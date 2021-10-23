@@ -1,13 +1,12 @@
 package com.barion.block_variants.data;
 
-import com.barion.block_variants.Registration;
+import com.barion.block_variants.BVRegister;
 import com.barion.block_variants.stuff.ModBlocks;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
-
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -15,7 +14,6 @@ import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fmllegacy.RegistryObject;
 
 import java.util.List;
@@ -25,8 +23,8 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class ModLootTables extends LootTableProvider {
-    public ModLootTables(DataGenerator generator) {super(generator);}
+public class BVLootTables extends LootTableProvider {
+    public BVLootTables(DataGenerator generator) {super(generator);}
 
 
     @Override
@@ -179,7 +177,7 @@ public class ModLootTables extends LootTableProvider {
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
-            return Registration.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+            return BVRegister.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
         }
     }
 }

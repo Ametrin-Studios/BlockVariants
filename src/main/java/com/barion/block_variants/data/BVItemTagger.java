@@ -9,8 +9,8 @@ import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 
-public class ModItemTags extends ItemTagsProvider {
-    public ModItemTags(DataGenerator generator, BlockTagsProvider provider, ExistingFileHelper fileHelper) {
+public class BVItemTagger extends ItemTagsProvider {
+    public BVItemTagger(DataGenerator generator, BlockTagsProvider provider, ExistingFileHelper fileHelper) {
         super(generator, provider, BlockVariants.Mod_ID, fileHelper);
     }
 

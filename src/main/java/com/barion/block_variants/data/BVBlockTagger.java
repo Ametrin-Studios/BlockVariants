@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModBlockTags extends BlockTagsProvider {
-    public ModBlockTags(DataGenerator generator, ExistingFileHelper fileHelper){
+public class BVBlockTagger extends BlockTagsProvider {
+    public BVBlockTagger(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, BlockVariants.Mod_ID, fileHelper);
     }
 

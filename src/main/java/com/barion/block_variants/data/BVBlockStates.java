@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModBlockModels extends BlockStateProvider {
-    public ModBlockModels(DataGenerator generator, ExistingFileHelper fileHelper){
+public class BVBlockStates extends BlockStateProvider {
+    public BVBlockStates(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, BlockVariants.Mod_ID, fileHelper);
     }
 

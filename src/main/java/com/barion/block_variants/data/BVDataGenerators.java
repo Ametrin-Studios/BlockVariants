@@ -8,21 +8,21 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = BlockVariants.Mod_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class DataGenerators {
-    private DataGenerators() {}
+public class BVDataGenerators {
+    private BVDataGenerators() {}
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event){
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(new ModBlockModels(generator, fileHelper));
-        generator.addProvider(new ModItemModels(generator, fileHelper));
-        ModBlockTags blockTags = new ModBlockTags(generator, fileHelper);
+        generator.addProvider(new BVBlockStates(generator, fileHelper));
+        generator.addProvider(new BVItemModels(generator, fileHelper));
+        BVBlockTagger blockTags = new BVBlockTagger(generator, fileHelper);
         generator.addProvider(blockTags);
-        generator.addProvider(new ModItemTags(generator, blockTags, fileHelper));
-        generator.addProvider(new ModRecipes(generator));
-        generator.addProvider(new ModLootTables(generator));
+        generator.addProvider(new BVItemTagger(generator, blockTags, fileHelper));
+        generator.addProvider(new BVRecipes(generator));
+        generator.addProvider(new BVLootTables(generator));
     }
 
 }

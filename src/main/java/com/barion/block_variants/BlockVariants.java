@@ -11,7 +11,7 @@ public class BlockVariants{
     public static final Logger LOGGER = LogManager.getLogger();
 
     public BlockVariants() {
-        Registration.onRegister();
+        BVRegister.onRegister();
         MinecraftForge.EVENT_BUS.register(this);
     }
 }

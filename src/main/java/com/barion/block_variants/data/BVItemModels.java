@@ -6,8 +6,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModItemModels extends ItemModelProvider {
-    public ModItemModels(DataGenerator generator, ExistingFileHelper fileHelper){
+public class BVItemModels extends ItemModelProvider {
+    public BVItemModels(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, BlockVariants.Mod_ID, fileHelper);
     }
 

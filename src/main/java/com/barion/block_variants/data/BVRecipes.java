@@ -11,9 +11,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Consumer;
 
-public class ModRecipes extends RecipeProvider {
+public class BVRecipes extends RecipeProvider {
     private Consumer<FinishedRecipe> consumer;
-    public ModRecipes(DataGenerator generator){super(generator);}
+    public BVRecipes(DataGenerator generator){super(generator);}
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {

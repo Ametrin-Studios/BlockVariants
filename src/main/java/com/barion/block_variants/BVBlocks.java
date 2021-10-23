@@ -1,6 +1,5 @@
-package com.barion.block_variants.stuff;
+package com.barion.block_variants;
 
-import com.barion.block_variants.Registration;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -11,7 +10,7 @@ import net.minecraftforge.fmllegacy.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class ModBlocks {
+public class BVBlocks {
 
     public static final RegistryObject<WallBlock> Polished_Granite_Wall = register("polished_granite_wall", () ->
             WallProperties(Material.STONE, 1.5F, 6, SoundType.STONE, true),
@@ -288,11 +287,11 @@ public class ModBlocks {
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = register(name, block);
-        Registration.Items.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
+        BVRegister.Items.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
         return ret;
     }
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block){
-        return Registration.Blocks.register(name, block);
+        return BVRegister.Blocks.register(name, block);
     }
 
     private static Block BlockProperties(Material material, float hardness, float resistance, SoundType soundType){
