@@ -1,6 +1,5 @@
 package com.barion.block_variants;
 
-import com.barion.block_variants.BVBlocks;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;

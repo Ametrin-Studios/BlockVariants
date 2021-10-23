@@ -1,7 +1,7 @@
 package com.barion.block_variants.data;
 
 import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.stuff.ModBlocks;
+import com.barion.block_variants.BVBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.SlabBlock;
@@ -17,71 +17,71 @@ public class BVBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        regWall(ModBlocks.Polished_Granite_Wall.get(), "polished_granite");
-        regWall(ModBlocks.Polished_Diorite_Wall.get(), "polished_diorite");
-        regWall(ModBlocks.Polished_Andesite_Wall.get(), "polished_andesite");
+        regWall(BVBlocks.Polished_Granite_Wall.get(), "polished_granite");
+        regWall(BVBlocks.Polished_Diorite_Wall.get(), "polished_diorite");
+        regWall(BVBlocks.Polished_Andesite_Wall.get(), "polished_andesite");
 
-        regWall(ModBlocks.Stone_Wall.get(), "stone");
-        regStairs(ModBlocks.Smooth_Stone_Stairs.get(), "smooth_stone_slab_side", "smooth_stone");
-        regWall(ModBlocks.Smooth_Stone_Wall.get(), "smooth_stone");
+        regWall(BVBlocks.Stone_Wall.get(), "stone");
+        regStairs(BVBlocks.Smooth_Stone_Stairs.get(), "smooth_stone_slab_side", "smooth_stone");
+        regWall(BVBlocks.Smooth_Stone_Wall.get(), "smooth_stone");
 
-        regStairs(ModBlocks.Cut_Sandstone_Stairs.get(), "cut_sandstone", "sandstone_top");
-        regWall(ModBlocks.Cut_Sandstone_Wall.get(), "cut_sandstone");
-        regStairs(ModBlocks.Cut_Red_Sandstone_Stairs.get(), "cut_red_sandstone", "red_sandstone_top");
-        regWall(ModBlocks.Cut_Red_Sandstone_Wall.get(), "cut_red_sandstone");
+        regStairs(BVBlocks.Cut_Sandstone_Stairs.get(), "cut_sandstone", "sandstone_top");
+        regWall(BVBlocks.Cut_Sandstone_Wall.get(), "cut_sandstone");
+        regStairs(BVBlocks.Cut_Red_Sandstone_Stairs.get(), "cut_red_sandstone", "red_sandstone_top");
+        regWall(BVBlocks.Cut_Red_Sandstone_Wall.get(), "cut_red_sandstone");
 
-        regWall(ModBlocks.Quartz_Wall.get(), "quartz_block_top");
-        regAll(ModBlocks.Quartz_Bricks_Stairs.get(), ModBlocks.Quartz_Bricks_Slab.get(), ModBlocks.Quartz_Bricks_Wall.get(), "quartz_bricks");
-        regWall(ModBlocks.Smooth_Quartz_Wall.get(), "quartz_block_bottom");
-        regAll(ModBlocks.Chiseled_Quartz_Block_Stairs.get(), ModBlocks.Chiseled_Quartz_Block_Slab.get(), ModBlocks.Chiseled_Quartz_Block_Wall.get(), "chiseled_quartz_block", "chiseled_quartz_block_top");
+        regWall(BVBlocks.Quartz_Wall.get(), "quartz_block_top");
+        regAll(BVBlocks.Quartz_Bricks_Stairs.get(), BVBlocks.Quartz_Bricks_Slab.get(), BVBlocks.Quartz_Bricks_Wall.get(), "quartz_bricks");
+        regWall(BVBlocks.Smooth_Quartz_Wall.get(), "quartz_block_bottom");
+        regAll(BVBlocks.Chiseled_Quartz_Block_Stairs.get(), BVBlocks.Chiseled_Quartz_Block_Slab.get(), BVBlocks.Chiseled_Quartz_Block_Wall.get(), "chiseled_quartz_block", "chiseled_quartz_block_top");
 
-        regWall(ModBlocks.Prismarine_Bricks_Wall.get(), "prismarine_bricks");
-        regWall(ModBlocks.Dark_Prismarine_Wall.get(), "dark_prismarine");
+        regWall(BVBlocks.Prismarine_Bricks_Wall.get(), "prismarine_bricks");
+        regWall(BVBlocks.Dark_Prismarine_Wall.get(), "dark_prismarine");
 
-        regAll(ModBlocks.Netherrack_Stairs.get(), ModBlocks.Netherrack_Slab.get(), ModBlocks.Netherrack_Wall.get(), "netherrack");
-        regAll(ModBlocks.End_Stone_Stairs.get(), ModBlocks.End_Stone_Slab.get(), ModBlocks.End_Stone_Wall.get(), "end_stone");
-        regAll(ModBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get(), ModBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), ModBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), "cracked_polished_blackstone_bricks");
-        regAll(ModBlocks.Basalt_Stairs.get(), ModBlocks.Basalt_Slab.get(), ModBlocks.Basalt_Wall.get(), "basalt_side", "basalt_top", "basalt");
-        regAll(ModBlocks.Polished_Basalt_Stairs.get(), ModBlocks.Polished_Basalt_Slab.get(), ModBlocks.Polished_Basalt_Wall.get(), "polished_basalt_side", "polished_basalt_top", "polished_basalt");
+        regAll(BVBlocks.Netherrack_Stairs.get(), BVBlocks.Netherrack_Slab.get(), BVBlocks.Netherrack_Wall.get(), "netherrack");
+        regAll(BVBlocks.End_Stone_Stairs.get(), BVBlocks.End_Stone_Slab.get(), BVBlocks.End_Stone_Wall.get(), "end_stone");
+        regAll(BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), "cracked_polished_blackstone_bricks");
+        regAll(BVBlocks.Basalt_Stairs.get(), BVBlocks.Basalt_Slab.get(), BVBlocks.Basalt_Wall.get(), "basalt_side", "basalt_top", "basalt");
+        regAll(BVBlocks.Polished_Basalt_Stairs.get(), BVBlocks.Polished_Basalt_Slab.get(), BVBlocks.Polished_Basalt_Wall.get(), "polished_basalt_side", "polished_basalt_top", "polished_basalt");
 
-        regAll(ModBlocks.Terracotta_Stairs.get(), ModBlocks.Terracotta_Slab.get(), ModBlocks.Terracotta_Wall.get(), "terracotta");
-        regAll(ModBlocks.White_Terracotta_Stairs.get(), ModBlocks.White_Terracotta_Slab.get(), ModBlocks.White_Terracotta_Wall.get(), "white_terracotta");
-        regAll(ModBlocks.Orange_Terracotta_Stairs.get(), ModBlocks.Orange_Terracotta_Slab.get(), ModBlocks.Orange_Terracotta_Wall.get(), "orange_terracotta");
-        regAll(ModBlocks.Magenta_Terracotta_Stairs.get(), ModBlocks.Magenta_Terracotta_Slab.get(), ModBlocks.Magenta_Terracotta_Wall.get(), "magenta_terracotta");
-        regAll(ModBlocks.Light_Blue_Terracotta_Stairs.get(), ModBlocks.Light_Blue_Terracotta_Slab.get(), ModBlocks.Light_Blue_Terracotta_Wall.get(), "light_blue_terracotta");
-        regAll(ModBlocks.Yellow_Terracotta_Stairs.get(), ModBlocks.Yellow_Terracotta_Slab.get(), ModBlocks.Yellow_Terracotta_Wall.get(), "yellow_terracotta");
-        regAll(ModBlocks.Lime_Terracotta_Stairs.get(), ModBlocks.Lime_Terracotta_Slab.get(), ModBlocks.Lime_Terracotta_Wall.get(), "lime_terracotta");
-        regAll(ModBlocks.Pink_Terracotta_Stairs.get(), ModBlocks.Pink_Terracotta_Slab.get(), ModBlocks.Pink_Terracotta_Wall.get(), "pink_terracotta");
-        regAll(ModBlocks.Gray_Terracotta_Stairs.get(), ModBlocks.Gray_Terracotta_Slab.get(), ModBlocks.Gray_Terracotta_Wall.get(), "gray_terracotta");
-        regAll(ModBlocks.Light_Gray_Terracotta_Stairs.get(), ModBlocks.Light_Gray_Terracotta_Slab.get(), ModBlocks.Light_Gray_Terracotta_Wall.get(), "light_gray_terracotta");
-        regAll(ModBlocks.Cyan_Terracotta_Stairs.get(), ModBlocks.Cyan_Terracotta_Slab.get(), ModBlocks.Cyan_Terracotta_Wall.get(), "cyan_terracotta");
-        regAll(ModBlocks.Purple_Terracotta_Stairs.get(), ModBlocks.Purple_Terracotta_Slab.get(), ModBlocks.Purple_Terracotta_Wall.get(), "purple_terracotta");
-        regAll(ModBlocks.Blue_Terracotta_Stairs.get(), ModBlocks.Blue_Terracotta_Slab.get(), ModBlocks.Blue_Terracotta_Wall.get(), "blue_terracotta");
-        regAll(ModBlocks.Brown_Terracotta_Stairs.get(), ModBlocks.Brown_Terracotta_Slab.get(), ModBlocks.Brown_Terracotta_Wall.get(), "brown_terracotta");
-        regAll(ModBlocks.Green_Terracotta_Stairs.get(), ModBlocks.Green_Terracotta_Slab.get(), ModBlocks.Green_Terracotta_Wall.get(), "green_terracotta");
-        regAll(ModBlocks.Red_Terracotta_Stairs.get(), ModBlocks.Red_Terracotta_Slab.get(), ModBlocks.Red_Terracotta_Wall.get(), "red_terracotta");
-        regAll(ModBlocks.Black_Terracotta_Stairs.get(), ModBlocks.Black_Terracotta_Slab.get(), ModBlocks.Black_Terracotta_Wall.get(), "black_terracotta");
+        regAll(BVBlocks.Terracotta_Stairs.get(), BVBlocks.Terracotta_Slab.get(), BVBlocks.Terracotta_Wall.get(), "terracotta");
+        regAll(BVBlocks.White_Terracotta_Stairs.get(), BVBlocks.White_Terracotta_Slab.get(), BVBlocks.White_Terracotta_Wall.get(), "white_terracotta");
+        regAll(BVBlocks.Orange_Terracotta_Stairs.get(), BVBlocks.Orange_Terracotta_Slab.get(), BVBlocks.Orange_Terracotta_Wall.get(), "orange_terracotta");
+        regAll(BVBlocks.Magenta_Terracotta_Stairs.get(), BVBlocks.Magenta_Terracotta_Slab.get(), BVBlocks.Magenta_Terracotta_Wall.get(), "magenta_terracotta");
+        regAll(BVBlocks.Light_Blue_Terracotta_Stairs.get(), BVBlocks.Light_Blue_Terracotta_Slab.get(), BVBlocks.Light_Blue_Terracotta_Wall.get(), "light_blue_terracotta");
+        regAll(BVBlocks.Yellow_Terracotta_Stairs.get(), BVBlocks.Yellow_Terracotta_Slab.get(), BVBlocks.Yellow_Terracotta_Wall.get(), "yellow_terracotta");
+        regAll(BVBlocks.Lime_Terracotta_Stairs.get(), BVBlocks.Lime_Terracotta_Slab.get(), BVBlocks.Lime_Terracotta_Wall.get(), "lime_terracotta");
+        regAll(BVBlocks.Pink_Terracotta_Stairs.get(), BVBlocks.Pink_Terracotta_Slab.get(), BVBlocks.Pink_Terracotta_Wall.get(), "pink_terracotta");
+        regAll(BVBlocks.Gray_Terracotta_Stairs.get(), BVBlocks.Gray_Terracotta_Slab.get(), BVBlocks.Gray_Terracotta_Wall.get(), "gray_terracotta");
+        regAll(BVBlocks.Light_Gray_Terracotta_Stairs.get(), BVBlocks.Light_Gray_Terracotta_Slab.get(), BVBlocks.Light_Gray_Terracotta_Wall.get(), "light_gray_terracotta");
+        regAll(BVBlocks.Cyan_Terracotta_Stairs.get(), BVBlocks.Cyan_Terracotta_Slab.get(), BVBlocks.Cyan_Terracotta_Wall.get(), "cyan_terracotta");
+        regAll(BVBlocks.Purple_Terracotta_Stairs.get(), BVBlocks.Purple_Terracotta_Slab.get(), BVBlocks.Purple_Terracotta_Wall.get(), "purple_terracotta");
+        regAll(BVBlocks.Blue_Terracotta_Stairs.get(), BVBlocks.Blue_Terracotta_Slab.get(), BVBlocks.Blue_Terracotta_Wall.get(), "blue_terracotta");
+        regAll(BVBlocks.Brown_Terracotta_Stairs.get(), BVBlocks.Brown_Terracotta_Slab.get(), BVBlocks.Brown_Terracotta_Wall.get(), "brown_terracotta");
+        regAll(BVBlocks.Green_Terracotta_Stairs.get(), BVBlocks.Green_Terracotta_Slab.get(), BVBlocks.Green_Terracotta_Wall.get(), "green_terracotta");
+        regAll(BVBlocks.Red_Terracotta_Stairs.get(), BVBlocks.Red_Terracotta_Slab.get(), BVBlocks.Red_Terracotta_Wall.get(), "red_terracotta");
+        regAll(BVBlocks.Black_Terracotta_Stairs.get(), BVBlocks.Black_Terracotta_Slab.get(), BVBlocks.Black_Terracotta_Wall.get(), "black_terracotta");
 
-        regAll(ModBlocks.Dripstone_Block_Stairs.get(), ModBlocks.Dripstone_Block_Slab.get(), ModBlocks.Dripstone_Block_Wall.get(), "dripstone_block");
-        regAll(ModBlocks.Amethyst_Block_Stairs.get(), ModBlocks.Amethyst_Block_Slab.get(), ModBlocks.Amethyst_Block_Wall.get(), "amethyst_block");
-        regAll(ModBlocks.Cracked_Stone_Brick_Stairs.get(), ModBlocks.Cracked_Stone_Brick_Slab.get(), ModBlocks.Cracked_Stone_Brick_Wall.get(), "cracked_stone_bricks");
+        regAll(BVBlocks.Dripstone_Block_Stairs.get(), BVBlocks.Dripstone_Block_Slab.get(), BVBlocks.Dripstone_Block_Wall.get(), "dripstone_block");
+        regAll(BVBlocks.Amethyst_Block_Stairs.get(), BVBlocks.Amethyst_Block_Slab.get(), BVBlocks.Amethyst_Block_Wall.get(), "amethyst_block");
+        regAll(BVBlocks.Cracked_Stone_Brick_Stairs.get(), BVBlocks.Cracked_Stone_Brick_Slab.get(), BVBlocks.Cracked_Stone_Brick_Wall.get(), "cracked_stone_bricks");
 
-        regStairsSlab(ModBlocks.Oak_Log_Stairs.get(), ModBlocks.Oak_Log_Slab.get(), "oak_log", "stripped_oak_log_top");
-        regStairsSlab(ModBlocks.Spruce_Log_Stairs.get(), ModBlocks.Spruce_Log_Slab.get(), "spruce_log", "stripped_spruce_log_top");
-        regStairsSlab(ModBlocks.Birch_Log_Stairs.get(), ModBlocks.Birch_Log_Slab.get(), "birch_log", "stripped_birch_log_top");
-        regStairsSlab(ModBlocks.Jungle_Log_Stairs.get(), ModBlocks.Jungle_Log_Slab.get(), "jungle_log", "stripped_jungle_log_top");
-        regStairsSlab(ModBlocks.Acacia_Log_Stairs.get(), ModBlocks.Acacia_Log_Slab.get(), "acacia_log", "stripped_acacia_log_top");
-        regStairsSlab(ModBlocks.Dark_Oak_Log_Stairs.get(), ModBlocks.Dark_Oak_Log_Slab.get(), "dark_oak_log", "stripped_dark_oak_log_top");
-        regStairsSlab(ModBlocks.Stripped_Oak_Log_Stairs.get(), ModBlocks.Stripped_Oak_Log_Slab.get(), "stripped_oak_log", "stripped_oak_log_top");
-        regStairsSlab(ModBlocks.Stripped_Spruce_Log_Stairs.get(), ModBlocks.Stripped_Spruce_Log_Slab.get(), "stripped_spruce_log", "stripped_spruce_log_top");
-        regStairsSlab(ModBlocks.Stripped_Birch_Log_Stairs.get(), ModBlocks.Stripped_Birch_Log_Slab.get(), "stripped_birch_log", "stripped_birch_log_top");
-        regStairsSlab(ModBlocks.Stripped_Jungle_Log_Stairs.get(), ModBlocks.Stripped_Jungle_Log_Slab.get(), "stripped_jungle_log", "stripped_jungle_log_top");
-        regStairsSlab(ModBlocks.Stripped_Acacia_Log_Stairs.get(), ModBlocks.Stripped_Acacia_Log_Slab.get(), "stripped_acacia_log", "stripped_acacia_log_top");
-        regStairsSlab(ModBlocks.Stripped_Dark_Oak_Log_Stairs.get(), ModBlocks.Stripped_Dark_Oak_Log_Slab.get(), "stripped_dark_oak_log", "stripped_dark_oak_log_top");
-        regStairsSlab(ModBlocks.Crimson_Stem_Stairs.get(), ModBlocks.Crimson_Stem_Slab.get(), "crimson_stem", "crimson_stem_top");
-        regStairsSlab(ModBlocks.Warped_Stem_Stairs.get(), ModBlocks.Warped_Stem_Slab.get(), "warped_stem", "warped_stem_top");
-        regStairsSlab(ModBlocks.Stripped_Crimson_Stem_Stairs.get(), ModBlocks.Stripped_Crimson_Stem_Slab.get(), "stripped_crimson_stem", "stripped_crimson_stem_top");
-        regStairsSlab(ModBlocks.Stripped_Warped_Stem_Stairs.get(), ModBlocks.Stripped_Warped_Stem_Slab.get(), "stripped_warped_stem", "stripped_warped_stem_top");
+        regStairsSlab(BVBlocks.Oak_Log_Stairs.get(), BVBlocks.Oak_Log_Slab.get(), "oak_log", "stripped_oak_log_top");
+        regStairsSlab(BVBlocks.Spruce_Log_Stairs.get(), BVBlocks.Spruce_Log_Slab.get(), "spruce_log", "stripped_spruce_log_top");
+        regStairsSlab(BVBlocks.Birch_Log_Stairs.get(), BVBlocks.Birch_Log_Slab.get(), "birch_log", "stripped_birch_log_top");
+        regStairsSlab(BVBlocks.Jungle_Log_Stairs.get(), BVBlocks.Jungle_Log_Slab.get(), "jungle_log", "stripped_jungle_log_top");
+        regStairsSlab(BVBlocks.Acacia_Log_Stairs.get(), BVBlocks.Acacia_Log_Slab.get(), "acacia_log", "stripped_acacia_log_top");
+        regStairsSlab(BVBlocks.Dark_Oak_Log_Stairs.get(), BVBlocks.Dark_Oak_Log_Slab.get(), "dark_oak_log", "stripped_dark_oak_log_top");
+        regStairsSlab(BVBlocks.Stripped_Oak_Log_Stairs.get(), BVBlocks.Stripped_Oak_Log_Slab.get(), "stripped_oak_log", "stripped_oak_log_top");
+        regStairsSlab(BVBlocks.Stripped_Spruce_Log_Stairs.get(), BVBlocks.Stripped_Spruce_Log_Slab.get(), "stripped_spruce_log", "stripped_spruce_log_top");
+        regStairsSlab(BVBlocks.Stripped_Birch_Log_Stairs.get(), BVBlocks.Stripped_Birch_Log_Slab.get(), "stripped_birch_log", "stripped_birch_log_top");
+        regStairsSlab(BVBlocks.Stripped_Jungle_Log_Stairs.get(), BVBlocks.Stripped_Jungle_Log_Slab.get(), "stripped_jungle_log", "stripped_jungle_log_top");
+        regStairsSlab(BVBlocks.Stripped_Acacia_Log_Stairs.get(), BVBlocks.Stripped_Acacia_Log_Slab.get(), "stripped_acacia_log", "stripped_acacia_log_top");
+        regStairsSlab(BVBlocks.Stripped_Dark_Oak_Log_Stairs.get(), BVBlocks.Stripped_Dark_Oak_Log_Slab.get(), "stripped_dark_oak_log", "stripped_dark_oak_log_top");
+        regStairsSlab(BVBlocks.Crimson_Stem_Stairs.get(), BVBlocks.Crimson_Stem_Slab.get(), "crimson_stem", "crimson_stem_top");
+        regStairsSlab(BVBlocks.Warped_Stem_Stairs.get(), BVBlocks.Warped_Stem_Slab.get(), "warped_stem", "warped_stem_top");
+        regStairsSlab(BVBlocks.Stripped_Crimson_Stem_Stairs.get(), BVBlocks.Stripped_Crimson_Stem_Slab.get(), "stripped_crimson_stem", "stripped_crimson_stem_top");
+        regStairsSlab(BVBlocks.Stripped_Warped_Stem_Stairs.get(), BVBlocks.Stripped_Warped_Stem_Slab.get(), "stripped_warped_stem", "stripped_warped_stem_top");
 
     }
     protected void regAll(StairBlock stairs, SlabBlock slab, WallBlock wall, String texture){
