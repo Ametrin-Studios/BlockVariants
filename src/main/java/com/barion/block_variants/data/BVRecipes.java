@@ -163,13 +163,13 @@ public class BVRecipes extends RecipeProvider {
         }
     }
     protected void recipeStonecutting(Item result, Item ingredient){
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));
+        recipeStonecutting(result, ingredient, 1);
     }
     protected void recipeStonecutting(Item result, Item ingredient, int amount){
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));
     }
     protected void recipeStonecutting(Item result, Item ingredient, boolean addToID){
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting_" + ingredient.toString()));
+        recipeStonecutting(result, ingredient, addToID);
     }
     protected void recipeStonecutting(Item result, Item ingredient, int amount, boolean addToID){
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting_" + ingredient.toString()));
