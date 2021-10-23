@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:blackstone_stairs"
-            ]
+            "item": "minecraft:blackstone_stairs"
           }
         ]
       }

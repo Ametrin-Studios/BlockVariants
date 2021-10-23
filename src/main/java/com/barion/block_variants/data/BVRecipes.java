@@ -1,22 +1,21 @@
 package com.barion.block_variants.data;
 
-import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.BVBlocks;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
+import com.barion.block_variants.BlockVariants;
+import net.minecraft.data.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Consumer;
 
 public class BVRecipes extends RecipeProvider {
-    private Consumer<FinishedRecipe> consumer;
+    private Consumer<IFinishedRecipe> consumer;
     public BVRecipes(DataGenerator generator){super(generator);}
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
         this.consumer = consumer;
         recipeWall(BVBlocks.Polished_Granite_Wall.get().asItem(), Items.POLISHED_GRANITE, new Item[] {Items.GRANITE, Items.GRANITE_WALL});
         recipeWall(BVBlocks.Polished_Diorite_Wall.get().asItem(), Items.POLISHED_DIORITE, new Item[] {Items.DIORITE, Items.DIORITE_WALL});
@@ -163,19 +162,19 @@ public class BVRecipes extends RecipeProvider {
         }
     }
     protected void recipeStonecutting(Item result, Item ingredient){
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));
+        recipeStonecutting(result, ingredient, 1);
     }
     protected void recipeStonecutting(Item result, Item ingredient, int amount){
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlocks("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));
     }
     protected void recipeStonecutting(Item result, Item ingredient, boolean addToID){
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting_" + ingredient.toString()));
+        recipeStonecutting(result, ingredient, 1, addToID);
     }
     protected void recipeStonecutting(Item result, Item ingredient, int amount, boolean addToID){
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting_" + ingredient.toString()));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlocks("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting_" + ingredient));
     }
     protected void recipeSmelting(Item result, Item ingredient) {
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, 0.1F, 200).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_smelting"));
+        CookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, 0.1F, 200).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_smelting"));
     }
     private static ResourceLocation recipeID(Item item) { return new ResourceLocation(BlockVariants.Mod_ID, item.toString());}
     private static ResourceLocation recipeID(Item item, String add) { return new ResourceLocation(BlockVariants.Mod_ID, item.toString() + add);}

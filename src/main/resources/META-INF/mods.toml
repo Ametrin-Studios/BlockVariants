@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[37,)" #mandatory
+loaderVersion="[36,)" #mandatory
 license="All rights reserved"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants/issues" #optional
 
@@ -19,12 +19,12 @@ Adds Variants of Vanilla Blocks that are for some reason missing and more recipe
 [[dependencies.block_variants]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[37,)" #mandatory
+    versionRange="[36,)" #mandatory
     ordering="NONE"
     side="BOTH"
 [[dependencies.block_variants]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17.1,1.18)"
+    versionRange="[1.16.5,1.17)"
     ordering="NONE"
     side="BOTH"

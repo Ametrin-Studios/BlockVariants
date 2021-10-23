@@ -2,7 +2,7 @@ package com.barion.block_variants.data;
 
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -41,10 +41,8 @@ public class BVItemModels extends ItemModelProvider {
         regAll("polished_basalt", "polished_basalt_side", "polished_basalt_top");
 
         regAll("terracotta");
-        regAllTerra(new String[] {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"});
+        regAllTerra("white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black");
 
-        regAll("dripstone_block");
-        regAll("amethyst_block");
         regAll("cracked_stone_brick", "cracked_stone_bricks");
 
         regStairsSlab("oak_log", "oak_log_top");
@@ -118,7 +116,7 @@ public class BVItemModels extends ItemModelProvider {
         wallInventory(name + "_wall", mcLoc("block/" + texture));
     }
 
-    private void regAllTerra(String[] colors){
+    private void regAllTerra(String... colors){
         for(String color : colors) {
             regAll(color + "_terracotta");
         }

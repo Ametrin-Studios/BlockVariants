@@ -1,12 +1,12 @@
 package com.barion.block_variants.data;
 
-import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.BVBlocks;
+import com.barion.block_variants.BlockVariants;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -62,8 +62,6 @@ public class BVBlockStates extends BlockStateProvider {
         regAll(BVBlocks.Red_Terracotta_Stairs.get(), BVBlocks.Red_Terracotta_Slab.get(), BVBlocks.Red_Terracotta_Wall.get(), "red_terracotta");
         regAll(BVBlocks.Black_Terracotta_Stairs.get(), BVBlocks.Black_Terracotta_Slab.get(), BVBlocks.Black_Terracotta_Wall.get(), "black_terracotta");
 
-        regAll(BVBlocks.Dripstone_Block_Stairs.get(), BVBlocks.Dripstone_Block_Slab.get(), BVBlocks.Dripstone_Block_Wall.get(), "dripstone_block");
-        regAll(BVBlocks.Amethyst_Block_Stairs.get(), BVBlocks.Amethyst_Block_Slab.get(), BVBlocks.Amethyst_Block_Wall.get(), "amethyst_block");
         regAll(BVBlocks.Cracked_Stone_Brick_Stairs.get(), BVBlocks.Cracked_Stone_Brick_Slab.get(), BVBlocks.Cracked_Stone_Brick_Wall.get(), "cracked_stone_bricks");
 
         regStairsSlab(BVBlocks.Oak_Log_Stairs.get(), BVBlocks.Oak_Log_Slab.get(), "oak_log", "stripped_oak_log_top");
@@ -84,29 +82,29 @@ public class BVBlockStates extends BlockStateProvider {
         regStairsSlab(BVBlocks.Stripped_Warped_Stem_Stairs.get(), BVBlocks.Stripped_Warped_Stem_Slab.get(), "stripped_warped_stem", "stripped_warped_stem_top");
 
     }
-    protected void regAll(StairBlock stairs, SlabBlock slab, WallBlock wall, String texture){
+    protected void regAll(StairsBlock stairs, SlabBlock slab, WallBlock wall, String texture){
         regStairs(stairs, texture);
         regSlab(slab, texture);
         regWall(wall, texture);
     }
-    protected void regAll(StairBlock stairs, SlabBlock slab, WallBlock wall, String texture, String topTexture){
+    protected void regAll(StairsBlock stairs, SlabBlock slab, WallBlock wall, String texture, String topTexture){
         regStairs(stairs, texture, topTexture);
         regSlab(slab, texture, topTexture, texture);
         regWall(wall, texture);
     }
-    protected void regAll(StairBlock stairs, SlabBlock slab, WallBlock wall, String texture, String topTexture, String doubleSlab){
+    protected void regAll(StairsBlock stairs, SlabBlock slab, WallBlock wall, String texture, String topTexture, String doubleSlab){
         regStairs(stairs, texture, topTexture);
         regSlab(slab, texture, topTexture, doubleSlab);
         regWall(wall, texture);
     }
-    protected void regStairsSlab(StairBlock stairs, SlabBlock slab, String texture, String topTexture){
+    protected void regStairsSlab(StairsBlock stairs, SlabBlock slab, String texture, String topTexture){
         regStairs(stairs, texture, topTexture);
         regSlab(slab, texture, topTexture, texture);
     }
-    protected void regStairs(StairBlock stairs, String texture){
+    protected void regStairs(StairsBlock stairs, String texture){
         stairsBlock(stairs, mcLoc("block/" + texture));
     }
-    protected void regStairs(StairBlock stairs, String texture, String topTexture){
+    protected void regStairs(StairsBlock stairs, String texture, String topTexture){
         ResourceLocation topResource = mcLoc("block/" + topTexture);
         stairsBlock(stairs, mcLoc("block/" + texture), topResource, topResource);
     }

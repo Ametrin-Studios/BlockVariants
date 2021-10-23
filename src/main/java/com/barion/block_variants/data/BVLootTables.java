@@ -4,17 +4,13 @@ import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVRegister;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.loot.BlockLoot;
-import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.LootTables;
-import net.minecraft.world.level.storage.loot.ValidationContext;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraft.data.LootTableProvider;
+import net.minecraft.data.loot.BlockLootTables;
+import net.minecraft.loot.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.RegistryObject;
 
 import java.util.List;
 import java.util.Map;
@@ -28,16 +24,16 @@ public class BVLootTables extends LootTableProvider {
 
 
     @Override
-    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
-        return ImmutableList.of(Pair.of(ModBlockLootTables::new, LootContextParamSets.BLOCK));
+    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> getTables() {
+        return ImmutableList.of(Pair.of(ModBlockLootTables::new, LootParameterSets.BLOCK));
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationContext) {
-        map.forEach((p_218436_2_, p_218436_3_) -> LootTables.validate(validationContext, p_218436_2_, p_218436_3_));
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationTracker validationContext) {
+        map.forEach((p_218436_2_, p_218436_3_) -> LootTableManager.validate(validationContext, p_218436_2_, p_218436_3_));
     }
 
-    public static class ModBlockLootTables extends BlockLoot {
+    public static class ModBlockLootTables extends BlockLootTables {
         @Override
         protected void addTables() {
             dropSelf(BVBlocks.Polished_Granite_Wall.get(),
@@ -126,12 +122,6 @@ public class BVLootTables extends LootTableProvider {
                     BVBlocks.Black_Terracotta_Stairs.get(),
                     BVBlocks.Black_Terracotta_Slab.get(),
                     BVBlocks.Black_Terracotta_Wall.get(),
-                    BVBlocks.Dripstone_Block_Stairs.get(),
-                    BVBlocks.Dripstone_Block_Slab.get(),
-                    BVBlocks.Dripstone_Block_Wall.get(),
-                    BVBlocks.Amethyst_Block_Stairs.get(),
-                    BVBlocks.Amethyst_Block_Slab.get(),
-                    BVBlocks.Amethyst_Block_Wall.get(),
                     BVBlocks.Cracked_Stone_Brick_Stairs.get(),
                     BVBlocks.Cracked_Stone_Brick_Slab.get(),
                     BVBlocks.Cracked_Stone_Brick_Wall.get(),

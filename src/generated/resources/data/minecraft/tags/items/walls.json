@@ -36,8 +36,6 @@
     "block_variants:green_terracotta_wall",
     "block_variants:red_terracotta_wall",
     "block_variants:black_terracotta_wall",
-    "block_variants:dripstone_block_wall",
-    "block_variants:amethyst_block_wall",
     "block_variants:cracked_stone_brick_wall"
   ]
 }

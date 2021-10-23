@@ -29,8 +29,6 @@
     "block_variants:green_terracotta_stairs",
     "block_variants:red_terracotta_stairs",
     "block_variants:black_terracotta_stairs",
-    "block_variants:dripstone_block_stairs",
-    "block_variants:amethyst_block_stairs",
     "block_variants:cracked_stone_brick_stairs"
   ]
 }
