@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "block_variants:quartz_bricks_slab",
+    "block_variants:chiseled_quartz_block_slab",
+    "block_variants:netherrack_slab",
+    "block_variants:end_stone_slab",
+    "block_variants:cracked_polished_blackstone_brick_slab",
+    "block_variants:basalt_slab",
+    "block_variants:polished_basalt_slab",
+    "block_variants:terracotta_slab",
+    "block_variants:white_terracotta_slab",
+    "block_variants:orange_terracotta_slab",
+    "block_variants:magenta_terracotta_slab",
+    "block_variants:light_blue_terracotta_slab",
+    "block_variants:yellow_terracotta_slab",
+    "block_variants:lime_terracotta_slab",
+    "block_variants:pink_terracotta_slab",
+    "block_variants:gray_terracotta_slab",
+    "block_variants:light_gray_terracotta_slab",
+    "block_variants:cyan_terracotta_slab",
+    "block_variants:purple_terracotta_slab",
+    "block_variants:blue_terracotta_slab",
+    "block_variants:brown_terracotta_slab",
+    "block_variants:green_terracotta_slab",
+    "block_variants:red_terracotta_slab",
+    "block_variants:black_terracotta_slab",
+    "block_variants:dripstone_block_slab",
+    "block_variants:amethyst_block_slab",
+    "block_variants:cracked_stone_brick_slab"
+  ]
+}

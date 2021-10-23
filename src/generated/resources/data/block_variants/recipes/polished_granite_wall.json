@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:polished_granite"
+    }
+  },
+  "result": {
+    "item": "block_variants:polished_granite_wall",
+    "count": 6
+  }
+}

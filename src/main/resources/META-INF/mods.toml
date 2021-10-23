@@ -1,0 +1,30 @@
+modLoader="javafml" #mandatory
+loaderVersion="[37,)" #mandatory
+license="All rights reserved"
+issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants/issues" #optional
+
+[[mods]] #mandatory
+
+modId="block_variants" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Vanilla Block Variants" #mandatory
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants" #optional
+logoFile="block_variants.png" #optional
+#credits="Thanks for this example mod goes to Java" #optional
+authors="Barion" #optional
+description='''
+Adds Variants of Vanilla Blocks that are for some reason missing and more recipes for existing Blocks.
+'''
+[[dependencies.block_variants]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[37,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.block_variants]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
