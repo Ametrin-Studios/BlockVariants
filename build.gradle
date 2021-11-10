@@ -70,18 +70,18 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.103'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.107'
 }
 
 jar {
     manifest {
         attributes([
             "Specification-Title": "block_variants",
-            "Specification-Vendor": "block_variantssareus",
+            "Specification-Vendor": "Barion",
             "Specification-Version": "1",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"block_variantssareus",
+            "Implementation-Vendor" :"Barion",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
