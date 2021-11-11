@@ -61,6 +61,12 @@ public class BVItemModels extends ItemModelProvider {
         regStairsSlab("warped_stem", "warped_stem_top");
         regStairsSlab("stripped_crimson_stem", "stripped_crimson_stem_top");
         regStairsSlab("stripped_warped_stem", "stripped_warped_stem_top");
+
+        regAllWood("oak", "spruce", "birch", "jungle", "acacia", "dark_oak");
+        regAll("crimson_hyphae", "crimson_stem");
+        regAll("warped_hyphae", "warped_stem");
+        regAll("stripped_crimson_hyphae", "stripped_crimson_stem");
+        regAll("stripped_warped_hyphae", "stripped_warped_stem");
     }
 
     private void regAll(String name){
@@ -119,6 +125,20 @@ public class BVItemModels extends ItemModelProvider {
     private void regAllTerra(String... colors){
         for(String color : colors) {
             regAll(color + "_terracotta");
+        }
+    }
+    private void regAllWood(String... types){
+        for(String type : types) {
+            regAll(type + "_wood", type + "_log");
+        }
+        for(String type : types) {
+            regAll("stripped_" + type + "_wood", "stripped_" + type + "_log");
+        }
+        for(String type : types) {
+            regAll(type + "_log", type + "_log", type + "_log_top");
+        }
+        for(String type : types) {
+            regAll("stripped_" + type + "_log", "stripped_" + type + "_log", "stripped_" + type + "_log_top");
         }
     }
 }
