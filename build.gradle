@@ -14,7 +14,7 @@ apply plugin: 'maven-publish'
 
 version = '2.4'
 group = 'com.barion.block_variants'
-archivesBaseName = "block_variants-1.17.1-${version}"
+archivesBaseName = "block_variants-1.17.1-"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
@@ -22,6 +22,8 @@ println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getPro
 minecraft {
    
     mappings channel: 'official', version: '1.17.1'
+
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
         client {
@@ -70,7 +72,7 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.107'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.108'
 }
 
 jar {
