@@ -47,7 +47,7 @@ public class BVItemModels extends ItemModelProvider {
         regAll("amethyst_block");
         regAll("cracked_stone_brick", "cracked_stone_bricks");
 
-        /*regStairsSlab("oak_log", "oak_log_top");
+        regStairsSlab("oak_log", "oak_log_top");
         regStairsSlab("spruce_log", "spruce_log_top");
         regStairsSlab("birch_log", "birch_log_top");
         regStairsSlab("jungle_log", "jungle_log_top");
@@ -58,7 +58,7 @@ public class BVItemModels extends ItemModelProvider {
         regStairsSlab("stripped_birch_log", "stripped_birch_log_top");
         regStairsSlab("stripped_jungle_log", "stripped_jungle_log_top");
         regStairsSlab("stripped_acacia_log", "stripped_acacia_log_top");
-        regStairsSlab("stripped_dark_oak_log", "stripped_dark_oak_log_top");*/
+        regStairsSlab("stripped_dark_oak_log", "stripped_dark_oak_log_top");
         regStairsSlab("crimson_stem", "crimson_stem_top");
         regStairsSlab("warped_stem", "warped_stem_top");
         regStairsSlab("stripped_crimson_stem", "stripped_crimson_stem_top");
