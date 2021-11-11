@@ -311,9 +311,9 @@ public class BVBlocks {
     }
     private static StairBlock StairProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool, Block block){
         if(requiresTool)
-            return new StairBlock(() -> block.defaultBlockState(), BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return new StairBlock(() -> block.defaultBlockState(), BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
     private static SlabBlock SlabProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
