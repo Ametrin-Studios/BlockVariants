@@ -12,6 +12,7 @@ import net.minecraft.loot.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -22,13 +23,12 @@ import java.util.stream.Collectors;
 public class BVLootTables extends LootTableProvider {
     public BVLootTables(DataGenerator generator) {super(generator);}
 
-
     @Override
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> getTables() {
         return ImmutableList.of(Pair.of(ModBlockLootTables::new, LootParameterSets.BLOCK));
     }
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     protected void validate(Map<ResourceLocation, LootTable> map, ValidationTracker validationContext) {
         map.forEach((p_218436_2_, p_218436_3_) -> LootTableManager.validate(validationContext, p_218436_2_, p_218436_3_));
     }
