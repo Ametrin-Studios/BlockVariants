@@ -14,7 +14,7 @@ apply plugin: 'maven-publish'
 
 version = '2.4'
 group = 'com.barion.block_variants'
-archivesBaseName = "block_variants-1.17.1-"
+archivesBaseName = "block_variants-1.17.1"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
