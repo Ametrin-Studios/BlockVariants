@@ -8,18 +8,19 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
 public class BVRecipes extends RecipeProvider {
     private Consumer<IFinishedRecipe> consumer;
     public BVRecipes(DataGenerator generator){super(generator);}
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
         this.consumer = consumer;
-        recipeWall(BVBlocks.Polished_Granite_Wall.get().asItem(), Items.POLISHED_GRANITE, new Item[] {Items.GRANITE, Items.GRANITE_WALL});
-        recipeWall(BVBlocks.Polished_Diorite_Wall.get().asItem(), Items.POLISHED_DIORITE, new Item[] {Items.DIORITE, Items.DIORITE_WALL});
-        recipeWall(BVBlocks.Polished_Andesite_Wall.get().asItem(), Items.POLISHED_ANDESITE, new Item[] {Items.ANDESITE, Items.ANDESITE_WALL});
+        recipeWall(BVBlocks.Polished_Granite_Wall.get().asItem(), Items.POLISHED_GRANITE, Items.GRANITE, Items.GRANITE_WALL);
+        recipeWall(BVBlocks.Polished_Diorite_Wall.get().asItem(), Items.POLISHED_DIORITE, Items.DIORITE, Items.DIORITE_WALL);
+        recipeWall(BVBlocks.Polished_Andesite_Wall.get().asItem(), Items.POLISHED_ANDESITE, Items.ANDESITE, Items.ANDESITE_WALL);
 
         recipeSmelting(Items.STONE_STAIRS, Items.COBBLESTONE_STAIRS);
         recipeSmelting(Items.STONE_SLAB, Items.COBBLESTONE_SLAB);
@@ -31,22 +32,22 @@ public class BVRecipes extends RecipeProvider {
         recipeWall(BVBlocks.Smooth_Stone_Wall.get().asItem(), Items.SMOOTH_STONE);
         recipeSmelting(BVBlocks.Smooth_Stone_Wall.get().asItem(), BVBlocks.Stone_Wall.get().asItem());
 
-        recipeStairs(BVBlocks.Cut_Sandstone_Stairs.get().asItem(), Items.CUT_SANDSTONE, new Item[] {Items.SANDSTONE, Items.SANDSTONE_STAIRS});
-        recipeStairs(BVBlocks.Cut_Red_Sandstone_Stairs.get().asItem(), Items.CUT_RED_SANDSTONE, new Item[] {Items.RED_SANDSTONE, Items.RED_SANDSTONE_STAIRS});
-        recipeWall(BVBlocks.Cut_Sandstone_Wall.get().asItem(), Items.CUT_SANDSTONE, new Item[] {Items.SANDSTONE, Items.SANDSTONE_WALL});
-        recipeWall(BVBlocks.Cut_Red_Sandstone_Wall.get().asItem(), Items.CUT_RED_SANDSTONE, new Item[] {Items.RED_SANDSTONE, Items.RED_SANDSTONE_WALL});
+        recipeStairs(BVBlocks.Cut_Sandstone_Stairs.get().asItem(), Items.CUT_SANDSTONE, Items.SANDSTONE, Items.SANDSTONE_STAIRS);
+        recipeStairs(BVBlocks.Cut_Red_Sandstone_Stairs.get().asItem(), Items.CUT_RED_SANDSTONE, Items.RED_SANDSTONE, Items.RED_SANDSTONE_STAIRS);
+        recipeWall(BVBlocks.Cut_Sandstone_Wall.get().asItem(), Items.CUT_SANDSTONE, Items.SANDSTONE, Items.SANDSTONE_WALL);
+        recipeWall(BVBlocks.Cut_Red_Sandstone_Wall.get().asItem(), Items.CUT_RED_SANDSTONE, Items.RED_SANDSTONE, Items.RED_SANDSTONE_WALL);
 
         recipeWall(BVBlocks.Quartz_Wall.get().asItem(), Items.QUARTZ_BLOCK);
-        recipeStairs(BVBlocks.Quartz_Bricks_Stairs.get().asItem(), Items.QUARTZ_BRICKS, new  Item[] {Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS});
-        recipeSlab(BVBlocks.Quartz_Bricks_Slab.get().asItem(), Items.QUARTZ_BRICKS, new  Item[] {Items.QUARTZ_BLOCK, Items.QUARTZ_SLAB});
-        recipeWall(BVBlocks.Quartz_Bricks_Wall.get().asItem(), Items.QUARTZ_BRICKS, new Item[] {Items.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get().asItem()});
+        recipeStairs(BVBlocks.Quartz_Bricks_Stairs.get().asItem(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS);
+        recipeSlab(BVBlocks.Quartz_Bricks_Slab.get().asItem(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, Items.QUARTZ_SLAB);
+        recipeWall(BVBlocks.Quartz_Bricks_Wall.get().asItem(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get().asItem());
         recipeSmelting(Items.SMOOTH_QUARTZ_STAIRS, Items.QUARTZ_STAIRS);
         recipeSmelting(Items.SMOOTH_QUARTZ_SLAB, Items.QUARTZ_SLAB);
         recipeWall(BVBlocks.Smooth_Quartz_Wall.get().asItem(), Items.SMOOTH_QUARTZ);
         recipeSmelting(BVBlocks.Smooth_Quartz_Wall.get().asItem(), BVBlocks.Quartz_Wall.get().asItem());
-        recipeStairs(BVBlocks.Chiseled_Quartz_Block_Stairs.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, new Item[] {Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS});
-        recipeSlab(BVBlocks.Chiseled_Quartz_Block_Slab.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, new Item[] {Items.QUARTZ_BLOCK, Items.QUARTZ_SLAB});
-        recipeWall(BVBlocks.Chiseled_Quartz_Block_Wall.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, new Item[] {Items.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get().asItem()});
+        recipeStairs(BVBlocks.Chiseled_Quartz_Block_Stairs.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS);
+        recipeSlab(BVBlocks.Chiseled_Quartz_Block_Slab.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, Items.QUARTZ_BLOCK, Items.QUARTZ_SLAB);
+        recipeWall(BVBlocks.Chiseled_Quartz_Block_Wall.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, Items.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get().asItem());
 
         recipeWall(BVBlocks.Prismarine_Bricks_Wall.get().asItem(), Items.PRISMARINE_BRICKS);
         recipeWall(BVBlocks.Dark_Prismarine_Wall.get().asItem(), Items.DARK_PRISMARINE);
@@ -68,9 +69,9 @@ public class BVRecipes extends RecipeProvider {
         recipeStonecutting(Items.POLISHED_BLACKSTONE_BRICK_WALL, Items.POLISHED_BLACKSTONE_WALL, true);
 
         recipeAll(BVBlocks.Basalt_Stairs.get().asItem(), BVBlocks.Basalt_Slab.get().asItem(), BVBlocks.Basalt_Wall.get().asItem(), Items.BASALT);
-        recipeStairs(BVBlocks.Polished_Basalt_Stairs.get().asItem(), Items.POLISHED_BASALT, new Item[] {Items.BASALT, BVBlocks.Basalt_Stairs.get().asItem()});
-        recipeSlab(BVBlocks.Polished_Basalt_Slab.get().asItem(), Items.POLISHED_BASALT, new Item[] {Items.BASALT, BVBlocks.Basalt_Slab.get().asItem()});
-        recipeWall(BVBlocks.Polished_Basalt_Wall.get().asItem(), Items.POLISHED_BASALT, new Item[] {Items.BASALT, BVBlocks.Basalt_Wall.get().asItem()});
+        recipeStairs(BVBlocks.Polished_Basalt_Stairs.get().asItem(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Stairs.get().asItem());
+        recipeSlab(BVBlocks.Polished_Basalt_Slab.get().asItem(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Slab.get().asItem());
+        recipeWall(BVBlocks.Polished_Basalt_Wall.get().asItem(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Wall.get().asItem());
 
         recipeStairsSlab(BVBlocks.Oak_Log_Stairs.get().asItem(), BVBlocks.Oak_Log_Slab.get().asItem(), Items.OAK_LOG, false);
         recipeStairsSlab(BVBlocks.Spruce_Log_Stairs.get().asItem(), BVBlocks.Spruce_Log_Slab.get().asItem(), Items.SPRUCE_LOG, false);
@@ -118,7 +119,7 @@ public class BVRecipes extends RecipeProvider {
     protected void recipeStairs(Item stairs, Item material){
         recipeStairs(stairs, material, true);
     }
-    protected void recipeStairs(Item stairs, Item material, Item[] addMats){
+    protected void recipeStairs(Item stairs, Item material, Item... addMats){
         recipeStairs(stairs, material);
         for (Item item : addMats) {
             recipeStonecutting(stairs, item, true);
@@ -136,7 +137,7 @@ public class BVRecipes extends RecipeProvider {
     protected void recipeSlab(Item slab, Item material){
         recipeSlab(slab, material, true);
     }
-    protected void recipeSlab(Item slab, Item material, Item[] addMats){
+    protected void recipeSlab(Item slab, Item material, Item... addMats){
         recipeSlab(slab, material, true);
         for (Item item : addMats) {
             recipeStonecutting(slab, item, 2, true);
@@ -155,7 +156,7 @@ public class BVRecipes extends RecipeProvider {
     protected void recipeWall(Item wall, Item material) {
         recipeWall(wall, material, true);
     }
-    protected void recipeWall(Item wall, Item material, Item[] addMats) {
+    protected void recipeWall(Item wall, Item material, Item... addMats) {
         recipeWall(wall, material);
         for (Item item : addMats) {
             recipeStonecutting(wall, item, true);
