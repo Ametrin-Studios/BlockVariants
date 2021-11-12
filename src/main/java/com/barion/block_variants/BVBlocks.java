@@ -15,63 +15,63 @@ public class BVBlocks {
     private static final Item.Properties DecorationBlocks = new Item.Properties().tab(ItemGroup.TAB_DECORATIONS);
 
     public static final RegistryObject<WallBlock> Polished_Granite_Wall = register("polished_granite_wall", () ->
-            WallProperties(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 1.5F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<WallBlock> Polished_Diorite_Wall = register("polished_diorite_wall", () ->
-            WallProperties(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 1.5F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<WallBlock> Polished_Andesite_Wall = register("polished_andesite_wall", () ->
-            WallProperties(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 1.5F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
 
     public static final RegistryObject<WallBlock> Stone_Wall = register("stone_wall", () ->
-            WallProperties(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 1.5F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<StairsBlock> Smooth_Stone_Stairs = register("smooth_stone_stairs", () ->
-            StairProperties(Material.STONE, 2, 6, SoundType.STONE, true, Blocks.SMOOTH_STONE), BuildingBlocks);
+            StairProperties(Material.STONE, 2, 6, ToolType.PICKAXE, 0, SoundType.STONE, true, Blocks.SMOOTH_STONE), BuildingBlocks);
     public static final RegistryObject<WallBlock> Smooth_Stone_Wall = register("smooth_stone_wall", () ->
-            WallProperties(Material.STONE, 2F, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 2F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
 
     public static final RegistryObject<StairsBlock> Cut_Sandstone_Stairs = register("cut_sandstone_stairs", () ->
-            StairProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), BuildingBlocks);
+            StairProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true, Blocks.CUT_SANDSTONE), BuildingBlocks);
     public static final RegistryObject<WallBlock> Cut_Sandstone_Wall = register("cut_sandstone_wall", () ->
-            WallProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<StairsBlock> Cut_Red_Sandstone_Stairs = register("cut_red_sandstone_stairs", () ->
-            StairProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), BuildingBlocks);
+            StairProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true, Blocks.CUT_SANDSTONE), BuildingBlocks);
     public static final RegistryObject<WallBlock> Cut_Red_Sandstone_Wall = register("cut_red_sandstone_wall", () ->
-            WallProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
 
     public static final RegistryObject<WallBlock> Quartz_Wall = register("quartz_wall", ()->
-            WallProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<StairsBlock> Quartz_Bricks_Stairs = register("quartz_bricks_stairs", ()->
-            StairProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.QUARTZ_BRICKS), BuildingBlocks);
+            StairProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true, Blocks.QUARTZ_BRICKS), BuildingBlocks);
     public static final RegistryObject<SlabBlock> Quartz_Bricks_Slab = register("quartz_bricks_slab", ()->
-            SlabProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), BuildingBlocks);
+            SlabProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true), BuildingBlocks);
     public static final RegistryObject<WallBlock> Quartz_Bricks_Wall = register("quartz_bricks_wall", ()->
-            WallProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<WallBlock> Smooth_Quartz_Wall = register("smooth_quartz_wall", ()->
-            WallProperties(Material.STONE, 2, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 2, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<StairsBlock> Chiseled_Quartz_Block_Stairs = register("chiseled_quartz_block_stairs", ()->
-            StairProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CHISELED_QUARTZ_BLOCK), BuildingBlocks);
+            StairProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true, Blocks.CHISELED_QUARTZ_BLOCK), BuildingBlocks);
     public static final RegistryObject<SlabBlock> Chiseled_Quartz_Block_Slab = register("chiseled_quartz_block_slab", ()->
-            SlabProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), BuildingBlocks);
+            SlabProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true), BuildingBlocks);
     public static final RegistryObject<WallBlock> Chiseled_Quartz_Block_Wall = register("chiseled_quartz_block_wall", ()->
-            WallProperties(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 0.8F, 0.8F, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
 
     public static final RegistryObject<WallBlock> Prismarine_Bricks_Wall = register("prismarine_bricks_wall", ()->
-            WallProperties(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 1.5F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
     public static final RegistryObject<WallBlock> Dark_Prismarine_Wall = register("dark_prismarine_wall", ()->
-            WallProperties(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 1.5F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
 
     public static final RegistryObject<StairsBlock> Netherrack_Stairs = register("netherrack_stairs", ()->
-            StairProperties(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true, Blocks.NETHERRACK), BuildingBlocks);
+            StairProperties(Material.STONE, 0.4F, 0.4F, ToolType.PICKAXE, 0, SoundType.NETHERRACK, true, Blocks.NETHERRACK), BuildingBlocks);
     public static final RegistryObject<SlabBlock> Netherrack_Slab = register("netherrack_slab", ()->
-            SlabProperties(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), BuildingBlocks);
+            SlabProperties(Material.STONE, 0.4F, 0.4F, ToolType.PICKAXE, 0, SoundType.NETHERRACK, true), BuildingBlocks);
     public static final RegistryObject<WallBlock> Netherrack_Wall = register("netherrack_wall", ()->
-            WallProperties(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), DecorationBlocks);
+            WallProperties(Material.STONE, 0.4F, 0.4F, ToolType.PICKAXE, 0, SoundType.NETHERRACK, true), DecorationBlocks);
 
     public static final RegistryObject<StairsBlock> End_Stone_Stairs = register("end_stone_stairs", ()->
-            StairProperties(Material.STONE, 3, 9, SoundType.STONE, true, Blocks.END_STONE), BuildingBlocks);
+            StairProperties(Material.STONE, 3, 9, ToolType.PICKAXE, 0, SoundType.STONE, true, Blocks.END_STONE), BuildingBlocks);
     public static final RegistryObject<SlabBlock> End_Stone_Slab = register("end_stone_slab", ()->
-            SlabProperties(Material.STONE, 3, 9, SoundType.STONE, true), BuildingBlocks);
+            SlabProperties(Material.STONE, 3, 9, ToolType.PICKAXE, 0, SoundType.STONE, true), BuildingBlocks);
     public static final RegistryObject<WallBlock> End_Stone_Wall = register("end_stone_wall", ()->
-            WallProperties(Material.STONE, 3, 9, SoundType.STONE, true), DecorationBlocks);
+            WallProperties(Material.STONE, 3, 9, ToolType.PICKAXE, 0, SoundType.STONE, true), DecorationBlocks);
 
     public static final RegistryObject<StairsBlock> Cracked_Polished_Blackstone_Brick_Stairs = register("cracked_polished_blackstone_brick_stairs", ()->
             StairProperties(Material.STONE, 1.5F, 6, ToolType.PICKAXE, 0, SoundType.STONE, true, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS), BuildingBlocks);
@@ -216,6 +216,57 @@ public class BVBlocks {
     public static final RegistryObject<SlabBlock> Stripped_Warped_Stem_Slab = register("stripped_warped_stem_slab", () ->
                     SlabProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), BuildingBlocks);
 
+
+    public static final RegistryObject<StairsBlock> Oak_Wood_Stairs = regWoodStairs("oak", Blocks.OAK_WOOD);
+    public static final RegistryObject<SlabBlock> Oak_Wood_Slab = regWoodSlab("oak");
+    public static final RegistryObject<WallBlock> Oak_Wood_Wall = regWoodWall("oak");
+    public static final RegistryObject<StairsBlock> Spruce_Wood_Stairs = regWoodStairs("spruce", Blocks.SPRUCE_WOOD);
+    public static final RegistryObject<SlabBlock> Spruce_Wood_Slab = regWoodSlab("spruce");
+    public static final RegistryObject<WallBlock> Spruce_Wood_Wall = regWoodWall("spruce");
+    public static final RegistryObject<StairsBlock> Birch_Wood_Stairs = regWoodStairs("birch", Blocks.BIRCH_WOOD);
+    public static final RegistryObject<SlabBlock> Birch_Wood_Slab = regWoodSlab("birch");
+    public static final RegistryObject<WallBlock> Birch_Wood_Wall = regWoodWall("birch");
+    public static final RegistryObject<StairsBlock> Jungle_Wood_Stairs = regWoodStairs("jungle", Blocks.JUNGLE_WOOD);
+    public static final RegistryObject<SlabBlock> Jungle_Wood_Slab = regWoodSlab("jungle");
+    public static final RegistryObject<WallBlock> Jungle_Wood_Wall = regWoodWall("jungle");
+    public static final RegistryObject<StairsBlock> Acacia_Wood_Stairs = regWoodStairs("acacia", Blocks.ACACIA_WOOD);
+    public static final RegistryObject<SlabBlock> Acacia_Wood_Slab = regWoodSlab("acacia");
+    public static final RegistryObject<WallBlock> Acacia_Wood_Wall = regWoodWall("acacia");
+    public static final RegistryObject<StairsBlock> Dark_Oak_Wood_Stairs = regWoodStairs("dark_oak", Blocks.DARK_OAK_WOOD);
+    public static final RegistryObject<SlabBlock> Dark_Oak_Wood_Slab = regWoodSlab("dark_oak");
+    public static final RegistryObject<WallBlock> Dark_Oak_Wood_Wall = regWoodWall("dark_oak");
+
+    public static final RegistryObject<StairsBlock> Stripped_Oak_Wood_Stairs = regWoodStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Oak_Wood_Slab = regWoodSlab("stripped_oak");
+    public static final RegistryObject<WallBlock> Stripped_Oak_Wood_Wall = regWoodWall("stripped_oak");
+    public static final RegistryObject<StairsBlock> Stripped_Spruce_Wood_Stairs = regWoodStairs("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Spruce_Wood_Slab = regWoodSlab("stripped_spruce");
+    public static final RegistryObject<WallBlock> Stripped_Spruce_Wood_Wall = regWoodWall("stripped_spruce");
+    public static final RegistryObject<StairsBlock> Stripped_Birch_Wood_Stairs = regWoodStairs("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Birch_Wood_Slab = regWoodSlab("stripped_birch");
+    public static final RegistryObject<WallBlock> Stripped_Birch_Wood_Wall = regWoodWall("stripped_birch");
+    public static final RegistryObject<StairsBlock> Stripped_Jungle_Wood_Stairs = regWoodStairs("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Jungle_Wood_Slab = regWoodSlab("stripped_jungle");
+    public static final RegistryObject<WallBlock> Stripped_Jungle_Wood_Wall = regWoodWall("stripped_jungle");
+    public static final RegistryObject<StairsBlock> Stripped_Acacia_Wood_Stairs = regWoodStairs("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Acacia_Wood_Slab = regWoodSlab("stripped_acacia");
+    public static final RegistryObject<WallBlock> Stripped_Acacia_Wood_Wall = regWoodWall("stripped_acacia");
+    public static final RegistryObject<StairsBlock> Stripped_Dark_Oak_Wood_Stairs = regWoodStairs("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Wood_Slab = regWoodSlab("stripped_dark_oak");
+    public static final RegistryObject<WallBlock> Stripped_Dark_Oak_Wood_Wall = regWoodWall("stripped_dark_oak");
+
+    public static final RegistryObject<StairsBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs", () ->
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false, Blocks.CRIMSON_HYPHAE), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab", () ->
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall", () ->
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), DecorationBlocks);
+    public static final RegistryObject<StairsBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs", () ->
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false, Blocks.WARPED_HYPHAE), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab", () ->
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall", () ->
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), DecorationBlocks);
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = register(name, block);
