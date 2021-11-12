@@ -177,6 +177,23 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Warped_Hyphae_Slab.get(),
                 BVBlocks.Stripped_Crimson_Hyphae_Slab.get(),
                 BVBlocks.Stripped_Warped_Hyphae_Slab.get());
+
+        addWoodenWalls(BVBlocks.Oak_Wood_Wall.get(),
+                BVBlocks.Spruce_Wood_Wall.get(),
+                BVBlocks.Birch_Wood_Wall.get(),
+                BVBlocks.Jungle_Wood_Wall.get(),
+                BVBlocks.Acacia_Wood_Wall.get(),
+                BVBlocks.Dark_Oak_Wood_Wall.get(),
+                BVBlocks.Stripped_Oak_Wood_Wall.get(),
+                BVBlocks.Stripped_Spruce_Wood_Wall.get(),
+                BVBlocks.Stripped_Birch_Wood_Wall.get(),
+                BVBlocks.Stripped_Jungle_Wood_Wall.get(),
+                BVBlocks.Stripped_Acacia_Wood_Wall.get(),
+                BVBlocks.Stripped_Dark_Oak_Wood_Wall.get(),
+                BVBlocks.Crimson_Hyphae_Wall.get(),
+                BVBlocks.Warped_Hyphae_Wall.get(),
+                BVBlocks.Stripped_Crimson_Hyphae_Wall.get(),
+                BVBlocks.Stripped_Warped_Hyphae_Wall.get());
     }
 
     protected void addStairs(StairsBlock... blocks) {tag(BlockTags.STAIRS).add(blocks);}
