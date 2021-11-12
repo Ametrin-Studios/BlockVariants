@@ -1,6 +1,7 @@
 package com.barion.block_variants.data;
 
 import com.barion.block_variants.BVBlocks;
+import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
