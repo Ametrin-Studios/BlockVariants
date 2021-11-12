@@ -268,6 +268,19 @@ public class BVBlocks {
     public static final RegistryObject<WallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall", () ->
             WallProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), DecorationBlocks);
 
+    public static final RegistryObject<StairsBlock> Stripped_Crimson_Hyphae_Stairs = register("stripped_crimson_hyphae_stairs", () ->
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Stripped_Crimson_Hyphae_Slab = register("stripped_crimson_hyphae_slab", () ->
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Stripped_Crimson_Hyphae_Wall = register("stripped_crimson_hyphae_wall", () ->
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), DecorationBlocks);
+    public static final RegistryObject<StairsBlock> Stripped_Warped_Hyphae_Stairs = register("stripped_warped_hyphae_stairs", () ->
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false, Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Stripped_Warped_Hyphae_Slab = register("stripped_warped_hyphae_slab", () ->
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Stripped_Warped_Hyphae_Wall = register("stripped_warped_hyphae_wall", () ->
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, ToolType.AXE, 0, SoundType.STEM, false), DecorationBlocks);
+
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = register(name, block);
         BVRegister.Items.register(name, ()-> new BlockItem(ret.get(), ItemProperties));

@@ -126,9 +126,25 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Crimson_Stem_Stairs.get(),
                 BVBlocks.Warped_Stem_Stairs.get(),
                 BVBlocks.Stripped_Crimson_Stem_Stairs.get(),
-                BVBlocks.Stripped_Warped_Stem_Stairs.get());
+                BVBlocks.Stripped_Warped_Stem_Stairs.get(),
+                BVBlocks.Oak_Wood_Stairs.get(),
+                BVBlocks.Spruce_Wood_Stairs.get(),
+                BVBlocks.Birch_Wood_Stairs.get(),
+                BVBlocks.Jungle_Wood_Stairs.get(),
+                BVBlocks.Acacia_Wood_Stairs.get(),
+                BVBlocks.Dark_Oak_Wood_Stairs.get(),
+                BVBlocks.Stripped_Oak_Wood_Stairs.get(),
+                BVBlocks.Stripped_Spruce_Wood_Stairs.get(),
+                BVBlocks.Stripped_Birch_Wood_Stairs.get(),
+                BVBlocks.Stripped_Jungle_Wood_Stairs.get(),
+                BVBlocks.Stripped_Acacia_Wood_Stairs.get(),
+                BVBlocks.Stripped_Dark_Oak_Wood_Stairs.get(),
+                BVBlocks.Crimson_Hyphae_Stairs.get(),
+                BVBlocks.Warped_Hyphae_Stairs.get(),
+                BVBlocks.Stripped_Crimson_Hyphae_Stairs.get(),
+                BVBlocks.Stripped_Warped_Hyphae_Stairs.get());
 
-        addWoodenSlab(BVBlocks.Oak_Log_Slab.get(),
+        addWoodenSlabs(BVBlocks.Oak_Log_Slab.get(),
                 BVBlocks.Spruce_Log_Slab.get(),
                 BVBlocks.Birch_Log_Slab.get(),
                 BVBlocks.Jungle_Log_Slab.get(),
@@ -143,12 +159,29 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Crimson_Stem_Slab.get(),
                 BVBlocks.Warped_Stem_Slab.get(),
                 BVBlocks.Stripped_Crimson_Stem_Slab.get(),
-                BVBlocks.Stripped_Warped_Stem_Slab.get());
+                BVBlocks.Stripped_Warped_Stem_Slab.get(),
+                BVBlocks.Oak_Wood_Slab.get(),
+                BVBlocks.Spruce_Wood_Slab.get(),
+                BVBlocks.Birch_Wood_Slab.get(),
+                BVBlocks.Jungle_Wood_Slab.get(),
+                BVBlocks.Acacia_Wood_Slab.get(),
+                BVBlocks.Dark_Oak_Wood_Slab.get(),
+                BVBlocks.Stripped_Oak_Wood_Slab.get(),
+                BVBlocks.Stripped_Spruce_Wood_Slab.get(),
+                BVBlocks.Stripped_Birch_Wood_Slab.get(),
+                BVBlocks.Stripped_Jungle_Wood_Slab.get(),
+                BVBlocks.Stripped_Acacia_Wood_Slab.get(),
+                BVBlocks.Stripped_Dark_Oak_Wood_Slab.get(),
+                BVBlocks.Crimson_Hyphae_Slab.get(),
+                BVBlocks.Warped_Hyphae_Slab.get(),
+                BVBlocks.Stripped_Crimson_Hyphae_Slab.get(),
+                BVBlocks.Stripped_Warped_Hyphae_Slab.get());
     }
 
     protected void addStairs(StairsBlock... blocks) {tag(BlockTags.STAIRS).add(blocks);}
     protected void addSlab(SlabBlock... blocks) {tag(BlockTags.SLABS).add(blocks);}
-    protected void addWoodenStairs(StairsBlock... blocks) {tag(BlockTags.WOODEN_STAIRS).add(blocks);}
-    protected void addWoodenSlab(SlabBlock... blocks) {tag(BlockTags.WOODEN_SLABS).add(blocks);}
     protected void addWall(WallBlock... blocks) {tag(BlockTags.WALLS).add(blocks);}
+    protected void addWoodenStairs(StairsBlock... blocks) {tag(BlockTags.WOODEN_STAIRS).add(blocks);}
+    protected void addWoodenSlabs(SlabBlock... blocks) {tag(BlockTags.WOODEN_SLABS).add(blocks);}
+    protected void addWoodenWalls(WallBlock... blocks) {tag(BVTags.Blocks.WoodenWalls).add(blocks); tag(BlockTags.WALLS).add(blocks);}
 }
