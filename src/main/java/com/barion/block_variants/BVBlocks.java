@@ -11,8 +11,8 @@ import net.minecraftforge.fmllegacy.RegistryObject;
 import java.util.function.Supplier;
 
 public class BVBlocks {
-    private static final Item.Properties BuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
-    private static final Item.Properties DecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS);
+    private static final Item.Properties BuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS).fireResistant();
+    private static final Item.Properties DecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS).fireResistant();
 
 
     public static final RegistryObject<WallBlock> Polished_Granite_Wall = register("polished_granite_wall", () ->

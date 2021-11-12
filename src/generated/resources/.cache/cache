@@ -1443,11 +1443,13 @@ fbb37cb7b45a48738d7971a4def38356dbba813b data/block_variants/recipes/warped_stem
 941e44ec47bb7815c67939a90a76d9ff0fbedf3f data/forge/tags/items/wooden_wall.json
 d564897d5b7cc859c87d6fcdb87a956329eee129 data/minecraft/tags/blocks/mineable/axe.json
 645acfaa16be3c5be2dd8e2fde2e2b9ded3f8499 data/minecraft/tags/blocks/mineable/pickaxe.json
+25c6bbfc31cdffdb542baf6cf966ff0f14dcb835 data/minecraft/tags/blocks/non_flammable_wood.json
 fe5e5de34fd9a478aedd80ddd86b041522676d1e data/minecraft/tags/blocks/slabs.json
 90304c1404152b5366d97338e536a8ad61b962b5 data/minecraft/tags/blocks/stairs.json
 f76056b5856c87f279141b7b11ac0e84d067f7db data/minecraft/tags/blocks/walls.json
 84aa824600ffe11d4ed3caed2e3c74858d83b231 data/minecraft/tags/blocks/wooden_slabs.json
 3243283dd9837a0c5cd422c0016ccf30b33c4f28 data/minecraft/tags/blocks/wooden_stairs.json
+25c6bbfc31cdffdb542baf6cf966ff0f14dcb835 data/minecraft/tags/items/non_flammable_wood.json
 72e9fd84be623207430f7d88916de4cbfe8f6c79 data/minecraft/tags/items/slabs.json
 3cf05c35337d51c0121d7da0c746f41eb934404d data/minecraft/tags/items/stairs.json
 aecab4c8ca8531f2507c26db43fb1f6f3238d767 data/minecraft/tags/items/walls.json
