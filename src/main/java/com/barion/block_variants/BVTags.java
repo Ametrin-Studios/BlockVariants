@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 
 public class BVTags {
-    public class Blocks{
+    public static final class Blocks{
         public static final Tags.IOptionalNamedTag<Block> WoodenWalls = forge("wooden_wall");
 
         private static Tags.IOptionalNamedTag<Block> forge(String path){
