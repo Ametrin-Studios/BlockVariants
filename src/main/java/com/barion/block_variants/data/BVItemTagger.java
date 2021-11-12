@@ -1,5 +1,6 @@
 package com.barion.block_variants.data;
 
+import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
@@ -21,7 +22,10 @@ public class BVItemTagger extends ItemTagsProvider {
         copy(BlockTags.WALLS, ItemTags.WALLS);
         copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
         copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
+        copy(BVTags.Blocks.WoodenWalls, BVTags.Items.WoodenWalls);
         copy(BlockTags.WOODEN_STAIRS, ItemTags.STAIRS);
         copy(BlockTags.WOODEN_SLABS, ItemTags.SLABS);
+
+        copy(BlockTags.NON_FLAMMABLE_WOOD, ItemTags.NON_FLAMMABLE_WOOD);
     }
 }

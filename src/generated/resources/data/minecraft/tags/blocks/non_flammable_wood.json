@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "block_variants:crimson_hyphae_stairs",
+    "block_variants:crimson_hyphae_slab",
+    "block_variants:crimson_hyphae_wall",
+    "block_variants:warped_hyphae_stairs",
+    "block_variants:warped_hyphae_slab",
+    "block_variants:warped_hyphae_wall",
+    "block_variants:stripped_crimson_hyphae_wall",
+    "block_variants:stripped_crimson_hyphae_slab",
+    "block_variants:stripped_warped_hyphae_slab",
+    "block_variants:stripped_crimson_hyphae_stairs",
+    "block_variants:stripped_warped_hyphae_stairs",
+    "block_variants:stripped_warped_hyphae_wall"
+  ]
+}
