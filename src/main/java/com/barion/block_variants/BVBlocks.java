@@ -303,6 +303,13 @@ public class BVBlocks {
     public static final RegistryObject<WallBlock> Calcite_Wall = register("calcite_wall", () ->
             WallProperties(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), DecorationBlocks);
 
+    public static final RegistryObject<StairBlock> Smooth_Basalt_Stairs = register("smooth_basalt_stairs", () ->
+            StairProperties(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.SMOOTH_BASALT), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Smooth_Basalt_Slab = register("smooth_basalt_slab", () ->
+            SlabProperties(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Smooth_Basalt_Wall = register("smooth_basalt_wall", () ->
+            WallProperties(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), DecorationBlocks);
+
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = register(name, block);

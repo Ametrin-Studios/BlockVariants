@@ -103,6 +103,7 @@ public class BVBlockStates extends BlockStateProvider {
         regAll(BVBlocks.Stripped_Warped_Hyphae_Stairs, BVBlocks.Stripped_Warped_Hyphae_Slab, BVBlocks.Stripped_Warped_Hyphae_Wall, "stripped_warped_stem");
 
         regAll(BVBlocks.Calcite_Stairs, BVBlocks.Calcite_Slab, BVBlocks.Calcite_Wall, "calcite");
+        regAll(BVBlocks.Smooth_Basalt_Stairs, BVBlocks.Smooth_Basalt_Slab, BVBlocks.Smooth_Basalt_Wall, "smooth_basalt");
     }
     protected void regAll(RegistryObject<StairBlock> stairs, RegistryObject<SlabBlock> slab, RegistryObject<WallBlock> wall, String texture){
         regStairs(stairs, texture);

@@ -70,6 +70,7 @@ public class BVItemModels extends ItemModelProvider {
         regAll("stripped_crimson_hyphae", "stripped_crimson_stem");
         regAll("stripped_warped_hyphae", "stripped_warped_stem");
         regAll("calcite");
+        regAll("smooth_basalt");
     }
 
     private void regAll(String name){

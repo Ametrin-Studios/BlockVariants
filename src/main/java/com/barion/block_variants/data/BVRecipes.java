@@ -111,6 +111,7 @@ public class BVRecipes extends RecipeProvider {
         recipeWoods(BVBlocks.Stripped_Warped_Hyphae_Stairs.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Slab.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Wall.get().asItem(), Items.STRIPPED_WARPED_HYPHAE, Items.STRIPPED_WARPED_STEM);
 
         recipeAll(BVBlocks.Calcite_Stairs.get().asItem(), BVBlocks.Calcite_Slab.get().asItem(), BVBlocks.Calcite_Wall.get().asItem(), Items.CALCITE);
+        recipeAll(BVBlocks.Smooth_Basalt_Stairs.get().asItem(), BVBlocks.Smooth_Basalt_Slab.get().asItem(), BVBlocks.Smooth_Basalt_Wall.get().asItem(), Items.SMOOTH_BASALT);
 
         ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
                 .define('#', ItemTags.STONE_CRAFTING_MATERIALS)

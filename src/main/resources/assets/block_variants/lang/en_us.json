@@ -179,5 +179,8 @@
 
   "block.block_variants.calcite_stairs" : "Calcite Stairs",
   "block.block_variants.calcite_slab" : "Calcite Slab",
-  "block.block_variants.calcite_wall" : "Calcite Wall"
+  "block.block_variants.calcite_wall" : "Calcite Wall",
+  "block.block_variants.smooth_basalt_stairs" : "Smooth Basalt Stairs",
+  "block.block_variants.smooth_basalt_slab" : "Smooth Basalt Slab",
+  "block.block_variants.smooth_basalt_wall" : "Smooth Basalt Wall"
 }

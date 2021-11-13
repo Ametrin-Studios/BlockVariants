@@ -32,6 +32,7 @@
     "block_variants:dripstone_block_stairs",
     "block_variants:amethyst_block_stairs",
     "block_variants:cracked_stone_brick_stairs",
-    "block_variants:calcite_stairs"
+    "block_variants:calcite_stairs",
+    "block_variants:smooth_basalt_stairs"
   ]
 }

@@ -219,9 +219,13 @@ public class BVLootTables extends LootTableProvider {
 
                     BVBlocks.Calcite_Stairs.get(),
                     BVBlocks.Calcite_Slab.get(),
-                    BVBlocks.Calcite_Wall.get());
+                    BVBlocks.Calcite_Wall.get(),
+                    BVBlocks.Smooth_Basalt_Stairs.get(),
+                    BVBlocks.Smooth_Basalt_Slab.get(),
+                    BVBlocks.Smooth_Basalt_Wall.get());
         }
 
+        @SafeVarargs
         private <T extends Block> void dropSelf(T... Blocks){
             for (Block Block : Blocks){
                 dropSelf(Block);

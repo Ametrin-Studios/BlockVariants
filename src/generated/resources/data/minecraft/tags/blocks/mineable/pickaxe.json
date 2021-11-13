@@ -99,6 +99,9 @@
     "block_variants:cracked_stone_brick_wall",
     "block_variants:calcite_stairs",
     "block_variants:calcite_slab",
-    "block_variants:calcite_wall"
+    "block_variants:calcite_wall",
+    "block_variants:smooth_basalt_stairs",
+    "block_variants:smooth_basalt_slab",
+    "block_variants:smooth_basalt_wall"
   ]
 }
