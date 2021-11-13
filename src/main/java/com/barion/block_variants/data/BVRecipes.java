@@ -110,6 +110,7 @@ public class BVRecipes extends RecipeProvider {
         recipeWoods(BVBlocks.Stripped_Crimson_Hyphae_Stairs.get().asItem(), BVBlocks.Stripped_Crimson_Hyphae_Slab.get().asItem(), BVBlocks.Stripped_Crimson_Hyphae_Wall.get().asItem(), Items.STRIPPED_CRIMSON_HYPHAE, Items.STRIPPED_CRIMSON_STEM);
         recipeWoods(BVBlocks.Stripped_Warped_Hyphae_Stairs.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Slab.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Wall.get().asItem(), Items.STRIPPED_WARPED_HYPHAE, Items.STRIPPED_WARPED_STEM);
 
+        recipeAll(BVBlocks.Calcite_Stairs.get().asItem(), BVBlocks.Calcite_Slab.get().asItem(), BVBlocks.Calcite_Wall.get().asItem(), Items.CALCITE);
 
         ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
                 .define('#', ItemTags.STONE_CRAFTING_MATERIALS)

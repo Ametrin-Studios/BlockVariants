@@ -96,6 +96,9 @@
     "block_variants:black_terracotta_wall",
     "block_variants:dripstone_block_wall",
     "block_variants:amethyst_block_wall",
-    "block_variants:cracked_stone_brick_wall"
+    "block_variants:cracked_stone_brick_wall",
+    "block_variants:calcite_stairs",
+    "block_variants:calcite_slab",
+    "block_variants:calcite_wall"
   ]
 }

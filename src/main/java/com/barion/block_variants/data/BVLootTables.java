@@ -215,7 +215,11 @@ public class BVLootTables extends LootTableProvider {
                     BVBlocks.Stripped_Crimson_Hyphae_Wall.get(),
                     BVBlocks.Stripped_Warped_Hyphae_Stairs.get(),
                     BVBlocks.Stripped_Warped_Hyphae_Slab.get(),
-                    BVBlocks.Stripped_Warped_Hyphae_Wall.get());
+                    BVBlocks.Stripped_Warped_Hyphae_Wall.get(),
+
+                    BVBlocks.Calcite_Stairs.get(),
+                    BVBlocks.Calcite_Slab.get(),
+                    BVBlocks.Calcite_Wall.get());
         }
 
         private <T extends Block> void dropSelf(T... Blocks){

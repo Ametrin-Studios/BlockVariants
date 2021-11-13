@@ -175,5 +175,9 @@
   "block.block_variants.stripped_crimson_hyphae_wall": "Stripped Crimson Hyphae Wall",
   "block.block_variants.stripped_warped_hyphae_stairs": "Stripped Warped Hyphae Stairs",
   "block.block_variants.stripped_warped_hyphae_slab": "Stripped Warped Hyphae Slab",
-  "block.block_variants.stripped_warped_hyphae_wall": "Stripped Warped Hyphae Wall"
+  "block.block_variants.stripped_warped_hyphae_wall": "Stripped Warped Hyphae Wall",
+
+  "block.block_variants.calcite_stairs" : "Calcite Stairs",
+  "block.block_variants.calcite_slab" : "Calcite Slab",
+  "block.block_variants.calcite_wall" : "Calcite Wall"
 }

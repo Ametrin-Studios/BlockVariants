@@ -39,6 +39,7 @@
     "block_variants:dripstone_block_wall",
     "block_variants:amethyst_block_wall",
     "block_variants:cracked_stone_brick_wall",
+    "block_variants:calcite_wall",
     "block_variants:oak_wood_wall",
     "block_variants:spruce_wood_wall",
     "block_variants:birch_wood_wall",
