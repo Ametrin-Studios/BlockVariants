@@ -29,6 +29,7 @@
     "block_variants:amethyst_block_slab",
     "block_variants:cracked_stone_brick_slab",
     "block_variants:calcite_slab",
-    "block_variants:smooth_basalt_slab"
+    "block_variants:smooth_basalt_slab",
+    "block_variants:tuff_slab"
   ]
 }

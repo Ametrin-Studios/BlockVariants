@@ -102,6 +102,9 @@
     "block_variants:calcite_wall",
     "block_variants:smooth_basalt_stairs",
     "block_variants:smooth_basalt_slab",
-    "block_variants:smooth_basalt_wall"
+    "block_variants:smooth_basalt_wall",
+    "block_variants:tuff_stairs",
+    "block_variants:tuff_slab",
+    "block_variants:tuff_wall"
   ]
 }

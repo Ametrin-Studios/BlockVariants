@@ -112,6 +112,7 @@ public class BVRecipes extends RecipeProvider {
 
         recipeAll(BVBlocks.Calcite_Stairs.get().asItem(), BVBlocks.Calcite_Slab.get().asItem(), BVBlocks.Calcite_Wall.get().asItem(), Items.CALCITE);
         recipeAll(BVBlocks.Smooth_Basalt_Stairs.get().asItem(), BVBlocks.Smooth_Basalt_Slab.get().asItem(), BVBlocks.Smooth_Basalt_Wall.get().asItem(), Items.SMOOTH_BASALT);
+        recipeAll(BVBlocks.Tuff_Stairs.get().asItem(), BVBlocks.Tuff_Slab.get().asItem(), BVBlocks.Tuff_Wall.get().asItem(), Items.TUFF);
 
         ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
                 .define('#', ItemTags.STONE_CRAFTING_MATERIALS)

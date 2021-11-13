@@ -51,7 +51,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Amethyst_Block_Stairs.get(),
                 BVBlocks.Cracked_Stone_Brick_Stairs.get(),
                 BVBlocks.Calcite_Stairs.get(),
-                BVBlocks.Smooth_Basalt_Stairs.get());
+                BVBlocks.Smooth_Basalt_Stairs.get(),
+                BVBlocks.Tuff_Stairs.get());
 
         addSlab(BVBlocks.Quartz_Bricks_Slab.get(),
                 BVBlocks.Chiseled_Quartz_Block_Slab.get(),
@@ -81,7 +82,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Amethyst_Block_Slab.get(),
                 BVBlocks.Cracked_Stone_Brick_Slab.get(),
                 BVBlocks.Calcite_Slab.get(),
-                BVBlocks.Smooth_Basalt_Slab.get());
+                BVBlocks.Smooth_Basalt_Slab.get(),
+                BVBlocks.Tuff_Slab.get());
 
 
         addWall(BVBlocks.Polished_Diorite_Wall.get(),
@@ -123,7 +125,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Amethyst_Block_Wall.get(),
                 BVBlocks.Cracked_Stone_Brick_Wall.get(),
                 BVBlocks.Calcite_Wall.get(),
-                BVBlocks.Smooth_Basalt_Wall.get());
+                BVBlocks.Smooth_Basalt_Wall.get(),
+                BVBlocks.Tuff_Wall.get());
 
         addWoodenStairs(BVBlocks.Oak_Log_Stairs.get(),
                 BVBlocks.Spruce_Log_Stairs.get(),
@@ -295,7 +298,10 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Calcite_Wall.get(),
                 BVBlocks.Smooth_Basalt_Stairs.get(),
                 BVBlocks.Smooth_Basalt_Slab.get(),
-                BVBlocks.Smooth_Basalt_Wall.get());
+                BVBlocks.Smooth_Basalt_Wall.get(),
+                BVBlocks.Tuff_Stairs.get(),
+                BVBlocks.Tuff_Slab.get(),
+                BVBlocks.Tuff_Wall.get());
 
         needsAxe(BVBlocks.Oak_Log_Stairs.get(),
                 BVBlocks.Oak_Log_Slab.get(),

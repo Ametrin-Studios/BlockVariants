@@ -222,7 +222,10 @@ public class BVLootTables extends LootTableProvider {
                     BVBlocks.Calcite_Wall.get(),
                     BVBlocks.Smooth_Basalt_Stairs.get(),
                     BVBlocks.Smooth_Basalt_Slab.get(),
-                    BVBlocks.Smooth_Basalt_Wall.get());
+                    BVBlocks.Smooth_Basalt_Wall.get(),
+                    BVBlocks.Tuff_Stairs.get(),
+                    BVBlocks.Tuff_Slab.get(),
+                    BVBlocks.Tuff_Wall.get());
         }
 
         @SafeVarargs
