@@ -18,7 +18,6 @@ public class BVItemTagger extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
-        super.addTags();
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
         copy(BlockTags.SLABS, ItemTags.SLABS);
         copy(BlockTags.WALLS, ItemTags.WALLS);
