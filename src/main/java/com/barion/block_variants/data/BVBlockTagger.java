@@ -19,6 +19,7 @@ public class BVBlockTagger extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
+        super.addTags();
         addStairs(BVBlocks.Smooth_Stone_Stairs.get(),
                 BVBlocks.Cut_Sandstone_Stairs.get(),
                 BVBlocks.Cut_Red_Sandstone_Stairs.get(),
