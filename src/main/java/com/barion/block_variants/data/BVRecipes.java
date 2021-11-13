@@ -5,9 +5,11 @@ import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
@@ -107,24 +109,79 @@ public class BVRecipes extends RecipeProvider {
         recipeWoods(BVBlocks.Stripped_Dark_Oak_Wood_Stairs.get().asItem(), BVBlocks.Stripped_Dark_Oak_Wood_Slab.get().asItem(), BVBlocks.Stripped_Dark_Oak_Wood_Wall.get().asItem(), Items.STRIPPED_DARK_OAK_WOOD, Items.STRIPPED_DARK_OAK_LOG);
         recipeWoods(BVBlocks.Stripped_Crimson_Hyphae_Stairs.get().asItem(), BVBlocks.Stripped_Crimson_Hyphae_Slab.get().asItem(), BVBlocks.Stripped_Crimson_Hyphae_Wall.get().asItem(), Items.STRIPPED_CRIMSON_HYPHAE, Items.STRIPPED_CRIMSON_STEM);
         recipeWoods(BVBlocks.Stripped_Warped_Hyphae_Stairs.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Slab.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Wall.get().asItem(), Items.STRIPPED_WARPED_HYPHAE, Items.STRIPPED_WARPED_STEM);
+
+
+        ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
+                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('+', Items.REDSTONE)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("#+#")
+                .unlockedBy("has_item", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .save(consumer, recipeID(Items.DROPPER));
+
+        ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
+                .define('#', Tags.Items.STONE)
+                .define('+', Items.REDSTONE)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("#+#")
+                .unlockedBy("has_item", has(Tags.Items.STONE))
+                .save(consumer, recipeID(Items.DROPPER, "_from_stone"));
+
+        ShapedRecipeBuilder.shaped(Items.DISPENSER, 1)
+                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('+', Items.REDSTONE)
+                .define('(', Items.BOW)
+                .pattern("###")
+                .pattern("#(#")
+                .pattern("#+#")
+                .unlockedBy("has_item", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .save(consumer, recipeID(Items.DISPENSER));
+
+        ShapedRecipeBuilder.shaped(Items.DISPENSER, 1)
+                .define('#', Tags.Items.STONE)
+                .define('+', Items.REDSTONE)
+                .define('(', Items.BOW)
+                .pattern("###")
+                .pattern("#(#")
+                .pattern("#+#")
+                .unlockedBy("has_item", has(Tags.Items.STONE))
+                .save(consumer, recipeID(Items.DISPENSER, "_from_stone"));
+
+        ShapedRecipeBuilder.shaped(Items.FURNACE, 1)
+                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_item", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .save(consumer, recipeID(Items.FURNACE));
+
+        ShapedRecipeBuilder.shaped(Items.FURNACE, 1)
+                .define('#', Tags.Items.STONE)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_item", has(Tags.Items.STONE))
+                .save(consumer, recipeID(Items.FURNACE, "_from_stone"));
     }
 
-    private void recipeAll(Item stairs, Item slab, Item wall, Item material, boolean hasStonecutting){
-        recipeStairs(stairs, material, hasStonecutting);
+    private void recipeAll(Item stair, Item slab, Item wall, Item material, boolean hasStonecutting){
+        recipeStairs(stair, material, hasStonecutting);
         recipeSlab(slab, material, hasStonecutting);
         recipeWall(wall, material, hasStonecutting);
     }
-    private void recipeAll(Item stairs, Item slab, Item wall, Item material){
-        recipeStairs(stairs, material, true);
+    private void recipeAll(Item stair, Item slab, Item wall, Item material){
+        recipeStairs(stair, material, true);
         recipeSlab(slab, material, true);
         recipeWall(wall, material, true);
     }
-    private void recipeStairsSlab(Item stairs, Item slab, Item material, boolean hasStonecutting){
-        recipeStairs(stairs, material, hasStonecutting);
+    private void recipeStairsSlab(Item stair, Item slab, Item material, boolean hasStonecutting){
+        recipeStairs(stair, material, hasStonecutting);
         recipeSlab(slab, material, hasStonecutting);
     }
-    protected void recipeStairs(Item stairs, Item material, boolean hasStonecutting){
-        ShapedRecipeBuilder.shaped(stairs, 4)
+    protected void recipeStairs(Item stair, Item material, boolean hasStonecutting){
+        ShapedRecipeBuilder.shaped(stair, 4)
                 .define('#', material)
                 .pattern("#  ")
                 .pattern("## ")
@@ -132,7 +189,7 @@ public class BVRecipes extends RecipeProvider {
                 .unlockedBy("has_item", has(material))
                 .save(consumer);
         if(hasStonecutting)
-            recipeStonecutting(stairs, material);
+            recipeStonecutting(stair, material);
     }
     protected void recipeStairs(Item stairs, Item material){
         recipeStairs(stairs, material, true);
