@@ -1,15 +1,14 @@
 package com.barion.block_variants.data;
 
 import com.barion.block_variants.BVBlocks;
+import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
@@ -118,58 +117,31 @@ public class BVRecipes extends RecipeProvider {
         recipeAll(BVBlocks.Tuff_Stairs.get().asItem(), BVBlocks.Tuff_Slab.get().asItem(), BVBlocks.Tuff_Wall.get().asItem(), Items.TUFF);
 
         ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
-                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('#', BVTags.Items.StoneCrafting)
                 .define('+', Items.REDSTONE)
                 .pattern("###")
                 .pattern("# #")
                 .pattern("#+#")
-                .unlockedBy("has_item", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
                 .save(consumer, recipeID(Items.DROPPER));
 
-        ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
-                .define('#', Tags.Items.STONE)
-                .define('+', Items.REDSTONE)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("#+#")
-                .unlockedBy("has_item", has(Tags.Items.STONE))
-                .save(consumer, recipeID(Items.DROPPER, "_from_stone"));
-
         ShapedRecipeBuilder.shaped(Items.DISPENSER, 1)
-                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('#', BVTags.Items.StoneCrafting)
                 .define('+', Items.REDSTONE)
                 .define('(', Items.BOW)
                 .pattern("###")
                 .pattern("#(#")
                 .pattern("#+#")
-                .unlockedBy("has_item", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
                 .save(consumer, recipeID(Items.DISPENSER));
 
-        ShapedRecipeBuilder.shaped(Items.DISPENSER, 1)
-                .define('#', Tags.Items.STONE)
-                .define('+', Items.REDSTONE)
-                .define('(', Items.BOW)
-                .pattern("###")
-                .pattern("#(#")
-                .pattern("#+#")
-                .unlockedBy("has_item", has(Tags.Items.STONE))
-                .save(consumer, recipeID(Items.DISPENSER, "_from_stone"));
-
         ShapedRecipeBuilder.shaped(Items.FURNACE, 1)
-                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('#', BVTags.Items.StoneCrafting)
                 .pattern("###")
                 .pattern("# #")
                 .pattern("###")
-                .unlockedBy("has_item", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
                 .save(consumer, recipeID(Items.FURNACE));
-
-        ShapedRecipeBuilder.shaped(Items.FURNACE, 1)
-                .define('#', Tags.Items.STONE)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("###")
-                .unlockedBy("has_item", has(Tags.Items.STONE))
-                .save(consumer, recipeID(Items.FURNACE, "_from_stone"));
     }
 
     private void recipeAll(Item stair, Item slab, Item wall, Item material, boolean hasStonecutting){

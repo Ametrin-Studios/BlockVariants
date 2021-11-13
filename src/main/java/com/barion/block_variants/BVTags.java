@@ -21,6 +21,7 @@ public class BVTags {
 
     public static final class Items{
         public static final Tags.IOptionalNamedTag<Item> WoodenWalls = forge("wooden_wall");
+        public static final Tags.IOptionalNamedTag<Item> StoneCrafting = mod("stone_crafting");
 
         private static Tags.IOptionalNamedTag<Item> forge(String path){
             return ItemTags.createOptional(new ResourceLocation("forge", path));
