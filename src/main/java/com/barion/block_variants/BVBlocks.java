@@ -6,13 +6,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
 public class BVBlocks {
-    private static final Item.Properties BuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS).fireResistant();
-    private static final Item.Properties DecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS).fireResistant();
+    private static final Item.Properties BuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
+    private static final Item.Properties DecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS);
 
 
     public static final RegistryObject<WallBlock> Polished_Granite_Wall = register("polished_granite_wall", () ->
@@ -215,22 +215,22 @@ public class BVBlocks {
     public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Log_Slab = regLogSlab("stripped_dark_oak");
 
     public static final RegistryObject<StairBlock> Crimson_Stem_Stairs = register("crimson_stem_stairs", () ->
-                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.CRIMSON_STEM), BuildingBlocks);
+                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.CRIMSON_STEM), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Crimson_Stem_Slab = register("crimson_stem_slab", () ->
-                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
     public static final RegistryObject<StairBlock> Warped_Stem_Stairs = register("warped_stem_stairs", () ->
-                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.WARPED_STEM), BuildingBlocks);
+                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.WARPED_STEM), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Warped_Stem_Slab = register("warped_stem_slab", () ->
-                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
 
     public static final RegistryObject<StairBlock> Stripped_Crimson_Stem_Stairs = register("stripped_crimson_stem_stairs", () ->
-                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), BuildingBlocks);
+                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Crimson_Stem_Slab = register("stripped_crimson_stem_slab", () ->
-                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
     public static final RegistryObject<StairBlock> Stripped_Warped_Stem_Stairs = register("stripped_warped_stem_stairs", () ->
-                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), BuildingBlocks);
+                    StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Warped_Stem_Slab = register("stripped_warped_stem_slab", () ->
-                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+                    SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
 
     public static final RegistryObject<StairBlock> Oak_Wood_Stairs = regWoodStairs("oak", Blocks.OAK_WOOD);
     public static final RegistryObject<SlabBlock> Oak_Wood_Slab = regWoodSlab("oak");
@@ -271,30 +271,30 @@ public class BVBlocks {
     public static final RegistryObject<WallBlock> Stripped_Dark_Oak_Wood_Wall = regWoodWall("stripped_dark_oak");
 
     public static final RegistryObject<StairBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs", () ->
-            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.CRIMSON_HYPHAE), BuildingBlocks);
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab", () ->
-            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
     public static final RegistryObject<WallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall", () ->
-            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks);
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
     public static final RegistryObject<StairBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs", () ->
-            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.WARPED_HYPHAE), BuildingBlocks);
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.WARPED_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab", () ->
-            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
     public static final RegistryObject<WallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall", () ->
-            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks);
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
 
     public static final RegistryObject<StairBlock> Stripped_Crimson_Hyphae_Stairs = register("stripped_crimson_hyphae_stairs", () ->
-            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks);
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Crimson_Hyphae_Slab = register("stripped_crimson_hyphae_slab", () ->
-            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
     public static final RegistryObject<WallBlock> Stripped_Crimson_Hyphae_Wall = register("stripped_crimson_hyphae_wall", () ->
-            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks);
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
     public static final RegistryObject<StairBlock> Stripped_Warped_Hyphae_Stairs = register("stripped_warped_hyphae_stairs", () ->
-            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks);
+            StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Warped_Hyphae_Slab = register("stripped_warped_hyphae_slab", () ->
-            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks);
+            SlabProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
     public static final RegistryObject<WallBlock> Stripped_Warped_Hyphae_Wall = register("stripped_warped_hyphae_wall", () ->
-            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks);
+            WallProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
 
     public static final RegistryObject<StairBlock> Calcite_Stairs = register("calcite_stairs", () ->
             StairProperties(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true, Blocks.CALCITE), BuildingBlocks);

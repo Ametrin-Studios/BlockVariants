@@ -21,10 +21,6 @@ public class BlockVariants{
     }
 
     private void setup(final FMLCommonSetupEvent event){
-            /*event.enqueueWork(() -> {
-            AxeItem.STRIPPABLES = (new ImmutableMap.Builder<Block, Block>()).putAll(AxeItem.STRIPPABLES)
-                    .put(BVBlocks.Oak_Log_Stairs.get(), BVBlocks.Stripped_Oak_Log_Stairs.get())
-                    .build();
-        });*/
+
     }
 }

@@ -14,8 +14,10 @@ import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -27,12 +29,12 @@ public class BVLootTables extends LootTableProvider {
     public BVLootTables(DataGenerator generator) {super(generator);}
 
 
-    @Override
+    @Override @Nonnull
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return ImmutableList.of(Pair.of(ModBlockLootTables::new, LootContextParamSets.BLOCK));
     }
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationContext) {
         map.forEach((p_218436_2_, p_218436_3_) -> LootTables.validate(validationContext, p_218436_2_, p_218436_3_));
     }
@@ -235,7 +237,7 @@ public class BVLootTables extends LootTableProvider {
             }
         }
 
-        @Override
+        @Override @Nonnull
         protected Iterable<Block> getKnownBlocks() {
             return BVRegister.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
         }
