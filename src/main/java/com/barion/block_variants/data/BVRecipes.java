@@ -18,7 +18,7 @@ public class BVRecipes extends RecipeProvider {
     public BVRecipes(DataGenerator generator){super(generator);}
 
     @Override @ParametersAreNonnullByDefault
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer){
         this.consumer = consumer;
         recipeWall(BVBlocks.Polished_Granite_Wall.get().asItem(), Items.POLISHED_GRANITE, Items.GRANITE, Items.GRANITE_WALL);
         recipeWall(BVBlocks.Polished_Diorite_Wall.get().asItem(), Items.POLISHED_DIORITE, Items.DIORITE, Items.DIORITE_WALL);
@@ -116,32 +116,42 @@ public class BVRecipes extends RecipeProvider {
         recipeSmelting(BVBlocks.Smooth_Basalt_Wall.get().asItem(), BVBlocks.Basalt_Wall.get().asItem());
         recipeAll(BVBlocks.Tuff_Stairs.get().asItem(), BVBlocks.Tuff_Slab.get().asItem(), BVBlocks.Tuff_Wall.get().asItem(), Items.TUFF);
 
-        ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
-                .define('#', BVTags.Items.StoneCrafting)
-                .define('+', Items.REDSTONE)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("#+#")
-                .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
-                .save(consumer, recipeID(Items.DROPPER));
+        {
+            ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
+                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('+', Items.REDSTONE)
+                    .pattern("###")
+                    .pattern("# #")
+                    .pattern("#+#")
+                    .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
+                    .save(consumer, recipeID(Items.DROPPER));
 
-        ShapedRecipeBuilder.shaped(Items.DISPENSER, 1)
-                .define('#', BVTags.Items.StoneCrafting)
-                .define('+', Items.REDSTONE)
-                .define('(', Items.BOW)
-                .pattern("###")
-                .pattern("#(#")
-                .pattern("#+#")
-                .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
-                .save(consumer, recipeID(Items.DISPENSER));
+            ShapedRecipeBuilder.shaped(Items.DISPENSER, 1)
+                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('+', Items.REDSTONE)
+                    .define('(', Items.BOW)
+                    .pattern("###")
+                    .pattern("#(#")
+                    .pattern("#+#")
+                    .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
+                    .save(consumer, recipeID(Items.DISPENSER));
 
-        ShapedRecipeBuilder.shaped(Items.FURNACE, 1)
-                .define('#', BVTags.Items.StoneCrafting)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("###")
-                .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
-                .save(consumer, recipeID(Items.FURNACE));
+            ShapedRecipeBuilder.shaped(Items.FURNACE, 1)
+                    .define('#', BVTags.Items.StoneCrafting)
+                    .pattern("###")
+                    .pattern("# #")
+                    .pattern("###")
+                    .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
+                    .save(consumer, recipeID(Items.FURNACE));
+
+            ShapedRecipeBuilder.shaped(Items.STONECUTTER, 1)
+                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('+', Items.IRON_INGOT)
+                    .pattern(" + ")
+                    .pattern("###")
+                    .unlockedBy("has_item", has(BVTags.Items.StoneCrafting))
+                    .save(consumer, recipeID(Items.STONECUTTER));
+        } //Recipe overrides
     }
 
     private void recipeAll(Item stair, Item slab, Item wall, Item material, boolean hasStonecutting){
