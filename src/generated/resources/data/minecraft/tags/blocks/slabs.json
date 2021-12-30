@@ -30,6 +30,9 @@
     "block_variants:cracked_stone_brick_slab",
     "block_variants:calcite_slab",
     "block_variants:smooth_basalt_slab",
-    "block_variants:tuff_slab"
+    "block_variants:tuff_slab",
+    "block_variants:deepslate_slab",
+    "block_variants:cracked_deepslate_brick_slab",
+    "block_variants:cracked_deepslate_tile_slab"
   ]
 }

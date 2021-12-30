@@ -34,6 +34,9 @@
     "block_variants:cracked_stone_brick_stairs",
     "block_variants:calcite_stairs",
     "block_variants:smooth_basalt_stairs",
-    "block_variants:tuff_stairs"
+    "block_variants:tuff_stairs",
+    "block_variants:deepslate_stairs",
+    "block_variants:cracked_deepslate_brick_stairs",
+    "block_variants:cracked_deepslate_tile_stairs"
   ]
 }

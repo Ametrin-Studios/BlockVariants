@@ -116,6 +116,10 @@ public class BVRecipes extends RecipeProvider {
         recipeSmelting(BVBlocks.Smooth_Basalt_Wall.get().asItem(), BVBlocks.Basalt_Wall.get().asItem());
         recipeAll(BVBlocks.Tuff_Stairs.get().asItem(), BVBlocks.Tuff_Slab.get().asItem(), BVBlocks.Tuff_Wall.get().asItem(), Items.TUFF);
 
+        recipeAll(BVBlocks.Deepslate_Stairs.get().asItem(), BVBlocks.Deepslate_Slab.get().asItem(), BVBlocks.Deepslate_Wall.get().asItem(), Items.DEEPSLATE);
+        recipeAll(BVBlocks.Cracked_Deepslate_Brick_Stairs.get().asItem(), BVBlocks.Cracked_Deepslate_Brick_Slab.get().asItem(), BVBlocks.Cracked_Deepslate_Brick_Wall.get().asItem(), Items.CRACKED_DEEPSLATE_BRICKS);
+        recipeAll(BVBlocks.Cracked_Deepslate_Tile_Stairs.get().asItem(), BVBlocks.Cracked_Deepslate_Tile_Slab.get().asItem(), BVBlocks.Cracked_Deepslate_Tile_Wall.get().asItem(), Items.CRACKED_DEEPSLATE_TILES);
+
         {
             ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
                     .define('#', BVTags.Items.StoneCrafting)

@@ -317,6 +317,27 @@ public class BVBlocks {
     public static final RegistryObject<WallBlock> Tuff_Wall = register("tuff_wall", () ->
             WallProperties(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), DecorationBlocks);
 
+    public static final RegistryObject<StairBlock> Deepslate_Stairs = register("deepslate_stairs", () ->
+            StairProperties(Material.STONE, 3, 6, SoundType.DEEPSLATE, true, Blocks.DEEPSLATE), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Deepslate_Slab = register("deepslate_slab", () ->
+            SlabProperties(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Deepslate_Wall = register("deepslate_wall", () ->
+            WallProperties(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), DecorationBlocks);
+
+    public static final RegistryObject<StairBlock> Cracked_Deepslate_Brick_Stairs = register("cracked_deepslate_brick_stairs", () ->
+            StairProperties(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true, Blocks.CRACKED_DEEPSLATE_BRICKS), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Cracked_Deepslate_Brick_Slab = register("cracked_deepslate_brick_slab", () ->
+            SlabProperties(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Cracked_Deepslate_Brick_Wall = register("cracked_deepslate_brick_wall", () ->
+            WallProperties(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), DecorationBlocks);
+
+    public static final RegistryObject<StairBlock> Cracked_Deepslate_Tile_Stairs = register("cracked_deepslate_tile_stairs", () ->
+            StairProperties(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true, Blocks.CRACKED_DEEPSLATE_TILES), BuildingBlocks);
+    public static final RegistryObject<SlabBlock> Cracked_Deepslate_Tile_Slab = register("cracked_deepslate_tile_slab", () ->
+            SlabProperties(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), BuildingBlocks);
+    public static final RegistryObject<WallBlock> Cracked_Deepslate_Tile_Wall = register("cracked_deepslate_tile_wall", () ->
+            WallProperties(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), DecorationBlocks);
+
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = register(name, block);

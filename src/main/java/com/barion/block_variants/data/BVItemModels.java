@@ -72,6 +72,9 @@ public class BVItemModels extends ItemModelProvider {
         regAll("calcite");
         regAll("smooth_basalt");
         regAll("tuff");
+        regAll("deepslate");
+        regAll("cracked_deepslate_brick", "cracked_deepslate_bricks");
+        regAll("cracked_deepslate_tile", "cracked_deepslate_tiles");
     }
 
     private void regAll(String name){

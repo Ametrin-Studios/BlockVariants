@@ -227,7 +227,17 @@ public class BVLootTables extends LootTableProvider {
                     BVBlocks.Smooth_Basalt_Wall.get(),
                     BVBlocks.Tuff_Stairs.get(),
                     BVBlocks.Tuff_Slab.get(),
-                    BVBlocks.Tuff_Wall.get());
+                    BVBlocks.Tuff_Wall.get(),
+
+                    BVBlocks.Deepslate_Stairs.get(),
+                    BVBlocks.Deepslate_Slab.get(),
+                    BVBlocks.Deepslate_Wall.get(),
+                    BVBlocks.Cracked_Deepslate_Brick_Stairs.get(),
+                    BVBlocks.Cracked_Deepslate_Brick_Slab.get(),
+                    BVBlocks.Cracked_Deepslate_Brick_Wall.get(),
+                    BVBlocks.Cracked_Deepslate_Tile_Stairs.get(),
+                    BVBlocks.Cracked_Deepslate_Tile_Slab.get(),
+                    BVBlocks.Cracked_Deepslate_Tile_Wall.get());
         }
 
         @SafeVarargs

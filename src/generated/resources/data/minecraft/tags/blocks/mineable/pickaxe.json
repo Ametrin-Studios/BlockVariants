@@ -105,6 +105,15 @@
     "block_variants:smooth_basalt_wall",
     "block_variants:tuff_stairs",
     "block_variants:tuff_slab",
-    "block_variants:tuff_wall"
+    "block_variants:tuff_wall",
+    "block_variants:deepslate_stairs",
+    "block_variants:deepslate_slab",
+    "block_variants:deepslate_wall",
+    "block_variants:cracked_deepslate_brick_stairs",
+    "block_variants:cracked_deepslate_brick_slab",
+    "block_variants:cracked_deepslate_brick_wall",
+    "block_variants:cracked_deepslate_tile_stairs",
+    "block_variants:cracked_deepslate_tile_slab",
+    "block_variants:cracked_deepslate_tile_wall"
   ]
 }

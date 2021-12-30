@@ -185,5 +185,15 @@
   "block.block_variants.smooth_basalt_wall" : "Smooth Basalt Wall",
   "block.block_variants.tuff_stairs" : "Tuff Stairs",
   "block.block_variants.tuff_slab" : "Tuff Slab",
-  "block.block_variants.tuff_wall" : "Tuff Wall"
+  "block.block_variants.tuff_wall" : "Tuff Wall",
+
+  "block.block_variants.deepslate_stairs" : "Deepslate Stairs",
+  "block.block_variants.deepslate_slab" : "Deepslate Slab",
+  "block.block_variants.deepslate_wall" : "Deepslate Wall",
+  "block.block_variants.cracked_deepslate_brick_stairs" : "Cracked Deepslate Brick Stairs",
+  "block.block_variants.cracked_deepslate_brick_slab" : "Cracked Deepslate Brick Slab",
+  "block.block_variants.cracked_deepslate_brick_wall" : "Cracked Deepslate Brick Wall",
+  "block.block_variants.cracked_deepslate_tile_stairs" : "Cracked Deepslate Tile Stairs",
+  "block.block_variants.cracked_deepslate_tile_slab" : "Cracked Deepslate Tile Slab",
+  "block.block_variants.cracked_deepslate_tile_wall" : "Cracked Deepslate Tile Wall"
 }
