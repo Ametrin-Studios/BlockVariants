@@ -47,22 +47,22 @@ public class BVItemModels extends ItemModelProvider {
         regAll("amethyst_block");
         regAll("cracked_stone_brick", "cracked_stone_bricks");
 
-        regStairsSlab("oak_log", "oak_log_top");
-        regStairsSlab("spruce_log", "spruce_log_top");
-        regStairsSlab("birch_log", "birch_log_top");
-        regStairsSlab("jungle_log", "jungle_log_top");
-        regStairsSlab("acacia_log", "acacia_log_top");
-        regStairsSlab("dark_oak_log", "dark_oak_log_top");
-        regStairsSlab("stripped_oak_log", "stripped_oak_log_top");
-        regStairsSlab("stripped_spruce_log", "stripped_spruce_log_top");
-        regStairsSlab("stripped_birch_log", "stripped_birch_log_top");
-        regStairsSlab("stripped_jungle_log", "stripped_jungle_log_top");
-        regStairsSlab("stripped_acacia_log", "stripped_acacia_log_top");
-        regStairsSlab("stripped_dark_oak_log", "stripped_dark_oak_log_top");
-        regStairsSlab("crimson_stem", "crimson_stem_top");
-        regStairsSlab("warped_stem", "warped_stem_top");
-        regStairsSlab("stripped_crimson_stem", "stripped_crimson_stem_top");
-        regStairsSlab("stripped_warped_stem", "stripped_warped_stem_top");
+        regStairsSlabWithTop("oak_log", "oak_log_top");
+        regStairsSlabWithTop("spruce_log", "spruce_log_top");
+        regStairsSlabWithTop("birch_log", "birch_log_top");
+        regStairsSlabWithTop("jungle_log", "jungle_log_top");
+        regStairsSlabWithTop("acacia_log", "acacia_log_top");
+        regStairsSlabWithTop("dark_oak_log", "dark_oak_log_top");
+        regStairsSlabWithTop("stripped_oak_log", "stripped_oak_log_top");
+        regStairsSlabWithTop("stripped_spruce_log", "stripped_spruce_log_top");
+        regStairsSlabWithTop("stripped_birch_log", "stripped_birch_log_top");
+        regStairsSlabWithTop("stripped_jungle_log", "stripped_jungle_log_top");
+        regStairsSlabWithTop("stripped_acacia_log", "stripped_acacia_log_top");
+        regStairsSlabWithTop("stripped_dark_oak_log", "stripped_dark_oak_log_top");
+        regStairsSlabWithTop("crimson_stem", "crimson_stem_top");
+        regStairsSlabWithTop("warped_stem", "warped_stem_top");
+        regStairsSlabWithTop("stripped_crimson_stem", "stripped_crimson_stem_top");
+        regStairsSlabWithTop("stripped_warped_stem", "stripped_warped_stem_top");
 
         regAllWood("oak", "spruce", "birch", "jungle", "acacia", "dark_oak");
         regAll("crimson_hyphae", "crimson_stem");
@@ -75,6 +75,11 @@ public class BVItemModels extends ItemModelProvider {
         regAll("deepslate");
         regAll("cracked_deepslate_brick", "cracked_deepslate_bricks");
         regAll("cracked_deepslate_tile", "cracked_deepslate_tiles");
+
+        regFenceGate("nether_brick", "nether_bricks");
+        regAll("cracked_nether_brick", "cracked_nether_bricks");
+        regFenceAndGate("cracked_nether_brick", "cracked_nether_bricks");
+        regFenceAndGate("red_nether_brick", "red_nether_bricks");
     }
 
     private void regAll(String name){
@@ -97,9 +102,13 @@ public class BVItemModels extends ItemModelProvider {
         regSlab(name, name, top);
         regWall(name);
     }
-    private void regStairsSlab(String name, String top){
+    private void regStairsSlabWithTop(String name, String top){
         regStairs(name, name, top);
         regSlab(name, name, top);
+    }
+    private void regStairsSlab(String name, String texture){
+        regStairs(name, texture);
+        regSlab(name, texture);
     }
     private void regStairs(String name){
         regStairs(name, name, name);
@@ -128,6 +137,12 @@ public class BVItemModels extends ItemModelProvider {
     }
     private void regWall(String name, String texture){
         wallInventory(name + "_wall", mcLoc("block/" + texture));
+    }
+    private void regFence(String name, String texture){fenceInventory(name + "_fence", mcLoc("block/" + texture));}
+    private void regFenceGate(String name, String texture){fenceGate(name + "_fence_gate", mcLoc("block/" + texture));}
+    private void regFenceAndGate(String name, String texture){
+        regFence(name, texture);
+        regFenceGate(name, texture);
     }
 
     private void regAllTerra(String... colors){

@@ -114,6 +114,10 @@
     "block_variants:cracked_deepslate_brick_wall",
     "block_variants:cracked_deepslate_tile_stairs",
     "block_variants:cracked_deepslate_tile_slab",
-    "block_variants:cracked_deepslate_tile_wall"
+    "block_variants:cracked_deepslate_tile_wall",
+    "block_variants:cracked_nether_brick_stairs",
+    "block_variants:cracked_nether_brick_slab",
+    "block_variants:cracked_nether_brick_wall",
+    "block_variants:cracked_nether_brick_fence"
   ]
 }

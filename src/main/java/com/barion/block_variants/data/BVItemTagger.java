@@ -26,7 +26,9 @@ public class BVItemTagger extends ItemTagsProvider {
         copy(BVTags.Blocks.WoodenWalls, BVTags.Items.WoodenWalls);
         copy(BlockTags.WOODEN_STAIRS, ItemTags.STAIRS);
         copy(BlockTags.WOODEN_SLABS, ItemTags.SLABS);
-        copy(BVTags.Blocks.WoodenWalls, ItemTags.WALLS);
+        copy(BlockTags.FENCES, ItemTags.FENCES);
+
+        tag(ItemTags.WALLS).addTag(BVTags.Items.WoodenWalls);
 
         copy(BlockTags.NON_FLAMMABLE_WOOD, ItemTags.NON_FLAMMABLE_WOOD);
         tag(BVTags.Items.StoneCrafting).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONE);

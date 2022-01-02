@@ -120,6 +120,11 @@ public class BVRecipes extends RecipeProvider {
         recipeAll(BVBlocks.Cracked_Deepslate_Brick_Stairs.get().asItem(), BVBlocks.Cracked_Deepslate_Brick_Slab.get().asItem(), BVBlocks.Cracked_Deepslate_Brick_Wall.get().asItem(), Items.CRACKED_DEEPSLATE_BRICKS);
         recipeAll(BVBlocks.Cracked_Deepslate_Tile_Stairs.get().asItem(), BVBlocks.Cracked_Deepslate_Tile_Slab.get().asItem(), BVBlocks.Cracked_Deepslate_Tile_Wall.get().asItem(), Items.CRACKED_DEEPSLATE_TILES);
 
+        recipeFenceGate(BVBlocks.Nether_Brick_Fence_Gate.get().asItem(), Items.NETHER_BRICKS, Items.NETHER_BRICK);
+        recipeAll(BVBlocks.Cracked_Nether_Brick_Stairs.get().asItem(), BVBlocks.Cracked_Nether_Brick_Slab.get().asItem(), BVBlocks.Cracked_Nether_Brick_Wall.get().asItem(), Items.CRACKED_NETHER_BRICKS);
+        recipeFenceAndGate(BVBlocks.Cracked_Nether_Brick_Fence.get().asItem(), BVBlocks.Cracked_Nether_Brick_Fence_Gate.get().asItem(), Items.CRACKED_NETHER_BRICKS, Items.NETHER_BRICK);
+        recipeFenceAndGate(BVBlocks.Red_Nether_Brick_Fence.get().asItem(), BVBlocks.Red_Nether_Brick_Fence_Gate.get().asItem(), Items.RED_NETHER_BRICKS, Items.NETHER_BRICK);
+
         {
             ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
                     .define('#', BVTags.Items.StoneCrafting)
@@ -238,6 +243,28 @@ public class BVRecipes extends RecipeProvider {
         for (Item item : addMats) {
             recipeStonecutting(wall, item, true);
         }
+    }
+    protected void recipeFence(Item fence, Item material, Item stick){
+        ShapedRecipeBuilder.shaped(fence, 3)
+                .define('#', material)
+                .define('|', stick)
+                .pattern("#|#")
+                .pattern("#|#")
+                .unlockedBy("has_item", has(material))
+                .save(consumer);
+    }
+    protected void recipeFenceGate(Item gate, Item material, Item stick){
+        ShapedRecipeBuilder.shaped(gate, 1)
+                .define('#', material)
+                .define('|', stick)
+                .pattern("|#|")
+                .pattern("|#|")
+                .unlockedBy("has_item", has(material))
+                .save(consumer);
+    }
+    protected void recipeFenceAndGate(Item fence, Item gate, Item material, Item stick){
+        recipeFence(fence, material, stick);
+        recipeFenceGate(gate, material, stick);
     }
     protected void recipeStonecutting(Item result, Item ingredient){
         recipeStonecutting(result, ingredient, 1);

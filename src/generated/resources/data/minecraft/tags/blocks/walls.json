@@ -45,6 +45,7 @@
     "block_variants:deepslate_wall",
     "block_variants:cracked_deepslate_brick_wall",
     "block_variants:cracked_deepslate_tile_wall",
+    "block_variants:cracked_nether_brick_wall",
     "block_variants:oak_wood_wall",
     "block_variants:spruce_wood_wall",
     "block_variants:birch_wood_wall",

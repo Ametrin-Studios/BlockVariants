@@ -195,5 +195,14 @@
   "block.block_variants.cracked_deepslate_brick_wall" : "Cracked Deepslate Brick Wall",
   "block.block_variants.cracked_deepslate_tile_stairs" : "Cracked Deepslate Tile Stairs",
   "block.block_variants.cracked_deepslate_tile_slab" : "Cracked Deepslate Tile Slab",
-  "block.block_variants.cracked_deepslate_tile_wall" : "Cracked Deepslate Tile Wall"
+  "block.block_variants.cracked_deepslate_tile_wall" : "Cracked Deepslate Tile Wall",
+
+  "block.block_variants.nether_brick_fence_gate" : "Nether Brick Fence Gate",
+  "block.block_variants.cracked_nether_brick_stairs" : "Cracked Nether Brick Stairs",
+  "block.block_variants.cracked_nether_brick_slab" : "Cracked Nether Brick Slab",
+  "block.block_variants.cracked_nether_brick_wall" : "Cracked Nether Brick Wall",
+  "block.block_variants.cracked_nether_brick_fence" : "Cracked Nether Brick Fence",
+  "block.block_variants.cracked_nether_brick_fence_gate" : "Cracked Nether Brick Fence Gate",
+  "block.block_variants.red_nether_brick_fence" : "Red Nether Brick Fence",
+  "block.block_variants.red_nether_brick_fence_gate" : "Red Nether Brick Fence Gate"
 }

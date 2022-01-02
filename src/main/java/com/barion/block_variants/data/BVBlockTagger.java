@@ -55,6 +55,7 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Tuff_Stairs.get(),
                 BVBlocks.Deepslate_Stairs.get(),
                 BVBlocks.Cracked_Deepslate_Brick_Stairs.get(),
+                BVBlocks.Cracked_Deepslate_Tile_Stairs.get(),
                 BVBlocks.Cracked_Deepslate_Tile_Stairs.get());} // Stairs
 
         {addSlab(BVBlocks.Quartz_Bricks_Slab.get(),
@@ -89,7 +90,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Tuff_Slab.get(),
                 BVBlocks.Deepslate_Slab.get(),
                 BVBlocks.Cracked_Deepslate_Brick_Slab.get(),
-                BVBlocks.Cracked_Deepslate_Tile_Slab.get());} // Slabs
+                BVBlocks.Cracked_Deepslate_Tile_Slab.get(),
+                BVBlocks.Cracked_Nether_Brick_Slab.get());} // Slabs
 
         {addWall(BVBlocks.Polished_Diorite_Wall.get(),
                 BVBlocks.Polished_Granite_Wall.get(),
@@ -133,8 +135,18 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Smooth_Basalt_Wall.get(),
                 BVBlocks.Tuff_Wall.get(),
                 BVBlocks.Deepslate_Wall.get(),
-                BVBlocks.Cracked_Deepslate_Brick_Wall.get(), // Walls
-                BVBlocks.Cracked_Deepslate_Tile_Wall.get());} // Walls
+                BVBlocks.Cracked_Deepslate_Brick_Wall.get(),
+                BVBlocks.Cracked_Deepslate_Tile_Wall.get(),
+                BVBlocks.Cracked_Nether_Brick_Wall.get());} // Walls
+
+        {tag(BlockTags.FENCES).add(
+                BVBlocks.Cracked_Nether_Brick_Fence.get(),
+                BVBlocks.Red_Nether_Brick_Fence.get());} // Fences
+
+        {tag(BlockTags.FENCE_GATES).add(
+                BVBlocks.Nether_Brick_Fence_Gate.get(),
+                BVBlocks.Cracked_Nether_Brick_Fence_Gate.get(),
+                BVBlocks.Red_Nether_Brick_Fence_Gate.get());} // Fence Gates
 
         {needsPickaxe(BVBlocks.Smooth_Stone_Stairs.get(),
                     BVBlocks.Cut_Sandstone_Stairs.get(),
@@ -253,7 +265,12 @@ public class BVBlockTagger extends BlockTagsProvider {
                     BVBlocks.Cracked_Deepslate_Brick_Wall.get(),
                     BVBlocks.Cracked_Deepslate_Tile_Stairs.get(),
                     BVBlocks.Cracked_Deepslate_Tile_Slab.get(),
-                    BVBlocks.Cracked_Deepslate_Tile_Wall.get());} // needs Pickaxe
+                    BVBlocks.Cracked_Deepslate_Tile_Wall.get(),
+
+                    BVBlocks.Cracked_Nether_Brick_Stairs.get(),
+                    BVBlocks.Cracked_Nether_Brick_Slab.get(),
+                    BVBlocks.Cracked_Nether_Brick_Wall.get(),
+                    BVBlocks.Cracked_Nether_Brick_Fence.get());} // needs Pickaxe
 
         {needsAxe(BVBlocks.Oak_Log_Stairs.get(),
                 BVBlocks.Oak_Log_Slab.get(),
@@ -434,6 +451,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Stripped_Crimson_Hyphae_Stairs.get(),
                 BVBlocks.Stripped_Warped_Hyphae_Stairs.get(),
                 BVBlocks.Stripped_Warped_Hyphae_Wall.get());
+
+        tag(BlockTags.FENCES).addTag(BlockTags.WOODEN_FENCES);
     }
 
     @SafeVarargs

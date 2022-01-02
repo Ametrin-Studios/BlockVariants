@@ -33,6 +33,7 @@
     "block_variants:tuff_slab",
     "block_variants:deepslate_slab",
     "block_variants:cracked_deepslate_brick_slab",
-    "block_variants:cracked_deepslate_tile_slab"
+    "block_variants:cracked_deepslate_tile_slab",
+    "block_variants:cracked_nether_brick_slab"
   ]
 }

@@ -45,6 +45,7 @@
     "block_variants:deepslate_wall",
     "block_variants:cracked_deepslate_brick_wall",
     "block_variants:cracked_deepslate_tile_wall",
+    "block_variants:cracked_nether_brick_wall",
     "block_variants:oak_wood_wall",
     "block_variants:spruce_wood_wall",
     "block_variants:birch_wood_wall",
@@ -61,21 +62,6 @@
     "block_variants:warped_hyphae_wall",
     "block_variants:stripped_crimson_hyphae_wall",
     "block_variants:stripped_warped_hyphae_wall",
-    "block_variants:oak_wood_wall",
-    "block_variants:spruce_wood_wall",
-    "block_variants:birch_wood_wall",
-    "block_variants:jungle_wood_wall",
-    "block_variants:acacia_wood_wall",
-    "block_variants:dark_oak_wood_wall",
-    "block_variants:stripped_oak_wood_wall",
-    "block_variants:stripped_spruce_wood_wall",
-    "block_variants:stripped_birch_wood_wall",
-    "block_variants:stripped_jungle_wood_wall",
-    "block_variants:stripped_acacia_wood_wall",
-    "block_variants:stripped_dark_oak_wood_wall",
-    "block_variants:crimson_hyphae_wall",
-    "block_variants:warped_hyphae_wall",
-    "block_variants:stripped_crimson_hyphae_wall",
-    "block_variants:stripped_warped_hyphae_wall"
+    "#forge:wooden_wall"
   ]
 }
