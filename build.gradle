@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '3.0'
+version = '3.1'
 group = 'com.barion.block_variants'
 archivesBaseName = "block_variants-${mc_version}"
 
