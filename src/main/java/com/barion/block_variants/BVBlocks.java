@@ -177,8 +177,6 @@ public class BVBlocks {
     public static final RegistryObject<WallBlock> Amethyst_Block_Wall = register("amethyst_block_wall",
                     WallProperties(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), DecorationBlocks);
 
-    // new
-
     public static final RegistryObject<StairBlock> Cracked_Stone_Brick_Stairs = register("cracked_stone_brick_stairs",
                     StairProperties(Material.STONE, 1.5F, 6F, SoundType.STONE, true, Blocks.CRACKED_STONE_BRICKS), BuildingBlocks);
     public static final RegistryObject<SlabBlock> Cracked_Stone_Brick_Slab = register("cracked_stone_brick_slab",
