@@ -2,9 +2,7 @@ package com.barion.block_variants.data;
 
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BlockVariants;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.WallBlock;
+import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -99,6 +97,11 @@ public class BVBlockStates extends BlockStateProvider {
         regAll(BVBlocks.Warped_Hyphae_Stairs, BVBlocks.Warped_Hyphae_Slab, BVBlocks.Warped_Hyphae_Wall, "warped_stem");
         regAll(BVBlocks.Stripped_Crimson_Hyphae_Stairs, BVBlocks.Stripped_Crimson_Hyphae_Slab, BVBlocks.Stripped_Crimson_Hyphae_Wall, "stripped_crimson_stem");
         regAll(BVBlocks.Stripped_Warped_Hyphae_Stairs, BVBlocks.Stripped_Warped_Hyphae_Slab, BVBlocks.Stripped_Warped_Hyphae_Wall, "stripped_warped_stem");
+
+        regFenceGate(BVBlocks.Nether_Brick_Fence_Gate, "nether_bricks");
+        regAll(BVBlocks.Cracked_Nether_Brick_Stairs, BVBlocks.Cracked_Nether_Brick_Slab, BVBlocks.Cracked_Nether_Brick_Wall, "cracked_nether_bricks");
+        regFenceAndGate(BVBlocks.Cracked_Nether_Brick_Fence, BVBlocks.Cracked_Nether_Brick_Fence_Gate, "cracked_nether_bricks");
+        regFenceAndGate(BVBlocks.Red_Nether_Brick_Fence, BVBlocks.Red_Nether_Brick_Fence_Gate, "red_nether_bricks");
     }
     protected void regAll(RegistryObject<StairsBlock> stairs, RegistryObject<SlabBlock> slab, RegistryObject<WallBlock> wall, String texture){
         regStairs(stairs, texture);
@@ -142,5 +145,15 @@ public class BVBlockStates extends BlockStateProvider {
     }
     protected void regWall(RegistryObject<WallBlock> wall, String texture){
         wallBlock(wall.get(), mcLoc("block/" + texture));
+    }
+    protected void regFence(RegistryObject<FenceBlock> fence, String texture){
+        fenceBlock(fence.get(), mcLoc("block/"+texture));
+    }
+    protected void regFenceGate(RegistryObject<FenceGateBlock> gate, String texture){
+        fenceGateBlock(gate.get(), mcLoc("block/"+texture));
+    }
+    protected void regFenceAndGate(RegistryObject<FenceBlock> fence, RegistryObject<FenceGateBlock> gate, String texture){
+        regFence(fence, texture);
+        regFenceGate(gate, texture);
     }
 }

@@ -67,6 +67,11 @@ public class BVItemModels extends ItemModelProvider {
         regAll("warped_hyphae", "warped_stem");
         regAll("stripped_crimson_hyphae", "stripped_crimson_stem");
         regAll("stripped_warped_hyphae", "stripped_warped_stem");
+
+        regFenceGate("nether_brick", "nether_bricks");
+        regAll("cracked_nether_brick", "cracked_nether_bricks");
+        regFenceAndGate("cracked_nether_brick", "cracked_nether_bricks");
+        regFenceAndGate("red_nether_brick", "red_nether_bricks");
     }
 
     private void regAll(String name){
@@ -120,6 +125,12 @@ public class BVItemModels extends ItemModelProvider {
     }
     private void regWall(String name, String texture){
         wallInventory(name + "_wall", mcLoc("block/" + texture));
+    }
+    private void regFence(String name, String texture){fenceInventory(name + "_fence", mcLoc("block/" + texture));}
+    private void regFenceGate(String name, String texture){fenceGate(name + "_fence_gate", mcLoc("block/" + texture));}
+    private void regFenceAndGate(String name, String texture){
+        regFence(name, texture);
+        regFenceGate(name, texture);
     }
 
     private void regAllTerra(String... colors){

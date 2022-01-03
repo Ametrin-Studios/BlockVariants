@@ -21,6 +21,7 @@ public class BVItemTagger extends ItemTagsProvider {
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
         copy(BlockTags.SLABS, ItemTags.SLABS);
         copy(BlockTags.WALLS, ItemTags.WALLS);
+        copy(BlockTags.FENCES, ItemTags.FENCES);
         copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
         copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
         copy(BVTags.Blocks.WoodenWalls, BVTags.Items.WoodenWalls);

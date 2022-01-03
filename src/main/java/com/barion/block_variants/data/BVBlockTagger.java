@@ -17,7 +17,7 @@ public class BVBlockTagger extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(){
         addStairs(BVBlocks.Smooth_Stone_Stairs.get(),
                 BVBlocks.Cut_Sandstone_Stairs.get(),
                 BVBlocks.Cut_Red_Sandstone_Stairs.get(),
@@ -46,7 +46,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Green_Terracotta_Stairs.get(),
                 BVBlocks.Red_Terracotta_Stairs.get(),
                 BVBlocks.Black_Terracotta_Stairs.get(),
-                BVBlocks.Cracked_Stone_Brick_Stairs.get());
+                BVBlocks.Cracked_Stone_Brick_Stairs.get(),
+                BVBlocks.Cracked_Nether_Brick_Stairs.get());
 
         addSlab(BVBlocks.Quartz_Bricks_Slab.get(),
                 BVBlocks.Chiseled_Quartz_Block_Slab.get(),
@@ -72,7 +73,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Green_Terracotta_Slab.get(),
                 BVBlocks.Red_Terracotta_Slab.get(),
                 BVBlocks.Black_Terracotta_Slab.get(),
-                BVBlocks.Cracked_Stone_Brick_Slab.get());
+                BVBlocks.Cracked_Stone_Brick_Slab.get(),
+                BVBlocks.Cracked_Nether_Brick_Slab.get());
 
 
         addWall(BVBlocks.Polished_Diorite_Wall.get(),
@@ -110,7 +112,8 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Green_Terracotta_Wall.get(),
                 BVBlocks.Red_Terracotta_Wall.get(),
                 BVBlocks.Black_Terracotta_Wall.get(),
-                BVBlocks.Cracked_Stone_Brick_Wall.get());
+                BVBlocks.Cracked_Stone_Brick_Wall.get(),
+                BVBlocks.Cracked_Nether_Brick_Wall.get());
 
         addWoodenStairs(BVBlocks.Oak_Log_Stairs.get(),
                 BVBlocks.Spruce_Log_Stairs.get(),
@@ -194,6 +197,13 @@ public class BVBlockTagger extends BlockTagsProvider {
                 BVBlocks.Warped_Hyphae_Wall.get(),
                 BVBlocks.Stripped_Crimson_Hyphae_Wall.get(),
                 BVBlocks.Stripped_Warped_Hyphae_Wall.get());
+
+        tag(BlockTags.FENCES).add(BVBlocks.Cracked_Nether_Brick_Fence.get(),
+                BVBlocks.Red_Nether_Brick_Fence.get());
+
+        tag(BlockTags.FENCE_GATES).add(BVBlocks.Nether_Brick_Fence_Gate.get(),
+                BVBlocks.Cracked_Nether_Brick_Fence_Gate.get(),
+                BVBlocks.Red_Nether_Brick_Fence_Gate.get());
 
         tag(BlockTags.NON_FLAMMABLE_WOOD).add(
                 BVBlocks.Crimson_Hyphae_Stairs.get(),

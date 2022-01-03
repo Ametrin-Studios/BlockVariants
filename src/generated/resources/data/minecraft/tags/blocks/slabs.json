@@ -25,6 +25,7 @@
     "block_variants:green_terracotta_slab",
     "block_variants:red_terracotta_slab",
     "block_variants:black_terracotta_slab",
-    "block_variants:cracked_stone_brick_slab"
+    "block_variants:cracked_stone_brick_slab",
+    "block_variants:cracked_nether_brick_slab"
   ]
 }

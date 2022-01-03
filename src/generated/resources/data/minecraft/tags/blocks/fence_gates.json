@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "block_variants:nether_brick_fence_gate",
+    "block_variants:cracked_nether_brick_fence_gate",
+    "block_variants:red_nether_brick_fence_gate"
+  ]
+}
