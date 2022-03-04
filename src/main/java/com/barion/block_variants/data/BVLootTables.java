@@ -1,7 +1,6 @@
 package com.barion.block_variants.data;
 
 import com.barion.block_variants.BVBlocks;
-import com.barion.block_variants.BVRegister;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.data.DataGenerator;
@@ -258,7 +257,7 @@ public class BVLootTables extends LootTableProvider {
 
         @Override @Nonnull
         protected Iterable<Block> getKnownBlocks() {
-            return BVRegister.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+            return BVBlocks.BlockRegistry.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
         }
     }
 }

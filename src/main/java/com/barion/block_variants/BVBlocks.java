@@ -6,9 +6,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BVBlocks {
+    public static final DeferredRegister<Block> BlockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.Mod_ID);
+    public static final DeferredRegister<Item> ItemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.Mod_ID);
+
     private static final Item.Properties BuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
     private static final Item.Properties DecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS);
 
@@ -184,19 +189,6 @@ public class BVBlocks {
     public static final RegistryObject<WallBlock> Cracked_Stone_Brick_Wall = register("cracked_stone_brick_wall",
                     WallProperties(Material.STONE, 1.5F, 6F, SoundType.STONE, true), DecorationBlocks);
 
-    public static final RegistryObject<StairBlock> Oak_Log_Stairs = regLogStairs("oak", Blocks.OAK_LOG);
-    public static final RegistryObject<SlabBlock> Oak_Log_Slab = regLogSlab("oak");
-    public static final RegistryObject<StairBlock> Spruce_Log_Stairs = regLogStairs("spruce", Blocks.SPRUCE_LOG);
-    public static final RegistryObject<SlabBlock> Spruce_Log_Slab = regLogSlab("spruce");
-    public static final RegistryObject<StairBlock> Birch_Log_Stairs = regLogStairs("birch", Blocks.BIRCH_LOG);
-    public static final RegistryObject<SlabBlock> Birch_Log_Slab = regLogSlab("birch");
-    public static final RegistryObject<StairBlock> Jungle_Log_Stairs = regLogStairs("jungle", Blocks.JUNGLE_LOG);
-    public static final RegistryObject<SlabBlock> Jungle_Log_Slab = regLogSlab("jungle");
-    public static final RegistryObject<StairBlock> Acacia_Log_Stairs = regLogStairs("acacia", Blocks.ACACIA_LOG);
-    public static final RegistryObject<SlabBlock> Acacia_Log_Slab = regLogSlab("acacia");
-    public static final RegistryObject<StairBlock> Dark_Oak_Log_Stairs = regLogStairs("dark_oak", Blocks.DARK_OAK_LOG);
-    public static final RegistryObject<SlabBlock> Dark_Oak_Log_Slab = regLogSlab("dark_oak");
-
     public static final RegistryObject<StairBlock> Stripped_Oak_Log_Stairs = regLogStairs("stripped_oak", Blocks.STRIPPED_OAK_LOG);
     public static final RegistryObject<SlabBlock> Stripped_Oak_Log_Slab = regLogSlab("stripped_oak");
     public static final RegistryObject<StairBlock> Stripped_Spruce_Log_Stairs = regLogStairs("stripped_spruce", Blocks.STRIPPED_SPRUCE_LOG);
@@ -209,6 +201,19 @@ public class BVBlocks {
     public static final RegistryObject<SlabBlock> Stripped_Acacia_Log_Slab = regLogSlab("stripped_acacia");
     public static final RegistryObject<StairBlock> Stripped_Dark_Oak_Log_Stairs = regLogStairs("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_LOG);
     public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Log_Slab = regLogSlab("stripped_dark_oak");
+
+    public static final RegistryObject<StairBlock> Oak_Log_Stairs = regLogStairs("oak", Blocks.OAK_LOG);
+    public static final RegistryObject<SlabBlock> Oak_Log_Slab = regLogSlab("oak");
+    public static final RegistryObject<StairBlock> Spruce_Log_Stairs = regLogStairs("spruce", Blocks.SPRUCE_LOG);
+    public static final RegistryObject<SlabBlock> Spruce_Log_Slab = regLogSlab("spruce");
+    public static final RegistryObject<StairBlock> Birch_Log_Stairs = regLogStairs("birch", Blocks.BIRCH_LOG);
+    public static final RegistryObject<SlabBlock> Birch_Log_Slab = regLogSlab("birch");
+    public static final RegistryObject<StairBlock> Jungle_Log_Stairs = regLogStairs("jungle", Blocks.JUNGLE_LOG);
+    public static final RegistryObject<SlabBlock> Jungle_Log_Slab = regLogSlab("jungle");
+    public static final RegistryObject<StairBlock> Acacia_Log_Stairs = regLogStairs("acacia", Blocks.ACACIA_LOG);
+    public static final RegistryObject<SlabBlock> Acacia_Log_Slab = regLogSlab("acacia");
+    public static final RegistryObject<StairBlock> Dark_Oak_Log_Stairs = regLogStairs("dark_oak", Blocks.DARK_OAK_LOG);
+    public static final RegistryObject<SlabBlock> Dark_Oak_Log_Slab = regLogSlab("dark_oak");
 
     public static final RegistryObject<StairBlock> Crimson_Stem_Stairs = register("crimson_stem_stairs",
                     StairProperties(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.CRIMSON_STEM), BuildingBlocks.fireResistant());
@@ -352,11 +357,11 @@ public class BVBlocks {
 
     private static <T extends Block>RegistryObject<T> register(String name, T block, Item.Properties ItemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
-        BVRegister.Items.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
+        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
         return ret;
     }
     private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, T block){
-        return BVRegister.Blocks.register(name, ()-> block);
+        return BlockRegistry.register(name, ()-> block);
     }
 
     private static Block BlockProperties(Block base){
@@ -405,7 +410,7 @@ public class BVBlocks {
 
     private static RegistryObject<StairBlock> regTerracottaStairs(String color, Block base){
         return register(color + "_terracotta_stairs",
-                StairProperties(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true, base), BuildingBlocks);
+                StairProperties(base), BuildingBlocks);
     }
     private static RegistryObject<SlabBlock> regTerracottaSlab(String color){
         return register(color + "_terracotta_slab",
@@ -437,6 +442,4 @@ public class BVBlocks {
         return register(type + "_wood_wall",
                         WallProperties(Material.WOOD, 2F, 5F, SoundType.WOOD, false), DecorationBlocks);
     }
-
-    public static void register() {}
 }

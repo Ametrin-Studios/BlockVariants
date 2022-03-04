@@ -460,13 +460,9 @@ public class BVBlockTagger extends BlockTagsProvider {
     }
 
     @SafeVarargs
-    protected final <T extends Block> void needsAxe(T... blocks) {
-        tag(BlockTags.MINEABLE_WITH_AXE).add(blocks);
-    }
+    protected final <T extends Block> void needsAxe(T... blocks) {tag(BlockTags.MINEABLE_WITH_AXE).add(blocks);}
     @SafeVarargs
-    protected final <T extends Block> void needsPickaxe(T... blocks) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blocks);
-    }
+    protected final <T extends Block> void needsPickaxe(T... blocks) {tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blocks);}
     protected void addStairs(StairBlock... blocks) {tag(BlockTags.STAIRS).add(blocks);}
     protected void addSlab(SlabBlock... blocks) {tag(BlockTags.SLABS).add(blocks);}
     protected void addWall(WallBlock... blocks) {tag(BlockTags.WALLS).add(blocks);}

@@ -3,9 +3,12 @@ package com.barion.block_variants.data;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -286,6 +289,10 @@ public class BVRecipes extends RecipeProvider {
         recipeSlab(slab, material, false);
         recipeWall(wall, material, false);
         recipeWall(wall, altMaterial, false, true);
+    }
+
+    private static InventoryChangeTrigger.TriggerInstance has(TagKey<Item> tagKey) {
+        return inventoryTrigger(ItemPredicate.Builder.item().of(tagKey).build());
     }
 
     private static ResourceLocation recipeID(Item item) { return new ResourceLocation(BlockVariants.Mod_ID, item.toString());}
