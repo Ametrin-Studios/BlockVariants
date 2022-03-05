@@ -1703,7 +1703,7 @@ fbb37cb7b45a48738d7971a4def38356dbba813b data/block_variants/recipes/warped_stem
 572b5243185241c0b0ee0f86ef91f8a5bd3edb79 data/minecraft/tags/blocks/fence_gates.json
 de9d4d8374b55b46544342b98478ce2deece013d data/minecraft/tags/blocks/fences.json
 d564897d5b7cc859c87d6fcdb87a956329eee129 data/minecraft/tags/blocks/mineable/axe.json
-3063b9f5bf8ac7e51976b51c084c5dd160a09f64 data/minecraft/tags/blocks/mineable/pickaxe.json
+2726db315ea6acbdb5bda99c53ebc8cb7c4a5277 data/minecraft/tags/blocks/mineable/pickaxe.json
 25c6bbfc31cdffdb542baf6cf966ff0f14dcb835 data/minecraft/tags/blocks/non_flammable_wood.json
 d0a4f607aa1895280eeb0554f239b781f8c09894 data/minecraft/tags/blocks/slabs.json
 b095a6bfb63fcfc94d59d534aa984db5e11f250a data/minecraft/tags/blocks/stairs.json

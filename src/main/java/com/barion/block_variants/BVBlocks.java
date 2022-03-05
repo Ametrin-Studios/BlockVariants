@@ -10,6 +10,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Supplier;
+
 public class BVBlocks {
     public static final DeferredRegister<Block> BlockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.Mod_ID);
     public static final DeferredRegister<Item> ItemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.Mod_ID);
@@ -355,57 +357,57 @@ public class BVBlocks {
             FenceGateProperties(Blocks.RED_NETHER_BRICKS), DecorationBlocks);
 
 
-    private static <T extends Block>RegistryObject<T> register(String name, T block, Item.Properties ItemProperties){
+    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
         ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
         return ret;
     }
-    private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, T block){
-        return BlockRegistry.register(name, ()-> block);
+    private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block){
+        return BlockRegistry.register(name, block);
     }
 
-    private static Block BlockProperties(Block base){
-        return new Block(BlockBehaviour.Properties.copy(base));
+    private static Supplier<Block> BlockProperties(Block base){
+        return ()-> new Block(BlockBehaviour.Properties.copy(base));
     }
 
-    private static StairBlock StairProperties(Block base){
-        return new StairBlock(base::defaultBlockState, StairBlock.Properties.copy(base));
+    private static Supplier<StairBlock> StairProperties(Block base){
+        return ()-> new StairBlock(base::defaultBlockState, StairBlock.Properties.copy(base));
     }
-    private static SlabBlock SlabProperties(Block base){
-        return new SlabBlock(SlabBlock.Properties.copy(base));
+    private static Supplier<SlabBlock> SlabProperties(Block base){
+        return ()-> new SlabBlock(SlabBlock.Properties.copy(base));
     }
-    private static WallBlock WallProperties(Block base){
-        return new WallBlock(WallBlock.Properties.copy(base));
+    private static Supplier<WallBlock> WallProperties(Block base){
+        return ()-> new WallBlock(WallBlock.Properties.copy(base));
     }
-    private static FenceBlock FenceProperties(Block base){
-        return new FenceBlock(FenceBlock.Properties.copy(base));
+    private static Supplier<FenceBlock> FenceProperties(Block base){
+        return () -> new FenceBlock(FenceBlock.Properties.copy(base));
     }
-    private static FenceGateBlock FenceGateProperties(Block base){
-        return new FenceGateBlock(FenceGateBlock.Properties.copy(base));
+    private static Supplier<FenceGateBlock> FenceGateProperties(Block base){
+        return ()-> new FenceGateBlock(FenceGateBlock.Properties.copy(base));
     }
-    @Deprecated private static StairBlock StairProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool, Block block){
+    @Deprecated private static Supplier<StairBlock> StairProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool, Block block){
         if(requiresTool)
-            return new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return ()-> new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return ()-> new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
-    @Deprecated private static SlabBlock SlabProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
+    @Deprecated private static Supplier<SlabBlock> SlabProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
-            return new SlabBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return ()-> new SlabBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return new SlabBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return ()-> new SlabBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
-    @Deprecated private static WallBlock WallProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
+    @Deprecated private static Supplier<WallBlock> WallProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
-            return new WallBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return ()-> new WallBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return new WallBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return ()-> new WallBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
-    @Deprecated private static FenceBlock FenceProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
+    @Deprecated private static Supplier<FenceBlock> FenceProperties(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
-            return new FenceBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return ()-> new FenceBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return new FenceBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return ()-> new FenceBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
 
     private static RegistryObject<StairBlock> regTerracottaStairs(String color, Block base){
