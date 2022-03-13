@@ -188,13 +188,12 @@ public class BVRecipes extends RecipeProvider {
                 .pattern("###")
                 .unlockedBy("has_item", has(material))
                 .save(consumer);
-        if(hasStonecutting)
-            recipeStonecutting(stair, material);
+        if(hasStonecutting) {recipeStonecutting(stair, material);}
     }
     protected void recipeStairs(Item stairs, Item material){
         recipeStairs(stairs, material, true);
     }
-    protected void recipeStairs(Item stairs, Item material, Item[] addMats){
+    protected void recipeStairs(Item stairs, Item material, Item... addMats){
         recipeStairs(stairs, material);
         for (Item item : addMats) {
             recipeStonecutting(stairs, item, true);
@@ -206,12 +205,9 @@ public class BVRecipes extends RecipeProvider {
                 .pattern("###")
                 .unlockedBy("has_item", has(material))
                 .save(consumer);
-        if(hasStonecutting)
-            recipeStonecutting(slab, material, 2);
+        if(hasStonecutting) {recipeStonecutting(slab, material, 2);}
     }
-    protected void recipeSlab(Item slab, Item material){
-        recipeSlab(slab, material, true);
-    }
+    protected void recipeSlab(Item slab, Item material) {recipeSlab(slab, material, true);}
     protected void recipeSlab(Item slab, Item material, Item... addMats){
         recipeSlab(slab, material, true);
         for (Item item : addMats) {
@@ -225,8 +221,7 @@ public class BVRecipes extends RecipeProvider {
                 .pattern("###")
                 .unlockedBy("has_item", has(material))
                 .save(consumer);
-        if(hasStonecutting)
-            recipeStonecutting(wall, material);
+        if(hasStonecutting) {recipeStonecutting(wall, material);}
     }
     protected void recipeWall(Item wall, Item material, boolean hasStonecutting, boolean addToID) {
         ShapedRecipeBuilder.shaped(wall, 6)
@@ -235,8 +230,7 @@ public class BVRecipes extends RecipeProvider {
                 .pattern("###")
                 .unlockedBy("has_item", has(material))
                 .save(consumer, recipeID(wall, "_from_" + material));
-        if(hasStonecutting)
-            recipeStonecutting(wall, material);
+        if(hasStonecutting) {recipeStonecutting(wall, material);}
     }
     protected void recipeWall(Item wall, Item material) {
         recipeWall(wall, material, true);
@@ -247,6 +241,7 @@ public class BVRecipes extends RecipeProvider {
             recipeStonecutting(wall, item, true);
         }
     }
+
     protected void recipeFence(Item fence, Item material, Item stick){
         ShapedRecipeBuilder.shaped(fence, 3)
                 .define('#', material)
@@ -269,9 +264,7 @@ public class BVRecipes extends RecipeProvider {
         recipeFence(fence, material, stick);
         recipeFenceGate(gate, material, stick);
     }
-    protected void recipeStonecutting(Item result, Item ingredient){
-        recipeStonecutting(result, ingredient, 1);
-    }
+    protected void recipeStonecutting(Item result, Item ingredient) {recipeStonecutting(result, ingredient, 1);}
     protected void recipeStonecutting(Item result, Item ingredient, int amount){
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy("has_item", has(ingredient)).save(consumer, recipeID(result, "_stonecutting"));
     }
