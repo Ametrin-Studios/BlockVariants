@@ -13,9 +13,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
-public class BVRecipes extends RecipeProvider {
+public class BVRecipeProvider extends RecipeProvider {
     private Consumer<FinishedRecipe> consumer;
-    public BVRecipes(DataGenerator generator){super(generator);}
+    public BVRecipeProvider(DataGenerator generator){super(generator);}
 
     @Override @ParametersAreNonnullByDefault
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer){

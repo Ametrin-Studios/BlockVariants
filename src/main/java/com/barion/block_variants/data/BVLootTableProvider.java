@@ -35,7 +35,7 @@ public class BVLootTableProvider extends LootTableProvider {
 
     @Override @ParametersAreNonnullByDefault
     protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationContext) {
-        map.forEach((p_218436_2_, p_218436_3_) -> LootTables.validate(validationContext, p_218436_2_, p_218436_3_));
+        map.forEach((resourceLocation, lootTable) -> LootTables.validate(validationContext, resourceLocation, lootTable));
     }
 
     public static class ModBlockLootTables extends BlockLoot {
@@ -250,7 +250,7 @@ public class BVLootTableProvider extends LootTableProvider {
 
         @SafeVarargs
         private <T extends Block> void dropSelf(T... Blocks){
-            for (Block Block : Blocks){
+            for (Block Block : Blocks) {
                 dropSelf(Block);
             }
         }

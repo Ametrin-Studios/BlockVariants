@@ -38,7 +38,7 @@ public class BlockVariants{
             BVBlockTagsProvider blockTags = new BVBlockTagsProvider(generator, fileHelper);
             generator.addProvider(blockTags);
             generator.addProvider(new BVItemTagsProvider(generator, blockTags, fileHelper));
-            generator.addProvider(new BVRecipes(generator));
+            generator.addProvider(new BVRecipeProvider(generator));
             generator.addProvider(new BVLootTableProvider(generator));
         }
 
