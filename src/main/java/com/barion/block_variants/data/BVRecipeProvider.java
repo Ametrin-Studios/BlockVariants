@@ -10,58 +10,61 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
 public class BVRecipeProvider extends RecipeProvider {
     private Consumer<FinishedRecipe> consumer;
-    public BVRecipeProvider(DataGenerator generator){super(generator);}
+    public BVRecipeProvider(DataGenerator generator) {super(generator);}
 
     @Override @ParametersAreNonnullByDefault
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer){
         this.consumer = consumer;
-        wall(BVBlocks.Polished_Granite_Wall.get().asItem(), Items.POLISHED_GRANITE, Items.GRANITE, Items.GRANITE_WALL);
-        wall(BVBlocks.Polished_Diorite_Wall.get().asItem(), Items.POLISHED_DIORITE, Items.DIORITE, Items.DIORITE_WALL);
-        wall(BVBlocks.Polished_Andesite_Wall.get().asItem(), Items.POLISHED_ANDESITE, Items.ANDESITE, Items.ANDESITE_WALL);
+        wall(BVBlocks.Polished_Granite_Wall.get(), Items.POLISHED_GRANITE, Items.GRANITE, Items.GRANITE_WALL);
+        wall(BVBlocks.Polished_Diorite_Wall.get(), Items.POLISHED_DIORITE, Items.DIORITE, Items.DIORITE_WALL);
+        wall(BVBlocks.Polished_Andesite_Wall.get(), Items.POLISHED_ANDESITE, Items.ANDESITE, Items.ANDESITE_WALL);
 
         smelting(Items.STONE_STAIRS, Items.COBBLESTONE_STAIRS);
         smelting(Items.STONE_SLAB, Items.COBBLESTONE_SLAB);
-        wall(BVBlocks.Stone_Wall.get().asItem(), Items.STONE, true);
-        smelting(BVBlocks.Stone_Wall.get().asItem(), Items.COBBLESTONE_WALL);
-        stair(BVBlocks.Smooth_Stone_Stairs.get().asItem(), Items.SMOOTH_STONE, true);
-        smelting(BVBlocks.Smooth_Stone_Stairs.get().asItem(), Items.STONE_STAIRS);
+        wall(BVBlocks.Stone_Wall.get(), Items.STONE, true);
+        smelting(BVBlocks.Stone_Wall.get(), Items.COBBLESTONE_WALL);
+        stair(BVBlocks.Smooth_Stone_Stairs.get(), Items.SMOOTH_STONE, true);
+        smelting(BVBlocks.Smooth_Stone_Stairs.get(), Items.STONE_STAIRS);
         smelting(Items.SMOOTH_STONE_SLAB, Items.STONE_SLAB);
-        wall(BVBlocks.Smooth_Stone_Wall.get().asItem(), Items.SMOOTH_STONE, true);
-        smelting(BVBlocks.Smooth_Stone_Wall.get().asItem(), BVBlocks.Stone_Wall.get().asItem());
+        wall(BVBlocks.Smooth_Stone_Wall.get(), Items.SMOOTH_STONE, true);
+        smelting(BVBlocks.Smooth_Stone_Wall.get(), BVBlocks.Stone_Wall.get());
 
-        stair(BVBlocks.Cut_Sandstone_Stairs.get().asItem(), Items.CUT_SANDSTONE, Items.SANDSTONE, Items.SANDSTONE_STAIRS);
-        stair(BVBlocks.Cut_Red_Sandstone_Stairs.get().asItem(), Items.CUT_RED_SANDSTONE, Items.RED_SANDSTONE, Items.RED_SANDSTONE_STAIRS);
-        wall(BVBlocks.Cut_Sandstone_Wall.get().asItem(), Items.CUT_SANDSTONE, Items.SANDSTONE, Items.SANDSTONE_WALL);
-        wall(BVBlocks.Cut_Red_Sandstone_Wall.get().asItem(), Items.CUT_RED_SANDSTONE, Items.RED_SANDSTONE, Items.RED_SANDSTONE_WALL);
+        stair(BVBlocks.Cut_Sandstone_Stairs.get(), Items.CUT_SANDSTONE, Items.SANDSTONE, Items.SANDSTONE_STAIRS);
+        stair(BVBlocks.Cut_Red_Sandstone_Stairs.get(), Items.CUT_RED_SANDSTONE, Items.RED_SANDSTONE, Items.RED_SANDSTONE_STAIRS);
+        wall(BVBlocks.Cut_Sandstone_Wall.get(), Items.CUT_SANDSTONE, Items.SANDSTONE, Items.SANDSTONE_WALL);
+        wall(BVBlocks.Cut_Red_Sandstone_Wall.get(), Items.CUT_RED_SANDSTONE, Items.RED_SANDSTONE, Items.RED_SANDSTONE_WALL);
 
-        wall(BVBlocks.Quartz_Wall.get().asItem(), Items.QUARTZ_BLOCK, true);
-        stair(BVBlocks.Quartz_Bricks_Stairs.get().asItem(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS);
-        slab(BVBlocks.Quartz_Bricks_Slab.get().asItem(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, Items.QUARTZ_SLAB);
-        wall(BVBlocks.Quartz_Bricks_Wall.get().asItem(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get().asItem());
+        wall(BVBlocks.Quartz_Wall.get(), Items.QUARTZ_BLOCK, true);
+        stair(BVBlocks.Quartz_Bricks_Stairs.get(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS);
+        slab(BVBlocks.Quartz_Bricks_Slab.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
+        wall(BVBlocks.Quartz_Bricks_Wall.get(), Items.QUARTZ_BRICKS, Items.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get());
         smelting(Items.SMOOTH_QUARTZ_STAIRS, Items.QUARTZ_STAIRS);
         smelting(Items.SMOOTH_QUARTZ_SLAB, Items.QUARTZ_SLAB);
-        wall(BVBlocks.Smooth_Quartz_Wall.get().asItem(), Items.SMOOTH_QUARTZ, true);
-        smelting(BVBlocks.Smooth_Quartz_Wall.get().asItem(), BVBlocks.Quartz_Wall.get().asItem());
-        stair(BVBlocks.Chiseled_Quartz_Block_Stairs.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS);
-        slab(BVBlocks.Chiseled_Quartz_Block_Slab.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, Items.QUARTZ_BLOCK, Items.QUARTZ_SLAB);
-        wall(BVBlocks.Chiseled_Quartz_Block_Wall.get().asItem(), Items.CHISELED_QUARTZ_BLOCK, Items.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get().asItem());
+        wall(BVBlocks.Smooth_Quartz_Wall.get(), Items.SMOOTH_QUARTZ, true);
+        smelting(BVBlocks.Smooth_Quartz_Wall.get(), BVBlocks.Quartz_Wall.get());
+        stair(BVBlocks.Chiseled_Quartz_Block_Stairs.get(), Items.CHISELED_QUARTZ_BLOCK, Items.QUARTZ_BLOCK, Items.QUARTZ_STAIRS);
+        slab(BVBlocks.Chiseled_Quartz_Block_Slab.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
+        wall(BVBlocks.Chiseled_Quartz_Block_Wall.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, BVBlocks.Quartz_Wall.get());
 
-        wall(BVBlocks.Prismarine_Bricks_Wall.get().asItem(), Items.PRISMARINE_BRICKS, true);
-        wall(BVBlocks.Dark_Prismarine_Wall.get().asItem(), Items.DARK_PRISMARINE, true);
-        all(BVBlocks.Netherrack_Stairs.get().asItem(), BVBlocks.Netherrack_Slab.get().asItem(), BVBlocks.Netherrack_Wall.get().asItem(), Items.NETHERRACK, true);
-        all(BVBlocks.End_Stone_Stairs.get().asItem(), BVBlocks.End_Stone_Slab.get().asItem(), BVBlocks.End_Stone_Wall.get().asItem(), Items.END_STONE, true);
+        wall(BVBlocks.Prismarine_Bricks_Wall.get(), Items.PRISMARINE_BRICKS, true);
+        wall(BVBlocks.Dark_Prismarine_Wall.get(), Items.DARK_PRISMARINE, true);
+        all(BVBlocks.Netherrack_Stairs.get(), BVBlocks.Netherrack_Slab.get(), BVBlocks.Netherrack_Wall.get(), Items.NETHERRACK, true);
+        all(BVBlocks.End_Stone_Stairs.get(), BVBlocks.End_Stone_Slab.get(), BVBlocks.End_Stone_Wall.get(), Items.END_STONE, true);
 
-        all(BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get().asItem(), BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get().asItem(), BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get().asItem(), Items.CRACKED_POLISHED_BLACKSTONE_BRICKS, true);
-        smelting(BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get().asItem(), Items.POLISHED_BLACKSTONE_BRICK_STAIRS);
-        smelting(BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get().asItem(), Items.POLISHED_BLACKSTONE_BRICK_SLAB);
-        smelting(BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get().asItem(), Items.POLISHED_BLACKSTONE_BRICK_WALL);
+        all(BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), Items.CRACKED_POLISHED_BLACKSTONE_BRICKS, true);
+        smelting(BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get(), Items.POLISHED_BLACKSTONE_BRICK_STAIRS);
+        smelting(BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), Items.POLISHED_BLACKSTONE_BRICK_SLAB);
+        smelting(BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), Items.POLISHED_BLACKSTONE_BRICK_WALL);
         stonecuttingExtraID(Items.POLISHED_BLACKSTONE_STAIRS, 1, Items.BLACKSTONE_STAIRS);
         stonecuttingExtraID(Items.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Items.BLACKSTONE_STAIRS);
         stonecuttingExtraID(Items.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Items.POLISHED_BLACKSTONE_STAIRS);
@@ -72,62 +75,65 @@ public class BVRecipeProvider extends RecipeProvider {
         stonecuttingExtraID(Items.POLISHED_BLACKSTONE_BRICK_WALL, 1, Items.BLACKSTONE_WALL);
         stonecuttingExtraID(Items.POLISHED_BLACKSTONE_BRICK_WALL, 1, Items.POLISHED_BLACKSTONE_WALL);
 
-        all(BVBlocks.Basalt_Stairs.get().asItem(), BVBlocks.Basalt_Slab.get().asItem(), BVBlocks.Basalt_Wall.get().asItem(), Items.BASALT, true);
-        stair(BVBlocks.Polished_Basalt_Stairs.get().asItem(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Stairs.get().asItem());
-        slab(BVBlocks.Polished_Basalt_Slab.get().asItem(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Slab.get().asItem());
-        wall(BVBlocks.Polished_Basalt_Wall.get().asItem(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Wall.get().asItem());
+        all(BVBlocks.Basalt_Stairs.get(), BVBlocks.Basalt_Slab.get(), BVBlocks.Basalt_Wall.get(), Items.BASALT, true);
+        stair(BVBlocks.Polished_Basalt_Stairs.get(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Stairs.get());
+        slab(BVBlocks.Polished_Basalt_Slab.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.Basalt_Slab.get());
+        wall(BVBlocks.Polished_Basalt_Wall.get(), Items.POLISHED_BASALT, Items.BASALT, BVBlocks.Basalt_Wall.get());
 
-        stairSlab(BVBlocks.Oak_Log_Stairs.get().asItem(), BVBlocks.Oak_Log_Slab.get().asItem(), Items.OAK_LOG, false);
-        stairSlab(BVBlocks.Spruce_Log_Stairs.get().asItem(), BVBlocks.Spruce_Log_Slab.get().asItem(), Items.SPRUCE_LOG, false);
-        stairSlab(BVBlocks.Birch_Log_Stairs.get().asItem(), BVBlocks.Birch_Log_Slab.get().asItem(), Items.BIRCH_LOG, false);
-        stairSlab(BVBlocks.Jungle_Log_Stairs.get().asItem(), BVBlocks.Jungle_Log_Slab.get().asItem(), Items.JUNGLE_LOG, false);
-        stairSlab(BVBlocks.Acacia_Log_Stairs.get().asItem(), BVBlocks.Acacia_Log_Slab.get().asItem(), Items.ACACIA_LOG, false);
-        stairSlab(BVBlocks.Dark_Oak_Log_Stairs.get().asItem(), BVBlocks.Dark_Oak_Log_Slab.get().asItem(), Items.DARK_OAK_LOG, false);
-        stairSlab(BVBlocks.Stripped_Oak_Log_Stairs.get().asItem(), BVBlocks.Stripped_Oak_Log_Slab.get().asItem(), Items.STRIPPED_OAK_LOG, false);
-        stairSlab(BVBlocks.Stripped_Spruce_Log_Stairs.get().asItem(), BVBlocks.Stripped_Spruce_Log_Slab.get().asItem(), Items.STRIPPED_SPRUCE_LOG, false);
-        stairSlab(BVBlocks.Stripped_Birch_Log_Stairs.get().asItem(), BVBlocks.Stripped_Birch_Log_Slab.get().asItem(), Items.STRIPPED_BIRCH_LOG, false);
-        stairSlab(BVBlocks.Stripped_Jungle_Log_Stairs.get().asItem(), BVBlocks.Stripped_Jungle_Log_Slab.get().asItem(), Items.STRIPPED_JUNGLE_LOG, false);
-        stairSlab(BVBlocks.Stripped_Acacia_Log_Stairs.get().asItem(), BVBlocks.Stripped_Acacia_Log_Slab.get().asItem(), Items.STRIPPED_ACACIA_LOG, false);
-        stairSlab(BVBlocks.Stripped_Dark_Oak_Log_Stairs.get().asItem(), BVBlocks.Stripped_Dark_Oak_Log_Slab.get().asItem(), Items.STRIPPED_DARK_OAK_LOG, false);
-        stairSlab(BVBlocks.Crimson_Stem_Stairs.get().asItem(), BVBlocks.Crimson_Stem_Slab.get().asItem(), Items.CRIMSON_STEM, false);
-        stairSlab(BVBlocks.Warped_Stem_Stairs.get().asItem(), BVBlocks.Warped_Stem_Slab.get().asItem(), Items.WARPED_STEM, false);
-        stairSlab(BVBlocks.Stripped_Crimson_Stem_Stairs.get().asItem(), BVBlocks.Stripped_Crimson_Stem_Slab.get().asItem(), Items.STRIPPED_CRIMSON_STEM, false);
-        stairSlab(BVBlocks.Stripped_Warped_Stem_Stairs.get().asItem(), BVBlocks.Stripped_Warped_Stem_Slab.get().asItem(), Items.STRIPPED_WARPED_STEM, false);
+        stairSlab(BVBlocks.Oak_Log_Stairs.get(), BVBlocks.Oak_Log_Slab.get(), Items.OAK_LOG, false);
+        stairSlab(BVBlocks.Spruce_Log_Stairs.get(), BVBlocks.Spruce_Log_Slab.get(), Items.SPRUCE_LOG, false);
+        stairSlab(BVBlocks.Birch_Log_Stairs.get(), BVBlocks.Birch_Log_Slab.get(), Items.BIRCH_LOG, false);
+        stairSlab(BVBlocks.Jungle_Log_Stairs.get(), BVBlocks.Jungle_Log_Slab.get(), Items.JUNGLE_LOG, false);
+        stairSlab(BVBlocks.Acacia_Log_Stairs.get(), BVBlocks.Acacia_Log_Slab.get(), Items.ACACIA_LOG, false);
+        stairSlab(BVBlocks.Dark_Oak_Log_Stairs.get(), BVBlocks.Dark_Oak_Log_Slab.get(), Items.DARK_OAK_LOG, false);
+        stairSlab(BVBlocks.Stripped_Oak_Log_Stairs.get(), BVBlocks.Stripped_Oak_Log_Slab.get(), Items.STRIPPED_OAK_LOG, false);
+        stairSlab(BVBlocks.Stripped_Spruce_Log_Stairs.get(), BVBlocks.Stripped_Spruce_Log_Slab.get(), Items.STRIPPED_SPRUCE_LOG, false);
+        stairSlab(BVBlocks.Stripped_Birch_Log_Stairs.get(), BVBlocks.Stripped_Birch_Log_Slab.get(), Items.STRIPPED_BIRCH_LOG, false);
+        stairSlab(BVBlocks.Stripped_Jungle_Log_Stairs.get(), BVBlocks.Stripped_Jungle_Log_Slab.get(), Items.STRIPPED_JUNGLE_LOG, false);
+        stairSlab(BVBlocks.Stripped_Acacia_Log_Stairs.get(), BVBlocks.Stripped_Acacia_Log_Slab.get(), Items.STRIPPED_ACACIA_LOG, false);
+        stairSlab(BVBlocks.Stripped_Dark_Oak_Log_Stairs.get(), BVBlocks.Stripped_Dark_Oak_Log_Slab.get(), Items.STRIPPED_DARK_OAK_LOG, false);
+        stairSlab(BVBlocks.Crimson_Stem_Stairs.get(), BVBlocks.Crimson_Stem_Slab.get(), Items.CRIMSON_STEM, false);
+        stairSlab(BVBlocks.Warped_Stem_Stairs.get(), BVBlocks.Warped_Stem_Slab.get(), Items.WARPED_STEM, false);
+        stairSlab(BVBlocks.Stripped_Crimson_Stem_Stairs.get(), BVBlocks.Stripped_Crimson_Stem_Slab.get(), Items.STRIPPED_CRIMSON_STEM, false);
+        stairSlab(BVBlocks.Stripped_Warped_Stem_Stairs.get(), BVBlocks.Stripped_Warped_Stem_Slab.get(), Items.STRIPPED_WARPED_STEM, false);
 
-        recipeWoods(BVBlocks.Oak_Wood_Stairs.get().asItem(), BVBlocks.Oak_Wood_Slab.get().asItem(), BVBlocks.Oak_Wood_Wall.get().asItem(), Items.OAK_WOOD, Items.OAK_LOG);
-        recipeWoods(BVBlocks.Spruce_Wood_Stairs.get().asItem(), BVBlocks.Spruce_Wood_Slab.get().asItem(), BVBlocks.Spruce_Wood_Wall.get().asItem(), Items.SPRUCE_WOOD, Items.SPRUCE_LOG);
-        recipeWoods(BVBlocks.Birch_Wood_Stairs.get().asItem(), BVBlocks.Birch_Wood_Slab.get().asItem(), BVBlocks.Birch_Wood_Wall.get().asItem(), Items.BIRCH_WOOD, Items.BIRCH_LOG);
-        recipeWoods(BVBlocks.Jungle_Wood_Stairs.get().asItem(), BVBlocks.Jungle_Wood_Slab.get().asItem(), BVBlocks.Jungle_Wood_Wall.get().asItem(), Items.JUNGLE_WOOD, Items.JUNGLE_LOG);
-        recipeWoods(BVBlocks.Acacia_Wood_Stairs.get().asItem(), BVBlocks.Acacia_Wood_Slab.get().asItem(), BVBlocks.Acacia_Wood_Wall.get().asItem(), Items.ACACIA_WOOD, Items.ACACIA_LOG);
-        recipeWoods(BVBlocks.Dark_Oak_Wood_Stairs.get().asItem(), BVBlocks.Dark_Oak_Wood_Slab.get().asItem(), BVBlocks.Dark_Oak_Wood_Wall.get().asItem(), Items.DARK_OAK_WOOD, Items.DARK_OAK_LOG);
-        recipeWoods(BVBlocks.Crimson_Hyphae_Stairs.get().asItem(), BVBlocks.Crimson_Hyphae_Slab.get().asItem(), BVBlocks.Crimson_Hyphae_Wall.get().asItem(), Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM);
-        recipeWoods(BVBlocks.Warped_Hyphae_Stairs.get().asItem(), BVBlocks.Warped_Hyphae_Slab.get().asItem(), BVBlocks.Warped_Hyphae_Wall.get().asItem(), Items.WARPED_HYPHAE, Items.WARPED_STEM);
-        recipeWoods(BVBlocks.Stripped_Oak_Wood_Stairs.get().asItem(), BVBlocks.Stripped_Oak_Wood_Slab.get().asItem(), BVBlocks.Stripped_Oak_Wood_Wall.get().asItem(), Items.STRIPPED_OAK_WOOD, Items.STRIPPED_OAK_LOG);
-        recipeWoods(BVBlocks.Stripped_Spruce_Wood_Stairs.get().asItem(), BVBlocks.Stripped_Spruce_Wood_Slab.get().asItem(), BVBlocks.Stripped_Spruce_Wood_Wall.get().asItem(), Items.STRIPPED_SPRUCE_WOOD, Items.STRIPPED_SPRUCE_LOG);
-        recipeWoods(BVBlocks.Stripped_Birch_Wood_Stairs.get().asItem(), BVBlocks.Stripped_Birch_Wood_Slab.get().asItem(), BVBlocks.Stripped_Birch_Wood_Wall.get().asItem(), Items.STRIPPED_BIRCH_WOOD, Items.STRIPPED_BIRCH_LOG);
-        recipeWoods(BVBlocks.Stripped_Jungle_Wood_Stairs.get().asItem(), BVBlocks.Stripped_Jungle_Wood_Slab.get().asItem(), BVBlocks.Stripped_Jungle_Wood_Wall.get().asItem(), Items.STRIPPED_JUNGLE_WOOD, Items.STRIPPED_JUNGLE_LOG);
-        recipeWoods(BVBlocks.Stripped_Acacia_Wood_Stairs.get().asItem(), BVBlocks.Stripped_Acacia_Wood_Slab.get().asItem(), BVBlocks.Stripped_Acacia_Wood_Wall.get().asItem(), Items.STRIPPED_ACACIA_WOOD, Items.STRIPPED_ACACIA_LOG);
-        recipeWoods(BVBlocks.Stripped_Dark_Oak_Wood_Stairs.get().asItem(), BVBlocks.Stripped_Dark_Oak_Wood_Slab.get().asItem(), BVBlocks.Stripped_Dark_Oak_Wood_Wall.get().asItem(), Items.STRIPPED_DARK_OAK_WOOD, Items.STRIPPED_DARK_OAK_LOG);
-        recipeWoods(BVBlocks.Stripped_Crimson_Hyphae_Stairs.get().asItem(), BVBlocks.Stripped_Crimson_Hyphae_Slab.get().asItem(), BVBlocks.Stripped_Crimson_Hyphae_Wall.get().asItem(), Items.STRIPPED_CRIMSON_HYPHAE, Items.STRIPPED_CRIMSON_STEM);
-        recipeWoods(BVBlocks.Stripped_Warped_Hyphae_Stairs.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Slab.get().asItem(), BVBlocks.Stripped_Warped_Hyphae_Wall.get().asItem(), Items.STRIPPED_WARPED_HYPHAE, Items.STRIPPED_WARPED_STEM);
+        recipeWoods(BVBlocks.Oak_Wood_Stairs.get(), BVBlocks.Oak_Wood_Slab.get(), BVBlocks.Oak_Wood_Wall.get(), Items.OAK_WOOD, Items.OAK_LOG);
+        recipeWoods(BVBlocks.Spruce_Wood_Stairs.get(), BVBlocks.Spruce_Wood_Slab.get(), BVBlocks.Spruce_Wood_Wall.get(), Items.SPRUCE_WOOD, Items.SPRUCE_LOG);
+        recipeWoods(BVBlocks.Birch_Wood_Stairs.get(), BVBlocks.Birch_Wood_Slab.get(), BVBlocks.Birch_Wood_Wall.get(), Items.BIRCH_WOOD, Items.BIRCH_LOG);
+        recipeWoods(BVBlocks.Jungle_Wood_Stairs.get(), BVBlocks.Jungle_Wood_Slab.get(), BVBlocks.Jungle_Wood_Wall.get(), Items.JUNGLE_WOOD, Items.JUNGLE_LOG);
+        recipeWoods(BVBlocks.Acacia_Wood_Stairs.get(), BVBlocks.Acacia_Wood_Slab.get(), BVBlocks.Acacia_Wood_Wall.get(), Items.ACACIA_WOOD, Items.ACACIA_LOG);
+        recipeWoods(BVBlocks.Dark_Oak_Wood_Stairs.get(), BVBlocks.Dark_Oak_Wood_Slab.get(), BVBlocks.Dark_Oak_Wood_Wall.get(), Items.DARK_OAK_WOOD, Items.DARK_OAK_LOG);
+        recipeWoods(BVBlocks.Crimson_Hyphae_Stairs.get(), BVBlocks.Crimson_Hyphae_Slab.get(), BVBlocks.Crimson_Hyphae_Wall.get(), Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM);
+        recipeWoods(BVBlocks.Warped_Hyphae_Stairs.get(), BVBlocks.Warped_Hyphae_Slab.get(), BVBlocks.Warped_Hyphae_Wall.get(), Items.WARPED_HYPHAE, Items.WARPED_STEM);
+        recipeWoods(BVBlocks.Stripped_Oak_Wood_Stairs.get(), BVBlocks.Stripped_Oak_Wood_Slab.get(), BVBlocks.Stripped_Oak_Wood_Wall.get(), Items.STRIPPED_OAK_WOOD, Items.STRIPPED_OAK_LOG);
+        recipeWoods(BVBlocks.Stripped_Spruce_Wood_Stairs.get(), BVBlocks.Stripped_Spruce_Wood_Slab.get(), BVBlocks.Stripped_Spruce_Wood_Wall.get(), Items.STRIPPED_SPRUCE_WOOD, Items.STRIPPED_SPRUCE_LOG);
+        recipeWoods(BVBlocks.Stripped_Birch_Wood_Stairs.get(), BVBlocks.Stripped_Birch_Wood_Slab.get(), BVBlocks.Stripped_Birch_Wood_Wall.get(), Items.STRIPPED_BIRCH_WOOD, Items.STRIPPED_BIRCH_LOG);
+        recipeWoods(BVBlocks.Stripped_Jungle_Wood_Stairs.get(), BVBlocks.Stripped_Jungle_Wood_Slab.get(), BVBlocks.Stripped_Jungle_Wood_Wall.get(), Items.STRIPPED_JUNGLE_WOOD, Items.STRIPPED_JUNGLE_LOG);
+        recipeWoods(BVBlocks.Stripped_Acacia_Wood_Stairs.get(), BVBlocks.Stripped_Acacia_Wood_Slab.get(), BVBlocks.Stripped_Acacia_Wood_Wall.get(), Items.STRIPPED_ACACIA_WOOD, Items.STRIPPED_ACACIA_LOG);
+        recipeWoods(BVBlocks.Stripped_Dark_Oak_Wood_Stairs.get(), BVBlocks.Stripped_Dark_Oak_Wood_Slab.get(), BVBlocks.Stripped_Dark_Oak_Wood_Wall.get(), Items.STRIPPED_DARK_OAK_WOOD, Items.STRIPPED_DARK_OAK_LOG);
+        recipeWoods(BVBlocks.Stripped_Crimson_Hyphae_Stairs.get(), BVBlocks.Stripped_Crimson_Hyphae_Slab.get(), BVBlocks.Stripped_Crimson_Hyphae_Wall.get(), Items.STRIPPED_CRIMSON_HYPHAE, Items.STRIPPED_CRIMSON_STEM);
+        recipeWoods(BVBlocks.Stripped_Warped_Hyphae_Stairs.get(), BVBlocks.Stripped_Warped_Hyphae_Slab.get(), BVBlocks.Stripped_Warped_Hyphae_Wall.get(), Items.STRIPPED_WARPED_HYPHAE, Items.STRIPPED_WARPED_STEM);
 
-        all(BVBlocks.Calcite_Stairs.get().asItem(), BVBlocks.Calcite_Slab.get().asItem(), BVBlocks.Calcite_Wall.get().asItem(), Items.CALCITE, true);
-        all(BVBlocks.Smooth_Basalt_Stairs.get().asItem(), BVBlocks.Smooth_Basalt_Slab.get().asItem(), BVBlocks.Smooth_Basalt_Wall.get().asItem(), Items.SMOOTH_BASALT, true);
-        smelting(BVBlocks.Smooth_Basalt_Stairs.get().asItem(), BVBlocks.Basalt_Stairs.get().asItem());
-        smelting(BVBlocks.Smooth_Basalt_Slab.get().asItem(), BVBlocks.Basalt_Slab.get().asItem());
-        smelting(BVBlocks.Smooth_Basalt_Wall.get().asItem(), BVBlocks.Basalt_Wall.get().asItem());
-        all(BVBlocks.Tuff_Stairs.get().asItem(), BVBlocks.Tuff_Slab.get().asItem(), BVBlocks.Tuff_Wall.get().asItem(), Items.TUFF, true);
+        all(BVBlocks.Calcite_Stairs.get(), BVBlocks.Calcite_Slab.get(), BVBlocks.Calcite_Wall.get(), Items.CALCITE, true);
+        all(BVBlocks.Smooth_Basalt_Stairs.get(), BVBlocks.Smooth_Basalt_Slab.get(), BVBlocks.Smooth_Basalt_Wall.get(), Items.SMOOTH_BASALT, true);
+        smelting(BVBlocks.Smooth_Basalt_Stairs.get(), BVBlocks.Basalt_Stairs.get());
+        smelting(BVBlocks.Smooth_Basalt_Slab.get(), BVBlocks.Basalt_Slab.get());
+        smelting(BVBlocks.Smooth_Basalt_Wall.get(), BVBlocks.Basalt_Wall.get());
+        all(BVBlocks.Tuff_Stairs.get(), BVBlocks.Tuff_Slab.get(), BVBlocks.Tuff_Wall.get(), Items.TUFF, true);
 
-        all(BVBlocks.Deepslate_Stairs.get().asItem(), BVBlocks.Deepslate_Slab.get().asItem(), BVBlocks.Deepslate_Wall.get().asItem(), Items.DEEPSLATE, true);
-        all(BVBlocks.Cracked_Deepslate_Brick_Stairs.get().asItem(), BVBlocks.Cracked_Deepslate_Brick_Slab.get().asItem(), BVBlocks.Cracked_Deepslate_Brick_Wall.get().asItem(), Items.CRACKED_DEEPSLATE_BRICKS, true);
-        all(BVBlocks.Cracked_Deepslate_Tile_Stairs.get().asItem(), BVBlocks.Cracked_Deepslate_Tile_Slab.get().asItem(), BVBlocks.Cracked_Deepslate_Tile_Wall.get().asItem(), Items.CRACKED_DEEPSLATE_TILES, true);
+        all(BVBlocks.Deepslate_Stairs.get(), BVBlocks.Deepslate_Slab.get(), BVBlocks.Deepslate_Wall.get(), Items.DEEPSLATE, true);
+        all(BVBlocks.Cracked_Deepslate_Brick_Stairs.get(), BVBlocks.Cracked_Deepslate_Brick_Slab.get(), BVBlocks.Cracked_Deepslate_Brick_Wall.get(), Items.CRACKED_DEEPSLATE_BRICKS, true);
+        all(BVBlocks.Cracked_Deepslate_Tile_Stairs.get(), BVBlocks.Cracked_Deepslate_Tile_Slab.get(), BVBlocks.Cracked_Deepslate_Tile_Wall.get(), Items.CRACKED_DEEPSLATE_TILES, true);
 
-        fenceGate(BVBlocks.Nether_Brick_Fence_Gate.get().asItem(), Items.NETHER_BRICKS);
-        all(BVBlocks.Cracked_Nether_Brick_Stairs.get().asItem(), BVBlocks.Cracked_Nether_Brick_Slab.get().asItem(), BVBlocks.Cracked_Nether_Brick_Wall.get().asItem(), Items.CRACKED_NETHER_BRICKS, true);
+        netherFenceGate(BVBlocks.Nether_Brick_Fence_Gate.get(), Items.NETHER_BRICKS);
+        all(BVBlocks.Cracked_Nether_Brick_Stairs.get(), BVBlocks.Cracked_Nether_Brick_Slab.get(), BVBlocks.Cracked_Nether_Brick_Wall.get(), Items.CRACKED_NETHER_BRICKS, true);
         netherFence(BVBlocks.Cracked_Nether_Brick_Fence.get(), Items.CRACKED_NETHER_BRICKS);
         netherFenceGate(BVBlocks.Cracked_Nether_Brick_Fence_Gate.get(), Items.CRACKED_NETHER_BRICKS);
         netherFence(BVBlocks.Red_Nether_Brick_Fence.get(), Items.RED_NETHER_BRICKS);
         netherFenceGate(BVBlocks.Red_Nether_Brick_Fence_Gate.get(), Items.RED_NETHER_BRICKS);
+
+        all(BVBlocks.Obsidian_Stairs.get(), BVBlocks.Obsidian_Slab.get(), BVBlocks.Obsidian_Wall.get(), Blocks.OBSIDIAN, false);
+        all(BVBlocks.Crying_Obsidian_Stairs.get(), BVBlocks.Crying_Obsidian_Slab.get(), BVBlocks.Crying_Obsidian_Wall.get(), Blocks.CRYING_OBSIDIAN, false);
 
         {
             ShapedRecipeBuilder.shaped(Items.DROPPER, 1)
@@ -210,41 +216,40 @@ public class BVRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(fenceGate).define('#', Items.NETHER_BRICK).define('W', material).pattern("#W#").pattern("#W#").unlockedBy(getHasName(material), has(material)).save(consumer);
     }
 
-    protected void stonecutting(ItemLike result, int amount, ItemLike material) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(material), result, amount).unlockedBy(getHasName(material), has(material)).save(consumer, getStonecuttingRecipeName(result));}
-    protected void stonecuttingExtraID(ItemLike result, int amount, ItemLike material) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(material), result, amount).unlockedBy(getHasName(material), has(material)).save(consumer, getStonecuttingConversionRecipeName(result, material));}
+    protected void stonecutting(ItemLike result, int amount, ItemLike material) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(material), result, amount).unlockedBy(getHasName(material), has(material)).save(consumer, getStonecuttingRecipeID(result));}
+    protected void stonecuttingExtraID(ItemLike result, int amount, ItemLike material) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(material), result, amount).unlockedBy(getHasName(material), has(material)).save(consumer, getConversionStonecuttingRecipeID(result, material));}
 
 
 
 
-    private void all(Item stair, Item slab, Item wall, Item material, boolean hasStonecutting){
+    protected void all(StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){
         stair(stair, material, hasStonecutting);
         slab(slab, material, hasStonecutting);
         wall(wall, material, hasStonecutting);
     }
-    private void stairSlab(Item stair, Item slab, Item material, boolean hasStonecutting){
+    protected void stairSlab(StairBlock stair, SlabBlock slab, Item material, boolean hasStonecutting){
         stair(stair, material, hasStonecutting);
         slab(slab, material, hasStonecutting);
     }
 
-    protected void wallExtraID(Item wall, Item material, boolean hasStonecutting) {
+    protected void wallExtraID(ItemLike wall, ItemLike material, boolean hasStonecutting) {
         wallBuilder(wall, Ingredient.of(material)).unlockedBy(getHasName(material), has(material)).save(consumer, recipeID(getConversionRecipeName(wall, material)));
         if(hasStonecutting) {stonecuttingExtraID(wall, 1, material);}
     }
 
-    protected void smelting(Item result, Item ingredient) {
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, 0.1F, 200).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, recipeID(getSmeltingRecipeName(result)));
+    protected void smelting(ItemLike result, ItemLike ingredient) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, 0.1F, 200).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSmeltingRecipeID(result));
     }
-    private void recipeWoods(Item stairs, Item slab, Item wall, Item material, Item altMaterial){
+    protected void recipeWoods(StairBlock stairs, SlabBlock slab, WallBlock wall, ItemLike material, ItemLike altMaterial){
         stair(stairs, material, false);
         slab(slab, material, false);
         wall(wall, material, false);
         wallExtraID(wall, altMaterial, false);
     }
 
-    private static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.ModID, getItemName(item));}
-    private static ResourceLocation recipeID(String path) {return new ResourceLocation(BlockVariants.ModID, path);}
-    private static ResourceLocation getStonecuttingRecipeName(ItemLike item) {return new ResourceLocation(BlockVariants.ModID, "stonecutting/" + getItemName(item));}
-    private static ResourceLocation getStonecuttingConversionRecipeName(ItemLike result, ItemLike material) {return new ResourceLocation(BlockVariants.ModID, "stonecutting/" + getConversionRecipeName(result, material));}
-
-    protected static String getSmeltingRecipeName(ItemLike item) {return "smelting/" + getItemName(item);}
+    protected static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.ModID, getItemName(item));}
+    protected static ResourceLocation recipeID(String path) {return new ResourceLocation(BlockVariants.ModID, path);}
+    protected static ResourceLocation getStonecuttingRecipeID(ItemLike item) {return new ResourceLocation(BlockVariants.ModID, "stonecutting/" + getItemName(item));}
+    protected static ResourceLocation getConversionStonecuttingRecipeID(ItemLike result, ItemLike material) {return new ResourceLocation(BlockVariants.ModID, "stonecutting/" + getConversionRecipeName(result, material));}
+    protected static ResourceLocation getSmeltingRecipeID(ItemLike item) {return new ResourceLocation(BlockVariants.ModID, "smelting/" + getItemName(item));}
 }

@@ -1,4 +1,4 @@
-package com.barion.block_variants.blocks;
+package com.barion.block_variants.block;
 
 /*
 import net.minecraft.core.BlockPos;

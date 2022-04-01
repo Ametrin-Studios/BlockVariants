@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "block_variants:obsidian_stairs",
+    "block_variants:obsidian_slab",
+    "block_variants:obsidian_wall",
+    "block_variants:crying_obsidian_stairs",
+    "block_variants:crying_obsidian_slab",
+    "block_variants:crying_obsidian_wall"
+  ]
+}

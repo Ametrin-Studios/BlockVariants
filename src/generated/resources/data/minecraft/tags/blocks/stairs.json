@@ -38,6 +38,8 @@
     "block_variants:deepslate_stairs",
     "block_variants:cracked_deepslate_brick_stairs",
     "block_variants:cracked_deepslate_tile_stairs",
-    "block_variants:cracked_deepslate_tile_stairs"
+    "block_variants:cracked_nether_brick_stairs",
+    "block_variants:obsidian_stairs",
+    "block_variants:crying_obsidian_stairs"
   ]
 }
