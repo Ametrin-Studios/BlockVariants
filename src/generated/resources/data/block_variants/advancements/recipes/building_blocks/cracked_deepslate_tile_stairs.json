@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_item": {
+    "has_cracked_deepslate_tiles": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -27,7 +27,7 @@
   },
   "requirements": [
     [
-      "has_item",
+      "has_cracked_deepslate_tiles",
       "has_the_recipe"
     ]
   ]
