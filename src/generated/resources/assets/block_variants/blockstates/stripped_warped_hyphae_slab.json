@@ -7,7 +7,7 @@
       "model": "block_variants:block/stripped_warped_hyphae_slab"
     },
     "type=double": {
-      "model": "minecraft:block/stripped_warped_stem"
+      "model": "minecraft:block/stripped_warped_hyphae"
     }
   }
 }

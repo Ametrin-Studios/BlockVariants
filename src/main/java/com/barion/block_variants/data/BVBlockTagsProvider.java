@@ -12,9 +12,9 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class BVBlockTagger extends BlockTagsProvider {
-    public BVBlockTagger(DataGenerator generator, ExistingFileHelper fileHelper){
-        super(generator, BlockVariants.Mod_ID, fileHelper);
+public class BVBlockTagsProvider extends BlockTagsProvider {
+    public BVBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
+        super(generator, BlockVariants.ModID, fileHelper);
     }
 
     @Override

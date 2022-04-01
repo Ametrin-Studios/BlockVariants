@@ -11,9 +11,9 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 
-public class BVItemTagger extends ItemTagsProvider {
-    public BVItemTagger(DataGenerator generator, BlockTagsProvider provider, ExistingFileHelper fileHelper) {
-        super(generator, provider, BlockVariants.Mod_ID, fileHelper);
+public class BVItemTagsProvider extends ItemTagsProvider {
+    public BVItemTagsProvider(DataGenerator generator, BlockTagsProvider provider, ExistingFileHelper fileHelper) {
+        super(generator, provider, BlockVariants.ModID, fileHelper);
     }
 
     @Override

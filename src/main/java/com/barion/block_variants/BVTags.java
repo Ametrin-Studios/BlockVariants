@@ -15,7 +15,7 @@ public class BVTags {
             return BlockTags.create(new ResourceLocation("forge", path));
         }
         private static TagKey<Block> mod(String path){
-            return BlockTags.create(new ResourceLocation(BlockVariants.Mod_ID, path));
+            return BlockTags.create(new ResourceLocation(BlockVariants.ModID, path));
         }
     }
 
@@ -27,7 +27,7 @@ public class BVTags {
             return ItemTags.create(new ResourceLocation("forge", path));
         }
         private static TagKey<Item> mod(String path){
-            return ItemTags.create(new ResourceLocation(BlockVariants.Mod_ID, path));
+            return ItemTags.create(new ResourceLocation(BlockVariants.ModID, path));
         }
     }
 }

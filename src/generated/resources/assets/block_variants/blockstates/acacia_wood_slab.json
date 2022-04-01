@@ -7,7 +7,7 @@
       "model": "block_variants:block/acacia_wood_slab"
     },
     "type=double": {
-      "model": "minecraft:block/acacia_log"
+      "model": "minecraft:block/acacia_wood"
     }
   }
 }

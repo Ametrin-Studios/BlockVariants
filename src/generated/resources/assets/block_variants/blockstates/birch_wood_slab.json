@@ -7,7 +7,7 @@
       "model": "block_variants:block/birch_wood_slab"
     },
     "type=double": {
-      "model": "minecraft:block/birch_log"
+      "model": "minecraft:block/birch_wood"
     }
   }
 }

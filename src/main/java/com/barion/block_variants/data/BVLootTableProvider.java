@@ -24,8 +24,8 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class BVLootTables extends LootTableProvider {
-    public BVLootTables(DataGenerator generator) {super(generator);}
+public class BVLootTableProvider extends LootTableProvider {
+    public BVLootTableProvider(DataGenerator generator) {super(generator);}
 
 
     @Override @Nonnull

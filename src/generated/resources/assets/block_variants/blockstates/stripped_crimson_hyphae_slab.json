@@ -7,7 +7,7 @@
       "model": "block_variants:block/stripped_crimson_hyphae_slab"
     },
     "type=double": {
-      "model": "minecraft:block/stripped_crimson_stem"
+      "model": "minecraft:block/stripped_crimson_hyphae"
     }
   }
 }
