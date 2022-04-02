@@ -6,12 +6,14 @@
     ]
   },
   "criteria": {
-    "has_stone": {
+    "has_redstone": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "block_variants:stone_crafting"
+            "items": [
+              "minecraft:redstone"
+            ]
           }
         ]
       }
@@ -25,7 +27,7 @@
   },
   "requirements": [
     [
-      "has_stone",
+      "has_redstone",
       "has_the_recipe"
     ]
   ]
