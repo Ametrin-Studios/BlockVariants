@@ -59,6 +59,7 @@ public class BVRecipeProvider extends RecipeProvider {
         wall(BVBlocks.Dark_Prismarine_Wall.get(), Blocks.DARK_PRISMARINE, true);
         all(BVBlocks.Netherrack_Stairs.get(), BVBlocks.Netherrack_Slab.get(), BVBlocks.Netherrack_Wall.get(), Blocks.NETHERRACK, true);
         all(BVBlocks.End_Stone_Stairs.get(), BVBlocks.End_Stone_Slab.get(), BVBlocks.End_Stone_Wall.get(), Blocks.END_STONE, true);
+        wall(BVBlocks.Purpur_Wall.get(), Blocks.PURPUR_BLOCK);
 
         all(BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, true);
         smelting(BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);

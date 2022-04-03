@@ -71,6 +71,7 @@ public class BVItemModelProvider extends ItemModelProvider {
             }else if(block instanceof WallBlock){
                 if(Objects.equals(name, "quartz_wall")) {texture = blockTexture(name.replace("_wall", "_block_top"));}
                 else if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
+                else if(BVUtil.shouldAppendBlock(name)) {texture = blockTexture(name.replace("wall", "block"));}
                 else if(Objects.equals(name, "smooth_quartz_wall")) {texture = blockTexture(name.replace("_wall", "_block_bottom").replace("smooth_", ""));}
                 else if(BVUtil.isBasalt(name)) {texture = blockTexture(name.replace("wall", "side"));}
                 else {texture = blockTexture(name.replace("_wall", ""));}

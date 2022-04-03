@@ -22,11 +22,11 @@ public class BVBlocks {
 
 
     public static final RegistryObject<WallBlock> Polished_Granite_Wall = register("polished_granite_wall",
-            wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            wall(Blocks.POLISHED_GRANITE), DecorationBlocks);
     public static final RegistryObject<WallBlock> Polished_Diorite_Wall = register("polished_diorite_wall",
-            wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            wall(Blocks.POLISHED_DIORITE), DecorationBlocks);
     public static final RegistryObject<WallBlock> Polished_Andesite_Wall = register("polished_andesite_wall",
-            wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
+            wall(Blocks.POLISHED_ANDESITE), DecorationBlocks);
 
     public static final RegistryObject<WallBlock> Stone_Wall = register("stone_wall",
             wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), DecorationBlocks);
@@ -74,11 +74,13 @@ public class BVBlocks {
             wall(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), DecorationBlocks);
 
     public static final RegistryObject<StairBlock> End_Stone_Stairs = register("end_stone_stairs",
-            stair(Material.STONE, 3, 9, SoundType.STONE, true, Blocks.END_STONE), BuildingBlocks);
+            stair(Blocks.END_STONE), BuildingBlocks);
     public static final RegistryObject<SlabBlock> End_Stone_Slab = register("end_stone_slab",
-            slab(Material.STONE, 3, 9, SoundType.STONE, true), BuildingBlocks);
+            slab(Blocks.END_STONE), BuildingBlocks);
     public static final RegistryObject<WallBlock> End_Stone_Wall = register("end_stone_wall",
-            wall(Material.STONE, 3, 9, SoundType.STONE, true), DecorationBlocks);
+            wall(Blocks.END_STONE), DecorationBlocks);
+    public static final RegistryObject<WallBlock> Purpur_Wall = register("purpur_wall",
+            wall(Blocks.PURPUR_BLOCK), DecorationBlocks);
 
     public static final RegistryObject<StairBlock> Cracked_Polished_Blackstone_Brick_Stairs = register("cracked_polished_blackstone_brick_stairs",
             stair(Material.STONE, 1.5F, 6, SoundType.STONE, true, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS), BuildingBlocks);

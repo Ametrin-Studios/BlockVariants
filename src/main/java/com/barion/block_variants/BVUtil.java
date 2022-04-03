@@ -12,6 +12,7 @@ public class BVUtil {
     public static boolean isBasalt(String name) {return (name.contains("basalt") && !name.contains("smooth"));}
     public static boolean isWood(String name) {return (name.contains("wood") || name.contains("hyphae"));}
     public static boolean isLog(String name) {return (name.contains("log") || name.contains("stem"));}
+    public static boolean shouldAppendBlock(String name) {return (name.contains("purpur"));}
     public static boolean isCutSandstone(String name) {return (name.contains("cut") && name.contains("sandstone"));}
 
     public static void cry(BlockState state, Level level, BlockPos pos, Random random) {

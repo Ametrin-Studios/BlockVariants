@@ -40,9 +40,7 @@ public class BVLootTableProvider extends LootTableProvider {
 
     public static class ModBlockLootTables extends BlockLoot {
         @Override
-        protected void addTables() {
-            dropSelf(BVBlocks.getAllBlocks());
-        }
+        protected void addTables() {dropSelf(BVBlocks.getAllBlocks());}
 
         private <T extends Block> void dropSelf(List<T> Blocks){
             for (Block Block : Blocks) {
