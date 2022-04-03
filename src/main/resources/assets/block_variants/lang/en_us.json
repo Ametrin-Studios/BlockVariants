@@ -20,6 +20,7 @@
   "block.block_variants.basalt_slab": "Basalt Slab",
   "block.block_variants.orange_terracotta_wall": "Orange Terracotta Wall",
   "block.block_variants.end_stone_wall": "End Stone Wall",
+  "block.block_variants.purpur_wall": "Purpur Wall",
   "block.block_variants.gray_terracotta_stairs": "Gray Terracotta Stairs",
   "block.block_variants.yellow_terracotta_wall": "Yellow Terracotta Wall",
   "block.block_variants.magenta_terracotta_wall": "Magenta Terracotta Wall",
@@ -178,5 +179,12 @@
   "block.block_variants.cracked_nether_brick_fence": "Cracked Nether Brick Fence",
   "block.block_variants.cracked_nether_brick_fence_gate": "Cracked Nether Brick Fence Gate",
   "block.block_variants.red_nether_brick_fence": "Red Nether Brick Fence",
-  "block.block_variants.red_nether_brick_fence_gate": "Red Nether Brick Fence Gate"
+  "block.block_variants.red_nether_brick_fence_gate": "Red Nether Brick Fence Gate",
+
+  "block.block_variants.obsidian_stairs" : "Obsidian Stairs",
+  "block.block_variants.obsidian_slab" : "Obsidian Slab",
+  "block.block_variants.obsidian_wall" : "Obsidian Wall",
+  "block.block_variants.crying_obsidian_stairs" : "Crying Obsidian Stairs",
+  "block.block_variants.crying_obsidian_slab" : "Crying Obsidian Slab",
+  "block.block_variants.crying_obsidian_wall" : "Crying Obsidian Wall"
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "block_variants:stonecutting/quartz_bricks_stairs"
+    ]
+  },
+  "criteria": {
+    "has_quartz_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:quartz_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "block_variants:stonecutting/quartz_bricks_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_quartz_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

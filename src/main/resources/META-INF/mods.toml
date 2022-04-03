@@ -6,7 +6,7 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-vari
 [[mods]] #mandatory
 
 modId="block_variants" #mandatory
-version="${file.jarVersion}" #mandatory
+version="2.6" #mandatory
 displayName="Vanilla Block Variants" #mandatory
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants" #optional

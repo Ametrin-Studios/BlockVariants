@@ -30,6 +30,8 @@
     "block_variants:red_terracotta_stairs",
     "block_variants:black_terracotta_stairs",
     "block_variants:cracked_stone_brick_stairs",
-    "block_variants:cracked_nether_brick_stairs"
+    "block_variants:cracked_nether_brick_stairs",
+    "block_variants:obsidian_stairs",
+    "block_variants:crying_obsidian_stairs"
   ]
 }

@@ -7,7 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 
-@Mod.EventBusSubscriber(modid = BlockVariants.Mod_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = BlockVariants.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BVDataGenerators {
     private BVDataGenerators() {}
 
@@ -16,13 +16,13 @@ public class BVDataGenerators {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(new BVBlockStates(generator, fileHelper));
-        generator.addProvider(new BVItemModels(generator, fileHelper));
-        BVBlockTagger blockTags = new BVBlockTagger(generator, fileHelper);
+        generator.addProvider(new BVBlockStateProvider(generator, fileHelper));
+        generator.addProvider(new BVItemModelProvider(generator, fileHelper));
+        BVBlockTagsProvider blockTags = new BVBlockTagsProvider(generator, fileHelper);
         generator.addProvider(blockTags);
-        generator.addProvider(new BVItemTagger(generator, blockTags, fileHelper));
-        generator.addProvider(new BVRecipes(generator));
-        generator.addProvider(new BVLootTables(generator));
+        generator.addProvider(new BVItemTagsProvider(generator, blockTags, fileHelper));
+        generator.addProvider(new BVRecipeProvider(generator));
+        generator.addProvider(new BVLootTableProvider(generator));
     }
 
 }

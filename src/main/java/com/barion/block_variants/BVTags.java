@@ -15,7 +15,7 @@ public class BVTags {
             return BlockTags.createOptional(new ResourceLocation("forge", path));
         }
         private static Tags.IOptionalNamedTag<Block> mod(String path){
-            return BlockTags.createOptional(new ResourceLocation(BlockVariants.Mod_ID, path));
+            return BlockTags.createOptional(new ResourceLocation(BlockVariants.ModID, path));
         }
     }
 
@@ -27,7 +27,7 @@ public class BVTags {
             return ItemTags.createOptional(new ResourceLocation("forge", path));
         }
         private static Tags.IOptionalNamedTag<Item> mod(String path){
-            return ItemTags.createOptional(new ResourceLocation(BlockVariants.Mod_ID, path));
+            return ItemTags.createOptional(new ResourceLocation(BlockVariants.ModID, path));
         }
     }
 }

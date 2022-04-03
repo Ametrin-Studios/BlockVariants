@@ -7,7 +7,7 @@
       "model": "block_variants:block/jungle_wood_slab"
     },
     "type=double": {
-      "model": "minecraft:block/jungle_log"
+      "model": "minecraft:block/jungle_wood"
     }
   }
 }

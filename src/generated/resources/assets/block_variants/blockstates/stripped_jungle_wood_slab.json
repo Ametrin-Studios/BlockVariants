@@ -7,7 +7,7 @@
       "model": "block_variants:block/stripped_jungle_wood_slab"
     },
     "type=double": {
-      "model": "minecraft:block/stripped_jungle_log"
+      "model": "minecraft:block/stripped_jungle_wood"
     }
   }
 }

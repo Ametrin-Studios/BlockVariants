@@ -8,8 +8,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class BVRegister {
-    public static final DeferredRegister<Block> Blocks = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.Mod_ID);
-    public static final DeferredRegister<Item> Items = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.Mod_ID);
+    public static final DeferredRegister<Block> Blocks = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
+    public static final DeferredRegister<Item> Items = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.ModID);
 
     public static void onRegister(){
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
