@@ -8,7 +8,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
@@ -16,11 +16,11 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Supplier;
 
-public class StrippableStairBlock extends StairBlock {
-    private final Supplier<StairBlock> stripResult;
+public class StrippableSlabBlock extends SlabBlock {
+    private final Supplier<SlabBlock> stripResult;
 
-    public StrippableStairBlock(Supplier<BlockState> state, Supplier<StairBlock> stripResult, Properties properties) {
-        super(state, properties);
+    public StrippableSlabBlock(Supplier<SlabBlock> stripResult, Properties properties) {
+        super(properties);
         this.stripResult = stripResult;
     }
 

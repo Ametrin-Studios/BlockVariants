@@ -1,5 +1,8 @@
 package com.barion.block_variants;
 
+import com.barion.block_variants.block.StrippableSlabBlock;
+import com.barion.block_variants.block.StrippableStairBlock;
+import com.barion.block_variants.block.StrippableWallBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -194,113 +197,113 @@ public class BVBlocks {
     public static final RegistryObject<WallBlock> Cracked_Stone_Brick_Wall = register("cracked_stone_brick_wall",
                     wall(Material.STONE, 1.5F, 6F, SoundType.STONE, true), DecorationBlocks);
 
-    public static final RegistryObject<StairBlock> Stripped_Oak_Log_Stairs = regLogStairs("stripped_oak", Blocks.STRIPPED_OAK_LOG);
-    public static final RegistryObject<SlabBlock> Stripped_Oak_Log_Slab = regLogSlab("stripped_oak");
-    public static final RegistryObject<StairBlock> Stripped_Spruce_Log_Stairs = regLogStairs("stripped_spruce", Blocks.STRIPPED_SPRUCE_LOG);
-    public static final RegistryObject<SlabBlock> Stripped_Spruce_Log_Slab = regLogSlab("stripped_spruce");
-    public static final RegistryObject<StairBlock> Stripped_Birch_Log_Stairs = regLogStairs("stripped_birch", Blocks.STRIPPED_BIRCH_LOG);
-    public static final RegistryObject<SlabBlock> Stripped_Birch_Log_Slab = regLogSlab("stripped_birch");
-    public static final RegistryObject<StairBlock> Stripped_Jungle_Log_Stairs = regLogStairs("stripped_jungle", Blocks.STRIPPED_JUNGLE_LOG);
-    public static final RegistryObject<SlabBlock> Stripped_Jungle_Log_Slab = regLogSlab("stripped_jungle");
-    public static final RegistryObject<StairBlock> Stripped_Acacia_Log_Stairs = regLogStairs("stripped_acacia", Blocks.STRIPPED_ACACIA_LOG);
-    public static final RegistryObject<SlabBlock> Stripped_Acacia_Log_Slab = regLogSlab("stripped_acacia");
-    public static final RegistryObject<StairBlock> Stripped_Dark_Oak_Log_Stairs = regLogStairs("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_LOG);
-    public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Log_Slab = regLogSlab("stripped_dark_oak");
+    public static final RegistryObject<StairBlock> Stripped_Oak_Log_Stairs = logStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD); // log sets its material color based of the AXIS
+    public static final RegistryObject<SlabBlock> Stripped_Oak_Log_Slab = logSlab("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Spruce_Log_Stairs = logStairs("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Spruce_Log_Slab = logSlab("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Birch_Log_Stairs = logStairs("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Birch_Log_Slab = logSlab("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Jungle_Log_Stairs = logStairs("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Jungle_Log_Slab = logSlab("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Acacia_Log_Stairs = logStairs("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Acacia_Log_Slab = logSlab("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Dark_Oak_Log_Stairs = logStairs("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Log_Slab = logSlab("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
 
-    public static final RegistryObject<StairBlock> Oak_Log_Stairs = regLogStairs("oak", Blocks.OAK_LOG);
-    public static final RegistryObject<SlabBlock> Oak_Log_Slab = regLogSlab("oak");
-    public static final RegistryObject<StairBlock> Spruce_Log_Stairs = regLogStairs("spruce", Blocks.SPRUCE_LOG);
-    public static final RegistryObject<SlabBlock> Spruce_Log_Slab = regLogSlab("spruce");
-    public static final RegistryObject<StairBlock> Birch_Log_Stairs = regLogStairs("birch", Blocks.BIRCH_LOG);
-    public static final RegistryObject<SlabBlock> Birch_Log_Slab = regLogSlab("birch");
-    public static final RegistryObject<StairBlock> Jungle_Log_Stairs = regLogStairs("jungle", Blocks.JUNGLE_LOG);
-    public static final RegistryObject<SlabBlock> Jungle_Log_Slab = regLogSlab("jungle");
-    public static final RegistryObject<StairBlock> Acacia_Log_Stairs = regLogStairs("acacia", Blocks.ACACIA_LOG);
-    public static final RegistryObject<SlabBlock> Acacia_Log_Slab = regLogSlab("acacia");
-    public static final RegistryObject<StairBlock> Dark_Oak_Log_Stairs = regLogStairs("dark_oak", Blocks.DARK_OAK_LOG);
-    public static final RegistryObject<SlabBlock> Dark_Oak_Log_Slab = regLogSlab("dark_oak");
-
-    public static final RegistryObject<StairBlock> Crimson_Stem_Stairs = register("crimson_stem_stairs",
-                    stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.CRIMSON_STEM), BuildingBlocks.fireResistant());
-    public static final RegistryObject<SlabBlock> Crimson_Stem_Slab = register("crimson_stem_slab",
-                    slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
-    public static final RegistryObject<StairBlock> Warped_Stem_Stairs = register("warped_stem_stairs",
-                    stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.WARPED_STEM), BuildingBlocks.fireResistant());
-    public static final RegistryObject<SlabBlock> Warped_Stem_Slab = register("warped_stem_slab",
-                    slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableStairBlock> Oak_Log_Stairs = logStairs("oak", Blocks.OAK_WOOD, Stripped_Oak_Log_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Oak_Log_Slab = logSlab("oak", Blocks.OAK_WOOD, Stripped_Oak_Log_Slab);
+    public static final RegistryObject<StrippableStairBlock> Spruce_Log_Stairs = logStairs("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Log_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Spruce_Log_Slab = logSlab("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Log_Slab);
+    public static final RegistryObject<StrippableStairBlock> Birch_Log_Stairs = logStairs("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Log_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Birch_Log_Slab = logSlab("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Log_Slab);
+    public static final RegistryObject<StrippableStairBlock> Jungle_Log_Stairs = logStairs("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Log_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Jungle_Log_Slab = logSlab("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Log_Slab);
+    public static final RegistryObject<StrippableStairBlock> Acacia_Log_Stairs = logStairs("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Log_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Acacia_Log_Slab = logSlab("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Log_Slab);
+    public static final RegistryObject<StrippableStairBlock> Dark_Oak_Log_Stairs = logStairs("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Log_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Dark_Oak_Log_Slab = logSlab("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Log_Slab);
 
     public static final RegistryObject<StairBlock> Stripped_Crimson_Stem_Stairs = register("stripped_crimson_stem_stairs",
-                    stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), BuildingBlocks.fireResistant());
+            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Crimson_Stem_Slab = register("stripped_crimson_stem_slab",
-                    slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
+            slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
     public static final RegistryObject<StairBlock> Stripped_Warped_Stem_Stairs = register("stripped_warped_stem_stairs",
-                    stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), BuildingBlocks.fireResistant());
+            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Warped_Stem_Slab = register("stripped_warped_stem_slab",
-                    slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
-
-    public static final RegistryObject<StairBlock> Oak_Wood_Stairs = regWoodStairs("oak", Blocks.OAK_WOOD);
-    public static final RegistryObject<SlabBlock> Oak_Wood_Slab = regWoodSlab("oak");
-    public static final RegistryObject<WallBlock> Oak_Wood_Wall = regWoodWall("oak");
-    public static final RegistryObject<StairBlock> Spruce_Wood_Stairs = regWoodStairs("spruce", Blocks.SPRUCE_WOOD);
-    public static final RegistryObject<SlabBlock> Spruce_Wood_Slab = regWoodSlab("spruce");
-    public static final RegistryObject<WallBlock> Spruce_Wood_Wall = regWoodWall("spruce");
-    public static final RegistryObject<StairBlock> Birch_Wood_Stairs = regWoodStairs("birch", Blocks.BIRCH_WOOD);
-    public static final RegistryObject<SlabBlock> Birch_Wood_Slab = regWoodSlab("birch");
-    public static final RegistryObject<WallBlock> Birch_Wood_Wall = regWoodWall("birch");
-    public static final RegistryObject<StairBlock> Jungle_Wood_Stairs = regWoodStairs("jungle", Blocks.JUNGLE_WOOD);
-    public static final RegistryObject<SlabBlock> Jungle_Wood_Slab = regWoodSlab("jungle");
-    public static final RegistryObject<WallBlock> Jungle_Wood_Wall = regWoodWall("jungle");
-    public static final RegistryObject<StairBlock> Acacia_Wood_Stairs = regWoodStairs("acacia", Blocks.ACACIA_WOOD);
-    public static final RegistryObject<SlabBlock> Acacia_Wood_Slab = regWoodSlab("acacia");
-    public static final RegistryObject<WallBlock> Acacia_Wood_Wall = regWoodWall("acacia");
-    public static final RegistryObject<StairBlock> Dark_Oak_Wood_Stairs = regWoodStairs("dark_oak", Blocks.DARK_OAK_WOOD);
-    public static final RegistryObject<SlabBlock> Dark_Oak_Wood_Slab = regWoodSlab("dark_oak");
-    public static final RegistryObject<WallBlock> Dark_Oak_Wood_Wall = regWoodWall("dark_oak");
-
-    public static final RegistryObject<StairBlock> Stripped_Oak_Wood_Stairs = regWoodStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
-    public static final RegistryObject<SlabBlock> Stripped_Oak_Wood_Slab = regWoodSlab("stripped_oak");
-    public static final RegistryObject<WallBlock> Stripped_Oak_Wood_Wall = regWoodWall("stripped_oak");
-    public static final RegistryObject<StairBlock> Stripped_Spruce_Wood_Stairs = regWoodStairs("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
-    public static final RegistryObject<SlabBlock> Stripped_Spruce_Wood_Slab = regWoodSlab("stripped_spruce");
-    public static final RegistryObject<WallBlock> Stripped_Spruce_Wood_Wall = regWoodWall("stripped_spruce");
-    public static final RegistryObject<StairBlock> Stripped_Birch_Wood_Stairs = regWoodStairs("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
-    public static final RegistryObject<SlabBlock> Stripped_Birch_Wood_Slab = regWoodSlab("stripped_birch");
-    public static final RegistryObject<WallBlock> Stripped_Birch_Wood_Wall = regWoodWall("stripped_birch");
-    public static final RegistryObject<StairBlock> Stripped_Jungle_Wood_Stairs = regWoodStairs("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
-    public static final RegistryObject<SlabBlock> Stripped_Jungle_Wood_Slab = regWoodSlab("stripped_jungle");
-    public static final RegistryObject<WallBlock> Stripped_Jungle_Wood_Wall = regWoodWall("stripped_jungle");
-    public static final RegistryObject<StairBlock> Stripped_Acacia_Wood_Stairs = regWoodStairs("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
-    public static final RegistryObject<SlabBlock> Stripped_Acacia_Wood_Slab = regWoodSlab("stripped_acacia");
-    public static final RegistryObject<WallBlock> Stripped_Acacia_Wood_Wall = regWoodWall("stripped_acacia");
-    public static final RegistryObject<StairBlock> Stripped_Dark_Oak_Wood_Stairs = regWoodStairs("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
-    public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Wood_Slab = regWoodSlab("stripped_dark_oak");
-    public static final RegistryObject<WallBlock> Stripped_Dark_Oak_Wood_Wall = regWoodWall("stripped_dark_oak");
-
-    public static final RegistryObject<StairBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs",
-            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
-    public static final RegistryObject<SlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab",
             slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
-    public static final RegistryObject<WallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall",
-            wall(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
-    public static final RegistryObject<StairBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs",
-            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.WARPED_HYPHAE), BuildingBlocks.fireResistant());
-    public static final RegistryObject<SlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab",
-            slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
-    public static final RegistryObject<WallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall",
-            wall(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
+
+    public static final RegistryObject<StrippableStairBlock> Crimson_Stem_Stairs = register("crimson_stem_stairs",
+                    stair(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Stairs), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableSlabBlock> Crimson_Stem_Slab = register("crimson_stem_slab",
+                    slab(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Slab), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableStairBlock> Warped_Stem_Stairs = register("warped_stem_stairs",
+                    stair(Blocks.WARPED_STEM, Stripped_Warped_Stem_Stairs), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableSlabBlock> Warped_Stem_Slab = register("warped_stem_slab",
+                    slab(Blocks.WARPED_STEM, Stripped_Warped_Stem_Slab), BuildingBlocks.fireResistant());
+
+    public static final RegistryObject<StairBlock> Stripped_Oak_Wood_Stairs = woodStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Oak_Wood_Slab = woodSlab("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
+    public static final RegistryObject<WallBlock> Stripped_Oak_Wood_Wall = woodWall("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Spruce_Wood_Stairs = woodStairs("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Spruce_Wood_Slab = woodSlab("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<WallBlock> Stripped_Spruce_Wood_Wall = woodWall("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Birch_Wood_Stairs = woodStairs("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Birch_Wood_Slab = woodSlab("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<WallBlock> Stripped_Birch_Wood_Wall = woodWall("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Jungle_Wood_Stairs = woodStairs("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Jungle_Wood_Slab = woodSlab("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<WallBlock> Stripped_Jungle_Wood_Wall = woodWall("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Acacia_Wood_Stairs = woodStairs("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Acacia_Wood_Slab = woodSlab("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<WallBlock> Stripped_Acacia_Wood_Wall = woodWall("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<StairBlock> Stripped_Dark_Oak_Wood_Stairs = woodStairs("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Wood_Slab = woodSlab("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<WallBlock> Stripped_Dark_Oak_Wood_Wall = woodWall("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
+
+    public static final RegistryObject<StrippableStairBlock> Oak_Wood_Stairs = woodStairs("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Oak_Wood_Slab = woodSlab("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_Slab);
+    public static final RegistryObject<StrippableWallBlock> Oak_Wood_Wall = woodWall("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_Wall);
+    public static final RegistryObject<StrippableStairBlock> Spruce_Wood_Stairs = woodStairs("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Spruce_Wood_Slab = woodSlab("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_Slab);
+    public static final RegistryObject<StrippableWallBlock> Spruce_Wood_Wall = woodWall("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_Wall);
+    public static final RegistryObject<StrippableStairBlock> Birch_Wood_Stairs = woodStairs("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Birch_Wood_Slab = woodSlab("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_Slab);
+    public static final RegistryObject<StrippableWallBlock> Birch_Wood_Wall = woodWall("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_Wall);
+    public static final RegistryObject<StrippableStairBlock> Jungle_Wood_Stairs = woodStairs("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Jungle_Wood_Slab = woodSlab("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_Slab);
+    public static final RegistryObject<StrippableWallBlock> Jungle_Wood_Wall = woodWall("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_Wall);
+    public static final RegistryObject<StrippableStairBlock> Acacia_Wood_Stairs = woodStairs("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Acacia_Wood_Slab = woodSlab("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_Slab);
+    public static final RegistryObject<StrippableWallBlock> Acacia_Wood_Wall = woodWall("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_Wall);
+    public static final RegistryObject<StrippableStairBlock> Dark_Oak_Wood_Stairs = woodStairs("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_Stairs);
+    public static final RegistryObject<StrippableSlabBlock> Dark_Oak_Wood_Slab = woodSlab("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_Slab);
+    public static final RegistryObject<StrippableWallBlock> Dark_Oak_Wood_Wall = woodWall("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_Wall);
 
     public static final RegistryObject<StairBlock> Stripped_Crimson_Hyphae_Stairs = register("stripped_crimson_hyphae_stairs",
-            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
+            stair(Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Crimson_Hyphae_Slab = register("stripped_crimson_hyphae_slab",
-            slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
+            slab(Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<WallBlock> Stripped_Crimson_Hyphae_Wall = register("stripped_crimson_hyphae_wall",
-            wall(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
+            wall(Blocks.STRIPPED_CRIMSON_HYPHAE), DecorationBlocks.fireResistant());
     public static final RegistryObject<StairBlock> Stripped_Warped_Hyphae_Stairs = register("stripped_warped_hyphae_stairs",
-            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks.fireResistant());
+            stair(Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Warped_Hyphae_Slab = register("stripped_warped_hyphae_slab",
-            slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), BuildingBlocks.fireResistant());
+            slab(Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks.fireResistant());
     public static final RegistryObject<WallBlock> Stripped_Warped_Hyphae_Wall = register("stripped_warped_hyphae_wall",
-            wall(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DecorationBlocks.fireResistant());
+            wall(Blocks.STRIPPED_WARPED_HYPHAE), DecorationBlocks.fireResistant());
+
+    public static final RegistryObject<StrippableStairBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs",
+            stair(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Stairs), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableSlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab",
+            slab(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Slab), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableWallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall",
+            wall(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Wall), DecorationBlocks.fireResistant());
+    public static final RegistryObject<StrippableStairBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs",
+            stair(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Stairs), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableSlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab",
+            slab(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Slab), BuildingBlocks.fireResistant());
+    public static final RegistryObject<StrippableWallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall",
+            wall(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Wall), DecorationBlocks.fireResistant());
 
     public static final RegistryObject<StairBlock> Calcite_Stairs = register("calcite_stairs",
             stair(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true, Blocks.CALCITE), BuildingBlocks);
@@ -374,22 +377,14 @@ public class BVBlocks {
             wall(Blocks.CRYING_OBSIDIAN), DecorationBlocks);
 
 
-    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
-        RegistryObject<T> ret = registerWithoutItem(name, block);
-        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
-        return ret;
-    }
-    private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block){
-        return BlockRegistry.register(name, block);
-    }
+    private static Supplier<Block> block(Block base) {return ()-> new Block(BlockBehaviour.Properties.copy(base));}
 
-    private static Supplier<Block> block(Block base){
-        return ()-> new Block(BlockBehaviour.Properties.copy(base));
-    }
-
-    private static Supplier<StairBlock> stair(Block base) {return ()-> new StairBlock(base::defaultBlockState, StairBlock.Properties.copy(base));}
+    private static Supplier<StairBlock> stair(Block base) {return ()-> new StairBlock(base::defaultBlockState, BlockBehaviour.Properties.copy(base));}
+    private static Supplier<StrippableStairBlock> stair(Block base, Supplier<StairBlock> stripped) {return ()-> new StrippableStairBlock(base::defaultBlockState, stripped, StairBlock.Properties.copy(base));}
     private static Supplier<SlabBlock> slab(Block base) {return ()-> new SlabBlock(SlabBlock.Properties.copy(base));}
+    private static Supplier<StrippableSlabBlock> slab(Block base, Supplier<SlabBlock> stripped) {return ()-> new StrippableSlabBlock(stripped, SlabBlock.Properties.copy(base));}
     private static Supplier<WallBlock> wall(Block base) {return ()-> new WallBlock(WallBlock.Properties.copy(base));}
+    private static Supplier<StrippableWallBlock> wall(Block base, Supplier<WallBlock> stripped) {return ()-> new StrippableWallBlock(stripped, WallBlock.Properties.copy(base));}
     private static Supplier<FenceBlock> fence(Block base){
         return () -> new FenceBlock(FenceBlock.Properties.copy(base));
     }
@@ -434,28 +429,46 @@ public class BVBlocks {
                 wall(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), DecorationBlocks);
     }
 
-    private static RegistryObject<StairBlock> regLogStairs(String type, Block base){
-        return register(type + "_log_stairs",
-                stair(Material.WOOD, 2F, 5F, SoundType.WOOD, false, base), BuildingBlocks);
-    }
-    private static RegistryObject<SlabBlock> regLogSlab(String type){
-        return register(type + "_log_slab",
-                slab(Material.WOOD, 2F, 5F, SoundType.WOOD, false), BuildingBlocks);
+    private static RegistryObject<StrippableStairBlock> logStairs(String type, Block base, Supplier<StairBlock> stripped) {
+        return register(type + "_log_stairs", stair(base, stripped), BuildingBlocks);
     }
 
-    private static RegistryObject<StairBlock> regWoodStairs(String type, Block base){
-        return register(type + "_wood_stairs",
-                        stair(Material.WOOD, 2F, 5F, SoundType.WOOD, false, base), BuildingBlocks);
+    private static RegistryObject<StairBlock> logStairs(String type, Block base) {
+        return register(type + "_log_stairs", stair(base), BuildingBlocks);
     }
-    private static RegistryObject<SlabBlock> regWoodSlab(String type){
-        return register(type + "_wood_slab",
-                        slab(Material.WOOD, 2F, 5F, SoundType.WOOD, false), BuildingBlocks);
+    private static RegistryObject<SlabBlock> logSlab(String type, Block base) {
+        return register(type + "_log_slab", slab(base), BuildingBlocks);
     }
-    private static RegistryObject<WallBlock> regWoodWall(String type){
-        return register(type + "_wood_wall",
-                        wall(Material.WOOD, 2F, 5F, SoundType.WOOD, false), DecorationBlocks);
+    private static RegistryObject<StrippableSlabBlock> logSlab(String type, Block base, Supplier<SlabBlock> stripped) {
+        return register(type + "_log_slab", slab(base, stripped), BuildingBlocks);
     }
 
+    private static RegistryObject<StairBlock> woodStairs(String type, Block base) {
+        return register(type + "_wood_stairs", stair(base), BuildingBlocks);
+    }
+
+    private static RegistryObject<StrippableStairBlock> woodStairs(String type, Block base, Supplier<StairBlock> stripped){
+        return register(type + "_wood_stairs", stair(base, stripped), BuildingBlocks);
+    }
+    private static RegistryObject<SlabBlock> woodSlab(String type, Block base){
+        return register(type + "_wood_slab", slab(base), BuildingBlocks);
+    }
+    private static RegistryObject<StrippableSlabBlock> woodSlab(String type, Block base, Supplier<SlabBlock> stripped){
+        return register(type + "_wood_slab", slab(base, stripped), BuildingBlocks);
+    }
+    private static RegistryObject<WallBlock> woodWall(String type, Block base){
+        return register(type + "_wood_wall", wall(base), DecorationBlocks);
+    }
+    private static RegistryObject<StrippableWallBlock> woodWall(String type, Block base, Supplier<WallBlock> stripped) {
+        return register(type + "_wood_wall", wall(base, stripped), DecorationBlocks);
+    }
+
+    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
+        RegistryObject<T> ret = registerWithoutItem(name, block);
+        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
+        return ret;
+    }
+    private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return BlockRegistry.register(name, block);}
 
     public static List<Block> getAllBlocks() {return BlockRegistry.getEntries().stream().map(RegistryObject::get).toList();}
 }

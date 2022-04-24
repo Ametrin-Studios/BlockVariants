@@ -20,8 +20,8 @@ public class BlockVariants{
     public BlockVariants() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        BVBlocks.ItemRegistry.register(modBus);
         BVBlocks.BlockRegistry.register(modBus);
+        BVBlocks.ItemRegistry.register(modBus);
     }
 
     @Mod.EventBusSubscriber(modid = BlockVariants.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
