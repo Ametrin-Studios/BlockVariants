@@ -18,7 +18,9 @@ public class BVBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    protected void registerStatesAndModels() {blocks(BVBlocks.getAllBlocks());}
+    protected void registerStatesAndModels() {
+        blocks(BVBlocks.getAllBlocks());
+    }
 
     protected  <B extends Block> void blocks(List<B> blocks) {
         for(B block : blocks) {

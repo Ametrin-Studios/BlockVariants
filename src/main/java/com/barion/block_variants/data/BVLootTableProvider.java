@@ -1,7 +1,6 @@
 package com.barion.block_variants.data;
 
 import com.barion.block_variants.BVBlocks;
-import com.barion.block_variants.BVRegister;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
@@ -12,6 +11,7 @@ import net.minecraft.loot.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
 
+import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 public class BVLootTableProvider extends LootTableProvider {
     public BVLootTableProvider(DataGenerator generator) {super(generator);}
 
-    @Override
+    @Override @Nonnull
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> getTables() {
         return ImmutableList.of(Pair.of(BVBlockLootTables::new, LootParameterSets.BLOCK));
     }
@@ -43,9 +43,9 @@ public class BVLootTableProvider extends LootTableProvider {
             }
         }
 
-        @Override
+        @Override @Nonnull
         protected Iterable<Block> getKnownBlocks() {
-            return BVRegister.Blocks.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+            return BVBlocks.BlockRegistry.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
         }
     }
 }
