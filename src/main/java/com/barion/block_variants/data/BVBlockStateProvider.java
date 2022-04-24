@@ -98,10 +98,6 @@ public class BVBlockStateProvider extends BlockStateProvider {
                 buttonBlock((ButtonBlock) block, blockTexture(name.replace("_button", "_planks")));
             }else if(block instanceof PressurePlateBlock){
                 pressurePlateBlock((PressurePlateBlock) block, blockTexture(name.replace("_pressure_plate", "_planks")));
-            }else if(block instanceof TrapDoorBlock){
-                trapdoorBlock((TrapDoorBlock) block, blockTexture(name), true);
-            }else if(block instanceof DoorBlock){
-                doorBlock((DoorBlock) block, blockTexture(name + "_bottom"), blockTexture(name + "_top"));
             }else{
                 simpleBlock(block);
             }

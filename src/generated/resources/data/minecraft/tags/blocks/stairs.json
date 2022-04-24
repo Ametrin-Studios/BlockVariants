@@ -5,7 +5,6 @@
     "block_variants:cut_sandstone_stairs",
     "block_variants:cut_red_sandstone_stairs",
     "block_variants:quartz_bricks_stairs",
-    "block_variants:smooth_stone_stairs",
     "block_variants:chiseled_quartz_block_stairs",
     "block_variants:netherrack_stairs",
     "block_variants:end_stone_stairs",
@@ -40,6 +39,22 @@
     "block_variants:cracked_deepslate_tile_stairs",
     "block_variants:cracked_nether_brick_stairs",
     "block_variants:obsidian_stairs",
-    "block_variants:crying_obsidian_stairs"
+    "block_variants:crying_obsidian_stairs",
+    "block_variants:white_glazed_terracotta_stairs",
+    "block_variants:orange_glazed_terracotta_stairs",
+    "block_variants:magenta_glazed_terracotta_stairs",
+    "block_variants:light_blue_glazed_terracotta_stairs",
+    "block_variants:yellow_glazed_terracotta_stairs",
+    "block_variants:lime_glazed_terracotta_stairs",
+    "block_variants:pink_glazed_terracotta_stairs",
+    "block_variants:gray_glazed_terracotta_stairs",
+    "block_variants:light_gray_glazed_terracotta_stairs",
+    "block_variants:cyan_glazed_terracotta_stairs",
+    "block_variants:purple_glazed_terracotta_stairs",
+    "block_variants:blue_glazed_terracotta_stairs",
+    "block_variants:brown_glazed_terracotta_stairs",
+    "block_variants:green_glazed_terracotta_stairs",
+    "block_variants:red_glazed_terracotta_stairs",
+    "block_variants:black_glazed_terracotta_stairs"
   ]
 }
