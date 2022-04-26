@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "block_variants:green_terracotta_wall"
+  },
+  "result": "block_variants:green_glazed_terracotta_wall",
+  "experience": 0.1,
+  "cookingtime": 200
+}

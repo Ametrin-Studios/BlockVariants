@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "block_variants:smelting/green_glazed_terracotta_wall"
+    ]
+  },
+  "criteria": {
+    "has_green_terracotta_wall": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "block_variants:green_terracotta_wall"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "block_variants:smelting/green_glazed_terracotta_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_green_terracotta_wall",
+      "has_the_recipe"
+    ]
+  ]
+}

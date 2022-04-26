@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "block_variants:smelting/purple_glazed_terracotta_stairs"
+    ]
+  },
+  "criteria": {
+    "has_purple_terracotta_stairs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "block_variants:purple_terracotta_stairs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "block_variants:smelting/purple_glazed_terracotta_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_purple_terracotta_stairs",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "block_variants:lime_glazed_terracotta_wall"
+    ]
+  },
+  "criteria": {
+    "has_lime_glazed_terracotta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:lime_glazed_terracotta"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "block_variants:lime_glazed_terracotta_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lime_glazed_terracotta",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "block_variants:blue_glazed_terracotta_stairs"
+    ]
+  },
+  "criteria": {
+    "has_blue_glazed_terracotta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:blue_glazed_terracotta"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "block_variants:blue_glazed_terracotta_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blue_glazed_terracotta",
+      "has_the_recipe"
+    ]
+  ]
+}
