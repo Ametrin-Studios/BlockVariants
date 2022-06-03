@@ -22,15 +22,6 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
     protected void addTags() {
         handleDefaults(BVBlocks.getAllBlocks());
 
-/*        {tag(BlockTags.FENCES).add(
-                BVBlocks.Cracked_Nether_Brick_Fence.get(),
-                BVBlocks.Red_Nether_Brick_Fence.get());} // Fences
-
-        {tag(BlockTags.FENCE_GATES).add(
-                BVBlocks.Nether_Brick_Fence_Gate.get(),
-                BVBlocks.Cracked_Nether_Brick_Fence_Gate.get(),
-                BVBlocks.Red_Nether_Brick_Fence_Gate.get());} // Fence Gates*/
-
         {tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 BVBlocks.Smooth_Stone_Stairs.get(),
                 BVBlocks.Cut_Sandstone_Stairs.get(),
