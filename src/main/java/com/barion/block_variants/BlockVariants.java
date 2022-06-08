@@ -11,7 +11,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.slf4j.Logger;
 
-
 @Mod(BlockVariants.ModID)
 public class BlockVariants{
     public static final String ModID = "block_variants";
@@ -33,13 +32,13 @@ public class BlockVariants{
             DataGenerator generator = event.getGenerator();
             ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
-            generator.addProvider(new BVBlockStateProvider(generator, fileHelper));
-            generator.addProvider(new BVItemModelProvider(generator, fileHelper));
+            generator.addProvider(true, new BVBlockStateProvider(generator, fileHelper));
+            generator.addProvider(true, new BVItemModelProvider(generator, fileHelper));
             BVBlockTagsProvider blockTags = new BVBlockTagsProvider(generator, fileHelper);
-            generator.addProvider(blockTags);
-            generator.addProvider(new BVItemTagsProvider(generator, blockTags, fileHelper));
-            generator.addProvider(new BVRecipeProvider(generator));
-            generator.addProvider(new BVLootTableProvider(generator));
+            generator.addProvider(true, blockTags);
+            generator.addProvider(true, new BVItemTagsProvider(generator, blockTags, fileHelper));
+            generator.addProvider(true, new BVRecipeProvider(generator));
+            generator.addProvider(true, new BVLootTableProvider(generator));
         }
 
     }

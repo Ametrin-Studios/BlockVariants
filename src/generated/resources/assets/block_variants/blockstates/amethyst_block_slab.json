@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "block_variants:block/amethyst_block_slab_top"
-    },
     "type=bottom": {
       "model": "block_variants:block/amethyst_block_slab"
     },
     "type=double": {
       "model": "minecraft:block/amethyst_block"
+    },
+    "type=top": {
+      "model": "block_variants:block/amethyst_block_slab_top"
     }
   }
 }

@@ -1,11 +1,11 @@
 modLoader="javafml" #mandatory
-loaderVersion="[40,)" #mandatory
+loaderVersion="[41,)" #mandatory
 license="All rights reserved"
 issueTrackerURL="https://github.com/BarionLP/BlockVariants/issues" #optional
 
 [[mods]] #mandatory
     modId="block_variants" #mandatory
-    version="3.3" #mandatory
+    version="4.0" #mandatory
     displayName="Block Variants" #mandatory
     #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
     displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants" #optional
@@ -19,12 +19,12 @@ Provides you tons of blocks that are missing in vanilla like Polished Diorite Wa
 [[dependencies.block_variants]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[40,)" #mandatory
+    versionRange="[41,)" #mandatory
     ordering="NONE"
     side="BOTH"
 [[dependencies.block_variants]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,1.19)"
+    versionRange="[1.19,1.20)"
     ordering="NONE"
     side="BOTH"

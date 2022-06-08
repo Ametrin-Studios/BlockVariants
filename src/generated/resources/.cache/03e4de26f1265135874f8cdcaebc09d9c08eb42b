@@ -1,0 +1,10 @@
+// 1.19	2022-06-08T12:35:47.8453111	Tags for minecraft:item
+4bb0b4af6e2b59a1dc5527dfc5f80b1dd9067afb data/block_variants/tags/items/stone_crafting.json
+76f378f95628fb97c8373f5b2d8d18a5bb72a181 data/forge/tags/items/wooden_wall.json
+74bc1a422e173d897a1855d3558abb454d777ab9 data/minecraft/tags/items/fences.json
+7f2074e89fd38e8e9ca743afc8d2a0919890e331 data/minecraft/tags/items/non_flammable_wood.json
+010645e7e8e4a929a4760e03fa4d46028ac8a092 data/minecraft/tags/items/slabs.json
+3f52edaf7c574999a9c4236e7a3c66008788de24 data/minecraft/tags/items/stairs.json
+dc50efe8d08e984304dcfe3d0e12463212f12a96 data/minecraft/tags/items/walls.json
+9da6149da84d5acb6b8c19c2613f23540fbc48a4 data/minecraft/tags/items/wooden_slabs.json
+ce5190ef005fa744e588459240ba5890770998c9 data/minecraft/tags/items/wooden_stairs.json

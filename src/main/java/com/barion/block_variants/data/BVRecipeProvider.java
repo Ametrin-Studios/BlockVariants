@@ -303,8 +303,6 @@ public class BVRecipeProvider extends RecipeProvider {
     protected void stonecuttingExtraID(ItemLike result, int amount, ItemLike material) {SingleItemRecipeBuilder.stonecutting(Ingredient.of(material), result, amount).unlockedBy(getHasName(material), has(material)).save(consumer, getConversionStonecuttingRecipeID(result, material));}
 
 
-
-
     protected void all(StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){
         stair(stair, material, hasStonecutting);
         slab(slab, material, hasStonecutting);

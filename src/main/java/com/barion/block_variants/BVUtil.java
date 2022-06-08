@@ -1,11 +1,12 @@
 package com.barion.block_variants;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-
-import java.util.Random;
 
 public class BVUtil {
     public static boolean shouldAppendS(String name) {return ((name.contains("brick") && !name.contains("bricks") || (name.contains("tile") && !name.contains("tiles"))));}
@@ -16,7 +17,9 @@ public class BVUtil {
     public static boolean shouldAppendBlock(String name) {return (name.contains("purpur"));}
     public static boolean isCutSandstone(String name) {return (name.contains("cut") && name.contains("sandstone"));}
 
-    public static void cry(BlockState state, Level level, BlockPos pos, Random random) {
+    public static String getBlockName(Block block) {return Registry.BLOCK.getKey(block).getPath();}
+
+    public static void cry(BlockState state, Level level, BlockPos pos, RandomSource random) {
         Blocks.CRYING_OBSIDIAN.animateTick(state, level, pos, random);
     }
 }

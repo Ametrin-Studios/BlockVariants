@@ -1,9 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#W#",
-    "#W#"
-  ],
   "key": {
     "#": {
       "item": "minecraft:nether_brick"
@@ -12,6 +8,10 @@
       "item": "minecraft:red_nether_bricks"
     }
   },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
   "result": {
     "item": "block_variants:red_nether_brick_fence_gate"
   }

@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "block_variants:block/dark_oak_log_slab_top"
-    },
     "type=bottom": {
       "model": "block_variants:block/dark_oak_log_slab"
     },
     "type=double": {
       "model": "minecraft:block/dark_oak_log"
+    },
+    "type=top": {
+      "model": "block_variants:block/dark_oak_log_slab_top"
     }
   }
 }

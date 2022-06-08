@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "block_variants:basalt_slab"
   },
-  "result": "block_variants:polished_basalt_slab",
-  "count": 1
+  "result": "block_variants:polished_basalt_slab"
 }

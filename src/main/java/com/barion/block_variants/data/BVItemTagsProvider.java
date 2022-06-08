@@ -10,7 +10,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-
+@SuppressWarnings("unchecked")
 public class BVItemTagsProvider extends ItemTagsProvider {
     public BVItemTagsProvider(DataGenerator generator, BlockTagsProvider provider, ExistingFileHelper fileHelper) {
         super(generator, provider, BlockVariants.ModID, fileHelper);

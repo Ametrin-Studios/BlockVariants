@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "block_variants:block/cracked_nether_brick_slab_top"
-    },
     "type=bottom": {
       "model": "block_variants:block/cracked_nether_brick_slab"
     },
     "type=double": {
       "model": "minecraft:block/cracked_nether_bricks"
+    },
+    "type=top": {
+      "model": "block_variants:block/cracked_nether_brick_slab_top"
     }
   }
 }

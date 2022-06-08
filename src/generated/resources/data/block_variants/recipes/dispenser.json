@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "block_variants:stone_crafting"
+    },
+    "(": {
+      "item": "minecraft:bow"
+    },
+    "+": {
+      "item": "minecraft:redstone"
+    }
+  },
   "pattern": [
     "###",
     "#(#",
     "#+#"
   ],
-  "key": {
-    "#": {
-      "tag": "block_variants:stone_crafting"
-    },
-    "+": {
-      "item": "minecraft:redstone"
-    },
-    "(": {
-      "item": "minecraft:bow"
-    }
-  },
   "result": {
     "item": "minecraft:dispenser"
   }

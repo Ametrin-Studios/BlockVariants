@@ -12,6 +12,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import java.util.List;
 import java.util.Objects;
 
+import static com.barion.block_variants.BVUtil.getBlockName;
+
 public class BVBlockStateProvider extends BlockStateProvider {
     public BVBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, BlockVariants.ModID, fileHelper);
@@ -24,7 +26,7 @@ public class BVBlockStateProvider extends BlockStateProvider {
 
     protected  <B extends Block> void blocks(List<B> blocks){
         for(B block : blocks) {
-            String name = getName(block);
+            String name = getBlockName(block);
             ResourceLocation texture;
             if(name.contains("wood")) {name = name.replace("wood", "log");}
             if(name.contains("hyphae")) {name = name.replace("hyphae", "stem");}
@@ -46,7 +48,7 @@ public class BVBlockStateProvider extends BlockStateProvider {
                     texture = blockTexture(name.replace("stairs", "top"));
                     stairsBlock((StairBlock) block, blockTexture(name.replace("stairs", "side")), texture, texture);
                     continue;
-                }else if(BVUtil.isLog(getName(block))){
+                }else if(BVUtil.isLog(getBlockName(block))){
                     texture = blockTexture(name.replace("stairs", "top"));
                     stairsBlock((StairBlock) block, blockTexture(name.replace("_stairs", "")), texture, texture);
                     continue;
@@ -62,12 +64,12 @@ public class BVBlockStateProvider extends BlockStateProvider {
                     texture = blockTexture(name.replace("slab", "top"));
                     slabBlock((SlabBlock) block, blockTexture(name.replace("_slab", "")), blockTexture(name.replace("slab", "side")), texture, texture);
                     continue;
-                }else if(BVUtil.isLog(getName(block))) {
+                }else if(BVUtil.isLog(getBlockName(block))) {
                     texture = blockTexture(name.replace("slab", "top"));
                     slabBlock((SlabBlock) block, blockTexture(name.replace("_slab", "")), blockTexture(name.replace("_slab", "")), texture, texture);
                     continue;
-                }else if(BVUtil.isWood(getName(block))) {
-                    slabBlock((SlabBlock) block, blockTexture(getName(block).replace("_slab", "")), blockTexture(name.replace("_slab", "")));
+                }else if(BVUtil.isWood(getBlockName(block))) {
+                    slabBlock((SlabBlock) block, blockTexture(getBlockName(block).replace("_slab", "")), blockTexture(name.replace("_slab", "")));
                     continue;
                 } else {texture = blockTexture(name.replace("_slab", ""));}
                 slabBlock((SlabBlock) block, texture, texture);
@@ -105,5 +107,4 @@ public class BVBlockStateProvider extends BlockStateProvider {
     }
 
     protected ResourceLocation blockTexture(String texture) {return mcLoc("block/" + texture);}
-    protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
 }

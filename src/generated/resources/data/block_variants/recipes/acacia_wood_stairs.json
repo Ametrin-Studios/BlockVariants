@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
   "key": {
     "#": {
       "item": "minecraft:acacia_wood"
     }
   },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
   "result": {
-    "item": "block_variants:acacia_wood_stairs",
-    "count": 4
+    "count": 4,
+    "item": "block_variants:acacia_wood_stairs"
   }
 }

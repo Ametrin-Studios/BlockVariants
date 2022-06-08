@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
-import java.util.Objects;
 
 public class BVBlockTagsProvider extends BlockTagsProvider {
     public BVBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
@@ -354,5 +353,5 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
         }
     }
 
-    protected String getName(Block block) {return Objects.requireNonNull(block.getRegistryName()).getPath();}
+    protected String getName(Block block) {return block.getName().toString();}
 }

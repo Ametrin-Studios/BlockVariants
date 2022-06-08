@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
+  "count": 1,
   "ingredient": {
     "item": "minecraft:smooth_basalt"
   },
-  "result": "block_variants:smooth_basalt_wall",
-  "count": 1
+  "result": "block_variants:smooth_basalt_wall"
 }
