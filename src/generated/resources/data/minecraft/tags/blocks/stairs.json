@@ -3,7 +3,7 @@
     "block_variants:smooth_stone_stairs",
     "block_variants:cut_sandstone_stairs",
     "block_variants:cut_red_sandstone_stairs",
-    "block_variants:quartz_bricks_stairs",
+    "block_variants:quartz_brick_stairs",
     "block_variants:chiseled_quartz_block_stairs",
     "block_variants:netherrack_stairs",
     "block_variants:end_stone_stairs",
@@ -54,6 +54,7 @@
     "block_variants:brown_glazed_terracotta_stairs",
     "block_variants:green_glazed_terracotta_stairs",
     "block_variants:red_glazed_terracotta_stairs",
-    "block_variants:black_glazed_terracotta_stairs"
+    "block_variants:black_glazed_terracotta_stairs",
+    "block_variants:packed_mud_stairs"
   ]
 }

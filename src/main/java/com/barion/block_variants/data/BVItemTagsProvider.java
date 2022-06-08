@@ -24,11 +24,13 @@ public class BVItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
         copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
         copy(BVTags.Blocks.WoodenWalls, BVTags.Items.WoodenWalls);
-        copy(BlockTags.WOODEN_STAIRS, ItemTags.STAIRS);
-        copy(BlockTags.WOODEN_SLABS, ItemTags.SLABS);
         copy(BlockTags.FENCES, ItemTags.FENCES);
 
         copy(BlockTags.NON_FLAMMABLE_WOOD, ItemTags.NON_FLAMMABLE_WOOD);
         tag(BVTags.Items.StoneCrafting).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONE);
+
+        tag(ItemTags.STAIRS).addTag(ItemTags.WOODEN_STAIRS);
+        tag(ItemTags.SLABS).addTag(ItemTags.WOODEN_SLABS);
+        //tag(ItemTags.WALLS).addTag(BVTags.Items.WoodenWalls);
     }
 }

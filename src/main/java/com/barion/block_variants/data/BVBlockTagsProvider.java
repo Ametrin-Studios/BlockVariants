@@ -22,15 +22,15 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
         handleDefaults(BVBlocks.getAllBlocks());
 
         {tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                BVBlocks.Smooth_Stone_Stairs.get(),
-                BVBlocks.Cut_Sandstone_Stairs.get(),
-                BVBlocks.Cut_Red_Sandstone_Stairs.get(),
-                BVBlocks.Quartz_Bricks_Stairs.get(),
-                BVBlocks.Smooth_Stone_Stairs.get(),
-                BVBlocks.Chiseled_Quartz_Block_Stairs.get(),
-                BVBlocks.Netherrack_Stairs.get(),
-                BVBlocks.End_Stone_Stairs.get(),
-                BVBlocks.Cracked_Polished_Blackstone_Brick_Stairs.get(),
+                BVBlocks.SmoothStoneStairs.get(),
+                BVBlocks.CutSandstoneStairs.get(),
+                BVBlocks.CutRedSandstoneStairs.get(),
+                BVBlocks.QuartzBrickStairs.get(),
+                BVBlocks.SmoothStoneStairs.get(),
+                BVBlocks.ChiseledQuartzBlockStairs.get(),
+                BVBlocks.NetherrackStairs.get(),
+                BVBlocks.EndStoneStairs.get(),
+                BVBlocks.CrackedPolishedBlackstoneBrickStairs.get(),
                 BVBlocks.Basalt_Stairs.get(),
                 BVBlocks.Polished_Basalt_Stairs.get(),
                 BVBlocks.Terracotta_Stairs.get(),
@@ -54,7 +54,7 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Amethyst_Block_Stairs.get(),
                 BVBlocks.Cracked_Stone_Brick_Stairs.get(),
 
-                BVBlocks.Quartz_Bricks_Slab.get(),
+                BVBlocks.QuartzBrickSlab.get(),
                 BVBlocks.Chiseled_Quartz_Block_Slab.get(),
                 BVBlocks.Netherrack_Slab.get(),
                 BVBlocks.End_Stone_Slab.get(),
@@ -82,18 +82,18 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Amethyst_Block_Slab.get(),
                 BVBlocks.Cracked_Stone_Brick_Slab.get(),
 
-                BVBlocks.Polished_Diorite_Wall.get(),
-                BVBlocks.Polished_Granite_Wall.get(),
-                BVBlocks.Polished_Andesite_Wall.get(),
-                BVBlocks.Stone_Wall.get(),
-                BVBlocks.Smooth_Stone_Wall.get(),
-                BVBlocks.Cut_Sandstone_Wall.get(),
-                BVBlocks.Cut_Red_Sandstone_Wall.get(),
-                BVBlocks.Quartz_Wall.get(),
-                BVBlocks.Quartz_Bricks_Wall.get(),
-                BVBlocks.Smooth_Quartz_Wall.get(),
+                BVBlocks.PolishedDioriteWall.get(),
+                BVBlocks.PolishedGraniteWall.get(),
+                BVBlocks.PolishedAndesiteWall.get(),
+                BVBlocks.StoneWall.get(),
+                BVBlocks.SmoothStoneWall.get(),
+                BVBlocks.CutSandstoneWall.get(),
+                BVBlocks.CutRedSandstoneWall.get(),
+                BVBlocks.QuartzWall.get(),
+                BVBlocks.QuartzBrickWall.get(),
+                BVBlocks.SmoothQuartzWall.get(),
                 BVBlocks.Chiseled_Quartz_Block_Wall.get(),
-                BVBlocks.Prismarine_Bricks_Wall.get(),
+                BVBlocks.Prismarine_Brick_Wall.get(),
                 BVBlocks.Dark_Prismarine_Wall.get(),
                 BVBlocks.Netherrack_Wall.get(),
                 BVBlocks.End_Stone_Wall.get(),
@@ -205,7 +205,11 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Red_Glazed_Terracotta_Wall.get(),
                 BVBlocks.Black_Glazed_Terracotta_Stairs.get(),
                 BVBlocks.Black_Glazed_Terracotta_Slab.get(),
-                BVBlocks.Black_Glazed_Terracotta_Wall.get()
+                BVBlocks.Black_Glazed_Terracotta_Wall.get(),
+
+                BVBlocks.PackedMudStairs.get(),
+                BVBlocks.PackedMudSlab.get(),
+                BVBlocks.PackedMudWall.get()
         );} // needs Pickaxe
 
         {tag(BlockTags.MINEABLE_WITH_AXE).add(
@@ -221,6 +225,9 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Acacia_Log_Slab.get(),
                 BVBlocks.Dark_Oak_Log_Stairs.get(),
                 BVBlocks.Dark_Oak_Log_Slab.get(),
+                BVBlocks.Mangrove_Log_Stairs.get(),
+                BVBlocks.Mangrove_Log_Slab.get(),
+
                 BVBlocks.Stripped_Oak_Log_Stairs.get(),
                 BVBlocks.Stripped_Oak_Log_Slab.get(),
                 BVBlocks.Stripped_Spruce_Log_Stairs.get(),
@@ -233,6 +240,9 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Stripped_Acacia_Log_Slab.get(),
                 BVBlocks.Stripped_Dark_Oak_Log_Stairs.get(),
                 BVBlocks.Stripped_Dark_Oak_Log_Slab.get(),
+                BVBlocks.Stripped_Mangrove_Log_Stairs.get(),
+                BVBlocks.Stripped_Mangrove_Log_Slab.get(),
+
                 BVBlocks.Crimson_Stem_Stairs.get(),
                 BVBlocks.Crimson_Stem_Slab.get(),
                 BVBlocks.Warped_Stem_Stairs.get(),
@@ -260,6 +270,10 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Dark_Oak_Wood_Stairs.get(),
                 BVBlocks.Dark_Oak_Wood_Slab.get(),
                 BVBlocks.Dark_Oak_Wood_Wall.get(),
+                BVBlocks.Mangrove_Wood_Stairs.get(),
+                BVBlocks.Mangrove_Wood_Slab.get(),
+                BVBlocks.Mangrove_Wood_Wall.get(),
+
                 BVBlocks.Stripped_Oak_Wood_Stairs.get(),
                 BVBlocks.Stripped_Oak_Wood_Slab.get(),
                 BVBlocks.Stripped_Oak_Wood_Wall.get(),
@@ -278,6 +292,9 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Stripped_Dark_Oak_Wood_Stairs.get(),
                 BVBlocks.Stripped_Dark_Oak_Wood_Slab.get(),
                 BVBlocks.Stripped_Dark_Oak_Wood_Wall.get(),
+                BVBlocks.Stripped_Mangrove_Wood_Stairs.get(),
+                BVBlocks.Stripped_Mangrove_Wood_Slab.get(),
+                BVBlocks.Stripped_Mangrove_Wood_Wall.get(),
 
                 BVBlocks.Crimson_Hyphae_Stairs.get(),
                 BVBlocks.Crimson_Hyphae_Slab.get(),
@@ -290,7 +307,8 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Stripped_Crimson_Hyphae_Wall.get(),
                 BVBlocks.Stripped_Warped_Hyphae_Stairs.get(),
                 BVBlocks.Stripped_Warped_Hyphae_Slab.get(),
-                BVBlocks.Stripped_Warped_Hyphae_Wall.get());} // needs Axe
+                BVBlocks.Stripped_Warped_Hyphae_Wall.get()
+        );} // needs Axe
 
         tag(BlockTags.NON_FLAMMABLE_WOOD).add(
                 BVBlocks.Crimson_Hyphae_Stairs.get(),
@@ -304,7 +322,8 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Stripped_Warped_Hyphae_Slab.get(),
                 BVBlocks.Stripped_Crimson_Hyphae_Stairs.get(),
                 BVBlocks.Stripped_Warped_Hyphae_Stairs.get(),
-                BVBlocks.Stripped_Warped_Hyphae_Wall.get());
+                BVBlocks.Stripped_Warped_Hyphae_Wall.get()
+        );
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 BVBlocks.Obsidian_Stairs.get(),

@@ -26,68 +26,69 @@ public class BVItemModelProvider extends ItemModelProvider {
 
     protected  <B extends Block> void blocks(List<B> blocks){
         for(B block : blocks) {
+            String textureName = getBlockName(block);
             String name = getBlockName(block);
             ResourceLocation texture;
-            if(name.contains("wood")) {name = name.replace("wood", "log");}
-            if(name.contains("hyphae")) {name = name.replace("hyphae", "stem");}
+            if(textureName.contains("wood")) {textureName = textureName.replace("wood", "log");}
+            if(textureName.contains("hyphae")) {textureName = textureName.replace("hyphae", "stem");}
 
             if(block instanceof StairBlock){
                 //if(BVUtil.needsPlanksTexture(name)) {texture = blockTexture(name.replace("_stairs", "_planks"));}
-                if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_stairs", "s"));}
-                else if(name.contains("chiseled_quartz")) {
-                    stairs(getBlockName(block), blockTexture("chiseled_quartz_block"), blockTexture("chiseled_quartz_block_top"), blockTexture("chiseled_quartz_block_top"));
+                if(BVUtil.shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_stairs", "s"));}
+                else if(textureName.contains("chiseled_quartz")) {
+                    stairs(name, blockTexture("chiseled_quartz_block"), blockTexture("chiseled_quartz_block_top"), blockTexture("chiseled_quartz_block_top"));
                     continue;
-                }else if(name.contains("smooth_stone")) {
-                    stairs(getBlockName(block), blockTexture("smooth_stone_slab_side"), blockTexture("smooth_stone"), blockTexture("smooth_stone"));
+                }else if(textureName.contains("smooth_stone")) {
+                    stairs(name, blockTexture("smooth_stone_slab_side"), blockTexture("smooth_stone"), blockTexture("smooth_stone"));
                     continue;
-                }else if(BVUtil.isCutSandstone(name)) {
-                    texture = blockTexture(name.replace("cut_", "").replace("stairs", "top"));
-                    stairs(getBlockName(block), blockTexture(name.replace("_stairs", "")), texture, texture);
+                }else if(BVUtil.isCutSandstone(textureName)) {
+                    texture = blockTexture(textureName.replace("cut_", "").replace("stairs", "top"));
+                    stairs(name, blockTexture(textureName.replace("_stairs", "")), texture, texture);
                     continue;
-                }else if(BVUtil.isBasalt(name)) {
-                    texture = blockTexture(name.replace("stairs", "top"));
-                    stairs(getBlockName(block), blockTexture(name.replace("stairs", "side")), texture, texture);
+                }else if(BVUtil.isBasalt(textureName)) {
+                    texture = blockTexture(textureName.replace("stairs", "top"));
+                    stairs(name, blockTexture(textureName.replace("stairs", "side")), texture, texture);
                     continue;
-                }else if(BVUtil.isLog(getBlockName(block))){
-                    texture = blockTexture(name.replace("stairs", "top"));
-                    stairs(getBlockName(block), blockTexture(name.replace("_stairs", "")), texture, texture);
+                }else if(BVUtil.isLog(name)){
+                    texture = blockTexture(textureName.replace("stairs", "top"));
+                    stairs(name, blockTexture(textureName.replace("_stairs", "")), texture, texture);
                     continue;
-                }else {texture = blockTexture(name.replace("_stairs", ""));}
-                stairs(getBlockName(block), texture, texture, texture);
+                }else {texture = blockTexture(textureName.replace("_stairs", ""));}
+                stairs(name, texture, texture, texture);
             }else if(block instanceof SlabBlock) {
                 //if(BVUtil.needsPlanksTexture(name)) {texture = blockTexture(name.replace("_slab", "_planks"));}
-                if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_slab", "s"));}
-                else if(name.contains("chiseled_quartz")) {
-                    slab(getBlockName(block), blockTexture("chiseled_quartz_block"), blockTexture("chiseled_quartz_block_top"), blockTexture("chiseled_quartz_block_top"));
+                if(BVUtil.shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_slab", "s"));}
+                else if(textureName.contains("chiseled_quartz")) {
+                    slab(name, blockTexture("chiseled_quartz_block"), blockTexture("chiseled_quartz_block_top"), blockTexture("chiseled_quartz_block_top"));
                     continue;
-                }else if(BVUtil.isBasalt(name)) {
-                    texture = blockTexture(name.replace("slab", "top"));
-                    slab(getBlockName(block), blockTexture(name.replace("slab", "side")), texture, texture);
+                }else if(BVUtil.isBasalt(textureName)) {
+                    texture = blockTexture(textureName.replace("slab", "top"));
+                    slab(name, blockTexture(textureName.replace("slab", "side")), texture, texture);
                     continue;
-                }else if(BVUtil.isLog(getBlockName(block))) {
-                    texture = blockTexture(name.replace("slab", "top"));
-                    slab(getBlockName(block), blockTexture(name.replace("_slab", "")), texture, texture);
+                }else if(BVUtil.isLog(name)) {
+                    texture = blockTexture(textureName.replace("slab", "top"));
+                    slab(name, blockTexture(textureName.replace("_slab", "")), texture, texture);
                     continue;
-                }else {texture = blockTexture(name.replace("_slab", ""));}
-                slab(getBlockName(block), texture, texture, texture);
+                }else {texture = blockTexture(textureName.replace("_slab", ""));}
+                slab(name, texture, texture, texture);
             }else if(block instanceof WallBlock){
-                if(Objects.equals(name, "quartz_wall")) {texture = blockTexture(name.replace("_wall", "_block_top"));}
-                else if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_wall", "s"));}
-                else if(BVUtil.shouldAppendBlock(name)) {texture = blockTexture(name.replace("wall", "block"));}
-                else if(Objects.equals(name, "smooth_quartz_wall")) {texture = blockTexture(name.replace("_wall", "_block_bottom").replace("smooth_", ""));}
-                else if(BVUtil.isBasalt(name)) {texture = blockTexture(name.replace("wall", "side"));}
-                else {texture = blockTexture(name.replace("_wall", ""));}
-                wallInventory(getBlockName(block), texture);
+                if(Objects.equals(textureName, "quartz_wall")) {texture = blockTexture(textureName.replace("_wall", "_block_top"));}
+                else if(BVUtil.shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_wall", "s"));}
+                else if(BVUtil.shouldAppendBlock(textureName)) {texture = blockTexture(textureName.replace("wall", "block"));}
+                else if(Objects.equals(textureName, "smooth_quartz_wall")) {texture = blockTexture(textureName.replace("_wall", "_block_bottom").replace("smooth_", ""));}
+                else if(BVUtil.isBasalt(textureName)) {texture = blockTexture(textureName.replace("wall", "side"));}
+                else {texture = blockTexture(textureName.replace("_wall", ""));}
+                wallInventory(name, texture);
             }else if(block instanceof FenceBlock) {
-                if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_fence", "s"));}
-                else {texture = blockTexture(name.replace("_fence", "_planks"));}
-                fenceInventory(getBlockName(block), texture);
+                if(BVUtil.shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence", "s"));}
+                else {texture = blockTexture(textureName.replace("_fence", "_planks"));}
+                fenceInventory(name, texture);
             }else if(block instanceof FenceGateBlock){
-                if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_fence_gate", "s"));}
-                else {texture = blockTexture(name.replace("_fence_gate", "_planks"));}
-                fenceGate(getBlockName(block), texture);
+                if(BVUtil.shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence_gate", "s"));}
+                else {texture = blockTexture(textureName.replace("_fence_gate", "_planks"));}
+                fenceGate(name, texture);
             }else{
-                withExistingParent(name, blockTexture(name));
+                withExistingParent(textureName, blockTexture(textureName));
             }
         }
     }

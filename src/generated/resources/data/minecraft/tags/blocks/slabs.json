@@ -1,6 +1,6 @@
 {
   "values": [
-    "block_variants:quartz_bricks_slab",
+    "block_variants:quartz_brick_slab",
     "block_variants:chiseled_quartz_block_slab",
     "block_variants:netherrack_slab",
     "block_variants:end_stone_slab",
@@ -51,6 +51,7 @@
     "block_variants:brown_glazed_terracotta_slab",
     "block_variants:green_glazed_terracotta_slab",
     "block_variants:red_glazed_terracotta_slab",
-    "block_variants:black_glazed_terracotta_slab"
+    "block_variants:black_glazed_terracotta_slab",
+    "block_variants:packed_mud_slab"
   ]
 }
