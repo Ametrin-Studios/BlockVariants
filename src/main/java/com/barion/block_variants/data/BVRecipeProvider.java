@@ -98,6 +98,9 @@ public class BVRecipeProvider extends RecipeProvider {
         all(BVBlocks.Red_Terracotta_Stairs.get(), BVBlocks.Red_Terracotta_Slab.get(), BVBlocks.Red_Terracotta_Wall.get(), Blocks.RED_TERRACOTTA, true);
         all(BVBlocks.Black_Terracotta_Stairs.get(), BVBlocks.Black_Terracotta_Slab.get(), BVBlocks.Black_Terracotta_Wall.get(), Blocks.BLACK_TERRACOTTA, true);
 
+        all(BVBlocks.Dripstone_Block_Stairs.get(), BVBlocks.Dripstone_Block_Slab.get(), BVBlocks.Dripstone_Block_Wall.get(), Blocks.DRIPSTONE_BLOCK, true);
+        all(BVBlocks.Amethyst_Block_Stairs.get(), BVBlocks.Amethyst_Block_Slab.get(), BVBlocks.Amethyst_Block_Wall.get(), Blocks.AMETHYST_BLOCK, false);
+
         stairSlab(BVBlocks.Oak_Log_Stairs.get(), BVBlocks.Oak_Log_Slab.get(), Blocks.OAK_LOG, false);
         stairSlab(BVBlocks.Spruce_Log_Stairs.get(), BVBlocks.Spruce_Log_Slab.get(), Blocks.SPRUCE_LOG, false);
         stairSlab(BVBlocks.Birch_Log_Stairs.get(), BVBlocks.Birch_Log_Slab.get(), Blocks.BIRCH_LOG, false);

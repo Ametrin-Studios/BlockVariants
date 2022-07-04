@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:amethyst_block"
+    }
+  },
+  "result": {
+    "item": "block_variants:amethyst_block_slab",
+    "count": 6
+  }
+}
