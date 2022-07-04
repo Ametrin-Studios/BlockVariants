@@ -10,9 +10,6 @@ assignees: BarionLP
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
 **Version (please complete the following information):**
  - Minecraft version: [e.g. 1.18.2]
  - Forge version: [e.g. 40.0.12]
