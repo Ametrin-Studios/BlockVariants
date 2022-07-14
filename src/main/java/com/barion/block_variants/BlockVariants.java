@@ -4,11 +4,11 @@ import com.barion.block_variants.data.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.slf4j.Logger;
 
 @Mod(BlockVariants.ModID)
@@ -40,6 +40,5 @@ public class BlockVariants{
             generator.addProvider(true, new BVRecipeProvider(generator));
             generator.addProvider(true, new BVLootTableProvider(generator));
         }
-
     }
 }
