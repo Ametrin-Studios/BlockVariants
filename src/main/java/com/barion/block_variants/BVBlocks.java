@@ -9,12 +9,15 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNullableByDefault;
 import java.util.List;
 import java.util.function.Supplier;
@@ -473,10 +476,10 @@ public class BVBlocks {
         return register(type + "_wood_slab", slab(base, stripped), BuildingBlocks);
     }
     private static RegistryObject<WallBlock> woodWall(String type, Block base){
-        return register(type + "_wood_wall", wall(base), DecorationBlocks);
+        return register(type + "_wood_wall", wall(base), 300, DecorationBlocks);
     }
     private static RegistryObject<StrippableWallBlock> woodWall(String type, Block base, Supplier<WallBlock> stripped) {
-        return register(type + "_wood_wall", wall(base, stripped), DecorationBlocks);
+        return register(type + "_wood_wall", wall(base, stripped), 300, DecorationBlocks);
     }
 
     private static RegistryObject<StairsBlock> regGlazedTerracottaStairs(String color, Block base){
@@ -501,6 +504,15 @@ public class BVBlocks {
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
         ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
+        return ret;
+    }
+
+    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties ItemProperties){
+        RegistryObject<T> ret = registerWithoutItem(name, block);
+        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties){
+            @Override
+            public int getBurnTime(ItemStack itemStack, @Nullable IRecipeType<?> recipeType) {return itemBurnTime;}
+        });
         return ret;
     }
     private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return BlockRegistry.register(name, block);}

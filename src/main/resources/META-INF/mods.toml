@@ -6,7 +6,7 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-vari
 [[mods]] #mandatory
 
 modId="block_variants" #mandatory
-version="2.7" #mandatory
+version="2.8" #mandatory
 displayName="Block Variants" #mandatory
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants" #optional
@@ -19,7 +19,7 @@ Adds Variants of Vanilla Blocks that are for some reason missing and more recipe
 [[dependencies.block_variants]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[36,)" #mandatory
+    versionRange="[36.2,)" #mandatory
     ordering="NONE"
     side="BOTH"
 [[dependencies.block_variants]]
