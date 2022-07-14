@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/BarionLP/BlockVariants/issues" #optional
 
 [[mods]] #mandatory
     modId="block_variants" #mandatory
-    version="3.3" #mandatory
+    version="3.4" #mandatory
     displayName="Block Variants" #mandatory
     #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
     displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants" #optional
