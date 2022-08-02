@@ -271,5 +271,9 @@
   "block.block_variants.red_glazed_terracotta_slab": "Red Glazed Terracotta Slab",
   "block.block_variants.black_glazed_terracotta_slab": "Black Glazed Terracotta Slab",
   "block.block_variants.black_glazed_terracotta_wall": "Black Glazed Terracotta Wall",
-  "block.block_variants.black_glazed_terracotta_stairs": "Black Glazed Terracotta Stairs"
+  "block.block_variants.black_glazed_terracotta_stairs": "Black Glazed Terracotta Stairs",
+
+  "block.block_variants.packed_mud_stairs": "Packed Mud Stairs",
+  "block.block_variants.packed_mud_slab": "Packed Mud Slab",
+  "block.block_variants.packed_mud_wall": "Packed Mud Wall"
 }

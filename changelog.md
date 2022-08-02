@@ -1,3 +1,12 @@
+## 4.2
+* fixed Packed Mud translations missing
+* fixed wooden walls burn time
+* ported to 1.19.1
+
+## 4.1
+* fixed Amethyst/Dripstone variants not being craftable
+* updated en_us.json
+
 ## 4.0
 * ported to 1.19
 * added Mangrove stuff
