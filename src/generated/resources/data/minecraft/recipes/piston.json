@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "block_variants:stone_crafting"
+    },
+    "I": {
+      "item": "minecraft:redstone"
+    },
+    "N": {
+      "item": "minecraft:iron_ingot"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "#N#",
+    "#I#"
+  ],
+  "result": {
+    "item": "minecraft:piston"
+  }
+}

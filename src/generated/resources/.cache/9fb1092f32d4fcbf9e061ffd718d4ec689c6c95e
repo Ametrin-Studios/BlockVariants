@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-09T08:39:06.3684927	Recipes
+// 1.19.2	2022-09-09T15:17:31.1294622	Recipes
 441a04e649d3a43a29cde4c88fe94698d010d72e data/block_variants/advancements/recipes/building_blocks/acacia_log_slab.json
 6f07a7a97ec5d5b32494751bfb7a3891ef826d55 data/block_variants/advancements/recipes/building_blocks/acacia_log_stairs.json
 8ca9b25041f1b59268272cdbb3da293f06b8f6cc data/block_variants/advancements/recipes/building_blocks/acacia_wood_slab.json
@@ -1107,3 +1107,7 @@ df4f31414e1df85990e086314924ce9d6876da94 data/block_variants/recipes/yellow_glaz
 c23eff3167719c8a2c37bd06c6efd3dc1c919302 data/block_variants/recipes/yellow_terracotta_slab.json
 6d383730f9e7094cd6af6e387bc671fcacbcba7c data/block_variants/recipes/yellow_terracotta_stairs.json
 2ac87eb2c02ed0ade9f1656d50186b36a6699964 data/block_variants/recipes/yellow_terracotta_wall.json
+35bd571c131f4fc0dc5bc49865d185518d00fa95 data/minecraft/advancements/recipes/redstone/lever.json
+9fe7c645205f1be0de808a3e5dd8676f9241d263 data/minecraft/advancements/recipes/redstone/piston.json
+956a7f3aa737a44004a62a04ebf80424e9ae799d data/minecraft/recipes/lever.json
+c1e1afbd0aeb4ff7157153b200566196b4042306 data/minecraft/recipes/piston.json

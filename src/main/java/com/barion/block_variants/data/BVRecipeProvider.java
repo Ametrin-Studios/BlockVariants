@@ -6,6 +6,7 @@ import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -262,6 +263,25 @@ public class BVRecipeProvider extends RecipeProvider {
                     .pattern("###")
                     .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
                     .save(consumer, recipeID(Blocks.STONECUTTER));
+
+            ShapedRecipeBuilder.shaped(Blocks.LEVER, 1)
+                    .define('|', Items.STICK)
+                    .define('#', BVTags.Items.StoneCrafting)
+                    .pattern("|")
+                    .pattern("#")
+                    .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
+                    .save(consumer);
+
+            ShapedRecipeBuilder.shaped(Blocks.PISTON, 1)
+                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('W', ItemTags.PLANKS)
+                    .define('N', Items.IRON_INGOT)
+                    .define('I', Items.REDSTONE)
+                    .pattern("WWW")
+                    .pattern("#N#")
+                    .pattern("#I#")
+                    .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
+                    .save(consumer);
         } //Recipe overrides
     }
 
