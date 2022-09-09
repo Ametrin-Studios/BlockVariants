@@ -1,26 +1,32 @@
 package com.barion.block_variants.data;
 
+import com.ametrinstudios.ametrin.datagen.ExtendedBlockTagsProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
-
-import java.util.List;
 
 import static com.ametrinstudios.ametrin.AmetrinUtil.isWooden;
 
-public class BVBlockTagsProvider extends BlockTagsProvider {
+public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     public BVBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
         super(generator, BlockVariants.ModID, fileHelper);
     }
 
+    {
+        blockTagProviderRules.add((block, name)->{
+            if(block instanceof WallBlock && isWooden(name)){
+                tag(BVTags.Blocks.WoodenWalls).add(block);
+            }
+        });
+    }
+
     @Override
     protected void addTags() {
-        handleDefaults(BVBlocks.getAllBlocks());
+        runRules(BVBlocks.getAllBlocks());
 
         {tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 BVBlocks.SmoothStoneStairs.get(),
@@ -334,44 +340,5 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 BVBlocks.Crying_Obsidian_Slab.get(),
                 BVBlocks.Crying_Obsidian_Wall.get()
         );
-
-        tag(BlockTags.FENCES).addTag(BlockTags.WOODEN_FENCES);
-        tag(BlockTags.WALLS).addTag(BVTags.Blocks.WoodenWalls);
     }
-
-    private void handleDefaults(List<Block> allBlocks) {
-        for(Block block : allBlocks) {
-            String name = getName(block);
-
-            if(block instanceof StairBlock){
-                if(isWooden(name)){
-                    tag(BlockTags.WOODEN_STAIRS).add(block);
-                } else {
-                    tag(BlockTags.STAIRS).add(block);
-                }
-            }
-            if(block instanceof SlabBlock){
-                if(isWooden(name)){
-                    tag(BlockTags.WOODEN_SLABS).add(block);
-                } else {
-                    tag(BlockTags.SLABS).add(block);
-                }
-            }
-            if(block instanceof WallBlock) {
-                if(isWooden(name)){
-                    tag(BVTags.Blocks.WoodenWalls).add(block);
-                } else {
-                    tag(BlockTags.WALLS).add(block);
-                }
-            }
-            if(block instanceof FenceBlock){
-                tag(BlockTags.FENCES).add(block);
-            }
-            if(block instanceof FenceGateBlock){
-                tag(BlockTags.FENCE_GATES).add(block);
-            }
-        }
-    }
-
-    protected String getName(Block block) {return block.getName().toString();}
 }
