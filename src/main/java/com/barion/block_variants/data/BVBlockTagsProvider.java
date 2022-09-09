@@ -2,7 +2,6 @@ package com.barion.block_variants.data;
 
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
-import com.barion.block_variants.BVUtil;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -11,6 +10,8 @@ import net.minecraft.world.level.block.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.List;
+
+import static com.ametrinstudios.ametrin.AmetrinUtil.isWooden;
 
 public class BVBlockTagsProvider extends BlockTagsProvider {
     public BVBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
@@ -343,21 +344,21 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
             String name = getName(block);
 
             if(block instanceof StairBlock){
-                if(BVUtil.isWooden(name)){
+                if(isWooden(name)){
                     tag(BlockTags.WOODEN_STAIRS).add(block);
                 } else {
                     tag(BlockTags.STAIRS).add(block);
                 }
             }
             if(block instanceof SlabBlock){
-                if(BVUtil.isWooden(name)){
+                if(isWooden(name)){
                     tag(BlockTags.WOODEN_SLABS).add(block);
                 } else {
                     tag(BlockTags.SLABS).add(block);
                 }
             }
             if(block instanceof WallBlock) {
-                if(BVUtil.isWooden(name)){
+                if(isWooden(name)){
                     tag(BVTags.Blocks.WoodenWalls).add(block);
                 } else {
                     tag(BlockTags.WALLS).add(block);

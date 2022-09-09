@@ -78,17 +78,25 @@ minecraft {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-repositories {}
+repositories {
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+    implementation fg.deobf("curse.maven:ametrin-670599:${ametrin_version}")
 }
 
 jar {
     manifest {
         attributes([
                 "Specification-Title"     : "block_variants",
-                "Specification-Vendor"    : "Barion",
+                "Specification-Vendor"    : "Ametrin Studios",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : mod_version,
