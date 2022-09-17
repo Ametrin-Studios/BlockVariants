@@ -269,7 +269,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .pattern("|")
                     .pattern("#")
                     .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
-                    .save(consumer);
+                    .save(consumer, recipeID(Blocks.LEVER));
 
             ShapedRecipeBuilder.shaped(Blocks.PISTON, 1)
                     .define('#', BVTags.Items.StoneCrafting)
@@ -280,7 +280,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .pattern("#N#")
                     .pattern("#I#")
                     .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
-                    .save(consumer);
+                    .save(consumer, recipeID(Blocks.PISTON));
         } //Recipe overrides
     }
 
