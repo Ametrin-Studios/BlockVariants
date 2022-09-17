@@ -29,3 +29,10 @@ Provides you tons of blocks that are missing in vanilla like Polished Diorite Wa
     versionRange="[1.19.2,1.20)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.block_variants]]
+    modId="ametrin"
+    mandatory=true
+    versionRange="[0.0.15,)"
+    ordering="NONE"
+    side="BOTH"

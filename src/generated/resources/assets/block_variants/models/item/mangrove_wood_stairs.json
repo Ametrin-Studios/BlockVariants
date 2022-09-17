@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "minecraft:block/mangrove_log",
-    "side": "minecraft:block/mangrove_log",
-    "top": "minecraft:block/mangrove_log"
-  }
+  "parent": "block_variants:block/mangrove_wood_stairs"
 }

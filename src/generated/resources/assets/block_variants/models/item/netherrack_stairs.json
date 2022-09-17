@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "minecraft:block/netherrack",
-    "side": "minecraft:block/netherrack",
-    "top": "minecraft:block/netherrack"
-  }
+  "parent": "block_variants:block/netherrack_stairs"
 }

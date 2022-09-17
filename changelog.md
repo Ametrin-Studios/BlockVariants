@@ -1,3 +1,7 @@
+## 4.3
+* ported to 1.19.2
+* requires Ametrin API 0.1.0
+
 ## 4.2
 * fixed Packed Mud translations missing
 * fixed wooden walls burn time

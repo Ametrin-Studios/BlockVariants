@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:nether_bricks"
+  },
+  "result": "block_variants:nether_brick_fence_gate"
+}

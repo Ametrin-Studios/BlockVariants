@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blackstone_wall": {
+    "has_blackstone_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:blackstone_wall"
+              "minecraft:blackstone_slab"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/polished_blackstone_brick_wall_from_blackstone_wall"
+        "recipe": "block_variants:stonecutting/polished_blackstone_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blackstone_wall",
+      "has_blackstone_slab",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "block_variants:stonecutting/polished_blackstone_brick_wall_from_blackstone_wall"
+      "block_variants:stonecutting/polished_blackstone_slab"
     ]
   }
 }

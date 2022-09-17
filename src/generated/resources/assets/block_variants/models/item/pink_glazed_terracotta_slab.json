@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "minecraft:block/pink_glazed_terracotta",
-    "side": "minecraft:block/pink_glazed_terracotta",
-    "top": "minecraft:block/pink_glazed_terracotta"
-  }
+  "parent": "block_variants:block/pink_glazed_terracotta_slab"
 }

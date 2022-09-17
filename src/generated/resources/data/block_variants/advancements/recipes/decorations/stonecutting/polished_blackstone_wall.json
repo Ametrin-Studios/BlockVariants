@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blackstone_stairs": {
+    "has_blackstone_wall": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:blackstone_stairs"
+              "minecraft:blackstone_wall"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/polished_blackstone_stairs_from_blackstone_stairs"
+        "recipe": "block_variants:stonecutting/polished_blackstone_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blackstone_stairs",
+      "has_blackstone_wall",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "block_variants:stonecutting/polished_blackstone_stairs_from_blackstone_stairs"
+      "block_variants:stonecutting/polished_blackstone_wall"
     ]
   }
 }

@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "minecraft:block/black_terracotta",
-    "side": "minecraft:block/black_terracotta",
-    "top": "minecraft:block/black_terracotta"
-  }
+  "parent": "block_variants:block/black_terracotta_stairs"
 }

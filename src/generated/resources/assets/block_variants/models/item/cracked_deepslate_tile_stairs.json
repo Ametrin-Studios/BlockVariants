@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "minecraft:block/cracked_deepslate_tiles",
-    "side": "minecraft:block/cracked_deepslate_tiles",
-    "top": "minecraft:block/cracked_deepslate_tiles"
-  }
+  "parent": "block_variants:block/cracked_deepslate_tile_stairs"
 }
