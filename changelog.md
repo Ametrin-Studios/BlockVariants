@@ -1,4 +1,7 @@
 ## 4.4
+* added `StrippableFenceBlock`
+* added `StrippableFenceGateBlock`
+* added Wood/Hyhae Fence(Gate)s
 * requires Ametrin API 0.0.20 or later
 
 ## 4.3

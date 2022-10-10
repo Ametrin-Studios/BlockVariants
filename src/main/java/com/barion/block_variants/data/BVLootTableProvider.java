@@ -17,12 +17,12 @@ import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 public class BVLootTableProvider extends LootTableProvider {
     public BVLootTableProvider(DataGenerator generator) {super(generator);}
@@ -42,15 +42,13 @@ public class BVLootTableProvider extends LootTableProvider {
         @Override
         protected void addTables() {dropSelf(BVBlocks.getAllBlocks());}
 
-        private <T extends Block> void dropSelf(List<T> Blocks){
-            for (Block Block : Blocks) {
-                dropSelf(Block);
-            }
+        private <T extends Block> void dropSelf(Iterator<T> blocks){
+            blocks.forEachRemaining(this::dropSelf);
         }
 
         @Override @Nonnull
         protected Iterable<Block> getKnownBlocks() {
-            return BVBlocks.BlockRegistry.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+            return BVBlocks.BlockRegistry.getEntries().stream().map(RegistryObject::get).toList();
         }
     }
 }

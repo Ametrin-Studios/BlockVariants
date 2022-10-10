@@ -1,8 +1,6 @@
 package com.barion.block_variants;
 
-import com.barion.block_variants.block.StrippableSlabBlock;
-import com.barion.block_variants.block.StrippableStairBlock;
-import com.barion.block_variants.block.StrippableWallBlock;
+import com.barion.block_variants.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -19,16 +17,17 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java.util.Iterator;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
-public class BVBlocks {
+public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final DeferredRegister<Block> BlockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
     public static final DeferredRegister<Item> ItemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.ModID);
 
     private static final Item.Properties BuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
     private static final Item.Properties DecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS);
+    private static final Item.Properties FireResistanceBuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS).fireResistant();
+    private static final Item.Properties FireResistanceDecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS).fireResistant();
 
 
     public static final RegistryObject<WallBlock> PolishedGraniteWall = register("polished_granite_wall",
@@ -255,72 +254,96 @@ public class BVBlocks {
     public static final RegistryObject<StairBlock> Stripped_Oak_Wood_Stairs = woodStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Oak_Wood_Slab = woodSlab("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
     public static final RegistryObject<WallBlock> Stripped_Oak_Wood_Wall = woodWall("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
+    public static final RegistryObject<FenceBlock> Stripped_Oak_Wood_Fence = woodFence("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
+    public static final RegistryObject<FenceGateBlock> Stripped_Oak_Wood_FenceGate = woodFenceGate("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
     public static final RegistryObject<StairBlock> Stripped_Spruce_Wood_Stairs = woodStairs("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Spruce_Wood_Slab = woodSlab("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
     public static final RegistryObject<WallBlock> Stripped_Spruce_Wood_Wall = woodWall("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<FenceBlock> Stripped_Spruce_Wood_Fence = woodFence("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
+    public static final RegistryObject<FenceGateBlock> Stripped_Spruce_Wood_FenceGate = woodFenceGate("stripped_spruce", Blocks.STRIPPED_SPRUCE_WOOD);
     public static final RegistryObject<StairBlock> Stripped_Birch_Wood_Stairs = woodStairs("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Birch_Wood_Slab = woodSlab("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
     public static final RegistryObject<WallBlock> Stripped_Birch_Wood_Wall = woodWall("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<FenceBlock> Stripped_Birch_Wood_Fence = woodFence("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
+    public static final RegistryObject<FenceGateBlock> Stripped_Birch_Wood_FenceGate = woodFenceGate("stripped_birch", Blocks.STRIPPED_BIRCH_WOOD);
     public static final RegistryObject<StairBlock> Stripped_Jungle_Wood_Stairs = woodStairs("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Jungle_Wood_Slab = woodSlab("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
     public static final RegistryObject<WallBlock> Stripped_Jungle_Wood_Wall = woodWall("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<FenceBlock> Stripped_Jungle_Wood_Fence = woodFence("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
+    public static final RegistryObject<FenceGateBlock> Stripped_Jungle_Wood_FenceGate = woodFenceGate("stripped_jungle", Blocks.STRIPPED_JUNGLE_WOOD);
     public static final RegistryObject<StairBlock> Stripped_Acacia_Wood_Stairs = woodStairs("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Acacia_Wood_Slab = woodSlab("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
     public static final RegistryObject<WallBlock> Stripped_Acacia_Wood_Wall = woodWall("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<FenceBlock> Stripped_Acacia_Wood_Fence = woodFence("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
+    public static final RegistryObject<FenceGateBlock> Stripped_Acacia_Wood_FenceGate = woodFenceGate("stripped_acacia", Blocks.STRIPPED_ACACIA_WOOD);
     public static final RegistryObject<StairBlock> Stripped_Dark_Oak_Wood_Stairs = woodStairs("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Dark_Oak_Wood_Slab = woodSlab("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
     public static final RegistryObject<WallBlock> Stripped_Dark_Oak_Wood_Wall = woodWall("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<FenceBlock> Stripped_Dark_Oak_Wood_Fence = woodFence("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<FenceGateBlock> Stripped_Dark_Oak_Wood_FenceGate = woodFenceGate("stripped_dark_oak", Blocks.STRIPPED_DARK_OAK_WOOD);
     public static final RegistryObject<StairBlock> Stripped_Mangrove_Wood_Stairs = woodStairs("stripped_mangrove", Blocks.STRIPPED_DARK_OAK_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Mangrove_Wood_Slab = woodSlab("stripped_mangrove", Blocks.STRIPPED_DARK_OAK_WOOD);
     public static final RegistryObject<WallBlock> Stripped_Mangrove_Wood_Wall = woodWall("stripped_mangrove", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<FenceBlock> Stripped_Mangrove_Wood_Fence = woodFence("stripped_mangrove", Blocks.STRIPPED_DARK_OAK_WOOD);
+    public static final RegistryObject<FenceGateBlock> Stripped_Mangrove_Wood_FenceGate = woodFenceGate("stripped_mangrove", Blocks.STRIPPED_DARK_OAK_WOOD);
 
     public static final RegistryObject<StrippableStairBlock> Oak_Wood_Stairs = woodStairs("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_Stairs);
     public static final RegistryObject<StrippableSlabBlock> Oak_Wood_Slab = woodSlab("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_Slab);
     public static final RegistryObject<StrippableWallBlock> Oak_Wood_Wall = woodWall("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_Wall);
+    public static final RegistryObject<StrippableFenceBlock> Oak_Wood_Fence = woodFence("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_Fence);
+    public static final RegistryObject<StrippableFenceGateBlock> Oak_Wood_FenceGate = woodFenceGate("oak", Blocks.OAK_WOOD, Stripped_Oak_Wood_FenceGate);
     public static final RegistryObject<StrippableStairBlock> Spruce_Wood_Stairs = woodStairs("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_Stairs);
     public static final RegistryObject<StrippableSlabBlock> Spruce_Wood_Slab = woodSlab("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_Slab);
     public static final RegistryObject<StrippableWallBlock> Spruce_Wood_Wall = woodWall("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_Wall);
+    public static final RegistryObject<StrippableFenceBlock> Spruce_Wood_Fence = woodFence("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_Fence);
+    public static final RegistryObject<StrippableFenceGateBlock> Spruce_Wood_FenceGate = woodFenceGate("spruce", Blocks.SPRUCE_WOOD, Stripped_Spruce_Wood_FenceGate);
     public static final RegistryObject<StrippableStairBlock> Birch_Wood_Stairs = woodStairs("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_Stairs);
     public static final RegistryObject<StrippableSlabBlock> Birch_Wood_Slab = woodSlab("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_Slab);
     public static final RegistryObject<StrippableWallBlock> Birch_Wood_Wall = woodWall("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_Wall);
+    public static final RegistryObject<StrippableFenceBlock> Birch_Wood_Fence = woodFence("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_Fence);
+    public static final RegistryObject<StrippableFenceGateBlock> Birch_Wood_FenceGate = woodFenceGate("birch", Blocks.BIRCH_WOOD, Stripped_Birch_Wood_FenceGate);
     public static final RegistryObject<StrippableStairBlock> Jungle_Wood_Stairs = woodStairs("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_Stairs);
     public static final RegistryObject<StrippableSlabBlock> Jungle_Wood_Slab = woodSlab("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_Slab);
     public static final RegistryObject<StrippableWallBlock> Jungle_Wood_Wall = woodWall("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_Wall);
+    public static final RegistryObject<StrippableFenceBlock> Jungle_Wood_Fence = woodFence("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_Fence);
+    public static final RegistryObject<StrippableFenceGateBlock> Jungle_Wood_FenceGate = woodFenceGate("jungle", Blocks.JUNGLE_WOOD, Stripped_Jungle_Wood_FenceGate);
     public static final RegistryObject<StrippableStairBlock> Acacia_Wood_Stairs = woodStairs("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_Stairs);
     public static final RegistryObject<StrippableSlabBlock> Acacia_Wood_Slab = woodSlab("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_Slab);
     public static final RegistryObject<StrippableWallBlock> Acacia_Wood_Wall = woodWall("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_Wall);
+    public static final RegistryObject<StrippableFenceBlock> Acacia_Wood_Fence = woodFence("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_Fence);
+    public static final RegistryObject<StrippableFenceGateBlock> Acacia_Wood_FenceGate = woodFenceGate("acacia", Blocks.ACACIA_WOOD, Stripped_Acacia_Wood_FenceGate);
     public static final RegistryObject<StrippableStairBlock> Dark_Oak_Wood_Stairs = woodStairs("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_Stairs);
     public static final RegistryObject<StrippableSlabBlock> Dark_Oak_Wood_Slab = woodSlab("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_Slab);
     public static final RegistryObject<StrippableWallBlock> Dark_Oak_Wood_Wall = woodWall("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_Wall);
+    public static final RegistryObject<StrippableFenceBlock> Dark_Oak_Wood_Fence = woodFence("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_Fence);
+    public static final RegistryObject<StrippableFenceGateBlock> Dark_Oak_Wood_FenceGate = woodFenceGate("dark_oak", Blocks.DARK_OAK_WOOD, Stripped_Dark_Oak_Wood_FenceGate);
     public static final RegistryObject<StrippableStairBlock> Mangrove_Wood_Stairs = woodStairs("mangrove", Blocks.DARK_OAK_WOOD, Stripped_Mangrove_Wood_Stairs);
     public static final RegistryObject<StrippableSlabBlock> Mangrove_Wood_Slab = woodSlab("mangrove", Blocks.DARK_OAK_WOOD, Stripped_Mangrove_Wood_Slab);
     public static final RegistryObject<StrippableWallBlock> Mangrove_Wood_Wall = woodWall("mangrove", Blocks.DARK_OAK_WOOD, Stripped_Mangrove_Wood_Wall);
+    public static final RegistryObject<StrippableFenceBlock> Mangrove_Wood_Fence = woodFence("mangrove", Blocks.DARK_OAK_WOOD, Stripped_Mangrove_Wood_Fence);
+    public static final RegistryObject<StrippableFenceGateBlock> Mangrove_Wood_FenceGate = woodFenceGate("mangrove", Blocks.DARK_OAK_WOOD, Stripped_Mangrove_Wood_FenceGate);
 
-    public static final RegistryObject<StairBlock> Stripped_Crimson_Hyphae_Stairs = register("stripped_crimson_hyphae_stairs",
-            stair(Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
-    public static final RegistryObject<SlabBlock> Stripped_Crimson_Hyphae_Slab = register("stripped_crimson_hyphae_slab",
-            slab(Blocks.STRIPPED_CRIMSON_HYPHAE), BuildingBlocks.fireResistant());
-    public static final RegistryObject<WallBlock> Stripped_Crimson_Hyphae_Wall = register("stripped_crimson_hyphae_wall",
-            wall(Blocks.STRIPPED_CRIMSON_HYPHAE), DecorationBlocks.fireResistant());
-    public static final RegistryObject<StairBlock> Stripped_Warped_Hyphae_Stairs = register("stripped_warped_hyphae_stairs",
-            stair(Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks.fireResistant());
-    public static final RegistryObject<SlabBlock> Stripped_Warped_Hyphae_Slab = register("stripped_warped_hyphae_slab",
-            slab(Blocks.STRIPPED_WARPED_HYPHAE), BuildingBlocks.fireResistant());
-    public static final RegistryObject<WallBlock> Stripped_Warped_Hyphae_Wall = register("stripped_warped_hyphae_wall",
-            wall(Blocks.STRIPPED_WARPED_HYPHAE), DecorationBlocks.fireResistant());
+    public static final RegistryObject<StairBlock> Stripped_Crimson_Hyphae_Stairs = register("stripped_crimson_hyphae_stairs", stair(Blocks.STRIPPED_CRIMSON_HYPHAE), FireResistanceBuildingBlocks);
+    public static final RegistryObject<SlabBlock> Stripped_Crimson_Hyphae_Slab = register("stripped_crimson_hyphae_slab", slab(Blocks.STRIPPED_CRIMSON_HYPHAE), FireResistanceBuildingBlocks);
+    public static final RegistryObject<WallBlock> Stripped_Crimson_Hyphae_Wall = register("stripped_crimson_hyphae_wall", wall(Blocks.STRIPPED_CRIMSON_HYPHAE), FireResistanceDecorationBlocks);
+    public static final RegistryObject<FenceBlock> Stripped_Crimson_Hyphae_Fence = register("stripped_crimson_hyphae_fence", fence(Blocks.STRIPPED_CRIMSON_HYPHAE), FireResistanceDecorationBlocks);
+    public static final RegistryObject<FenceGateBlock> Stripped_Crimson_Hyphae_FenceGate = register("stripped_crimson_hyphae_fence_gate", fenceGate(Blocks.STRIPPED_CRIMSON_HYPHAE), FireResistanceDecorationBlocks);
+    public static final RegistryObject<StairBlock> Stripped_Warped_Hyphae_Stairs = register("stripped_warped_hyphae_stairs", stair(Blocks.STRIPPED_WARPED_HYPHAE), FireResistanceBuildingBlocks);
+    public static final RegistryObject<SlabBlock> Stripped_Warped_Hyphae_Slab = register("stripped_warped_hyphae_slab", slab(Blocks.STRIPPED_WARPED_HYPHAE), FireResistanceBuildingBlocks);
+    public static final RegistryObject<WallBlock> Stripped_Warped_Hyphae_Wall = register("stripped_warped_hyphae_wall", wall(Blocks.STRIPPED_WARPED_HYPHAE), FireResistanceDecorationBlocks);
+    public static final RegistryObject<FenceBlock> Stripped_Warped_Hyphae_Fence = register("stripped_warped_hyphae_fence", fence(Blocks.STRIPPED_WARPED_HYPHAE), FireResistanceDecorationBlocks);
+    public static final RegistryObject<FenceGateBlock> Stripped_Warped_Hyphae_FenceGate = register("stripped_warped_hyphae_fence_gate", fenceGate(Blocks.STRIPPED_WARPED_HYPHAE), FireResistanceDecorationBlocks);
 
-    public static final RegistryObject<StrippableStairBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs",
-            stair(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Stairs), BuildingBlocks.fireResistant());
-    public static final RegistryObject<StrippableSlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab",
-            slab(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Slab), BuildingBlocks.fireResistant());
-    public static final RegistryObject<StrippableWallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall",
-            wall(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Wall), DecorationBlocks.fireResistant());
-    public static final RegistryObject<StrippableStairBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs",
-            stair(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Stairs), BuildingBlocks.fireResistant());
-    public static final RegistryObject<StrippableSlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab",
-            slab(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Slab), BuildingBlocks.fireResistant());
-    public static final RegistryObject<StrippableWallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall",
-            wall(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Wall), DecorationBlocks.fireResistant());
+    public static final RegistryObject<StrippableStairBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs", stair(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Stairs), FireResistanceBuildingBlocks);
+    public static final RegistryObject<StrippableSlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab", slab(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Slab), FireResistanceBuildingBlocks);
+    public static final RegistryObject<StrippableWallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall", wall(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Wall), FireResistanceDecorationBlocks);
+    public static final RegistryObject<StrippableFenceBlock> Crimson_Hyphae_Fence = register("crimson_hyphae_fence", fence(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Fence), FireResistanceDecorationBlocks);
+    public static final RegistryObject<StrippableFenceGateBlock> Crimson_Hyphae_FenceGate = register("crimson_hyphae_fence_gate", fenceGate(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_FenceGate), FireResistanceDecorationBlocks);
+    public static final RegistryObject<StrippableStairBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs", stair(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Stairs), FireResistanceBuildingBlocks);
+    public static final RegistryObject<StrippableSlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab", slab(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Slab), FireResistanceBuildingBlocks);
+    public static final RegistryObject<StrippableWallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall", wall(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Wall), FireResistanceDecorationBlocks);
+    public static final RegistryObject<StrippableFenceBlock> Warped_Hyphae_Fence = register("warped_hyphae_fence", fence(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Fence), FireResistanceDecorationBlocks);
+    public static final RegistryObject<StrippableFenceGateBlock> Warped_Hyphae_FenceGate = register("warped_hyphae_fence_gate", fenceGate(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_FenceGate), FireResistanceDecorationBlocks);
 
     public static final RegistryObject<StairBlock> Calcite_Stairs = register("calcite_stairs",
             stair(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true, Blocks.CALCITE), BuildingBlocks);
@@ -461,43 +484,29 @@ public class BVBlocks {
     public static final RegistryObject<SlabBlock> PackedMudSlab = register("packed_mud_slab", slab(Blocks.PACKED_MUD), BuildingBlocks);
     public static final RegistryObject<WallBlock> PackedMudWall = register("packed_mud_wall", wall(Blocks.PACKED_MUD), DecorationBlocks);
 
-    private static Supplier<Block> block(Block base) {return ()-> new Block(BlockBehaviour.Properties.copy(base));}
-
-    private static Supplier<StairBlock> stair(Block base) {return ()-> new StairBlock(base::defaultBlockState, BlockBehaviour.Properties.copy(base));}
     private static Supplier<StrippableStairBlock> stair(Block base, Supplier<StairBlock> stripped) {return ()-> new StrippableStairBlock(base::defaultBlockState, stripped, StairBlock.Properties.copy(base));}
-    private static Supplier<SlabBlock> slab(Block base) {return ()-> new SlabBlock(SlabBlock.Properties.copy(base));}
     private static Supplier<StrippableSlabBlock> slab(Block base, Supplier<SlabBlock> stripped) {return ()-> new StrippableSlabBlock(stripped, SlabBlock.Properties.copy(base));}
-    private static Supplier<WallBlock> wall(Block base) {return ()-> new WallBlock(WallBlock.Properties.copy(base));}
     private static Supplier<StrippableWallBlock> wall(Block base, Supplier<WallBlock> stripped) {return ()-> new StrippableWallBlock(stripped, WallBlock.Properties.copy(base));}
-    private static Supplier<FenceBlock> fence(Block base){
-        return () -> new FenceBlock(FenceBlock.Properties.copy(base));
-    }
-    private static Supplier<FenceGateBlock> fenceGate(Block base){
-        return ()-> new FenceGateBlock(FenceGateBlock.Properties.copy(base));
-    }
+    private static Supplier<StrippableFenceBlock> fence(Block base, Supplier<FenceBlock> stripped) {return ()-> new StrippableFenceBlock(stripped, WallBlock.Properties.copy(base));}
+    private static Supplier<StrippableFenceGateBlock> fenceGate(Block base, Supplier<FenceGateBlock> stripped) {return ()-> new StrippableFenceGateBlock(stripped, WallBlock.Properties.copy(base));}
+
     @Deprecated private static Supplier<StairBlock> stair(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool, Block block){
         if(requiresTool)
-            return ()-> new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return stair(properties(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops(), block::defaultBlockState);
         else
-            return ()-> new StairBlock(block::defaultBlockState, BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return stair(properties(material).strength(hardness, resistance).sound(soundType), block::defaultBlockState);
     }
     @Deprecated private static Supplier<SlabBlock> slab(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
-            return ()-> new SlabBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return slab(properties(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return ()-> new SlabBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return slab(properties(material).strength(hardness, resistance).sound(soundType));
     }
     @Deprecated private static Supplier<WallBlock> wall(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
-            return ()-> new WallBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return wall(properties(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return ()-> new WallBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
-    }
-    @Deprecated private static Supplier<FenceBlock> fence(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
-        if(requiresTool)
-            return ()-> new FenceBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
-        else
-            return ()-> new FenceBlock(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
+            return wall(properties(material).strength(hardness, resistance).sound(soundType));
     }
 
     private static RegistryObject<StairBlock> regTerracottaStairs(String color, Block base){
@@ -546,6 +555,18 @@ public class BVBlocks {
     private static RegistryObject<StrippableWallBlock> woodWall(String type, Block base, Supplier<WallBlock> stripped) {
         return register(type + "_wood_wall", wall(base, stripped), 300, DecorationBlocks);
     }
+    private static RegistryObject<FenceBlock> woodFence(String type, Block base) {
+        return register(type + "_wood_fence", fence(base), DecorationBlocks);
+    }
+    private static RegistryObject<StrippableFenceBlock> woodFence(String type, Block base, Supplier<FenceBlock> stripped) {
+        return register(type + "_wood_fence", fence(base, stripped), DecorationBlocks);
+    }
+    private static RegistryObject<FenceGateBlock> woodFenceGate(String type, Block base) {
+        return register(type + "_wood_fence_gate", fenceGate(base), DecorationBlocks);
+    }
+    private static RegistryObject<StrippableFenceGateBlock> woodFenceGate(String type, Block base, Supplier<FenceGateBlock> stripped) {
+        return register(type + "_wood_fence_gate", fenceGate(base, stripped), DecorationBlocks);
+    }
 
     private static RegistryObject<StairBlock> regGlazedTerracottaStairs(String color, Block base){
         return register(color + "_glazed_terracotta_stairs", ()-> new StairBlock(base::defaultBlockState, BlockBehaviour.Properties.copy(base)){
@@ -582,5 +603,5 @@ public class BVBlocks {
     }
     private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return BlockRegistry.register(name, block);}
 
-    public static List<Block> getAllBlocks() {return BlockRegistry.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());}
+    public static Iterator<Block> getAllBlocks() {return BlockRegistry.getEntries().stream().map(RegistryObject::get).iterator();}
 }

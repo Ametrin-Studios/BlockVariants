@@ -12,9 +12,10 @@ import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import java.util.List;
+import java.util.Iterator;
 import java.util.Objects;
 
+import static com.ametrinstudios.ametrin.AmetrinUtil.isWood;
 import static com.ametrinstudios.ametrin.AmetrinUtil.shouldAppendS;
 import static com.barion.block_variants.BVUtil.getBlockName;
 
@@ -28,33 +29,36 @@ public class BVItemModelProvider extends ExtendedItemModelProvider {
        blocks(BVBlocks.getAllBlocks());
     }
 
-    protected  <B extends Block> void blocks(List<B> blocks){
-        for(B block : blocks) {
+    protected  <B extends Block> void blocks(Iterator<B> blocks){
+        while(blocks.hasNext()) {
+            B block = blocks.next();
             String textureName = getBlockName(block);
             String name = getBlockName(block);
             ResourceLocation texture;
             if(textureName.contains("wood")) {textureName = textureName.replace("wood", "log");}
             if(textureName.contains("hyphae")) {textureName = textureName.replace("hyphae", "stem");}
 
-           if(block instanceof WallBlock){
-               if(Objects.equals(textureName, "quartz_wall")) {texture = blockTexture(textureName.replace("_wall", "_block_top"));}
-               else if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_wall", "s"));}
-               else if(BVUtil.shouldAppendBlock(textureName)) {texture = blockTexture(textureName.replace("wall", "block"));}
-               else if(Objects.equals(textureName, "smooth_quartz_wall")) {texture = blockTexture(textureName.replace("_wall", "_block_bottom").replace("smooth_", ""));}
-               else if(BVUtil.isBasalt(textureName)) {texture = blockTexture(textureName.replace("wall", "side"));}
-               else {texture = blockTexture(textureName.replace("_wall", ""));}
-               wallInventory(name, texture);
-           }else if(block instanceof FenceBlock) {
-               if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence", "s"));}
-               else {texture = blockTexture(textureName.replace("_fence", "_planks"));}
-               fenceInventory(name, texture);
-           }else if(block instanceof FenceGateBlock){
-               if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence_gate", "s"));}
-               else {texture = blockTexture(textureName.replace("_fence_gate", "_planks"));}
-               fenceGate(name, texture);
-           }else{
-               withExistingParent(name, modBlockLoc(name));
-           }
+            if(block instanceof WallBlock){
+                if(Objects.equals(textureName, "quartz_wall")) {texture = blockTexture(textureName.replace("_wall", "_block_top"));}
+                else if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_wall", "s"));}
+                else if(BVUtil.shouldAppendBlock(textureName)) {texture = blockTexture(textureName.replace("wall", "block"));}
+                else if(Objects.equals(textureName, "smooth_quartz_wall")) {texture = blockTexture(textureName.replace("_wall", "_block_bottom").replace("smooth_", ""));}
+                else if(BVUtil.isBasalt(textureName)) {texture = blockTexture(textureName.replace("wall", "side"));}
+                else {texture = blockTexture(textureName.replace("_wall", ""));}
+                wallInventory(name, texture);
+            }else if(block instanceof FenceBlock) {
+                if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence", "s"));}
+                else if(isWood(name)) {texture = blockTexture(textureName.replace("_fence", ""));}
+                else {texture = blockTexture(textureName.replace("_fence", "_planks"));}
+                fenceInventory(name, texture);
+            }else if(block instanceof FenceGateBlock){
+                if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence_gate", "s"));}
+                else if(isWood(name)) {texture = blockTexture(textureName.replace("_fence_gate", ""));}
+                else {texture = blockTexture(textureName.replace("_fence_gate", "_planks"));}
+                fenceGate(name, texture);
+            }else{
+                withExistingParent(name, modBlockLoc(name));
+            }
         }
     }
 

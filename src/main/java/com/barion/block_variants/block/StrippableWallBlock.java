@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Supplier;
 
-public class StrippableWallBlock extends WallBlock {
+public class StrippableWallBlock extends WallBlock{
     private final Supplier<WallBlock> stripResult;
 
     public StrippableWallBlock(Supplier<WallBlock> stripResult, Properties properties) {
@@ -28,7 +28,7 @@ public class StrippableWallBlock extends WallBlock {
     public InteractionResult use(BlockState blockState, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(!(player.getItemInHand(hand).getItem() instanceof AxeItem)) {return super.use(blockState, level, pos, player, hand, hitResult);}
 
-        level.setBlock(pos, stripResult.get().withPropertiesOf(blockState), 3);
+        level.setBlock(pos, stripResult.get().withPropertiesOf(blockState), 2);
         level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1,1);
 
         return InteractionResult.sidedSuccess(level.isClientSide);

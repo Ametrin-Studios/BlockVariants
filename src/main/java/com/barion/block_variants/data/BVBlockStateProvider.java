@@ -90,8 +90,7 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-//        blocks(BVBlocks.getAllBlocks());
-        runProviderRules(BVBlocks.getAllBlocks());
+        runProviderRules(BVBlocks.BlockRegistry);
     }
 
     @Override
@@ -100,89 +99,6 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
         if(name.contains("hyphae")) {name = name.replace("hyphae", "stem");}
         return name;
     }
-
-    /*protected  <B extends Block> void blocks(List<B> blocks){
-        for(B block : blocks) {
-            String textureName = getBlockName(block);
-            final String name = getBlockName(block);
-            ResourceLocation texture;
-            if(textureName.contains("wood")) {textureName = textureName.replace("wood", "log");}
-            if(textureName.contains("hyphae")) {textureName = textureName.replace("hyphae", "stem");}
-
-            if(block instanceof StairBlock){
-                //if(BVUtil.needsPlanksTexture(name)) {texture = modBlockLoc()(textureName.replace("_stairs", "_planks"));}
-                if(AmUtil.shouldAppendS(textureName)) {texture = modBlockLoc(textureName.replace("_stairs", "s"));}
-                else if(textureName.contains("chiseled_quartz")) {
-                    stairsBlock((StairBlock) block, modBlockLoc("chiseled_quartz_block"), modBlockLoc("chiseled_quartz_block_top"), modBlockLoc("chiseled_quartz_block_top"));
-                    continue;
-                }else if(textureName.contains("smooth_stone")) {
-                    stairsBlock((StairBlock) block, modBlockLoc("smooth_stone_slab_side"), modBlockLoc("smooth_stone"), modBlockLoc("smooth_stone"));
-                    continue;
-                }else if(BVUtil.isCutSandstone(textureName)) {
-                    texture = modBlockLoc(textureName.replace("cut_", "").replace("stairs", "top"));
-                    stairsBlock((StairBlock) block, modBlockLoc(textureName.replace("_stairs", "")), texture, texture);
-                    continue;
-                }else if(BVUtil.isBasalt(textureName)) {
-                    texture = modBlockLoc(textureName.replace("stairs", "top"));
-                    stairsBlock((StairBlock) block, modBlockLoc(textureName.replace("stairs", "side")), texture, texture);
-                    continue;
-                }else if(AmUtil.isLog(name)){
-                    texture = modBlockLoc(textureName.replace("stairs", "top"));
-                    stairsBlock((StairBlock) block, modBlockLoc(textureName.replace("_stairs", "")), texture, texture);
-                    continue;
-                }else {texture = modBlockLoc(textureName.replace("_stairs", ""));}
-                stairsBlock((StairBlock) block, texture);
-            }else if(block instanceof SlabBlock) {
-                //if(BVUtil.needsPlanksTexture(name)) {texture = modBlockLoc()(name.replace("_slab", "_planks"));}
-                if(AmUtil.shouldAppendS(textureName)) {texture = modBlockLoc(textureName.replace("_slab", "s"));}
-                else if(textureName.contains("chiseled_quartz")) {
-                    slabBlock((SlabBlock) block, modBlockLoc("chiseled_quartz_block"), modBlockLoc("chiseled_quartz_block"), modBlockLoc("chiseled_quartz_block_top"), modBlockLoc("chiseled_quartz_block_top"));
-                    continue;
-                }else if(BVUtil.isBasalt(textureName)) {
-                    texture = modBlockLoc(textureName.replace("slab", "top"));
-                    slabBlock((SlabBlock) block, modBlockLoc(textureName.replace("_slab", "")), modBlockLoc(textureName.replace("slab", "side")), texture, texture);
-                    continue;
-                }else if(AmUtil.isLog(name)) {
-                    texture = modBlockLoc(textureName.replace("slab", "top"));
-                    slabBlock((SlabBlock) block, modBlockLoc(textureName.replace("_slab", "")), modBlockLoc(textureName.replace("_slab", "")), texture, texture);
-                    continue;
-                }else if(AmUtil.isWood(name)) {
-                    slabBlock((SlabBlock) block, modBlockLoc(name.replace("_slab", "")), modBlockLoc(textureName.replace("_slab", "")));
-                    continue;
-                } else {texture = modBlockLoc(textureName.replace("_slab", ""));}
-                slabBlock((SlabBlock) block, texture, texture);
-            }else if(block instanceof WallBlock){
-                if(Objects.equals(textureName, "quartz_wall")) {texture = modBlockLoc(textureName.replace("_wall", "_block_top"));}
-                else if(AmUtil.shouldAppendS(textureName)) {texture = modBlockLoc(textureName.replace("_wall", "s"));}
-                else if(BVUtil.shouldAppendBlock(textureName)) {texture = modBlockLoc(textureName.replace("wall", "block"));}
-                else if(Objects.equals(textureName, "smooth_quartz_wall")) {texture = modBlockLoc(textureName.replace("_wall", "_block_bottom").replace("smooth_", ""));}
-                else if(BVUtil.isBasalt(textureName)) {texture = modBlockLoc(textureName.replace("wall", "side"));}
-                else {texture = modBlockLoc(textureName.replace("_wall", ""));}
-                wallBlock((WallBlock) block, texture);
-            }else if(block instanceof RotatedPillarBlock){
-                if(textureName.contains("wood")) {
-                    texture = modBlockLoc(textureName.replace("wood", "log"));
-                    axisBlock((RotatedPillarBlock)block, texture, texture);
-                }else{
-                    logBlock((RotatedPillarBlock) block);
-                }
-            }else if(block instanceof FenceBlock) {
-                if(AmUtil.shouldAppendS(textureName)) {texture = modBlockLoc(textureName.replace("_fence", "s"));}
-                else {texture = modBlockLoc(textureName.replace("_fence", "_planks"));}
-                fenceBlock((FenceBlock) block, texture);
-            }else if(block instanceof FenceGateBlock){
-                if(AmUtil.shouldAppendS(textureName)) {texture = modBlockLoc(textureName.replace("_fence_gate", "s"));}
-                else {texture = modBlockLoc(textureName.replace("_fence_gate", "_planks"));}
-                fenceGateBlock((FenceGateBlock) block, texture);
-            }else if(block instanceof ButtonBlock){
-                buttonBlock((ButtonBlock) block, modBlockLoc(textureName.replace("_button", "_planks")));
-            }else if(block instanceof PressurePlateBlock){
-                pressurePlateBlock((PressurePlateBlock) block, modBlockLoc(textureName.replace("_pressure_plate", "_planks")));
-            }else{
-                simpleBlock(block);
-            }
-        }
-    }*/
 
     @Override
     protected ResourceLocation modBlockLoc(String key) {
