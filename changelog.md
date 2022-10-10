@@ -1,7 +1,10 @@
+## 4.4
+* requires Ametrin API 0.0.20 or later
+
 ## 4.3
 * added lever and piston crafting variations
 * ported to 1.19.2
-* requires Ametrin API 0.1.0
+* requires Ametrin API 0.0.15
 * updated License to MIT
 
 ## 4.2

@@ -33,6 +33,6 @@ Provides you tons of blocks that are missing in vanilla like Polished Diorite Wa
 [[dependencies.block_variants]]
     modId="ametrin"
     mandatory=true
-    versionRange="[0.0.15,)"
+    versionRange="[0.0.20,)"
     ordering="NONE"
     side="BOTH"
