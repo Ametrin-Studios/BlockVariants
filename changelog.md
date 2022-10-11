@@ -1,7 +1,8 @@
 ## 4.4
 * added `StrippableFenceBlock`
 * added `StrippableFenceGateBlock`
-* added Wood/Hyhae Fence(Gate)s
+* added Wood/Hyphae Fence(Gate)s (36 blocks)
+* added Wool Stairs/Slab/Wall (48 blocks)
 * requires Ametrin API 0.0.20 or later
 
 ## 4.3

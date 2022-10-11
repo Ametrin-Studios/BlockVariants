@@ -480,6 +480,70 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final RegistryObject<SlabBlock> Black_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("black", Blocks.BLACK_GLAZED_TERRACOTTA);
     public static final RegistryObject<WallBlock> Black_Glazed_Terracotta_Wall = regGlazedTerracottaWall("black", Blocks.BLACK_GLAZED_TERRACOTTA);
 
+    public static final RegistryObject<StairBlock> WhiteWoolStairs = regWoolStairs("white", Blocks.WHITE_WOOL);
+    public static final RegistryObject<SlabBlock> WhiteWoolSlab = regWoolSlab("white", Blocks.WHITE_WOOL);
+    public static final RegistryObject<WallBlock> WhiteWoolWall = regWoolWall("white", Blocks.WHITE_WOOL);
+
+    public static final RegistryObject<StairBlock> OrangeWoolStairs = regWoolStairs("orange", Blocks.ORANGE_WOOL);
+    public static final RegistryObject<SlabBlock> OrangeWoolSlab = regWoolSlab("orange", Blocks.ORANGE_WOOL);
+    public static final RegistryObject<WallBlock> OrangeWoolWall = regWoolWall("orange", Blocks.ORANGE_WOOL);
+
+    public static final RegistryObject<StairBlock> MagentaWoolStairs = regWoolStairs("magenta", Blocks.MAGENTA_WOOL);
+    public static final RegistryObject<SlabBlock> MagentaWoolSlab = regWoolSlab("magenta", Blocks.MAGENTA_WOOL);
+    public static final RegistryObject<WallBlock> MagentaWoolWall = regWoolWall("magenta", Blocks.MAGENTA_WOOL);
+
+    public static final RegistryObject<StairBlock> LightBlueWoolStairs = regWoolStairs("light_blue", Blocks.LIGHT_BLUE_WOOL);
+    public static final RegistryObject<SlabBlock> LightBlueWoolSlab = regWoolSlab("light_blue", Blocks.LIGHT_BLUE_WOOL);
+    public static final RegistryObject<WallBlock> LightBlueWoolWall = regWoolWall("light_blue", Blocks.LIGHT_BLUE_WOOL);
+
+    public static final RegistryObject<StairBlock> YellowWoolStairs = regWoolStairs("yellow", Blocks.YELLOW_WOOL);
+    public static final RegistryObject<SlabBlock> YellowWoolSlab = regWoolSlab("yellow", Blocks.YELLOW_WOOL);
+    public static final RegistryObject<WallBlock> YellowWoolWall = regWoolWall("yellow", Blocks.YELLOW_WOOL);
+
+    public static final RegistryObject<StairBlock> LimeWoolStairs = regWoolStairs("lime", Blocks.LIME_WOOL);
+    public static final RegistryObject<SlabBlock> LimeWoolSlab = regWoolSlab("lime", Blocks.LIME_WOOL);
+    public static final RegistryObject<WallBlock> LimeWoolWall = regWoolWall("lime", Blocks.LIME_WOOL);
+
+    public static final RegistryObject<StairBlock> PinkWoolStairs = regWoolStairs("pink", Blocks.PINK_WOOL);
+    public static final RegistryObject<SlabBlock> PinkWoolSlab = regWoolSlab("pink", Blocks.PINK_WOOL);
+    public static final RegistryObject<WallBlock> PinkWoolWall = regWoolWall("pink", Blocks.PINK_WOOL);
+
+    public static final RegistryObject<StairBlock> GrayWoolStairs = regWoolStairs("gray", Blocks.GRAY_WOOL);
+    public static final RegistryObject<SlabBlock> GrayWoolSlab = regWoolSlab("gray", Blocks.GRAY_WOOL);
+    public static final RegistryObject<WallBlock> GrayWoolWall = regWoolWall("gray", Blocks.GRAY_WOOL);
+
+    public static final RegistryObject<StairBlock> LightGrayWoolStairs = regWoolStairs("light_gray", Blocks.LIGHT_GRAY_WOOL);
+    public static final RegistryObject<SlabBlock> LightGrayWoolSlab = regWoolSlab("light_gray", Blocks.LIGHT_GRAY_WOOL);
+    public static final RegistryObject<WallBlock> LightGrayWoolWall = regWoolWall("light_gray", Blocks.LIGHT_GRAY_WOOL);
+
+    public static final RegistryObject<StairBlock> CyanWoolStairs = regWoolStairs("cyan", Blocks.CYAN_WOOL);
+    public static final RegistryObject<SlabBlock> CyanWoolSlab = regWoolSlab("cyan", Blocks.CYAN_WOOL);
+    public static final RegistryObject<WallBlock> CyanWoolWall = regWoolWall("cyan", Blocks.CYAN_WOOL);
+
+    public static final RegistryObject<StairBlock> PurpleWoolStairs = regWoolStairs("purple", Blocks.PURPLE_WOOL);
+    public static final RegistryObject<SlabBlock> PurpleWoolSlab = regWoolSlab("purple", Blocks.PURPLE_WOOL);
+    public static final RegistryObject<WallBlock> PurpleWoolWall = regWoolWall("purple", Blocks.PURPLE_WOOL);
+
+    public static final RegistryObject<StairBlock> BlueWoolStairs = regWoolStairs("blue", Blocks.BLUE_WOOL);
+    public static final RegistryObject<SlabBlock> BlueWoolSlab = regWoolSlab("blue", Blocks.BLUE_WOOL);
+    public static final RegistryObject<WallBlock> BlueWoolWall = regWoolWall("blue", Blocks.BLUE_WOOL);
+
+    public static final RegistryObject<StairBlock> BrownWoolStairs = regWoolStairs("brown", Blocks.BROWN_WOOL);
+    public static final RegistryObject<SlabBlock> BrownWoolSlab = regWoolSlab("brown", Blocks.BROWN_WOOL);
+    public static final RegistryObject<WallBlock> BrownWoolWall = regWoolWall("brown", Blocks.BROWN_WOOL);
+
+    public static final RegistryObject<StairBlock> GreenWoolStairs = regWoolStairs("green", Blocks.GREEN_WOOL);
+    public static final RegistryObject<SlabBlock> GreenWoolSlab = regWoolSlab("green", Blocks.GREEN_WOOL);
+    public static final RegistryObject<WallBlock> GreenWoolWall = regWoolWall("green", Blocks.GREEN_WOOL);
+
+    public static final RegistryObject<StairBlock> RedWoolStairs = regWoolStairs("red", Blocks.RED_WOOL);
+    public static final RegistryObject<SlabBlock> RedWoolSlab = regWoolSlab("red", Blocks.RED_WOOL);
+    public static final RegistryObject<WallBlock> RedWoolWall = regWoolWall("red", Blocks.RED_WOOL);
+
+    public static final RegistryObject<StairBlock> BlackWoolStairs = regWoolStairs("black", Blocks.BLACK_WOOL);
+    public static final RegistryObject<SlabBlock> BlackWoolSlab = regWoolSlab("black", Blocks.BLACK_WOOL);
+    public static final RegistryObject<WallBlock> BlackWoolWall = regWoolWall("black", Blocks.BLACK_WOOL);
+
     public static final RegistryObject<StairBlock> PackedMudStairs = register("packed_mud_stairs", stair(Blocks.PACKED_MUD), BuildingBlocks);
     public static final RegistryObject<SlabBlock> PackedMudSlab = register("packed_mud_slab", slab(Blocks.PACKED_MUD), BuildingBlocks);
     public static final RegistryObject<WallBlock> PackedMudWall = register("packed_mud_wall", wall(Blocks.PACKED_MUD), DecorationBlocks);
@@ -587,15 +651,28 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
         }, DecorationBlocks);
     }
 
+    private static RegistryObject<StairBlock> regWoolStairs(String color, Block parent){
+        return register(color + "_wool_stairs",
+                stair(parent), BuildingBlocks);
+    }
+    private static RegistryObject<SlabBlock> regWoolSlab(String color, Block parent){
+        return register(color + "_wool_slab",
+                slab(parent), BuildingBlocks);
+    }
+    private static RegistryObject<WallBlock> regWoolWall(String color, Block parent){
+        return register(color + "_wool_wall",
+                wall(parent), DecorationBlocks);
+    }
+
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
         ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
         return ret;
     }
 
-    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties ItemProperties){
+    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemPorperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
-        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties){
+        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), itemPorperties){
             @Override
             public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {return itemBurnTime;}
         });
