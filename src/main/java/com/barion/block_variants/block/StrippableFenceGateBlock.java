@@ -8,7 +8,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
@@ -16,10 +16,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Supplier;
 
-public class StrippableSlabBlock extends SlabBlock {
-    private final Supplier<SlabBlock> stripResult;
+public class StrippableFenceGateBlock extends FenceGateBlock {
+    private final Supplier<FenceGateBlock> stripResult;
 
-    public StrippableSlabBlock(Supplier<SlabBlock> stripResult, Properties properties) {
+    public StrippableFenceGateBlock(Supplier<FenceGateBlock> stripResult, Properties properties) {
         super(properties);
         this.stripResult = stripResult;
     }

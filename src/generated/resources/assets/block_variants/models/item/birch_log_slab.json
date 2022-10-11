@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "side": "minecraft:block/birch_log",
-    "bottom": "minecraft:block/birch_log_top",
-    "top": "minecraft:block/birch_log_top"
-  }
+  "parent": "block_variants:block/birch_log_slab"
 }

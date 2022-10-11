@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import java.util.List;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class BVBlockStateProvider extends BlockStateProvider {
@@ -22,8 +22,9 @@ public class BVBlockStateProvider extends BlockStateProvider {
         blocks(BVBlocks.getAllBlocks());
     }
 
-    protected  <B extends Block> void blocks(List<B> blocks){
-        for(B block : blocks) {
+    protected  <B extends Block> void blocks(Iterator<B> blocks){
+        while (blocks.hasNext()) {
+            B block = blocks.next();
             String name = getName(block);
             ResourceLocation texture;
             if(name.contains("wood")) {name = name.replace("wood", "log");}
@@ -88,11 +89,11 @@ public class BVBlockStateProvider extends BlockStateProvider {
                 }
             }else if(block instanceof FenceBlock) {
                 if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_fence", "s"));}
-                else {texture = blockTexture(name.replace("_fence", "_planks"));}
+                else {texture = blockTexture(name.replace("_fence", ""));}
                 fenceBlock((FenceBlock) block, texture);
             }else if(block instanceof FenceGateBlock){
                 if(BVUtil.shouldAppendS(name)) {texture = blockTexture(name.replace("_fence_gate", "s"));}
-                else {texture = blockTexture(name.replace("_fence_gate", "_planks"));}
+                else {texture = blockTexture(name.replace("_fence_gate", ""));}
                 fenceGateBlock((FenceGateBlock) block, texture);
             }else if(block instanceof ButtonBlock){
                 buttonBlock((ButtonBlock) block, blockTexture(name.replace("_button", "_planks")));

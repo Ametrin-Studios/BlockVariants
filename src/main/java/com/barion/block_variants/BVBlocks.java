@@ -19,9 +19,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java.util.Iterator;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 public class BVBlocks {
     public static final DeferredRegister<Block> BlockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
@@ -568,5 +567,5 @@ public class BVBlocks {
     }
     private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return BlockRegistry.register(name, block);}
 
-    public static List<Block> getAllBlocks() {return BlockRegistry.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());}
+    public static Iterator<Block> getAllBlocks() {return BlockRegistry.getEntries().stream().map(RegistryObject::get).iterator();}
 }

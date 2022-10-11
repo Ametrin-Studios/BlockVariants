@@ -8,9 +8,10 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.*;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import java.util.List;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class BVBlockTagsProvider extends BlockTagsProvider {
@@ -320,8 +321,9 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.WALLS).addTag(BVTags.Blocks.WoodenWalls);
     }
 
-    private void handleDefaults(List<Block> allBlocks) {
-        for(Block block : allBlocks) {
+    private void handleDefaults(Iterator<Block> blocks) {
+        while (blocks.hasNext()) {
+            Block block = blocks.next();
             String name = getName(block);
 
             if(block instanceof StairBlock){
@@ -346,10 +348,18 @@ public class BVBlockTagsProvider extends BlockTagsProvider {
                 }
             }
             if(block instanceof FenceBlock){
-                tag(BlockTags.FENCES).add(block);
+                if(BVUtil.isWooden(name)){
+                    tag(BlockTags.WOODEN_FENCES).add(block);
+                } else {
+                    tag(BlockTags.FENCES).add(block);
+                }
             }
             if(block instanceof FenceGateBlock){
-                tag(BlockTags.FENCE_GATES).add(block);
+                if(BVUtil.isWooden(name)){
+                    tag(Tags.Blocks.FENCE_GATES_WOODEN).add(block);
+                } else {
+                    tag(BlockTags.FENCE_GATES).add(block);
+                }
             }
         }
     }

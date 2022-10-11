@@ -1,8 +1,3 @@
 {
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "side": "minecraft:block/magenta_glazed_terracotta",
-    "bottom": "minecraft:block/magenta_glazed_terracotta",
-    "top": "minecraft:block/magenta_glazed_terracotta"
-  }
+  "parent": "block_variants:block/magenta_glazed_terracotta_slab"
 }
