@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "block_variants:cracked_nether_brick_fence",
-    "block_variants:red_nether_brick_fence",
-    "#minecraft:wooden_fences"
+    "block_variants:red_nether_brick_fence"
   ]
 }

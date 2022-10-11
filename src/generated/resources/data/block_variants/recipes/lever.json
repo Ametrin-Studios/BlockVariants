@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "|",
+    "#"
+  ],
+  "key": {
+    "|": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "tag": "block_variants:stone_crafting"
+    }
+  },
+  "result": {
+    "item": "minecraft:lever"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "block_variants:stripped_oak_wood_fence_gate",
+    "block_variants:stripped_spruce_wood_fence_gate",
+    "block_variants:stripped_birch_wood_fence_gate",
+    "block_variants:stripped_jungle_wood_fence_gate",
+    "block_variants:stripped_acacia_wood_fence_gate",
+    "block_variants:stripped_dark_oak_wood_fence_gate",
+    "block_variants:oak_wood_fence_gate",
+    "block_variants:spruce_wood_fence_gate",
+    "block_variants:birch_wood_fence_gate",
+    "block_variants:jungle_wood_fence_gate",
+    "block_variants:acacia_wood_fence_gate",
+    "block_variants:dark_oak_wood_fence_gate",
+    "block_variants:stripped_crimson_hyphae_fence_gate",
+    "block_variants:stripped_warped_hyphae_fence_gate",
+    "block_variants:crimson_hyphae_fence_gate",
+    "block_variants:warped_hyphae_fence_gate"
+  ]
+}
