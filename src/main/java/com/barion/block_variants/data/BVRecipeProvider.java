@@ -219,6 +219,23 @@ public class BVRecipeProvider extends RecipeProvider {
         smelting(BVBlocks.Black_Glazed_Terracotta_Slab.get(), BVBlocks.Black_Terracotta_Slab.get());
         smelting(BVBlocks.Black_Glazed_Terracotta_Wall.get(), BVBlocks.Black_Terracotta_Wall.get());
 
+        all(BVBlocks.WhiteWoolStairs.get(), BVBlocks.WhiteWoolSlab.get(), BVBlocks.WhiteWoolWall.get(), Blocks.WHITE_WOOL, false);
+        all(BVBlocks.OrangeWoolStairs.get(), BVBlocks.OrangeWoolSlab.get(), BVBlocks.OrangeWoolWall.get(), Blocks.ORANGE_WOOL, false);
+        all(BVBlocks.MagentaWoolStairs.get(), BVBlocks.MagentaWoolSlab.get(), BVBlocks.MagentaWoolWall.get(), Blocks.MAGENTA_WOOL, false);
+        all(BVBlocks.LightBlueWoolStairs.get(), BVBlocks.LightBlueWoolSlab.get(), BVBlocks.LightBlueWoolWall.get(), Blocks.LIGHT_BLUE_WOOL, false);
+        all(BVBlocks.YellowWoolStairs.get(), BVBlocks.YellowWoolSlab.get(), BVBlocks.YellowWoolWall.get(), Blocks.YELLOW_WOOL, false);
+        all(BVBlocks.LimeWoolStairs.get(), BVBlocks.LimeWoolSlab.get(), BVBlocks.LimeWoolWall.get(), Blocks.LIME_WOOL, false);
+        all(BVBlocks.PinkWoolStairs.get(), BVBlocks.PinkWoolSlab.get(), BVBlocks.PinkWoolWall.get(), Blocks.PINK_WOOL, false);
+        all(BVBlocks.GrayWoolStairs.get(), BVBlocks.GrayWoolSlab.get(), BVBlocks.GrayWoolWall.get(), Blocks.GRAY_WOOL, false);
+        all(BVBlocks.LightGrayWoolStairs.get(), BVBlocks.LightGrayWoolSlab.get(), BVBlocks.LightGrayWoolWall.get(), Blocks.LIGHT_GRAY_WOOL, false);
+        all(BVBlocks.CyanWoolStairs.get(), BVBlocks.CyanWoolSlab.get(), BVBlocks.CyanWoolWall.get(), Blocks.CYAN_WOOL, false);
+        all(BVBlocks.PurpleWoolStairs.get(), BVBlocks.PurpleWoolSlab.get(), BVBlocks.PurpleWoolWall.get(), Blocks.PURPLE_WOOL, false);
+        all(BVBlocks.BlueWoolStairs.get(), BVBlocks.BlueWoolSlab.get(), BVBlocks.BlueWoolWall.get(), Blocks.BLUE_WOOL, false);
+        all(BVBlocks.BrownWoolStairs.get(), BVBlocks.BrownWoolSlab.get(), BVBlocks.BrownWoolWall.get(), Blocks.BROWN_WOOL, false);
+        all(BVBlocks.GreenWoolStairs.get(), BVBlocks.GreenWoolSlab.get(), BVBlocks.GreenWoolWall.get(), Blocks.GREEN_WOOL, false);
+        all(BVBlocks.RedWoolStairs.get(), BVBlocks.RedWoolSlab.get(), BVBlocks.RedWoolWall.get(), Blocks.RED_WOOL, false);
+        all(BVBlocks.BlackWoolStairs.get(), BVBlocks.BlackWoolSlab.get(), BVBlocks.BlackWoolWall.get(), Blocks.BLACK_WOOL, false);
+
         {
             ShapedRecipeBuilder.shaped(Blocks.DROPPER, 1)
                     .define('#', BVTags.Items.StoneCrafting)
