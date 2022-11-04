@@ -6,7 +6,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -21,13 +20,10 @@ public class BlockVariants{
 
         BVBlocks.BlockRegistry.register(modBus);
         BVBlocks.ItemRegistry.register(modBus);
+        modBus.addListener(BVDataGenerators::gatherData);
     }
-
-    @Mod.EventBusSubscriber(modid = BlockVariants.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class BVDataGenerators{
         private BVDataGenerators(){}
-
-        @SubscribeEvent
         public static void gatherData(GatherDataEvent event){
             DataGenerator generator = event.getGenerator();
             ExistingFileHelper fileHelper = event.getExistingFileHelper();
