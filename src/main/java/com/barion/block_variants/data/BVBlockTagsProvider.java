@@ -4,16 +4,19 @@ import com.ametrinstudios.ametrin.datagen.ExtendedBlockTagsProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import java.util.concurrent.CompletableFuture;
+
 import static com.ametrinstudios.ametrin.AmetrinUtil.isWooden;
 
 public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
-    public BVBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper){
-        super(generator, BlockVariants.ModID, fileHelper);
+    public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper){
+        super(output, lookupProvider, BlockVariants.ModID, fileHelper);
     }
 
     {
@@ -25,7 +28,7 @@ public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider holderLookup){
         runRules(BVBlocks.BlockRegistry);
 
         {tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
@@ -352,21 +355,6 @@ public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.Stripped_Warped_Hyphae_Fence.get(),
                 BVBlocks.Stripped_Warped_Hyphae_FenceGate.get()
         );} // needs Axe
-
-        tag(BlockTags.NON_FLAMMABLE_WOOD).add(
-                BVBlocks.Crimson_Hyphae_Stairs.get(),
-                BVBlocks.Crimson_Hyphae_Slab.get(),
-                BVBlocks.Crimson_Hyphae_Wall.get(),
-                BVBlocks.Warped_Hyphae_Stairs.get(),
-                BVBlocks.Warped_Hyphae_Slab.get(),
-                BVBlocks.Warped_Hyphae_Wall.get(),
-                BVBlocks.Stripped_Crimson_Hyphae_Wall.get(),
-                BVBlocks.Stripped_Crimson_Hyphae_Slab.get(),
-                BVBlocks.Stripped_Warped_Hyphae_Slab.get(),
-                BVBlocks.Stripped_Crimson_Hyphae_Stairs.get(),
-                BVBlocks.Stripped_Warped_Hyphae_Stairs.get(),
-                BVBlocks.Stripped_Warped_Hyphae_Wall.get()
-        );
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 BVBlocks.Obsidian_Stairs.get(),

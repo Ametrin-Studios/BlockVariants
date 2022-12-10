@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-11T17:28:53.6605991	Tags for minecraft:item
+// 1.19.3	2022-12-10T09:01:16.9624272	Tags for minecraft:item mod id block_variants
 4bb0b4af6e2b59a1dc5527dfc5f80b1dd9067afb data/block_variants/tags/items/stone_crafting.json
 ddded40b3891121c787181085e098b75480c6cf5 data/forge/tags/items/wooden_wall.json
 960d76897d027e0bc0520bff67e9be02fba90f86 data/minecraft/tags/items/fences.json

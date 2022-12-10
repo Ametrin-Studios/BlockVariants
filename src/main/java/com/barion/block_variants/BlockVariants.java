@@ -2,7 +2,9 @@ package com.barion.block_variants;
 
 import com.barion.block_variants.data.*;
 import com.mojang.logging.LogUtils;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -10,6 +12,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod(BlockVariants.ModID)
 public class BlockVariants{
@@ -30,15 +34,18 @@ public class BlockVariants{
         @SubscribeEvent
         public static void gatherData(GatherDataEvent event){
             DataGenerator generator = event.getGenerator();
+            PackOutput packOutput = generator.getPackOutput();
+            CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
             ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
             generator.addProvider(true, new BVBlockStateProvider(generator, fileHelper));
             generator.addProvider(true, new BVItemModelProvider(generator, fileHelper));
-            BVBlockTagsProvider blockTags = new BVBlockTagsProvider(generator, fileHelper);
+            BVBlockTagsProvider blockTags = new BVBlockTagsProvider(packOutput, lookupProvider, fileHelper);
             generator.addProvider(true, blockTags);
-            generator.addProvider(true, new BVItemTagsProvider(generator, blockTags, fileHelper));
-            generator.addProvider(true, new BVRecipeProvider(generator));
-            generator.addProvider(true, new BVLootTableProvider(generator));
+            generator.addProvider(true, new BVItemTagsProvider(packOutput, lookupProvider, blockTags, fileHelper));
+            generator.addProvider(true, new BVRecipeProvider(packOutput));
+            generator.addProvider(true, new BVLootTableProvider(packOutput));
         }
     }
 }

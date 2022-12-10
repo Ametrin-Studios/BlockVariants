@@ -20,7 +20,7 @@ public class StrippableFenceGateBlock extends FenceGateBlock {
     private final Supplier<FenceGateBlock> stripResult;
 
     public StrippableFenceGateBlock(Supplier<FenceGateBlock> stripResult, Properties properties) {
-        super(properties);
+        super(properties, SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN);
         this.stripResult = stripResult;
     }
 

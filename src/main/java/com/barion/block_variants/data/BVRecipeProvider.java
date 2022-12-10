@@ -4,8 +4,9 @@ import com.ametrinstudios.ametrin.datagen.ExtendedRecipeProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -17,10 +18,10 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
 public class BVRecipeProvider extends ExtendedRecipeProvider {
-    public BVRecipeProvider(DataGenerator generator) {super(generator, BlockVariants.ModID);}
+    public BVRecipeProvider(PackOutput packOutput) {super(packOutput, BlockVariants.ModID);}
 
     @Override @ParametersAreNonnullByDefault
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer){
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer){
         wall(consumer, BVBlocks.PolishedGraniteWall.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
         wall(consumer, BVBlocks.PolishedDioriteWall.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
         wall(consumer, BVBlocks.PolishedAndesiteWall.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
@@ -62,15 +63,15 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         smelting(consumer, BVBlocks.CrackedPolishedBlackstoneBrickStairs.get(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);
         smelting(consumer, BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), Blocks.POLISHED_BLACKSTONE_BRICK_SLAB);
         smelting(consumer, BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.POLISHED_BLACKSTONE_STAIRS);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_SLAB, 1, Blocks.BLACKSTONE_SLAB);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.BLACKSTONE_SLAB);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.POLISHED_BLACKSTONE_SLAB);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_WALL, 1, Blocks.BLACKSTONE_WALL);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.BLACKSTONE_WALL);
-        stonecutting(consumer, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.POLISHED_BLACKSTONE_WALL);
+        stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
+        stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
+        stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.POLISHED_BLACKSTONE_STAIRS);
+        stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_SLAB, 1, Blocks.BLACKSTONE_SLAB);
+        stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.BLACKSTONE_SLAB);
+        stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.POLISHED_BLACKSTONE_SLAB);
+        stonecutting(consumer, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_WALL, 1, Blocks.BLACKSTONE_WALL);
+        stonecutting(consumer, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.BLACKSTONE_WALL);
+        stonecutting(consumer, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.POLISHED_BLACKSTONE_WALL);
 
         all(consumer, BVBlocks.Basalt_Stairs.get(), BVBlocks.Basalt_Slab.get(), BVBlocks.Basalt_Wall.get(), Blocks.BASALT, true);
         stairs(consumer, BVBlocks.Polished_Basalt_Stairs.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.Basalt_Stairs.get());
@@ -242,7 +243,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         all(consumer, BVBlocks.PackedMudStairs.get(), BVBlocks.PackedMudSlab.get(), BVBlocks.PackedMudWall.get(), Blocks.PACKED_MUD, true);
 
         {
-            ShapedRecipeBuilder.shaped(Blocks.DROPPER, 1)
+            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DROPPER, 1)
                     .define('#', BVTags.Items.StoneCrafting)
                     .define('+', Items.REDSTONE)
                     .pattern("###")
@@ -251,7 +252,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_redstone", has(Items.REDSTONE))
                     .save(consumer, recipeID(Blocks.DROPPER));
 
-            ShapedRecipeBuilder.shaped(Blocks.DISPENSER, 1)
+            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DISPENSER, 1)
                     .define('#', BVTags.Items.StoneCrafting)
                     .define('+', Items.REDSTONE)
                     .define('(', Items.BOW)
@@ -261,7 +262,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_bow", has(Items.BOW))
                     .save(consumer, recipeID(Blocks.DISPENSER));
 
-            ShapedRecipeBuilder.shaped(Blocks.FURNACE, 1)
+            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Blocks.FURNACE, 1)
                     .define('#', BVTags.Items.StoneCrafting)
                     .pattern("###")
                     .pattern("# #")
@@ -269,7 +270,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
                     .save(consumer, recipeID(Blocks.FURNACE));
 
-            ShapedRecipeBuilder.shaped(Blocks.STONECUTTER, 1)
+            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS,Blocks.STONECUTTER, 1)
                     .define('#', BVTags.Items.StoneCrafting)
                     .define('+', Items.IRON_INGOT)
                     .pattern(" + ")
@@ -277,7 +278,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
                     .save(consumer, recipeID(Blocks.STONECUTTER));
 
-            ShapedRecipeBuilder.shaped(Blocks.LEVER, 1)
+            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.LEVER, 1)
                     .define('|', Items.STICK)
                     .define('#', BVTags.Items.StoneCrafting)
                     .pattern("|")
@@ -285,7 +286,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
                     .save(consumer, recipeID(Blocks.LEVER));
 
-            ShapedRecipeBuilder.shaped(Blocks.PISTON, 1)
+            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.PISTON, 1)
                     .define('#', BVTags.Items.StoneCrafting)
                     .define('W', ItemTags.PLANKS)
                     .define('N', Items.IRON_INGOT)
@@ -307,9 +308,8 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         stairs(consumer, stair, material, hasStonecutting);
         slab(consumer, slab, material, hasStonecutting);
     }
-
     protected void smelting(Consumer<FinishedRecipe> consumer, ItemLike result, ItemLike ingredient) {
-        smelting(consumer, result, ingredient, 0.1f, 200);
+        smelting(consumer, RecipeCategory.MISC, result, ingredient, 0.1f, 200);
     }
     protected void recipeWoods(Consumer<FinishedRecipe> consumer, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material, ItemLike altMaterial){
         stairs(consumer, stairs, material, false);
@@ -323,5 +323,4 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
     }
 
     protected static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.ModID, getItemName(item));}
-
 }

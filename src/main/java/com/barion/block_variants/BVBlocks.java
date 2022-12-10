@@ -1,8 +1,8 @@
 package com.barion.block_variants;
 
 import com.barion.block_variants.block.*;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -24,10 +24,10 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final DeferredRegister<Block> BlockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
     public static final DeferredRegister<Item> ItemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.ModID);
 
-    private static final Item.Properties BuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
-    private static final Item.Properties DecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS);
-    private static final Item.Properties FireResistanceBuildingBlocks = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS).fireResistant();
-    private static final Item.Properties FireResistanceDecorationBlocks = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS).fireResistant();
+    private static final Item.Properties BuildingBlocks = new Item.Properties();
+    private static final Item.Properties DecorationBlocks = new Item.Properties();
+    private static final Item.Properties FireResistanceBuildingBlocks = new Item.Properties().fireResistant();
+    private static final Item.Properties FireResistanceDecorationBlocks = new Item.Properties().fireResistant();
 
 
     public static final RegistryObject<WallBlock> PolishedGraniteWall = register("polished_granite_wall",
@@ -663,6 +663,15 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
         return register(color + "_wool_wall",
                 wall(parent), DecorationBlocks);
     }
+
+    protected static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
+    protected static Supplier<SlabBlock> slab(Block parent) {return slab(properties(parent));}
+    protected static Supplier<WallBlock> wall(WallBlock.Properties properties) {return ()-> new WallBlock(properties);}
+    protected static Supplier<WallBlock> wall(Block parent) {return wall(properties(parent));}
+    protected static Supplier<FenceBlock> fence(FenceBlock.Properties properties) {return ()-> new FenceBlock(properties);}
+    protected static Supplier<FenceBlock> fence(Block parent) {return fence(properties(parent));}
+    protected static Supplier<FenceGateBlock> fenceGate(FenceGateBlock.Properties properties) {return ()-> new FenceGateBlock(properties, SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN);}
+    protected static Supplier<FenceGateBlock> fenceGate(Block parent) {return fenceGate(properties(parent));}
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
