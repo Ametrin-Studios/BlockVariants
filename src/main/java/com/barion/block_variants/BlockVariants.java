@@ -37,13 +37,13 @@ public class BlockVariants{
             PackOutput packOutput = generator.getPackOutput();
             CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-            ExistingFileHelper fileHelper = event.getExistingFileHelper();
+            ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-            generator.addProvider(true, new BVBlockStateProvider(generator, fileHelper));
-            generator.addProvider(true, new BVItemModelProvider(generator, fileHelper));
-            BVBlockTagsProvider blockTags = new BVBlockTagsProvider(packOutput, lookupProvider, fileHelper);
+            generator.addProvider(true, new BVBlockStateProvider(packOutput, existingFileHelper));
+            generator.addProvider(true, new BVItemModelProvider(packOutput, existingFileHelper));
+            BVBlockTagsProvider blockTags = new BVBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
             generator.addProvider(true, blockTags);
-            generator.addProvider(true, new BVItemTagsProvider(packOutput, lookupProvider, blockTags, fileHelper));
+            generator.addProvider(true, new BVItemTagsProvider(packOutput, lookupProvider, blockTags, existingFileHelper));
             generator.addProvider(true, new BVRecipeProvider(packOutput));
             generator.addProvider(true, new BVLootTableProvider(packOutput));
         }

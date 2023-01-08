@@ -679,9 +679,9 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
         return ret;
     }
 
-    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemPorperties){
+    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
-        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), itemPorperties){
+        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), itemProperties){
             @Override
             public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {return itemBurnTime;}
         });

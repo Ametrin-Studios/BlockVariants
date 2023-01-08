@@ -17,8 +17,8 @@ import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("unchecked")
 public class BVItemTagsProvider extends ItemTagsProvider {
-    public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExtendedBlockTagsProvider provider, ExistingFileHelper fileHelper) {
-        super(packOutput, lookupProvider, provider, BlockVariants.ModID, fileHelper);
+    public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExtendedBlockTagsProvider provider, ExistingFileHelper existingFileHelper) {
+        super(packOutput, lookupProvider, provider, BlockVariants.ModID, existingFileHelper);
     }
 
     @Override

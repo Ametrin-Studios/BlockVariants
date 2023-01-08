@@ -2,10 +2,9 @@ package com.barion.block_variants.data;
 
 import com.ametrinstudios.ametrin.datagen.ExtendedLootTableProvider;
 import com.barion.block_variants.BVBlocks;
+import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTables;
@@ -16,16 +15,14 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class BVLootTableProvider extends ExtendedLootTableProvider {
     private static List<SubProviderEntry> tables;
 
     public BVLootTableProvider(PackOutput packOutput) {
-        super(packOutput);
+        super(packOutput, BlockVariants.ModID, null);
         tables = List.of(new SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK));
     }
 
@@ -39,16 +36,7 @@ public class BVLootTableProvider extends ExtendedLootTableProvider {
         return tables;
     }
 
-    public static class ModBlockLootTableProvider extends BlockLootSubProvider {
-
-        protected ModBlockLootTableProvider() {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
-        }
-
-        private <T extends Block> void dropSelf(Iterator<T> blocks) {
-            blocks.forEachRemaining(this::dropSelf);
-        }
-
+    public class ModBlockLootTableProvider extends ExtendedBlockLootSubProvider {
         @Override
         protected void generate() {dropSelf(BVBlocks.getAllBlocks());}
 

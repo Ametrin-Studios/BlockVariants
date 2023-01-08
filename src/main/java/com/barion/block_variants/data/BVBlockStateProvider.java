@@ -4,7 +4,7 @@ import com.ametrinstudios.ametrin.datagen.ExtendedBlockStateProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVUtil;
 import com.barion.block_variants.BlockVariants;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
@@ -14,8 +14,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import static com.ametrinstudios.ametrin.AmetrinUtil.isLog;
 
 public class BVBlockStateProvider extends ExtendedBlockStateProvider {
-    public BVBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper){
-        super(generator, BlockVariants.ModID, fileHelper);
+    public BVBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper){
+        super(output, BlockVariants.ModID, existingFileHelper);
     }
 
     {
@@ -101,7 +101,5 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
     }
 
     @Override
-    protected ResourceLocation modBlockLoc(String key) {
-        return mcLoc("block/" + key);
-    }
+    protected ResourceLocation modBlockLoc(String key) {return mcLoc("block/" + key);}
 }

@@ -4,7 +4,7 @@ import com.ametrinstudios.ametrin.datagen.ExtendedItemModelProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVUtil;
 import com.barion.block_variants.BlockVariants;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceBlock;
@@ -20,8 +20,8 @@ import static com.ametrinstudios.ametrin.AmetrinUtil.shouldAppendS;
 import static com.barion.block_variants.BVUtil.getBlockName;
 
 public class BVItemModelProvider extends ExtendedItemModelProvider {
-    public BVItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper){
-        super(generator, BlockVariants.ModID, fileHelper);
+    public BVItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper){
+        super(output, BlockVariants.ModID, existingFileHelper);
     }
 
     @Override
