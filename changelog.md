@@ -1,3 +1,6 @@
+## 4.5
+* ported to 1.19.3
+
 ## 4.4
 * added `StrippableFenceBlock`
 * added `StrippableFenceGateBlock`
