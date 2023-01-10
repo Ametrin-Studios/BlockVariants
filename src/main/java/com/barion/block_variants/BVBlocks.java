@@ -20,6 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Iterator;
 import java.util.function.Supplier;
 
+@SuppressWarnings("removal")
 public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final DeferredRegister<Block> BlockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
     public static final DeferredRegister<Item> ItemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.ModID);
