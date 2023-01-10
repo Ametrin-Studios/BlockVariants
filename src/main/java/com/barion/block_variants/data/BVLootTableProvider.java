@@ -22,7 +22,7 @@ public class BVLootTableProvider extends ExtendedLootTableProvider {
     private static List<SubProviderEntry> tables;
 
     public BVLootTableProvider(PackOutput packOutput) {
-        super(packOutput, BlockVariants.ModID, null);
+        super(packOutput, BlockVariants.ModID);
         tables = List.of(new SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK));
     }
 
@@ -32,9 +32,7 @@ public class BVLootTableProvider extends ExtendedLootTableProvider {
     }
 
     @Override
-    public @NotNull List<SubProviderEntry> getTables() {
-        return tables;
-    }
+    public @NotNull List<SubProviderEntry> getTables() {return tables;}
 
     public class ModBlockLootTableProvider extends ExtendedBlockLootSubProvider {
         @Override
