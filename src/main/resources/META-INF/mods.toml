@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[43,)" #mandatory
+loaderVersion="[44,)" #mandatory
 license="All rights reserved"
 issueTrackerURL="https://github.com/BarionLP/BlockVariants/issues" #optional
 
@@ -12,27 +12,26 @@ issueTrackerURL="https://github.com/BarionLP/BlockVariants/issues" #optional
     logoFile="logo.png" #optional
     #credits="Thanks for this example mod goes to Java" #optional
     authors="Barion" #optional
-    description='''
-Provides you tons of blocks that are missing in vanilla like Polished Diorite Walls and Amethyst Slabs.
-'''
+    description=
+'''Provides you tons of blocks that are missing in vanilla like Polished Diorite Walls and Amethyst Slabs'''
 
 [[dependencies.block_variants]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[43,)" #mandatory
+    versionRange="[44.1,)" #mandatory
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.block_variants]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,1.20)"
+    versionRange="[1.19.3,1.20)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.block_variants]]
     modId="ametrin"
     mandatory=true
-    versionRange="[0.0.20,)"
+    versionRange="[0.0.29,)"
     ordering="NONE"
     side="BOTH"
