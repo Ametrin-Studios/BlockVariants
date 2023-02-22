@@ -12,7 +12,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.ametrinstudios.ametrin.AmetrinUtil.isWooden;
+import static com.ametrinstudios.ametrin.datagen.DataProviderExtensions.isWooden;
 
 public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper){

@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import static com.ametrinstudios.ametrin.AmetrinUtil.isLog;
+import static com.ametrinstudios.ametrin.datagen.DataProviderExtensions.isLog;
 
 public class BVBlockStateProvider extends ExtendedBlockStateProvider {
     public BVBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper){

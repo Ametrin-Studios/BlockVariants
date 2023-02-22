@@ -1,3 +1,9 @@
+## 4.5.2
+* Ametrin API compatibility
+
+## 4.5.1
+* fixed Items not being in CreativeModeTabs
+
 ## 4.5
 * ported to 1.19.3
 
