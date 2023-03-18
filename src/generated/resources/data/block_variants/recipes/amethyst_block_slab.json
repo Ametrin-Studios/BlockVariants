@@ -12,5 +12,6 @@
   "result": {
     "count": 6,
     "item": "block_variants:amethyst_block_slab"
-  }
+  },
+  "show_notification": true
 }

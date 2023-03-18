@@ -13,5 +13,6 @@
   "result": {
     "count": 6,
     "item": "block_variants:gray_glazed_terracotta_wall"
-  }
+  },
+  "show_notification": true
 }

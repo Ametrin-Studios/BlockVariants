@@ -13,5 +13,6 @@
   "result": {
     "count": 6,
     "item": "block_variants:smooth_basalt_wall"
-  }
+  },
+  "show_notification": true
 }

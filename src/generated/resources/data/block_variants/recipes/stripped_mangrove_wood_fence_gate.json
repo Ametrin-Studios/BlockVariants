@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "block_variants:stripped_mangrove_wood_fence_gate"
-  }
+  },
+  "show_notification": true
 }

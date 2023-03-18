@@ -16,5 +16,6 @@
   "result": {
     "count": 6,
     "item": "block_variants:cracked_nether_brick_fence"
-  }
+  },
+  "show_notification": true
 }

@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "block_variants:acacia_wood_fence_gate"
-  }
+  },
+  "show_notification": true
 }

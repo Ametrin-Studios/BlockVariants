@@ -12,5 +12,6 @@
   "result": {
     "count": 6,
     "item": "block_variants:crimson_stem_slab"
-  }
+  },
+  "show_notification": true
 }

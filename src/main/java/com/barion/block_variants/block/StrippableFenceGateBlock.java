@@ -10,6 +10,7 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,8 +20,8 @@ import java.util.function.Supplier;
 public class StrippableFenceGateBlock extends FenceGateBlock {
     private final Supplier<FenceGateBlock> stripResult;
 
-    public StrippableFenceGateBlock(Supplier<FenceGateBlock> stripResult, Properties properties) {
-        super(properties, SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN);
+    public StrippableFenceGateBlock(Supplier<FenceGateBlock> stripResult, Properties properties, WoodType type) {
+        super(properties, type);
         this.stripResult = stripResult;
     }
 

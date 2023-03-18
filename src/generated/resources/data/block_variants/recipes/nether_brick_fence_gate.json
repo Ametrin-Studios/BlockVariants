@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "block_variants:nether_brick_fence_gate"
-  }
+  },
+  "show_notification": true
 }

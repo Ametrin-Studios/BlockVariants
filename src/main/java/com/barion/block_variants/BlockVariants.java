@@ -27,10 +27,10 @@ public class BlockVariants{
 
         BVBlocks.BlockRegistry.register(modBus);
         BVBlocks.ItemRegistry.register(modBus);
-        modBus.addListener(this::addCreative);
+        modBus.addListener(this::buildCreativeModeTabs);
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event){
+    private void buildCreativeModeTabs(CreativeModeTabEvent.BuildContents event){
         if(event.getTab() != CreativeModeTabs.BUILDING_BLOCKS) { return; }
         BVBlocks.BlockRegistry.getEntries().forEach((o)-> event.accept(o.get()));
     }
@@ -51,7 +51,7 @@ public class BlockVariants{
             generator.addProvider(true, new BVItemModelProvider(packOutput, existingFileHelper));
             BVBlockTagsProvider blockTags = new BVBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
             generator.addProvider(true, blockTags);
-            generator.addProvider(true, new BVItemTagsProvider(packOutput, lookupProvider, blockTags, existingFileHelper));
+            generator.addProvider(true, new BVItemTagsProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
             generator.addProvider(true, new BVRecipeProvider(packOutput));
             generator.addProvider(true, new BVLootTableProvider(packOutput));
         }

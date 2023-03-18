@@ -14,5 +14,6 @@
   "result": {
     "count": 4,
     "item": "block_variants:gray_terracotta_stairs"
-  }
+  },
+  "show_notification": true
 }

@@ -13,5 +13,6 @@
   "result": {
     "count": 6,
     "item": "block_variants:crimson_hyphae_wall"
-  }
+  },
+  "show_notification": true
 }
