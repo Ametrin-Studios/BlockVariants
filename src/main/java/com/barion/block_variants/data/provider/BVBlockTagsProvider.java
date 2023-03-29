@@ -1,6 +1,6 @@
-package com.barion.block_variants.data;
+package com.barion.block_variants.data.provider;
 
-import com.ametrinstudios.ametrin.datagen.ExtendedBlockTagsProvider;
+import com.ametrinstudios.ametrin.data.provider.ExtendedBlockTagsProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
@@ -12,7 +12,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.ametrinstudios.ametrin.datagen.DataProviderExtensions.isWooden;
+import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isWooden;
 
 public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper){
@@ -22,27 +22,27 @@ public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     {
         blockTagProviderRules.add((block, name)->{
             if(block instanceof WallBlock && isWooden(name)){
-                tag(BVTags.Blocks.WoodenWalls).add(block);
+                tag(BVTags.Blocks.WOODEN_WALLS).add(block);
             }
         });
     }
 
     @Override
     protected void addTags(HolderLookup.Provider holderLookup){
-        runRules(BVBlocks.BlockRegistry);
+        runRules(BVBlocks.BLOCK_REGISTER);
 
         {tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                BVBlocks.SmoothStoneStairs.get(),
-                BVBlocks.CutSandstoneStairs.get(),
-                BVBlocks.CutRedSandstoneStairs.get(),
-                BVBlocks.QuartzBrickStairs.get(),
-                BVBlocks.SmoothStoneStairs.get(),
-                BVBlocks.ChiseledQuartzBlockStairs.get(),
-                BVBlocks.NetherrackStairs.get(),
-                BVBlocks.EndStoneStairs.get(),
-                BVBlocks.CrackedPolishedBlackstoneBrickStairs.get(),
-                BVBlocks.Basalt_Stairs.get(),
-                BVBlocks.Polished_Basalt_Stairs.get(),
+                BVBlocks.SMOOTH_STONE_STAIRS.get(),
+                BVBlocks.CUT_SANDSTONE_STAIRS.get(),
+                BVBlocks.CUT_RED_SANDSTONE_STAIRS.get(),
+                BVBlocks.QUARTZ_BRICK_STAIRS.get(),
+                BVBlocks.SMOOTH_STONE_STAIRS.get(),
+                BVBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get(),
+                BVBlocks.NETHERRACK_STAIRS.get(),
+                BVBlocks.END_STONE_STAIRS.get(),
+                BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(),
+                BVBlocks.BASALT_STAIRS.get(),
+                BVBlocks.POLISHED_BASALT_STAIRS.get(),
                 BVBlocks.Terracotta_Stairs.get(),
                 BVBlocks.White_Terracotta_Stairs.get(),
                 BVBlocks.Orange_Terracotta_Stairs.get(),
@@ -64,13 +64,13 @@ public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.Amethyst_Block_Stairs.get(),
                 BVBlocks.Cracked_Stone_Brick_Stairs.get(),
 
-                BVBlocks.QuartzBrickSlab.get(),
-                BVBlocks.Chiseled_Quartz_Block_Slab.get(),
-                BVBlocks.Netherrack_Slab.get(),
-                BVBlocks.End_Stone_Slab.get(),
-                BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(),
-                BVBlocks.Basalt_Slab.get(),
-                BVBlocks.Polished_Basalt_Slab.get(),
+                BVBlocks.QUARTZ_BRICK_SLAB.get(),
+                BVBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get(),
+                BVBlocks.NETHERRACK_SLAB.get(),
+                BVBlocks.END_STONE_SLAB.get(),
+                BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(),
+                BVBlocks.BASALT_SLAB.get(),
+                BVBlocks.POLISHED_BASALT_SLAB.get(),
                 BVBlocks.Terracotta_Slab.get(),
                 BVBlocks.White_Terracotta_Slab.get(),
                 BVBlocks.Orange_Terracotta_Slab.get(),
@@ -92,25 +92,25 @@ public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.Amethyst_Block_Slab.get(),
                 BVBlocks.Cracked_Stone_Brick_Slab.get(),
 
-                BVBlocks.PolishedDioriteWall.get(),
-                BVBlocks.PolishedGraniteWall.get(),
+                BVBlocks.POLISHED_DIORITE_WALL.get(),
+                BVBlocks.POLISHED_GRANITE_WALL.get(),
                 BVBlocks.PolishedAndesiteWall.get(),
-                BVBlocks.StoneWall.get(),
-                BVBlocks.SmoothStoneWall.get(),
-                BVBlocks.CutSandstoneWall.get(),
-                BVBlocks.CutRedSandstoneWall.get(),
-                BVBlocks.QuartzWall.get(),
-                BVBlocks.QuartzBrickWall.get(),
-                BVBlocks.SmoothQuartzWall.get(),
-                BVBlocks.Chiseled_Quartz_Block_Wall.get(),
-                BVBlocks.Prismarine_Brick_Wall.get(),
-                BVBlocks.Dark_Prismarine_Wall.get(),
-                BVBlocks.Netherrack_Wall.get(),
-                BVBlocks.End_Stone_Wall.get(),
-                BVBlocks.Purpur_Wall.get(),
-                BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(),
-                BVBlocks.Basalt_Wall.get(),
-                BVBlocks.Polished_Basalt_Wall.get(),
+                BVBlocks.STONE_WALL.get(),
+                BVBlocks.SMOOTH_STONE_WALL.get(),
+                BVBlocks.CUT_SANDSTONE_WALL.get(),
+                BVBlocks.CUT_RED_SANDSTONE_WALL.get(),
+                BVBlocks.QUARTZ_WALL.get(),
+                BVBlocks.QUARTZ_BRICK_WALL.get(),
+                BVBlocks.SMOOTH_QUARTZ_WALL.get(),
+                BVBlocks.CHISELED_QUARTZ_BLOCK_WALL.get(),
+                BVBlocks.PRISMARINE_BRICK_WALL.get(),
+                BVBlocks.DARK_PRISMARINE_WALL.get(),
+                BVBlocks.NETHERRACK_WALL.get(),
+                BVBlocks.END_STONE_WALL.get(),
+                BVBlocks.PURPUR_WALL.get(),
+                BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(),
+                BVBlocks.BASALT_WALL.get(),
+                BVBlocks.POLISHED_BASALT_WALL.get(),
                 BVBlocks.Terracotta_Wall.get(),
                 BVBlocks.White_Terracotta_Wall.get(),
                 BVBlocks.Orange_Terracotta_Wall.get(),

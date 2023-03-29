@@ -1,21 +1,20 @@
 package com.barion.block_variants;
 
-import com.barion.block_variants.data.*;
+import com.ametrinstudios.ametrin.data.provider.CustomLootTableProvider;
+import com.barion.block_variants.data.provider.*;
+import com.barion.block_variants.data.provider.loot_table.BVBlockLootSubProvider;
 import com.mojang.logging.LogUtils;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-import java.util.concurrent.CompletableFuture;
+import java.util.List;
 
 @Mod(BlockVariants.ModID)
 public class BlockVariants{
@@ -23,16 +22,16 @@ public class BlockVariants{
     public static final Logger Logger = LogUtils.getLogger();
 
     public BlockVariants() {
-        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
+        var modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        BVBlocks.BlockRegistry.register(modBus);
-        BVBlocks.ItemRegistry.register(modBus);
+        BVBlocks.BLOCK_REGISTER.register(modBus);
+        BVBlocks.ITEM_REGISTER.register(modBus);
         modBus.addListener(this::buildCreativeModeTabs);
     }
 
     private void buildCreativeModeTabs(CreativeModeTabEvent.BuildContents event){
         if(event.getTab() != CreativeModeTabs.BUILDING_BLOCKS) { return; }
-        BVBlocks.BlockRegistry.getEntries().forEach((o)-> event.accept(o.get()));
+        BVBlocks.BLOCK_REGISTER.getEntries().forEach((o)-> event.accept(o.get()));
     }
 
     @Mod.EventBusSubscriber(modid = BlockVariants.ModID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -41,19 +40,22 @@ public class BlockVariants{
 
         @SubscribeEvent
         public static void gatherData(GatherDataEvent event){
-            DataGenerator generator = event.getGenerator();
-            PackOutput packOutput = generator.getPackOutput();
-            CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+            var generator = event.getGenerator();
+            var output = generator.getPackOutput();
+            var existingFileHelper = event.getExistingFileHelper();
+            var lookup = event.getLookupProvider();
 
-            ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+            var runClient = event.includeClient();
+            var runServer = event.includeServer();
 
-            generator.addProvider(true, new BVBlockStateProvider(packOutput, existingFileHelper));
-            generator.addProvider(true, new BVItemModelProvider(packOutput, existingFileHelper));
-            BVBlockTagsProvider blockTags = new BVBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
-            generator.addProvider(true, blockTags);
-            generator.addProvider(true, new BVItemTagsProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
-            generator.addProvider(true, new BVRecipeProvider(packOutput));
-            generator.addProvider(true, new BVLootTableProvider(packOutput));
+            generator.addProvider(runServer, new BVBlockStateProvider(output, existingFileHelper));
+            generator.addProvider(runServer, new BVItemModelProvider(output, existingFileHelper));
+            BVBlockTagsProvider blockTags = new BVBlockTagsProvider(output, lookup, existingFileHelper);
+            generator.addProvider(runServer, blockTags);
+            generator.addProvider(runServer, new BVItemTagsProvider(output, lookup, blockTags.contentsGetter(), existingFileHelper));
+            generator.addProvider(runServer, new BVRecipeProvider(output));
+            var lootTableProvider = new CustomLootTableProvider(output, List.of(new LootTableProvider.SubProviderEntry(BVBlockLootSubProvider::new, LootContextParamSets.BLOCK)));
+            generator.addProvider(runServer, lootTableProvider);
         }
     }
 }

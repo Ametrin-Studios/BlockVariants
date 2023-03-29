@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 
 public class BVTags {
     public static final class Blocks{
-        public static final TagKey<Block> WoodenWalls = forge("wooden_wall");
+        public static final TagKey<Block> WOODEN_WALLS = forge("wooden_wall");
 
         private static TagKey<Block> forge(String path){
             return BlockTags.create(new ResourceLocation("forge", path));
@@ -20,8 +20,8 @@ public class BVTags {
     }
 
     public static final class Items{
-        public static final TagKey<Item> WoodenWalls = forge("wooden_wall");
-        public static final TagKey<Item> StoneCrafting = mod("stone_crafting");
+        public static final TagKey<Item> WOODEN_WALLS = forge("wooden_wall");
+        public static final TagKey<Item> STONE_CRAFTING = mod("stone_crafting");
 
         private static TagKey<Item> forge(String path){
             return ItemTags.create(new ResourceLocation("forge", path));

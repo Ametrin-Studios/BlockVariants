@@ -1,6 +1,6 @@
-package com.barion.block_variants.data;
+package com.barion.block_variants.data.provider;
 
-import com.ametrinstudios.ametrin.datagen.ExtendedItemModelProvider;
+import com.ametrinstudios.ametrin.data.provider.ExtendedItemModelProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVUtil;
 import com.barion.block_variants.BlockVariants;
@@ -15,8 +15,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import java.util.Iterator;
 import java.util.Objects;
 
-import static com.ametrinstudios.ametrin.datagen.DataProviderExtensions.isWood;
-import static com.ametrinstudios.ametrin.datagen.DataProviderExtensions.shouldAppendS;
+import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isWood;
+import static com.ametrinstudios.ametrin.data.DataProviderExtensions.shouldAppendS;
 import static com.barion.block_variants.BVUtil.getBlockName;
 
 public class BVItemModelProvider extends ExtendedItemModelProvider {

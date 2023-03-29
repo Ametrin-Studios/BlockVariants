@@ -1,6 +1,6 @@
-package com.barion.block_variants.data;
+package com.barion.block_variants.data.provider;
 
-import com.ametrinstudios.ametrin.datagen.ExtendedRecipeProvider;
+import com.ametrinstudios.ametrin.data.provider.ExtendedRecipeProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
@@ -22,47 +22,47 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
 
     @Override @ParametersAreNonnullByDefault
     protected void buildRecipes(Consumer<FinishedRecipe> consumer){
-        wall(consumer, BVBlocks.PolishedGraniteWall.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
-        wall(consumer, BVBlocks.PolishedDioriteWall.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
+        wall(consumer, BVBlocks.POLISHED_GRANITE_WALL.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
+        wall(consumer, BVBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
         wall(consumer, BVBlocks.PolishedAndesiteWall.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
 
         smelting(consumer, Blocks.STONE_STAIRS, Blocks.COBBLESTONE_STAIRS);
         smelting(consumer, Blocks.STONE_SLAB, Blocks.COBBLESTONE_SLAB);
-        wall(consumer, BVBlocks.StoneWall.get(), Blocks.STONE, true);
-        smelting(consumer, BVBlocks.StoneWall.get(), Blocks.COBBLESTONE_WALL);
-        stairs(consumer, BVBlocks.SmoothStoneStairs.get(), Blocks.SMOOTH_STONE, true);
-        smelting(consumer, BVBlocks.SmoothStoneStairs.get(), Blocks.STONE_STAIRS);
+        wall(consumer, BVBlocks.STONE_WALL.get(), Blocks.STONE, true);
+        smelting(consumer, BVBlocks.STONE_WALL.get(), Blocks.COBBLESTONE_WALL);
+        stairs(consumer, BVBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.SMOOTH_STONE, true);
+        smelting(consumer, BVBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.STONE_STAIRS);
         smelting(consumer, Blocks.SMOOTH_STONE_SLAB, Blocks.STONE_SLAB);
-        wall(consumer, BVBlocks.SmoothStoneWall.get(), Blocks.SMOOTH_STONE, true);
-        smelting(consumer, BVBlocks.SmoothStoneWall.get(), BVBlocks.StoneWall.get());
+        wall(consumer, BVBlocks.SMOOTH_STONE_WALL.get(), Blocks.SMOOTH_STONE, true);
+        smelting(consumer, BVBlocks.SMOOTH_STONE_WALL.get(), BVBlocks.STONE_WALL.get());
 
-        stairs(consumer, BVBlocks.CutSandstoneStairs.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS);
-        stairs(consumer, BVBlocks.CutRedSandstoneStairs.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS);
-        wall(consumer, BVBlocks.CutSandstoneWall.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_WALL);
-        wall(consumer, BVBlocks.CutRedSandstoneWall.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_WALL);
+        stairs(consumer, BVBlocks.CUT_SANDSTONE_STAIRS.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS);
+        stairs(consumer, BVBlocks.CUT_RED_SANDSTONE_STAIRS.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS);
+        wall(consumer, BVBlocks.CUT_SANDSTONE_WALL.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_WALL);
+        wall(consumer, BVBlocks.CUT_RED_SANDSTONE_WALL.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_WALL);
 
-        wall(consumer, BVBlocks.QuartzWall.get(), Blocks.QUARTZ_BLOCK, true);
-        stairs(consumer, BVBlocks.QuartzBrickStairs.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_STAIRS);
-        slab(consumer, BVBlocks.QuartzBrickSlab.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
-        wall(consumer, BVBlocks.QuartzBrickWall.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, BVBlocks.QuartzWall.get());
+        wall(consumer, BVBlocks.QUARTZ_WALL.get(), Blocks.QUARTZ_BLOCK, true);
+        stairs(consumer, BVBlocks.QUARTZ_BRICK_STAIRS.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_STAIRS);
+        slab(consumer, BVBlocks.QUARTZ_BRICK_SLAB.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
+        wall(consumer, BVBlocks.QUARTZ_BRICK_WALL.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, BVBlocks.QUARTZ_WALL.get());
         smelting(consumer, Blocks.SMOOTH_QUARTZ_STAIRS, Blocks.QUARTZ_STAIRS);
         smelting(consumer, Blocks.SMOOTH_QUARTZ_SLAB, Blocks.QUARTZ_SLAB);
-        wall(consumer, BVBlocks.SmoothQuartzWall.get(), Blocks.SMOOTH_QUARTZ, true);
-        smelting(consumer, BVBlocks.SmoothQuartzWall.get(), BVBlocks.QuartzWall.get());
-        stairs(consumer, BVBlocks.ChiseledQuartzBlockStairs.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_STAIRS);
-        slab(consumer, BVBlocks.Chiseled_Quartz_Block_Slab.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
-        wall(consumer, BVBlocks.Chiseled_Quartz_Block_Wall.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, BVBlocks.QuartzWall.get());
+        wall(consumer, BVBlocks.SMOOTH_QUARTZ_WALL.get(), Blocks.SMOOTH_QUARTZ, true);
+        smelting(consumer, BVBlocks.SMOOTH_QUARTZ_WALL.get(), BVBlocks.QUARTZ_WALL.get());
+        stairs(consumer, BVBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_STAIRS);
+        slab(consumer, BVBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
+        wall(consumer, BVBlocks.CHISELED_QUARTZ_BLOCK_WALL.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, BVBlocks.QUARTZ_WALL.get());
 
-        wall(consumer, BVBlocks.Prismarine_Brick_Wall.get(), Blocks.PRISMARINE_BRICKS, true);
-        wall(consumer, BVBlocks.Dark_Prismarine_Wall.get(), Blocks.DARK_PRISMARINE, true);
-        all(consumer, BVBlocks.NetherrackStairs.get(), BVBlocks.Netherrack_Slab.get(), BVBlocks.Netherrack_Wall.get(), Blocks.NETHERRACK, true);
-        all(consumer, BVBlocks.EndStoneStairs.get(), BVBlocks.End_Stone_Slab.get(), BVBlocks.End_Stone_Wall.get(), Blocks.END_STONE, true);
-        wall(consumer, BVBlocks.Purpur_Wall.get(), Blocks.PURPUR_BLOCK, true);
+        wall(consumer, BVBlocks.PRISMARINE_BRICK_WALL.get(), Blocks.PRISMARINE_BRICKS, true);
+        wall(consumer, BVBlocks.DARK_PRISMARINE_WALL.get(), Blocks.DARK_PRISMARINE, true);
+        all(consumer, BVBlocks.NETHERRACK_STAIRS.get(), BVBlocks.NETHERRACK_SLAB.get(), BVBlocks.NETHERRACK_WALL.get(), Blocks.NETHERRACK, true);
+        all(consumer, BVBlocks.END_STONE_STAIRS.get(), BVBlocks.END_STONE_SLAB.get(), BVBlocks.END_STONE_WALL.get(), Blocks.END_STONE, true);
+        wall(consumer, BVBlocks.PURPUR_WALL.get(), Blocks.PURPUR_BLOCK, true);
 
-        all(consumer, BVBlocks.CrackedPolishedBlackstoneBrickStairs.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, true);
-        smelting(consumer, BVBlocks.CrackedPolishedBlackstoneBrickStairs.get(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);
-        smelting(consumer, BVBlocks.Cracked_Polished_Blackstone_Brick_Slab.get(), Blocks.POLISHED_BLACKSTONE_BRICK_SLAB);
-        smelting(consumer, BVBlocks.Cracked_Polished_Blackstone_Brick_Wall.get(), Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+        all(consumer, BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(), BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(), Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, true);
+        smelting(consumer, BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);
+        smelting(consumer, BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(), Blocks.POLISHED_BLACKSTONE_BRICK_SLAB);
+        smelting(consumer, BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(), Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
         stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
         stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
         stonecutting(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.POLISHED_BLACKSTONE_STAIRS);
@@ -73,10 +73,10 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         stonecutting(consumer, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.BLACKSTONE_WALL);
         stonecutting(consumer, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.POLISHED_BLACKSTONE_WALL);
 
-        all(consumer, BVBlocks.Basalt_Stairs.get(), BVBlocks.Basalt_Slab.get(), BVBlocks.Basalt_Wall.get(), Blocks.BASALT, true);
-        stairs(consumer, BVBlocks.Polished_Basalt_Stairs.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.Basalt_Stairs.get());
-        slab(consumer, BVBlocks.Polished_Basalt_Slab.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.Basalt_Slab.get());
-        wall(consumer, BVBlocks.Polished_Basalt_Wall.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.Basalt_Wall.get());
+        all(consumer, BVBlocks.BASALT_STAIRS.get(), BVBlocks.BASALT_SLAB.get(), BVBlocks.BASALT_WALL.get(), Blocks.BASALT, true);
+        stairs(consumer, BVBlocks.POLISHED_BASALT_STAIRS.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.BASALT_STAIRS.get());
+        slab(consumer, BVBlocks.POLISHED_BASALT_SLAB.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.BASALT_SLAB.get());
+        wall(consumer, BVBlocks.POLISHED_BASALT_WALL.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.BASALT_WALL.get());
 
         all(consumer, BVBlocks.Terracotta_Stairs.get(), BVBlocks.Terracotta_Slab.get(), BVBlocks.Terracotta_Wall.get(), Blocks.TERRACOTTA, true);
         all(consumer, BVBlocks.White_Terracotta_Stairs.get(), BVBlocks.White_Terracotta_Slab.get(), BVBlocks.White_Terracotta_Wall.get(), Blocks.WHITE_TERRACOTTA, true);
@@ -139,9 +139,9 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
 
         all(consumer, BVBlocks.Calcite_Stairs.get(), BVBlocks.Calcite_Slab.get(), BVBlocks.Calcite_Wall.get(), Blocks.CALCITE, true);
         all(consumer, BVBlocks.Smooth_Basalt_Stairs.get(), BVBlocks.Smooth_Basalt_Slab.get(), BVBlocks.Smooth_Basalt_Wall.get(), Blocks.SMOOTH_BASALT, true);
-        smelting(consumer, BVBlocks.Smooth_Basalt_Stairs.get(), BVBlocks.Basalt_Stairs.get());
-        smelting(consumer, BVBlocks.Smooth_Basalt_Slab.get(), BVBlocks.Basalt_Slab.get());
-        smelting(consumer, BVBlocks.Smooth_Basalt_Wall.get(), BVBlocks.Basalt_Wall.get());
+        smelting(consumer, BVBlocks.Smooth_Basalt_Stairs.get(), BVBlocks.BASALT_STAIRS.get());
+        smelting(consumer, BVBlocks.Smooth_Basalt_Slab.get(), BVBlocks.BASALT_SLAB.get());
+        smelting(consumer, BVBlocks.Smooth_Basalt_Wall.get(), BVBlocks.BASALT_WALL.get());
         all(consumer, BVBlocks.Tuff_Stairs.get(), BVBlocks.Tuff_Slab.get(), BVBlocks.Tuff_Wall.get(), Blocks.TUFF, true);
 
         all(consumer, BVBlocks.Deepslate_Stairs.get(), BVBlocks.Deepslate_Slab.get(), BVBlocks.Deepslate_Wall.get(), Blocks.DEEPSLATE, true);
@@ -244,7 +244,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
 
         {
             ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DROPPER, 1)
-                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('+', Items.REDSTONE)
                     .pattern("###")
                     .pattern("# #")
@@ -253,7 +253,7 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .save(consumer, recipeID(Blocks.DROPPER));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DISPENSER, 1)
-                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('+', Items.REDSTONE)
                     .define('(', Items.BOW)
                     .pattern("###")
@@ -263,38 +263,38 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
                     .save(consumer, recipeID(Blocks.DISPENSER));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Blocks.FURNACE, 1)
-                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('#', BVTags.Items.STONE_CRAFTING)
                     .pattern("###")
                     .pattern("# #")
                     .pattern("###")
-                    .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
+                    .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(consumer, recipeID(Blocks.FURNACE));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS,Blocks.STONECUTTER, 1)
-                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('+', Items.IRON_INGOT)
                     .pattern(" + ")
                     .pattern("###")
-                    .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
+                    .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(consumer, recipeID(Blocks.STONECUTTER));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.LEVER, 1)
                     .define('|', Items.STICK)
-                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('#', BVTags.Items.STONE_CRAFTING)
                     .pattern("|")
                     .pattern("#")
-                    .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
+                    .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(consumer, recipeID(Blocks.LEVER));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.PISTON, 1)
-                    .define('#', BVTags.Items.StoneCrafting)
+                    .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('W', ItemTags.PLANKS)
                     .define('N', Items.IRON_INGOT)
                     .define('I', Items.REDSTONE)
                     .pattern("WWW")
                     .pattern("#N#")
                     .pattern("#I#")
-                    .unlockedBy("has_stone", has(BVTags.Items.StoneCrafting))
+                    .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(consumer, recipeID(Blocks.PISTON));
         } //Recipe overrides
     }

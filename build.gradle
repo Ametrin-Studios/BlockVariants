@@ -81,16 +81,13 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
-        url "https://cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
+        url "https://github.com/BarionLP/Ametrin/raw/master/maven"
     }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
-    implementation fg.deobf("curse.maven:ametrin-670599:${ametrin_version}")
+    implementation fg.deobf("com.ametrinstudios:ametrin:${mc_version}-${ametrin_version}")
 }
 
 jar {

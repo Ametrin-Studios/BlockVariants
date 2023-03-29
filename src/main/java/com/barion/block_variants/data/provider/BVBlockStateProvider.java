@@ -1,6 +1,6 @@
-package com.barion.block_variants.data;
+package com.barion.block_variants.data.provider;
 
-import com.ametrinstudios.ametrin.datagen.ExtendedBlockStateProvider;
+import com.ametrinstudios.ametrin.data.provider.ExtendedBlockStateProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVUtil;
 import com.barion.block_variants.BlockVariants;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import static com.ametrinstudios.ametrin.datagen.DataProviderExtensions.isLog;
+import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isLog;
 
 public class BVBlockStateProvider extends ExtendedBlockStateProvider {
     public BVBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper){
@@ -72,17 +72,17 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
             return true;
         });
         blockStateProviderRules.add((block, name, texture)->{
-            if(block != BVBlocks.QuartzWall.get()) {return false;}
+            if(block != BVBlocks.QUARTZ_WALL.get()) {return false;}
             wallBlock((WallBlock) block, modBlockLoc(texture.replace("_wall", "_block_top")));
             return true;
         });
         blockStateProviderRules.add((block, name, texture)->{
-            if(block != BVBlocks.SmoothQuartzWall.get()) {return false;}
+            if(block != BVBlocks.SMOOTH_QUARTZ_WALL.get()) {return false;}
             wallBlock((WallBlock) block, modBlockLoc(texture.replace("_wall", "_block_bottom").replace("smooth_", "")));
             return true;
         });
         blockStateProviderRules.add((block, name, texture)->{
-            if(block != BVBlocks.Purpur_Wall.get()) {return false;}
+            if(block != BVBlocks.PURPUR_WALL.get()) {return false;}
             wallBlock((WallBlock) block, modBlockLoc(texture.replace("wall", "block")));
             return true;
         });
@@ -90,11 +90,11 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        runProviderRules(BVBlocks.BlockRegistry);
+        runProviderRules(BVBlocks.BLOCK_REGISTER);
     }
 
     @Override
-    protected String getTexture(String name) {
+    protected String getTextureLocation(String name) {
         if(name.contains("wood")) {name = name.replace("wood", "log");}
         if(name.contains("hyphae")) {name = name.replace("hyphae", "stem");}
         return name;

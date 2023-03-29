@@ -1,4 +1,4 @@
-package com.barion.block_variants.data;
+package com.barion.block_variants.data.provider;
 
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
@@ -28,10 +28,10 @@ public class BVItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.WALLS, ItemTags.WALLS);
         copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
         copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
-        copy(BVTags.Blocks.WoodenWalls, BVTags.Items.WoodenWalls);
+        copy(BVTags.Blocks.WOODEN_WALLS, BVTags.Items.WOODEN_WALLS);
         copy(BlockTags.FENCES, ItemTags.FENCES);
 
-        tag(BVTags.Items.StoneCrafting).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONE);
+        tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONE);
 
         tag(ItemTags.STAIRS).addTag(ItemTags.WOODEN_STAIRS);
         tag(ItemTags.SLABS).addTag(ItemTags.WOODEN_SLABS);

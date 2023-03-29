@@ -20,100 +20,104 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Iterator;
 import java.util.function.Supplier;
 
-public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
-    public static final DeferredRegister<Block> BlockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
-    public static final DeferredRegister<Item> ItemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.ModID);
+import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.CopyProperties;
+import static com.ametrinstudios.ametrin.world.block.helper.BlockRegistryHelper.fenceGate;
+import static com.ametrinstudios.ametrin.world.block.helper.BlockRegistryHelper.stair;
+
+public class BVBlocks {
+    public static final DeferredRegister<Block> BLOCK_REGISTER = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
+    public static final DeferredRegister<Item> ITEM_REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.ModID);
 
     private static final Item.Properties defaultItemProperties = new Item.Properties();
     private static final Item.Properties fireResistanceItemProperties = new Item.Properties().fireResistant();
 
 
-    public static final RegistryObject<WallBlock> PolishedGraniteWall = register("polished_granite_wall",
+    public static final RegistryObject<WallBlock> POLISHED_GRANITE_WALL = register("polished_granite_wall",
             wall(Blocks.POLISHED_GRANITE), defaultItemProperties);
-    public static final RegistryObject<WallBlock> PolishedDioriteWall = register("polished_diorite_wall",
+    public static final RegistryObject<WallBlock> POLISHED_DIORITE_WALL = register("polished_diorite_wall",
             wall(Blocks.POLISHED_DIORITE), defaultItemProperties);
     public static final RegistryObject<WallBlock> PolishedAndesiteWall = register("polished_andesite_wall",
             wall(Blocks.POLISHED_ANDESITE), defaultItemProperties);
 
-    public static final RegistryObject<WallBlock> StoneWall = register("stone_wall",
+    public static final RegistryObject<WallBlock> STONE_WALL = register("stone_wall",
             wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<StairBlock> SmoothStoneStairs = register("smooth_stone_stairs",
+    public static final RegistryObject<StairBlock> SMOOTH_STONE_STAIRS = register("smooth_stone_stairs",
             stair(Blocks.SMOOTH_STONE), defaultItemProperties);
-    public static final RegistryObject<WallBlock> SmoothStoneWall = register("smooth_stone_wall",
+    public static final RegistryObject<WallBlock> SMOOTH_STONE_WALL = register("smooth_stone_wall",
             wall(Material.STONE, 2F, 6, SoundType.STONE, true), defaultItemProperties);
 
-    public static final RegistryObject<StairBlock> CutSandstoneStairs = register("cut_sandstone_stairs",
-            stair(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), defaultItemProperties);
-    public static final RegistryObject<WallBlock> CutSandstoneWall = register("cut_sandstone_wall",
+    public static final RegistryObject<StairBlock> CUT_SANDSTONE_STAIRS = register("cut_sandstone_stairs",
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), defaultItemProperties);
+    public static final RegistryObject<WallBlock> CUT_SANDSTONE_WALL = register("cut_sandstone_wall",
             wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<StairBlock> CutRedSandstoneStairs = register("cut_red_sandstone_stairs",
-            stair(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), defaultItemProperties);
-    public static final RegistryObject<WallBlock> CutRedSandstoneWall = register("cut_red_sandstone_wall",
+    public static final RegistryObject<StairBlock> CUT_RED_SANDSTONE_STAIRS = register("cut_red_sandstone_stairs",
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), defaultItemProperties);
+    public static final RegistryObject<WallBlock> CUT_RED_SANDSTONE_WALL = register("cut_red_sandstone_wall",
             wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
 
-    public static final RegistryObject<WallBlock> QuartzWall = register("quartz_wall",
+    public static final RegistryObject<WallBlock> QUARTZ_WALL = register("quartz_wall",
             wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<StairBlock> QuartzBrickStairs = register("quartz_brick_stairs",
-            stair(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.QUARTZ_BRICKS), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> QuartzBrickSlab = register("quartz_brick_slab",
-            slab(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> QuartzBrickWall = register("quartz_brick_wall",
+    public static final RegistryObject<StairBlock> QUARTZ_BRICK_STAIRS = register("quartz_brick_stairs",
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.QUARTZ_BRICKS), defaultItemProperties);
+    public static final RegistryObject<SlabBlock> QUARTZ_BRICK_SLAB = register("quartz_brick_slab",
+            slabOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+    public static final RegistryObject<WallBlock> QUARTZ_BRICK_WALL = register("quartz_brick_wall",
             wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> SmoothQuartzWall = register("smooth_quartz_wall",
+    public static final RegistryObject<WallBlock> SMOOTH_QUARTZ_WALL = register("smooth_quartz_wall",
             wall(Material.STONE, 2, 6, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<StairBlock> ChiseledQuartzBlockStairs = register("chiseled_quartz_block_stairs",
-            stair(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CHISELED_QUARTZ_BLOCK), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Chiseled_Quartz_Block_Slab = register("chiseled_quartz_block_slab",
-            slab(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Chiseled_Quartz_Block_Wall = register("chiseled_quartz_block_wall",
+    public static final RegistryObject<StairBlock> CHISELED_QUARTZ_BLOCK_STAIRS = register("chiseled_quartz_block_stairs",
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CHISELED_QUARTZ_BLOCK), defaultItemProperties);
+    public static final RegistryObject<SlabBlock> CHISELED_QUARTZ_BLOCK_SLAB = register("chiseled_quartz_block_slab",
+            slabOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+    public static final RegistryObject<WallBlock> CHISELED_QUARTZ_BLOCK_WALL = register("chiseled_quartz_block_wall",
             wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
 
-    public static final RegistryObject<WallBlock> Prismarine_Brick_Wall = register("prismarine_brick_wall",
+    public static final RegistryObject<WallBlock> PRISMARINE_BRICK_WALL = register("prismarine_brick_wall",
             wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Dark_Prismarine_Wall = register("dark_prismarine_wall",
+    public static final RegistryObject<WallBlock> DARK_PRISMARINE_WALL = register("dark_prismarine_wall",
             wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
 
-    public static final RegistryObject<StairBlock> NetherrackStairs = register("netherrack_stairs",
-            stair(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true, Blocks.NETHERRACK), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Netherrack_Slab = register("netherrack_slab",
-            slab(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Netherrack_Wall = register("netherrack_wall",
+    public static final RegistryObject<StairBlock> NETHERRACK_STAIRS = register("netherrack_stairs",
+            stairOld(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true, Blocks.NETHERRACK), defaultItemProperties);
+    public static final RegistryObject<SlabBlock> NETHERRACK_SLAB = register("netherrack_slab",
+            slabOld(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), defaultItemProperties);
+    public static final RegistryObject<WallBlock> NETHERRACK_WALL = register("netherrack_wall",
             wall(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), defaultItemProperties);
 
-    public static final RegistryObject<StairBlock> EndStoneStairs = register("end_stone_stairs",
+    public static final RegistryObject<StairBlock> END_STONE_STAIRS = register("end_stone_stairs",
             stair(Blocks.END_STONE), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> End_Stone_Slab = register("end_stone_slab",
+    public static final RegistryObject<SlabBlock> END_STONE_SLAB = register("end_stone_slab",
             slab(Blocks.END_STONE), defaultItemProperties);
-    public static final RegistryObject<WallBlock> End_Stone_Wall = register("end_stone_wall",
+    public static final RegistryObject<WallBlock> END_STONE_WALL = register("end_stone_wall",
             wall(Blocks.END_STONE), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Purpur_Wall = register("purpur_wall",
+    public static final RegistryObject<WallBlock> PURPUR_WALL = register("purpur_wall",
             wall(Blocks.PURPUR_BLOCK), defaultItemProperties);
 
-    public static final RegistryObject<StairBlock> CrackedPolishedBlackstoneBrickStairs = register("cracked_polished_blackstone_brick_stairs",
-            stair(Material.STONE, 1.5F, 6, SoundType.STONE, true, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Cracked_Polished_Blackstone_Brick_Slab = register("cracked_polished_blackstone_brick_slab",
-            slab(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Cracked_Polished_Blackstone_Brick_Wall = register("cracked_polished_blackstone_brick_wall",
+    public static final RegistryObject<StairBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS = register("cracked_polished_blackstone_brick_stairs",
+            stairOld(Material.STONE, 1.5F, 6, SoundType.STONE, true, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS), defaultItemProperties);
+    public static final RegistryObject<SlabBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB = register("cracked_polished_blackstone_brick_slab",
+            slabOld(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
+    public static final RegistryObject<WallBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_WALL = register("cracked_polished_blackstone_brick_wall",
             wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
 
-    public static final RegistryObject<StairBlock> Basalt_Stairs = register("basalt_stairs",
-            stair(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.BASALT), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Basalt_Slab = register("basalt_slab",
-            slab(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Basalt_Wall = register("basalt_wall",
+    public static final RegistryObject<StairBlock> BASALT_STAIRS = register("basalt_stairs",
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.BASALT), defaultItemProperties);
+    public static final RegistryObject<SlabBlock> BASALT_SLAB = register("basalt_slab",
+            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+    public static final RegistryObject<WallBlock> BASALT_WALL = register("basalt_wall",
             wall(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
 
-    public static final RegistryObject<StairBlock> Polished_Basalt_Stairs = register("polished_basalt_stairs",
-            stair(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.POLISHED_BASALT), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Polished_Basalt_Slab = register("polished_basalt_slab",
-            slab(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Polished_Basalt_Wall = register("polished_basalt_wall",
+    public static final RegistryObject<StairBlock> POLISHED_BASALT_STAIRS = register("polished_basalt_stairs",
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.POLISHED_BASALT), defaultItemProperties);
+    public static final RegistryObject<SlabBlock> POLISHED_BASALT_SLAB = register("polished_basalt_slab",
+            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+    public static final RegistryObject<WallBlock> POLISHED_BASALT_WALL = register("polished_basalt_wall",
             wall(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
 
     public static final RegistryObject<StairBlock> Terracotta_Stairs = register("terracotta_stairs",
-            stair(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true, Blocks.TERRACOTTA), defaultItemProperties);
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true, Blocks.TERRACOTTA), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Terracotta_Slab = register("terracotta_slab",
-                    slab(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
+                    slabOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Terracotta_Wall = register("terracotta_wall",
                     wall(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
 
@@ -182,22 +186,22 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final RegistryObject<WallBlock> Black_Terracotta_Wall = regTerracottaWall("black");
 
     public static final RegistryObject<StairBlock> Dripstone_Block_Stairs = register("dripstone_block_stairs",
-                    stair(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true, Blocks.DRIPSTONE_BLOCK), defaultItemProperties);
+                    stairOld(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true, Blocks.DRIPSTONE_BLOCK), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Dripstone_Block_Slab = register("dripstone_block_slab",
-                    slab(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true), defaultItemProperties);
+                    slabOld(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Dripstone_Block_Wall = register("dripstone_block_wall",
                     wall(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true), defaultItemProperties);
     public static final RegistryObject<StairBlock> Amethyst_Block_Stairs = register("amethyst_block_stairs",
-                    stair(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true, Blocks.DRIPSTONE_BLOCK), defaultItemProperties);
+                    stairOld(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true, Blocks.DRIPSTONE_BLOCK), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Amethyst_Block_Slab = register("amethyst_block_slab",
-                    slab(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), defaultItemProperties);
+                    slabOld(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Amethyst_Block_Wall = register("amethyst_block_wall",
                     wall(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), defaultItemProperties);
 
     public static final RegistryObject<StairBlock> Cracked_Stone_Brick_Stairs = register("cracked_stone_brick_stairs",
-                    stair(Material.STONE, 1.5F, 6F, SoundType.STONE, true, Blocks.CRACKED_STONE_BRICKS), defaultItemProperties);
+                    stairOld(Material.STONE, 1.5F, 6F, SoundType.STONE, true, Blocks.CRACKED_STONE_BRICKS), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Cracked_Stone_Brick_Slab = register("cracked_stone_brick_slab",
-                    slab(Material.STONE, 1.5F, 6F, SoundType.STONE, true), defaultItemProperties);
+                    slabOld(Material.STONE, 1.5F, 6F, SoundType.STONE, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Cracked_Stone_Brick_Wall = register("cracked_stone_brick_wall",
                     wall(Material.STONE, 1.5F, 6F, SoundType.STONE, true), defaultItemProperties);
 
@@ -232,22 +236,22 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final RegistryObject<StrippableSlabBlock> Mangrove_Log_Slab = logSlab("mangrove", Blocks.DARK_OAK_WOOD, Stripped_Mangrove_Log_Slab);
 
     public static final RegistryObject<StairBlock> Stripped_Crimson_Stem_Stairs = register("stripped_crimson_stem_stairs",
-            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), defaultItemProperties.fireResistant());
+            stairOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), defaultItemProperties.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Crimson_Stem_Slab = register("stripped_crimson_stem_slab",
-            slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), defaultItemProperties.fireResistant());
+            slabOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), defaultItemProperties.fireResistant());
     public static final RegistryObject<StairBlock> Stripped_Warped_Stem_Stairs = register("stripped_warped_stem_stairs",
-            stair(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), defaultItemProperties.fireResistant());
+            stairOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), defaultItemProperties.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Warped_Stem_Slab = register("stripped_warped_stem_slab",
-            slab(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), defaultItemProperties.fireResistant());
+            slabOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), defaultItemProperties.fireResistant());
 
     public static final RegistryObject<StrippableStairBlock> Crimson_Stem_Stairs = register("crimson_stem_stairs",
-                    stair(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Stairs), defaultItemProperties.fireResistant());
+                    strippableStair(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Stairs), defaultItemProperties.fireResistant());
     public static final RegistryObject<StrippableSlabBlock> Crimson_Stem_Slab = register("crimson_stem_slab",
-                    slab(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Slab), defaultItemProperties.fireResistant());
+                    strippableSlab(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Slab), defaultItemProperties.fireResistant());
     public static final RegistryObject<StrippableStairBlock> Warped_Stem_Stairs = register("warped_stem_stairs",
-                    stair(Blocks.WARPED_STEM, Stripped_Warped_Stem_Stairs), defaultItemProperties.fireResistant());
+                    strippableStair(Blocks.WARPED_STEM, Stripped_Warped_Stem_Stairs), defaultItemProperties.fireResistant());
     public static final RegistryObject<StrippableSlabBlock> Warped_Stem_Slab = register("warped_stem_slab",
-                    slab(Blocks.WARPED_STEM, Stripped_Warped_Stem_Slab), defaultItemProperties.fireResistant());
+                    strippableSlab(Blocks.WARPED_STEM, Stripped_Warped_Stem_Slab), defaultItemProperties.fireResistant());
 
     public static final RegistryObject<StairBlock> Stripped_Oak_Wood_Stairs = woodStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Oak_Wood_Slab = woodSlab("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
@@ -325,64 +329,64 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final RegistryObject<SlabBlock> Stripped_Crimson_Hyphae_Slab = register("stripped_crimson_hyphae_slab", slab(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
     public static final RegistryObject<WallBlock> Stripped_Crimson_Hyphae_Wall = register("stripped_crimson_hyphae_wall", wall(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
     public static final RegistryObject<FenceBlock> Stripped_Crimson_Hyphae_Fence = register("stripped_crimson_hyphae_fence", fence(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
-    public static final RegistryObject<FenceGateBlock> Stripped_Crimson_Hyphae_FenceGate = register("stripped_crimson_hyphae_fence_gate", fenceGate(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
+    public static final RegistryObject<FenceGateBlock> Stripped_Crimson_Hyphae_FenceGate = register("stripped_crimson_hyphae_fence_gate", fenceGate(CopyProperties(Blocks.STRIPPED_CRIMSON_HYPHAE), WoodType.CRIMSON), fireResistanceItemProperties);
     public static final RegistryObject<StairBlock> Stripped_Warped_Hyphae_Stairs = register("stripped_warped_hyphae_stairs", stair(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
     public static final RegistryObject<SlabBlock> Stripped_Warped_Hyphae_Slab = register("stripped_warped_hyphae_slab", slab(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
     public static final RegistryObject<WallBlock> Stripped_Warped_Hyphae_Wall = register("stripped_warped_hyphae_wall", wall(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
     public static final RegistryObject<FenceBlock> Stripped_Warped_Hyphae_Fence = register("stripped_warped_hyphae_fence", fence(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
-    public static final RegistryObject<FenceGateBlock> Stripped_Warped_Hyphae_FenceGate = register("stripped_warped_hyphae_fence_gate", fenceGate(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
+    public static final RegistryObject<FenceGateBlock> Stripped_Warped_Hyphae_FenceGate = register("stripped_warped_hyphae_fence_gate", fenceGate(CopyProperties(Blocks.STRIPPED_WARPED_HYPHAE), WoodType.WARPED), fireResistanceItemProperties);
 
-    public static final RegistryObject<StrippableStairBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs", stair(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Stairs), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableSlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab", slab(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Slab), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableWallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall", wall(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Wall), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableFenceBlock> Crimson_Hyphae_Fence = register("crimson_hyphae_fence", fence(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Fence), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableFenceGateBlock> Crimson_Hyphae_FenceGate = register("crimson_hyphae_fence_gate", fenceGate(Blocks.CRIMSON_HYPHAE, WoodType.CRIMSON, Stripped_Crimson_Hyphae_FenceGate), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableStairBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs", stair(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Stairs), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableSlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab", slab(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Slab), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableWallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall", wall(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Wall), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableFenceBlock> Warped_Hyphae_Fence = register("warped_hyphae_fence", fence(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Fence), fireResistanceItemProperties);
-    public static final RegistryObject<StrippableFenceGateBlock> Warped_Hyphae_FenceGate = register("warped_hyphae_fence_gate", fenceGate(Blocks.WARPED_HYPHAE, WoodType.WARPED, Stripped_Warped_Hyphae_FenceGate), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableStairBlock> Crimson_Hyphae_Stairs = register("crimson_hyphae_stairs", strippableStair(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Stairs), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableSlabBlock> Crimson_Hyphae_Slab = register("crimson_hyphae_slab", strippableSlab(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Slab), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableWallBlock> Crimson_Hyphae_Wall = register("crimson_hyphae_wall", strippableWall(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Wall), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableFenceBlock> Crimson_Hyphae_Fence = register("crimson_hyphae_fence", strippableFence(Blocks.CRIMSON_HYPHAE, Stripped_Crimson_Hyphae_Fence), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableFenceGateBlock> Crimson_Hyphae_FenceGate = register("crimson_hyphae_fence_gate", strippableFenceGate(Blocks.CRIMSON_HYPHAE, WoodType.CRIMSON, Stripped_Crimson_Hyphae_FenceGate), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableStairBlock> Warped_Hyphae_Stairs = register("warped_hyphae_stairs", strippableStair(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Stairs), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableSlabBlock> Warped_Hyphae_Slab = register("warped_hyphae_slab", strippableSlab(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Slab), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableWallBlock> Warped_Hyphae_Wall = register("warped_hyphae_wall", strippableWall(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Wall), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableFenceBlock> Warped_Hyphae_Fence = register("warped_hyphae_fence", strippableFence(Blocks.WARPED_HYPHAE, Stripped_Warped_Hyphae_Fence), fireResistanceItemProperties);
+    public static final RegistryObject<StrippableFenceGateBlock> Warped_Hyphae_FenceGate = register("warped_hyphae_fence_gate", strippableFenceGate(Blocks.WARPED_HYPHAE, WoodType.WARPED, Stripped_Warped_Hyphae_FenceGate), fireResistanceItemProperties);
 
     public static final RegistryObject<StairBlock> Calcite_Stairs = register("calcite_stairs",
-            stair(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true, Blocks.CALCITE), defaultItemProperties);
+            stairOld(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true, Blocks.CALCITE), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Calcite_Slab = register("calcite_slab",
-            slab(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), defaultItemProperties);
+            slabOld(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Calcite_Wall = register("calcite_wall",
             wall(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), defaultItemProperties);
     public static final RegistryObject<StairBlock> Smooth_Basalt_Stairs = register("smooth_basalt_stairs",
-            stair(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.SMOOTH_BASALT), defaultItemProperties);
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.SMOOTH_BASALT), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Smooth_Basalt_Slab = register("smooth_basalt_slab",
-            slab(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Smooth_Basalt_Wall = register("smooth_basalt_wall",
             wall(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
     public static final RegistryObject<StairBlock> Tuff_Stairs = register("tuff_stairs",
-            stair(Material.STONE, 1.5F, 6F, SoundType.TUFF, true, Blocks.TUFF), defaultItemProperties);
+            stairOld(Material.STONE, 1.5F, 6F, SoundType.TUFF, true, Blocks.TUFF), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Tuff_Slab = register("tuff_slab",
-            slab(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), defaultItemProperties);
+            slabOld(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Tuff_Wall = register("tuff_wall",
             wall(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), defaultItemProperties);
 
     public static final RegistryObject<StairBlock> Deepslate_Stairs = register("deepslate_stairs",
-            stair(Material.STONE, 3, 6, SoundType.DEEPSLATE, true, Blocks.DEEPSLATE), defaultItemProperties);
+            stairOld(Material.STONE, 3, 6, SoundType.DEEPSLATE, true, Blocks.DEEPSLATE), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Deepslate_Slab = register("deepslate_slab",
-            slab(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), defaultItemProperties);
+            slabOld(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Deepslate_Wall = register("deepslate_wall",
             wall(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), defaultItemProperties);
     public static final RegistryObject<StairBlock> Cracked_Deepslate_Brick_Stairs = register("cracked_deepslate_brick_stairs",
-            stair(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true, Blocks.CRACKED_DEEPSLATE_BRICKS), defaultItemProperties);
+            stairOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true, Blocks.CRACKED_DEEPSLATE_BRICKS), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Cracked_Deepslate_Brick_Slab = register("cracked_deepslate_brick_slab",
-            slab(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), defaultItemProperties);
+            slabOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Cracked_Deepslate_Brick_Wall = register("cracked_deepslate_brick_wall",
             wall(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), defaultItemProperties);
     public static final RegistryObject<StairBlock> Cracked_Deepslate_Tile_Stairs = register("cracked_deepslate_tile_stairs",
-            stair(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true, Blocks.CRACKED_DEEPSLATE_TILES), defaultItemProperties);
+            stairOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true, Blocks.CRACKED_DEEPSLATE_TILES), defaultItemProperties);
     public static final RegistryObject<SlabBlock> Cracked_Deepslate_Tile_Slab = register("cracked_deepslate_tile_slab",
-            slab(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), defaultItemProperties);
+            slabOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), defaultItemProperties);
     public static final RegistryObject<WallBlock> Cracked_Deepslate_Tile_Wall = register("cracked_deepslate_tile_wall",
             wall(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), defaultItemProperties);
 
     public static final RegistryObject<FenceGateBlock> Nether_Brick_Fence_Gate = register("nether_brick_fence_gate",
-            fenceGate(Blocks.NETHER_BRICK_FENCE), defaultItemProperties);
+            fenceGate(CopyProperties(Blocks.NETHER_BRICK_FENCE)), defaultItemProperties); // TODO: fix wood type
 
     public static final RegistryObject<StairBlock> Cracked_Nether_Brick_Stairs = register("cracked_nether_brick_stairs",
             stair(Blocks.CRACKED_NETHER_BRICKS), defaultItemProperties);
@@ -393,12 +397,12 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final RegistryObject<FenceBlock> Cracked_Nether_Brick_Fence = register("cracked_nether_brick_fence",
             fence(Blocks.CRACKED_NETHER_BRICKS), defaultItemProperties);
     public static final RegistryObject<FenceGateBlock> Cracked_Nether_Brick_Fence_Gate = register("cracked_nether_brick_fence_gate",
-            fenceGate(Blocks.CRACKED_NETHER_BRICKS), defaultItemProperties);
+            fenceGate(CopyProperties(Blocks.CRACKED_NETHER_BRICKS)), defaultItemProperties);
 
     public static final RegistryObject<FenceBlock> Red_Nether_Brick_Fence = register("red_nether_brick_fence",
             fence(Blocks.RED_NETHER_BRICKS), defaultItemProperties);
     public static final RegistryObject<FenceGateBlock> Red_Nether_Brick_Fence_Gate = register("red_nether_brick_fence_gate",
-            fenceGate(Blocks.RED_NETHER_BRICKS), defaultItemProperties);
+            fenceGate(CopyProperties(Blocks.RED_NETHER_BRICKS)), defaultItemProperties);
 
     public static final RegistryObject<StairBlock> Obsidian_Stairs = register("obsidian_stairs",
             stair(Blocks.OBSIDIAN), defaultItemProperties);
@@ -546,29 +550,29 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     public static final RegistryObject<SlabBlock> PackedMudSlab = register("packed_mud_slab", slab(Blocks.PACKED_MUD), defaultItemProperties);
     public static final RegistryObject<WallBlock> PackedMudWall = register("packed_mud_wall", wall(Blocks.PACKED_MUD), defaultItemProperties);
 
-    private static Supplier<StrippableStairBlock> stair(Block base, Supplier<StairBlock> stripped) {return ()-> new StrippableStairBlock(base::defaultBlockState, stripped, StairBlock.Properties.copy(base));}
-    private static Supplier<StrippableSlabBlock> slab(Block base, Supplier<SlabBlock> stripped) {return ()-> new StrippableSlabBlock(stripped, SlabBlock.Properties.copy(base));}
-    private static Supplier<StrippableWallBlock> wall(Block base, Supplier<WallBlock> stripped) {return ()-> new StrippableWallBlock(stripped, WallBlock.Properties.copy(base));}
-    private static Supplier<StrippableFenceBlock> fence(Block base, Supplier<FenceBlock> stripped) {return ()-> new StrippableFenceBlock(stripped, WallBlock.Properties.copy(base));}
-    private static Supplier<StrippableFenceGateBlock> fenceGate(Block base, WoodType type, Supplier<FenceGateBlock> stripped) {return ()-> new StrippableFenceGateBlock(stripped, FenceGateBlock.Properties.copy(base), type);}
+    private static Supplier<StrippableStairBlock> strippableStair(Block base, Supplier<StairBlock> stripped) {return ()-> new StrippableStairBlock(base::defaultBlockState, stripped, StairBlock.Properties.copy(base));}
+    private static Supplier<StrippableSlabBlock> strippableSlab(Block base, Supplier<SlabBlock> stripped) {return ()-> new StrippableSlabBlock(stripped, SlabBlock.Properties.copy(base));}
+    private static Supplier<StrippableWallBlock> strippableWall(Block base, Supplier<WallBlock> stripped) {return ()-> new StrippableWallBlock(stripped, WallBlock.Properties.copy(base));}
+    private static Supplier<StrippableFenceBlock> strippableFence(Block base, Supplier<FenceBlock> stripped) {return ()-> new StrippableFenceBlock(stripped, WallBlock.Properties.copy(base));}
+    private static Supplier<StrippableFenceGateBlock> strippableFenceGate(Block base, WoodType type, Supplier<FenceGateBlock> stripped) {return ()-> new StrippableFenceGateBlock(stripped, FenceGateBlock.Properties.copy(base), type);}
 
-    @Deprecated private static Supplier<StairBlock> stair(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool, Block block){
+    @Deprecated private static Supplier<StairBlock> stairOld(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool, Block block){
         if(requiresTool)
-            return stair(properties(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops(), block::defaultBlockState);
+            return stair(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops(), block::defaultBlockState);
         else
-            return stair(properties(material).strength(hardness, resistance).sound(soundType), block::defaultBlockState);
+            return stair(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType), block::defaultBlockState);
     }
-    @Deprecated private static Supplier<SlabBlock> slab(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
+    @Deprecated private static Supplier<SlabBlock> slabOld(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
-            return slab(properties(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return slab(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return slab(properties(material).strength(hardness, resistance).sound(soundType));
+            return slab(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
     @Deprecated private static Supplier<WallBlock> wall(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
-            return wall(properties(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
+            return wall(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
-            return wall(properties(material).strength(hardness, resistance).sound(soundType));
+            return wall(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
 
     private static RegistryObject<StairBlock> regTerracottaStairs(String color, Block base){
@@ -577,7 +581,7 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     }
     private static RegistryObject<SlabBlock> regTerracottaSlab(String color){
         return register(color + "_terracotta_slab",
-                slab(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
+                slabOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
     }
     private static RegistryObject<WallBlock> regTerracottaWall(String color){
         return register(color + "_terracotta_wall",
@@ -585,7 +589,7 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     }
 
     private static RegistryObject<StrippableStairBlock> logStairs(String type, Block base, Supplier<StairBlock> stripped) {
-        return register(type + "_log_stairs", stair(base, stripped), defaultItemProperties);
+        return register(type + "_log_stairs", strippableStair(base, stripped), defaultItemProperties);
     }
 
     private static RegistryObject<StairBlock> logStairs(String type, Block base) {
@@ -595,7 +599,7 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
         return register(type + "_log_slab", slab(base), defaultItemProperties);
     }
     private static RegistryObject<StrippableSlabBlock> logSlab(String type, Block base, Supplier<SlabBlock> stripped) {
-        return register(type + "_log_slab", slab(base, stripped), defaultItemProperties);
+        return register(type + "_log_slab", strippableSlab(base, stripped), defaultItemProperties);
     }
 
     private static RegistryObject<StairBlock> woodStairs(String type, Block base) {
@@ -603,31 +607,31 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     }
 
     private static RegistryObject<StrippableStairBlock> woodStairs(String type, Block base, Supplier<StairBlock> stripped){
-        return register(type + "_wood_stairs", stair(base, stripped), defaultItemProperties);
+        return register(type + "_wood_stairs", strippableStair(base, stripped), defaultItemProperties);
     }
     private static RegistryObject<SlabBlock> woodSlab(String type, Block base){
         return register(type + "_wood_slab", slab(base), defaultItemProperties);
     }
     private static RegistryObject<StrippableSlabBlock> woodSlab(String type, Block base, Supplier<SlabBlock> stripped){
-        return register(type + "_wood_slab", slab(base, stripped), defaultItemProperties);
+        return register(type + "_wood_slab", strippableSlab(base, stripped), defaultItemProperties);
     }
     private static RegistryObject<WallBlock> woodWall(String type, Block base){
         return register(type + "_wood_wall", wall(base), 300, defaultItemProperties);
     }
     private static RegistryObject<StrippableWallBlock> woodWall(String type, Block base, Supplier<WallBlock> stripped) {
-        return register(type + "_wood_wall", wall(base, stripped), 300, defaultItemProperties);
+        return register(type + "_wood_wall", strippableWall(base, stripped), 300, defaultItemProperties);
     }
     private static RegistryObject<FenceBlock> woodFence(String type, Block base) {
         return register(type + "_wood_fence", fence(base), defaultItemProperties);
     }
     private static RegistryObject<StrippableFenceBlock> woodFence(String type, Block base, Supplier<FenceBlock> stripped) {
-        return register(type + "_wood_fence", fence(base, stripped), defaultItemProperties);
+        return register(type + "_wood_fence", strippableFence(base, stripped), defaultItemProperties);
     }
     private static RegistryObject<FenceGateBlock> woodFenceGate(String type, Block base) {
-        return register(type + "_wood_fence_gate", fenceGate(base), defaultItemProperties);
+        return register(type + "_wood_fence_gate", fenceGate(CopyProperties(base), WoodTypeOf(type)), defaultItemProperties);
     }
     private static RegistryObject<StrippableFenceGateBlock> woodFenceGate(WoodType type, Block base, Supplier<FenceGateBlock> stripped) {
-        return register(type.name() + "_wood_fence_gate", fenceGate(base, type, stripped), defaultItemProperties);
+        return register(type.name() + "_wood_fence_gate", strippableFenceGate(base, type, stripped), defaultItemProperties);
     }
 
     private static RegistryObject<StairBlock> regGlazedTerracottaStairs(String color, Block base){
@@ -663,29 +667,37 @@ public class BVBlocks extends com.ametrinstudios.ametrin.world.BlockRegistry {
     }
 
     protected static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
-    protected static Supplier<SlabBlock> slab(Block parent) {return slab(properties(parent));}
+    protected static Supplier<SlabBlock> slab(Block parent) {return slab(CopyProperties(parent));}
     protected static Supplier<WallBlock> wall(WallBlock.Properties properties) {return ()-> new WallBlock(properties);}
-    protected static Supplier<WallBlock> wall(Block parent) {return wall(properties(parent));}
+    protected static Supplier<WallBlock> wall(Block parent) {return wall(CopyProperties(parent));}
     protected static Supplier<FenceBlock> fence(FenceBlock.Properties properties) {return ()-> new FenceBlock(properties);}
-    protected static Supplier<FenceBlock> fence(Block parent) {return fence(properties(parent));}
-    protected static Supplier<FenceGateBlock> fenceGate(WoodType type, FenceGateBlock.Properties properties) {return ()-> new FenceGateBlock(properties, type);}
-    protected static Supplier<FenceGateBlock> fenceGate(Block parent) {return fenceGate(properties(parent));}
+    protected static Supplier<FenceBlock> fence(Block parent) {return fence(CopyProperties(parent));}
+
+    private static WoodType WoodTypeOf(String key){
+        key = key.replace("stripped_", "");
+        var iterator = WoodType.values().iterator();
+        while(iterator.hasNext()){
+            var type = iterator.next();
+            if(type.name().contains(key)) return type;
+        }
+        throw new IllegalArgumentException("No wood type with key: " + key);
+    }
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
-        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
+        ITEM_REGISTER.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
         return ret;
     }
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemProperties){
         RegistryObject<T> ret = registerWithoutItem(name, block);
-        ItemRegistry.register(name, ()-> new BlockItem(ret.get(), itemProperties){
+        ITEM_REGISTER.register(name, ()-> new BlockItem(ret.get(), itemProperties){
             @Override
             public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {return itemBurnTime;}
         });
         return ret;
     }
-    private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return BlockRegistry.register(name, block);}
+    private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return BLOCK_REGISTER.register(name, block);}
 
-    public static Iterator<Block> getAllBlocks() {return BlockRegistry.getEntries().stream().map(RegistryObject::get).iterator();}
+    public static Iterator<Block> getAllBlocks() {return BLOCK_REGISTER.getEntries().stream().map(RegistryObject::get).iterator();}
 }
