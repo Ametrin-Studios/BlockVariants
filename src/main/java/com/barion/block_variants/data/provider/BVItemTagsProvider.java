@@ -26,15 +26,19 @@ public class BVItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
         copy(BlockTags.SLABS, ItemTags.SLABS);
         copy(BlockTags.WALLS, ItemTags.WALLS);
+        copy(BlockTags.FENCES, ItemTags.FENCES);
+        copy(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES);
+
         copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
         copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
         copy(BVTags.Blocks.WOODEN_WALLS, BVTags.Items.WOODEN_WALLS);
-        copy(BlockTags.FENCES, ItemTags.FENCES);
+        copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
+        copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);
 
         tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONE);
 
-        tag(ItemTags.STAIRS).addTag(ItemTags.WOODEN_STAIRS);
-        tag(ItemTags.SLABS).addTag(ItemTags.WOODEN_SLABS);
+//        tag(ItemTags.STAIRS).addTag(ItemTags.WOODEN_STAIRS);
+//        tag(ItemTags.SLABS).addTag(ItemTags.WOODEN_SLABS);
         //tag(ItemTags.WALLS).addTag(BVTags.Items.WoodenWalls);
 
         tag(ItemTags.NON_FLAMMABLE_WOOD).add(

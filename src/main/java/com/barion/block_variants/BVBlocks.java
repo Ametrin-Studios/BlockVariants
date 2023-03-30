@@ -1,7 +1,9 @@
 package com.barion.block_variants;
 
 import com.barion.block_variants.block.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -28,182 +30,182 @@ public class BVBlocks {
     public static final DeferredRegister<Block> BLOCK_REGISTER = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockVariants.ModID);
     public static final DeferredRegister<Item> ITEM_REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, BlockVariants.ModID);
 
-    private static final Item.Properties defaultItemProperties = new Item.Properties();
+    private static final Item.Properties DEFAULT_ITEM_PROPERTIES = new Item.Properties();
     private static final Item.Properties fireResistanceItemProperties = new Item.Properties().fireResistant();
 
 
     public static final RegistryObject<WallBlock> POLISHED_GRANITE_WALL = register("polished_granite_wall",
-            wall(Blocks.POLISHED_GRANITE), defaultItemProperties);
+            wall(Blocks.POLISHED_GRANITE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> POLISHED_DIORITE_WALL = register("polished_diorite_wall",
-            wall(Blocks.POLISHED_DIORITE), defaultItemProperties);
-    public static final RegistryObject<WallBlock> PolishedAndesiteWall = register("polished_andesite_wall",
-            wall(Blocks.POLISHED_ANDESITE), defaultItemProperties);
+            wall(Blocks.POLISHED_DIORITE), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<WallBlock> POLISHED_ANDESITE_WALL = register("polished_andesite_wall",
+            wall(Blocks.POLISHED_ANDESITE), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<WallBlock> STONE_WALL = register("stone_wall",
-            wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.5F, 6, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> SMOOTH_STONE_STAIRS = register("smooth_stone_stairs",
-            stair(Blocks.SMOOTH_STONE), defaultItemProperties);
+            stair(Blocks.SMOOTH_STONE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> SMOOTH_STONE_WALL = register("smooth_stone_wall",
-            wall(Material.STONE, 2F, 6, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 2F, 6, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> CUT_SANDSTONE_STAIRS = register("cut_sandstone_stairs",
-            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), defaultItemProperties);
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> CUT_SANDSTONE_WALL = register("cut_sandstone_wall",
-            wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> CUT_RED_SANDSTONE_STAIRS = register("cut_red_sandstone_stairs",
-            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), defaultItemProperties);
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CUT_SANDSTONE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> CUT_RED_SANDSTONE_WALL = register("cut_red_sandstone_wall",
-            wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<WallBlock> QUARTZ_WALL = register("quartz_wall",
-            wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> QUARTZ_BRICK_STAIRS = register("quartz_brick_stairs",
-            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.QUARTZ_BRICKS), defaultItemProperties);
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.QUARTZ_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> QUARTZ_BRICK_SLAB = register("quartz_brick_slab",
-            slabOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+            slabOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> QUARTZ_BRICK_WALL = register("quartz_brick_wall",
-            wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> SMOOTH_QUARTZ_WALL = register("smooth_quartz_wall",
-            wall(Material.STONE, 2, 6, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 2, 6, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> CHISELED_QUARTZ_BLOCK_STAIRS = register("chiseled_quartz_block_stairs",
-            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CHISELED_QUARTZ_BLOCK), defaultItemProperties);
+            stairOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true, Blocks.CHISELED_QUARTZ_BLOCK), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> CHISELED_QUARTZ_BLOCK_SLAB = register("chiseled_quartz_block_slab",
-            slabOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+            slabOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> CHISELED_QUARTZ_BLOCK_WALL = register("chiseled_quartz_block_wall",
-            wall(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 0.8F, 0.8F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<WallBlock> PRISMARINE_BRICK_WALL = register("prismarine_brick_wall",
-            wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.5F, 6, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> DARK_PRISMARINE_WALL = register("dark_prismarine_wall",
-            wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.5F, 6, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> NETHERRACK_STAIRS = register("netherrack_stairs",
-            stairOld(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true, Blocks.NETHERRACK), defaultItemProperties);
+            stairOld(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true, Blocks.NETHERRACK), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> NETHERRACK_SLAB = register("netherrack_slab",
-            slabOld(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), defaultItemProperties);
+            slabOld(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> NETHERRACK_WALL = register("netherrack_wall",
-            wall(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), defaultItemProperties);
+            wallOld(Material.STONE, 0.4F, 0.4F, SoundType.NETHERRACK, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> END_STONE_STAIRS = register("end_stone_stairs",
-            stair(Blocks.END_STONE), defaultItemProperties);
+            stair(Blocks.END_STONE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> END_STONE_SLAB = register("end_stone_slab",
-            slab(Blocks.END_STONE), defaultItemProperties);
+            slab(Blocks.END_STONE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> END_STONE_WALL = register("end_stone_wall",
-            wall(Blocks.END_STONE), defaultItemProperties);
+            wall(Blocks.END_STONE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> PURPUR_WALL = register("purpur_wall",
-            wall(Blocks.PURPUR_BLOCK), defaultItemProperties);
+            wall(Blocks.PURPUR_BLOCK), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS = register("cracked_polished_blackstone_brick_stairs",
-            stairOld(Material.STONE, 1.5F, 6, SoundType.STONE, true, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS), defaultItemProperties);
+            stairOld(Material.STONE, 1.5F, 6, SoundType.STONE, true, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB = register("cracked_polished_blackstone_brick_slab",
-            slabOld(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
+            slabOld(Material.STONE, 1.5F, 6, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_WALL = register("cracked_polished_blackstone_brick_wall",
-            wall(Material.STONE, 1.5F, 6, SoundType.STONE, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.5F, 6, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> BASALT_STAIRS = register("basalt_stairs",
-            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.BASALT), defaultItemProperties);
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.BASALT), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> BASALT_SLAB = register("basalt_slab",
-            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> BASALT_WALL = register("basalt_wall",
-            wall(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> POLISHED_BASALT_STAIRS = register("polished_basalt_stairs",
-            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.POLISHED_BASALT), defaultItemProperties);
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.POLISHED_BASALT), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> POLISHED_BASALT_SLAB = register("polished_basalt_slab",
-            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> POLISHED_BASALT_WALL = register("polished_basalt_wall",
-            wall(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), DEFAULT_ITEM_PROPERTIES);
 
-    public static final RegistryObject<StairBlock> Terracotta_Stairs = register("terracotta_stairs",
-            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true, Blocks.TERRACOTTA), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Terracotta_Slab = register("terracotta_slab",
-                    slabOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Terracotta_Wall = register("terracotta_wall",
-                    wall(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
+    public static final RegistryObject<StairBlock> TERRACOTTA_STAIRS = register("terracotta_stairs",
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true, Blocks.TERRACOTTA), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<SlabBlock> TERRACOTTA_SLAB = register("terracotta_slab",
+                    slabOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<WallBlock> TERRACOTTA_WALL = register("terracotta_wall",
+                    wallOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
 
-    public static final RegistryObject<StairBlock> White_Terracotta_Stairs = regTerracottaStairs("white", Blocks.WHITE_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> White_Terracotta_Slab = regTerracottaSlab("white");
-    public static final RegistryObject<WallBlock> White_Terracotta_Wall = regTerracottaWall("white");
+    public static final RegistryObject<StairBlock> White_Terracotta_Stairs = regTerracottaStairs(DyeColor.WHITE, Blocks.WHITE_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> WHITE_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.WHITE);
+    public static final RegistryObject<WallBlock> WHITE_TERRACOTTA_WALL = regTerracottaWall(DyeColor.WHITE);
 
-    public static final RegistryObject<StairBlock> Orange_Terracotta_Stairs = regTerracottaStairs("orange", Blocks.ORANGE_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Orange_Terracotta_Slab = regTerracottaSlab("orange");
-    public static final RegistryObject<WallBlock> Orange_Terracotta_Wall = regTerracottaWall("orange");
+    public static final RegistryObject<StairBlock> ORANGE_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.ORANGE, Blocks.ORANGE_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> ORANGE_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.ORANGE);
+    public static final RegistryObject<WallBlock> ORANGE_TERRACOTTA_WALL = regTerracottaWall(DyeColor.ORANGE);
 
-    public static final RegistryObject<StairBlock> Magenta_Terracotta_Stairs = regTerracottaStairs("magenta", Blocks.MAGENTA_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Magenta_Terracotta_Slab = regTerracottaSlab("magenta");
-    public static final RegistryObject<WallBlock> Magenta_Terracotta_Wall = regTerracottaWall("magenta");
+    public static final RegistryObject<StairBlock> MAGENTA_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.MAGENTA, Blocks.MAGENTA_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> MAGENTA_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.MAGENTA);
+    public static final RegistryObject<WallBlock> MAGENTA_TERRACOTTA_WALL = regTerracottaWall(DyeColor.MAGENTA);
 
-    public static final RegistryObject<StairBlock> Light_Blue_Terracotta_Stairs = regTerracottaStairs("light_blue", Blocks.LIGHT_BLUE_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Light_Blue_Terracotta_Slab = regTerracottaSlab("light_blue");
-    public static final RegistryObject<WallBlock> Light_Blue_Terracotta_Wall = regTerracottaWall("light_blue");
+    public static final RegistryObject<StairBlock> LIGHT_BLUE_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.LIGHT_BLUE, Blocks.LIGHT_BLUE_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> LIGHT_BLUE_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<WallBlock> LIGHT_BLUE_TERRACOTTA_WALL = regTerracottaWall(DyeColor.LIGHT_BLUE);
 
-    public static final RegistryObject<StairBlock> Yellow_Terracotta_Stairs = regTerracottaStairs("yellow", Blocks.YELLOW_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Yellow_Terracotta_Slab = regTerracottaSlab("yellow");
-    public static final RegistryObject<WallBlock> Yellow_Terracotta_Wall = regTerracottaWall("yellow");
+    public static final RegistryObject<StairBlock> YELLOW_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.YELLOW, Blocks.YELLOW_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> YELLOW_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.YELLOW);
+    public static final RegistryObject<WallBlock> YELLOW_TERRACOTTA_WALL = regTerracottaWall(DyeColor.YELLOW);
 
-    public static final RegistryObject<StairBlock> Lime_Terracotta_Stairs = regTerracottaStairs("lime", Blocks.LIME_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Lime_Terracotta_Slab = regTerracottaSlab("lime");
-    public static final RegistryObject<WallBlock> Lime_Terracotta_Wall = regTerracottaWall("lime");
+    public static final RegistryObject<StairBlock> LIME_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.LIME, Blocks.LIME_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> LIME_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.LIME);
+    public static final RegistryObject<WallBlock> LIME_TERRACOTTA_WALL = regTerracottaWall(DyeColor.LIME);
 
-    public static final RegistryObject<StairBlock> Pink_Terracotta_Stairs = regTerracottaStairs("pink", Blocks.PINK_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Pink_Terracotta_Slab = regTerracottaSlab("pink");
-    public static final RegistryObject<WallBlock> Pink_Terracotta_Wall = regTerracottaWall("pink");
+    public static final RegistryObject<StairBlock> PINK_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.PINK, Blocks.PINK_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> PINK_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.PINK);
+    public static final RegistryObject<WallBlock> PINK_TERRACOTTA_WALL = regTerracottaWall(DyeColor.PINK);
 
-    public static final RegistryObject<StairBlock> Gray_Terracotta_Stairs = regTerracottaStairs("gray", Blocks.GRAY_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Gray_Terracotta_Slab = regTerracottaSlab("gray");
-    public static final RegistryObject<WallBlock> Gray_Terracotta_Wall = regTerracottaWall("gray");
+    public static final RegistryObject<StairBlock> GRAY_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.GRAY, Blocks.GRAY_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> GRAY_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.GRAY);
+    public static final RegistryObject<WallBlock> GRAY_TERRACOTTA_WALL = regTerracottaWall(DyeColor.GRAY);
 
-    public static final RegistryObject<StairBlock> Light_Gray_Terracotta_Stairs = regTerracottaStairs("light_gray", Blocks.LIGHT_GRAY_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Light_Gray_Terracotta_Slab = regTerracottaSlab("light_gray");
-    public static final RegistryObject<WallBlock> Light_Gray_Terracotta_Wall = regTerracottaWall("light_gray");
+    public static final RegistryObject<StairBlock> LIGHT_GRAY_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.LIGHT_GRAY, Blocks.LIGHT_GRAY_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> LIGHT_GRAY_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<WallBlock> LIGHT_GRAY_TERRACOTTA_WALL = regTerracottaWall(DyeColor.LIGHT_GRAY);
 
-    public static final RegistryObject<StairBlock> Cyan_Terracotta_Stairs = regTerracottaStairs("cyan", Blocks.CYAN_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Cyan_Terracotta_Slab = regTerracottaSlab("cyan");
-    public static final RegistryObject<WallBlock> Cyan_Terracotta_Wall = regTerracottaWall("cyan");
+    public static final RegistryObject<StairBlock> CYAN_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.CYAN, Blocks.CYAN_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> CYAN_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.CYAN);
+    public static final RegistryObject<WallBlock> CYAN_TERRACOTTA_WALL = regTerracottaWall(DyeColor.CYAN);
 
-    public static final RegistryObject<StairBlock> Purple_Terracotta_Stairs = regTerracottaStairs("purple", Blocks.PURPLE_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Purple_Terracotta_Slab = regTerracottaSlab("purple");
-    public static final RegistryObject<WallBlock> Purple_Terracotta_Wall = regTerracottaWall("purple");
+    public static final RegistryObject<StairBlock> PURPLE_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.PURPLE, Blocks.PURPLE_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> PURPLE_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.PURPLE);
+    public static final RegistryObject<WallBlock> PURPLE_TERRACOTTA_WALL = regTerracottaWall(DyeColor.PURPLE);
 
-    public static final RegistryObject<StairBlock> Blue_Terracotta_Stairs = regTerracottaStairs("blue", Blocks.BLUE_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Blue_Terracotta_Slab = regTerracottaSlab("blue");
-    public static final RegistryObject<WallBlock> Blue_Terracotta_Wall = regTerracottaWall("blue");
+    public static final RegistryObject<StairBlock> BLUE_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.BLUE, Blocks.BLUE_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> BLUE_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.BLUE);
+    public static final RegistryObject<WallBlock> BLUE_TERRACOTTA_WALL = regTerracottaWall(DyeColor.BLUE);
 
-    public static final RegistryObject<StairBlock> Brown_Terracotta_Stairs = regTerracottaStairs("brown", Blocks.BROWN_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Brown_Terracotta_Slab = regTerracottaSlab("brown");
-    public static final RegistryObject<WallBlock> Brown_Terracotta_Wall = regTerracottaWall("brown");
+    public static final RegistryObject<StairBlock> BROWN_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.BROWN, Blocks.BROWN_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> BROWN_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.BROWN);
+    public static final RegistryObject<WallBlock> BROWN_TERRACOTTA_WALL = regTerracottaWall(DyeColor.BROWN);
 
-    public static final RegistryObject<StairBlock> Green_Terracotta_Stairs = regTerracottaStairs("green", Blocks.GREEN_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Green_Terracotta_Slab = regTerracottaSlab("green");
-    public static final RegistryObject<WallBlock> Green_Terracotta_Wall = regTerracottaWall("green");
+    public static final RegistryObject<StairBlock> GREEN_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.GREEN, Blocks.GREEN_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> GREEN_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.GREEN);
+    public static final RegistryObject<WallBlock> GREEN_TERRACOTTA_WALL = regTerracottaWall(DyeColor.GREEN);
 
-    public static final RegistryObject<StairBlock> Red_Terracotta_Stairs = regTerracottaStairs("red", Blocks.RED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Red_Terracotta_Slab = regTerracottaSlab("red");
-    public static final RegistryObject<WallBlock> Red_Terracotta_Wall = regTerracottaWall("red");
+    public static final RegistryObject<StairBlock> RED_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.RED, Blocks.RED_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> RED_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.RED);
+    public static final RegistryObject<WallBlock> RED_TERRACOTTA_WALL = regTerracottaWall(DyeColor.RED);
 
-    public static final RegistryObject<StairBlock> Black_Terracotta_Stairs = regTerracottaStairs("black", Blocks.BLACK_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Black_Terracotta_Slab = regTerracottaSlab("black");
-    public static final RegistryObject<WallBlock> Black_Terracotta_Wall = regTerracottaWall("black");
+    public static final RegistryObject<StairBlock> BLACK_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.BLACK, Blocks.BLACK_TERRACOTTA);
+    public static final RegistryObject<SlabBlock> BLACK_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.BLACK);
+    public static final RegistryObject<WallBlock> BLACK_TERRACOTTA_WALL = regTerracottaWall(DyeColor.BLACK);
 
-    public static final RegistryObject<StairBlock> Dripstone_Block_Stairs = register("dripstone_block_stairs",
-                    stairOld(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true, Blocks.DRIPSTONE_BLOCK), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Dripstone_Block_Slab = register("dripstone_block_slab",
-                    slabOld(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Dripstone_Block_Wall = register("dripstone_block_wall",
-                    wall(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true), defaultItemProperties);
-    public static final RegistryObject<StairBlock> Amethyst_Block_Stairs = register("amethyst_block_stairs",
-                    stairOld(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true, Blocks.DRIPSTONE_BLOCK), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> Amethyst_Block_Slab = register("amethyst_block_slab",
-                    slabOld(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), defaultItemProperties);
-    public static final RegistryObject<WallBlock> Amethyst_Block_Wall = register("amethyst_block_wall",
-                    wall(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), defaultItemProperties);
+    public static final RegistryObject<StairBlock> DRIPSTONE_BLOCK_STAIRS = register("dripstone_block_stairs",
+                    stairOld(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true, Blocks.DRIPSTONE_BLOCK), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<SlabBlock> DRIPSTONE_BLOCK_SLAB = register("dripstone_block_slab",
+                    slabOld(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<WallBlock> DRIPSTONE_BLOCK_WALL = register("dripstone_block_wall",
+                    wallOld(Material.STONE, 1.5F, 1F, SoundType.DRIPSTONE_BLOCK, true), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<StairBlock> AMETHYST_BLOCK_STAIRS = register("amethyst_block_stairs",
+                    stairOld(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true, Blocks.DRIPSTONE_BLOCK), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<SlabBlock> AMETHYST_BLOCK_SLAB = register("amethyst_block_slab",
+                    slabOld(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<WallBlock> AMETHYST_BLOCK_WALL = register("amethyst_block_wall",
+                    wallOld(Material.AMETHYST, 1.5F, 1.5F, SoundType.AMETHYST, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> Cracked_Stone_Brick_Stairs = register("cracked_stone_brick_stairs",
-                    stairOld(Material.STONE, 1.5F, 6F, SoundType.STONE, true, Blocks.CRACKED_STONE_BRICKS), defaultItemProperties);
+                    stairOld(Material.STONE, 1.5F, 6F, SoundType.STONE, true, Blocks.CRACKED_STONE_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Cracked_Stone_Brick_Slab = register("cracked_stone_brick_slab",
-                    slabOld(Material.STONE, 1.5F, 6F, SoundType.STONE, true), defaultItemProperties);
+                    slabOld(Material.STONE, 1.5F, 6F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Cracked_Stone_Brick_Wall = register("cracked_stone_brick_wall",
-                    wall(Material.STONE, 1.5F, 6F, SoundType.STONE, true), defaultItemProperties);
+                    wallOld(Material.STONE, 1.5F, 6F, SoundType.STONE, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> Stripped_Oak_Log_Stairs = logStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD); // log sets its material color based of the AXIS
     public static final RegistryObject<SlabBlock> Stripped_Oak_Log_Slab = logSlab("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
@@ -236,22 +238,22 @@ public class BVBlocks {
     public static final RegistryObject<StrippableSlabBlock> Mangrove_Log_Slab = logSlab("mangrove", Blocks.DARK_OAK_WOOD, Stripped_Mangrove_Log_Slab);
 
     public static final RegistryObject<StairBlock> Stripped_Crimson_Stem_Stairs = register("stripped_crimson_stem_stairs",
-            stairOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), defaultItemProperties.fireResistant());
+            stairOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_CRIMSON_STEM), DEFAULT_ITEM_PROPERTIES.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Crimson_Stem_Slab = register("stripped_crimson_stem_slab",
-            slabOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), defaultItemProperties.fireResistant());
+            slabOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DEFAULT_ITEM_PROPERTIES.fireResistant());
     public static final RegistryObject<StairBlock> Stripped_Warped_Stem_Stairs = register("stripped_warped_stem_stairs",
-            stairOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), defaultItemProperties.fireResistant());
+            stairOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false, Blocks.STRIPPED_WARPED_STEM), DEFAULT_ITEM_PROPERTIES.fireResistant());
     public static final RegistryObject<SlabBlock> Stripped_Warped_Stem_Slab = register("stripped_warped_stem_slab",
-            slabOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), defaultItemProperties.fireResistant());
+            slabOld(Material.NETHER_WOOD, 2F, 5F, SoundType.STEM, false), DEFAULT_ITEM_PROPERTIES.fireResistant());
 
     public static final RegistryObject<StrippableStairBlock> Crimson_Stem_Stairs = register("crimson_stem_stairs",
-                    strippableStair(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Stairs), defaultItemProperties.fireResistant());
+                    strippableStair(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Stairs), DEFAULT_ITEM_PROPERTIES.fireResistant());
     public static final RegistryObject<StrippableSlabBlock> Crimson_Stem_Slab = register("crimson_stem_slab",
-                    strippableSlab(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Slab), defaultItemProperties.fireResistant());
+                    strippableSlab(Blocks.CRIMSON_STEM, Stripped_Crimson_Stem_Slab), DEFAULT_ITEM_PROPERTIES.fireResistant());
     public static final RegistryObject<StrippableStairBlock> Warped_Stem_Stairs = register("warped_stem_stairs",
-                    strippableStair(Blocks.WARPED_STEM, Stripped_Warped_Stem_Stairs), defaultItemProperties.fireResistant());
+                    strippableStair(Blocks.WARPED_STEM, Stripped_Warped_Stem_Stairs), DEFAULT_ITEM_PROPERTIES.fireResistant());
     public static final RegistryObject<StrippableSlabBlock> Warped_Stem_Slab = register("warped_stem_slab",
-                    strippableSlab(Blocks.WARPED_STEM, Stripped_Warped_Stem_Slab), defaultItemProperties.fireResistant());
+                    strippableSlab(Blocks.WARPED_STEM, Stripped_Warped_Stem_Slab), DEFAULT_ITEM_PROPERTIES.fireResistant());
 
     public static final RegistryObject<StairBlock> Stripped_Oak_Wood_Stairs = woodStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
     public static final RegistryObject<SlabBlock> Stripped_Oak_Wood_Slab = woodSlab("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
@@ -348,207 +350,207 @@ public class BVBlocks {
     public static final RegistryObject<StrippableFenceGateBlock> Warped_Hyphae_FenceGate = register("warped_hyphae_fence_gate", strippableFenceGate(Blocks.WARPED_HYPHAE, WoodType.WARPED, Stripped_Warped_Hyphae_FenceGate), fireResistanceItemProperties);
 
     public static final RegistryObject<StairBlock> Calcite_Stairs = register("calcite_stairs",
-            stairOld(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true, Blocks.CALCITE), defaultItemProperties);
+            stairOld(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true, Blocks.CALCITE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Calcite_Slab = register("calcite_slab",
-            slabOld(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), defaultItemProperties);
+            slabOld(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Calcite_Wall = register("calcite_wall",
-            wall(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), defaultItemProperties);
+            wallOld(Material.STONE, 0.75F, 0.75F, SoundType.CALCITE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> Smooth_Basalt_Stairs = register("smooth_basalt_stairs",
-            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.SMOOTH_BASALT), defaultItemProperties);
+            stairOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true, Blocks.SMOOTH_BASALT), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Smooth_Basalt_Slab = register("smooth_basalt_slab",
-            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+            slabOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Smooth_Basalt_Wall = register("smooth_basalt_wall",
-            wall(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.25F, 4.2F, SoundType.BASALT, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> Tuff_Stairs = register("tuff_stairs",
-            stairOld(Material.STONE, 1.5F, 6F, SoundType.TUFF, true, Blocks.TUFF), defaultItemProperties);
+            stairOld(Material.STONE, 1.5F, 6F, SoundType.TUFF, true, Blocks.TUFF), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Tuff_Slab = register("tuff_slab",
-            slabOld(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), defaultItemProperties);
+            slabOld(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Tuff_Wall = register("tuff_wall",
-            wall(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), defaultItemProperties);
+            wallOld(Material.STONE, 1.5F, 6F, SoundType.TUFF, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> Deepslate_Stairs = register("deepslate_stairs",
-            stairOld(Material.STONE, 3, 6, SoundType.DEEPSLATE, true, Blocks.DEEPSLATE), defaultItemProperties);
+            stairOld(Material.STONE, 3, 6, SoundType.DEEPSLATE, true, Blocks.DEEPSLATE), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Deepslate_Slab = register("deepslate_slab",
-            slabOld(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), defaultItemProperties);
+            slabOld(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Deepslate_Wall = register("deepslate_wall",
-            wall(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), defaultItemProperties);
+            wallOld(Material.STONE, 3, 6, SoundType.DEEPSLATE, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> Cracked_Deepslate_Brick_Stairs = register("cracked_deepslate_brick_stairs",
-            stairOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true, Blocks.CRACKED_DEEPSLATE_BRICKS), defaultItemProperties);
+            stairOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true, Blocks.CRACKED_DEEPSLATE_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Cracked_Deepslate_Brick_Slab = register("cracked_deepslate_brick_slab",
-            slabOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), defaultItemProperties);
+            slabOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Cracked_Deepslate_Brick_Wall = register("cracked_deepslate_brick_wall",
-            wall(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), defaultItemProperties);
+            wallOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_BRICKS, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<StairBlock> Cracked_Deepslate_Tile_Stairs = register("cracked_deepslate_tile_stairs",
-            stairOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true, Blocks.CRACKED_DEEPSLATE_TILES), defaultItemProperties);
+            stairOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true, Blocks.CRACKED_DEEPSLATE_TILES), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Cracked_Deepslate_Tile_Slab = register("cracked_deepslate_tile_slab",
-            slabOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), defaultItemProperties);
+            slabOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Cracked_Deepslate_Tile_Wall = register("cracked_deepslate_tile_wall",
-            wall(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), defaultItemProperties);
+            wallOld(Material.STONE, 3.5f, 6, SoundType.DEEPSLATE_TILES, true), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<FenceGateBlock> Nether_Brick_Fence_Gate = register("nether_brick_fence_gate",
-            fenceGate(CopyProperties(Blocks.NETHER_BRICK_FENCE)), defaultItemProperties); // TODO: fix wood type
+            fenceGate(CopyProperties(Blocks.NETHER_BRICK_FENCE)), DEFAULT_ITEM_PROPERTIES); // TODO: fix wood type
 
     public static final RegistryObject<StairBlock> Cracked_Nether_Brick_Stairs = register("cracked_nether_brick_stairs",
-            stair(Blocks.CRACKED_NETHER_BRICKS), defaultItemProperties);
+            stair(Blocks.CRACKED_NETHER_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Cracked_Nether_Brick_Slab = register("cracked_nether_brick_slab",
-            slab(Blocks.CRACKED_NETHER_BRICKS), defaultItemProperties);
+            slab(Blocks.CRACKED_NETHER_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Cracked_Nether_Brick_Wall = register("cracked_nether_brick_wall",
-            wall(Blocks.CRACKED_NETHER_BRICKS), defaultItemProperties);
+            wall(Blocks.CRACKED_NETHER_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<FenceBlock> Cracked_Nether_Brick_Fence = register("cracked_nether_brick_fence",
-            fence(Blocks.CRACKED_NETHER_BRICKS), defaultItemProperties);
+            fence(Blocks.CRACKED_NETHER_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<FenceGateBlock> Cracked_Nether_Brick_Fence_Gate = register("cracked_nether_brick_fence_gate",
-            fenceGate(CopyProperties(Blocks.CRACKED_NETHER_BRICKS)), defaultItemProperties);
+            fenceGate(CopyProperties(Blocks.CRACKED_NETHER_BRICKS)), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<FenceBlock> Red_Nether_Brick_Fence = register("red_nether_brick_fence",
-            fence(Blocks.RED_NETHER_BRICKS), defaultItemProperties);
+            fence(Blocks.RED_NETHER_BRICKS), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<FenceGateBlock> Red_Nether_Brick_Fence_Gate = register("red_nether_brick_fence_gate",
-            fenceGate(CopyProperties(Blocks.RED_NETHER_BRICKS)), defaultItemProperties);
+            fenceGate(CopyProperties(Blocks.RED_NETHER_BRICKS)), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> Obsidian_Stairs = register("obsidian_stairs",
-            stair(Blocks.OBSIDIAN), defaultItemProperties);
+            stair(Blocks.OBSIDIAN), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Obsidian_Slab = register("obsidian_slab",
-            slab(Blocks.OBSIDIAN), defaultItemProperties);
+            slab(Blocks.OBSIDIAN), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Obsidian_Wall = register("obsidian_wall",
-            wall(Blocks.OBSIDIAN), defaultItemProperties);
+            wall(Blocks.OBSIDIAN), DEFAULT_ITEM_PROPERTIES);
 
     public static final RegistryObject<StairBlock> Crying_Obsidian_Stairs = register("crying_obsidian_stairs",
-            stair(Blocks.CRYING_OBSIDIAN), defaultItemProperties);
+            stair(Blocks.CRYING_OBSIDIAN), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<SlabBlock> Crying_Obsidian_Slab = register("crying_obsidian_slab",
-            slab(Blocks.CRYING_OBSIDIAN), defaultItemProperties);
+            slab(Blocks.CRYING_OBSIDIAN), DEFAULT_ITEM_PROPERTIES);
     public static final RegistryObject<WallBlock> Crying_Obsidian_Wall = register("crying_obsidian_wall",
-            wall(Blocks.CRYING_OBSIDIAN), defaultItemProperties);
+            wall(Blocks.CRYING_OBSIDIAN), DEFAULT_ITEM_PROPERTIES);
 
-    public static final RegistryObject<StairBlock> White_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("white", Blocks.WHITE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> White_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("white", Blocks.WHITE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> White_Glazed_Terracotta_Wall = regGlazedTerracottaWall("white", Blocks.WHITE_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> White_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.WHITE);
+    public static final RegistryObject<SlabBlock> White_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.WHITE);
+    public static final RegistryObject<WallBlock> White_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.WHITE);
 
-    public static final RegistryObject<StairBlock> Orange_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("orange", Blocks.ORANGE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Orange_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("orange", Blocks.ORANGE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Orange_Glazed_Terracotta_Wall = regGlazedTerracottaWall("orange", Blocks.ORANGE_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Orange_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.ORANGE);
+    public static final RegistryObject<SlabBlock> Orange_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.ORANGE);
+    public static final RegistryObject<WallBlock> Orange_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.ORANGE);
 
-    public static final RegistryObject<StairBlock> Magenta_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("magenta", Blocks.MAGENTA_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Magenta_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("magenta", Blocks.MAGENTA_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Magenta_Glazed_Terracotta_Wall = regGlazedTerracottaWall("magenta", Blocks.MAGENTA_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Magenta_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.MAGENTA);
+    public static final RegistryObject<SlabBlock> Magenta_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.MAGENTA);
+    public static final RegistryObject<WallBlock> Magenta_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.MAGENTA);
 
-    public static final RegistryObject<StairBlock> Light_Blue_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("light_blue", Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Light_Blue_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("light_blue", Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Light_Blue_Glazed_Terracotta_Wall = regGlazedTerracottaWall("light_blue", Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Light_Blue_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<SlabBlock> Light_Blue_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<WallBlock> Light_Blue_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.LIGHT_BLUE);
 
-    public static final RegistryObject<StairBlock> Yellow_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("yellow", Blocks.YELLOW_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Yellow_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("yellow", Blocks.YELLOW_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Yellow_Glazed_Terracotta_Wall = regGlazedTerracottaWall("yellow", Blocks.YELLOW_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Yellow_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.YELLOW);
+    public static final RegistryObject<SlabBlock> Yellow_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.YELLOW);
+    public static final RegistryObject<WallBlock> Yellow_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.YELLOW);
 
-    public static final RegistryObject<StairBlock> Lime_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("lime", Blocks.LIME_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Lime_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("lime", Blocks.LIME_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Lime_Glazed_Terracotta_Wall = regGlazedTerracottaWall("lime", Blocks.LIME_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Lime_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.LIME);
+    public static final RegistryObject<SlabBlock> Lime_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.LIME);
+    public static final RegistryObject<WallBlock> Lime_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.LIME);
 
-    public static final RegistryObject<StairBlock> Pink_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("pink", Blocks.PINK_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Pink_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("pink", Blocks.PINK_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Pink_Glazed_Terracotta_Wall = regGlazedTerracottaWall("pink", Blocks.PINK_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Pink_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.PINK);
+    public static final RegistryObject<SlabBlock> Pink_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.PINK);
+    public static final RegistryObject<WallBlock> Pink_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.PINK);
 
-    public static final RegistryObject<StairBlock> Gray_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("gray", Blocks.GRAY_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Gray_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("gray", Blocks.GRAY_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Gray_Glazed_Terracotta_Wall = regGlazedTerracottaWall("gray", Blocks.GRAY_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Gray_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.GRAY);
+    public static final RegistryObject<SlabBlock> Gray_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.GRAY);
+    public static final RegistryObject<WallBlock> Gray_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.GRAY);
 
-    public static final RegistryObject<StairBlock> Light_Gray_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("light_gray", Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Light_Gray_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("light_gray", Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Light_Gray_Glazed_Terracotta_Wall = regGlazedTerracottaWall("light_gray", Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Light_Gray_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<SlabBlock> Light_Gray_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<WallBlock> Light_Gray_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.LIGHT_GRAY);
 
-    public static final RegistryObject<StairBlock> Cyan_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("cyan", Blocks.CYAN_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Cyan_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("cyan", Blocks.CYAN_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Cyan_Glazed_Terracotta_Wall = regGlazedTerracottaWall("cyan", Blocks.CYAN_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Cyan_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.CYAN);
+    public static final RegistryObject<SlabBlock> Cyan_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.CYAN);
+    public static final RegistryObject<WallBlock> Cyan_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.CYAN);
 
-    public static final RegistryObject<StairBlock> Purple_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("purple", Blocks.PURPLE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Purple_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("purple", Blocks.PURPLE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Purple_Glazed_Terracotta_Wall = regGlazedTerracottaWall("purple", Blocks.PURPLE_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Purple_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.PURPLE);
+    public static final RegistryObject<SlabBlock> Purple_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.PURPLE);
+    public static final RegistryObject<WallBlock> Purple_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.PURPLE);
 
-    public static final RegistryObject<StairBlock> Blue_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("blue", Blocks.BLUE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Blue_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("blue", Blocks.BLUE_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Blue_Glazed_Terracotta_Wall = regGlazedTerracottaWall("blue", Blocks.BLUE_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Blue_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.BLUE);
+    public static final RegistryObject<SlabBlock> Blue_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.BLUE);
+    public static final RegistryObject<WallBlock> Blue_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.BLUE);
 
-    public static final RegistryObject<StairBlock> Brown_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("brown", Blocks.BROWN_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Brown_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("brown", Blocks.BROWN_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Brown_Glazed_Terracotta_Wall = regGlazedTerracottaWall("brown", Blocks.BROWN_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Brown_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.BROWN);
+    public static final RegistryObject<SlabBlock> Brown_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.BROWN);
+    public static final RegistryObject<WallBlock> Brown_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.BROWN);
 
-    public static final RegistryObject<StairBlock> Green_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("green", Blocks.GREEN_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Green_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("green", Blocks.GREEN_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Green_Glazed_Terracotta_Wall = regGlazedTerracottaWall("green", Blocks.GREEN_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Green_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.GREEN);
+    public static final RegistryObject<SlabBlock> Green_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.GREEN);
+    public static final RegistryObject<WallBlock> Green_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.GREEN);
 
-    public static final RegistryObject<StairBlock> Red_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("red", Blocks.RED_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Red_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("red", Blocks.RED_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Red_Glazed_Terracotta_Wall = regGlazedTerracottaWall("red", Blocks.RED_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Red_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.RED);
+    public static final RegistryObject<SlabBlock> Red_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.RED);
+    public static final RegistryObject<WallBlock> Red_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.RED);
 
-    public static final RegistryObject<StairBlock> Black_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs("black", Blocks.BLACK_GLAZED_TERRACOTTA);
-    public static final RegistryObject<SlabBlock> Black_Glazed_Terracotta_Slab = regGlazedTerracottaSlab("black", Blocks.BLACK_GLAZED_TERRACOTTA);
-    public static final RegistryObject<WallBlock> Black_Glazed_Terracotta_Wall = regGlazedTerracottaWall("black", Blocks.BLACK_GLAZED_TERRACOTTA);
+    public static final RegistryObject<StairBlock> Black_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.BLACK);
+    public static final RegistryObject<SlabBlock> Black_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.BLACK);
+    public static final RegistryObject<WallBlock> Black_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.BLACK);
 
-    public static final RegistryObject<StairBlock> WhiteWoolStairs = regWoolStairs("white", Blocks.WHITE_WOOL);
-    public static final RegistryObject<SlabBlock> WhiteWoolSlab = regWoolSlab("white", Blocks.WHITE_WOOL);
-    public static final RegistryObject<WallBlock> WhiteWoolWall = regWoolWall("white", Blocks.WHITE_WOOL);
+    public static final RegistryObject<StairBlock> WhiteWoolStairs = regWoolStairs(DyeColor.WHITE);
+    public static final RegistryObject<SlabBlock> WhiteWoolSlab = regWoolSlab(DyeColor.WHITE);
+    public static final RegistryObject<WallBlock> WhiteWoolWall = regWoolWall(DyeColor.WHITE);
 
-    public static final RegistryObject<StairBlock> OrangeWoolStairs = regWoolStairs("orange", Blocks.ORANGE_WOOL);
-    public static final RegistryObject<SlabBlock> OrangeWoolSlab = regWoolSlab("orange", Blocks.ORANGE_WOOL);
-    public static final RegistryObject<WallBlock> OrangeWoolWall = regWoolWall("orange", Blocks.ORANGE_WOOL);
+    public static final RegistryObject<StairBlock> OrangeWoolStairs = regWoolStairs(DyeColor.ORANGE);
+    public static final RegistryObject<SlabBlock> OrangeWoolSlab = regWoolSlab(DyeColor.ORANGE);
+    public static final RegistryObject<WallBlock> OrangeWoolWall = regWoolWall(DyeColor.ORANGE);
 
-    public static final RegistryObject<StairBlock> MagentaWoolStairs = regWoolStairs("magenta", Blocks.MAGENTA_WOOL);
-    public static final RegistryObject<SlabBlock> MagentaWoolSlab = regWoolSlab("magenta", Blocks.MAGENTA_WOOL);
-    public static final RegistryObject<WallBlock> MagentaWoolWall = regWoolWall("magenta", Blocks.MAGENTA_WOOL);
+    public static final RegistryObject<StairBlock> MagentaWoolStairs = regWoolStairs(DyeColor.MAGENTA);
+    public static final RegistryObject<SlabBlock> MagentaWoolSlab = regWoolSlab(DyeColor.MAGENTA);
+    public static final RegistryObject<WallBlock> MagentaWoolWall = regWoolWall(DyeColor.MAGENTA);
 
-    public static final RegistryObject<StairBlock> LightBlueWoolStairs = regWoolStairs("light_blue", Blocks.LIGHT_BLUE_WOOL);
-    public static final RegistryObject<SlabBlock> LightBlueWoolSlab = regWoolSlab("light_blue", Blocks.LIGHT_BLUE_WOOL);
-    public static final RegistryObject<WallBlock> LightBlueWoolWall = regWoolWall("light_blue", Blocks.LIGHT_BLUE_WOOL);
+    public static final RegistryObject<StairBlock> LightBlueWoolStairs = regWoolStairs(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<SlabBlock> LightBlueWoolSlab = regWoolSlab(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<WallBlock> LightBlueWoolWall = regWoolWall(DyeColor.LIGHT_BLUE);
 
-    public static final RegistryObject<StairBlock> YellowWoolStairs = regWoolStairs("yellow", Blocks.YELLOW_WOOL);
-    public static final RegistryObject<SlabBlock> YellowWoolSlab = regWoolSlab("yellow", Blocks.YELLOW_WOOL);
-    public static final RegistryObject<WallBlock> YellowWoolWall = regWoolWall("yellow", Blocks.YELLOW_WOOL);
+    public static final RegistryObject<StairBlock> YellowWoolStairs = regWoolStairs(DyeColor.YELLOW);
+    public static final RegistryObject<SlabBlock> YellowWoolSlab = regWoolSlab(DyeColor.YELLOW);
+    public static final RegistryObject<WallBlock> YellowWoolWall = regWoolWall(DyeColor.YELLOW);
 
-    public static final RegistryObject<StairBlock> LimeWoolStairs = regWoolStairs("lime", Blocks.LIME_WOOL);
-    public static final RegistryObject<SlabBlock> LimeWoolSlab = regWoolSlab("lime", Blocks.LIME_WOOL);
-    public static final RegistryObject<WallBlock> LimeWoolWall = regWoolWall("lime", Blocks.LIME_WOOL);
+    public static final RegistryObject<StairBlock> LimeWoolStairs = regWoolStairs(DyeColor.LIME);
+    public static final RegistryObject<SlabBlock> LimeWoolSlab = regWoolSlab(DyeColor.LIME);
+    public static final RegistryObject<WallBlock> LimeWoolWall = regWoolWall(DyeColor.LIME);
 
-    public static final RegistryObject<StairBlock> PinkWoolStairs = regWoolStairs("pink", Blocks.PINK_WOOL);
-    public static final RegistryObject<SlabBlock> PinkWoolSlab = regWoolSlab("pink", Blocks.PINK_WOOL);
-    public static final RegistryObject<WallBlock> PinkWoolWall = regWoolWall("pink", Blocks.PINK_WOOL);
+    public static final RegistryObject<StairBlock> PinkWoolStairs = regWoolStairs(DyeColor.PINK);
+    public static final RegistryObject<SlabBlock> PinkWoolSlab = regWoolSlab(DyeColor.PINK);
+    public static final RegistryObject<WallBlock> PinkWoolWall = regWoolWall(DyeColor.PINK);
 
-    public static final RegistryObject<StairBlock> GrayWoolStairs = regWoolStairs("gray", Blocks.GRAY_WOOL);
-    public static final RegistryObject<SlabBlock> GrayWoolSlab = regWoolSlab("gray", Blocks.GRAY_WOOL);
-    public static final RegistryObject<WallBlock> GrayWoolWall = regWoolWall("gray", Blocks.GRAY_WOOL);
+    public static final RegistryObject<StairBlock> GrayWoolStairs = regWoolStairs(DyeColor.GRAY);
+    public static final RegistryObject<SlabBlock> GrayWoolSlab = regWoolSlab(DyeColor.GRAY);
+    public static final RegistryObject<WallBlock> GrayWoolWall = regWoolWall(DyeColor.GRAY);
 
-    public static final RegistryObject<StairBlock> LightGrayWoolStairs = regWoolStairs("light_gray", Blocks.LIGHT_GRAY_WOOL);
-    public static final RegistryObject<SlabBlock> LightGrayWoolSlab = regWoolSlab("light_gray", Blocks.LIGHT_GRAY_WOOL);
-    public static final RegistryObject<WallBlock> LightGrayWoolWall = regWoolWall("light_gray", Blocks.LIGHT_GRAY_WOOL);
+    public static final RegistryObject<StairBlock> LightGrayWoolStairs = regWoolStairs(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<SlabBlock> LightGrayWoolSlab = regWoolSlab(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<WallBlock> LightGrayWoolWall = regWoolWall(DyeColor.LIGHT_GRAY);
 
-    public static final RegistryObject<StairBlock> CyanWoolStairs = regWoolStairs("cyan", Blocks.CYAN_WOOL);
-    public static final RegistryObject<SlabBlock> CyanWoolSlab = regWoolSlab("cyan", Blocks.CYAN_WOOL);
-    public static final RegistryObject<WallBlock> CyanWoolWall = regWoolWall("cyan", Blocks.CYAN_WOOL);
+    public static final RegistryObject<StairBlock> CyanWoolStairs = regWoolStairs(DyeColor.CYAN);
+    public static final RegistryObject<SlabBlock> CyanWoolSlab = regWoolSlab(DyeColor.CYAN);
+    public static final RegistryObject<WallBlock> CyanWoolWall = regWoolWall(DyeColor.CYAN);
 
-    public static final RegistryObject<StairBlock> PurpleWoolStairs = regWoolStairs("purple", Blocks.PURPLE_WOOL);
-    public static final RegistryObject<SlabBlock> PurpleWoolSlab = regWoolSlab("purple", Blocks.PURPLE_WOOL);
-    public static final RegistryObject<WallBlock> PurpleWoolWall = regWoolWall("purple", Blocks.PURPLE_WOOL);
+    public static final RegistryObject<StairBlock> PurpleWoolStairs = regWoolStairs(DyeColor.PURPLE);
+    public static final RegistryObject<SlabBlock> PurpleWoolSlab = regWoolSlab(DyeColor.PURPLE);
+    public static final RegistryObject<WallBlock> PurpleWoolWall = regWoolWall(DyeColor.PURPLE);
 
-    public static final RegistryObject<StairBlock> BlueWoolStairs = regWoolStairs("blue", Blocks.BLUE_WOOL);
-    public static final RegistryObject<SlabBlock> BlueWoolSlab = regWoolSlab("blue", Blocks.BLUE_WOOL);
-    public static final RegistryObject<WallBlock> BlueWoolWall = regWoolWall("blue", Blocks.BLUE_WOOL);
+    public static final RegistryObject<StairBlock> BlueWoolStairs = regWoolStairs(DyeColor.BLUE);
+    public static final RegistryObject<SlabBlock> BlueWoolSlab = regWoolSlab(DyeColor.BLUE);
+    public static final RegistryObject<WallBlock> BlueWoolWall = regWoolWall(DyeColor.BLUE);
 
-    public static final RegistryObject<StairBlock> BrownWoolStairs = regWoolStairs("brown", Blocks.BROWN_WOOL);
-    public static final RegistryObject<SlabBlock> BrownWoolSlab = regWoolSlab("brown", Blocks.BROWN_WOOL);
-    public static final RegistryObject<WallBlock> BrownWoolWall = regWoolWall("brown", Blocks.BROWN_WOOL);
+    public static final RegistryObject<StairBlock> BrownWoolStairs = regWoolStairs(DyeColor.BROWN);
+    public static final RegistryObject<SlabBlock> BrownWoolSlab = regWoolSlab(DyeColor.BROWN);
+    public static final RegistryObject<WallBlock> BrownWoolWall = regWoolWall(DyeColor.BROWN);
 
-    public static final RegistryObject<StairBlock> GreenWoolStairs = regWoolStairs("green", Blocks.GREEN_WOOL);
-    public static final RegistryObject<SlabBlock> GreenWoolSlab = regWoolSlab("green", Blocks.GREEN_WOOL);
-    public static final RegistryObject<WallBlock> GreenWoolWall = regWoolWall("green", Blocks.GREEN_WOOL);
+    public static final RegistryObject<StairBlock> GreenWoolStairs = regWoolStairs(DyeColor.GREEN);
+    public static final RegistryObject<SlabBlock> GreenWoolSlab = regWoolSlab(DyeColor.GREEN);
+    public static final RegistryObject<WallBlock> GreenWoolWall = regWoolWall(DyeColor.GREEN);
 
-    public static final RegistryObject<StairBlock> RedWoolStairs = regWoolStairs("red", Blocks.RED_WOOL);
-    public static final RegistryObject<SlabBlock> RedWoolSlab = regWoolSlab("red", Blocks.RED_WOOL);
-    public static final RegistryObject<WallBlock> RedWoolWall = regWoolWall("red", Blocks.RED_WOOL);
+    public static final RegistryObject<StairBlock> RedWoolStairs = regWoolStairs(DyeColor.RED);
+    public static final RegistryObject<SlabBlock> RedWoolSlab = regWoolSlab(DyeColor.RED);
+    public static final RegistryObject<WallBlock> RedWoolWall = regWoolWall(DyeColor.RED);
 
-    public static final RegistryObject<StairBlock> BlackWoolStairs = regWoolStairs("black", Blocks.BLACK_WOOL);
-    public static final RegistryObject<SlabBlock> BlackWoolSlab = regWoolSlab("black", Blocks.BLACK_WOOL);
-    public static final RegistryObject<WallBlock> BlackWoolWall = regWoolWall("black", Blocks.BLACK_WOOL);
+    public static final RegistryObject<StairBlock> BlackWoolStairs = regWoolStairs(DyeColor.BLACK);
+    public static final RegistryObject<SlabBlock> BlackWoolSlab = regWoolSlab(DyeColor.BLACK);
+    public static final RegistryObject<WallBlock> BlackWoolWall = regWoolWall(DyeColor.BLACK);
 
-    public static final RegistryObject<StairBlock> PackedMudStairs = register("packed_mud_stairs", stair(Blocks.PACKED_MUD), defaultItemProperties);
-    public static final RegistryObject<SlabBlock> PackedMudSlab = register("packed_mud_slab", slab(Blocks.PACKED_MUD), defaultItemProperties);
-    public static final RegistryObject<WallBlock> PackedMudWall = register("packed_mud_wall", wall(Blocks.PACKED_MUD), defaultItemProperties);
+    public static final RegistryObject<StairBlock> PackedMudStairs = register("packed_mud_stairs", stair(Blocks.PACKED_MUD), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<SlabBlock> PackedMudSlab = register("packed_mud_slab", slab(Blocks.PACKED_MUD), DEFAULT_ITEM_PROPERTIES);
+    public static final RegistryObject<WallBlock> PackedMudWall = register("packed_mud_wall", wall(Blocks.PACKED_MUD), DEFAULT_ITEM_PROPERTIES);
 
     private static Supplier<StrippableStairBlock> strippableStair(Block base, Supplier<StairBlock> stripped) {return ()-> new StrippableStairBlock(base::defaultBlockState, stripped, StairBlock.Properties.copy(base));}
     private static Supplier<StrippableSlabBlock> strippableSlab(Block base, Supplier<SlabBlock> stripped) {return ()-> new StrippableSlabBlock(stripped, SlabBlock.Properties.copy(base));}
@@ -568,102 +570,114 @@ public class BVBlocks {
         else
             return slab(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
-    @Deprecated private static Supplier<WallBlock> wall(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
+    @Deprecated private static Supplier<WallBlock> wallOld(Material material, float hardness, float resistance, SoundType soundType, boolean requiresTool){
         if(requiresTool)
             return wall(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType).requiresCorrectToolForDrops());
         else
             return wall(BlockBehaviour.Properties.of(material).strength(hardness, resistance).sound(soundType));
     }
 
+    @Deprecated(forRemoval = true)
     private static RegistryObject<StairBlock> regTerracottaStairs(String color, Block base){
-        return register(color + "_terracotta_stairs",
-                stair(base), defaultItemProperties);
+        return register(color + "_terracotta_stairs", stair(base), DEFAULT_ITEM_PROPERTIES);
     }
+    @Deprecated(forRemoval = true)
     private static RegistryObject<SlabBlock> regTerracottaSlab(String color){
-        return register(color + "_terracotta_slab",
-                slabOld(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
+        return register(color + "_terracotta_slab", slab(Blocks.TERRACOTTA), DEFAULT_ITEM_PROPERTIES);
     }
+    @Deprecated(forRemoval = true)
     private static RegistryObject<WallBlock> regTerracottaWall(String color){
-        return register(color + "_terracotta_wall",
-                wall(Material.STONE, 1.25F, 4.2F, SoundType.STONE, true), defaultItemProperties);
+        return register(color + "_terracotta_wall", wall(Blocks.TERRACOTTA), DEFAULT_ITEM_PROPERTIES);
+    }
+    private static RegistryObject<StairBlock> regTerracottaStairs(DyeColor color, Block base){
+        return register(color.getName() + "_terracotta_stairs", stair(base), DEFAULT_ITEM_PROPERTIES);
+    }
+    private static RegistryObject<SlabBlock> regTerracottaSlab(DyeColor color){
+        return register(color.getName() + "_terracotta_slab", slab(Blocks.TERRACOTTA), DEFAULT_ITEM_PROPERTIES);
+    }
+    private static RegistryObject<WallBlock> regTerracottaWall(DyeColor color){
+        return register(color.getName() + "_terracotta_wall", wall(Blocks.TERRACOTTA), DEFAULT_ITEM_PROPERTIES);
     }
 
     private static RegistryObject<StrippableStairBlock> logStairs(String type, Block base, Supplier<StairBlock> stripped) {
-        return register(type + "_log_stairs", strippableStair(base, stripped), defaultItemProperties);
+        return register(type + "_log_stairs", strippableStair(base, stripped), DEFAULT_ITEM_PROPERTIES);
     }
 
     private static RegistryObject<StairBlock> logStairs(String type, Block base) {
-        return register(type + "_log_stairs", stair(base), defaultItemProperties);
+        return register(type + "_log_stairs", stair(base), DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<SlabBlock> logSlab(String type, Block base) {
-        return register(type + "_log_slab", slab(base), defaultItemProperties);
+        return register(type + "_log_slab", slab(base), DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<StrippableSlabBlock> logSlab(String type, Block base, Supplier<SlabBlock> stripped) {
-        return register(type + "_log_slab", strippableSlab(base, stripped), defaultItemProperties);
+        return register(type + "_log_slab", strippableSlab(base, stripped), DEFAULT_ITEM_PROPERTIES);
     }
 
     private static RegistryObject<StairBlock> woodStairs(String type, Block base) {
-        return register(type + "_wood_stairs", stair(base), defaultItemProperties);
+        return register(type + "_wood_stairs", stair(base), DEFAULT_ITEM_PROPERTIES);
     }
 
     private static RegistryObject<StrippableStairBlock> woodStairs(String type, Block base, Supplier<StairBlock> stripped){
-        return register(type + "_wood_stairs", strippableStair(base, stripped), defaultItemProperties);
+        return register(type + "_wood_stairs", strippableStair(base, stripped), DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<SlabBlock> woodSlab(String type, Block base){
-        return register(type + "_wood_slab", slab(base), defaultItemProperties);
+        return register(type + "_wood_slab", slab(base), DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<StrippableSlabBlock> woodSlab(String type, Block base, Supplier<SlabBlock> stripped){
-        return register(type + "_wood_slab", strippableSlab(base, stripped), defaultItemProperties);
+        return register(type + "_wood_slab", strippableSlab(base, stripped), DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<WallBlock> woodWall(String type, Block base){
-        return register(type + "_wood_wall", wall(base), 300, defaultItemProperties);
+        return register(type + "_wood_wall", wall(base), 300, DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<StrippableWallBlock> woodWall(String type, Block base, Supplier<WallBlock> stripped) {
-        return register(type + "_wood_wall", strippableWall(base, stripped), 300, defaultItemProperties);
+        return register(type + "_wood_wall", strippableWall(base, stripped), 300, DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<FenceBlock> woodFence(String type, Block base) {
-        return register(type + "_wood_fence", fence(base), defaultItemProperties);
+        return register(type + "_wood_fence", fence(base), DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<StrippableFenceBlock> woodFence(String type, Block base, Supplier<FenceBlock> stripped) {
-        return register(type + "_wood_fence", strippableFence(base, stripped), defaultItemProperties);
+        return register(type + "_wood_fence", strippableFence(base, stripped), DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<FenceGateBlock> woodFenceGate(String type, Block base) {
-        return register(type + "_wood_fence_gate", fenceGate(CopyProperties(base), WoodTypeOf(type)), defaultItemProperties);
+        return register(type + "_wood_fence_gate", fenceGate(CopyProperties(base), WoodTypeOf(type)), 300, DEFAULT_ITEM_PROPERTIES);
     }
     private static RegistryObject<StrippableFenceGateBlock> woodFenceGate(WoodType type, Block base, Supplier<FenceGateBlock> stripped) {
-        return register(type.name() + "_wood_fence_gate", strippableFenceGate(base, type, stripped), defaultItemProperties);
+        return register(type.name() + "_wood_fence_gate", strippableFenceGate(base, type, stripped), 300, DEFAULT_ITEM_PROPERTIES);
     }
 
-    private static RegistryObject<StairBlock> regGlazedTerracottaStairs(String color, Block base){
-        return register(color + "_glazed_terracotta_stairs", ()-> new StairBlock(base::defaultBlockState, BlockBehaviour.Properties.copy(base)){
+    private static RegistryObject<StairBlock> regGlazedTerracottaStairs(DyeColor color){
+        var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
+        return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent::defaultBlockState, CopyProperties(parent)){
             @Override
             public @NotNull PushReaction getPistonPushReaction(@NotNull BlockState blockState) {return PushReaction.PUSH_ONLY;}
-        }, defaultItemProperties);
+        }, DEFAULT_ITEM_PROPERTIES);
     }
-    private static RegistryObject<SlabBlock> regGlazedTerracottaSlab(String color, Block base){
-        return register(color + "_glazed_terracotta_slab", ()-> new SlabBlock(SlabBlock.Properties.copy(base)){
+    private static RegistryObject<SlabBlock> regGlazedTerracottaSlab(DyeColor color){
+        var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
+        return register(color.getName() + "_glazed_terracotta_slab", ()-> new SlabBlock(CopyProperties(parent)){
             @Override
             public @NotNull PushReaction getPistonPushReaction(@NotNull BlockState blockState) {return PushReaction.PUSH_ONLY;}
-        }, defaultItemProperties);
+        }, DEFAULT_ITEM_PROPERTIES);
     }
-    private static RegistryObject<WallBlock> regGlazedTerracottaWall(String color, Block base){
-        return register(color + "_glazed_terracotta_wall", ()-> new WallBlock(WallBlock.Properties.copy(base)){
+    private static RegistryObject<WallBlock> regGlazedTerracottaWall(DyeColor color){
+        var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
+        return register(color.getName() + "_glazed_terracotta_wall", ()-> new WallBlock(CopyProperties(parent)){
             @Override
             public @NotNull PushReaction getPistonPushReaction(@NotNull BlockState blockState) {return PushReaction.PUSH_ONLY;}
-        }, defaultItemProperties);
+        }, DEFAULT_ITEM_PROPERTIES);
     }
 
-    private static RegistryObject<StairBlock> regWoolStairs(String color, Block parent){
-        return register(color + "_wool_stairs",
-                stair(parent), defaultItemProperties);
+    private static RegistryObject<StairBlock> regWoolStairs(DyeColor color){
+        var parent = GetVanillaBlock(color.getName() + "_wool");
+        return register(color.getName() + "_wool_stairs", stair(parent), DEFAULT_ITEM_PROPERTIES);
     }
-    private static RegistryObject<SlabBlock> regWoolSlab(String color, Block parent){
-        return register(color + "_wool_slab",
-                slab(parent), defaultItemProperties);
+    private static RegistryObject<SlabBlock> regWoolSlab(DyeColor color){
+        var parent = GetVanillaBlock(color.getName() + "_wool");
+        return register(color.getName() + "_wool_slab", slab(parent), DEFAULT_ITEM_PROPERTIES);
     }
-    private static RegistryObject<WallBlock> regWoolWall(String color, Block parent){
-        return register(color + "_wool_wall",
-                wall(parent), defaultItemProperties);
+    private static RegistryObject<WallBlock> regWoolWall(DyeColor color){
+        var parent = GetVanillaBlock(color.getName() + "_wool");
+        return register(color.getName() + "_wool_wall", wall(parent), DEFAULT_ITEM_PROPERTIES);
     }
 
     protected static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
@@ -683,19 +697,23 @@ public class BVBlocks {
         throw new IllegalArgumentException("No wood type with key: " + key);
     }
 
-    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties ItemProperties){
-        RegistryObject<T> ret = registerWithoutItem(name, block);
-        ITEM_REGISTER.register(name, ()-> new BlockItem(ret.get(), ItemProperties));
-        return ret;
+    private static Block GetVanillaBlock(String name){
+        return ForgeRegistries.BLOCKS.getValue(new ResourceLocation("key"));
+    }
+
+    private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, Item.Properties itemProperties){
+        var registryObject = registerWithoutItem(name, block);
+        ITEM_REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties));
+        return registryObject;
     }
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemProperties){
-        RegistryObject<T> ret = registerWithoutItem(name, block);
-        ITEM_REGISTER.register(name, ()-> new BlockItem(ret.get(), itemProperties){
+        var registryObject = registerWithoutItem(name, block);
+        ITEM_REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties){
             @Override
             public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {return itemBurnTime;}
         });
-        return ret;
+        return registryObject;
     }
     private static <T extends Block> RegistryObject<T> registerWithoutItem(String name, Supplier<T> block) {return BLOCK_REGISTER.register(name, block);}
 

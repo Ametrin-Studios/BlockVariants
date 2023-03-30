@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:wooden_slabs",
     "block_variants:quartz_brick_slab",
     "block_variants:chiseled_quartz_block_slab",
     "block_variants:netherrack_slab",
