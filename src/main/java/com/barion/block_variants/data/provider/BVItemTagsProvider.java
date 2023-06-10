@@ -22,7 +22,7 @@ public class BVItemTagsProvider extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.@NotNull Provider lookupProvider){
+    protected void addTags(@NotNull HolderLookup.Provider lookupProvider){
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
         copy(BlockTags.SLABS, ItemTags.SLABS);
         copy(BlockTags.WALLS, ItemTags.WALLS);
@@ -42,18 +42,18 @@ public class BVItemTagsProvider extends ItemTagsProvider {
         //tag(ItemTags.WALLS).addTag(BVTags.Items.WoodenWalls);
 
         tag(ItemTags.NON_FLAMMABLE_WOOD).add(
-                BVBlocks.Crimson_Hyphae_Stairs.get().asItem(),
-                BVBlocks.Crimson_Hyphae_Slab.get().asItem(),
-                BVBlocks.Crimson_Hyphae_Wall.get().asItem(),
-                BVBlocks.Warped_Hyphae_Stairs.get().asItem(),
-                BVBlocks.Warped_Hyphae_Slab.get().asItem(),
-                BVBlocks.Warped_Hyphae_Wall.get().asItem(),
-                BVBlocks.Stripped_Crimson_Hyphae_Wall.get().asItem(),
-                BVBlocks.Stripped_Crimson_Hyphae_Slab.get().asItem(),
-                BVBlocks.Stripped_Warped_Hyphae_Slab.get().asItem(),
-                BVBlocks.Stripped_Crimson_Hyphae_Stairs.get().asItem(),
-                BVBlocks.Stripped_Warped_Hyphae_Stairs.get().asItem(),
-                BVBlocks.Stripped_Warped_Hyphae_Wall.get().asItem()
+                BVBlocks.CRIMSON_HYPHAE_STAIRS.get().asItem(),
+                BVBlocks.CRIMSON_HYPHAE_SLAB.get().asItem(),
+                BVBlocks.CRIMSON_HYPHAE_WALL.get().asItem(),
+                BVBlocks.WARPED_HYPHAE_STAIRS.get().asItem(),
+                BVBlocks.WARPED_HYPHAE_SLAB.get().asItem(),
+                BVBlocks.WARPED_HYPHAE_WALL.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.get().asItem(),
+                BVBlocks.STRIPPED_WARPED_HYPHAE_SLAB.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.get().asItem(),
+                BVBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.get().asItem(),
+                BVBlocks.STRIPPED_WARPED_HYPHAE_WALL.get().asItem()
         );
     }
 }

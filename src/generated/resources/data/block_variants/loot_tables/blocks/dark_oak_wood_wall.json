@@ -16,5 +16,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "block_variants:blocks/dark_oak_wood_wall"
 }

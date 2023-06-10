@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:smelting/stone_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

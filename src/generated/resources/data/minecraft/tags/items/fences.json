@@ -1,5 +1,7 @@
 {
   "values": [
+    "block_variants:stripped_bamboo_block_fence",
+    "block_variants:bamboo_block_fence",
     "block_variants:cracked_nether_brick_fence",
     "block_variants:red_nether_brick_fence"
   ]

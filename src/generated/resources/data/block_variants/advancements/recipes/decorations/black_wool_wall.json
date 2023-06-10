@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:black_wool_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

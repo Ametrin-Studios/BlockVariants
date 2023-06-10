@@ -86,6 +86,26 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
             wallBlock((WallBlock) block, modBlockLoc(texture.replace("wall", "block")));
             return true;
         });
+        blockStateProviderRules.add((block, name, texture)->{
+            if(!name.contains("bamboo")) return false;
+
+            if(block instanceof StairBlock){
+                texture = texture.replace("_stairs", "");
+                var side = modBlockLoc(texture);
+                var top = modBlockLoc(texture + "_top");
+                stairsBlock((StairBlock) block, side, top, top);
+                return true;
+            }
+            if(block instanceof SlabBlock){
+                texture = texture.replace("_slab", "");
+                var side = modBlockLoc(texture); //also double slab location
+                var top = modBlockLoc(texture + "_top");
+                slabBlock((SlabBlock) block, side, side, top, top);
+                return true;
+            }
+
+            return false;
+        });
     }
 
     @Override

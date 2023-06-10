@@ -6,7 +6,7 @@ import com.barion.block_variants.data.provider.loot_table.BVBlockLootSubProvider
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -25,8 +25,8 @@ public class BlockVariants{
         modBus.addListener(BlockVariants::gatherData);
     }
 
-    private static void buildCreativeModeTabs(CreativeModeTabEvent.BuildContents event){
-        if(event.getTab() != CreativeModeTabs.BUILDING_BLOCKS) { return; }
+    private static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event){
+        if(event.getTabKey() != CreativeModeTabs.BUILDING_BLOCKS) { return; }
         BVBlocks.BLOCK_REGISTER.getEntries().forEach((o)-> event.accept(o.get()));
     }
 

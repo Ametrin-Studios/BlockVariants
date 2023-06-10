@@ -28,5 +28,6 @@
     "recipes": [
       "block_variants:lever"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

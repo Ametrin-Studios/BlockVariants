@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:jungle_log_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

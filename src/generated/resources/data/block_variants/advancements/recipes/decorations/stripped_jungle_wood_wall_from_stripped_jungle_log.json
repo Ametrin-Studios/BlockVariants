@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:stripped_jungle_wood_wall_from_stripped_jungle_log"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

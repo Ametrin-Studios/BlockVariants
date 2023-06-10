@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:lime_wool_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

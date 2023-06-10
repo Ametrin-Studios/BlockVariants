@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:spruce_log_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

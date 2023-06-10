@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:orange_terracotta_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

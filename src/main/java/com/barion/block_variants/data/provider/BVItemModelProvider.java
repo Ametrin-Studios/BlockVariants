@@ -31,7 +31,7 @@ public class BVItemModelProvider extends ExtendedItemModelProvider {
 
     protected  <B extends Block> void blocks(Iterator<B> blocks){
         while(blocks.hasNext()) {
-            B block = blocks.next();
+            var block = blocks.next();
             String textureName = getBlockName(block);
             String name = getBlockName(block);
             ResourceLocation texture;
@@ -48,12 +48,12 @@ public class BVItemModelProvider extends ExtendedItemModelProvider {
                 wallInventory(name, texture);
             }else if(block instanceof FenceBlock) {
                 if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence", "s"));}
-                else if(isWood(name)) {texture = blockTexture(textureName.replace("_fence", ""));}
+                else if(isWood(name) || name.contains("bamboo")) {texture = blockTexture(textureName.replace("_fence", ""));}
                 else {texture = blockTexture(textureName.replace("_fence", "_planks"));}
                 fenceInventory(name, texture);
             }else if(block instanceof FenceGateBlock){
                 if(shouldAppendS(textureName)) {texture = blockTexture(textureName.replace("_fence_gate", "s"));}
-                else if(isWood(name)) {texture = blockTexture(textureName.replace("_fence_gate", ""));}
+                else if(isWood(name) || name.contains("bamboo")) {texture = blockTexture(textureName.replace("_fence_gate", ""));}
                 else {texture = blockTexture(textureName.replace("_fence_gate", "_planks"));}
                 fenceGate(name, texture);
             }else{

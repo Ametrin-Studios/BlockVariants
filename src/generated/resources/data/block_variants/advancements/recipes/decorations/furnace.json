@@ -28,5 +28,6 @@
     "recipes": [
       "block_variants:furnace"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

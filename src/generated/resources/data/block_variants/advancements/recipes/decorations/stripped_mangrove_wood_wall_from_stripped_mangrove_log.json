@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:stripped_mangrove_wood_wall_from_stripped_mangrove_log"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

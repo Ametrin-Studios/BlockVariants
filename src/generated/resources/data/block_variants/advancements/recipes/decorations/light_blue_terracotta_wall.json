@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:light_blue_terracotta_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

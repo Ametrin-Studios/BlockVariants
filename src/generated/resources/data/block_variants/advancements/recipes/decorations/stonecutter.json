@@ -28,5 +28,6 @@
     "recipes": [
       "block_variants:stonecutter"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

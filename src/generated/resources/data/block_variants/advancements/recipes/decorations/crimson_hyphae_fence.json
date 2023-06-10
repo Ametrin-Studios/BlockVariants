@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:crimson_hyphae_fence"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -22,6 +22,9 @@ public class BVTags {
     public static final class Items{
         public static final TagKey<Item> WOODEN_WALLS = forge("wooden_wall");
         public static final TagKey<Item> STONE_CRAFTING = mod("stone_crafting");
+        public static final TagKey<Item> WOOL_STAIRS = mod("wool/stairs");
+        public static final TagKey<Item> WOOL_SLABS = mod("wool/slabs");
+        public static final TagKey<Item> WOOL_WALLS = mod("wool/walls");
 
         private static TagKey<Item> forge(String path){
             return ItemTags.create(new ResourceLocation("forge", path));

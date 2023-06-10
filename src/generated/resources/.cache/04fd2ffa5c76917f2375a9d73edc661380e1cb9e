@@ -1,17 +1,17 @@
-// 1.19.4	2023-03-18T20:48:07.4625179	Tags for minecraft:block mod id block_variants
-960d76897d027e0bc0520bff67e9be02fba90f86 data/forge/tags/blocks/fences.json
-7c01101c0e137246fedc392d12ad627303adaa3d data/forge/tags/blocks/fences/wooden.json
-51bf9b440cefd2b8fa0f8b95ffc78995a9d6089e data/forge/tags/blocks/fence_gates.json
-43d9f80796a7e90f381df972472948a24808eaa7 data/forge/tags/blocks/fence_gates/wooden.json
-ddded40b3891121c787181085e098b75480c6cf5 data/forge/tags/blocks/wooden_wall.json
-960d76897d027e0bc0520bff67e9be02fba90f86 data/minecraft/tags/blocks/fences.json
-51bf9b440cefd2b8fa0f8b95ffc78995a9d6089e data/minecraft/tags/blocks/fence_gates.json
-312354fe78c66d9b09a716cf149a99733f97d070 data/minecraft/tags/blocks/mineable/axe.json
+// 1.20	2023-06-10T23:39:00.0843164	Tags for minecraft:block mod id block_variants
+c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/forge/tags/blocks/fences.json
+490d991b4702a764720c9319534a45ffd8c7d044 data/forge/tags/blocks/fences/wooden.json
+5f280bff98fe21515c35c1684d9c64f837496d02 data/forge/tags/blocks/fence_gates.json
+de6deed7d1f252a69243754bf227386c76cfa89b data/forge/tags/blocks/fence_gates/wooden.json
+4cf096e97b377d2a8d97f817a6e891d334a5ac6b data/forge/tags/blocks/wooden_wall.json
+c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/minecraft/tags/blocks/fences.json
+5f280bff98fe21515c35c1684d9c64f837496d02 data/minecraft/tags/blocks/fence_gates.json
+073775aa66128c52d70ed763cfdb11c0c6c270f5 data/minecraft/tags/blocks/mineable/axe.json
 afeafb7cf8d9b8d401dd931f8960456db267b75b data/minecraft/tags/blocks/mineable/pickaxe.json
 00920e4e06e35b9708a9d4d960c86df1b17297f3 data/minecraft/tags/blocks/needs_diamond_tool.json
-51fe6c913a7a97743f21f68fafb88d82e8c530e6 data/minecraft/tags/blocks/slabs.json
-05f3dde2dd3b6bd154df578a0f055c3c51639df9 data/minecraft/tags/blocks/stairs.json
-497d263214c88855f7e421417a5d1af245c10f31 data/minecraft/tags/blocks/walls.json
-7c01101c0e137246fedc392d12ad627303adaa3d data/minecraft/tags/blocks/wooden_fences.json
-b3dc5b3b940b74964a8ff509db6a5be1a422599c data/minecraft/tags/blocks/wooden_slabs.json
-b201cd45f6e443b774aa5605f1c9c21718c4dcf8 data/minecraft/tags/blocks/wooden_stairs.json
+ad2e32d471b9990cfba3f9a8f3b57df9dc9d805e data/minecraft/tags/blocks/slabs.json
+767e9e60e1fd7e9b5e498d7404e758399dc3d330 data/minecraft/tags/blocks/stairs.json
+d4f9b786ef31547cdde35289e7b7e9d8be8c4ae0 data/minecraft/tags/blocks/walls.json
+417273649e9d9c167e056be1cd01e1ab116530e4 data/minecraft/tags/blocks/wooden_fences.json
+b3ef261a5bc56e7e5471e0b9abc23a12576ce283 data/minecraft/tags/blocks/wooden_slabs.json
+a88bdcfcf4c900822c8a23499d64e7bfd6d1bd5b data/minecraft/tags/blocks/wooden_stairs.json

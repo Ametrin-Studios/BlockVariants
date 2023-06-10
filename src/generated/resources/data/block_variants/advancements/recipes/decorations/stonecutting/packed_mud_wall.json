@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:stonecutting/packed_mud_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

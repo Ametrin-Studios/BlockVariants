@@ -2951,18 +2951,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/magenta_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/blue_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
   "block_variants:recipes/building_blocks/white_wool_slab": {
     "criteria": {
       "has_white_wool": "2022-10-11 17:33:28 +0200"
@@ -2975,67 +2963,13 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/black_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/light_blue_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/yellow_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/light_gray_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/red_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/purple_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/white_bed": {
     "criteria": {
       "has_white_wool": "2022-10-11 17:33:28 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/cyan_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/gray_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/white_banner": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/orange_wool": {
     "criteria": {
       "has_white_wool": "2022-10-11 17:33:28 +0200"
     },
@@ -3053,33 +2987,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/lime_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/green_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/brown_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/painting": {
     "criteria": {
       "has_wool": "2022-10-11 17:33:28 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/pink_wool": {
-    "criteria": {
-      "has_white_wool": "2022-10-11 17:33:28 +0200"
     },
     "done": true
   },
@@ -3677,5 +3587,221 @@
     },
     "done": true
   },
-  "DataVersion": 3337
+  "block_variants:recipes/building_blocks/bamboo_block_slab": {
+    "criteria": {
+      "has_bamboo_block": "2023-06-10 23:07:47 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/bamboo_block_stairs": {
+    "criteria": {
+      "has_bamboo_block": "2023-06-10 23:07:47 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bamboo_planks": {
+    "criteria": {
+      "has_logs": "2023-06-10 23:07:47 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/bamboo_block_fence_gate": {
+    "criteria": {
+      "has_bamboo_block": "2023-06-10 23:07:47 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/bamboo_block_wall": {
+    "criteria": {
+      "has_bamboo_block": "2023-06-10 23:07:47 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/bamboo_block_fence": {
+    "criteria": {
+      "has_bamboo_block": "2023-06-10 23:07:47 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_bamboo_block_fence": {
+    "criteria": {
+      "has_stripped_bamboo_block": "2023-06-10 23:07:49 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_bamboo_block_stairs": {
+    "criteria": {
+      "has_stripped_bamboo_block": "2023-06-10 23:07:49 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/stripped_bamboo_block_fence_gate": {
+    "criteria": {
+      "has_stripped_bamboo_block": "2023-06-10 23:07:49 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_bamboo_block_wall": {
+    "criteria": {
+      "has_stripped_bamboo_block": "2023-06-10 23:07:49 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_bamboo_block_slab": {
+    "criteria": {
+      "has_stripped_bamboo_block": "2023-06-10 23:07:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/bamboo_hanging_sign": {
+    "criteria": {
+      "has_stripped_logs": "2023-06-10 23:07:49 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/cherry_wood_fence_gate_from_cherry_log": {
+    "criteria": {
+      "has_cherry_log": "2023-06-10 23:08:24 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/cherry_log_slab": {
+    "criteria": {
+      "has_cherry_log": "2023-06-10 23:08:24 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cherry_planks": {
+    "criteria": {
+      "has_log": "2023-06-10 23:08:24 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cherry_wood": {
+    "criteria": {
+      "has_log": "2023-06-10 23:08:24 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/cherry_wood_fence_from_cherry_log": {
+    "criteria": {
+      "has_cherry_log": "2023-06-10 23:08:24 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/cherry_wood_wall_from_cherry_log": {
+    "criteria": {
+      "has_cherry_log": "2023-06-10 23:08:24 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/cherry_log_stairs": {
+    "criteria": {
+      "has_cherry_log": "2023-06-10 23:08:24 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/cherry_wood_stairs": {
+    "criteria": {
+      "has_cherry_wood": "2023-06-10 23:08:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/cherry_wood_slab": {
+    "criteria": {
+      "has_cherry_wood": "2023-06-10 23:08:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/cherry_wood_wall": {
+    "criteria": {
+      "has_cherry_wood": "2023-06-10 23:08:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/cherry_wood_fence_gate": {
+    "criteria": {
+      "has_cherry_wood": "2023-06-10 23:08:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/cherry_wood_fence": {
+    "criteria": {
+      "has_cherry_wood": "2023-06-10 23:08:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_cherry_log_slab": {
+    "criteria": {
+      "has_stripped_cherry_log": "2023-06-10 23:09:13 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/stripped_cherry_wood_fence_gate_from_stripped_cherry_log": {
+    "criteria": {
+      "has_stripped_cherry_log": "2023-06-10 23:09:13 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_cherry_wood_fence_from_stripped_cherry_log": {
+    "criteria": {
+      "has_stripped_cherry_log": "2023-06-10 23:09:13 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_cherry_log_stairs": {
+    "criteria": {
+      "has_stripped_cherry_log": "2023-06-10 23:09:13 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_cherry_wood_wall_from_stripped_cherry_log": {
+    "criteria": {
+      "has_stripped_cherry_log": "2023-06-10 23:09:13 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stripped_cherry_wood": {
+    "criteria": {
+      "has_log": "2023-06-10 23:09:13 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/cherry_hanging_sign": {
+    "criteria": {
+      "has_stripped_logs": "2023-06-10 23:09:13 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_cherry_wood_slab": {
+    "criteria": {
+      "has_stripped_cherry_wood": "2023-06-10 23:09:40 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_cherry_wood_fence": {
+    "criteria": {
+      "has_stripped_cherry_wood": "2023-06-10 23:09:40 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/stripped_cherry_wood_fence_gate": {
+    "criteria": {
+      "has_stripped_cherry_wood": "2023-06-10 23:09:40 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_cherry_wood_wall": {
+    "criteria": {
+      "has_stripped_cherry_wood": "2023-06-10 23:09:40 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_cherry_wood_stairs": {
+    "criteria": {
+      "has_stripped_cherry_wood": "2023-06-10 23:09:40 +0200"
+    },
+    "done": true
+  },
+  "DataVersion": 3463
 }

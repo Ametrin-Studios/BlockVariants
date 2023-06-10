@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:stone_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

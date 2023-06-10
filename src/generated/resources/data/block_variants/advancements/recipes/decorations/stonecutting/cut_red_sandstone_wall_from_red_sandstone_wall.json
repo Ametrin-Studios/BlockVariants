@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:stonecutting/cut_red_sandstone_wall_from_red_sandstone_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

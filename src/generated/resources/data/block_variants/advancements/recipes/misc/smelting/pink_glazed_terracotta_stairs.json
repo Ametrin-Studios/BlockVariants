@@ -30,5 +30,6 @@
     "recipes": [
       "block_variants:smelting/pink_glazed_terracotta_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

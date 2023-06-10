@@ -16,5 +16,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "block_variants:blocks/cracked_deepslate_tile_stairs"
 }
