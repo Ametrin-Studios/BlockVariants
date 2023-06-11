@@ -246,7 +246,12 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         all(consumer, BVBlocks.RedWoolStairs.get(), BVBlocks.RedWoolSlab.get(), BVBlocks.RedWoolWall.get(), Blocks.RED_WOOL, false);
         all(consumer, BVBlocks.BlackWoolStairs.get(), BVBlocks.BlackWoolSlab.get(), BVBlocks.BlackWoolWall.get(), Blocks.BLACK_WOOL, false);
 
+        dying(consumer, BVTags.Items.WOOL_STAIRS, "{color}_wool_stairs", "dye_wool_stairs");
+        dying(consumer, BVTags.Items.WOOL_SLABS, "{color}_wool_slab", "dye_wool_slabs");
+        dying(consumer, BVTags.Items.WOOL_WALLS, "{color}_wool_wall", "dye_wool_walls");
+
         all(consumer, BVBlocks.PackedMudStairs.get(), BVBlocks.PackedMudSlab.get(), BVBlocks.PackedMudWall.get(), Blocks.PACKED_MUD, true);
+
 
         {
             ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DROPPER, 1)

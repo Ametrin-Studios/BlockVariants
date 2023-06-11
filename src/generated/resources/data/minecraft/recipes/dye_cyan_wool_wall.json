@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "dye_wool_walls",
+  "ingredients": [
+    {
+      "tag": "block_variants:wool/walls"
+    },
+    {
+      "item": "minecraft:cyan_dye"
+    }
+  ],
+  "result": {
+    "item": "block_variants:cyan_wool_wall"
+  }
+}

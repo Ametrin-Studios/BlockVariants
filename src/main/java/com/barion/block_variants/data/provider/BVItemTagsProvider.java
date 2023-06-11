@@ -1,11 +1,11 @@
 package com.barion.block_variants.data.provider;
 
+import com.ametrinstudios.ametrin.data.provider.ExtendedItemTagsProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
@@ -16,13 +16,28 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("unchecked")
-public class BVItemTagsProvider extends ItemTagsProvider {
+public class BVItemTagsProvider extends ExtendedItemTagsProvider {
     public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> provider, ExistingFileHelper existingFileHelper) {
         super(packOutput, lookupProvider, provider, BlockVariants.ModID, existingFileHelper);
     }
 
+    {
+        itemTagProviderRules.add((item, name)->{
+            if(!name.contains("wool")) return;
+
+            if(name.contains("stairs")){
+                tag(BVTags.Items.WOOL_STAIRS).add(item);
+            }else if(name.contains("slab")){
+                tag(BVTags.Items.WOOL_SLABS).add(item);
+            }else if(name.contains("wall")){
+                tag(BVTags.Items.WOOL_WALLS).add(item);
+            }
+        });
+    }
+
     @Override
     protected void addTags(@NotNull HolderLookup.Provider lookupProvider){
+        runRules(BVBlocks.ITEM_REGISTER);
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
         copy(BlockTags.SLABS, ItemTags.SLABS);
         copy(BlockTags.WALLS, ItemTags.WALLS);
