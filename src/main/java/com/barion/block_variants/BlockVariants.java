@@ -26,7 +26,7 @@ public class BlockVariants{
     }
 
     private static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event){
-        if(event.getTabKey() != CreativeModeTabs.BUILDING_BLOCKS) { return; }
+        if(event.getTabKey() != CreativeModeTabs.BUILDING_BLOCKS) return;
         BVBlocks.BLOCK_REGISTER.getEntries().forEach((o)-> event.accept(o.get()));
     }
 

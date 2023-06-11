@@ -7,6 +7,9 @@ import com.barion.block_variants.BlockVariants;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -28,8 +31,17 @@ public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
         });
 
         blockTagProviderRules.add((block, name)->{
-            if(block instanceof WallBlock && (isWooden(name) || name.contains("bamboo_block"))){
-                tag(BVTags.Blocks.WOODEN_WALLS).add(block);
+            if(name.contains("bamboo_block")){
+                if(block instanceof StairBlock){
+                    tag(BlockTags.WOODEN_STAIRS).add(block);
+                }
+                if(block instanceof SlabBlock){
+                    tag(BlockTags.WOODEN_SLABS).add(block);
+                }
+                if(block instanceof FenceBlock){
+                    tag(BlockTags.WOODEN_FENCES).add(block);
+                }
+                // Fence gate not necessary
             }
         });
     }
@@ -395,7 +407,5 @@ public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.Crying_Obsidian_Slab.get(),
                 BVBlocks.Crying_Obsidian_Wall.get()
         );
-
-        tag(BlockTags.WOODEN_FENCES).add(BVBlocks.BAMBOO_BLOCK_FENCE.get(), BVBlocks.STRIPPED_BAMBOO_BLOCK_FENCE.get());
     }
 }
