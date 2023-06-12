@@ -1,3 +1,11 @@
+## 4.6.1
+* combat to Ametrin API 0.0.34
+* fixed item tagging
+* fixed item burn time
+
+## 4.6
+* ported to 1.19.4
+ 
 ## 4.5.2
 * Ametrin API compatibility
 
