@@ -39,17 +39,17 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
         });
         blockStateProviderRules.add((block, name, texture)->{
             if(!(BVUtil.isCutSandstone(name) && block instanceof StairBlock)) {return false;}
-            ResourceLocation topTexture = modBlockLoc(texture.replace("cut_", "").replace("stairs", "top"));
+            var topTexture = modBlockLoc(texture.replace("cut_", "").replace("stairs", "top"));
             stairsBlock((StairBlock) block, modBlockLoc(texture.replace("_stairs", "")), topTexture, topTexture);
             return true;
         });
         blockStateProviderRules.add((block, name, texture)->{
             if(!BVUtil.isBasalt(name)) {return false;}
             if(block instanceof StairBlock){
-                ResourceLocation top = modBlockLoc(texture.replace("stairs", "top"));
+                var top = modBlockLoc(texture.replace("stairs", "top"));
                 stairsBlock((StairBlock) block, modBlockLoc(texture.replace("stairs", "side")), top, top);
             }else if(block instanceof SlabBlock){
-                ResourceLocation top = modBlockLoc(texture.replace("slab", "top"));
+                var top = modBlockLoc(texture.replace("slab", "top"));
                 slabBlock((SlabBlock) block, modBlockLoc(texture.replace("_slab", "")), modBlockLoc(texture.replace("slab", "side")), top, top);
             }else if(block instanceof WallBlock){
                 wallBlock((WallBlock) block, modBlockLoc(texture.replace("wall", "side")));
@@ -61,10 +61,10 @@ public class BVBlockStateProvider extends ExtendedBlockStateProvider {
         blockStateProviderRules.add((block, name, texture)->{
             if(!isLog(name)) {return false;}
             if(block instanceof StairBlock){
-                ResourceLocation top = modBlockLoc(texture.replace("stairs", "top"));
+                var top = modBlockLoc(texture.replace("stairs", "top"));
                 stairsBlock((StairBlock) block, modBlockLoc(texture.replace("_stairs", "")), top, top);
             }else if(block instanceof SlabBlock){
-                ResourceLocation top = modBlockLoc(texture.replace("slab", "top"));
+                var top = modBlockLoc(texture.replace("slab", "top"));
                 slabBlock((SlabBlock) block, modBlockLoc(texture.replace("_slab", "")), modBlockLoc(texture.replace("_slab", "")), top, top);
             }else {
                 return false;
