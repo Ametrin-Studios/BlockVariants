@@ -554,7 +554,6 @@ public class BVBlocks {
 
     private static RegistryObject<StairBlock> regGlazedTerracottaStairs(DyeColor color){
         var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
-        // TODO: check push reaction
         return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent::defaultBlockState, CopyProperties(parent)));
     }
     private static RegistryObject<SlabBlock> regGlazedTerracottaSlab(DyeColor color){
@@ -597,7 +596,7 @@ public class BVBlocks {
     }
 
     private static Block GetVanillaBlock(String name){
-        return ForgeRegistries.BLOCKS.getValue(new ResourceLocation("key"));
+        return ForgeRegistries.BLOCKS.getValue(new ResourceLocation(name));
     }
 
     private static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block) {

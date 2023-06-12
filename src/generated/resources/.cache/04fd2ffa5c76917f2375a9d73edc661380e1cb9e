@@ -1,4 +1,4 @@
-// 1.20	2023-06-11T09:16:40.4080156	Tags for minecraft:block mod id block_variants
+// 1.20	2023-06-12T16:59:12.3069379	Tags for minecraft:block mod id block_variants
 c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/forge/tags/blocks/fences.json
 490d991b4702a764720c9319534a45ffd8c7d044 data/forge/tags/blocks/fences/wooden.json
 5f280bff98fe21515c35c1684d9c64f837496d02 data/forge/tags/blocks/fence_gates.json
@@ -9,7 +9,6 @@ c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/minecraft/tags/blocks/fences.json
 073775aa66128c52d70ed763cfdb11c0c6c270f5 data/minecraft/tags/blocks/mineable/axe.json
 afeafb7cf8d9b8d401dd931f8960456db267b75b data/minecraft/tags/blocks/mineable/pickaxe.json
 00920e4e06e35b9708a9d4d960c86df1b17297f3 data/minecraft/tags/blocks/needs_diamond_tool.json
-eea45880c7c2661304143f32ca8209dadeddb33f data/minecraft/tags/blocks/replaceable.json
 ad2e32d471b9990cfba3f9a8f3b57df9dc9d805e data/minecraft/tags/blocks/slabs.json
 767e9e60e1fd7e9b5e498d7404e758399dc3d330 data/minecraft/tags/blocks/stairs.json
 d4f9b786ef31547cdde35289e7b7e9d8be8c4ae0 data/minecraft/tags/blocks/walls.json
