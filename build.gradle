@@ -87,7 +87,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
-        url "https://github.com/BarionLP/Ametrin/raw/master/maven"
+        url "https://github.com/BarionLP/MCModsMaven/raw/main/"
     }
 }
 
