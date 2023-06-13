@@ -27,9 +27,10 @@ issueTrackerURL="https://github.com/BarionLP/BlockVariants/issues" #optional
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
 [[dependencies.${mod_id}]]
     modId="ametrin"
     mandatory=true
     versionRange="${ametrin_version_range}"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"
