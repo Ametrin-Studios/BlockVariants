@@ -327,14 +327,14 @@ public class BVBlocks {
     public static final RegistryObject<StairBlock> DEEPSLATE_STAIRS = register("deepslate_stairs", stair(Blocks.DEEPSLATE));
     public static final RegistryObject<SlabBlock> DEEPSLATE_SLAB = register("deepslate_slab", slab(Blocks.DEEPSLATE));
     public static final RegistryObject<WallBlock> DEEPSLATE_WALL = register("deepslate_wall", wall(Blocks.DEEPSLATE));
-    public static final RegistryObject<StairBlock> Cracked_Deepslate_Brick_Stairs = register("cracked_deepslate_brick_stairs", stair(Blocks.CRACKED_DEEPSLATE_BRICKS));
-    public static final RegistryObject<SlabBlock> Cracked_Deepslate_Brick_Slab = register("cracked_deepslate_brick_slab", slab(Blocks.CRACKED_DEEPSLATE_BRICKS));
-    public static final RegistryObject<WallBlock> Cracked_Deepslate_Brick_Wall = register("cracked_deepslate_brick_wall", wall(Blocks.CRACKED_DEEPSLATE_BRICKS));
-    public static final RegistryObject<StairBlock> Cracked_Deepslate_Tile_Stairs = register("cracked_deepslate_tile_stairs", stair(Blocks.CRACKED_DEEPSLATE_TILES));
-    public static final RegistryObject<SlabBlock> Cracked_Deepslate_Tile_Slab = register("cracked_deepslate_tile_slab", slab(Blocks.CRACKED_DEEPSLATE_TILES));
-    public static final RegistryObject<WallBlock> Cracked_Deepslate_Tile_Wall = register("cracked_deepslate_tile_wall", wall(Blocks.CRACKED_DEEPSLATE_TILES));
+    public static final RegistryObject<StairBlock> CRACKED_DEEPSLATE_BRICK_STAIRS = register("cracked_deepslate_brick_stairs", stair(Blocks.CRACKED_DEEPSLATE_BRICKS));
+    public static final RegistryObject<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = register("cracked_deepslate_brick_slab", slab(Blocks.CRACKED_DEEPSLATE_BRICKS));
+    public static final RegistryObject<WallBlock> CRACKED_DEEPSLATE_BRICK_WALL = register("cracked_deepslate_brick_wall", wall(Blocks.CRACKED_DEEPSLATE_BRICKS));
+    public static final RegistryObject<StairBlock> CRACKED_DEEPSLATE_TILE_STAIRS = register("cracked_deepslate_tile_stairs", stair(Blocks.CRACKED_DEEPSLATE_TILES));
+    public static final RegistryObject<SlabBlock> CRACKED_DEEPSLATE_TILE_SLAB = register("cracked_deepslate_tile_slab", slab(Blocks.CRACKED_DEEPSLATE_TILES));
+    public static final RegistryObject<WallBlock> CRACKED_DEEPSLATE_TILE_WALL = register("cracked_deepslate_tile_wall", wall(Blocks.CRACKED_DEEPSLATE_TILES));
 
-    public static final RegistryObject<FenceGateBlock> Nether_Brick_Fence_Gate = register("nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.NETHER_BRICK_FENCE))); // TODO: fix wood type
+    public static final RegistryObject<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.NETHER_BRICK_FENCE))); // TODO: fix wood type
 
     public static final RegistryObject<StairBlock> Cracked_Nether_Brick_Stairs = register("cracked_nether_brick_stairs", stair(Blocks.CRACKED_NETHER_BRICKS));
     public static final RegistryObject<SlabBlock> Cracked_Nether_Brick_Slab = register("cracked_nether_brick_slab", slab(Blocks.CRACKED_NETHER_BRICKS));

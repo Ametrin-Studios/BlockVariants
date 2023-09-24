@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_blackstone_wall",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_blackstone_wall"
     ]
   ],
   "rewards": {

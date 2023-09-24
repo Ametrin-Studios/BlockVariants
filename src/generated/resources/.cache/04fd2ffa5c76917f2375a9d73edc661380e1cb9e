@@ -1,4 +1,4 @@
-// 1.20	2023-06-12T16:59:12.3069379	Tags for minecraft:block mod id block_variants
+// 1.20.2	2023-09-24T13:13:51.8071478	Tags for minecraft:block mod id block_variants
 c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/forge/tags/blocks/fences.json
 490d991b4702a764720c9319534a45ffd8c7d044 data/forge/tags/blocks/fences/wooden.json
 5f280bff98fe21515c35c1684d9c64f837496d02 data/forge/tags/blocks/fence_gates.json
