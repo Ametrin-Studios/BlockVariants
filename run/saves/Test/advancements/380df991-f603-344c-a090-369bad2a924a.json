@@ -3857,7 +3857,31 @@
     },
     "done": true
   },
+  "minecraft:recipes/misc/netherite_ingot": {
+    "criteria": {
+      "has_netherite_scrap": "2023-09-24 13:23:11 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_warped_hyphae_fence": {
+    "criteria": {
+      "has_stripped_warped_hyphae": "2023-09-24 13:24:28 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/stripped_warped_hyphae_fence_gate": {
+    "criteria": {
+      "has_stripped_warped_hyphae": "2023-09-24 13:24:28 +0200"
+    },
+    "done": true
+  },
   "block_variants:recipes/decorations/stripped_crimson_hyphae_fence": {
+    "criteria": {
+      "has_stripped_crimson_hyphae": "2023-09-24 13:24:29 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/stripped_crimson_hyphae_fence_gate": {
     "criteria": {
       "has_stripped_crimson_hyphae": "2023-09-24 13:24:29 +0200"
     },
@@ -3869,57 +3893,15 @@
     },
     "done": true
   },
-  "block_variants:recipes/decorations/stonecutting/dark_prismarine_wall": {
-    "criteria": {
-      "has_dark_prismarine": "2023-09-24 13:25:23 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/netherite_ingot": {
-    "criteria": {
-      "has_netherite_scrap": "2023-09-24 13:23:11 +0200"
-    },
-    "done": true
-  },
   "block_variants:recipes/decorations/stripped_jungle_wood_fence": {
     "criteria": {
       "has_stripped_jungle_wood": "2023-09-24 13:24:32 +0200"
     },
     "done": true
   },
-  "block_variants:recipes/decorations/stripped_warped_hyphae_fence": {
-    "criteria": {
-      "has_stripped_warped_hyphae": "2023-09-24 13:24:28 +0200"
-    },
-    "done": true
-  },
-  "block_variants:recipes/decorations/dark_prismarine_wall": {
-    "criteria": {
-      "has_dark_prismarine": "2023-09-24 13:25:23 +0200"
-    },
-    "done": true
-  },
-  "block_variants:recipes/redstone/stripped_warped_hyphae_fence_gate": {
-    "criteria": {
-      "has_stripped_warped_hyphae": "2023-09-24 13:24:28 +0200"
-    },
-    "done": true
-  },
   "block_variants:recipes/decorations/stripped_jungle_wood_wall": {
     "criteria": {
       "has_stripped_jungle_wood": "2023-09-24 13:24:32 +0200"
-    },
-    "done": true
-  },
-  "block_variants:recipes/misc/smelting/smooth_stone_stairs": {
-    "criteria": {
-      "has_stone_stairs": "2023-09-24 13:25:20 +0200"
-    },
-    "done": true
-  },
-  "block_variants:recipes/redstone/stripped_crimson_hyphae_fence_gate": {
-    "criteria": {
-      "has_stripped_crimson_hyphae": "2023-09-24 13:24:29 +0200"
     },
     "done": true
   },
@@ -3932,6 +3914,24 @@
   "block_variants:recipes/redstone/stripped_jungle_wood_fence_gate": {
     "criteria": {
       "has_stripped_jungle_wood": "2023-09-24 13:24:32 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/smooth_stone_stairs": {
+    "criteria": {
+      "has_stone_stairs": "2023-09-24 13:25:20 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/dark_prismarine_wall": {
+    "criteria": {
+      "has_dark_prismarine": "2023-09-24 13:25:23 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/dark_prismarine_wall": {
+    "criteria": {
+      "has_dark_prismarine": "2023-09-24 13:25:23 +0200"
     },
     "done": true
   },
