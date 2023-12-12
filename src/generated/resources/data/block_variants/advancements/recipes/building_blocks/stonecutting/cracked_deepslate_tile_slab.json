@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/cracked_deepslate_tile_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

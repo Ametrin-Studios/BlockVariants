@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/quartz_brick_wall_from_quartz_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

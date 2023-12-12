@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stripped_crimson_hyphae_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

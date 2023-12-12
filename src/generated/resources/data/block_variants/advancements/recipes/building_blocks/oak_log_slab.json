@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:oak_log_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

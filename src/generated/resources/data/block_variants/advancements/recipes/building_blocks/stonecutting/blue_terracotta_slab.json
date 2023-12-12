@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/blue_terracotta_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

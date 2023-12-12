@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stripped_bamboo_block_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

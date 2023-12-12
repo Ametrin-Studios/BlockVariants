@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:jungle_wood_fence_from_jungle_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

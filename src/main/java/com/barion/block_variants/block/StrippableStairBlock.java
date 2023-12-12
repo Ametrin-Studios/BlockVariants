@@ -20,7 +20,7 @@ public class StrippableStairBlock extends StairBlock {
     private final Supplier<StairBlock> stripResult;
 
     public StrippableStairBlock(Supplier<BlockState> state, Supplier<StairBlock> stripResult, Properties properties) {
-        super(state, properties);
+        super(state.get(), properties);
         this.stripResult = stripResult;
     }
 

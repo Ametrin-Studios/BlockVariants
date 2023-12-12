@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:acacia_log_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

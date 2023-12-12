@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/basalt_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

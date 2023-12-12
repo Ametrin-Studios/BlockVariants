@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:smooth_stone_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

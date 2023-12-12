@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/polished_granite_wall_from_granite_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

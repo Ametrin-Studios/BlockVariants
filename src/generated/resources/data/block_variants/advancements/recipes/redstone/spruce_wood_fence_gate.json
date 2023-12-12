@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:spruce_wood_fence_gate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

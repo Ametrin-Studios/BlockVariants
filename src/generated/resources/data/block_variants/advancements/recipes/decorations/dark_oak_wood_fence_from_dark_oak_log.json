@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:dark_oak_wood_fence_from_dark_oak_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

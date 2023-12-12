@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/polished_blackstone_brick_slab_from_polished_blackstone_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

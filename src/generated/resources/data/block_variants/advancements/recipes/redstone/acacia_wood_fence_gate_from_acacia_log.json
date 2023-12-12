@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:acacia_wood_fence_gate_from_acacia_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

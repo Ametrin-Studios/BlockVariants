@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stripped_spruce_wood_wall_from_stripped_spruce_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:black_glazed_terracotta_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

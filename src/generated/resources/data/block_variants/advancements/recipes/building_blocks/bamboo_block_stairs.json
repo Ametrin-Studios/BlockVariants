@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:bamboo_block_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -554,7 +554,7 @@ public class BVBlocks {
 
     private static RegistryObject<StairBlock> regGlazedTerracottaStairs(DyeColor color){
         var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent::defaultBlockState, CopyProperties(parent)));
+        return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent.defaultBlockState(), CopyProperties(parent)));
     }
     private static RegistryObject<SlabBlock> regGlazedTerracottaSlab(DyeColor color){
         var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");

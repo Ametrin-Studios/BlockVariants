@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stripped_warped_hyphae_fence_gate_from_stripped_warped_stem"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

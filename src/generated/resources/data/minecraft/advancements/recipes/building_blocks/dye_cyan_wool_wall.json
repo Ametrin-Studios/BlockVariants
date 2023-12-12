@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:dye_cyan_wool_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

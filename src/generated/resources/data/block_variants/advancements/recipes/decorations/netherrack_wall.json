@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:netherrack_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

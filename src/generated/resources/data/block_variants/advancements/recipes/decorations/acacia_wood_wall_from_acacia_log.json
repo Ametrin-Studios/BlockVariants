@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:acacia_wood_wall_from_acacia_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

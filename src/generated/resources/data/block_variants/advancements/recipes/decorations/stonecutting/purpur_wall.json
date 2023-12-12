@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/purpur_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

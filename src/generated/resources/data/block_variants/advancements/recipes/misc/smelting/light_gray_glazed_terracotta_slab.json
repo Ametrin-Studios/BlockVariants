@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:smelting/light_gray_glazed_terracotta_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:crying_obsidian_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

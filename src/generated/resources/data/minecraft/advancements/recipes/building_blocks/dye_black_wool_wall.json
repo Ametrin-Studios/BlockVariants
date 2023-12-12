@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:dye_black_wool_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

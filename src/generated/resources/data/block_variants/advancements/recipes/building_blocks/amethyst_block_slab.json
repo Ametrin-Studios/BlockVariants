@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:amethyst_block_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

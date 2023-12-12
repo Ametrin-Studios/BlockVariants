@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stripped_birch_log_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

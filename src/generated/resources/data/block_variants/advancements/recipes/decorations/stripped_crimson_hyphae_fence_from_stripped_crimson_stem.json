@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stripped_crimson_hyphae_fence_from_stripped_crimson_stem"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

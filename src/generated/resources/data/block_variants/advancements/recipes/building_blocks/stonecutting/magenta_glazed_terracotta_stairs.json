@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/magenta_glazed_terracotta_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

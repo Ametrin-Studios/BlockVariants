@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:smooth_stone_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

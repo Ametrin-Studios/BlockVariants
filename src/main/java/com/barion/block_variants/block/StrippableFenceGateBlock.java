@@ -20,8 +20,14 @@ import java.util.function.Supplier;
 public class StrippableFenceGateBlock extends FenceGateBlock {
     private final Supplier<FenceGateBlock> stripResult;
 
+    @Deprecated
     public StrippableFenceGateBlock(Supplier<FenceGateBlock> stripResult, Properties properties, WoodType type) {
-        super(properties, type);
+        super(type, properties);
+        this.stripResult = stripResult;
+    }
+
+    public StrippableFenceGateBlock(Supplier<FenceGateBlock> stripResult, WoodType type, Properties properties) {
+        super(type, properties);
         this.stripResult = stripResult;
     }
 

@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:warped_hyphae_wall_from_warped_stem"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

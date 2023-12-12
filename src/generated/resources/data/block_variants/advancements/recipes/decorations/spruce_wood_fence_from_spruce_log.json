@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:spruce_wood_fence_from_spruce_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

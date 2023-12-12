@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/dripstone_block_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

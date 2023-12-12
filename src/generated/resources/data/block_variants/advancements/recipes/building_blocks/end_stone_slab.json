@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:end_stone_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

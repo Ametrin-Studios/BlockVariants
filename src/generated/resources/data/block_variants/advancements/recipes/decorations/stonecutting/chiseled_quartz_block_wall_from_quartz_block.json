@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/chiseled_quartz_block_wall_from_quartz_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

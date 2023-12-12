@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:cherry_wood_wall_from_cherry_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:crimson_hyphae_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

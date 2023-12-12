@@ -28,6 +28,5 @@
     "recipes": [
       "block_variants:piston"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

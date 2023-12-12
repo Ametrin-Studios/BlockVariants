@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:oak_wood_wall_from_oak_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

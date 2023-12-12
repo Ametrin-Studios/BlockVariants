@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:birch_wood_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

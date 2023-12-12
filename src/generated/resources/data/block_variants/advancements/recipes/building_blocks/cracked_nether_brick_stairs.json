@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:cracked_nether_brick_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

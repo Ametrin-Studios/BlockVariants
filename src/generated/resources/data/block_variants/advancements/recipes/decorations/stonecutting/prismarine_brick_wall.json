@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/prismarine_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

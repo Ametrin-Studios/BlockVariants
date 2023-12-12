@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:dark_prismarine_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

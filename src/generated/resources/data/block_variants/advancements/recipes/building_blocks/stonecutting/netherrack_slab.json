@@ -30,6 +30,5 @@
     "recipes": [
       "block_variants:stonecutting/netherrack_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
