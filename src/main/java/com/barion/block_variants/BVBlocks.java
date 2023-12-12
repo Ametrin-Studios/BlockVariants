@@ -336,86 +336,86 @@ public class BVBlocks {
 
     public static final RegistryObject<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.NETHER_BRICK_FENCE))); // TODO: fix wood type
 
-    public static final RegistryObject<StairBlock> Cracked_Nether_Brick_Stairs = register("cracked_nether_brick_stairs", stair(Blocks.CRACKED_NETHER_BRICKS));
-    public static final RegistryObject<SlabBlock> Cracked_Nether_Brick_Slab = register("cracked_nether_brick_slab", slab(Blocks.CRACKED_NETHER_BRICKS));
-    public static final RegistryObject<WallBlock> Cracked_Nether_Brick_Wall = register("cracked_nether_brick_wall", wall(Blocks.CRACKED_NETHER_BRICKS));
-    public static final RegistryObject<FenceBlock> Cracked_Nether_Brick_Fence = register("cracked_nether_brick_fence", fence(Blocks.CRACKED_NETHER_BRICKS));
-    public static final RegistryObject<FenceGateBlock> Cracked_Nether_Brick_Fence_Gate = register("cracked_nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.CRACKED_NETHER_BRICKS)));
+    public static final RegistryObject<StairBlock> CRACKED_NETHER_BRICK_STAIRS = register("cracked_nether_brick_stairs", stair(Blocks.CRACKED_NETHER_BRICKS));
+    public static final RegistryObject<SlabBlock> CRACKED_NETHER_BRICK_SLAB = register("cracked_nether_brick_slab", slab(Blocks.CRACKED_NETHER_BRICKS));
+    public static final RegistryObject<WallBlock> CRACKED_NETHER_BRICK_WALL = register("cracked_nether_brick_wall", wall(Blocks.CRACKED_NETHER_BRICKS));
+    public static final RegistryObject<FenceBlock> CRACKED_NETHER_BRICK_FENCE = register("cracked_nether_brick_fence", fence(Blocks.CRACKED_NETHER_BRICKS));
+    public static final RegistryObject<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.CRACKED_NETHER_BRICKS)));
 
-    public static final RegistryObject<FenceBlock> Red_Nether_Brick_Fence = register("red_nether_brick_fence", fence(Blocks.RED_NETHER_BRICKS));
-    public static final RegistryObject<FenceGateBlock> Red_Nether_Brick_Fence_Gate = register("red_nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.RED_NETHER_BRICKS)));
+    public static final RegistryObject<FenceBlock> RED_NETHER_BRICK_FENCE = register("red_nether_brick_fence", fence(Blocks.RED_NETHER_BRICKS));
+    public static final RegistryObject<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.RED_NETHER_BRICKS)));
 
-    public static final RegistryObject<StairBlock> Obsidian_Stairs = register("obsidian_stairs", stair(Blocks.OBSIDIAN));
-    public static final RegistryObject<SlabBlock> Obsidian_Slab = register("obsidian_slab", slab(Blocks.OBSIDIAN));
-    public static final RegistryObject<WallBlock> Obsidian_Wall = register("obsidian_wall", wall(Blocks.OBSIDIAN));
+    public static final RegistryObject<StairBlock> OBSIDIAN_STAIRS = register("obsidian_stairs", stair(Blocks.OBSIDIAN));
+    public static final RegistryObject<SlabBlock> OBSIDIAN_SLAB = register("obsidian_slab", slab(Blocks.OBSIDIAN));
+    public static final RegistryObject<WallBlock> OBSIDIAN_WALL = register("obsidian_wall", wall(Blocks.OBSIDIAN));
 
-    public static final RegistryObject<StairBlock> Crying_Obsidian_Stairs = register("crying_obsidian_stairs", stair(Blocks.CRYING_OBSIDIAN));
-    public static final RegistryObject<SlabBlock> Crying_Obsidian_Slab = register("crying_obsidian_slab", slab(Blocks.CRYING_OBSIDIAN));
-    public static final RegistryObject<WallBlock> Crying_Obsidian_Wall = register("crying_obsidian_wall", wall(Blocks.CRYING_OBSIDIAN));
+    public static final RegistryObject<StairBlock> CRYING_OBSIDIAN_STAIRS = register("crying_obsidian_stairs", stair(Blocks.CRYING_OBSIDIAN));
+    public static final RegistryObject<SlabBlock> CRYING_OBSIDIAN_SLAB = register("crying_obsidian_slab", slab(Blocks.CRYING_OBSIDIAN));
+    public static final RegistryObject<WallBlock> CRYING_OBSIDIAN_WALL = register("crying_obsidian_wall", wall(Blocks.CRYING_OBSIDIAN));
 
-    public static final RegistryObject<StairBlock> White_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.WHITE);
-    public static final RegistryObject<SlabBlock> White_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.WHITE);
-    public static final RegistryObject<WallBlock> White_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.WHITE);
+    public static final RegistryObject<StairBlock> WHITE_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.WHITE);
+    public static final RegistryObject<SlabBlock> WHITE_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.WHITE);
+    public static final RegistryObject<WallBlock> WHITE_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.WHITE);
 
-    public static final RegistryObject<StairBlock> Orange_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.ORANGE);
-    public static final RegistryObject<SlabBlock> Orange_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.ORANGE);
-    public static final RegistryObject<WallBlock> Orange_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.ORANGE);
+    public static final RegistryObject<StairBlock> ORANGE_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.ORANGE);
+    public static final RegistryObject<SlabBlock> ORANGE_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.ORANGE);
+    public static final RegistryObject<WallBlock> ORANGE_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.ORANGE);
 
-    public static final RegistryObject<StairBlock> Magenta_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.MAGENTA);
-    public static final RegistryObject<SlabBlock> Magenta_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.MAGENTA);
-    public static final RegistryObject<WallBlock> Magenta_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.MAGENTA);
+    public static final RegistryObject<StairBlock> MAGENTA_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.MAGENTA);
+    public static final RegistryObject<SlabBlock> MAGENTA_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.MAGENTA);
+    public static final RegistryObject<WallBlock> MAGENTA_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.MAGENTA);
 
-    public static final RegistryObject<StairBlock> Light_Blue_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.LIGHT_BLUE);
-    public static final RegistryObject<SlabBlock> Light_Blue_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.LIGHT_BLUE);
-    public static final RegistryObject<WallBlock> Light_Blue_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<StairBlock> LIGHT_BLUE_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<SlabBlock> LIGHT_BLUE_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.LIGHT_BLUE);
+    public static final RegistryObject<WallBlock> LIGHT_BLUE_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.LIGHT_BLUE);
 
-    public static final RegistryObject<StairBlock> Yellow_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.YELLOW);
-    public static final RegistryObject<SlabBlock> Yellow_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.YELLOW);
-    public static final RegistryObject<WallBlock> Yellow_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.YELLOW);
+    public static final RegistryObject<StairBlock> YELLOW_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.YELLOW);
+    public static final RegistryObject<SlabBlock> YELLOW_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.YELLOW);
+    public static final RegistryObject<WallBlock> YELLOW_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.YELLOW);
 
-    public static final RegistryObject<StairBlock> Lime_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.LIME);
-    public static final RegistryObject<SlabBlock> Lime_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.LIME);
-    public static final RegistryObject<WallBlock> Lime_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.LIME);
+    public static final RegistryObject<StairBlock> LIME_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.LIME);
+    public static final RegistryObject<SlabBlock> LIME_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.LIME);
+    public static final RegistryObject<WallBlock> LIME_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.LIME);
 
-    public static final RegistryObject<StairBlock> Pink_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.PINK);
-    public static final RegistryObject<SlabBlock> Pink_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.PINK);
-    public static final RegistryObject<WallBlock> Pink_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.PINK);
+    public static final RegistryObject<StairBlock> PINK_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.PINK);
+    public static final RegistryObject<SlabBlock> PINK_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.PINK);
+    public static final RegistryObject<WallBlock> PINK_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.PINK);
 
-    public static final RegistryObject<StairBlock> Gray_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.GRAY);
-    public static final RegistryObject<SlabBlock> Gray_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.GRAY);
-    public static final RegistryObject<WallBlock> Gray_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.GRAY);
+    public static final RegistryObject<StairBlock> GRAY_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.GRAY);
+    public static final RegistryObject<SlabBlock> GRAY_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.GRAY);
+    public static final RegistryObject<WallBlock> GRAY_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.GRAY);
 
-    public static final RegistryObject<StairBlock> Light_Gray_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.LIGHT_GRAY);
-    public static final RegistryObject<SlabBlock> Light_Gray_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.LIGHT_GRAY);
-    public static final RegistryObject<WallBlock> Light_Gray_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<StairBlock> LIGHT_GRAY_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<SlabBlock> LIGHT_GRAY_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.LIGHT_GRAY);
+    public static final RegistryObject<WallBlock> LIGHT_GRAY_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.LIGHT_GRAY);
 
-    public static final RegistryObject<StairBlock> Cyan_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.CYAN);
-    public static final RegistryObject<SlabBlock> Cyan_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.CYAN);
-    public static final RegistryObject<WallBlock> Cyan_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.CYAN);
+    public static final RegistryObject<StairBlock> CYAN_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.CYAN);
+    public static final RegistryObject<SlabBlock> CYAN_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.CYAN);
+    public static final RegistryObject<WallBlock> CYAN_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.CYAN);
 
-    public static final RegistryObject<StairBlock> Purple_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.PURPLE);
-    public static final RegistryObject<SlabBlock> Purple_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.PURPLE);
-    public static final RegistryObject<WallBlock> Purple_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.PURPLE);
+    public static final RegistryObject<StairBlock> PURPLE_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.PURPLE);
+    public static final RegistryObject<SlabBlock> PURPLE_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.PURPLE);
+    public static final RegistryObject<WallBlock> PURPLE_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.PURPLE);
 
-    public static final RegistryObject<StairBlock> Blue_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.BLUE);
-    public static final RegistryObject<SlabBlock> Blue_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.BLUE);
-    public static final RegistryObject<WallBlock> Blue_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.BLUE);
+    public static final RegistryObject<StairBlock> BLUE_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.BLUE);
+    public static final RegistryObject<SlabBlock> BLUE_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.BLUE);
+    public static final RegistryObject<WallBlock> BLUE_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.BLUE);
 
-    public static final RegistryObject<StairBlock> Brown_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.BROWN);
-    public static final RegistryObject<SlabBlock> Brown_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.BROWN);
-    public static final RegistryObject<WallBlock> Brown_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.BROWN);
+    public static final RegistryObject<StairBlock> BROWN_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.BROWN);
+    public static final RegistryObject<SlabBlock> BROWN_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.BROWN);
+    public static final RegistryObject<WallBlock> BROWN_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.BROWN);
 
-    public static final RegistryObject<StairBlock> Green_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.GREEN);
-    public static final RegistryObject<SlabBlock> Green_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.GREEN);
-    public static final RegistryObject<WallBlock> Green_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.GREEN);
+    public static final RegistryObject<StairBlock> GREEN_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.GREEN);
+    public static final RegistryObject<SlabBlock> GREEN_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.GREEN);
+    public static final RegistryObject<WallBlock> GREEN_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.GREEN);
 
-    public static final RegistryObject<StairBlock> Red_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.RED);
-    public static final RegistryObject<SlabBlock> Red_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.RED);
-    public static final RegistryObject<WallBlock> Red_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.RED);
+    public static final RegistryObject<StairBlock> RED_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.RED);
+    public static final RegistryObject<SlabBlock> RED_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.RED);
+    public static final RegistryObject<WallBlock> RED_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.RED);
 
-    public static final RegistryObject<StairBlock> Black_Glazed_Terracotta_Stairs = regGlazedTerracottaStairs(DyeColor.BLACK);
-    public static final RegistryObject<SlabBlock> Black_Glazed_Terracotta_Slab = regGlazedTerracottaSlab(DyeColor.BLACK);
-    public static final RegistryObject<WallBlock> Black_Glazed_Terracotta_Wall = regGlazedTerracottaWall(DyeColor.BLACK);
+    public static final RegistryObject<StairBlock> BLACK_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.BLACK);
+    public static final RegistryObject<SlabBlock> BLACK_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.BLACK);
+    public static final RegistryObject<WallBlock> BLACK_GLAZED_TERRACOTTA_WALL = regGlazedTerracottaWall(DyeColor.BLACK);
 
     public static final RegistryObject<StairBlock> WhiteWoolStairs = regWoolStairs(DyeColor.WHITE);
     public static final RegistryObject<SlabBlock> WhiteWoolSlab = regWoolSlab(DyeColor.WHITE);
