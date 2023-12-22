@@ -9,8 +9,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 @SuppressWarnings("unchecked")
 public class BVItemTagsProvider extends ExtendedItemTagsProvider {
     public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> provider, ExistingFileHelper existingFileHelper) {
-        super(packOutput, lookupProvider, provider, BlockVariants.ModID, existingFileHelper);
+        super(packOutput, lookupProvider, provider, BlockVariants.MOD_ID, existingFileHelper);
     }
 
     {

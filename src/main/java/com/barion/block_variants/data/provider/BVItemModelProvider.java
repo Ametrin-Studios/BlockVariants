@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -21,7 +21,7 @@ import static com.barion.block_variants.BVUtil.getBlockName;
 
 public class BVItemModelProvider extends ExtendedItemModelProvider {
     public BVItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper){
-        super(output, BlockVariants.ModID, existingFileHelper);
+        super(output, BlockVariants.MOD_ID, existingFileHelper);
     }
 
     @Override

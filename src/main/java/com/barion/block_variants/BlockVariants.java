@@ -5,20 +5,18 @@ import com.barion.block_variants.data.provider.*;
 import com.barion.block_variants.data.provider.loot_table.BVBlockLootSubProvider;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
-@Mod(BlockVariants.ModID)
+@Mod(BlockVariants.MOD_ID)
 public class BlockVariants{
-    public static final String ModID = "block_variants";
+    public static final String MOD_ID = "block_variants";
     public static final Logger Logger = LogUtils.getLogger();
 
-    public BlockVariants() {
-        var modBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+    public BlockVariants(IEventBus modBus) {
         BVBlocks.BLOCK_REGISTER.register(modBus);
         BVBlocks.ITEM_REGISTER.register(modBus);
         modBus.addListener(BlockVariants::buildCreativeModeTabs);
@@ -44,7 +42,7 @@ public class BlockVariants{
         BVBlockTagsProvider blockTags = new BVBlockTagsProvider(output, lookup, existingFileHelper);
         generator.addProvider(runServer, blockTags);
         generator.addProvider(runServer, new BVItemTagsProvider(output, lookup, blockTags.contentsGetter(), existingFileHelper));
-        generator.addProvider(runServer, new BVRecipeProvider(output));
+        generator.addProvider(runServer, new BVRecipeProvider(output, lookup));
         var lootTableProvider = CustomLootTableProvider.Builder().AddBlockProvider(BVBlockLootSubProvider::new).Build(output);
         generator.addProvider(runServer, lootTableProvider);
     }

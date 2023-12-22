@@ -4,6 +4,7 @@ import com.ametrinstudios.ametrin.data.provider.ExtendedRecipeProvider;
 import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -15,9 +16,10 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.concurrent.CompletableFuture;
 
 public class BVRecipeProvider extends ExtendedRecipeProvider {
-    public BVRecipeProvider(PackOutput packOutput) {super(packOutput, BlockVariants.ModID);}
+    public BVRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {super(packOutput, BlockVariants.MOD_ID, lookupProvider);}
 
     @Override @ParametersAreNonnullByDefault
     protected void buildRecipes(RecipeOutput output){
@@ -339,5 +341,5 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         fenceGate(output, fenceGate, altMaterial);
     }
 
-    protected static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.ModID, getItemName(item));}
+    protected static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.MOD_ID, getItemName(item));}
 }

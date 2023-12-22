@@ -9,13 +9,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isLog;
 
 public class BVBlockStateProvider extends ExtendedBlockStateProvider {
     public BVBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper){
-        super(output, BlockVariants.ModID, existingFileHelper);
+        super(output, BlockVariants.MOD_ID, existingFileHelper);
     }
 
     {
