@@ -10,7 +10,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 @Mod(BlockVariants.MOD_ID)
-public class BlockVariants{
+public final class BlockVariants{
     public static final String MOD_ID = "block_variants";
 //    public static final Logger Logger = LogUtils.getLogger();
 
