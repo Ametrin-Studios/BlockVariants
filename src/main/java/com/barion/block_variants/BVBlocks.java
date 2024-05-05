@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
@@ -22,7 +23,7 @@ import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourProper
 import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.fenceGate;
 import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.stair;
 
-public class BVBlocks {
+public final class BVBlocks {
     public static final DeferredRegister.Blocks BLOCK_REGISTER = DeferredRegister.createBlocks(BlockVariants.MOD_ID);
     public static final DeferredRegister.Items ITEM_REGISTER = DeferredRegister.createItems(BlockVariants.MOD_ID);
 
@@ -333,16 +334,16 @@ public class BVBlocks {
     public static final Supplier<SlabBlock> CRACKED_DEEPSLATE_TILE_SLAB = register("cracked_deepslate_tile_slab", slab(Blocks.CRACKED_DEEPSLATE_TILES));
     public static final Supplier<WallBlock> CRACKED_DEEPSLATE_TILE_WALL = register("cracked_deepslate_tile_wall", wall(Blocks.CRACKED_DEEPSLATE_TILES));
 
-    public static final Supplier<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.NETHER_BRICK_FENCE))); // TODO: fix wood type
+    public static final Supplier<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", fenceGate(WoodType.OAK, CopyProperties(Blocks.NETHER_BRICK_FENCE))); // TODO: fix wood type
 
     public static final Supplier<StairBlock> CRACKED_NETHER_BRICK_STAIRS = register("cracked_nether_brick_stairs", stair(Blocks.CRACKED_NETHER_BRICKS));
     public static final Supplier<SlabBlock> CRACKED_NETHER_BRICK_SLAB = register("cracked_nether_brick_slab", slab(Blocks.CRACKED_NETHER_BRICKS));
     public static final Supplier<WallBlock> CRACKED_NETHER_BRICK_WALL = register("cracked_nether_brick_wall", wall(Blocks.CRACKED_NETHER_BRICKS));
     public static final Supplier<FenceBlock> CRACKED_NETHER_BRICK_FENCE = register("cracked_nether_brick_fence", fence(Blocks.CRACKED_NETHER_BRICKS));
-    public static final Supplier<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.CRACKED_NETHER_BRICKS)));
+    public static final Supplier<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", fenceGate(WoodType.OAK, CopyProperties(Blocks.CRACKED_NETHER_BRICKS)));
 
     public static final Supplier<FenceBlock> RED_NETHER_BRICK_FENCE = register("red_nether_brick_fence", fence(Blocks.RED_NETHER_BRICKS));
-    public static final Supplier<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", fenceGate(CopyProperties(Blocks.RED_NETHER_BRICKS)));
+    public static final Supplier<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", fenceGate(WoodType.OAK, CopyProperties(Blocks.RED_NETHER_BRICKS)));
 
     public static final Supplier<StairBlock> OBSIDIAN_STAIRS = register("obsidian_stairs", stair(Blocks.OBSIDIAN));
     public static final Supplier<SlabBlock> OBSIDIAN_SLAB = register("obsidian_slab", slab(Blocks.OBSIDIAN));
@@ -577,12 +578,12 @@ public class BVBlocks {
         return register(color.getName() + "_wool_wall", wall(parent));
     }
 
-    protected static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
-    protected static Supplier<SlabBlock> slab(Block parent) {return slab(CopyProperties(parent));}
-    protected static Supplier<WallBlock> wall(WallBlock.Properties properties) {return ()-> new WallBlock(properties);}
-    protected static Supplier<WallBlock> wall(Block parent) {return wall(CopyProperties(parent));}
-    protected static Supplier<FenceBlock> fence(FenceBlock.Properties properties) {return ()-> new FenceBlock(properties);}
-    protected static Supplier<FenceBlock> fence(Block parent) {return fence(CopyProperties(parent));}
+    private static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
+    private static Supplier<SlabBlock> slab(Block parent) {return slab(CopyProperties(parent));}
+    private static Supplier<WallBlock> wall(WallBlock.Properties properties) {return ()-> new WallBlock(properties);}
+    private static Supplier<WallBlock> wall(Block parent) {return wall(CopyProperties(parent));}
+    private static Supplier<FenceBlock> fence(FenceBlock.Properties properties) {return ()-> new FenceBlock(properties);}
+    private static Supplier<FenceBlock> fence(Block parent) {return fence(CopyProperties(parent));}
 
     private static WoodType WoodTypeOf(String key){
         key = key.replace("stripped_", "");
@@ -616,7 +617,7 @@ public class BVBlocks {
         var registryObject = registerWithoutItem(name, block);
         ITEM_REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties){
             @Override
-            public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {return itemBurnTime;}
+            public int getBurnTime(@NotNull ItemStack itemStack, @Nullable RecipeType<?> recipeType) {return itemBurnTime;}
         });
         return registryObject;
     }

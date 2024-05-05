@@ -7,7 +7,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-public class BVTags {
+public final class BVTags {
     public static final class Blocks{
         public static final TagKey<Block> WOODEN_WALLS = forge("wooden_wall");
 

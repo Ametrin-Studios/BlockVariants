@@ -50,7 +50,7 @@ public class BVItemTagsProvider extends ExtendedItemTagsProvider {
         copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
         copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);
 
-        tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONE);
+        tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
 
 //        tag(ItemTags.STAIRS).addTag(ItemTags.WOODEN_STAIRS);
 //        tag(ItemTags.SLABS).addTag(ItemTags.WOODEN_SLABS);
