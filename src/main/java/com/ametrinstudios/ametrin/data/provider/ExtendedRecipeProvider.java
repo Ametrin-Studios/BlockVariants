@@ -435,7 +435,7 @@ public abstract class ExtendedRecipeProvider extends RecipeProvider {
             var dyeID = new ResourceLocation(dye.getName() + "_dye");
             var result = BuiltInRegistries.ITEM.get(resultID);
             var dyeItem = BuiltInRegistries.ITEM.get(dyeID);
-            ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(dyedItems).requires(dyeItem).group(group).unlockedBy("has_needed_dye", has(dyeItem)).save(output, "dye_" + getItemName(result));
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(dyedItems).requires(dyeItem).group(group).unlockedBy("has_needed_dye", has(dyeItem)).save(output, location("dye_" + getItemName(result)));
         }
     }
 

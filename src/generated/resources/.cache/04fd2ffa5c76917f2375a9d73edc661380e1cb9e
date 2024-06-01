@@ -1,9 +1,9 @@
-// 1.20.6	2024-06-01T19:57:48.038101	Tags for minecraft:block mod id block_variants
+// 1.20.6	2024-06-01T20:19:02.4684559	Tags for minecraft:block mod id block_variants
 c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/c/tags/blocks/fences.json
 490d991b4702a764720c9319534a45ffd8c7d044 data/c/tags/blocks/fences/wooden.json
 5f280bff98fe21515c35c1684d9c64f837496d02 data/c/tags/blocks/fence_gates.json
 de6deed7d1f252a69243754bf227386c76cfa89b data/c/tags/blocks/fence_gates/wooden.json
-25a5fc0d82838ffcc354fde3e97d392f74fe8ab6 data/forge/tags/blocks/wooden_wall.json
+25a5fc0d82838ffcc354fde3e97d392f74fe8ab6 data/c/tags/blocks/wooden_wall.json
 c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/minecraft/tags/blocks/fences.json
 5f280bff98fe21515c35c1684d9c64f837496d02 data/minecraft/tags/blocks/fence_gates.json
 073775aa66128c52d70ed763cfdb11c0c6c270f5 data/minecraft/tags/blocks/mineable/axe.json
