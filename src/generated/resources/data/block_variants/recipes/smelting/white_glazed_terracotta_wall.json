@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "block_variants:white_terracotta_wall"
   },
-  "result": "block_variants:white_glazed_terracotta_wall"
+  "result": {
+    "count": 1,
+    "id": "block_variants:white_glazed_terracotta_wall"
+  }
 }

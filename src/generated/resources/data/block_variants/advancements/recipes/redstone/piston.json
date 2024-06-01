@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "block_variants:stone_crafting"
+            "items": "#block_variants:stone_crafting"
           }
         ]
       },

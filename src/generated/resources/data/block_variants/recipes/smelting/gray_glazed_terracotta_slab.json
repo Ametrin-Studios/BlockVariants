@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "block_variants:gray_terracotta_slab"
   },
-  "result": "block_variants:gray_glazed_terracotta_slab"
+  "result": {
+    "count": 1,
+    "id": "block_variants:gray_glazed_terracotta_slab"
+  }
 }

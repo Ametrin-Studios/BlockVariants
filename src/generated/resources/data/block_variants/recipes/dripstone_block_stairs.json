@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 4,
-    "item": "block_variants:dripstone_block_stairs"
+    "id": "block_variants:dripstone_block_stairs"
   }
 }

@@ -5,7 +5,7 @@ import com.barion.block_variants.BVBlocks;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
-public class BVBlockLootSubProvider extends ExtendedBlockLootSubProvider {
+public final class BVBlockLootSubProvider extends ExtendedBlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(BVBlocks.getAllBlocks());

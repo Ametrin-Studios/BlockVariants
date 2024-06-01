@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
-public class CustomLootTableProvider extends LootTableProvider {
+public final class CustomLootTableProvider extends LootTableProvider {
     public CustomLootTableProvider(PackOutput packOutput, List<SubProviderEntry> subProviders, CompletableFuture<HolderLookup.Provider> registries) {
         super(packOutput, Set.of(), subProviders, registries);
     }

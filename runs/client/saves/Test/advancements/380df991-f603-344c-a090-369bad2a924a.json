@@ -3935,5 +3935,41 @@
     },
     "done": true
   },
-  "DataVersion": 3700
+  "block_variants:recipes/building_blocks/magenta_glazed_terracotta_slab": {
+    "criteria": {
+      "has_magenta_glazed_terracotta": "2024-06-01 20:04:09 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/magenta_glazed_terracotta_wall": {
+    "criteria": {
+      "has_magenta_glazed_terracotta": "2024-06-01 20:04:09 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/magenta_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_magenta_glazed_terracotta": "2024-06-01 20:04:09 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/magenta_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_magenta_glazed_terracotta": "2024-06-01 20:04:09 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/magenta_glazed_terracotta_slab": {
+    "criteria": {
+      "has_magenta_glazed_terracotta": "2024-06-01 20:04:09 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/magenta_glazed_terracotta_wall": {
+    "criteria": {
+      "has_magenta_glazed_terracotta": "2024-06-01 20:04:09 +0200"
+    },
+    "done": true
+  },
+  "DataVersion": 3839
 }

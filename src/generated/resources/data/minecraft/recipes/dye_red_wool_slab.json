@@ -11,6 +11,7 @@
     }
   ],
   "result": {
-    "item": "block_variants:red_wool_slab"
+    "count": 1,
+    "id": "block_variants:red_wool_slab"
   }
 }

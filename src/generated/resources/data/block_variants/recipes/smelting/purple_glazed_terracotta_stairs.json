@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "block_variants:purple_terracotta_stairs"
   },
-  "result": "block_variants:purple_glazed_terracotta_stairs"
+  "result": {
+    "count": 1,
+    "id": "block_variants:purple_glazed_terracotta_stairs"
+  }
 }

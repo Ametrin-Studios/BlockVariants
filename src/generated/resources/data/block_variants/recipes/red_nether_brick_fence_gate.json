@@ -14,6 +14,7 @@
     "#W#"
   ],
   "result": {
-    "item": "block_variants:red_nether_brick_fence_gate"
+    "count": 1,
+    "id": "block_variants:red_nether_brick_fence_gate"
   }
 }

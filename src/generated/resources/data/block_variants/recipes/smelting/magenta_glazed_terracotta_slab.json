@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "block_variants:magenta_terracotta_slab"
   },
-  "result": "block_variants:magenta_glazed_terracotta_slab"
+  "result": {
+    "count": 1,
+    "id": "block_variants:magenta_glazed_terracotta_slab"
+  }
 }

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "block_variants:stone_wall"
   },
-  "result": "block_variants:smooth_stone_wall"
+  "result": {
+    "count": 1,
+    "id": "block_variants:smooth_stone_wall"
+  }
 }

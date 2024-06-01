@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "block_variants:basalt_slab"
   },
-  "result": "block_variants:smooth_basalt_slab"
+  "result": {
+    "count": 1,
+    "id": "block_variants:smooth_basalt_slab"
+  }
 }

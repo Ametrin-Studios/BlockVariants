@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "block_variants:white_terracotta_wall"
-            ]
+            "items": "block_variants:white_terracotta_wall"
           }
         ]
       },

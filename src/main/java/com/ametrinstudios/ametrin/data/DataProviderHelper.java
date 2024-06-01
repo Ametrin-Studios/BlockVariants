@@ -13,7 +13,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
-public class DataProviderHelper {
+public final class DataProviderHelper {
     public final DataGenerator generator;
     public final PackOutput output;
     public final ExistingFileHelper existingFileHelper;

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "minecraft:cobblestone_wall"
   },
-  "result": "block_variants:stone_wall"
+  "result": {
+    "count": 1,
+    "id": "block_variants:stone_wall"
+  }
 }

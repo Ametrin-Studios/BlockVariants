@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 
 import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isWooden;
 
-public class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
+public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper){
         super(output, lookupProvider, BlockVariants.MOD_ID, fileHelper);
     }

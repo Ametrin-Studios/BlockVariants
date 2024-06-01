@@ -19,7 +19,7 @@ import java.util.function.ToIntFunction;
 import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.CopyProperties;
 
 @SuppressWarnings("unused")
-public class BlockRegisterHelper {
+public final class BlockRegisterHelper {
     private BlockRegisterHelper() {}
 
     public static Supplier<StairBlock> stair(StairBlock.Properties properties, Supplier<BlockState> base) {return ()-> new StairBlock(base.get(), properties);}

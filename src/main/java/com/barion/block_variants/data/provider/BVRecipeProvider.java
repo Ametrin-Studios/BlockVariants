@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.*;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.concurrent.CompletableFuture;
 
-public class BVRecipeProvider extends ExtendedRecipeProvider {
+public final class BVRecipeProvider extends ExtendedRecipeProvider {
     public BVRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {super(packOutput, BlockVariants.MOD_ID, lookupProvider);}
 
     @Override @ParametersAreNonnullByDefault
@@ -311,26 +311,26 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         } //Recipe overrides
     }
 
-    protected void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){
+    private void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){
         stairs(output, stair, material, hasStonecutting);
         slab(output, slab, material, hasStonecutting);
         wall(output, wall, material, hasStonecutting);
     }
-    protected void stairSlab(RecipeOutput output, StairBlock stair, SlabBlock slab, ItemLike material, boolean hasStonecutting){
+    private void stairSlab(RecipeOutput output, StairBlock stair, SlabBlock slab, ItemLike material, boolean hasStonecutting){
         stairs(output, stair, material, hasStonecutting);
         slab(output, slab, material, hasStonecutting);
     }
-    protected void smelting(RecipeOutput output, ItemLike result, ItemLike ingredient) {
+    private void smelting(RecipeOutput output, ItemLike result, ItemLike ingredient) {
         smelting(output, RecipeCategory.MISC, result, ingredient, 0.1f, 200);
     }
-    protected void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material){
+    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material){
         stairs(output, stairs, material, false);
         slab(output, slab, material, false);
         wall(output, wall, material, false);
         fence(output, fence, material);
         fenceGate(output, fenceGate, material);
     }
-    protected void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material, ItemLike altMaterial){
+    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material, ItemLike altMaterial){
         stairs(output, stairs, material, false);
         slab(output, slab, material, false);
         wall(output, wall, material, false);
@@ -341,5 +341,5 @@ public class BVRecipeProvider extends ExtendedRecipeProvider {
         fenceGate(output, fenceGate, altMaterial);
     }
 
-    protected static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.MOD_ID, getItemName(item));}
+    private static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.MOD_ID, getItemName(item));}
 }

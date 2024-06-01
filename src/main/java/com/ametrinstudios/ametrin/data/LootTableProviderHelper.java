@@ -16,7 +16,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
-public class LootTableProviderHelper {
+public final class LootTableProviderHelper {
     public static LootPoolEntryContainer.Builder<?> item(ItemLike item, int weight, NumberProvider amount){
         return LootItem.lootTableItem(item).setWeight(weight).apply(SetItemCountFunction.setCount(amount));
     }

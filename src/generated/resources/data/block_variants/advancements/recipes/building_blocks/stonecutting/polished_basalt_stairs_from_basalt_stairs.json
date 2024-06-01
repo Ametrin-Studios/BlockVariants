@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "block_variants:basalt_stairs"
-            ]
+            "items": "block_variants:basalt_stairs"
           }
         ]
       },

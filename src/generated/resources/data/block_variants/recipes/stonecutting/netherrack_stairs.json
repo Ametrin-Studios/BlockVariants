@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:netherrack"
   },
-  "result": "block_variants:netherrack_stairs"
+  "result": {
+    "count": 1,
+    "id": "block_variants:netherrack_stairs"
+  }
 }

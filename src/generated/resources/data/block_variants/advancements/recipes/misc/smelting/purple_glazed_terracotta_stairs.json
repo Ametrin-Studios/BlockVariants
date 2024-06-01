@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "block_variants:purple_terracotta_stairs"
-            ]
+            "items": "block_variants:purple_terracotta_stairs"
           }
         ]
       },

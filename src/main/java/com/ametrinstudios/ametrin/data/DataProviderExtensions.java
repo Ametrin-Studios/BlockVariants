@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class DataProviderExtensions {
+public final class DataProviderExtensions {
     /**
      * blocks containing strings from this list try to use the plank texture in some cases look at the usages to find out where exactly
      */

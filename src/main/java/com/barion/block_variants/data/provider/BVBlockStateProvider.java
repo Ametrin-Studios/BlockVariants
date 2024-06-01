@@ -13,7 +13,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isLog;
 
-public class BVBlockStateProvider extends ExtendedBlockStateProvider {
+public final class BVBlockStateProvider extends ExtendedBlockStateProvider {
     public BVBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper){
         super(output, BlockVariants.MOD_ID, existingFileHelper);
     }

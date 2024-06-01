@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "block_variants:quartz_wall"
   },
-  "result": "block_variants:smooth_quartz_wall"
+  "result": {
+    "count": 1,
+    "id": "block_variants:smooth_quartz_wall"
+  }
 }

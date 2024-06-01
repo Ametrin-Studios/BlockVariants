@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "minecraft:stone_stairs"
   },
-  "result": "block_variants:smooth_stone_stairs"
+  "result": {
+    "count": 1,
+    "id": "block_variants:smooth_stone_stairs"
+  }
 }

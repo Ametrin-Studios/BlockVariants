@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:black_glazed_terracotta"
   },
-  "result": "block_variants:black_glazed_terracotta_wall"
+  "result": {
+    "count": 1,
+    "id": "block_variants:black_glazed_terracotta_wall"
+  }
 }
