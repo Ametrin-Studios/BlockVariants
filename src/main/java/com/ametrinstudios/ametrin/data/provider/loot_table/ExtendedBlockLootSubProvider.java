@@ -1,6 +1,7 @@
 package com.ametrinstudios.ametrin.data.provider.loot_table;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.flag.FeatureFlags;
@@ -22,11 +23,11 @@ import java.util.Iterator;
 import java.util.Set;
 
 public abstract class ExtendedBlockLootSubProvider extends BlockLootSubProvider {
-    protected ExtendedBlockLootSubProvider() {
-        this(Set.of());
+    protected ExtendedBlockLootSubProvider(HolderLookup.Provider registries) {
+        this(Set.of(), registries);
     }
-    protected ExtendedBlockLootSubProvider(Set<Item> explosionResistant) {
-        super(explosionResistant, FeatureFlags.REGISTRY.allFlags());
+    protected ExtendedBlockLootSubProvider(Set<Item> explosionResistant, HolderLookup.Provider registries) {
+        super(explosionResistant, FeatureFlags.REGISTRY.allFlags(), registries);
     }
 
     protected void dropLeaveLoot(Block block, SaplingBlock sapling){add(block, createLeavesDrops(block, sapling, NORMAL_LEAVES_SAPLING_CHANCES));}

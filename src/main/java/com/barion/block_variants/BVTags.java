@@ -12,10 +12,10 @@ public final class BVTags {
         public static final TagKey<Block> WOODEN_WALLS = common("wooden_wall");
 
         private static TagKey<Block> common(String path){
-            return BlockTags.create(new ResourceLocation("c", path));
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
         }
         private static TagKey<Block> mod(String path){
-            return BlockTags.create(new ResourceLocation(BlockVariants.MOD_ID, path));
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, path));
         }
     }
 
@@ -27,10 +27,10 @@ public final class BVTags {
         public static final TagKey<Item> WOOL_WALLS = mod("wool/walls");
 
         private static TagKey<Item> common(String path){
-            return ItemTags.create(new ResourceLocation("c", path));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
         }
         private static TagKey<Item> mod(String path){
-            return ItemTags.create(new ResourceLocation(BlockVariants.MOD_ID, path));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, path));
         }
     }
 }

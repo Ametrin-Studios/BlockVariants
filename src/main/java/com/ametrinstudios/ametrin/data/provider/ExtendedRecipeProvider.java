@@ -432,7 +432,7 @@ public abstract class ExtendedRecipeProvider extends RecipeProvider {
     protected static void dying(RecipeOutput output, TagKey<Item> dyedItems, String idPattern, String group){
         for(var dye : DyeColor.values()){
             var resultID = location(idPattern.replace("{color}", dye.getName()));
-            var dyeID = new ResourceLocation(dye.getName() + "_dye");
+            var dyeID = ResourceLocation.withDefaultNamespace(dye.getName() + "_dye");
             var result = BuiltInRegistries.ITEM.get(resultID);
             var dyeItem = BuiltInRegistries.ITEM.get(dyeID);
             ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(dyedItems).requires(dyeItem).group(group).unlockedBy("has_needed_dye", has(dyeItem)).save(output, location("dye_" + getItemName(result)));
@@ -582,8 +582,8 @@ public abstract class ExtendedRecipeProvider extends RecipeProvider {
     protected static String getItemTagName(TagKey<Item> tag) {return tag.location().getPath().replace('/', '_');}
     protected static ResourceLocation location(String key) {
         if(key.contains(":")){
-            return ResourceLocation.of(key, ':');
+            return ResourceLocation.parse(key);
         }
-        return new ResourceLocation(currentModID, key);
+        return ResourceLocation.fromNamespaceAndPath(currentModID, key);
     }
 }

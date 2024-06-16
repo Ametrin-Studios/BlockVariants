@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 public final class CustomLootTableProvider extends LootTableProvider {
     public CustomLootTableProvider(PackOutput packOutput, List<SubProviderEntry> subProviders, CompletableFuture<HolderLookup.Provider> registries) {
@@ -29,22 +29,22 @@ public final class CustomLootTableProvider extends LootTableProvider {
              _subProviders = new ArrayList<>();
         }
 
-        public Builder AddBlockProvider(Supplier<LootTableSubProvider> subProviderSupplier){
+        public Builder AddBlockProvider(Function<HolderLookup.Provider, LootTableSubProvider> subProviderSupplier){
             return AddProvider(subProviderSupplier, LootContextParamSets.BLOCK);
         }
-        public Builder AddChestProvider(Supplier<LootTableSubProvider> subProviderSupplier){
+        public Builder AddChestProvider(Function<HolderLookup.Provider, LootTableSubProvider> subProviderSupplier){
             return AddProvider(subProviderSupplier, LootContextParamSets.CHEST);
         }
-        public Builder AddEntityProvider(Supplier<LootTableSubProvider> subProviderSupplier){
+        public Builder AddEntityProvider(Function<HolderLookup.Provider, LootTableSubProvider> subProviderSupplier){
             return AddProvider(subProviderSupplier, LootContextParamSets.ENTITY);
         }
-        public Builder AddArcheologyProvider(Supplier<LootTableSubProvider> subProviderSupplier){
+        public Builder AddArcheologyProvider(Function<HolderLookup.Provider, LootTableSubProvider> subProviderSupplier){
             return AddProvider(subProviderSupplier, LootContextParamSets.ARCHAEOLOGY);
         }
-        public Builder AddFishingProvider(Supplier<LootTableSubProvider> subProviderSupplier){
+        public Builder AddFishingProvider(Function<HolderLookup.Provider, LootTableSubProvider> subProviderSupplier){
             return AddProvider(subProviderSupplier, LootContextParamSets.FISHING);
         }
-        public Builder AddProvider(Supplier<LootTableSubProvider> subProviderSupplier, LootContextParamSet paramSet){
+        public Builder AddProvider(Function<HolderLookup.Provider, LootTableSubProvider> subProviderSupplier, LootContextParamSet paramSet){
             return AddProvider(new SubProviderEntry(subProviderSupplier, paramSet));
         }
 

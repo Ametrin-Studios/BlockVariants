@@ -341,5 +341,5 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         fenceGate(output, fenceGate, altMaterial);
     }
 
-    private static ResourceLocation recipeID(ItemLike item) {return new ResourceLocation(BlockVariants.MOD_ID, getItemName(item));}
+    private static ResourceLocation recipeID(ItemLike item) {return ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, getItemName(item));}
 }

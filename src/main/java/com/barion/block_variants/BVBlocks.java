@@ -596,7 +596,7 @@ public final class BVBlocks {
     }
 
     private static Block GetVanillaBlock(String name){
-        return BuiltInRegistries.BLOCK.get(new ResourceLocation(name));
+        return BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(name));
     }
 
     private static <T extends Block>Supplier<T> register(String name, Supplier<T> block) {
