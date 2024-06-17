@@ -3953,15 +3953,15 @@
     },
     "done": true
   },
-  "block_variants:recipes/decorations/polished_andesite_wall": {
-    "criteria": {
-      "has_polished_andesite": "2024-06-17 21:03:22 +0200"
-    },
-    "done": true
-  },
   "block_variants:recipes/decorations/stonecutting/polished_andesite_wall_from_andesite": {
     "criteria": {
       "has_andesite": "2024-06-17 21:03:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/polished_andesite_wall": {
+    "criteria": {
+      "has_polished_andesite": "2024-06-17 21:03:22 +0200"
     },
     "done": true
   },

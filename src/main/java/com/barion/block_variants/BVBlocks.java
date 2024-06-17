@@ -3,10 +3,7 @@ package com.barion.block_variants;
 import com.barion.block_variants.block.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -24,12 +21,22 @@ import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.
 import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.stair;
 
 public final class BVBlocks {
+
     public static final DeferredRegister.Blocks BLOCK_REGISTER = DeferredRegister.createBlocks(BlockVariants.MOD_ID);
     public static final DeferredRegister.Items ITEM_REGISTER = DeferredRegister.createItems(BlockVariants.MOD_ID);
 
     private static final Item.Properties DEFAULT_ITEM_PROPERTIES = new Item.Properties();
     private static final Item.Properties fireResistanceItemProperties = new Item.Properties().fireResistant();
 
+    static {
+        BLOCK_REGISTER.addAlias(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, "tuff_stairs"), BVUtil.getBlockID(Blocks.TUFF_STAIRS));
+        BLOCK_REGISTER.addAlias(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, "tuff_slab"), BVUtil.getBlockID(Blocks.TUFF_SLAB));
+        BLOCK_REGISTER.addAlias(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, "tuff_wall"), BVUtil.getBlockID(Blocks.TUFF_WALL));
+
+        ITEM_REGISTER.addAlias(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, "tuff_stairs"), BVUtil.getItemID(Items.TUFF_STAIRS));
+        ITEM_REGISTER.addAlias(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, "tuff_slab"), BVUtil.getItemID(Items.TUFF_SLAB));
+        ITEM_REGISTER.addAlias(ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, "tuff_wall"), BVUtil.getItemID(Items.TUFF_WALL));
+    }
 
     public static final Supplier<WallBlock> POLISHED_GRANITE_WALL = register("polished_granite_wall", wall(Blocks.POLISHED_GRANITE));
     public static final Supplier<WallBlock> POLISHED_DIORITE_WALL = register("polished_diorite_wall", wall(Blocks.POLISHED_DIORITE));
@@ -493,13 +500,13 @@ public final class BVBlocks {
     private static Supplier<StrippableFenceGateBlock> strippableFenceGate(Block base, WoodType type, Supplier<FenceGateBlock> stripped) {return ()-> new StrippableFenceGateBlock(stripped, CopyProperties(base), type);}
     private static Supplier<StrippableFenceGateBlock> strippableFenceGate(BlockBehaviour.Properties properties, WoodType type, Supplier<FenceGateBlock> stripped) {return ()-> new StrippableFenceGateBlock(stripped, properties, type);}
 
-    private static Supplier<StairBlock> regTerracottaStairs(DyeColor color, Block base){
+    private static Supplier<StairBlock> regTerracottaStairs(DyeColor color, Block base) {
         return register(color.getName() + "_terracotta_stairs", stair(base));
     }
-    private static Supplier<SlabBlock> regTerracottaSlab(DyeColor color){
+    private static Supplier<SlabBlock> regTerracottaSlab(DyeColor color) {
         return register(color.getName() + "_terracotta_slab", slab(Blocks.TERRACOTTA));
     }
-    private static Supplier<WallBlock> regTerracottaWall(DyeColor color){
+    private static Supplier<WallBlock> regTerracottaWall(DyeColor color) {
         return register(color.getName() + "_terracotta_wall", wall(Blocks.TERRACOTTA));
     }
 
@@ -521,16 +528,16 @@ public final class BVBlocks {
         return register(type + "_wood_stairs", stair(base), 300);
     }
 
-    private static Supplier<StrippableStairBlock> woodStairs(String type, Block base, Supplier<StairBlock> stripped){
+    private static Supplier<StrippableStairBlock> woodStairs(String type, Block base, Supplier<StairBlock> stripped) {
         return register(type + "_wood_stairs", strippableStair(base, stripped), 300);
     }
-    private static Supplier<SlabBlock> woodSlab(String type, Block base){
+    private static Supplier<SlabBlock> woodSlab(String type, Block base) {
         return register(type + "_wood_slab", slab(base), 150);
     }
-    private static Supplier<StrippableSlabBlock> woodSlab(String type, Block base, Supplier<SlabBlock> stripped){
+    private static Supplier<StrippableSlabBlock> woodSlab(String type, Block base, Supplier<SlabBlock> stripped) {
         return register(type + "_wood_slab", strippableSlab(base, stripped), 150);
     }
-    private static Supplier<WallBlock> woodWall(String type, Block base){
+    private static Supplier<WallBlock> woodWall(String type, Block base) {
         return register(type + "_wood_wall", wall(base), 300);
     }
     private static Supplier<StrippableWallBlock> woodWall(String type, Block base, Supplier<WallBlock> stripped) {
@@ -549,50 +556,50 @@ public final class BVBlocks {
         return register(type.name() + "_wood_fence_gate", strippableFenceGate(base, type, stripped), 300);
     }
 
-    private static Supplier<StairBlock> regGlazedTerracottaStairs(DyeColor color){
+    private static Supplier<StairBlock> regGlazedTerracottaStairs(DyeColor color) {
         var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
         return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent.defaultBlockState(), CopyProperties(parent)));
     }
-    private static Supplier<SlabBlock> regGlazedTerracottaSlab(DyeColor color){
+    private static Supplier<SlabBlock> regGlazedTerracottaSlab(DyeColor color) {
         var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
         return register(color.getName() + "_glazed_terracotta_slab", ()-> new SlabBlock(CopyProperties(parent)));
     }
-    private static Supplier<WallBlock> regGlazedTerracottaWall(DyeColor color){
+    private static Supplier<WallBlock> regGlazedTerracottaWall(DyeColor color) {
         var parent = GetVanillaBlock(color.getName() + "_glazed_terracotta");
         return register(color.getName() + "_glazed_terracotta_wall", ()-> new WallBlock(CopyProperties(parent)));
     }
 
-    private static Supplier<StairBlock> regWoolStairs(DyeColor color){
+    private static Supplier<StairBlock> regWoolStairs(DyeColor color) {
         var parent = GetVanillaBlock(color.getName() + "_wool");
         return register(color.getName() + "_wool_stairs", stair(parent));
     }
-    private static Supplier<SlabBlock> regWoolSlab(DyeColor color){
+    private static Supplier<SlabBlock> regWoolSlab(DyeColor color) {
         var parent = GetVanillaBlock(color.getName() + "_wool");
         return register(color.getName() + "_wool_slab", slab(parent));
     }
-    private static Supplier<WallBlock> regWoolWall(DyeColor color){
+    private static Supplier<WallBlock> regWoolWall(DyeColor color) {
         var parent = GetVanillaBlock(color.getName() + "_wool");
         return register(color.getName() + "_wool_wall", wall(parent));
     }
 
-    private static Supplier<SlabBlock> slab(SlabBlock.Properties properties) {return ()-> new SlabBlock(properties);}
-    private static Supplier<SlabBlock> slab(Block parent) {return slab(CopyProperties(parent));}
-    private static Supplier<WallBlock> wall(WallBlock.Properties properties) {return ()-> new WallBlock(properties);}
-    private static Supplier<WallBlock> wall(Block parent) {return wall(CopyProperties(parent));}
-    private static Supplier<FenceBlock> fence(FenceBlock.Properties properties) {return ()-> new FenceBlock(properties);}
-    private static Supplier<FenceBlock> fence(Block parent) {return fence(CopyProperties(parent));}
+    private static Supplier<SlabBlock> slab(SlabBlock.Properties properties) { return ()-> new SlabBlock(properties); }
+    private static Supplier<SlabBlock> slab(Block parent) { return slab(CopyProperties(parent)); }
+    private static Supplier<WallBlock> wall(WallBlock.Properties properties) { return ()-> new WallBlock(properties); }
+    private static Supplier<WallBlock> wall(Block parent) { return wall(CopyProperties(parent)); }
+    private static Supplier<FenceBlock> fence(FenceBlock.Properties properties) { return ()-> new FenceBlock(properties); }
+    private static Supplier<FenceBlock> fence(Block parent) { return fence(CopyProperties(parent)); }
 
-    private static WoodType WoodTypeOf(String key){
+    private static WoodType WoodTypeOf(String key) {
         key = key.replace("stripped_", "");
         var iterator = WoodType.values().iterator();
-        while(iterator.hasNext()){
+        while(iterator.hasNext()) {
             var type = iterator.next();
             if(type.name().contains(key)) return type;
         }
         throw new IllegalArgumentException("No wood type with key: " + key);
     }
 
-    private static Block GetVanillaBlock(String name){
+    private static Block GetVanillaBlock(String name) {
         return BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(name));
     }
 
@@ -604,21 +611,21 @@ public final class BVBlocks {
         return  register(name, block, itemBurnTime, DEFAULT_ITEM_PROPERTIES);
     }
 
-    private static <T extends Block>Supplier<T> register(String name, Supplier<T> block, Item.Properties itemProperties){
+    private static <T extends Block>Supplier<T> register(String name, Supplier<T> block, Item.Properties itemProperties) {
         var registryObject = registerWithoutItem(name, block);
         ITEM_REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties));
         return registryObject;
     }
 
-    private static <T extends Block>Supplier<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemProperties){
+    private static <T extends Block>Supplier<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemProperties) {
         var registryObject = registerWithoutItem(name, block);
-        ITEM_REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties){
+        ITEM_REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties) {
             @Override
-            public int getBurnTime(@NotNull ItemStack itemStack, @Nullable RecipeType<?> recipeType) {return itemBurnTime;}
+            public int getBurnTime(@NotNull ItemStack itemStack, @Nullable RecipeType<?> recipeType) { return itemBurnTime; }
         });
         return registryObject;
     }
-    private static <T extends Block> Supplier<T> registerWithoutItem(String name, Supplier<T> block) {return BLOCK_REGISTER.register(name, block);}
+    private static <T extends Block> Supplier<T> registerWithoutItem(String name, Supplier<T> block) { return BLOCK_REGISTER.register(name, block); }
 
-    public static Iterator<? extends Block> getAllBlocks() {return BLOCK_REGISTER.getEntries().stream().map(Supplier::get).iterator();}
+    public static Iterator<? extends Block> getAllBlocks() { return BLOCK_REGISTER.getEntries().stream().map(Supplier::get).iterator(); }
 }
