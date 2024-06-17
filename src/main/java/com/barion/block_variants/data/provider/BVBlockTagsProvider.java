@@ -157,9 +157,6 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.SMOOTH_BASALT_STAIRS.get(),
                 BVBlocks.SMOOTH_BASALT_SLAB.get(),
                 BVBlocks.SMOOTH_BASALT_WALL.get(),
-                BVBlocks.TUFF_STAIRS.get(),
-                BVBlocks.TUFF_SLAB.get(),
-                BVBlocks.TUFF_WALL.get(),
 
                 BVBlocks.DEEPSLATE_STAIRS.get(),
                 BVBlocks.DEEPSLATE_SLAB.get(),

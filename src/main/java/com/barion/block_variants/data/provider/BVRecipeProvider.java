@@ -149,7 +149,6 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         smelting(output, BVBlocks.SMOOTH_BASALT_STAIRS.get(), BVBlocks.BASALT_STAIRS.get());
         smelting(output, BVBlocks.SMOOTH_BASALT_SLAB.get(), BVBlocks.BASALT_SLAB.get());
         smelting(output, BVBlocks.SMOOTH_BASALT_WALL.get(), BVBlocks.BASALT_WALL.get());
-        all(output, BVBlocks.TUFF_STAIRS.get(), BVBlocks.TUFF_SLAB.get(), BVBlocks.TUFF_WALL.get(), Blocks.TUFF, true);
 
         all(output, BVBlocks.DEEPSLATE_STAIRS.get(), BVBlocks.DEEPSLATE_SLAB.get(), BVBlocks.DEEPSLATE_WALL.get(), Blocks.DEEPSLATE, true);
         all(output, BVBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), BVBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), BVBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get(), Blocks.CRACKED_DEEPSLATE_BRICKS, true);

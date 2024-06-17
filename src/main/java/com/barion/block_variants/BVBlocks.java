@@ -320,9 +320,6 @@ public final class BVBlocks {
     public static final Supplier<StairBlock> SMOOTH_BASALT_STAIRS = register("smooth_basalt_stairs", stair(Blocks.SMOOTH_BASALT));
     public static final Supplier<SlabBlock> SMOOTH_BASALT_SLAB = register("smooth_basalt_slab", slab(Blocks.SMOOTH_BASALT));
     public static final Supplier<WallBlock> SMOOTH_BASALT_WALL = register("smooth_basalt_wall", wall(Blocks.SMOOTH_BASALT));
-    public static final Supplier<StairBlock> TUFF_STAIRS = register("tuff_stairs", stair(Blocks.TUFF));
-    public static final Supplier<SlabBlock> TUFF_SLAB = register("tuff_slab", slab(Blocks.TUFF));
-    public static final Supplier<WallBlock> TUFF_WALL = register("tuff_wall", wall(Blocks.TUFF));
 
     public static final Supplier<StairBlock> DEEPSLATE_STAIRS = register("deepslate_stairs", stair(Blocks.DEEPSLATE));
     public static final Supplier<SlabBlock> DEEPSLATE_SLAB = register("deepslate_slab", slab(Blocks.DEEPSLATE));

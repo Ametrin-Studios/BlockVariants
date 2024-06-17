@@ -3809,12 +3809,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/dye_purple_wool_slab": {
-    "criteria": {
-      "has_needed_dye": "2023-06-12 17:05:38 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/purple_candle": {
     "criteria": {
       "has_purple_dye": "2023-06-12 17:05:38 +0200"
@@ -3840,18 +3834,6 @@
     "done": true
   },
   "minecraft:recipes/building_blocks/dye_purple_carpet": {
-    "criteria": {
-      "has_needed_dye": "2023-06-12 17:05:38 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/dye_purple_wool_wall": {
-    "criteria": {
-      "has_needed_dye": "2023-06-12 17:05:38 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/dye_purple_wool_stairs": {
     "criteria": {
       "has_needed_dye": "2023-06-12 17:05:38 +0200"
     },
@@ -3971,5 +3953,23 @@
     },
     "done": true
   },
-  "DataVersion": 3839
+  "block_variants:recipes/decorations/polished_andesite_wall": {
+    "criteria": {
+      "has_polished_andesite": "2024-06-17 21:03:22 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/polished_andesite_wall_from_andesite": {
+    "criteria": {
+      "has_andesite": "2024-06-17 21:03:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/polished_andesite_wall": {
+    "criteria": {
+      "has_polished_andesite": "2024-06-17 21:03:22 +0200"
+    },
+    "done": true
+  },
+  "DataVersion": 3953
 }
