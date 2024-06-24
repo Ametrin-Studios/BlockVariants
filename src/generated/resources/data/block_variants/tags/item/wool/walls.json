@@ -1,0 +1,20 @@
+{
+  "values": [
+    "block_variants:white_wool_wall",
+    "block_variants:orange_wool_wall",
+    "block_variants:magenta_wool_wall",
+    "block_variants:light_blue_wool_wall",
+    "block_variants:yellow_wool_wall",
+    "block_variants:lime_wool_wall",
+    "block_variants:pink_wool_wall",
+    "block_variants:gray_wool_wall",
+    "block_variants:light_gray_wool_wall",
+    "block_variants:cyan_wool_wall",
+    "block_variants:purple_wool_wall",
+    "block_variants:blue_wool_wall",
+    "block_variants:brown_wool_wall",
+    "block_variants:green_wool_wall",
+    "block_variants:red_wool_wall",
+    "block_variants:black_wool_wall"
+  ]
+}

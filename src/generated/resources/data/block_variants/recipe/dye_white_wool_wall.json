@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "dye_wool_walls",
+  "ingredients": [
+    {
+      "tag": "block_variants:wool/walls"
+    },
+    {
+      "item": "minecraft:white_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "block_variants:white_wool_wall"
+  }
+}

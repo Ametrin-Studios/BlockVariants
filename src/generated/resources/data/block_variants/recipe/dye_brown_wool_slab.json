@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "dye_wool_slabs",
+  "ingredients": [
+    {
+      "tag": "block_variants:wool/slabs"
+    },
+    {
+      "item": "minecraft:brown_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "block_variants:brown_wool_slab"
+  }
+}

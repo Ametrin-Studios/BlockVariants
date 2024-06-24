@@ -1,0 +1,24 @@
+{
+  "values": [
+    "block_variants:stripped_oak_wood_fence",
+    "block_variants:stripped_spruce_wood_fence",
+    "block_variants:stripped_birch_wood_fence",
+    "block_variants:stripped_jungle_wood_fence",
+    "block_variants:stripped_acacia_wood_fence",
+    "block_variants:stripped_dark_oak_wood_fence",
+    "block_variants:stripped_mangrove_wood_fence",
+    "block_variants:stripped_cherry_wood_fence",
+    "block_variants:oak_wood_fence",
+    "block_variants:spruce_wood_fence",
+    "block_variants:birch_wood_fence",
+    "block_variants:jungle_wood_fence",
+    "block_variants:acacia_wood_fence",
+    "block_variants:dark_oak_wood_fence",
+    "block_variants:mangrove_wood_fence",
+    "block_variants:cherry_wood_fence",
+    "block_variants:stripped_crimson_hyphae_fence",
+    "block_variants:stripped_warped_hyphae_fence",
+    "block_variants:crimson_hyphae_fence",
+    "block_variants:warped_hyphae_fence"
+  ]
+}

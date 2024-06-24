@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "block_variants:stone_crafting"
+    },
+    "+": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    " + ",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:stonecutter"
+  }
+}

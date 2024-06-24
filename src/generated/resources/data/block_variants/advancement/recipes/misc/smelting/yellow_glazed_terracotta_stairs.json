@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "block_variants:smelting/yellow_glazed_terracotta_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_terracotta_stairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "block_variants:yellow_terracotta_stairs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yellow_terracotta_stairs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "block_variants:smelting/yellow_glazed_terracotta_stairs"
+    ]
+  }
+}

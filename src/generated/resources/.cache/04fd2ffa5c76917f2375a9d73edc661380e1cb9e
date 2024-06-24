@@ -1,0 +1,17 @@
+// 1.21	2024-06-17T22:05:34.0659368	Tags for minecraft:block mod id block_variants
+c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/c/tags/block/fences.json
+490d991b4702a764720c9319534a45ffd8c7d044 data/c/tags/block/fences/wooden.json
+5f280bff98fe21515c35c1684d9c64f837496d02 data/c/tags/block/fence_gates.json
+de6deed7d1f252a69243754bf227386c76cfa89b data/c/tags/block/fence_gates/wooden.json
+25a5fc0d82838ffcc354fde3e97d392f74fe8ab6 data/c/tags/block/wooden_wall.json
+c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/minecraft/tags/block/fences.json
+5f280bff98fe21515c35c1684d9c64f837496d02 data/minecraft/tags/block/fence_gates.json
+073775aa66128c52d70ed763cfdb11c0c6c270f5 data/minecraft/tags/block/mineable/axe.json
+a669a8f126d77ce8b44e8e3a7cfbe66b7cb8320d data/minecraft/tags/block/mineable/pickaxe.json
+00920e4e06e35b9708a9d4d960c86df1b17297f3 data/minecraft/tags/block/needs_diamond_tool.json
+8d44a3346f3e5f04d40e7bfb134ac3b930ca9ea4 data/minecraft/tags/block/slabs.json
+22af6587a173551ae96c45aa8c474e47d954eb42 data/minecraft/tags/block/stairs.json
+0b163e10e86cdaee9b5f9b99bbaa33c652b44a58 data/minecraft/tags/block/walls.json
+13c3ba595663e3c051269838cb35bfe3cab14378 data/minecraft/tags/block/wooden_fences.json
+780892bd14b7c4c9b6958d3dd390d474edbe5ec1 data/minecraft/tags/block/wooden_slabs.json
+550442d6a114a974f44eaef4e3015124d9f49a26 data/minecraft/tags/block/wooden_stairs.json
