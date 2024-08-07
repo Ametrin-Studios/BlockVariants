@@ -5,12 +5,17 @@ import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
@@ -229,7 +234,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         smelting(output, BVBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), BVBlocks.BLACK_TERRACOTTA_SLAB.get());
         smelting(output, BVBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get(), BVBlocks.BLACK_TERRACOTTA_WALL.get());
 
-        all(output, BVBlocks.WhiteWoolStairs.get(), BVBlocks.WhiteWoolSlab.get(), BVBlocks.WhiteWoolWall.get(), Blocks.WHITE_WOOL, false);
+        all(output, BVBlocks.WHITE_WOOL_STAIRS.get(), BVBlocks.WHITE_WOOL_SLAB.get(), BVBlocks.WhiteWoolWall.get(), Blocks.WHITE_WOOL, false);
         all(output, BVBlocks.OrangeWoolStairs.get(), BVBlocks.OrangeWoolSlab.get(), BVBlocks.OrangeWoolWall.get(), Blocks.ORANGE_WOOL, false);
         all(output, BVBlocks.MagentaWoolStairs.get(), BVBlocks.MagentaWoolSlab.get(), BVBlocks.MagentaWoolWall.get(), Blocks.MAGENTA_WOOL, false);
         all(output, BVBlocks.LightBlueWoolStairs.get(), BVBlocks.LightBlueWoolSlab.get(), BVBlocks.LightBlueWoolWall.get(), Blocks.LIGHT_BLUE_WOOL, false);
@@ -238,19 +243,19 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         all(output, BVBlocks.PinkWoolStairs.get(), BVBlocks.PinkWoolSlab.get(), BVBlocks.PinkWoolWall.get(), Blocks.PINK_WOOL, false);
         all(output, BVBlocks.GrayWoolStairs.get(), BVBlocks.GrayWoolSlab.get(), BVBlocks.GrayWoolWall.get(), Blocks.GRAY_WOOL, false);
         all(output, BVBlocks.LightGrayWoolStairs.get(), BVBlocks.LightGrayWoolSlab.get(), BVBlocks.LightGrayWoolWall.get(), Blocks.LIGHT_GRAY_WOOL, false);
-        all(output, BVBlocks.CyanWoolStairs.get(), BVBlocks.CyanWoolSlab.get(), BVBlocks.CyanWoolWall.get(), Blocks.CYAN_WOOL, false);
-        all(output, BVBlocks.PurpleWoolStairs.get(), BVBlocks.PurpleWoolSlab.get(), BVBlocks.PurpleWoolWall.get(), Blocks.PURPLE_WOOL, false);
-        all(output, BVBlocks.BlueWoolStairs.get(), BVBlocks.BlueWoolSlab.get(), BVBlocks.BlueWoolWall.get(), Blocks.BLUE_WOOL, false);
-        all(output, BVBlocks.BrownWoolStairs.get(), BVBlocks.BrownWoolSlab.get(), BVBlocks.BrownWoolWall.get(), Blocks.BROWN_WOOL, false);
-        all(output, BVBlocks.GreenWoolStairs.get(), BVBlocks.GreenWoolSlab.get(), BVBlocks.GreenWoolWall.get(), Blocks.GREEN_WOOL, false);
-        all(output, BVBlocks.RedWoolStairs.get(), BVBlocks.RedWoolSlab.get(), BVBlocks.RedWoolWall.get(), Blocks.RED_WOOL, false);
-        all(output, BVBlocks.BlackWoolStairs.get(), BVBlocks.BlackWoolSlab.get(), BVBlocks.BlackWoolWall.get(), Blocks.BLACK_WOOL, false);
+        all(output, BVBlocks.CYAN_WOOL_STAIRS.get(), BVBlocks.CYAN_WOOL_SLAB.get(), BVBlocks.CYAN_WOOL_WALL.get(), Blocks.CYAN_WOOL, false);
+        all(output, BVBlocks.PURPLE_WOOL_STAIRS.get(), BVBlocks.PURPLE_WOOL_SLAB.get(), BVBlocks.PURPLE_WOOL_WALL.get(), Blocks.PURPLE_WOOL, false);
+        all(output, BVBlocks.BLUE_WOOL_STAIRS.get(), BVBlocks.BLUE_WOOL_SLAB.get(), BVBlocks.BLUE_WOOL_WALL.get(), Blocks.BLUE_WOOL, false);
+        all(output, BVBlocks.BROWN_WOOL_STAIRS.get(), BVBlocks.BROWN_WOOL_SLAB.get(), BVBlocks.BROWN_WOOL_WALL.get(), Blocks.BROWN_WOOL, false);
+        all(output, BVBlocks.GREEN_WOOL_STAIRS.get(), BVBlocks.GREEN_WOOL_SLAB.get(), BVBlocks.GREEN_WOOL_WALL.get(), Blocks.GREEN_WOOL, false);
+        all(output, BVBlocks.RED_WOOL_STAIRS.get(), BVBlocks.RED_WOOL_SLAB.get(), BVBlocks.RED_WOOL_WALL.get(), Blocks.RED_WOOL, false);
+        all(output, BVBlocks.BLACK_WOOL_STAIRS.get(), BVBlocks.BLACK_WOOL_SLAB.get(), BVBlocks.BLACK_WOOL_WALL.get(), Blocks.BLACK_WOOL, false);
 
         dying(output, BVTags.Items.WOOL_STAIRS, "{color}_wool_stairs", "dye_wool_stairs");
         dying(output, BVTags.Items.WOOL_SLABS, "{color}_wool_slab", "dye_wool_slabs");
         dying(output, BVTags.Items.WOOL_WALLS, "{color}_wool_wall", "dye_wool_walls");
 
-        all(output, BVBlocks.PackedMudStairs.get(), BVBlocks.PackedMudSlab.get(), BVBlocks.PackedMudWall.get(), Blocks.PACKED_MUD, true);
+        all(output, BVBlocks.PACKED_MUD_STAIRS.get(), BVBlocks.PACKED_MUD_SLAB.get(), BVBlocks.PACKED_MUD_WALL.get(), Blocks.PACKED_MUD, true);
 
 
         {
@@ -308,6 +313,18 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(output, recipeID(Blocks.PISTON));
         } //Recipe overrides
+    }
+
+    //todo: replace with Ametrin 0.2.4
+    protected static void dying(RecipeOutput output, TagKey<Item> dyedItems, String idPattern, String group) {
+        for (var dye : DyeColor.values()) {
+            var resultID = location(idPattern.replace("{color}", dye.getName()));
+            var dyeID = ResourceLocation.withDefaultNamespace(dye.getName() + "_dye");
+            var result = (Item) BuiltInRegistries.ITEM.get(resultID);
+            var dyeItem = (Item) BuiltInRegistries.ITEM.get(dyeID);
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(dyedItems).requires(dyeItem).group(group).unlockedBy("has_needed_dye", has(dyeItem)).save(output, location("dye_" + getItemName(result)));
+        }
+
     }
 
     private void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){

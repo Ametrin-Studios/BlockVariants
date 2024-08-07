@@ -233,9 +233,9 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(),
                 BVBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get(),
 
-                BVBlocks.PackedMudStairs.get(),
-                BVBlocks.PackedMudSlab.get(),
-                BVBlocks.PackedMudWall.get()
+                BVBlocks.PACKED_MUD_STAIRS.get(),
+                BVBlocks.PACKED_MUD_SLAB.get(),
+                BVBlocks.PACKED_MUD_WALL.get()
         );} // needs Pickaxe
 
         {tag(BlockTags.MINEABLE_WITH_AXE).add(
