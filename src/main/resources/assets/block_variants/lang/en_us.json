@@ -384,5 +384,11 @@
 
   "block.block_variants.packed_mud_stairs": "Packed Mud Stairs",
   "block.block_variants.packed_mud_slab": "Packed Mud Slab",
-  "block.block_variants.packed_mud_wall": "Packed Mud Wall"
+  "block.block_variants.packed_mud_wall": "Packed Mud Wall",
+
+  "tag.item.block_variants.wool.stairs": "Wool Stairs",
+  "tag.item.block_variants.wool.slabs": "Wool Slabs",
+  "tag.item.block_variants.wool.walls": "Wool Walls",
+  "tag.item.block_variants.stone_crafting": "Stone Crafting Materials",
+  "tag.item.c.wooden_walls": "Wooden Walls"
 }
