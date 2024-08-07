@@ -1,8 +1,8 @@
 ## Block Variants
-provides you tons of blocks that are missing in vanilla like Polished Diorite Walls and Amethyst Slabs.
-<br>It also offers alternate ways craft things e.g. Furnances from Granite (use Just Enough Items to find out more).
+Block Variants provides tons of blocks that are missing in vanilla like Polished Diorite Walls and Amethyst Slabs.
+<br>It also expands on what counts as stone in various crafting recipes like Furnaces, Stone Tools, and Droppers (use JEI or EMI to find out more).
 
-[Visit the CurseForge page](https://www.curseforge.com/minecraft/mc-mods/vanilla-block-variants)<br>
-[Visit the Modrinth page](https://modrinth.com/mod/block-variants)
+[Visit CurseForge page](https://www.curseforge.com/minecraft/mc-mods/block-variants)<br>
+[Visit modrinth page](https://modrinth.com/mod/block-variants)
 
-[Requires Ametrin API](https://github.com/BarionLP/Ametrin)
+[Requires Ametrin API](https://www.curseforge.com/minecraft/mc-mods/ametrin) ([repo](https://github.com/Ametrin-Studios/Ametrin))
