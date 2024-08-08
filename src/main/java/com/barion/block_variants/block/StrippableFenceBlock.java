@@ -18,7 +18,6 @@ public class StrippableFenceBlock extends FenceBlock{
         this.stripResult = stripResult;
     }
 
-    //TODO: for all
     @Override @ParametersAreNonnullByDefault
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
         if(itemAbility == ItemAbilities.AXE_STRIP) {

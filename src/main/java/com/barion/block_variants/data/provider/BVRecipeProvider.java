@@ -5,17 +5,12 @@ import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
@@ -313,18 +308,6 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(output, recipeID(Blocks.PISTON));
         } //Recipe overrides
-    }
-
-    //todo: replace with Ametrin 0.2.4
-    protected static void dying(RecipeOutput output, TagKey<Item> dyedItems, String idPattern, String group) {
-        for (var dye : DyeColor.values()) {
-            var resultID = location(idPattern.replace("{color}", dye.getName()));
-            var dyeID = ResourceLocation.withDefaultNamespace(dye.getName() + "_dye");
-            var result = (Item) BuiltInRegistries.ITEM.get(resultID);
-            var dyeItem = (Item) BuiltInRegistries.ITEM.get(dyeID);
-            ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(dyedItems).requires(dyeItem).group(group).unlockedBy("has_needed_dye", has(dyeItem)).save(output, location("dye_" + getItemName(result)));
-        }
-
     }
 
     private void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){

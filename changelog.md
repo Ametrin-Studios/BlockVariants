@@ -1,6 +1,7 @@
 ## 6.1
 * enabled update checker
-* requires Ametrin API 0.2.3 or above
+* EMI support
+* requires Ametrin API 0.2.4 or above
 
 ## 6.0
 * ported to 1.21
