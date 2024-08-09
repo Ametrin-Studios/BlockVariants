@@ -1,9 +1,9 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedRecipeProvider;
-import com.barion.block_variants.BVBlocks;
-import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
+import com.barion.block_variants.registry.BVBlocks;
+import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -229,8 +229,8 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         smelting(output, BVBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), BVBlocks.BLACK_TERRACOTTA_SLAB.get());
         smelting(output, BVBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get(), BVBlocks.BLACK_TERRACOTTA_WALL.get());
 
-        all(output, BVBlocks.WHITE_WOOL_STAIRS.get(), BVBlocks.WHITE_WOOL_SLAB.get(), BVBlocks.WhiteWoolWall.get(), Blocks.WHITE_WOOL, false);
-        all(output, BVBlocks.OrangeWoolStairs.get(), BVBlocks.OrangeWoolSlab.get(), BVBlocks.OrangeWoolWall.get(), Blocks.ORANGE_WOOL, false);
+        all(output, BVBlocks.WHITE_WOOL_STAIRS.get(), BVBlocks.WHITE_WOOL_SLAB.get(), BVBlocks.WHITE_WOOL_WALL.get(), Blocks.WHITE_WOOL, false);
+        all(output, BVBlocks.ORANGE_WOOL_STAIRS.get(), BVBlocks.ORANGE_WOOL_SLAB.get(), BVBlocks.ORANGE_WOOL_WALL.get(), Blocks.ORANGE_WOOL, false);
         all(output, BVBlocks.MagentaWoolStairs.get(), BVBlocks.MagentaWoolSlab.get(), BVBlocks.MagentaWoolWall.get(), Blocks.MAGENTA_WOOL, false);
         all(output, BVBlocks.LightBlueWoolStairs.get(), BVBlocks.LightBlueWoolSlab.get(), BVBlocks.LightBlueWoolWall.get(), Blocks.LIGHT_BLUE_WOOL, false);
         all(output, BVBlocks.YellowWoolStairs.get(), BVBlocks.YellowWoolSlab.get(), BVBlocks.YellowWoolWall.get(), Blocks.YELLOW_WOOL, false);

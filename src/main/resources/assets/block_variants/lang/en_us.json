@@ -254,9 +254,6 @@
   "block.block_variants.smooth_basalt_stairs" : "Smooth Basalt Stairs",
   "block.block_variants.smooth_basalt_slab" : "Smooth Basalt Slab",
   "block.block_variants.smooth_basalt_wall" : "Smooth Basalt Wall",
-  "block.block_variants.tuff_stairs" : "Tuff Stairs",
-  "block.block_variants.tuff_slab" : "Tuff Slab",
-  "block.block_variants.tuff_wall" : "Tuff Wall",
 
   "block.block_variants.deepslate_stairs" : "Deepslate Stairs",
   "block.block_variants.deepslate_slab" : "Deepslate Slab",

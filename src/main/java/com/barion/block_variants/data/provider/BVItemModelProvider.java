@@ -1,11 +1,13 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedItemModelProvider;
-import com.barion.block_variants.BVBlocks;
 import com.barion.block_variants.BVUtil;
 import com.barion.block_variants.BlockVariants;
+import com.barion.block_variants.registry.BVBlocks;
+import com.barion.block_variants.registry.BVItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -24,8 +26,13 @@ public final class BVItemModelProvider extends ExtendedItemModelProvider {
         super(output, BlockVariants.MOD_ID, existingFileHelper);
     }
 
+    {
+        excludedClasses.add(BlockItem.class);
+    }
+
     @Override
     protected void registerModels() {
+       runProviderRules(BVItems.REGISTER);
        blocks(BVBlocks.getAllBlocks());
     }
 

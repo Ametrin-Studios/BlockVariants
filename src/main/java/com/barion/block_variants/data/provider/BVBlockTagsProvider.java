@@ -1,9 +1,9 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockTagsProvider;
-import com.barion.block_variants.BVBlocks;
-import com.barion.block_variants.BVTags;
 import com.barion.block_variants.BlockVariants;
+import com.barion.block_variants.registry.BVBlocks;
+import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -48,7 +48,7 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
 
     @Override
     protected void addTags(@NotNull HolderLookup.Provider holderLookup){
-        runRules(BVBlocks.BLOCK_REGISTER);
+        runRules(BVBlocks.REGISTER);
 
         {tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 BVBlocks.SMOOTH_STONE_STAIRS.get(),
