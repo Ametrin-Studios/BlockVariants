@@ -12,13 +12,11 @@ issueTrackerURL="https://github.com/Ametrin-Studios/BlockVariants/issues" #optio
     logoFile="logo.png" #optional
     #credits="" #optional
     authors="${mod_authors}" #optional
-    #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
     description='''${mod_description}'''
-#    enumExtensions="${mod_id}.enum_extensions.json"
 
 [[dependencies.${mod_id}]] #optional
     modId="neoforge" #mandatory
-    type="required"
+    type="required" #mandatory
     versionRange="${neo_version_range}" #mandatory
     ordering="NONE"
     side="BOTH"
@@ -27,12 +25,5 @@ issueTrackerURL="https://github.com/Ametrin-Studios/BlockVariants/issues" #optio
     modId="minecraft"
     type="required"
     versionRange="${minecraft_version_range}"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.${mod_id}]]
-    modId="ametrin"
-    type="required"
-    versionRange="${ametrin_version_range}"
     ordering="NONE"
     side="BOTH"

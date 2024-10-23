@@ -22,10 +22,5 @@ eclipse
 run
 runs
 run-data
-#/src/generated/
-!runs/client/options.txt
-!runs/client/saves/Test
 
-# Files from Forge MDK
-forge*changelog.txt
-/src/test/
+repo
