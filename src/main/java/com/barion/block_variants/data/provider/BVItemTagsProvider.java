@@ -23,14 +23,14 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
     }
 
     {
-        itemTagProviderRules.add((item, name)-> {
+        registerRule((item, name)-> {
             if(!name.contains("wool")) return;
 
-            if(name.contains("stairs")){
+            if(name.contains("stairs")) {
                 tag(BVTags.Items.WOOL_STAIRS).add(item);
-            }else if(name.contains("slab")){
+            } else if(name.contains("slab")) {
                 tag(BVTags.Items.WOOL_SLABS).add(item);
-            }else if(name.contains("wall")){
+            } else if(name.contains("wall")) {
                 tag(BVTags.Items.WOOL_WALLS).add(item);
             }
         });

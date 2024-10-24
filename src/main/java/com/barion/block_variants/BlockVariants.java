@@ -41,7 +41,7 @@ public final class BlockVariants{
 
         helper.add(BVBlockStateProvider::new);
         helper.add(BVItemModelProvider::new);
-        helper.add(BVRecipeProvider::new);
+        helper.add(BVRecipeProvider.Runner::new);
         helper.addBlockAndItemTags(BVBlockTagsProvider::new, BVItemTagsProvider::new);
         helper.addLootTables(builder -> builder.addBlockProvider(BVBlockLootProvider::new));
     }

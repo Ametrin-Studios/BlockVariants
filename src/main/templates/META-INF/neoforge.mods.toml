@@ -27,3 +27,10 @@ issueTrackerURL="https://github.com/Ametrin-Studios/BlockVariants/issues" #optio
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="ametrin"
+    type="required"
+    versionRange="${ametrin_version_range}"
+    ordering="NONE"
+    side="BOTH"

@@ -5,24 +5,33 @@ import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBlocks;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public final class BVRecipeProvider extends ExtendedRecipeProvider {
-    public BVRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {super(packOutput, BlockVariants.MOD_ID, lookupProvider);}
+
+
+    public BVRecipeProvider(HolderLookup.Provider registries, RecipeOutput output, Set<ResourceKey<Recipe<?>>> recipeSet) {
+        super(BlockVariants.MOD_ID, registries, output, recipeSet);
+    }
 
     @Override @ParametersAreNonnullByDefault
-    protected void buildRecipes(RecipeOutput output){
+    protected void buildRecipes(){
         wall(output, BVBlocks.POLISHED_GRANITE_WALL.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
         wall(output, BVBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
         wall(output, BVBlocks.POLISHED_ANDESITE_WALL.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
@@ -254,7 +263,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
 
 
         {
-            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DROPPER, 1)
+            shaped(RecipeCategory.REDSTONE, Blocks.DROPPER, 1)
                     .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('+', Items.REDSTONE)
                     .pattern("###")
@@ -263,7 +272,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_redstone", has(Items.REDSTONE))
                     .save(output, recipeID(Blocks.DROPPER));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DISPENSER, 1)
+            shaped(RecipeCategory.REDSTONE, Blocks.DISPENSER, 1)
                     .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('+', Items.REDSTONE)
                     .define('(', Items.BOW)
@@ -273,7 +282,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_bow", has(Items.BOW))
                     .save(output, recipeID(Blocks.DISPENSER));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Blocks.FURNACE, 1)
+            shaped(RecipeCategory.DECORATIONS, Blocks.FURNACE, 1)
                     .define('#', BVTags.Items.STONE_CRAFTING)
                     .pattern("###")
                     .pattern("# #")
@@ -281,7 +290,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(output, recipeID(Blocks.FURNACE));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS,Blocks.STONECUTTER, 1)
+            shaped(RecipeCategory.DECORATIONS,Blocks.STONECUTTER, 1)
                     .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('+', Items.IRON_INGOT)
                     .pattern(" + ")
@@ -289,7 +298,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(output, recipeID(Blocks.STONECUTTER));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.LEVER, 1)
+            shaped(RecipeCategory.REDSTONE, Blocks.LEVER, 1)
                     .define('|', Items.STICK)
                     .define('#', BVTags.Items.STONE_CRAFTING)
                     .pattern("|")
@@ -297,7 +306,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(output, recipeID(Blocks.LEVER));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.PISTON, 1)
+            shaped(RecipeCategory.REDSTONE, Blocks.PISTON, 1)
                     .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('W', ItemTags.PLANKS)
                     .define('N', Items.IRON_INGOT)
@@ -310,26 +319,26 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         } //Recipe overrides
     }
 
-    private void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){
+    private void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting) {
         stairs(output, stair, material, hasStonecutting);
         slab(output, slab, material, hasStonecutting);
         wall(output, wall, material, hasStonecutting);
     }
-    private void stairSlab(RecipeOutput output, StairBlock stair, SlabBlock slab, ItemLike material, boolean hasStonecutting){
+    private void stairSlab(RecipeOutput output, StairBlock stair, SlabBlock slab, ItemLike material, boolean hasStonecutting) {
         stairs(output, stair, material, hasStonecutting);
         slab(output, slab, material, hasStonecutting);
     }
     private void smelting(RecipeOutput output, ItemLike result, ItemLike ingredient) {
         smelting(output, RecipeCategory.MISC, result, ingredient, 0.1f, 200);
     }
-    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material){
+    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material) {
         stairs(output, stairs, material, false);
         slab(output, slab, material, false);
         wall(output, wall, material, false);
         fence(output, fence, material);
         fenceGate(output, fenceGate, material);
     }
-    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material, ItemLike altMaterial){
+    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material, ItemLike altMaterial) {
         stairs(output, stairs, material, false);
         slab(output, slab, material, false);
         wall(output, wall, material, false);
@@ -340,5 +349,24 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         fenceGate(output, fenceGate, altMaterial);
     }
 
-    private static ResourceLocation recipeID(ItemLike item) {return ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, getItemName(item));}
+    private static ResourceKey<Recipe<?>> recipeID(ItemLike item) {
+        return ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, getItemName(item)));
+    }
+
+    public static class Runner extends ExtendedRecipeProvider.Runner {
+
+        public Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries) {
+            super(packOutput, registries);
+        }
+
+        @Override
+        protected ExtendedRecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput, Set<ResourceKey<Recipe<?>>> set) {
+            return new BVRecipeProvider(provider, recipeOutput, set);
+        }
+
+        @Override @NotNull
+        public String getName() {
+            return "Block Variants Recipe Provider";
+        }
+    }
 }

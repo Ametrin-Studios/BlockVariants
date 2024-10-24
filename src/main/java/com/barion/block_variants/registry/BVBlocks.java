@@ -1,5 +1,6 @@
 package com.barion.block_variants.registry;
 
+import com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper;
 import com.barion.block_variants.BVUtil;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.block.*;
@@ -11,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.FuelValues;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -19,7 +21,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Iterator;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.copyProperties;
@@ -248,7 +252,7 @@ public final class BVBlocks {
     public static final DeferredBlock<WallBlock> STRIPPED_CHERRY_WOOD_WALL = woodWall("stripped_cherry", Blocks.STRIPPED_CHERRY_WOOD);
     public static final DeferredBlock<FenceBlock> STRIPPED_CHERRY_WOOD_FENCE = woodFence("stripped_cherry", Blocks.STRIPPED_CHERRY_WOOD);
     public static final DeferredBlock<FenceGateBlock> STRIPPED_CHERRY_WOOD_FENCE_GATE = woodFenceGate("stripped_cherry", Blocks.STRIPPED_CHERRY_WOOD);
-    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", ()-> stair(Blocks.STRIPPED_BAMBOO_BLOCK::defaultBlockState, copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
+    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", prop-> new StairBlock(Blocks.STRIPPED_BAMBOO_BLOCK.defaultBlockState(), prop), copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), 150);
     public static final DeferredBlock<SlabBlock> STRIPPED_BAMBOO_BLOCK_SLAB = register("stripped_bamboo_block_slab", ()-> slab(copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 75);
     public static final DeferredBlock<WallBlock> STRIPPED_BAMBOO_BLOCK_WALL = register("stripped_bamboo_block_wall", ()-> wall(copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
     public static final DeferredBlock<FenceBlock> STRIPPED_BAMBOO_BLOCK_FENCE = register("stripped_bamboo_block_fence", ()-> fence(copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
@@ -322,41 +326,41 @@ public final class BVBlocks {
     public static final DeferredBlock<StrippableFenceBlock> WARPED_HYPHAE_FENCE = register("warped_hyphae_fence", ()-> strippableFence(STRIPPED_WARPED_HYPHAE_FENCE, Blocks.WARPED_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<StrippableFenceGateBlock> WARPED_HYPHAE_FENCE_GATE = register("warped_hyphae_fence_gate", ()-> strippableFenceGate(STRIPPED_WARPED_HYPHAE_FENCE_GATE, WoodType.WARPED, Blocks.WARPED_HYPHAE), fireResistanceItemProperties);
 
-    public static final DeferredBlock<StairBlock> CALCITE_STAIRS = register("calcite_stairs", ()-> stair(Blocks.CALCITE));
-    public static final DeferredBlock<SlabBlock> CALCITE_SLAB = register("calcite_slab", ()-> slab(Blocks.CALCITE));
-    public static final DeferredBlock<WallBlock> CALCITE_WALL = register("calcite_wall", ()-> wall(Blocks.CALCITE));
-    public static final DeferredBlock<StairBlock> SMOOTH_BASALT_STAIRS = register("smooth_basalt_stairs", ()-> stair(Blocks.SMOOTH_BASALT));
-    public static final DeferredBlock<SlabBlock> SMOOTH_BASALT_SLAB = register("smooth_basalt_slab", ()-> slab(Blocks.SMOOTH_BASALT));
-    public static final DeferredBlock<WallBlock> SMOOTH_BASALT_WALL = register("smooth_basalt_wall", ()-> wall(Blocks.SMOOTH_BASALT));
+    public static final DeferredBlock<StairBlock> CALCITE_STAIRS = register("calcite_stairs", prop-> new StairBlock(Blocks.CALCITE.defaultBlockState(), prop), Blocks.CALCITE);
+    public static final DeferredBlock<SlabBlock> CALCITE_SLAB = register("calcite_slab", SlabBlock::new, Blocks.CALCITE);
+    public static final DeferredBlock<WallBlock> CALCITE_WALL = register("calcite_wall", WallBlock::new, Blocks.CALCITE);
+    public static final DeferredBlock<StairBlock> SMOOTH_BASALT_STAIRS = register("smooth_basalt_stairs", prop-> new StairBlock(Blocks.SMOOTH_BASALT.defaultBlockState(), prop), Blocks.SMOOTH_BASALT);
+    public static final DeferredBlock<SlabBlock> SMOOTH_BASALT_SLAB = register("smooth_basalt_slab", SlabBlock::new, Blocks.SMOOTH_BASALT);
+    public static final DeferredBlock<WallBlock> SMOOTH_BASALT_WALL = register("smooth_basalt_wall", WallBlock::new, Blocks.SMOOTH_BASALT);
 
-    public static final DeferredBlock<StairBlock> DEEPSLATE_STAIRS = register("deepslate_stairs", ()-> stair(Blocks.DEEPSLATE));
-    public static final DeferredBlock<SlabBlock> DEEPSLATE_SLAB = register("deepslate_slab", ()-> slab(Blocks.DEEPSLATE));
-    public static final DeferredBlock<WallBlock> DEEPSLATE_WALL = register("deepslate_wall", ()-> wall(Blocks.DEEPSLATE));
-    public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_BRICK_STAIRS = register("cracked_deepslate_brick_stairs", ()-> stair(Blocks.CRACKED_DEEPSLATE_BRICKS));
-    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = register("cracked_deepslate_brick_slab", ()-> slab(Blocks.CRACKED_DEEPSLATE_BRICKS));
-    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_BRICK_WALL = register("cracked_deepslate_brick_wall", ()-> wall(Blocks.CRACKED_DEEPSLATE_BRICKS));
-    public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_TILE_STAIRS = register("cracked_deepslate_tile_stairs", ()-> stair(Blocks.CRACKED_DEEPSLATE_TILES));
-    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_TILE_SLAB = register("cracked_deepslate_tile_slab", ()-> slab(Blocks.CRACKED_DEEPSLATE_TILES));
-    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_TILE_WALL = register("cracked_deepslate_tile_wall", ()-> wall(Blocks.CRACKED_DEEPSLATE_TILES));
+    public static final DeferredBlock<StairBlock> DEEPSLATE_STAIRS = register("deepslate_stairs", prop-> new StairBlock(Blocks.DEEPSLATE.defaultBlockState(), prop), Blocks.DEEPSLATE);
+    public static final DeferredBlock<SlabBlock> DEEPSLATE_SLAB = register("deepslate_slab", SlabBlock::new, Blocks.DEEPSLATE);
+    public static final DeferredBlock<WallBlock> DEEPSLATE_WALL = register("deepslate_wall", WallBlock::new, Blocks.DEEPSLATE);
+    public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_BRICK_STAIRS = register("cracked_deepslate_brick_stairs", prop-> new StairBlock(Blocks.CRACKED_DEEPSLATE_BRICKS.defaultBlockState(), prop), Blocks.CRACKED_DEEPSLATE_BRICKS);
+    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = register("cracked_deepslate_brick_slab", SlabBlock::new, Blocks.CRACKED_DEEPSLATE_BRICKS);
+    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_BRICK_WALL = register("cracked_deepslate_brick_wall", WallBlock::new, Blocks.CRACKED_DEEPSLATE_BRICKS);
+    public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_TILE_STAIRS = register("cracked_deepslate_tile_stairs", prop-> new StairBlock(Blocks.CRACKED_DEEPSLATE_TILES.defaultBlockState(), prop), Blocks.CRACKED_DEEPSLATE_TILES);
+    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_TILE_SLAB = register("cracked_deepslate_tile_slab", SlabBlock::new, Blocks.CRACKED_DEEPSLATE_TILES);
+    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_TILE_WALL = register("cracked_deepslate_tile_wall", WallBlock::new, Blocks.CRACKED_DEEPSLATE_TILES);
 
-    public static final DeferredBlock<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, copyProperties(Blocks.NETHER_BRICK_FENCE))); // TODO: fix wood type
+    public static final DeferredBlock<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", prop-> new FenceGateBlock(WoodType.OAK, prop), copyProperties(Blocks.NETHER_BRICK_FENCE)); // TODO: fix wood type
 
-    public static final DeferredBlock<StairBlock> CRACKED_NETHER_BRICK_STAIRS = register("cracked_nether_brick_stairs", ()-> stair(Blocks.CRACKED_NETHER_BRICKS));
-    public static final DeferredBlock<SlabBlock> CRACKED_NETHER_BRICK_SLAB = register("cracked_nether_brick_slab", ()-> slab(Blocks.CRACKED_NETHER_BRICKS));
-    public static final DeferredBlock<WallBlock> CRACKED_NETHER_BRICK_WALL = register("cracked_nether_brick_wall", ()-> wall(Blocks.CRACKED_NETHER_BRICKS));
-    public static final DeferredBlock<FenceBlock> CRACKED_NETHER_BRICK_FENCE = register("cracked_nether_brick_fence", ()-> fence(Blocks.CRACKED_NETHER_BRICKS));
-    public static final DeferredBlock<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, copyProperties(Blocks.CRACKED_NETHER_BRICKS)));
+    public static final DeferredBlock<StairBlock> CRACKED_NETHER_BRICK_STAIRS = register("cracked_nether_brick_stairs", prop-> new StairBlock(Blocks.CRACKED_NETHER_BRICKS.defaultBlockState(), prop), Blocks.CRACKED_NETHER_BRICKS);
+    public static final DeferredBlock<SlabBlock> CRACKED_NETHER_BRICK_SLAB = register("cracked_nether_brick_slab", SlabBlock::new, Blocks.CRACKED_NETHER_BRICKS);
+    public static final DeferredBlock<WallBlock> CRACKED_NETHER_BRICK_WALL = register("cracked_nether_brick_wall", WallBlock::new, Blocks.CRACKED_NETHER_BRICKS);
+    public static final DeferredBlock<FenceBlock> CRACKED_NETHER_BRICK_FENCE = register("cracked_nether_brick_fence", FenceBlock::new, Blocks.CRACKED_NETHER_BRICKS);
+    public static final DeferredBlock<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", prop-> new FenceGateBlock(WoodType.OAK, prop), copyProperties(Blocks.CRACKED_NETHER_BRICKS));
 
-    public static final DeferredBlock<FenceBlock> RED_NETHER_BRICK_FENCE = register("red_nether_brick_fence", ()-> fence(Blocks.RED_NETHER_BRICKS));
-    public static final DeferredBlock<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, copyProperties(Blocks.RED_NETHER_BRICKS)));
+    public static final DeferredBlock<FenceBlock> RED_NETHER_BRICK_FENCE = register("red_nether_brick_fence", FenceBlock::new, Blocks.RED_NETHER_BRICKS);
+    public static final DeferredBlock<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", prop-> new FenceGateBlock(WoodType.OAK, prop), copyProperties(Blocks.RED_NETHER_BRICKS));
 
-    public static final DeferredBlock<StairBlock> OBSIDIAN_STAIRS = register("obsidian_stairs", ()-> stair(Blocks.OBSIDIAN));
-    public static final DeferredBlock<SlabBlock> OBSIDIAN_SLAB = register("obsidian_slab", ()-> slab(Blocks.OBSIDIAN));
-    public static final DeferredBlock<WallBlock> OBSIDIAN_WALL = register("obsidian_wall", ()-> wall(Blocks.OBSIDIAN));
+    public static final DeferredBlock<StairBlock> OBSIDIAN_STAIRS = register("obsidian_stairs", prop-> new StairBlock(Blocks.OBSIDIAN.defaultBlockState(), prop), Blocks.OBSIDIAN);
+    public static final DeferredBlock<SlabBlock> OBSIDIAN_SLAB = register("obsidian_slab", SlabBlock::new, Blocks.OBSIDIAN);
+    public static final DeferredBlock<WallBlock> OBSIDIAN_WALL = register("obsidian_wall", WallBlock::new, Blocks.OBSIDIAN);
 
-    public static final DeferredBlock<StairBlock> CRYING_OBSIDIAN_STAIRS = register("crying_obsidian_stairs", ()-> stair(Blocks.CRYING_OBSIDIAN));
-    public static final DeferredBlock<SlabBlock> CRYING_OBSIDIAN_SLAB = register("crying_obsidian_slab", ()-> slab(Blocks.CRYING_OBSIDIAN));
-    public static final DeferredBlock<WallBlock> CRYING_OBSIDIAN_WALL = register("crying_obsidian_wall", ()-> wall(Blocks.CRYING_OBSIDIAN));
+    public static final DeferredBlock<StairBlock> CRYING_OBSIDIAN_STAIRS = register("crying_obsidian_stairs", prop-> new StairBlock(Blocks.CRYING_OBSIDIAN.defaultBlockState(), prop), Blocks.CRYING_OBSIDIAN);
+    public static final DeferredBlock<SlabBlock> CRYING_OBSIDIAN_SLAB = register("crying_obsidian_slab", SlabBlock::new, Blocks.CRYING_OBSIDIAN);
+    public static final DeferredBlock<WallBlock> CRYING_OBSIDIAN_WALL = register("crying_obsidian_wall", WallBlock::new, Blocks.CRYING_OBSIDIAN);
 
     public static final DeferredBlock<StairBlock> WHITE_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.WHITE);
     public static final DeferredBlock<SlabBlock> WHITE_GLAZED_TERRACOTTA_SLAB = regGlazedTerracottaSlab(DyeColor.WHITE);
@@ -486,9 +490,9 @@ public final class BVBlocks {
     public static final DeferredBlock<SlabBlock> BLACK_WOOL_SLAB = regWoolSlab(DyeColor.BLACK);
     public static final DeferredBlock<WallBlock> BLACK_WOOL_WALL = regWoolWall(DyeColor.BLACK);
 
-    public static final DeferredBlock<StairBlock> PACKED_MUD_STAIRS = register("packed_mud_stairs", ()-> stair(Blocks.PACKED_MUD));
-    public static final DeferredBlock<SlabBlock> PACKED_MUD_SLAB = register("packed_mud_slab", ()-> slab(Blocks.PACKED_MUD));
-    public static final DeferredBlock<WallBlock> PACKED_MUD_WALL = register("packed_mud_wall", ()-> wall(Blocks.PACKED_MUD));
+    public static final DeferredBlock<StairBlock> PACKED_MUD_STAIRS = register("packed_mud_stairs", prop -> new StairBlock(Blocks.PACKED_MUD.defaultBlockState(), prop), Blocks.PACKED_MUD);
+    public static final DeferredBlock<SlabBlock> PACKED_MUD_SLAB = register("packed_mud_slab", SlabBlock::new,Blocks.PACKED_MUD);
+    public static final DeferredBlock<WallBlock> PACKED_MUD_WALL = register("packed_mud_wall", WallBlock::new,Blocks.PACKED_MUD);
 
     private static StrippableStairBlock strippableStair(Supplier<StairBlock> stripped, Block base) { return new StrippableStairBlock(stripped, base.defaultBlockState(), copyProperties(base)); }
     private static StrippableStairBlock strippableStair(Supplier<StairBlock> stripped, Block base, BlockBehaviour.Properties properties) { return new StrippableStairBlock(stripped, base.defaultBlockState(), properties); }
@@ -498,89 +502,87 @@ public final class BVBlocks {
     private static StrippableWallBlock strippableWall(Supplier<WallBlock> stripped, BlockBehaviour.Properties properties) { return new StrippableWallBlock(stripped, properties); }
     private static StrippableFenceBlock strippableFence(Supplier<FenceBlock> stripped, Block base) { return new StrippableFenceBlock(stripped, copyProperties(base)); }
     private static StrippableFenceBlock strippableFence(Supplier<FenceBlock> stripped, BlockBehaviour.Properties properties) { return new StrippableFenceBlock(stripped, properties); }
-    private static StrippableFenceGateBlock strippableFenceGate(Supplier<FenceGateBlock> stripped, WoodType type, Block base) { return new StrippableFenceGateBlock(stripped, type, copyProperties(base)); }
-    private static StrippableFenceGateBlock strippableFenceGate(Supplier<FenceGateBlock> stripped, WoodType type, BlockBehaviour.Properties properties) { return new StrippableFenceGateBlock(stripped, type, properties); }
 
     private static DeferredBlock<StairBlock> regTerracottaStairs(DyeColor color, Block base) {
-        return register(color.getName() + "_terracotta_stairs", ()-> stair(base));
+        return register(color.getName() + "_terracotta_stairs", prop-> new StairBlock(base.defaultBlockState(), prop), copyProperties(base));
     }
     private static DeferredBlock<SlabBlock> regTerracottaSlab(DyeColor color) {
-        return register(color.getName() + "_terracotta_slab", ()-> slab(Blocks.TERRACOTTA));
+        return register(color.getName() + "_terracotta_slab", SlabBlock::new, copyProperties(Blocks.TERRACOTTA));
     }
     private static DeferredBlock<WallBlock> regTerracottaWall(DyeColor color) {
-        return register(color.getName() + "_terracotta_wall", ()-> wall(Blocks.TERRACOTTA));
+        return register(color.getName() + "_terracotta_wall", WallBlock::new, copyProperties(Blocks.TERRACOTTA));
     }
 
     private static DeferredBlock<StrippableStairBlock> logStairs(String type, Block base, Supplier<StairBlock> stripped) {
-        return register(type + "_log_stairs", ()-> strippableStair(stripped, base), 300);
+        return register(type + "_log_stairs", prop-> new StrippableStairBlock(stripped, base.defaultBlockState(), prop), copyProperties(base), 300);
     }
 
     private static DeferredBlock<StairBlock> logStairs(String type, Block base) {
-        return register(type + "_log_stairs", ()-> stair(base), 300);
+        return register(type + "_log_stairs", prop-> new StairBlock(base.defaultBlockState(), prop), copyProperties(base), 300);
     }
     private static DeferredBlock<SlabBlock> logSlab(String type, Block base) {
-        return register(type + "_log_slab", ()-> slab(base), 300);
+        return register(type + "_log_slab", SlabBlock::new, copyProperties(base), 300);
     }
     private static DeferredBlock<StrippableSlabBlock> logSlab(String type, Block base, Supplier<SlabBlock> stripped) {
-        return register(type + "_log_slab", ()-> strippableSlab(stripped, base), 300);
+        return register(type + "_log_slab", prop-> new StrippableSlabBlock(stripped, prop), copyProperties(base), 300);
     }
 
     private static DeferredBlock<StairBlock> woodStairs(String type, Block base) {
-        return register(type + "_wood_stairs", ()-> stair(base), 300);
+        return register(type + "_wood_stairs", prop-> new StairBlock(base.defaultBlockState(), prop), copyProperties(base), 300);
     }
 
     private static DeferredBlock<StrippableStairBlock> woodStairs(String type, Block base, Supplier<StairBlock> stripped) {
-        return register(type + "_wood_stairs", ()-> strippableStair(stripped, base), 300);
+        return register(type + "_wood_stairs", prop-> new StrippableStairBlock(stripped, base.defaultBlockState(), prop), copyProperties(base), 300);
     }
     private static DeferredBlock<SlabBlock> woodSlab(String type, Block base) {
-        return register(type + "_wood_slab", ()-> slab(base), 150);
+        return register(type + "_wood_slab", SlabBlock::new, copyProperties(base), 150);
     }
     private static DeferredBlock<StrippableSlabBlock> woodSlab(String type, Block base, Supplier<SlabBlock> stripped) {
-        return register(type + "_wood_slab", ()-> strippableSlab(stripped, base), 150);
+        return register(type + "_wood_slab", prop-> new StrippableSlabBlock(stripped, prop), copyProperties(base), 150);
     }
     private static DeferredBlock<WallBlock> woodWall(String type, Block base) {
-        return register(type + "_wood_wall", ()-> wall(base), 300);
+        return register(type + "_wood_wall", WallBlock::new, copyProperties(base), 300);
     }
     private static DeferredBlock<StrippableWallBlock> woodWall(String type, Block base, Supplier<WallBlock> stripped) {
-        return register(type + "_wood_wall", ()-> strippableWall(stripped, base), 300);
+        return register(type + "_wood_wall", prop-> new StrippableWallBlock(stripped, prop), copyProperties(base), 300);
     }
     private static DeferredBlock<FenceBlock> woodFence(String type, Block base) {
-        return register(type + "_wood_fence", ()-> fence(base), 300);
+        return register(type + "_wood_fence", FenceBlock::new, copyProperties(base), 300);
     }
     private static DeferredBlock<StrippableFenceBlock> woodFence(String type, Block base, Supplier<FenceBlock> stripped) {
-        return register(type + "_wood_fence", ()-> strippableFence(stripped, base), 300);
+        return register(type + "_wood_fence", prop-> new StrippableFenceBlock(stripped, prop), copyProperties(base), 300);
     }
     private static DeferredBlock<FenceGateBlock> woodFenceGate(String type, Block base) {
-        return register(type + "_wood_fence_gate", ()-> fenceGate(woodTypeOf(type), copyProperties(base)), 300);
+        return register(type + "_wood_fence_gate", prop-> new FenceGateBlock(woodTypeOf(type), prop), copyProperties(base), 300);
     }
     private static DeferredBlock<StrippableFenceGateBlock> woodFenceGate(WoodType type, Block base, Supplier<FenceGateBlock> stripped) {
-        return register(type.name() + "_wood_fence_gate", ()-> strippableFenceGate(stripped, type, base), 300);
+        return register(type.name() + "_wood_fence_gate", prop-> new StrippableFenceGateBlock(stripped, type, prop), copyProperties(base), 300);
     }
 
     private static DeferredBlock<StairBlock> regGlazedTerracottaStairs(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent.defaultBlockState(), copyProperties(parent)));
+        return register(color.getName() + "_glazed_terracotta_stairs", prop -> new StairBlock(parent.defaultBlockState(), prop), copyProperties(parent));
     }
     private static DeferredBlock<SlabBlock> regGlazedTerracottaSlab(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_slab", ()-> new SlabBlock(copyProperties(parent)));
+        return register(color.getName() + "_glazed_terracotta_slab", SlabBlock::new, copyProperties(parent));
     }
     private static DeferredBlock<WallBlock> regGlazedTerracottaWall(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_wall", ()-> new WallBlock(copyProperties(parent)));
+        return register(color.getName() + "_glazed_terracotta_wall", WallBlock::new, copyProperties(parent));
     }
 
     private static DeferredBlock<StairBlock> regWoolStairs(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_wool");
-        return register(color.getName() + "_wool_stairs", ()-> stair(parent));
+        return register(color.getName() + "_wool_stairs", prop -> stair(parent, prop), copyProperties(parent));
     }
     private static DeferredBlock<SlabBlock> regWoolSlab(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_wool");
-        return register(color.getName() + "_wool_slab", ()-> slab(parent));
+        return register(color.getName() + "_wool_slab", SlabBlock::new, copyProperties(parent));
     }
     private static DeferredBlock<WallBlock> regWoolWall(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_wool");
-        return register(color.getName() + "_wool_wall", ()-> wall(parent));
+        return register(color.getName() + "_wool_wall", WallBlock::new, copyProperties(parent));
     }
 
     private static SlabBlock slab(SlabBlock.Properties properties) { return new SlabBlock(properties); }
@@ -601,32 +603,38 @@ public final class BVBlocks {
     }
 
     private static Block getVanillaBlock(String name) {
-        return BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(name));
+        return BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(name)).orElseThrow().value();
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> block) {
-        return  register(name, block, DEFAULT_ITEM_PROPERTIES);
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base) {
+        return  register(name, block, copyProperties(base));
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> block, int itemBurnTime) {
-        return  register(name, block, itemBurnTime, DEFAULT_ITEM_PROPERTIES);
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour.Properties properties) {
+        return  register(name, block, properties, DEFAULT_ITEM_PROPERTIES);
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> block, Item.Properties itemProperties) {
-        var registryObject = registerWithoutItem(name, block);
-        BVItems.REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties));
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour.Properties properties, int itemBurnTime) {
+        return  register(name, block, properties, itemBurnTime, DEFAULT_ITEM_PROPERTIES);
+    }
+
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour.Properties properties, Item.Properties itemProperties) {
+        var registryObject = registerWithoutItem(name, block, properties);
+        BVItems.REGISTER.registerSimpleBlockItem(registryObject, itemProperties);
         return registryObject;
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> block, int itemBurnTime, Item.Properties itemProperties) {
-        var registryObject = registerWithoutItem(name, block);
-        BVItems.REGISTER.register(name, ()-> new BlockItem(registryObject.get(), itemProperties) {
-            @Override
-            public int getBurnTime(@NotNull ItemStack itemStack, @Nullable RecipeType<?> recipeType) { return itemBurnTime; }
-        });
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour.Properties properties, int itemBurnTime, Item.Properties itemProperties) {
+        var registryObject = registerWithoutItem(name, block, properties);
+        BVItems.REGISTER.registerItem(name, iproperties-> new BlockItem(registryObject.get(), iproperties) {
+            @Override @ParametersAreNonnullByDefault
+            public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType, FuelValues fuelValues) {
+                return itemBurnTime;
+            }
+        }, itemProperties);
         return registryObject;
     }
-    private static <T extends Block> DeferredBlock<T> registerWithoutItem(String name, Supplier<T> block) { return REGISTER.register(name, block); }
+    private static <T extends Block> DeferredBlock<T> registerWithoutItem(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour.Properties properties) { return REGISTER.registerBlock(name, block, properties); }
 
     public static Iterator<? extends Block> getAllBlocks() { return REGISTER.getEntries().stream().map(Supplier::get).iterator(); }
 }

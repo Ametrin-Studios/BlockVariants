@@ -13,10 +13,15 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+
+    maven {
+        name "Ametrin Studios Maven"
+        url "https://github.com/Ametrin-Studios/maven/raw/main/"
+    }
 }
 
 base {
-    archivesName = "$mod_id-$minecraft_version"
+    archivesName = mod_id
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -55,7 +60,6 @@ neoForge {
 
         configureEach {
             systemProperty 'forge.logging.markers', 'REGISTRIES'
-
             logLevel = org.slf4j.event.Level.DEBUG
         }
     }
@@ -74,7 +78,7 @@ configurations {
 }
 
 dependencies {
-//    implementation "com.ametrinstudios:ametrin:${minecraft_version}-${ametrin_version}"
+    implementation "com.ametrinstudios:ametrin:${minecraft_version}-${ametrin_version}"
 //    localRuntime "curse.maven:emi-580555:5497461"
 }
 
@@ -95,7 +99,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_license             : mod_license,
             mod_version             : mod_version,
             mod_authors             : mod_authors,
-            mod_description         : mod_description,
+            mod_description         : mod_description
     ]
     inputs.properties replaceProperties
     expand replaceProperties
@@ -103,21 +107,9 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
     into "build/generated/sources/modMetadata"
 }
 
+
 sourceSets.main.resources.srcDir generateModMetadata
 neoForge.ideSyncTask generateModMetadata
-
-//publishing {
-//    publications {
-//        register('mavenJava', MavenPublication) {
-//            from components.java
-//        }
-//    }
-//    repositories {
-//        maven {
-//            url "file://${project.projectDir}/repo"
-//        }
-//    }
-//}
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
