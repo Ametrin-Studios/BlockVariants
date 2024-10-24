@@ -28,7 +28,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
     }
 
     @Override @ParametersAreNonnullByDefault
-    protected void buildRecipes(){
+    protected void buildRecipes() {
         wall(output, BVBlocks.POLISHED_GRANITE_WALL.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
         wall(output, BVBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
         wall(output, BVBlocks.POLISHED_ANDESITE_WALL.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
@@ -114,6 +114,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         stairSlab(output, BVBlocks.DARK_OAK_LOG_STAIRS.get(), BVBlocks.DARK_OAK_LOG_SLAB.get(), Blocks.DARK_OAK_LOG, false);
         stairSlab(output, BVBlocks.MANGROVE_LOG_STAIRS.get(), BVBlocks.MANGROVE_LOG_SLAB.get(), Blocks.MANGROVE_LOG, false);
         stairSlab(output, BVBlocks.CHERRY_LOG_STAIRS.get(), BVBlocks.CHERRY_LOG_SLAB.get(), Blocks.CHERRY_LOG, false);
+        stairSlab(output, BVBlocks.PALE_OAK_LOG_STAIRS.get(), BVBlocks.PALE_OAK_LOG_SLAB.get(), Blocks.PALE_OAK_LOG, false);
         stairSlab(output, BVBlocks.STRIPPED_OAK_LOG_STAIRS.get(), BVBlocks.STRIPPED_OAK_LOG_SLAB.get(), Blocks.STRIPPED_OAK_LOG, false);
         stairSlab(output, BVBlocks.STRIPPED_SPRUCE_LOG_STAIRS.get(), BVBlocks.STRIPPED_SPRUCE_LOG_SLAB.get(), Blocks.STRIPPED_SPRUCE_LOG, false);
         stairSlab(output, BVBlocks.STRIPPED_BIRCH_LOG_STAIRS.get(), BVBlocks.STRIPPED_BIRCH_LOG_SLAB.get(), Blocks.STRIPPED_BIRCH_LOG, false);
@@ -146,6 +147,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         recipeWoods(output, BVBlocks.STRIPPED_DARK_OAK_WOOD_STAIRS.get(), BVBlocks.STRIPPED_DARK_OAK_WOOD_SLAB.get(), BVBlocks.STRIPPED_DARK_OAK_WOOD_WALL.get(), BVBlocks.STRIPPED_DARK_OAK_WOOD_FENCE.get(), BVBlocks.STRIPPED_DARK_OAK_WOOD_FENCE_GATE.get(), Blocks.STRIPPED_DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_LOG);
         recipeWoods(output, BVBlocks.STRIPPED_MANGROVE_WOOD_STAIRS.get(), BVBlocks.STRIPPED_MANGROVE_WOOD_SLAB.get(), BVBlocks.STRIPPED_MANGROVE_WOOD_WALL.get(), BVBlocks.STRIPPED_MANGROVE_WOOD_FENCE.get(), BVBlocks.STRIPPED_MANGROVE_WOOD_FENCE_GATE.get(), Blocks.STRIPPED_MANGROVE_WOOD, Blocks.STRIPPED_MANGROVE_LOG);
         recipeWoods(output, BVBlocks.STRIPPED_CHERRY_WOOD_STAIRS.get(), BVBlocks.STRIPPED_CHERRY_WOOD_SLAB.get(), BVBlocks.STRIPPED_CHERRY_WOOD_WALL.get(), BVBlocks.STRIPPED_CHERRY_WOOD_FENCE.get(), BVBlocks.STRIPPED_CHERRY_WOOD_FENCE_GATE.get(), Blocks.STRIPPED_CHERRY_WOOD, Blocks.STRIPPED_CHERRY_LOG);
+        recipeWoods(output, BVBlocks.STRIPPED_PALE_OAK_WOOD_STAIRS.get(), BVBlocks.STRIPPED_PALE_OAK_WOOD_SLAB.get(), BVBlocks.STRIPPED_PALE_OAK_WOOD_WALL.get(), BVBlocks.STRIPPED_PALE_OAK_WOOD_FENCE.get(), BVBlocks.STRIPPED_PALE_OAK_WOOD_FENCE_GATE.get(), Blocks.STRIPPED_PALE_OAK_WOOD, Blocks.STRIPPED_PALE_OAK_LOG);
         recipeWoods(output, BVBlocks.STRIPPED_BAMBOO_BLOCK_STAIRS.get(), BVBlocks.STRIPPED_BAMBOO_BLOCK_SLAB.get(), BVBlocks.STRIPPED_BAMBOO_BLOCK_WALL.get(), BVBlocks.STRIPPED_BAMBOO_BLOCK_FENCE.get(), BVBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.get(), Blocks.STRIPPED_BAMBOO_BLOCK);
         recipeWoods(output, BVBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.get(), BVBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.get(), BVBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.get(), BVBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE.get(), BVBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.get(), Blocks.STRIPPED_CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_STEM);
         recipeWoods(output, BVBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.get(), BVBlocks.STRIPPED_WARPED_HYPHAE_SLAB.get(), BVBlocks.STRIPPED_WARPED_HYPHAE_WALL.get(), BVBlocks.STRIPPED_WARPED_HYPHAE_FENCE.get(), BVBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.get(), Blocks.STRIPPED_WARPED_HYPHAE, Blocks.STRIPPED_WARPED_STEM);

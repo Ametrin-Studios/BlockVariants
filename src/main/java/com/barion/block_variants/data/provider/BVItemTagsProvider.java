@@ -53,10 +53,6 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
 
         tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
 
-//        tag(ItemTags.STAIRS).addTag(ItemTags.WOODEN_STAIRS);
-//        tag(ItemTags.SLABS).addTag(ItemTags.WOODEN_SLABS);
-        //tag(ItemTags.WALLS).addTag(BVTags.Items.WoodenWalls);
-
         tag(ItemTags.NON_FLAMMABLE_WOOD).add(
                 BVBlocks.CRIMSON_HYPHAE_STAIRS.get().asItem(),
                 BVBlocks.CRIMSON_HYPHAE_SLAB.get().asItem(),
