@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "block_variants:stone_crafting"
-    },
-    "+": {
-      "item": "minecraft:iron_ingot"
-    }
+    "#": "#block_variants:stone_crafting",
+    "+": "minecraft:iron_ingot"
   },
   "pattern": [
     " + ",

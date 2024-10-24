@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:bamboo_block"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:bamboo_block"
   },
   "pattern": [
     "W#W",

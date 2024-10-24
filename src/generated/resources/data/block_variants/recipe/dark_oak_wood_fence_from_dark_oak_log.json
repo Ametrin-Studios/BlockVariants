@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:dark_oak_log"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:dark_oak_log"
   },
   "pattern": [
     "W#W",

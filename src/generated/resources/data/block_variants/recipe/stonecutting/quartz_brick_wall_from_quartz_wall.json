@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "block_variants:quartz_wall"
-  },
+  "ingredient": "block_variants:quartz_wall",
   "result": {
     "count": 1,
     "id": "block_variants:quartz_brick_wall"

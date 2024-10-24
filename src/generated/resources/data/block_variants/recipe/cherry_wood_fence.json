@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:cherry_wood"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:cherry_wood"
   },
   "pattern": [
     "W#W",

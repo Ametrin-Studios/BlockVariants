@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "minecraft:cobblestone_wall"
-  },
+  "ingredient": "minecraft:cobblestone_wall",
   "result": {
     "count": 1,
     "id": "block_variants:stone_wall"

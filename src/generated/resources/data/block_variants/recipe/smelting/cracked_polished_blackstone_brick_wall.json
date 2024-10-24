@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "minecraft:polished_blackstone_brick_wall"
-  },
+  "ingredient": "minecraft:polished_blackstone_brick_wall",
   "result": {
     "count": 1,
     "id": "block_variants:cracked_polished_blackstone_brick_wall"

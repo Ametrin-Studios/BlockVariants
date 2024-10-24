@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "block_variants:basalt_wall"
-  },
+  "ingredient": "block_variants:basalt_wall",
   "result": {
     "count": 1,
     "id": "block_variants:polished_basalt_wall"

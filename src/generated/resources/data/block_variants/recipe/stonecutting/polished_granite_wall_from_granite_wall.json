@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:granite_wall"
-  },
+  "ingredient": "minecraft:granite_wall",
   "result": {
     "count": 1,
     "id": "block_variants:polished_granite_wall"

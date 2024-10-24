@@ -3,12 +3,8 @@
   "category": "building",
   "group": "dye_wool_slabs",
   "ingredients": [
-    {
-      "tag": "block_variants:wool/slabs"
-    },
-    {
-      "item": "minecraft:cyan_dye"
-    }
+    "#block_variants:wool/slabs",
+    "minecraft:cyan_dye"
   ],
   "result": {
     "count": 1,

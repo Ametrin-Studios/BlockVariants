@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:crimson_stem"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:crimson_stem"
   },
   "pattern": [
     "W#W",

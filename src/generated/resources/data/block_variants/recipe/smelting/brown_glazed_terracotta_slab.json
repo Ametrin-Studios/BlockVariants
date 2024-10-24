@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "block_variants:brown_terracotta_slab"
-  },
+  "ingredient": "block_variants:brown_terracotta_slab",
   "result": {
     "count": 1,
     "id": "block_variants:brown_glazed_terracotta_slab"

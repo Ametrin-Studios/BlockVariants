@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:oak_wood"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:oak_wood"
   },
   "pattern": [
     "#W#",

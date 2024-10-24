@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:blackstone_wall"
-  },
+  "ingredient": "minecraft:blackstone_wall",
   "result": {
     "count": 1,
     "id": "minecraft:polished_blackstone_wall"

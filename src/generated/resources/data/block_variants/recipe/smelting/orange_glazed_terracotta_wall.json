@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "block_variants:orange_terracotta_wall"
-  },
+  "ingredient": "block_variants:orange_terracotta_wall",
   "result": {
     "count": 1,
     "id": "block_variants:orange_glazed_terracotta_wall"

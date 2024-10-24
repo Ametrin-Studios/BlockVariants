@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "block_variants:cyan_terracotta_wall"
-  },
+  "ingredient": "block_variants:cyan_terracotta_wall",
   "result": {
     "count": 1,
     "id": "block_variants:cyan_glazed_terracotta_wall"

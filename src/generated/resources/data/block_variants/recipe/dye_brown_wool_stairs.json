@@ -3,12 +3,8 @@
   "category": "building",
   "group": "dye_wool_stairs",
   "ingredients": [
-    {
-      "tag": "block_variants:wool/stairs"
-    },
-    {
-      "item": "minecraft:brown_dye"
-    }
+    "#block_variants:wool/stairs",
+    "minecraft:brown_dye"
   ],
   "result": {
     "count": 1,

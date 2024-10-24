@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:cracked_polished_blackstone_bricks"
-  },
+  "ingredient": "minecraft:cracked_polished_blackstone_bricks",
   "result": {
     "count": 1,
     "id": "block_variants:cracked_polished_blackstone_brick_wall"

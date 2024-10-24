@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:red_sandstone_stairs"
-  },
+  "ingredient": "minecraft:red_sandstone_stairs",
   "result": {
     "count": 1,
     "id": "block_variants:cut_red_sandstone_stairs"

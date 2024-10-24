@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "block_variants:stone_crafting"
-    }
+    "#": "#block_variants:stone_crafting"
   },
   "pattern": [
     "###",

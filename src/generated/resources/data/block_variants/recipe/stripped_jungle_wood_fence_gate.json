@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:stripped_jungle_wood"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:stripped_jungle_wood"
   },
   "pattern": [
     "#W#",

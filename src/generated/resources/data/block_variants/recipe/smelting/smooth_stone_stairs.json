@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "minecraft:stone_stairs"
-  },
+  "ingredient": "minecraft:stone_stairs",
   "result": {
     "count": 1,
     "id": "block_variants:smooth_stone_stairs"
