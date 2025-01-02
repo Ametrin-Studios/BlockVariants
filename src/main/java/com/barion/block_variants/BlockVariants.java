@@ -1,7 +1,10 @@
 package com.barion.block_variants;
 
-import com.ametrinstudios.ametrin.data.DataProviderHelper;
-import com.barion.block_variants.data.provider.*;
+import com.ametrinstudios.ametrin.data.provider.CustomLootTableProvider;
+import com.barion.block_variants.data.provider.BVBlockTagsProvider;
+import com.barion.block_variants.data.provider.BVItemTagsProvider;
+import com.barion.block_variants.data.provider.BVModelProvider;
+import com.barion.block_variants.data.provider.BVRecipeProvider;
 import com.barion.block_variants.data.provider.loot_table.BVBlockLootProvider;
 import com.barion.block_variants.registry.BVBlocks;
 import com.barion.block_variants.registry.BVItems;
@@ -15,7 +18,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
 @Mod(BlockVariants.MOD_ID)
-public final class BlockVariants{
+public final class BlockVariants {
     public static final String MOD_ID = "block_variants";
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -30,19 +33,16 @@ public final class BlockVariants{
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
-    private static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event){
+    private static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             BVBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
         }
     }
 
-    private static void gatherData(GatherDataEvent event){
-        var helper = new DataProviderHelper(event);
-
-        helper.add(BVBlockStateProvider::new);
-        helper.add(BVItemModelProvider::new);
-        helper.add(BVRecipeProvider.Runner::new);
-        helper.addBlockAndItemTags(BVBlockTagsProvider::new, BVItemTagsProvider::new);
-        helper.addLootTables(builder -> builder.addBlockProvider(BVBlockLootProvider::new));
+    private static void gatherData(GatherDataEvent.Client event) {
+        event.createProvider(BVModelProvider::new);
+        event.createProvider(BVRecipeProvider.Runner::new);
+        event.createBlockAndItemTags(BVBlockTagsProvider::new, BVItemTagsProvider::new);
+        event.createProvider(CustomLootTableProvider.builder().addBlockProvider(BVBlockLootProvider::new)::build);
     }
 }

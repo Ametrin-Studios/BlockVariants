@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,8 +18,8 @@ import java.util.concurrent.CompletableFuture;
 import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isWooden;
 
 public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
-    public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper){
-        super(output, lookupProvider, BlockVariants.MOD_ID, fileHelper);
+    public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider){
+        super(output, lookupProvider, BlockVariants.MOD_ID);
     }
 
     {

@@ -15,6 +15,7 @@ public final class BVTags {
         private static TagKey<Block> common(String path) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
         }
+
         private static TagKey<Block> mod(String path) {
             return BlockTags.create(BlockVariants.locate(path));
         }
@@ -30,6 +31,7 @@ public final class BVTags {
         private static TagKey<Item> common(String path) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
         }
+
         private static TagKey<Item> mod(String path) {
             return ItemTags.create(BlockVariants.locate(path));
         }

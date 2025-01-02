@@ -18,6 +18,6 @@ public final class BVBlockLootProvider extends ExtendedBlockLootSubProvider {
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return BVBlocks.REGISTER.getEntries().stream().map(s->(Block)s.get()).toList();
+        return BVBlocks.REGISTER.getEntries().stream().map(s -> (Block) s.get()).toList();
     }
 }
