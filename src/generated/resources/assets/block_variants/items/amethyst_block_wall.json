@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "block_variants:block/amethyst_block_wall_inventory"
+  }
+}

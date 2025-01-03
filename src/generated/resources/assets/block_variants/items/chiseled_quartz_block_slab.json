@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "block_variants:block/chiseled_quartz_block_slab"
+  }
+}

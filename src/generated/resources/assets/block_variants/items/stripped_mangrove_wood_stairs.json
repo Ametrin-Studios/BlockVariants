@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "block_variants:block/stripped_mangrove_wood_stairs"
+  }
+}

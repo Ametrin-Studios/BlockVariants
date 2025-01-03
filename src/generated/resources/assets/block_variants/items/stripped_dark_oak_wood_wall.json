@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "block_variants:block/stripped_dark_oak_wood_wall_inventory"
+  }
+}

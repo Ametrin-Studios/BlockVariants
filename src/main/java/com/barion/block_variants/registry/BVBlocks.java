@@ -448,33 +448,33 @@ public final class BVBlocks {
     public static final DeferredBlock<SlabBlock> ORANGE_WOOL_SLAB = regWoolSlab(DyeColor.ORANGE);
     public static final DeferredBlock<WallBlock> ORANGE_WOOL_WALL = regWoolWall(DyeColor.ORANGE);
 
-    public static final DeferredBlock<StairBlock> MagentaWoolStairs = regWoolStairs(DyeColor.MAGENTA);
-    public static final DeferredBlock<SlabBlock> MagentaWoolSlab = regWoolSlab(DyeColor.MAGENTA);
-    public static final DeferredBlock<WallBlock> MagentaWoolWall = regWoolWall(DyeColor.MAGENTA);
+    public static final DeferredBlock<StairBlock> MAGENTA_WOOL_STAIRS = regWoolStairs(DyeColor.MAGENTA);
+    public static final DeferredBlock<SlabBlock> MAGENTA_WOOL_SLAB = regWoolSlab(DyeColor.MAGENTA);
+    public static final DeferredBlock<WallBlock> MAGENTA_WOOL_WALL = regWoolWall(DyeColor.MAGENTA);
 
-    public static final DeferredBlock<StairBlock> LightBlueWoolStairs = regWoolStairs(DyeColor.LIGHT_BLUE);
-    public static final DeferredBlock<SlabBlock> LightBlueWoolSlab = regWoolSlab(DyeColor.LIGHT_BLUE);
-    public static final DeferredBlock<WallBlock> LightBlueWoolWall = regWoolWall(DyeColor.LIGHT_BLUE);
+    public static final DeferredBlock<StairBlock> LIGHT_BLUE_WOOL_STAIRS = regWoolStairs(DyeColor.LIGHT_BLUE);
+    public static final DeferredBlock<SlabBlock> LIGHT_BLUE_WOOL_SLAB = regWoolSlab(DyeColor.LIGHT_BLUE);
+    public static final DeferredBlock<WallBlock> LIGHT_BLUE_WOOL_WALL = regWoolWall(DyeColor.LIGHT_BLUE);
 
-    public static final DeferredBlock<StairBlock> YellowWoolStairs = regWoolStairs(DyeColor.YELLOW);
-    public static final DeferredBlock<SlabBlock> YellowWoolSlab = regWoolSlab(DyeColor.YELLOW);
-    public static final DeferredBlock<WallBlock> YellowWoolWall = regWoolWall(DyeColor.YELLOW);
+    public static final DeferredBlock<StairBlock> YELLOW_WOOL_STAIRS = regWoolStairs(DyeColor.YELLOW);
+    public static final DeferredBlock<SlabBlock> YELLOW_WOOL_SLAB = regWoolSlab(DyeColor.YELLOW);
+    public static final DeferredBlock<WallBlock> YELLOW_WOOL_WALL = regWoolWall(DyeColor.YELLOW);
 
-    public static final DeferredBlock<StairBlock> LimeWoolStairs = regWoolStairs(DyeColor.LIME);
-    public static final DeferredBlock<SlabBlock> LimeWoolSlab = regWoolSlab(DyeColor.LIME);
-    public static final DeferredBlock<WallBlock> LimeWoolWall = regWoolWall(DyeColor.LIME);
+    public static final DeferredBlock<StairBlock> LIME_WOOL_STAIRS = regWoolStairs(DyeColor.LIME);
+    public static final DeferredBlock<SlabBlock> LIME_WOOL_SLAB = regWoolSlab(DyeColor.LIME);
+    public static final DeferredBlock<WallBlock> LIME_WOOL_WALL = regWoolWall(DyeColor.LIME);
 
-    public static final DeferredBlock<StairBlock> PinkWoolStairs = regWoolStairs(DyeColor.PINK);
-    public static final DeferredBlock<SlabBlock> PinkWoolSlab = regWoolSlab(DyeColor.PINK);
-    public static final DeferredBlock<WallBlock> PinkWoolWall = regWoolWall(DyeColor.PINK);
+    public static final DeferredBlock<StairBlock> PINK_WOOL_STAIRS = regWoolStairs(DyeColor.PINK);
+    public static final DeferredBlock<SlabBlock> PINK_WOOL_SLAB = regWoolSlab(DyeColor.PINK);
+    public static final DeferredBlock<WallBlock> PINK_WOOL_WALL = regWoolWall(DyeColor.PINK);
 
-    public static final DeferredBlock<StairBlock> GrayWoolStairs = regWoolStairs(DyeColor.GRAY);
-    public static final DeferredBlock<SlabBlock> GrayWoolSlab = regWoolSlab(DyeColor.GRAY);
-    public static final DeferredBlock<WallBlock> GrayWoolWall = regWoolWall(DyeColor.GRAY);
+    public static final DeferredBlock<StairBlock> GRAY_WOOL_STAIRS = regWoolStairs(DyeColor.GRAY);
+    public static final DeferredBlock<SlabBlock> GRAY_WOOL_SLAB = regWoolSlab(DyeColor.GRAY);
+    public static final DeferredBlock<WallBlock> GRAY_WOOL_WALL = regWoolWall(DyeColor.GRAY);
 
-    public static final DeferredBlock<StairBlock> LightGrayWoolStairs = regWoolStairs(DyeColor.LIGHT_GRAY);
-    public static final DeferredBlock<SlabBlock> LightGrayWoolSlab = regWoolSlab(DyeColor.LIGHT_GRAY);
-    public static final DeferredBlock<WallBlock> LightGrayWoolWall = regWoolWall(DyeColor.LIGHT_GRAY);
+    public static final DeferredBlock<StairBlock> LIGHT_GRAY_WOOL_STAIRS = regWoolStairs(DyeColor.LIGHT_GRAY);
+    public static final DeferredBlock<SlabBlock> LIGHT_GRAY_WOOL_SLAB = regWoolSlab(DyeColor.LIGHT_GRAY);
+    public static final DeferredBlock<WallBlock> LIGHT_GRAY_WOOL_WALL = regWoolWall(DyeColor.LIGHT_GRAY);
 
     public static final DeferredBlock<StairBlock> CYAN_WOOL_STAIRS = regWoolStairs(DyeColor.CYAN);
     public static final DeferredBlock<SlabBlock> CYAN_WOOL_SLAB = regWoolSlab(DyeColor.CYAN);
@@ -505,8 +505,8 @@ public final class BVBlocks {
     public static final DeferredBlock<WallBlock> BLACK_WOOL_WALL = regWoolWall(DyeColor.BLACK);
 
     public static final DeferredBlock<StairBlock> PACKED_MUD_STAIRS = register("packed_mud_stairs", prop -> new StairBlock(Blocks.PACKED_MUD.defaultBlockState(), prop), Blocks.PACKED_MUD);
-    public static final DeferredBlock<SlabBlock> PACKED_MUD_SLAB = register("packed_mud_slab", SlabBlock::new,Blocks.PACKED_MUD);
-    public static final DeferredBlock<WallBlock> PACKED_MUD_WALL = register("packed_mud_wall", WallBlock::new,Blocks.PACKED_MUD);
+    public static final DeferredBlock<SlabBlock> PACKED_MUD_SLAB = register("packed_mud_slab", SlabBlock::new, Blocks.PACKED_MUD);
+    public static final DeferredBlock<WallBlock> PACKED_MUD_WALL = register("packed_mud_wall", WallBlock::new, Blocks.PACKED_MUD);
 
     private static DeferredBlock<StairBlock> regTerracottaStairs(DyeColor color, Block base) {
         return register(color.getName() + "_terracotta_stairs", prop-> new StairBlock(base.defaultBlockState(), prop), copyProperties(base));

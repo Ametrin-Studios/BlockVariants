@@ -4061,5 +4061,149 @@
     },
     "done": true
   },
-  "DataVersion": 4082
+  "block_variants:recipes/building_blocks/pale_oak_wood_slab": {
+    "criteria": {
+      "has_pale_oak_wood": "2025-01-03 19:37:14 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_pale_oak_wood_wall": {
+    "criteria": {
+      "has_stripped_pale_oak_wood": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_pale_oak_wood_fence": {
+    "criteria": {
+      "has_stripped_pale_oak_wood": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/pale_oak_wood_fence_gate": {
+    "criteria": {
+      "has_pale_oak_wood": "2025-01-03 19:37:14 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/pale_oak_wood_stairs": {
+    "criteria": {
+      "has_pale_oak_wood": "2025-01-03 19:37:14 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_pale_oak_wood_wall_from_stripped_pale_oak_log": {
+    "criteria": {
+      "has_stripped_pale_oak_log": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/pale_oak_wood_fence": {
+    "criteria": {
+      "has_pale_oak_wood": "2025-01-03 19:37:14 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_pale_oak_log_stairs": {
+    "criteria": {
+      "has_stripped_pale_oak_log": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/pale_oak_hanging_sign": {
+    "criteria": {
+      "has_stripped_logs": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/stripped_pale_oak_wood_fence_gate": {
+    "criteria": {
+      "has_stripped_pale_oak_wood": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/pale_oak_wood_fence_from_pale_oak_log": {
+    "criteria": {
+      "has_pale_oak_log": "2025-01-03 19:37:13 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_pale_oak_log_slab": {
+    "criteria": {
+      "has_stripped_pale_oak_log": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/stripped_pale_oak_wood_fence_gate_from_stripped_pale_oak_log": {
+    "criteria": {
+      "has_stripped_pale_oak_log": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stripped_pale_oak_wood": {
+    "criteria": {
+      "has_log": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stripped_pale_oak_wood_fence_from_stripped_pale_oak_log": {
+    "criteria": {
+      "has_stripped_pale_oak_log": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_pale_oak_wood_stairs": {
+    "criteria": {
+      "has_stripped_pale_oak_wood": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/pale_oak_wood_wall_from_pale_oak_log": {
+    "criteria": {
+      "has_pale_oak_log": "2025-01-03 19:37:13 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/pale_oak_planks": {
+    "criteria": {
+      "has_log": "2025-01-03 19:37:13 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/pale_oak_wood_wall": {
+    "criteria": {
+      "has_pale_oak_wood": "2025-01-03 19:37:14 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/redstone/pale_oak_wood_fence_gate_from_pale_oak_log": {
+    "criteria": {
+      "has_pale_oak_log": "2025-01-03 19:37:13 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/pale_oak_log_stairs": {
+    "criteria": {
+      "has_pale_oak_log": "2025-01-03 19:37:13 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/pale_oak_wood": {
+    "criteria": {
+      "has_log": "2025-01-03 19:37:13 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/pale_oak_log_slab": {
+    "criteria": {
+      "has_pale_oak_log": "2025-01-03 19:37:13 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stripped_pale_oak_wood_slab": {
+    "criteria": {
+      "has_stripped_pale_oak_wood": "2025-01-03 19:37:15 +0100"
+    },
+    "done": true
+  },
+  "DataVersion": 4189
 }
