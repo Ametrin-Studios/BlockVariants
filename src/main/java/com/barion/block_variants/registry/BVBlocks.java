@@ -27,7 +27,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.copyProperties;
-import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.stair;
 
 public final class BVBlocks {
 
@@ -579,7 +578,7 @@ public final class BVBlocks {
 
     private static DeferredBlock<StairBlock> regWoolStairs(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_wool");
-        return register(color.getName() + "_wool_stairs", prop -> stair(parent, prop), parent);
+        return register(color.getName() + "_wool_stairs", prop -> new StairBlock(parent.defaultBlockState(), prop), parent);
     }
     private static DeferredBlock<SlabBlock> regWoolSlab(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_wool");

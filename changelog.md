@@ -1,3 +1,5 @@
+## 6.4
+- Ametrin API compatibility
 ## 6.3
 * 1.21.4 port
 * Pale Oak variants no longer experimental
