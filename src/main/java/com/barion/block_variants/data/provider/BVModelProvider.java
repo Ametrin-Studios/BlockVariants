@@ -243,14 +243,14 @@ public final class BVModelProvider extends ExtendedModelProvider {
         var innerModel = ModelTemplates.STAIRS_INNER.create(stairsBlock, mapping, blockModels.modelOutput);
         var straightModel = ModelTemplates.STAIRS_STRAIGHT.create(stairsBlock, mapping, blockModels.modelOutput);
         var outerModel = ModelTemplates.STAIRS_OUTER.create(stairsBlock, mapping, blockModels.modelOutput);
-        blockModels.blockStateOutput.accept(BlockModelGenerators.createStairs(stairsBlock, innerModel, straightModel, outerModel));
+        blockModels.blockStateOutput.accept(BlockModelGenerators.createStairs(stairsBlock, BlockModelGenerators.plainVariant(innerModel), BlockModelGenerators.plainVariant(straightModel), BlockModelGenerators.plainVariant(outerModel)));
         blockModels.registerSimpleItemModel(stairsBlock, straightModel);
     }
 
     public static void customSlab(BlockModelGenerators blockModels, Block slabBlock, Block doubleSlab, TextureMapping mapping) {
         var bottomModel = ModelTemplates.SLAB_BOTTOM.create(slabBlock, mapping, blockModels.modelOutput);
         var topModel = ModelTemplates.SLAB_TOP.create(slabBlock, mapping, blockModels.modelOutput);
-        blockModels.blockStateOutput.accept(BlockModelGenerators.createSlab(slabBlock, bottomModel, topModel, ModelLocationUtils.getModelLocation(doubleSlab)));
+        blockModels.blockStateOutput.accept(BlockModelGenerators.createSlab(slabBlock, BlockModelGenerators.plainVariant(bottomModel), BlockModelGenerators.plainVariant(topModel), BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(doubleSlab))));
         blockModels.registerSimpleItemModel(slabBlock, bottomModel);
     }
 
@@ -258,7 +258,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
         var postModel = ModelTemplates.WALL_POST.create(wallBlock, mapping, blockModels.modelOutput);
         var lowModel = ModelTemplates.WALL_LOW_SIDE.create(wallBlock, mapping, blockModels.modelOutput);
         var tallModel = ModelTemplates.WALL_TALL_SIDE.create(wallBlock, mapping, blockModels.modelOutput);
-        blockModels.blockStateOutput.accept(BlockModelGenerators.createWall(wallBlock, postModel, lowModel, tallModel));
+        blockModels.blockStateOutput.accept(BlockModelGenerators.createWall(wallBlock, BlockModelGenerators.plainVariant(postModel), BlockModelGenerators.plainVariant(lowModel), BlockModelGenerators.plainVariant(tallModel)));
         ResourceLocation inventoryModel = ModelTemplates.WALL_INVENTORY.create(wallBlock, mapping, blockModels.modelOutput);
         blockModels.registerSimpleItemModel(wallBlock, inventoryModel);
     }
