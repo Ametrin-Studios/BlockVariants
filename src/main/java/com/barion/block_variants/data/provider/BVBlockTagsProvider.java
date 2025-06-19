@@ -3,51 +3,31 @@ package com.barion.block_variants.data.provider;
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockTagsProvider;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBlocks;
-import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.TagAppender;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
-
-import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isWooden;
 
 public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider, BlockVariants.MOD_ID);
     }
 
-    {
-        blockTagProviderRules.add((block, name) -> {
-            if (block instanceof WallBlock && (isWooden(name) || name.contains("bamboo_block"))) {
-                tag(BVTags.Blocks.WOODEN_WALLS).add(block);
-            }
-        });
-
-        blockTagProviderRules.add((block, name) -> {
-            if (name.contains("bamboo_block")) {
-                if (block instanceof StairBlock) {
-                    tag(BlockTags.WOODEN_STAIRS).add(block);
-                }
-                if (block instanceof SlabBlock) {
-                    tag(BlockTags.WOODEN_SLABS).add(block);
-                }
-                if (block instanceof FenceBlock) {
-                    tag(BlockTags.WOODEN_FENCES).add(block);
-                }
-                // Fence gate not necessary
-            }
-        });
-    }
-
     @Override
     protected void addTags(@NotNull HolderLookup.Provider holderLookup) {
         runRules(BVBlocks.REGISTER);
+        new BVBlockItemTagsProvider() {
+            @Override
+            protected @NotNull TagAppender<Block, Block> tag(@NotNull TagKey<Block> blockTag, @NotNull TagKey<Item> itemTag) {
+                return BVBlockTagsProvider.this.tag(blockTag);
+            }
+        }.run();
 
         {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
@@ -421,7 +401,5 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.CRYING_OBSIDIAN_SLAB.get(),
                 BVBlocks.CRYING_OBSIDIAN_WALL.get()
         );
-
-        tag(BlockTags.WALLS).addTag(BVTags.Blocks.WOODEN_WALLS);
     }
 }

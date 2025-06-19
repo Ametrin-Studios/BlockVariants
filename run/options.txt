@@ -1,4 +1,4 @@
-version:4325
+version:4435
 ao:true
 biomeBlendRadius:3
 enableVsync:true
@@ -15,7 +15,7 @@ prioritizeChunkUpdates:0
 fullscreen:false
 gamma:1.0
 graphicsMode:1
-guiScale:3
+guiScale:4
 maxFps:260
 inactivityFpsLimit:"afk"
 mipmapLevels:4
@@ -23,6 +23,7 @@ narrator:0
 particles:0
 reducedDebugInfo:false
 renderClouds:"false"
+cloudRange:128
 renderDistance:10
 simulationDistance:8
 screenEffectScale:1.0
@@ -90,6 +91,8 @@ telemetryOptInExtra:false
 onboardAccessibility:false
 menuBackgroundBlurriness:5
 startedCleanly:true
+showNowPlayingToast:false
+musicFrequency:"DEFAULT"
 key_key.attack:key.mouse.left
 key_key.use:key.mouse.right
 key_key.forward:key.keyboard.w
@@ -115,6 +118,7 @@ key_key.swapOffhand:key.keyboard.f
 key_key.saveToolbarActivator:key.keyboard.c
 key_key.loadToolbarActivator:key.keyboard.x
 key_key.advancements:key.keyboard.l
+key_key.quickActions:key.keyboard.g
 key_key.hotbar.1:key.keyboard.1
 key_key.hotbar.2:key.keyboard.2
 key_key.hotbar.3:key.keyboard.3
@@ -134,6 +138,7 @@ soundCategory_neutral:0.21830986
 soundCategory_player:0.34330985
 soundCategory_ambient:0.51584506
 soundCategory_voice:0.53521127
+soundCategory_ui:1.0
 modelPart_cape:true
 modelPart_jacket:true
 modelPart_left_sleeve:true

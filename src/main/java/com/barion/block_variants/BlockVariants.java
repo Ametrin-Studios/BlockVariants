@@ -40,7 +40,8 @@ public final class BlockVariants {
         event.createProvider(BVModelProvider::new);
         event.createProvider(BVRecipeProvider.Runner::new);
         event.createProvider(BVDataMapProvider::new);
-        event.createBlockAndItemTags(BVBlockTagsProvider::new, BVItemTagsProvider::new);
+        event.createProvider(BVBlockTagsProvider::new);
+        event.createProvider(BVItemTagsProvider::new);
         event.createProvider(CustomLootTableProvider.builder().addBlockProvider(BVBlockLootProvider::new)::build);
     }
 }

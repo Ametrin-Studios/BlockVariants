@@ -7,8 +7,10 @@ import com.barion.block_variants.registry.BVItems;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.data.tags.TagAppender;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
@@ -17,8 +19,8 @@ import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("unchecked")
 public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
-    public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> provider) {
-        super(packOutput, lookupProvider, provider, BlockVariants.MOD_ID);
+    public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(packOutput, lookupProvider, BlockVariants.MOD_ID);
     }
 
     {
@@ -38,17 +40,14 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
         runRules(BVItems.REGISTER);
-        copy(BlockTags.STAIRS, ItemTags.STAIRS);
-        copy(BlockTags.SLABS, ItemTags.SLABS);
-        copy(BlockTags.WALLS, ItemTags.WALLS);
-        copy(BlockTags.FENCES, ItemTags.FENCES);
-        copy(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES);
 
-        copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
-        copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
-        copy(BVTags.Blocks.WOODEN_WALLS, BVTags.Items.WOODEN_WALLS);
-        copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
-        copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);
+        new BVBlockItemTagsProvider(){
+
+            @Override
+            protected @NotNull TagAppender<Block, Block> tag(@NotNull TagKey<Block> blockTag, @NotNull TagKey<Item> itemTag) {
+                return new BlockToItemConverter(BVItemTagsProvider.this.tag(itemTag));
+            }
+        }.run();
 
         tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
 
