@@ -1,4 +1,4 @@
-// 1.21.5	2025-04-03T20:13:08.7917418	Tags for minecraft:item mod id block_variants
+// 1.21.5	2025-06-19T12:55:39.0548994	Tags for minecraft:item mod id block_variants
 079e7c87b6eb4a2909a8f54c6d340fc49b49c15a data/block_variants/tags/item/stone_crafting.json
 acbfdc5e74cb73bb89d95dd40224123cb8e1e235 data/block_variants/tags/item/wool/slabs.json
 671663a5c18418872454174ae867e276acb443d7 data/block_variants/tags/item/wool/stairs.json
@@ -10,7 +10,7 @@ c0fc731d5e6aa2aedcefe344fa7ec08238c6a5fc data/minecraft/tags/item/fences.json
 7f2074e89fd38e8e9ca743afc8d2a0919890e331 data/minecraft/tags/item/non_flammable_wood.json
 8d44a3346f3e5f04d40e7bfb134ac3b930ca9ea4 data/minecraft/tags/item/slabs.json
 22af6587a173551ae96c45aa8c474e47d954eb42 data/minecraft/tags/item/stairs.json
-ab372fc3594cbeb49108594aab70da38b1d77ddd data/minecraft/tags/item/walls.json
+9de6e80151464faf79c75f65bdaa42375ed897b4 data/minecraft/tags/item/walls.json
 785749556a8d40ea1a0c0c0174cbbe231ea487f7 data/minecraft/tags/item/wooden_fences.json
 85ca889bd613e381897782b813112cdfa0ee6829 data/minecraft/tags/item/wooden_slabs.json
 550c8695f31a062163edee251279497e0bbf0277 data/minecraft/tags/item/wooden_stairs.json

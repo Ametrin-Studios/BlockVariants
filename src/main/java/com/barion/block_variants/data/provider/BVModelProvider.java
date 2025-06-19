@@ -184,7 +184,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.familyWithExistingFullBlock(base).stairs(stair).slab(slab).wall(wall).fence(fence).fenceGate(gate);
     }
 
-    private static void woodStairsSlabWallFenceGate(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, Block doubleSlap, WallBlock wall, FenceBlock fence, FenceGateBlock gate) {
+    public static void woodStairsSlabWallFenceGate(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, Block doubleSlap, WallBlock wall, FenceBlock fence, FenceGateBlock gate) {
         blockModels.familyWithExistingFullBlock(base).stairs(stair).wall(wall).fence(fence).fenceGate(gate);
         customSlab(blockModels, slab, doubleSlap, new TextureMapping()
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(base))
@@ -200,11 +200,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
         customSlab(blockModels, slab, base, mapping);
     }
 
-    private static void stairsSlab(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab) {
-        blockModels.familyWithExistingFullBlock(base).stairs(stair).slab(slab);
-    }
-
-    private static void logStairsSlab(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab) {
+    public static void logStairsSlab(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab) {
         var mapping = logTextureMapping(base);
         customStairs(blockModels, stair, mapping);
         customSlab(blockModels, slab, base, mapping);
@@ -217,7 +213,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
         customWall(blockModels, wall, mapping);
     }
 
-    private static TextureMapping logTextureMapping(Block log) {
+    public static TextureMapping logTextureMapping(Block log) {
         return new TextureMapping()
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(log))
                 .put(TextureSlot.TOP, TextureMapping.getBlockTexture(log, "_top"))

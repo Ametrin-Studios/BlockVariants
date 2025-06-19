@@ -1,10 +1,7 @@
 package com.barion.block_variants;
 
 import com.ametrinstudios.ametrin.data.provider.CustomLootTableProvider;
-import com.barion.block_variants.data.provider.BVBlockTagsProvider;
-import com.barion.block_variants.data.provider.BVItemTagsProvider;
-import com.barion.block_variants.data.provider.BVModelProvider;
-import com.barion.block_variants.data.provider.BVRecipeProvider;
+import com.barion.block_variants.data.provider.*;
 import com.barion.block_variants.data.provider.loot_table.BVBlockLootProvider;
 import com.barion.block_variants.registry.BVBlocks;
 import com.barion.block_variants.registry.BVItems;
@@ -42,6 +39,7 @@ public final class BlockVariants {
     private static void gatherData(GatherDataEvent.Client event) {
         event.createProvider(BVModelProvider::new);
         event.createProvider(BVRecipeProvider.Runner::new);
+        event.createProvider(BVDataMapProvider::new);
         event.createBlockAndItemTags(BVBlockTagsProvider::new, BVItemTagsProvider::new);
         event.createProvider(CustomLootTableProvider.builder().addBlockProvider(BVBlockLootProvider::new)::build);
     }

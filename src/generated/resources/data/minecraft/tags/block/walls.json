@@ -103,6 +103,7 @@
     "block_variants:green_wool_wall",
     "block_variants:red_wool_wall",
     "block_variants:black_wool_wall",
-    "block_variants:packed_mud_wall"
+    "block_variants:packed_mud_wall",
+    "#c:wooden_walls"
   ]
 }

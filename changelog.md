@@ -1,7 +1,14 @@
+## 6.5.1
+- added `BVDataMapProvider`
+  - fixed some burn times (will replace burn time in item registration)
+- API changes
+
 ## 6.5
 - 1.21.5 port
+
 ## 6.4
 - Ametrin API compatibility
+
 ## 6.3
 * 1.21.4 port
 * Pale Oak variants no longer experimental

@@ -317,7 +317,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .pattern("#I#")
                     .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(output, recipeID(Blocks.PISTON));
-        } //Recipe overrides
+        } // Recipe overrides
     }
 
     private void all(StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting) {

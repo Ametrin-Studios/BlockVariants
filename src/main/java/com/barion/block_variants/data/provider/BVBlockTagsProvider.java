@@ -421,5 +421,7 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBlocks.CRYING_OBSIDIAN_SLAB.get(),
                 BVBlocks.CRYING_OBSIDIAN_WALL.get()
         );
+
+        tag(BlockTags.WALLS).addTag(BVTags.Blocks.WOODEN_WALLS);
     }
 }
