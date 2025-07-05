@@ -1,5 +1,6 @@
 ## 6.5.1
 - 1.21.7 port
+- furnace fuel fixes
 
 ## 6.5.0
 - 1.21.6 port
