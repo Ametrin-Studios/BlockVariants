@@ -24,14 +24,14 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
     }
 
     {
-        registerRule((item, name)-> {
-            if(!name.contains("wool")) return;
+        registerRule((item, name) -> {
+            if (!name.contains("wool")) return;
 
-            if(name.contains("stairs")) {
+            if (name.contains("stairs")) {
                 tag(BVTags.Items.WOOL_STAIRS).add(item);
-            } else if(name.contains("slab")) {
+            } else if (name.contains("slab")) {
                 tag(BVTags.Items.WOOL_SLABS).add(item);
-            } else if(name.contains("wall")) {
+            } else if (name.contains("wall")) {
                 tag(BVTags.Items.WOOL_WALLS).add(item);
             }
         });
@@ -41,7 +41,7 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
     protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
         runRules(BVItems.REGISTER);
 
-        new BVBlockItemTagsProvider(){
+        new BVBlockItemTagsProvider() {
 
             @Override
             protected @NotNull TagAppender<Block, Block> tag(@NotNull TagKey<Block> blockTag, @NotNull TagKey<Item> itemTag) {
@@ -52,18 +52,41 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
         tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
 
         tag(ItemTags.NON_FLAMMABLE_WOOD).add(
+                BVBlocks.CRIMSON_STEM_STAIRS.get().asItem(),
+                BVBlocks.CRIMSON_STEM_SLAB.get().asItem(),
+
+                BVBlocks.WARPED_STEM_STAIRS.get().asItem(),
+                BVBlocks.WARPED_STEM_SLAB.get().asItem(),
+
+                BVBlocks.STRIPPED_CRIMSON_STEM_STAIRS.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_STEM_SLAB.get().asItem(),
+
+                BVBlocks.STRIPPED_WARPED_STEM_STAIRS.get().asItem(),
+                BVBlocks.STRIPPED_WARPED_STEM_SLAB.get().asItem(),
+
                 BVBlocks.CRIMSON_HYPHAE_STAIRS.get().asItem(),
                 BVBlocks.CRIMSON_HYPHAE_SLAB.get().asItem(),
                 BVBlocks.CRIMSON_HYPHAE_WALL.get().asItem(),
+                BVBlocks.CRIMSON_HYPHAE_FENCE.get().asItem(),
+                BVBlocks.CRIMSON_HYPHAE_FENCE_GATE.get().asItem(),
+
                 BVBlocks.WARPED_HYPHAE_STAIRS.get().asItem(),
                 BVBlocks.WARPED_HYPHAE_SLAB.get().asItem(),
                 BVBlocks.WARPED_HYPHAE_WALL.get().asItem(),
-                BVBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.get().asItem(),
-                BVBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.get().asItem(),
-                BVBlocks.STRIPPED_WARPED_HYPHAE_SLAB.get().asItem(),
+                BVBlocks.WARPED_HYPHAE_FENCE.get().asItem(),
+                BVBlocks.WARPED_HYPHAE_FENCE_GATE.get().asItem(),
+
                 BVBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE.get().asItem(),
+                BVBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.get().asItem(),
+
                 BVBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.get().asItem(),
-                BVBlocks.STRIPPED_WARPED_HYPHAE_WALL.get().asItem()
+                BVBlocks.STRIPPED_WARPED_HYPHAE_SLAB.get().asItem(),
+                BVBlocks.STRIPPED_WARPED_HYPHAE_WALL.get().asItem(),
+                BVBlocks.STRIPPED_WARPED_HYPHAE_FENCE.get().asItem(),
+                BVBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.get().asItem()
         );
     }
 }

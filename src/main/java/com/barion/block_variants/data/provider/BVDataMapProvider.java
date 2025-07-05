@@ -1,6 +1,5 @@
 package com.barion.block_variants.data.provider;
 
-import com.barion.block_variants.registry.BVBlocks;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -21,8 +20,6 @@ public final class BVDataMapProvider extends DataMapProvider {
     protected void gather(@NotNull HolderLookup.Provider provider) {
         builder(NeoForgeDataMaps.FURNACE_FUELS)
                 .add(BVTags.Items.WOODEN_WALLS, new FurnaceFuel(AbstractFurnaceBlockEntity.BURN_TIME_STANDARD * 3 / 2), false)
-                .remove(BVBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.getId())
-                .remove(BVBlocks.NETHER_BRICK_FENCE_GATE.getId())
         ;
     }
 }

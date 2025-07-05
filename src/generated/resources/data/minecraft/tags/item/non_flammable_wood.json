@@ -1,16 +1,32 @@
 {
   "values": [
+    "block_variants:crimson_stem_stairs",
+    "block_variants:crimson_stem_slab",
+    "block_variants:warped_stem_stairs",
+    "block_variants:warped_stem_slab",
+    "block_variants:stripped_crimson_stem_stairs",
+    "block_variants:stripped_crimson_stem_slab",
+    "block_variants:stripped_warped_stem_stairs",
+    "block_variants:stripped_warped_stem_slab",
     "block_variants:crimson_hyphae_stairs",
     "block_variants:crimson_hyphae_slab",
     "block_variants:crimson_hyphae_wall",
+    "block_variants:crimson_hyphae_fence",
+    "block_variants:crimson_hyphae_fence_gate",
     "block_variants:warped_hyphae_stairs",
     "block_variants:warped_hyphae_slab",
     "block_variants:warped_hyphae_wall",
-    "block_variants:stripped_crimson_hyphae_wall",
-    "block_variants:stripped_crimson_hyphae_slab",
-    "block_variants:stripped_warped_hyphae_slab",
+    "block_variants:warped_hyphae_fence",
+    "block_variants:warped_hyphae_fence_gate",
     "block_variants:stripped_crimson_hyphae_stairs",
+    "block_variants:stripped_crimson_hyphae_slab",
+    "block_variants:stripped_crimson_hyphae_wall",
+    "block_variants:stripped_crimson_hyphae_fence",
+    "block_variants:stripped_crimson_hyphae_fence_gate",
     "block_variants:stripped_warped_hyphae_stairs",
-    "block_variants:stripped_warped_hyphae_wall"
+    "block_variants:stripped_warped_hyphae_slab",
+    "block_variants:stripped_warped_hyphae_wall",
+    "block_variants:stripped_warped_hyphae_fence",
+    "block_variants:stripped_warped_hyphae_fence_gate"
   ]
 }

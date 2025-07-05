@@ -31,6 +31,9 @@ public abstract class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvi
                 if (block instanceof FenceBlock) {
                     tag(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES).add(block);
                 }
+                if (block instanceof FenceBlock) {
+                    tag(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES).add(block);
+                }
             }
         });
     }

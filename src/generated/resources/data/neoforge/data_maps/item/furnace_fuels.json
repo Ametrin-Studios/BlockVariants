@@ -1,8 +1,4 @@
 {
-  "remove": [
-    "block_variants:cracked_nether_brick_fence_gate",
-    "block_variants:nether_brick_fence_gate"
-  ],
   "values": {
     "#c:wooden_walls": {
       "burn_time": 300
