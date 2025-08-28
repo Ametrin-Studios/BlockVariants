@@ -4193,5 +4193,11 @@
     },
     "done": true
   },
-  "DataVersion": 4438
+  "block_variants:recipes/misc/smelting/stone_wall": {
+    "criteria": {
+      "has_cobblestone_wall": "2025-08-28 11:03:59 +0200"
+    },
+    "done": true
+  },
+  "DataVersion": 4440
 }
