@@ -2003,12 +2003,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/chain": {
-    "criteria": {
-      "has_iron_ingot": "2021-12-30 20:51:22 +0100"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/iron_hoe": {
     "criteria": {
       "has_iron_ingot": "2021-12-30 20:51:22 +0100"
@@ -4199,5 +4193,5 @@
     },
     "done": true
   },
-  "DataVersion": 4440
+  "DataVersion": 4554
 }

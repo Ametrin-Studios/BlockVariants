@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.107'
+    id 'net.neoforged.moddev' version '2.0.110'
     id 'idea'
 }
 
@@ -73,7 +73,7 @@ configurations {
 }
 
 dependencies {
-    implementation "com.ametrinstudios:ametrin:1.21.7-${ametrin_version}"
+    implementation "com.ametrinstudios:ametrin:${minecraft_version}-${ametrin_version}"
 //    localRuntime "curse.maven:emi-580555:5497461"
 }
 
