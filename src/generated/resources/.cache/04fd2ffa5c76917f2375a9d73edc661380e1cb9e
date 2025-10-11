@@ -1,16 +1,19 @@
-// 1.21.10	2025-10-07T17:46:07.8106574	Tags for minecraft:block mod id block_variants
-fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/c/tags/block/fences.json
+// 1.21.10	2025-10-11T11:26:47.670264184	Tags for minecraft:block mod id block_variants
+e9884478f1bd8c89f5633f2541b40d466f9eeb2e data/block_variants/tags/block/wool/slabs.json
+fe89c51a774ad598e169fd72c7d12e4696915b8b data/block_variants/tags/block/wool/stairs.json
+24856b8268e63de06b2b339e9e224c113600432d data/block_variants/tags/block/wool/walls.json
 1cd2a942435ec4671ed7a4336f7b62f4e5520a5c data/c/tags/block/fence_gates.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/c/tags/block/fence_gates/wooden.json
+fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/c/tags/block/fences.json
 15aef73c588218e8b8b158e194bb026db6449365 data/c/tags/block/wooden_walls.json
-fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/minecraft/tags/block/fences.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/minecraft/tags/block/fence_gates.json
+fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/minecraft/tags/block/fences.json
 ee2a6562cab805d10a39b80266cad1d16657ebe8 data/minecraft/tags/block/mineable/axe.json
-a669a8f126d77ce8b44e8e3a7cfbe66b7cb8320d data/minecraft/tags/block/mineable/pickaxe.json
+7ac47f0939ba9f14e03850746dcf1c6714ab1070 data/minecraft/tags/block/mineable/pickaxe.json
 00920e4e06e35b9708a9d4d960c86df1b17297f3 data/minecraft/tags/block/needs_diamond_tool.json
-9b8fe905939bb590c67a4a343d5e0f6e2befab2d data/minecraft/tags/block/slabs.json
-429312194fc0f136420515802a91ab2ffd528c55 data/minecraft/tags/block/stairs.json
-3c35e349c0925b914c8d659db0f78036c93e3ba7 data/minecraft/tags/block/walls.json
+275464c1877df4229287baff966cc8cbf966ec42 data/minecraft/tags/block/slabs.json
+097a8a1711deddee8a355db25e1e11f79a5178e6 data/minecraft/tags/block/stairs.json
+f88b724b8eaf1fb558ac0c03d69d9a4a3e76d707 data/minecraft/tags/block/walls.json
 feeb0600998f692d2c4b2e36768bcdf5b215568b data/minecraft/tags/block/wooden_fences.json
 b0633c0a5f7f10cd415b61029df0b8eb1c52c581 data/minecraft/tags/block/wooden_slabs.json
 6bc66add1f6259ef27615fbb51c8841b19408b64 data/minecraft/tags/block/wooden_stairs.json

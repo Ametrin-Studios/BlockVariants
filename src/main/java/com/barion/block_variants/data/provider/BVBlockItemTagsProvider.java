@@ -1,7 +1,7 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockItemTagsProvider;
-import com.barion.block_variants.registry.BVBlocks;
+import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -36,11 +36,23 @@ public abstract class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvi
                 }
             }
         });
+
+        blockItemTagProviderRules.add((item, name) -> {
+            if (!name.contains("wool")) return;
+
+            if (name.contains("stairs")) {
+                tag(BVTags.Blocks.WOOL_STAIRS, BVTags.Items.WOOL_STAIRS).add(item);
+            } else if (name.contains("slab")) {
+                tag(BVTags.Blocks.WOOL_SLABS, BVTags.Items.WOOL_SLABS).add(item);
+            } else if (name.contains("wall")) {
+                tag(BVTags.Blocks.WOOL_WALLS, BVTags.Items.WOOL_WALLS).add(item);
+            }
+        });
     }
 
     @Override
     protected void run() {
-        runRules(BVBlocks.REGISTER);
+        runRules(BlockVariants.getAllBlocks());
 
         tag(BlockTags.WALLS, ItemTags.WALLS)
                 .addTag(BVTags.Blocks.WOODEN_WALLS)

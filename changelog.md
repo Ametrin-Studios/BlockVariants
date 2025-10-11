@@ -1,3 +1,8 @@
+## 6.6.0
+- added Concrete variants
+- moved colored blocks in the Colored Blocks creative tab
+- reordered colored blocks to match vanilla ordering
+
 ## 6.5.1
 - 1.21.7-10 port
 - furnace fuel fixes

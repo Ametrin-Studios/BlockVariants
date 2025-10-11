@@ -12,6 +12,10 @@ public final class BVTags {
     public static final class Blocks {
         public static final TagKey<Block> WOODEN_WALLS = common("wooden_walls");
 
+        public static final TagKey<Block> WOOL_STAIRS = mod("wool/stairs");
+        public static final TagKey<Block> WOOL_SLABS = mod("wool/slabs");
+        public static final TagKey<Block> WOOL_WALLS = mod("wool/walls");
+
         private static TagKey<Block> common(String path) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
         }

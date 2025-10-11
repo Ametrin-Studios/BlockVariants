@@ -1,7 +1,7 @@
 package com.barion.block_variants.data.provider.loot_table;
 
 import com.ametrinstudios.ametrin.data.provider.loot_table.ExtendedBlockLootSubProvider;
-import com.barion.block_variants.registry.BVBlocks;
+import com.barion.block_variants.BlockVariants;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
@@ -13,11 +13,11 @@ public final class BVBlockLootProvider extends ExtendedBlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(BVBlocks.getAllBlocks());
+        dropSelf(BlockVariants.getAllBlocks());
     }
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return BVBlocks.REGISTER.getEntries().stream().map(s -> (Block) s.get()).toList();
+        return BlockVariants.getAllBlocks().toList();
     }
 }

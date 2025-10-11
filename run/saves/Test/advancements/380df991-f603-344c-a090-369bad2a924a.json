@@ -4193,5 +4193,641 @@
     },
     "done": true
   },
+  "block_variants:recipes/decorations/white_concrete_wall": {
+    "criteria": {
+      "has_white_concrete": "2025-10-11 10:02:00 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/white_concrete_wall": {
+    "criteria": {
+      "has_white_concrete": "2025-10-11 10:02:00 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/white_concrete_stairs": {
+    "criteria": {
+      "has_white_concrete": "2025-10-11 10:02:00 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/white_concrete_slab": {
+    "criteria": {
+      "has_white_concrete": "2025-10-11 10:02:00 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/white_concrete_stairs": {
+    "criteria": {
+      "has_white_concrete": "2025-10-11 10:02:00 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/white_concrete_slab": {
+    "criteria": {
+      "has_white_concrete": "2025-10-11 10:02:00 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/light_gray_concrete_wall": {
+    "criteria": {
+      "has_light_gray_concrete": "2025-10-11 10:02:01 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/light_gray_concrete_slab": {
+    "criteria": {
+      "has_light_gray_concrete": "2025-10-11 10:02:01 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/light_gray_concrete_stairs": {
+    "criteria": {
+      "has_light_gray_concrete": "2025-10-11 10:02:01 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/light_gray_concrete_stairs": {
+    "criteria": {
+      "has_light_gray_concrete": "2025-10-11 10:02:01 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/light_gray_concrete_wall": {
+    "criteria": {
+      "has_light_gray_concrete": "2025-10-11 10:02:01 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/light_gray_concrete_slab": {
+    "criteria": {
+      "has_light_gray_concrete": "2025-10-11 10:02:01 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/gray_concrete_wall": {
+    "criteria": {
+      "has_gray_concrete": "2025-10-11 10:02:02 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/gray_concrete_stairs": {
+    "criteria": {
+      "has_gray_concrete": "2025-10-11 10:02:02 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/gray_concrete_slab": {
+    "criteria": {
+      "has_gray_concrete": "2025-10-11 10:02:02 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/gray_concrete_wall": {
+    "criteria": {
+      "has_gray_concrete": "2025-10-11 10:02:02 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/gray_concrete_stairs": {
+    "criteria": {
+      "has_gray_concrete": "2025-10-11 10:02:02 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/gray_concrete_slab": {
+    "criteria": {
+      "has_gray_concrete": "2025-10-11 10:02:02 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/brown_concrete_wall": {
+    "criteria": {
+      "has_brown_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/black_concrete_stairs": {
+    "criteria": {
+      "has_black_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/brown_concrete_stairs": {
+    "criteria": {
+      "has_brown_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/black_concrete_slab": {
+    "criteria": {
+      "has_black_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/black_concrete_slab": {
+    "criteria": {
+      "has_black_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/brown_concrete_wall": {
+    "criteria": {
+      "has_brown_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/brown_concrete_stairs": {
+    "criteria": {
+      "has_brown_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/black_concrete_wall": {
+    "criteria": {
+      "has_black_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/black_concrete_stairs": {
+    "criteria": {
+      "has_black_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/black_concrete_wall": {
+    "criteria": {
+      "has_black_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/brown_concrete_slab": {
+    "criteria": {
+      "has_brown_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/brown_concrete_slab": {
+    "criteria": {
+      "has_brown_concrete": "2025-10-11 10:02:03 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/red_concrete_wall": {
+    "criteria": {
+      "has_red_concrete": "2025-10-11 10:02:04 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/red_concrete_wall": {
+    "criteria": {
+      "has_red_concrete": "2025-10-11 10:02:04 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/red_concrete_slab": {
+    "criteria": {
+      "has_red_concrete": "2025-10-11 10:02:04 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/red_concrete_stairs": {
+    "criteria": {
+      "has_red_concrete": "2025-10-11 10:02:04 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/red_concrete_stairs": {
+    "criteria": {
+      "has_red_concrete": "2025-10-11 10:02:04 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/red_concrete_slab": {
+    "criteria": {
+      "has_red_concrete": "2025-10-11 10:02:04 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/orange_concrete_slab": {
+    "criteria": {
+      "has_orange_concrete": "2025-10-11 10:02:05 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/orange_concrete_stairs": {
+    "criteria": {
+      "has_orange_concrete": "2025-10-11 10:02:05 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/orange_concrete_wall": {
+    "criteria": {
+      "has_orange_concrete": "2025-10-11 10:02:05 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/orange_concrete_slab": {
+    "criteria": {
+      "has_orange_concrete": "2025-10-11 10:02:05 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/orange_concrete_stairs": {
+    "criteria": {
+      "has_orange_concrete": "2025-10-11 10:02:05 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/orange_concrete_wall": {
+    "criteria": {
+      "has_orange_concrete": "2025-10-11 10:02:05 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/yellow_concrete_wall": {
+    "criteria": {
+      "has_yellow_concrete": "2025-10-11 10:02:06 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/yellow_concrete_wall": {
+    "criteria": {
+      "has_yellow_concrete": "2025-10-11 10:02:06 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/yellow_concrete_stairs": {
+    "criteria": {
+      "has_yellow_concrete": "2025-10-11 10:02:06 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/yellow_concrete_slab": {
+    "criteria": {
+      "has_yellow_concrete": "2025-10-11 10:02:06 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/yellow_concrete_stairs": {
+    "criteria": {
+      "has_yellow_concrete": "2025-10-11 10:02:06 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/yellow_concrete_slab": {
+    "criteria": {
+      "has_yellow_concrete": "2025-10-11 10:02:06 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/lime_concrete_stairs": {
+    "criteria": {
+      "has_lime_concrete": "2025-10-11 10:02:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/lime_concrete_wall": {
+    "criteria": {
+      "has_lime_concrete": "2025-10-11 10:02:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/lime_concrete_slab": {
+    "criteria": {
+      "has_lime_concrete": "2025-10-11 10:02:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/lime_concrete_slab": {
+    "criteria": {
+      "has_lime_concrete": "2025-10-11 10:02:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/lime_concrete_wall": {
+    "criteria": {
+      "has_lime_concrete": "2025-10-11 10:02:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/lime_concrete_stairs": {
+    "criteria": {
+      "has_lime_concrete": "2025-10-11 10:02:07 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/green_concrete_wall": {
+    "criteria": {
+      "has_green_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/green_concrete_slab": {
+    "criteria": {
+      "has_green_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/green_concrete_slab": {
+    "criteria": {
+      "has_green_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/green_concrete_stairs": {
+    "criteria": {
+      "has_green_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/cyan_concrete_stairs": {
+    "criteria": {
+      "has_cyan_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/cyan_concrete_wall": {
+    "criteria": {
+      "has_cyan_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/cyan_concrete_slab": {
+    "criteria": {
+      "has_cyan_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/cyan_concrete_wall": {
+    "criteria": {
+      "has_cyan_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/green_concrete_stairs": {
+    "criteria": {
+      "has_green_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/green_concrete_wall": {
+    "criteria": {
+      "has_green_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/cyan_concrete_slab": {
+    "criteria": {
+      "has_cyan_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/cyan_concrete_stairs": {
+    "criteria": {
+      "has_cyan_concrete": "2025-10-11 10:02:55 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/blue_concrete_slab": {
+    "criteria": {
+      "has_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/light_blue_concrete_slab": {
+    "criteria": {
+      "has_light_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/blue_concrete_wall": {
+    "criteria": {
+      "has_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/light_blue_concrete_slab": {
+    "criteria": {
+      "has_light_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/light_blue_concrete_stairs": {
+    "criteria": {
+      "has_light_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/light_blue_concrete_wall": {
+    "criteria": {
+      "has_light_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/blue_concrete_stairs": {
+    "criteria": {
+      "has_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/light_blue_concrete_wall": {
+    "criteria": {
+      "has_light_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/blue_concrete_stairs": {
+    "criteria": {
+      "has_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/blue_concrete_wall": {
+    "criteria": {
+      "has_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/light_blue_concrete_stairs": {
+    "criteria": {
+      "has_light_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/blue_concrete_slab": {
+    "criteria": {
+      "has_blue_concrete": "2025-10-11 10:02:56 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/purple_concrete_stairs": {
+    "criteria": {
+      "has_purple_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/purple_concrete_slab": {
+    "criteria": {
+      "has_purple_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/magenta_concrete_slab": {
+    "criteria": {
+      "has_magenta_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/purple_concrete_wall": {
+    "criteria": {
+      "has_purple_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/magenta_concrete_stairs": {
+    "criteria": {
+      "has_magenta_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/magenta_concrete_slab": {
+    "criteria": {
+      "has_magenta_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/purple_concrete_wall": {
+    "criteria": {
+      "has_purple_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/magenta_concrete_stairs": {
+    "criteria": {
+      "has_magenta_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/purple_concrete_stairs": {
+    "criteria": {
+      "has_purple_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/magenta_concrete_wall": {
+    "criteria": {
+      "has_magenta_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/purple_concrete_slab": {
+    "criteria": {
+      "has_purple_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/magenta_concrete_wall": {
+    "criteria": {
+      "has_magenta_concrete": "2025-10-11 10:02:57 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/stonecutting/pink_concrete_wall": {
+    "criteria": {
+      "has_pink_concrete": "2025-10-11 10:02:58 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/pink_concrete_slab": {
+    "criteria": {
+      "has_pink_concrete": "2025-10-11 10:02:58 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/pink_concrete_stairs": {
+    "criteria": {
+      "has_pink_concrete": "2025-10-11 10:02:58 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/pink_concrete_stairs": {
+    "criteria": {
+      "has_pink_concrete": "2025-10-11 10:02:58 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/stonecutting/pink_concrete_slab": {
+    "criteria": {
+      "has_pink_concrete": "2025-10-11 10:02:58 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/pink_concrete_wall": {
+    "criteria": {
+      "has_pink_concrete": "2025-10-11 10:02:58 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/copper_nugget_from_smelting": {
+    "criteria": {
+      "has_copper_pickaxe": "2025-10-11 10:25:08 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/copper_nugget_from_blasting": {
+    "criteria": {
+      "has_copper_pickaxe": "2025-10-11 10:25:08 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/purple_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_purple_terracotta_stairs": "2025-10-11 11:27:47 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/orange_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_orange_terracotta_stairs": "2025-10-11 11:27:49 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/light_blue_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_light_blue_terracotta_stairs": "2025-10-11 11:27:49 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/red_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_red_terracotta_stairs": "2025-10-11 11:27:46 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/black_glazed_terracotta_slab": {
+    "criteria": {
+      "has_black_terracotta_slab": "2025-10-11 11:27:44 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/brown_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_brown_terracotta_stairs": "2025-10-11 11:27:46 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/lime_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_lime_terracotta_stairs": "2025-10-11 11:27:48 +0200"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/gray_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_gray_terracotta_stairs": "2025-10-11 11:27:48 +0200"
+    },
+    "done": true
+  },
   "DataVersion": 4556
 }
