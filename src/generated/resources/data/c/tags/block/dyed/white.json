@@ -1,0 +1,16 @@
+{
+  "values": [
+    "block_variants:white_wool_stairs",
+    "block_variants:white_wool_slab",
+    "block_variants:white_wool_wall",
+    "block_variants:white_terracotta_stairs",
+    "block_variants:white_terracotta_slab",
+    "block_variants:white_terracotta_wall",
+    "block_variants:white_concrete_stairs",
+    "block_variants:white_concrete_slab",
+    "block_variants:white_concrete_wall",
+    "block_variants:white_glazed_terracotta_stairs",
+    "block_variants:white_glazed_terracotta_slab",
+    "block_variants:white_glazed_terracotta_wall"
+  ]
+}

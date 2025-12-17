@@ -1,0 +1,16 @@
+{
+  "values": [
+    "block_variants:light_blue_wool_stairs",
+    "block_variants:light_blue_wool_slab",
+    "block_variants:light_blue_wool_wall",
+    "block_variants:light_blue_terracotta_stairs",
+    "block_variants:light_blue_terracotta_slab",
+    "block_variants:light_blue_terracotta_wall",
+    "block_variants:light_blue_concrete_stairs",
+    "block_variants:light_blue_concrete_slab",
+    "block_variants:light_blue_concrete_wall",
+    "block_variants:light_blue_glazed_terracotta_stairs",
+    "block_variants:light_blue_glazed_terracotta_slab",
+    "block_variants:light_blue_glazed_terracotta_wall"
+  ]
+}

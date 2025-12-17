@@ -11,6 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.copyProperties;
 import static com.barion.block_variants.registry.BVBuildingBlocks.DEFAULT_ITEM_PROPERTIES;
@@ -286,15 +287,15 @@ public final class BVColoredBlocks {
 
 
     private static DeferredBlock<StairBlock> regTerracottaStairs(DyeColor color, Block base) {
-        return register(color.getName() + "_terracotta_stairs", prop -> new StairBlock(base.defaultBlockState(), prop), copyProperties(base));
+        return register(color.getName() + "_terracotta_stairs", prop -> new StairBlock(base.defaultBlockState(), prop), ()-> copyProperties(base));
     }
 
     private static DeferredBlock<SlabBlock> regTerracottaSlab(DyeColor color) {
-        return register(color.getName() + "_terracotta_slab", SlabBlock::new, copyProperties(Blocks.TERRACOTTA));
+        return register(color.getName() + "_terracotta_slab", SlabBlock::new, ()-> copyProperties(Blocks.TERRACOTTA));
     }
 
     private static DeferredBlock<WallBlock> regTerracottaWall(DyeColor color) {
-        return register(color.getName() + "_terracotta_wall", WallBlock::new, copyProperties(Blocks.TERRACOTTA));
+        return register(color.getName() + "_terracotta_wall", WallBlock::new, ()-> copyProperties(Blocks.TERRACOTTA));
     }
 
     private static DeferredBlock<StairBlock> regGlazedTerracottaStairs(DyeColor color) {
@@ -343,18 +344,18 @@ public final class BVColoredBlocks {
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base) {
-        return register(name, prop -> block.apply(base.defaultBlockState(), prop), copyProperties(base));
+        return register(name, prop -> block.apply(base.defaultBlockState(), prop), ()-> copyProperties(base));
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base) {
-        return register(name, block, copyProperties(base));
+        return register(name, block, ()-> copyProperties(base));
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour.Properties properties) {
-        return register(name, block, properties, DEFAULT_ITEM_PROPERTIES);
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
+        return register(name, block, properties, () -> DEFAULT_ITEM_PROPERTIES);
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour.Properties properties, Item.Properties itemProperties) {
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties, Supplier<Item.Properties> itemProperties) {
         var registryObject = REGISTER.registerBlock(name, block, properties);
         BVItems.REGISTER.registerSimpleBlockItem(registryObject, itemProperties);
         return registryObject;

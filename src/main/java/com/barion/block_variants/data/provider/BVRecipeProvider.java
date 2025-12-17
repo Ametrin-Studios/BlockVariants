@@ -10,21 +10,20 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public final class BVRecipeProvider extends ExtendedRecipeProvider {
-    public BVRecipeProvider(HolderLookup.Provider registries, RecipeOutput output, Set<ResourceLocation> recipeSet) {
+    public BVRecipeProvider(HolderLookup.Provider registries, RecipeOutput output, Set<Identifier> recipeSet) {
         super(BlockVariants.MOD_ID, registries, output, recipeSet);
     }
 
@@ -368,7 +367,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
     }
 
     private static ResourceKey<Recipe<?>> recipeID(ItemLike item) {
-        return ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(BlockVariants.MOD_ID, getItemName(item)));
+        return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(BlockVariants.MOD_ID, getItemName(item)));
     }
 
     public static class Runner extends ExtendedRecipeProvider.Runner {
@@ -378,11 +377,11 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         }
 
         @Override
-        protected ExtendedRecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput, Set<ResourceLocation> set) {
+        protected ExtendedRecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput, Set<Identifier> set) {
             return new BVRecipeProvider(provider, recipeOutput, set);
         }
 
-        @Override @NotNull
+        @Override 
         public String getName() {
             return "Block Variants Recipe Provider";
         }

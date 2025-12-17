@@ -1,7 +1,7 @@
 package com.barion.block_variants.registry;
 
 import com.barion.block_variants.BlockVariants;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -17,7 +17,7 @@ public final class BVTags {
         public static final TagKey<Block> WOOL_WALLS = mod("wool/walls");
 
         private static TagKey<Block> common(String path) {
-            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
+            return BlockTags.create(Identifier.fromNamespaceAndPath("c", path));
         }
 
         private static TagKey<Block> mod(String path) {
@@ -33,7 +33,7 @@ public final class BVTags {
         public static final TagKey<Item> WOOL_WALLS = mod("wool/walls");
 
         private static TagKey<Item> common(String path) {
-            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
+            return ItemTags.create(Identifier.fromNamespaceAndPath("c", path));
         }
 
         private static TagKey<Item> mod(String path) {

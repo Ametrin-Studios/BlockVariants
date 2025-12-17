@@ -1,0 +1,16 @@
+{
+  "values": [
+    "block_variants:green_wool_stairs",
+    "block_variants:green_wool_slab",
+    "block_variants:green_wool_wall",
+    "block_variants:green_terracotta_stairs",
+    "block_variants:green_terracotta_slab",
+    "block_variants:green_terracotta_wall",
+    "block_variants:green_concrete_stairs",
+    "block_variants:green_concrete_slab",
+    "block_variants:green_concrete_wall",
+    "block_variants:green_glazed_terracotta_stairs",
+    "block_variants:green_glazed_terracotta_slab",
+    "block_variants:green_glazed_terracotta_wall"
+  ]
+}

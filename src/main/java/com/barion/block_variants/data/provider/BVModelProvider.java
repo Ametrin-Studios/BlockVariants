@@ -11,9 +11,8 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.*;
-import org.jetbrains.annotations.NotNull;
 
 public final class BVModelProvider extends ExtendedModelProvider {
     public BVModelProvider(PackOutput output) {
@@ -21,23 +20,23 @@ public final class BVModelProvider extends ExtendedModelProvider {
     }
 
     @Override
-    protected void registerModels(@NotNull BlockModelGenerators blockModels, @NotNull ItemModelGenerators itemModels) {
+    protected void registerModels( BlockModelGenerators blockModels,  ItemModelGenerators itemModels) {
         blockModels.familyWithExistingFullBlock(Blocks.POLISHED_GRANITE).wall(BVBuildingBlocks.POLISHED_GRANITE_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.POLISHED_DIORITE).wall(BVBuildingBlocks.POLISHED_DIORITE_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.POLISHED_ANDESITE).wall(BVBuildingBlocks.POLISHED_ANDESITE_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.STONE).wall(BVBuildingBlocks.STONE_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_STONE).wall(BVBuildingBlocks.SMOOTH_STONE_WALL.get());
-        customStairs(blockModels, BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, ResourceLocation.withDefaultNamespace("block/smooth_stone_slab_side")));
+        customStairs(blockModels, BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")));
 
         blockModels.familyWithExistingFullBlock(Blocks.CUT_SANDSTONE).wall(BVBuildingBlocks.CUT_SANDSTONE_WALL.get());
         customStairs(blockModels, BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE));
         blockModels.familyWithExistingFullBlock(Blocks.CUT_RED_SANDSTONE).wall(BVBuildingBlocks.CUT_RED_SANDSTONE_WALL.get());
         customStairs(blockModels, BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE));
 
-        customWall(blockModels, BVBuildingBlocks.QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, ResourceLocation.withDefaultNamespace("block/quartz_block_top")));
+        customWall(blockModels, BVBuildingBlocks.QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, Identifier.withDefaultNamespace("block/quartz_block_top")));
         blockModels.familyWithExistingFullBlock(Blocks.QUARTZ_BRICKS).stairs(BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get()).slab(BVBuildingBlocks.QUARTZ_BRICK_SLAB.get()).wall(BVBuildingBlocks.QUARTZ_BRICK_WALL.get());
-        customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, ResourceLocation.withDefaultNamespace("block/quartz_block_bottom")));
+        customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, Identifier.withDefaultNamespace("block/quartz_block_bottom")));
         blockModels.familyWithExistingFullBlock(Blocks.CHISELED_QUARTZ_BLOCK).stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get()).slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get()).wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.PRISMARINE_BRICKS).wall(BVBuildingBlocks.PRISMARINE_BRICK_WALL.get());
@@ -273,7 +272,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
         var lowModel = ModelTemplates.WALL_LOW_SIDE.create(wallBlock, mapping, blockModels.modelOutput);
         var tallModel = ModelTemplates.WALL_TALL_SIDE.create(wallBlock, mapping, blockModels.modelOutput);
         blockModels.blockStateOutput.accept(BlockModelGenerators.createWall(wallBlock, BlockModelGenerators.plainVariant(postModel), BlockModelGenerators.plainVariant(lowModel), BlockModelGenerators.plainVariant(tallModel)));
-        ResourceLocation inventoryModel = ModelTemplates.WALL_INVENTORY.create(wallBlock, mapping, blockModels.modelOutput);
+        Identifier inventoryModel = ModelTemplates.WALL_INVENTORY.create(wallBlock, mapping, blockModels.modelOutput);
         blockModels.registerSimpleItemModel(wallBlock, inventoryModel);
     }
 }

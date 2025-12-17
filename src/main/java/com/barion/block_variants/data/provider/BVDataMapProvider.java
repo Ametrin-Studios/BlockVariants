@@ -9,7 +9,6 @@ import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.neoforged.neoforge.registries.datamaps.builtin.Strippable;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,7 +18,7 @@ public final class BVDataMapProvider extends DataMapProvider {
     }
 
     @Override
-    protected void gather(@NotNull HolderLookup.Provider provider) {
+    protected void gather( HolderLookup.Provider provider) {
         builder(NeoForgeDataMaps.FURNACE_FUELS)
                 .add(BVTags.Items.WOODEN_WALLS, new FurnaceFuel(AbstractFurnaceBlockEntity.BURN_TIME_STANDARD * 3 / 2), false)
         ;

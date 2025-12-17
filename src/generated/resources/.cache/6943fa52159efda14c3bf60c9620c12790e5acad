@@ -1,12 +1,29 @@
-// 1.21.10	2025-10-11T11:26:47.666701368	Tags for minecraft:item mod id block_variants
+// 1.21.11	2025-12-17T08:47:49.133598083	Tags for minecraft:item mod id block_variants
 079e7c87b6eb4a2909a8f54c6d340fc49b49c15a data/block_variants/tags/item/stone_crafting.json
 e9884478f1bd8c89f5633f2541b40d466f9eeb2e data/block_variants/tags/item/wool/slabs.json
 fe89c51a774ad598e169fd72c7d12e4696915b8b data/block_variants/tags/item/wool/stairs.json
 24856b8268e63de06b2b339e9e224c113600432d data/block_variants/tags/item/wool/walls.json
+e72a04f7c29f2f56561a1a385427099e8ef4d0f5 data/c/tags/item/dyed/black.json
+f9a90cb99451c44d9153ae38ddfb9e8abedc514a data/c/tags/item/dyed/blue.json
+cafd0fb2e0f3d6dc660805d3876f9f39fdc881ac data/c/tags/item/dyed/brown.json
+2bdad442f413e72aaf39bb884c0c0fa09f520314 data/c/tags/item/dyed/cyan.json
+5e4b3411268de3e7bedaea3b8c10b8ed730b6c84 data/c/tags/item/dyed/gray.json
+28348bd72fd5f702664ccaffba93f6f400d78c90 data/c/tags/item/dyed/green.json
+52f23fe3489466787ad441681d709facbbab7f63 data/c/tags/item/dyed/light_blue.json
+c31eea517de756d18fd7d5c7347f9ee33d9f3d8c data/c/tags/item/dyed/light_gray.json
+c6f577a51775e4b70ec9ca1391626451e858c56d data/c/tags/item/dyed/lime.json
+1634c0ebe9e102db41858956094a162f851669c9 data/c/tags/item/dyed/magenta.json
+0721ce2b7065ea439c88655ac4fdadda776f78aa data/c/tags/item/dyed/orange.json
+32942bf5760842631fc2cc22d99e451b02947393 data/c/tags/item/dyed/pink.json
+51f4a7b45b07ba169406b61752ed90b1569334bf data/c/tags/item/dyed/purple.json
+548923d4440aa5f8b5c959e58327f17250fe202b data/c/tags/item/dyed/red.json
+989213f121e690427c6894bfffe18e2460602db8 data/c/tags/item/dyed/white.json
+73059734a22751f5b91e536f3f226ba33ebfaf58 data/c/tags/item/dyed/yellow.json
 1cd2a942435ec4671ed7a4336f7b62f4e5520a5c data/c/tags/item/fence_gates.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/c/tags/item/fence_gates/wooden.json
 fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/c/tags/item/fences.json
 15aef73c588218e8b8b158e194bb026db6449365 data/c/tags/item/wooden_walls.json
+12c6ce296aa6c7767d2250ee4c471bf3b587c988 data/minecraft/tags/item/dampens_vibrations.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/minecraft/tags/item/fence_gates.json
 fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/minecraft/tags/item/fences.json
 cbea610e69c2c0121f0b08936017c564e02c47b4 data/minecraft/tags/item/non_flammable_wood.json

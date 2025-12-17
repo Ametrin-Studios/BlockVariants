@@ -13,7 +13,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,13 +23,13 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
     }
 
     @Override
-    protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
+    protected void addTags( HolderLookup.Provider lookupProvider) {
         runRules(BVItems.REGISTER);
 
         new BVBlockItemTagsProvider() {
 
             @Override
-            protected @NotNull TagAppender<Block, Block> tag(@NotNull TagKey<Block> blockTag, @NotNull TagKey<Item> itemTag) {
+            protected  TagAppender<Block, Block> tag( TagKey<Block> blockTag,  TagKey<Item> itemTag) {
                 return new BlockToItemConverter(BVItemTagsProvider.this.tag(itemTag));
             }
         }.run();

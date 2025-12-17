@@ -11,22 +11,27 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
 public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider, BlockVariants.MOD_ID);
+
+        blockTagProviderRules.add((block, name) -> {
+            if (name.contains("wool")) {
+                tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(block);
+            }
+        });
     }
 
     @Override
-    protected void addTags(@NotNull HolderLookup.Provider holderLookup) {
+    protected void addTags(HolderLookup.Provider holderLookup) {
         runRules(BlockVariants.getAllBlocks());
 
         new BVBlockItemTagsProvider() {
             @Override
-            protected @NotNull TagAppender<Block, Block> tag(@NotNull TagKey<Block> blockTag, @NotNull TagKey<Item> itemTag) {
+            protected TagAppender<Block, Block> tag(TagKey<Block> blockTag, TagKey<Item> itemTag) {
                 return BVBlockTagsProvider.this.tag(blockTag);
             }
         }.run();
@@ -267,6 +272,23 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVColoredBlocks.BLACK_CONCRETE_STAIRS.get(),
                     BVColoredBlocks.BLACK_CONCRETE_SLAB.get(),
                     BVColoredBlocks.BLACK_CONCRETE_WALL.get()
+            ).remove( // minecraft:walls seems to be part of mineable with pickaxe
+                    BVColoredBlocks.WHITE_WOOL_WALL.get(),
+                    BVColoredBlocks.LIGHT_GRAY_WOOL_WALL.get(),
+                    BVColoredBlocks.GRAY_WOOL_WALL.get(),
+                    BVColoredBlocks.BLACK_WOOL_WALL.get(),
+                    BVColoredBlocks.BROWN_WOOL_WALL.get(),
+                    BVColoredBlocks.RED_WOOL_WALL.get(),
+                    BVColoredBlocks.ORANGE_WOOL_WALL.get(),
+                    BVColoredBlocks.YELLOW_WOOL_WALL.get(),
+                    BVColoredBlocks.LIME_WOOL_WALL.get(),
+                    BVColoredBlocks.GREEN_WOOL_WALL.get(),
+                    BVColoredBlocks.CYAN_WOOL_WALL.get(),
+                    BVColoredBlocks.LIGHT_BLUE_WOOL_WALL.get(),
+                    BVColoredBlocks.BLUE_WOOL_WALL.get(),
+                    BVColoredBlocks.PURPLE_WOOL_WALL.get(),
+                    BVColoredBlocks.MAGENTA_WOOL_WALL.get(),
+                    BVColoredBlocks.PINK_WOOL_WALL.get()
             );
         } // needs Pickaxe
 
@@ -451,6 +473,24 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                 BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get(),
                 BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get(),
                 BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get()
+        );
+
+        tag(BlockTags.CRYSTAL_SOUND_BLOCKS).add(
+                BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_WALL.get()
+        );
+
+        tag(BlockTags.VIBRATION_RESONATORS).add(
+                BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_WALL.get()
+        );
+
+        tag(BlockTags.DRAGON_IMMUNE).add(
+                BVBuildingBlocks.END_STONE_STAIRS.get(),
+                BVBuildingBlocks.END_STONE_SLAB.get(),
+                BVBuildingBlocks.END_STONE_WALL.get()
         );
     }
 }
