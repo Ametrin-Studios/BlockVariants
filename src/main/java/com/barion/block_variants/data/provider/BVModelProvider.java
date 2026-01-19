@@ -201,9 +201,9 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.familyWithExistingFullBlock(base).stairs(stair).slab(slab).wall(wall).fence(fence).fenceGate(gate);
     }
 
-    public static void woodStairsSlabWallFenceGate(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, Block doubleSlap, WallBlock wall, FenceBlock fence, FenceGateBlock gate) {
+    public static void woodStairsSlabWallFenceGate(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, Block doubleSlab, WallBlock wall, FenceBlock fence, FenceGateBlock gate) {
         blockModels.familyWithExistingFullBlock(base).stairs(stair).wall(wall).fence(fence).fenceGate(gate);
-        customSlab(blockModels, slab, doubleSlap, new TextureMapping()
+        customSlab(blockModels, slab, doubleSlab, new TextureMapping()
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(base))
                 .put(TextureSlot.TOP, TextureMapping.getBlockTexture(base))
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(base))
@@ -274,5 +274,21 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.blockStateOutput.accept(BlockModelGenerators.createWall(wallBlock, BlockModelGenerators.plainVariant(postModel), BlockModelGenerators.plainVariant(lowModel), BlockModelGenerators.plainVariant(tallModel)));
         Identifier inventoryModel = ModelTemplates.WALL_INVENTORY.create(wallBlock, mapping, blockModels.modelOutput);
         blockModels.registerSimpleItemModel(wallBlock, inventoryModel);
+    }
+
+    public static void customFence(BlockModelGenerators blockModels, Block fenceBlock, TextureMapping mapping) {
+        var post = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_POST.create(fenceBlock, mapping, blockModels.modelOutput));
+        var side = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_SIDE.create(fenceBlock, mapping, blockModels.modelOutput));
+        blockModels.blockStateOutput.accept(BlockModelGenerators.createFence(fenceBlock, post, side));
+        var identifier = ModelTemplates.FENCE_INVENTORY.create(fenceBlock, mapping, blockModels.modelOutput);
+        blockModels.registerSimpleItemModel(fenceBlock, identifier);
+    }
+
+    public static void customFenceGate(BlockModelGenerators blockModels, Block fenceGateBlock, TextureMapping mapping) {
+        var open = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_OPEN.create(fenceGateBlock, mapping, blockModels.modelOutput));
+        var closed = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_CLOSED.create(fenceGateBlock, mapping, blockModels.modelOutput));
+        var wall_open = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_WALL_OPEN.create(fenceGateBlock, mapping, blockModels.modelOutput));
+        var wall_closed = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_WALL_CLOSED.create(fenceGateBlock, mapping, blockModels.modelOutput));
+        blockModels.blockStateOutput.accept(BlockModelGenerators.createFenceGate(fenceGateBlock, open, closed, wall_open, wall_closed, true));
     }
 }
