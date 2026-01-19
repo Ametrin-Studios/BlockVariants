@@ -242,6 +242,7 @@
     "block_variants:red_concrete_wall",
     "block_variants:black_concrete_stairs",
     "block_variants:black_concrete_slab",
-    "block_variants:black_concrete_wall"
+    "block_variants:black_concrete_wall",
+    "block_variants:gold_grate"
   ]
 }

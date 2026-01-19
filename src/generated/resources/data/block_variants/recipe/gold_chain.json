@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:gold_ingot",
+    "N": "minecraft:gold_nugget"
+  },
+  "pattern": [
+    "N",
+    "I",
+    "N"
+  ],
+  "result": {
+    "count": 1,
+    "id": "block_variants:gold_chain"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21.11	2025-12-17T08:47:49.133598083	Tags for minecraft:item mod id block_variants
+// 1.21.11	2026-01-19T15:37:35.347256232	Tags for minecraft:item mod id block_variants
 079e7c87b6eb4a2909a8f54c6d340fc49b49c15a data/block_variants/tags/item/stone_crafting.json
 e9884478f1bd8c89f5633f2541b40d466f9eeb2e data/block_variants/tags/item/wool/slabs.json
 fe89c51a774ad598e169fd72c7d12e4696915b8b data/block_variants/tags/item/wool/stairs.json
@@ -23,10 +23,13 @@ c6f577a51775e4b70ec9ca1391626451e858c56d data/c/tags/item/dyed/lime.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/c/tags/item/fence_gates/wooden.json
 fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/c/tags/item/fences.json
 15aef73c588218e8b8b158e194bb026db6449365 data/c/tags/item/wooden_walls.json
+96721c84977223164fa102e8cf6adb4f11800b59 data/minecraft/tags/item/bars.json
+beb76012054f0dfed6d52f64dc4174fa2a712013 data/minecraft/tags/item/chains.json
 12c6ce296aa6c7767d2250ee4c471bf3b587c988 data/minecraft/tags/item/dampens_vibrations.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/minecraft/tags/item/fence_gates.json
 fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/minecraft/tags/item/fences.json
 cbea610e69c2c0121f0b08936017c564e02c47b4 data/minecraft/tags/item/non_flammable_wood.json
+7964d48993b01425f4ae92e046bcb3b3e0051b75 data/minecraft/tags/item/piglin_loved.json
 275464c1877df4229287baff966cc8cbf966ec42 data/minecraft/tags/item/slabs.json
 097a8a1711deddee8a355db25e1e11f79a5178e6 data/minecraft/tags/item/stairs.json
 f88b724b8eaf1fb558ac0c03d69d9a4a3e76d707 data/minecraft/tags/item/walls.json

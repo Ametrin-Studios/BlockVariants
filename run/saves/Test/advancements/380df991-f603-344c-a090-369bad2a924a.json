@@ -4865,5 +4865,305 @@
     },
     "done": true
   },
+  "minecraft:recipes/misc/gold_ingot_from_gold_block": {
+    "criteria": {
+      "has_gold_block": "2026-01-19 14:06:03 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/waxed_copper_bars_from_honeycomb": {
+    "criteria": {
+      "has_copper_bars": "2026-01-19 14:24:20 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/copper_torch": {
+    "criteria": {
+      "has_copper_nugget": "2026-01-19 14:25:15 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/copper_chain": {
+    "criteria": {
+      "has_copper_nugget": "2026-01-19 14:25:15 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/copper_ingot_from_nuggets": {
+    "criteria": {
+      "has_copper_nugget": "2026-01-19 14:25:15 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_ingot_from_nuggets": {
+    "criteria": {
+      "has_gold_nugget": "2026-01-19 14:25:18 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/golden_carrot": {
+    "criteria": {
+      "has_gold_nugget": "2026-01-19 14:25:18 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/iron_chain": {
+    "criteria": {
+      "has_iron_nugget": "2026-01-19 14:25:20 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_ingot_from_nuggets": {
+    "criteria": {
+      "has_iron_nugget": "2026-01-19 14:25:20 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/lightning_rod": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/copper_chestplate": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/copper_sword": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/copper_leggings": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/copper_trapdoor": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/copper_block": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/copper_nugget": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/copper_helmet": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/brush": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/copper_boots": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/copper_shovel": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/copper_door": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/copper_pickaxe": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/copper_axe": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/copper_bars": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/copper_hoe": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/copper_spear": {
+    "criteria": {
+      "has_copper_ingot": "2026-01-19 14:25:32 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/lodestone": {
+    "criteria": {
+      "has_iron_ingot": "2026-01-19 14:25:34 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_spear": {
+    "criteria": {
+      "has_iron_ingot": "2026-01-19 14:25:34 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_spear": {
+    "criteria": {
+      "has_gold_ingot": "2026-01-19 14:25:36 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/gold_bars": {
+    "criteria": {
+      "has_gold_ingot": "2026-01-19 14:29:43 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/decorations/gold_chain": {
+    "criteria": {
+      "has_gold_nugget": "2026-01-19 15:01:47 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/waxed_copper_chain_from_honeycomb": {
+    "criteria": {
+      "has_copper_chain": "2026-01-19 15:20:32 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/building_blocks/gold_grate": {
+    "criteria": {
+      "has_gold_block": "2026-01-19 15:38:46 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2026-01-19 15:38:59 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/cherry_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/bamboo_raft": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/pale_oak_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2026-01-19 15:39:19 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/light_gray_glazed_terracotta_wall": {
+    "criteria": {
+      "has_light_gray_terracotta_wall": "2026-01-19 16:01:46 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/light_blue_glazed_terracotta_wall": {
+    "criteria": {
+      "has_light_blue_terracotta_wall": "2026-01-19 16:01:45 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/cyan_glazed_terracotta_slab": {
+    "criteria": {
+      "has_cyan_terracotta_slab": "2026-01-19 16:01:47 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/green_glazed_terracotta_stairs": {
+    "criteria": {
+      "has_green_terracotta_stairs": "2026-01-19 16:01:48 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/yellow_glazed_terracotta_wall": {
+    "criteria": {
+      "has_yellow_terracotta_wall": "2026-01-19 16:01:45 +0100"
+    },
+    "done": true
+  },
+  "block_variants:recipes/misc/smelting/blue_glazed_terracotta_slab": {
+    "criteria": {
+      "has_blue_terracotta_slab": "2026-01-19 16:01:47 +0100"
+    },
+    "done": true
+  },
   "DataVersion": 4671
 }

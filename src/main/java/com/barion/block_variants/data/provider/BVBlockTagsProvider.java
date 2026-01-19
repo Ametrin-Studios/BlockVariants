@@ -4,6 +4,7 @@ import com.ametrinstudios.ametrin.data.provider.ExtendedBlockTagsProvider;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
+import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagAppender;
@@ -271,7 +272,9 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVColoredBlocks.RED_CONCRETE_WALL.get(),
                     BVColoredBlocks.BLACK_CONCRETE_STAIRS.get(),
                     BVColoredBlocks.BLACK_CONCRETE_SLAB.get(),
-                    BVColoredBlocks.BLACK_CONCRETE_WALL.get()
+                    BVColoredBlocks.BLACK_CONCRETE_WALL.get(),
+
+                    BVOtherBlocks.GOLD_GRATE.get()
             ).remove( // minecraft:walls seems to be part of mineable with pickaxe
                     BVColoredBlocks.WHITE_WOOL_WALL.get(),
                     BVColoredBlocks.LIGHT_GRAY_WOOL_WALL.get(),
@@ -465,6 +468,12 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.get()
             );
         } // needs Axe
+
+        tag(BlockTags.NEEDS_IRON_TOOL).add(
+                BVOtherBlocks.GOLD_BARS.get(),
+                BVOtherBlocks.GOLD_CHAIN.get(),
+                BVOtherBlocks.GOLD_GRATE.get()
+        );
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 BVBuildingBlocks.OBSIDIAN_STAIRS.get(),

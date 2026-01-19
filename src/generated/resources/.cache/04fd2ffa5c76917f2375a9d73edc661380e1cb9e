@@ -1,4 +1,4 @@
-// 1.21.11	2025-12-17T09:15:25.071931576	Tags for minecraft:block mod id block_variants
+// 1.21.11	2026-01-19T15:37:35.360907294	Tags for minecraft:block mod id block_variants
 e9884478f1bd8c89f5633f2541b40d466f9eeb2e data/block_variants/tags/block/wool/slabs.json
 fe89c51a774ad598e169fd72c7d12e4696915b8b data/block_variants/tags/block/wool/stairs.json
 24856b8268e63de06b2b339e9e224c113600432d data/block_variants/tags/block/wool/walls.json
@@ -22,14 +22,17 @@ c6f577a51775e4b70ec9ca1391626451e858c56d data/c/tags/block/dyed/lime.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/c/tags/block/fence_gates/wooden.json
 fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/c/tags/block/fences.json
 15aef73c588218e8b8b158e194bb026db6449365 data/c/tags/block/wooden_walls.json
+96721c84977223164fa102e8cf6adb4f11800b59 data/minecraft/tags/block/bars.json
+beb76012054f0dfed6d52f64dc4174fa2a712013 data/minecraft/tags/block/chains.json
 eaa4a71252b59d7a02b7c38ce0ae2efc7c5fb779 data/minecraft/tags/block/crystal_sound_blocks.json
 12c6ce296aa6c7767d2250ee4c471bf3b587c988 data/minecraft/tags/block/dampens_vibrations.json
 e343254d8db1ccf8c7a1473a8bbfcf225818de6c data/minecraft/tags/block/dragon_immune.json
 7353366566e7c46c092108ceefcc49725a7f52fd data/minecraft/tags/block/fence_gates.json
 fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/minecraft/tags/block/fences.json
 ee2a6562cab805d10a39b80266cad1d16657ebe8 data/minecraft/tags/block/mineable/axe.json
-ed234c21487590167fe41da09291ab5bdd2cc159 data/minecraft/tags/block/mineable/pickaxe.json
+0c93d06884912a7c575b392f7a4997fee5eefd49 data/minecraft/tags/block/mineable/pickaxe.json
 00920e4e06e35b9708a9d4d960c86df1b17297f3 data/minecraft/tags/block/needs_diamond_tool.json
+7964d48993b01425f4ae92e046bcb3b3e0051b75 data/minecraft/tags/block/needs_iron_tool.json
 12c6ce296aa6c7767d2250ee4c471bf3b587c988 data/minecraft/tags/block/occludes_vibration_signals.json
 275464c1877df4229287baff966cc8cbf966ec42 data/minecraft/tags/block/slabs.json
 097a8a1711deddee8a355db25e1e11f79a5178e6 data/minecraft/tags/block/stairs.json

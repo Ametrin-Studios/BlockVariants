@@ -4,12 +4,10 @@ import com.ametrinstudios.ametrin.data.provider.ExtendedModelProvider;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
+import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.*;
@@ -20,7 +18,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
     }
 
     @Override
-    protected void registerModels( BlockModelGenerators blockModels,  ItemModelGenerators itemModels) {
+    protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         blockModels.familyWithExistingFullBlock(Blocks.POLISHED_GRANITE).wall(BVBuildingBlocks.POLISHED_GRANITE_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.POLISHED_DIORITE).wall(BVBuildingBlocks.POLISHED_DIORITE_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.POLISHED_ANDESITE).wall(BVBuildingBlocks.POLISHED_ANDESITE_WALL.get());
@@ -191,6 +189,30 @@ public final class BVModelProvider extends ExtendedModelProvider {
         stairsSlabWall(blockModels, Blocks.PURPLE_CONCRETE, BVColoredBlocks.PURPLE_CONCRETE_STAIRS.get(), BVColoredBlocks.PURPLE_CONCRETE_SLAB.get(), BVColoredBlocks.PURPLE_CONCRETE_WALL.get());
         stairsSlabWall(blockModels, Blocks.MAGENTA_CONCRETE, BVColoredBlocks.MAGENTA_CONCRETE_STAIRS.get(), BVColoredBlocks.MAGENTA_CONCRETE_SLAB.get(), BVColoredBlocks.MAGENTA_CONCRETE_WALL.get());
         stairsSlabWall(blockModels, Blocks.PINK_CONCRETE, BVColoredBlocks.PINK_CONCRETE_STAIRS.get(), BVColoredBlocks.PINK_CONCRETE_SLAB.get(), BVColoredBlocks.PINK_CONCRETE_WALL.get());
+
+        createBarsAndItem(blockModels, BVOtherBlocks.GOLD_BARS.get());
+        createChain(blockModels, BVOtherBlocks.GOLD_CHAIN.get());
+        blockModels.createTrivialBlock(BVOtherBlocks.GOLD_GRATE.get(), TexturedModel.CUBE.updateTemplate(t -> t.extend().renderType("cutout").build()));
+    }
+
+    public static void createBarsAndItem(BlockModelGenerators blockModels, Block block) {
+        var texturemapping = TextureMapping.bars(block);
+        // TODO: cache the ModelTemplates
+        blockModels.createBars(
+                block,
+                ModelTemplates.BARS_POST_ENDS.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_CAP.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_CAP_ALT.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST_SIDE.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST_SIDE_ALT.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput)
+        );
+        blockModels.registerSimpleFlatItemModel(block);
+    }
+
+    public static void createChain(BlockModelGenerators blockModels, Block block) {
+        blockModels.createAxisAlignedPillarBlockCustomModel(block, BlockModelGenerators.plainVariant(TexturedModel.CHAIN.updateTemplate(t -> t.extend().renderType("cutout").build()).create(block, blockModels.modelOutput)));
+        blockModels.registerSimpleFlatItemModel(block.asItem());
     }
 
     private static void stairsSlabWall(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, WallBlock wall) {

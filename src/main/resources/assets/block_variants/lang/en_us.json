@@ -447,6 +447,10 @@
   "block.block_variants.pink_concrete_slab": "Pink Concrete Slab",
   "block.block_variants.pink_concrete_wall": "Pink Concrete Wall",
 
+  "block.block_variants.gold_bars": "Golden Bars",
+  "block.block_variants.gold_chain": "Golden Chain",
+  "block.block_variants.gold_grate": "Golden Grate",
+
   "tag.item.block_variants.wool.stairs": "Wool Stairs",
   "tag.item.block_variants.wool.slabs": "Wool Slabs",
   "tag.item.block_variants.wool.walls": "Wool Walls",

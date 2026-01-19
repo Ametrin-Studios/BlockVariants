@@ -6,9 +6,12 @@ import com.barion.block_variants.data.provider.loot_table.BVBlockLootProvider;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
 import com.barion.block_variants.registry.BVItems;
+import com.barion.block_variants.registry.BVOtherBlocks;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -27,6 +30,7 @@ public final class BlockVariants {
     public BlockVariants(IEventBus modBus) {
         BVBuildingBlocks.REGISTER.register(modBus);
         BVColoredBlocks.REGISTER.register(modBus);
+        BVOtherBlocks.REGISTER.register(modBus);
         BVItems.REGISTER.register(modBus);
         modBus.addListener(BlockVariants::buildCreativeModeTabs);
         modBus.addListener(BlockVariants::gatherData);
@@ -39,15 +43,22 @@ public final class BlockVariants {
     private static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             BVBuildingBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
+            event.insertAfter(Items.GOLD_BLOCK.getDefaultInstance(), BVOtherBlocks.GOLD_GRATE.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(BVOtherBlocks.GOLD_GRATE.asItem().getDefaultInstance(), BVOtherBlocks.GOLD_BARS.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.LIGHT_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             BVColoredBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
         }
+
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
     }
 
     public static Stream<Block> getAllBlocks() {
-        return Stream.concat(BVBuildingBlocks.REGISTER.getEntries().stream(), BVColoredBlocks.REGISTER.getEntries().stream()).map(Supplier::get);
+        return Stream.concat(Stream.concat(BVBuildingBlocks.REGISTER.getEntries().stream(), BVColoredBlocks.REGISTER.getEntries().stream()), BVOtherBlocks.REGISTER.getEntries().stream()).map(Supplier::get);
     }
 
     private static void gatherData(GatherDataEvent.Client event) {

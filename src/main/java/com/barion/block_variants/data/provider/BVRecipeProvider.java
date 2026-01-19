@@ -4,6 +4,7 @@ import com.ametrinstudios.ametrin.data.provider.ExtendedRecipeProvider;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
+import com.barion.block_variants.registry.BVOtherBlocks;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -278,6 +279,25 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         all(BVColoredBlocks.PURPLE_CONCRETE_STAIRS.get(), BVColoredBlocks.PURPLE_CONCRETE_SLAB.get(), BVColoredBlocks.PURPLE_CONCRETE_WALL.get(), Blocks.PURPLE_CONCRETE, true);
         all(BVColoredBlocks.MAGENTA_CONCRETE_STAIRS.get(), BVColoredBlocks.MAGENTA_CONCRETE_SLAB.get(), BVColoredBlocks.MAGENTA_CONCRETE_WALL.get(), Blocks.MAGENTA_CONCRETE, true);
         all(BVColoredBlocks.PINK_CONCRETE_STAIRS.get(), BVColoredBlocks.PINK_CONCRETE_SLAB.get(), BVColoredBlocks.PINK_CONCRETE_WALL.get(), Blocks.PINK_CONCRETE, true);
+
+        shaped(RecipeCategory.DECORATIONS, BVOtherBlocks.GOLD_BARS, 16)
+                .define('#', Items.GOLD_INGOT)
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+                .save(output);
+
+        shaped(RecipeCategory.DECORATIONS, BVOtherBlocks.GOLD_CHAIN)
+                .define('I', Items.GOLD_INGOT)
+                .define('N', Items.GOLD_NUGGET)
+                .pattern("N")
+                .pattern("I")
+                .pattern("N")
+                .unlockedBy("has_gold_nugget", has(Items.GOLD_NUGGET))
+                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+                .save(output);
+
+        grate(BVOtherBlocks.GOLD_GRATE.get(), Blocks.GOLD_BLOCK);
 
         {
             shaped(RecipeCategory.REDSTONE, Blocks.DROPPER, 1)
