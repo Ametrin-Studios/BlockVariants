@@ -4,6 +4,7 @@ import com.ametrinstudios.ametrin.data.provider.ExtendedBlockTagsProvider;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
+import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagAppender;
@@ -38,11 +39,9 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
 
         {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                    BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(),
                     BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(),
                     BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.get(),
                     BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get(),
-                    BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(),
                     BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get(),
                     BVBuildingBlocks.NETHERRACK_STAIRS.get(),
                     BVBuildingBlocks.END_STONE_STAIRS.get(),
@@ -98,22 +97,23 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(),
                     BVBuildingBlocks.CRACKED_STONE_BRICK_SLAB.get(),
 
-                    BVBuildingBlocks.POLISHED_DIORITE_WALL.get(),
-                    BVBuildingBlocks.POLISHED_GRANITE_WALL.get(),
-                    BVBuildingBlocks.POLISHED_ANDESITE_WALL.get(),
-                    BVBuildingBlocks.STONE_WALL.get(),
-                    BVBuildingBlocks.SMOOTH_STONE_WALL.get(),
+                    BVOtherBlocks.POLISHED_DIORITE_WALL.get(),
+                    BVOtherBlocks.POLISHED_GRANITE_WALL.get(),
+                    BVOtherBlocks.POLISHED_ANDESITE_WALL.get(),
+                    BVOtherBlocks.STONE_WALL.get(),
+                    BVOtherBlocks.SMOOTH_STONE_STAIRS.get(),
+                    BVOtherBlocks.SMOOTH_STONE_WALL.get(),
                     BVBuildingBlocks.CUT_SANDSTONE_WALL.get(),
                     BVBuildingBlocks.CUT_RED_SANDSTONE_WALL.get(),
                     BVBuildingBlocks.QUARTZ_WALL.get(),
                     BVBuildingBlocks.QUARTZ_BRICK_WALL.get(),
                     BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(),
                     BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get(),
-                    BVBuildingBlocks.PRISMARINE_BRICK_WALL.get(),
-                    BVBuildingBlocks.DARK_PRISMARINE_WALL.get(),
+                    BVOtherBlocks.PRISMARINE_BRICK_WALL.get(),
+                    BVOtherBlocks.DARK_PRISMARINE_WALL.get(),
                     BVBuildingBlocks.NETHERRACK_WALL.get(),
                     BVBuildingBlocks.END_STONE_WALL.get(),
-                    BVBuildingBlocks.PURPUR_WALL.get(),
+                    BVOtherBlocks.PURPUR_WALL.get(),
                     BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(),
                     BVBuildingBlocks.BASALT_WALL.get(),
                     BVBuildingBlocks.POLISHED_BASALT_WALL.get(),
@@ -271,7 +271,9 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVColoredBlocks.RED_CONCRETE_WALL.get(),
                     BVColoredBlocks.BLACK_CONCRETE_STAIRS.get(),
                     BVColoredBlocks.BLACK_CONCRETE_SLAB.get(),
-                    BVColoredBlocks.BLACK_CONCRETE_WALL.get()
+                    BVColoredBlocks.BLACK_CONCRETE_WALL.get(),
+
+                    BVOtherBlocks.GOLD_GRATE.get()
             ).remove( // minecraft:walls seems to be part of mineable with pickaxe
                     BVColoredBlocks.WHITE_WOOL_WALL.get(),
                     BVColoredBlocks.LIGHT_GRAY_WOOL_WALL.get(),
@@ -465,6 +467,12 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.get()
             );
         } // needs Axe
+
+        tag(BlockTags.NEEDS_IRON_TOOL).add(
+                BVOtherBlocks.GOLD_BARS.get(),
+                BVOtherBlocks.GOLD_CHAIN.get(),
+                BVOtherBlocks.GOLD_GRATE.get()
+        );
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 BVBuildingBlocks.OBSIDIAN_STAIRS.get(),

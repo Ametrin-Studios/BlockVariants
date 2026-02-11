@@ -4,12 +4,10 @@ import com.ametrinstudios.ametrin.data.provider.ExtendedModelProvider;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
+import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.*;
@@ -20,14 +18,14 @@ public final class BVModelProvider extends ExtendedModelProvider {
     }
 
     @Override
-    protected void registerModels( BlockModelGenerators blockModels,  ItemModelGenerators itemModels) {
-        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_GRANITE).wall(BVBuildingBlocks.POLISHED_GRANITE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_DIORITE).wall(BVBuildingBlocks.POLISHED_DIORITE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_ANDESITE).wall(BVBuildingBlocks.POLISHED_ANDESITE_WALL.get());
+    protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_GRANITE).wall(BVOtherBlocks.POLISHED_GRANITE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_DIORITE).wall(BVOtherBlocks.POLISHED_DIORITE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_ANDESITE).wall(BVOtherBlocks.POLISHED_ANDESITE_WALL.get());
 
-        blockModels.familyWithExistingFullBlock(Blocks.STONE).wall(BVBuildingBlocks.STONE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_STONE).wall(BVBuildingBlocks.SMOOTH_STONE_WALL.get());
-        customStairs(blockModels, BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")));
+        blockModels.familyWithExistingFullBlock(Blocks.STONE).wall(BVOtherBlocks.STONE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_STONE).wall(BVOtherBlocks.SMOOTH_STONE_WALL.get());
+        customStairs(blockModels, BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")));
 
         blockModels.familyWithExistingFullBlock(Blocks.CUT_SANDSTONE).wall(BVBuildingBlocks.CUT_SANDSTONE_WALL.get());
         customStairs(blockModels, BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE));
@@ -39,12 +37,12 @@ public final class BVModelProvider extends ExtendedModelProvider {
         customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, Identifier.withDefaultNamespace("block/quartz_block_bottom")));
         blockModels.familyWithExistingFullBlock(Blocks.CHISELED_QUARTZ_BLOCK).stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get()).slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get()).wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get());
 
-        blockModels.familyWithExistingFullBlock(Blocks.PRISMARINE_BRICKS).wall(BVBuildingBlocks.PRISMARINE_BRICK_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.DARK_PRISMARINE).wall(BVBuildingBlocks.DARK_PRISMARINE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.PRISMARINE_BRICKS).wall(BVOtherBlocks.PRISMARINE_BRICK_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.DARK_PRISMARINE).wall(BVOtherBlocks.DARK_PRISMARINE_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.NETHERRACK).stairs(BVBuildingBlocks.NETHERRACK_STAIRS.get()).slab(BVBuildingBlocks.NETHERRACK_SLAB.get()).wall(BVBuildingBlocks.NETHERRACK_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.END_STONE).stairs(BVBuildingBlocks.END_STONE_STAIRS.get()).slab(BVBuildingBlocks.END_STONE_SLAB.get()).wall(BVBuildingBlocks.END_STONE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.PURPUR_BLOCK).wall(BVBuildingBlocks.PURPUR_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.PURPUR_BLOCK).wall(BVOtherBlocks.PURPUR_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).stairs(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get()).slab(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get()).wall(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get());
         columnStairsSlabWall(blockModels, Blocks.BASALT, BVBuildingBlocks.BASALT_STAIRS.get(), BVBuildingBlocks.BASALT_SLAB.get(), BVBuildingBlocks.BASALT_WALL.get());
@@ -191,6 +189,30 @@ public final class BVModelProvider extends ExtendedModelProvider {
         stairsSlabWall(blockModels, Blocks.PURPLE_CONCRETE, BVColoredBlocks.PURPLE_CONCRETE_STAIRS.get(), BVColoredBlocks.PURPLE_CONCRETE_SLAB.get(), BVColoredBlocks.PURPLE_CONCRETE_WALL.get());
         stairsSlabWall(blockModels, Blocks.MAGENTA_CONCRETE, BVColoredBlocks.MAGENTA_CONCRETE_STAIRS.get(), BVColoredBlocks.MAGENTA_CONCRETE_SLAB.get(), BVColoredBlocks.MAGENTA_CONCRETE_WALL.get());
         stairsSlabWall(blockModels, Blocks.PINK_CONCRETE, BVColoredBlocks.PINK_CONCRETE_STAIRS.get(), BVColoredBlocks.PINK_CONCRETE_SLAB.get(), BVColoredBlocks.PINK_CONCRETE_WALL.get());
+
+        createBarsAndItem(blockModels, BVOtherBlocks.GOLD_BARS.get());
+        createChain(blockModels, BVOtherBlocks.GOLD_CHAIN.get());
+        blockModels.createTrivialBlock(BVOtherBlocks.GOLD_GRATE.get(), TexturedModel.CUBE.updateTemplate(t -> t.extend().renderType("cutout").build()));
+    }
+
+    public static void createBarsAndItem(BlockModelGenerators blockModels, Block block) {
+        var texturemapping = TextureMapping.bars(block);
+        // TODO: cache the ModelTemplates
+        blockModels.createBars(
+                block,
+                ModelTemplates.BARS_POST_ENDS.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_CAP.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_CAP_ALT.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST_SIDE.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST_SIDE_ALT.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput)
+        );
+        blockModels.registerSimpleFlatItemModel(block);
+    }
+
+    public static void createChain(BlockModelGenerators blockModels, Block block) {
+        blockModels.createAxisAlignedPillarBlockCustomModel(block, BlockModelGenerators.plainVariant(TexturedModel.CHAIN.updateTemplate(t -> t.extend().renderType("cutout").build()).create(block, blockModels.modelOutput)));
+        blockModels.registerSimpleFlatItemModel(block.asItem());
     }
 
     private static void stairsSlabWall(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, WallBlock wall) {

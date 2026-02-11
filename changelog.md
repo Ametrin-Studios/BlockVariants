@@ -1,3 +1,6 @@
+## 6.7.0
+- added Golden Bars
+
 ## 6.6.0
 - added Concrete variants
 - moved colored blocks in the Colored Blocks creative tab

@@ -32,14 +32,6 @@ public final class BVBuildingBlocks {
         REGISTER.addAlias(BlockVariants.locate("tuff_wall"), BVUtil.getBlockID(Blocks.TUFF_WALL));
     }
 
-    public static final DeferredBlock<WallBlock> POLISHED_GRANITE_WALL = register("polished_granite_wall", WallBlock::new, Blocks.POLISHED_GRANITE);
-    public static final DeferredBlock<WallBlock> POLISHED_DIORITE_WALL = register("polished_diorite_wall", WallBlock::new, Blocks.POLISHED_DIORITE);
-    public static final DeferredBlock<WallBlock> POLISHED_ANDESITE_WALL = register("polished_andesite_wall", WallBlock::new, Blocks.POLISHED_ANDESITE);
-
-    public static final DeferredBlock<WallBlock> STONE_WALL = register("stone_wall", WallBlock::new, Blocks.STONE);
-    public static final DeferredBlock<StairBlock> SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", StairBlock::new, Blocks.SMOOTH_STONE);
-    public static final DeferredBlock<WallBlock> SMOOTH_STONE_WALL = register("smooth_stone_wall", WallBlock::new, Blocks.SMOOTH_STONE);
-
     public static final DeferredBlock<StairBlock> CUT_SANDSTONE_STAIRS = register("cut_sandstone_stairs", StairBlock::new, Blocks.CUT_SANDSTONE);
     public static final DeferredBlock<WallBlock> CUT_SANDSTONE_WALL = register("cut_sandstone_wall", WallBlock::new, Blocks.CUT_SANDSTONE);
     public static final DeferredBlock<StairBlock> CUT_RED_SANDSTONE_STAIRS = register("cut_red_sandstone_stairs", StairBlock::new, Blocks.CUT_RED_SANDSTONE);
@@ -54,9 +46,6 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<SlabBlock> CHISELED_QUARTZ_BLOCK_SLAB = register("chiseled_quartz_block_slab", SlabBlock::new, Blocks.CHISELED_QUARTZ_BLOCK);
     public static final DeferredBlock<WallBlock> CHISELED_QUARTZ_BLOCK_WALL = register("chiseled_quartz_block_wall", WallBlock::new, Blocks.CHISELED_QUARTZ_BLOCK);
 
-    public static final DeferredBlock<WallBlock> PRISMARINE_BRICK_WALL = register("prismarine_brick_wall", WallBlock::new, Blocks.PRISMARINE_BRICKS);
-    public static final DeferredBlock<WallBlock> DARK_PRISMARINE_WALL = register("dark_prismarine_wall", WallBlock::new, Blocks.PRISMARINE_BRICKS);
-
     public static final DeferredBlock<StairBlock> NETHERRACK_STAIRS = register("netherrack_stairs", StairBlock::new, Blocks.NETHERRACK);
     public static final DeferredBlock<SlabBlock> NETHERRACK_SLAB = register("netherrack_slab", SlabBlock::new, Blocks.NETHERRACK);
     public static final DeferredBlock<WallBlock> NETHERRACK_WALL = register("netherrack_wall", WallBlock::new, Blocks.NETHERRACK);
@@ -64,7 +53,6 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<StairBlock> END_STONE_STAIRS = register("end_stone_stairs", StairBlock::new, Blocks.END_STONE);
     public static final DeferredBlock<SlabBlock> END_STONE_SLAB = register("end_stone_slab", SlabBlock::new, Blocks.END_STONE);
     public static final DeferredBlock<WallBlock> END_STONE_WALL = register("end_stone_wall", WallBlock::new, Blocks.END_STONE);
-    public static final DeferredBlock<WallBlock> PURPUR_WALL = register("purpur_wall", WallBlock::new, Blocks.PURPUR_BLOCK);
 
     public static final DeferredBlock<StairBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS = register("cracked_polished_blackstone_brick_stairs", StairBlock::new, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS);
     public static final DeferredBlock<SlabBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB = register("cracked_polished_blackstone_brick_slab", SlabBlock::new, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS);

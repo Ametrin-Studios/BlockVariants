@@ -1,4 +1,4 @@
-// 1.21.11	2025-12-17T08:45:02.66168467	Loot Tables
+// 1.21.11	2026-02-11T11:31:00.320033138	Loot Tables
 4c1aa2238b87ff95c2aec5aef793167fabbd53cd data/block_variants/loot_table/blocks/acacia_log_slab.json
 e91285707780e25851302c7df53c0a1ca7bd4aa5 data/block_variants/loot_table/blocks/acacia_log_stairs.json
 353b926072482467ff50e120801adcb9437a57ef data/block_variants/loot_table/blocks/acacia_wood_fence.json
@@ -133,6 +133,9 @@ b2ada383af492f96f4457578fb9e97ce96245377 data/block_variants/loot_table/blocks/d
 06b9d0e104d6ecabf1501db8f38ade8746b86503 data/block_variants/loot_table/blocks/end_stone_slab.json
 e58fcb8e27bbb1b00807686556666ec15e5da0bf data/block_variants/loot_table/blocks/end_stone_stairs.json
 5737a9dd57470c35e060b16edea5a03887f4a69a data/block_variants/loot_table/blocks/end_stone_wall.json
+3ad4bf97c44cad6b33f9599caf78277083815efc data/block_variants/loot_table/blocks/gold_bars.json
+3a6aa27b658ce53c01192d7166e17264a5843a9a data/block_variants/loot_table/blocks/gold_chain.json
+4aa444d08ce3d0960033bed1599211d48e093f97 data/block_variants/loot_table/blocks/gold_grate.json
 4d2e05ccc18038c79a1e91c56b5d606712ccf135 data/block_variants/loot_table/blocks/gray_concrete_slab.json
 a7db90160f39b9cb94ba5e8287a08c012edc1577 data/block_variants/loot_table/blocks/gray_concrete_stairs.json
 c34cb87d0e05b02a4f3bc315700a47493826e25f data/block_variants/loot_table/blocks/gray_concrete_wall.json

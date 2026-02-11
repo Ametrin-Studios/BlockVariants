@@ -2,6 +2,7 @@ package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockItemTagsProvider;
 import com.barion.block_variants.BlockVariants;
+import com.barion.block_variants.registry.BVOtherBlocks;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -95,5 +96,15 @@ public abstract class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvi
         tag(BlockTags.WALLS, ItemTags.WALLS)
                 .addTag(BVTags.Blocks.WOODEN_WALLS)
         ;
+
+        // this includes mineable with pickaxe
+        tag(BlockTags.BARS, ItemTags.BARS).add(
+                BVOtherBlocks.GOLD_BARS.get()
+        );
+
+        // this includes mineable with pickaxe
+        tag(BlockTags.CHAINS, ItemTags.CHAINS).add(
+                BVOtherBlocks.GOLD_CHAIN.get()
+        );
     }
 }

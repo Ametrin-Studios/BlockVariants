@@ -1,6 +1,5 @@
 {
   "values": [
-    "block_variants:smooth_stone_stairs",
     "block_variants:cut_sandstone_stairs",
     "block_variants:cut_red_sandstone_stairs",
     "block_variants:quartz_brick_stairs",
@@ -88,6 +87,7 @@
     "block_variants:blue_glazed_terracotta_stairs",
     "block_variants:purple_glazed_terracotta_stairs",
     "block_variants:magenta_glazed_terracotta_stairs",
-    "block_variants:pink_glazed_terracotta_stairs"
+    "block_variants:pink_glazed_terracotta_stairs",
+    "block_variants:smooth_stone_stairs"
   ]
 }
