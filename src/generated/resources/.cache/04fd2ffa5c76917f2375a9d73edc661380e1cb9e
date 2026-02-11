@@ -1,4 +1,4 @@
-// 1.21.11	2026-01-19T15:37:35.360907294	Tags for minecraft:block mod id block_variants
+// 1.21.11	2026-02-11T11:31:00.321129277	Tags for minecraft:block mod id block_variants
 e9884478f1bd8c89f5633f2541b40d466f9eeb2e data/block_variants/tags/block/wool/slabs.json
 fe89c51a774ad598e169fd72c7d12e4696915b8b data/block_variants/tags/block/wool/stairs.json
 24856b8268e63de06b2b339e9e224c113600432d data/block_variants/tags/block/wool/walls.json
@@ -30,14 +30,14 @@ e343254d8db1ccf8c7a1473a8bbfcf225818de6c data/minecraft/tags/block/dragon_immune
 7353366566e7c46c092108ceefcc49725a7f52fd data/minecraft/tags/block/fence_gates.json
 fb9538ff7bca6ffd0eb5377ee9ba37da3d2ca4e1 data/minecraft/tags/block/fences.json
 ee2a6562cab805d10a39b80266cad1d16657ebe8 data/minecraft/tags/block/mineable/axe.json
-0c93d06884912a7c575b392f7a4997fee5eefd49 data/minecraft/tags/block/mineable/pickaxe.json
+e7dad5c2ac3e3e9281fc5dfd13dbcefcd622ab86 data/minecraft/tags/block/mineable/pickaxe.json
 00920e4e06e35b9708a9d4d960c86df1b17297f3 data/minecraft/tags/block/needs_diamond_tool.json
 7964d48993b01425f4ae92e046bcb3b3e0051b75 data/minecraft/tags/block/needs_iron_tool.json
 12c6ce296aa6c7767d2250ee4c471bf3b587c988 data/minecraft/tags/block/occludes_vibration_signals.json
 275464c1877df4229287baff966cc8cbf966ec42 data/minecraft/tags/block/slabs.json
-097a8a1711deddee8a355db25e1e11f79a5178e6 data/minecraft/tags/block/stairs.json
+ac0b3a5cb9c282d854f61e4316eb26def796cc16 data/minecraft/tags/block/stairs.json
 eaa4a71252b59d7a02b7c38ce0ae2efc7c5fb779 data/minecraft/tags/block/vibration_resonators.json
-f88b724b8eaf1fb558ac0c03d69d9a4a3e76d707 data/minecraft/tags/block/walls.json
+08d65e7f6feb3ee45c9908b0945113b9ace40f90 data/minecraft/tags/block/walls.json
 feeb0600998f692d2c4b2e36768bcdf5b215568b data/minecraft/tags/block/wooden_fences.json
 b0633c0a5f7f10cd415b61029df0b8eb1c52c581 data/minecraft/tags/block/wooden_slabs.json
 6bc66add1f6259ef27615fbb51c8841b19408b64 data/minecraft/tags/block/wooden_stairs.json

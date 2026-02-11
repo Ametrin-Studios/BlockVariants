@@ -43,9 +43,21 @@ public final class BlockVariants {
     private static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             BVBuildingBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
-            event.insertAfter(Items.GOLD_BLOCK.getDefaultInstance(), BVOtherBlocks.GOLD_GRATE.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.insertAfter(BVOtherBlocks.GOLD_GRATE.asItem().getDefaultInstance(), BVOtherBlocks.GOLD_BARS.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.insertAfter(Items.LIGHT_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            event.insertAfter(Items.STONE_SLAB.getDefaultInstance(), BVOtherBlocks.STONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.SMOOTH_STONE.getDefaultInstance(), BVOtherBlocks.SMOOTH_STONE_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.SMOOTH_STONE_SLAB.getDefaultInstance(), BVOtherBlocks.SMOOTH_STONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.POLISHED_GRANITE_SLAB.getDefaultInstance(), BVOtherBlocks.POLISHED_GRANITE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.POLISHED_DIORITE_SLAB.getDefaultInstance(), BVOtherBlocks.POLISHED_DIORITE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.POLISHED_ANDESITE_SLAB.getDefaultInstance(), BVOtherBlocks.POLISHED_ANDESITE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            event.insertAfter(Items.PRISMARINE_BRICK_SLAB.getDefaultInstance(), BVOtherBlocks.PRISMARINE_BRICK_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DARK_PRISMARINE_SLAB.getDefaultInstance(), BVOtherBlocks.DARK_PRISMARINE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.PURPUR_SLAB.getDefaultInstance(), BVOtherBlocks.PURPUR_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            event.insertAfter(Items.GOLD_BLOCK.getDefaultInstance(), BVOtherBlocks.GOLD_GRATE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(BVOtherBlocks.GOLD_GRATE.toStack(), BVOtherBlocks.GOLD_BARS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.LIGHT_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
@@ -53,7 +65,7 @@ public final class BlockVariants {
         }
 
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
-            event.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 

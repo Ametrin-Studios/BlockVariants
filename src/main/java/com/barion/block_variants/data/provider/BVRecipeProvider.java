@@ -30,19 +30,19 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
 
     @Override @ParametersAreNonnullByDefault
     protected void buildRecipes() {
-        wall(BVBuildingBlocks.POLISHED_GRANITE_WALL.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
-        wall(BVBuildingBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
-        wall(BVBuildingBlocks.POLISHED_ANDESITE_WALL.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
+        wall(BVOtherBlocks.POLISHED_GRANITE_WALL.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
+        wall(BVOtherBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
+        wall(BVOtherBlocks.POLISHED_ANDESITE_WALL.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
 
         smelting(Blocks.STONE_STAIRS, Blocks.COBBLESTONE_STAIRS);
         smelting(Blocks.STONE_SLAB, Blocks.COBBLESTONE_SLAB);
-        wall(BVBuildingBlocks.STONE_WALL.get(), Blocks.STONE, true);
-        smelting(BVBuildingBlocks.STONE_WALL.get(), Blocks.COBBLESTONE_WALL);
-        stairs(BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.SMOOTH_STONE, true);
-        smelting(BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.STONE_STAIRS);
+        wall(BVOtherBlocks.STONE_WALL.get(), Blocks.STONE, true);
+        smelting(BVOtherBlocks.STONE_WALL.get(), Blocks.COBBLESTONE_WALL);
+        stairs(BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.SMOOTH_STONE, true);
+        smelting(BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.STONE_STAIRS);
         smelting(Blocks.SMOOTH_STONE_SLAB, Blocks.STONE_SLAB);
-        wall(BVBuildingBlocks.SMOOTH_STONE_WALL.get(), Blocks.SMOOTH_STONE, true);
-        smelting(BVBuildingBlocks.SMOOTH_STONE_WALL.get(), BVBuildingBlocks.STONE_WALL.get());
+        wall(BVOtherBlocks.SMOOTH_STONE_WALL.get(), Blocks.SMOOTH_STONE, true);
+        smelting(BVOtherBlocks.SMOOTH_STONE_WALL.get(), BVOtherBlocks.STONE_WALL.get());
 
         stairs(BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS);
         stairs(BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS);
@@ -61,11 +61,11 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
         wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, BVBuildingBlocks.QUARTZ_WALL.get());
 
-        wall(BVBuildingBlocks.PRISMARINE_BRICK_WALL.get(), Blocks.PRISMARINE_BRICKS, true);
-        wall(BVBuildingBlocks.DARK_PRISMARINE_WALL.get(), Blocks.DARK_PRISMARINE, true);
+        wall(BVOtherBlocks.PRISMARINE_BRICK_WALL.get(), Blocks.PRISMARINE_BRICKS, true);
+        wall(BVOtherBlocks.DARK_PRISMARINE_WALL.get(), Blocks.DARK_PRISMARINE, true);
         all(BVBuildingBlocks.NETHERRACK_STAIRS.get(), BVBuildingBlocks.NETHERRACK_SLAB.get(), BVBuildingBlocks.NETHERRACK_WALL.get(), Blocks.NETHERRACK, true);
         all(BVBuildingBlocks.END_STONE_STAIRS.get(), BVBuildingBlocks.END_STONE_SLAB.get(), BVBuildingBlocks.END_STONE_WALL.get(), Blocks.END_STONE, true);
-        wall(BVBuildingBlocks.PURPUR_WALL.get(), Blocks.PURPUR_BLOCK, true);
+        wall(BVOtherBlocks.PURPUR_WALL.get(), Blocks.PURPUR_BLOCK, true);
 
         all(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(), BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(), Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, true);
         smelting(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);

@@ -18,11 +18,9 @@
     "block_variants:pink_wool_wall"
   ],
   "values": [
-    "block_variants:smooth_stone_stairs",
     "block_variants:cut_sandstone_stairs",
     "block_variants:cut_red_sandstone_stairs",
     "block_variants:quartz_brick_stairs",
-    "block_variants:smooth_stone_stairs",
     "block_variants:chiseled_quartz_block_stairs",
     "block_variants:netherrack_stairs",
     "block_variants:end_stone_stairs",
@@ -80,6 +78,7 @@
     "block_variants:polished_granite_wall",
     "block_variants:polished_andesite_wall",
     "block_variants:stone_wall",
+    "block_variants:smooth_stone_stairs",
     "block_variants:smooth_stone_wall",
     "block_variants:cut_sandstone_wall",
     "block_variants:cut_red_sandstone_wall",

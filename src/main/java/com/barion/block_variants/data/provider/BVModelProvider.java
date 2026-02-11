@@ -19,13 +19,13 @@ public final class BVModelProvider extends ExtendedModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_GRANITE).wall(BVBuildingBlocks.POLISHED_GRANITE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_DIORITE).wall(BVBuildingBlocks.POLISHED_DIORITE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_ANDESITE).wall(BVBuildingBlocks.POLISHED_ANDESITE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_GRANITE).wall(BVOtherBlocks.POLISHED_GRANITE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_DIORITE).wall(BVOtherBlocks.POLISHED_DIORITE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_ANDESITE).wall(BVOtherBlocks.POLISHED_ANDESITE_WALL.get());
 
-        blockModels.familyWithExistingFullBlock(Blocks.STONE).wall(BVBuildingBlocks.STONE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_STONE).wall(BVBuildingBlocks.SMOOTH_STONE_WALL.get());
-        customStairs(blockModels, BVBuildingBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")));
+        blockModels.familyWithExistingFullBlock(Blocks.STONE).wall(BVOtherBlocks.STONE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_STONE).wall(BVOtherBlocks.SMOOTH_STONE_WALL.get());
+        customStairs(blockModels, BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")));
 
         blockModels.familyWithExistingFullBlock(Blocks.CUT_SANDSTONE).wall(BVBuildingBlocks.CUT_SANDSTONE_WALL.get());
         customStairs(blockModels, BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE));
@@ -37,12 +37,12 @@ public final class BVModelProvider extends ExtendedModelProvider {
         customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, Identifier.withDefaultNamespace("block/quartz_block_bottom")));
         blockModels.familyWithExistingFullBlock(Blocks.CHISELED_QUARTZ_BLOCK).stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get()).slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get()).wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get());
 
-        blockModels.familyWithExistingFullBlock(Blocks.PRISMARINE_BRICKS).wall(BVBuildingBlocks.PRISMARINE_BRICK_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.DARK_PRISMARINE).wall(BVBuildingBlocks.DARK_PRISMARINE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.PRISMARINE_BRICKS).wall(BVOtherBlocks.PRISMARINE_BRICK_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.DARK_PRISMARINE).wall(BVOtherBlocks.DARK_PRISMARINE_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.NETHERRACK).stairs(BVBuildingBlocks.NETHERRACK_STAIRS.get()).slab(BVBuildingBlocks.NETHERRACK_SLAB.get()).wall(BVBuildingBlocks.NETHERRACK_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.END_STONE).stairs(BVBuildingBlocks.END_STONE_STAIRS.get()).slab(BVBuildingBlocks.END_STONE_SLAB.get()).wall(BVBuildingBlocks.END_STONE_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.PURPUR_BLOCK).wall(BVBuildingBlocks.PURPUR_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.PURPUR_BLOCK).wall(BVOtherBlocks.PURPUR_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).stairs(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get()).slab(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get()).wall(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get());
         columnStairsSlabWall(blockModels, Blocks.BASALT, BVBuildingBlocks.BASALT_STAIRS.get(), BVBuildingBlocks.BASALT_SLAB.get(), BVBuildingBlocks.BASALT_WALL.get());
