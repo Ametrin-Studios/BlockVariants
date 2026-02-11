@@ -22,7 +22,6 @@ eclipse
 run
 runs
 run-data
-!run/saves/Test
 !run/options.txt
 
 repo
