@@ -1,5 +1,5 @@
 ## 6.7.0
-- added Golden Bars
+- added Golden Grate, Bars and Chain
 
 ## 6.6.0
 - added Concrete variants

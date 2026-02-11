@@ -1,8 +1,8 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/block-variants",
   "promos": {
-    "1.21.11-latest": "6.6.0",
-    "1.21.11-recommended": "6.6.0",
+    "1.21.11-latest": "6.7.0",
+    "1.21.11-recommended": "6.7.0",
     "1.21.10-latest": "6.5.1",
     "1.21.10-recommended": "6.5.1",
     "1.21.9-latest": "6.5.1",
@@ -55,6 +55,7 @@
     "1.16.5-recommended": "2.7"
   },
   "1.21.11": {
+    "6.7.0": "gold grate, bars, chain",
     "6.6.0": "concrete variants, creative tab changes, tag fixes, 1.21.11 port"
   },
   "1.21.10": {
