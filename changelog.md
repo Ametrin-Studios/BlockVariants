@@ -1,5 +1,6 @@
 ## 6.7.0
 - added Golden Grate, Bars and Chain
+- (26.1 port)
 
 ## 6.6.0
 - added Concrete variants

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:dripstone_block",
   "result": {
-    "count": 1,
     "id": "block_variants:dripstone_block_stairs"
   }
 }

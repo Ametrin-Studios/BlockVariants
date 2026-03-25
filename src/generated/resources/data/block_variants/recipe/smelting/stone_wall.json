@@ -5,7 +5,6 @@
   "experience": 0.1,
   "ingredient": "minecraft:cobblestone_wall",
   "result": {
-    "count": 1,
     "id": "block_variants:stone_wall"
   }
 }

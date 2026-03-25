@@ -8,6 +8,7 @@ import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.*;
@@ -25,16 +26,16 @@ public final class BVModelProvider extends ExtendedModelProvider {
 
         blockModels.familyWithExistingFullBlock(Blocks.STONE).wall(BVOtherBlocks.STONE_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_STONE).wall(BVOtherBlocks.SMOOTH_STONE_WALL.get());
-        customStairs(blockModels, BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")));
+        customStairs(blockModels, BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, new Material(Identifier.withDefaultNamespace("block/smooth_stone_slab_side"))));
 
         blockModels.familyWithExistingFullBlock(Blocks.CUT_SANDSTONE).wall(BVBuildingBlocks.CUT_SANDSTONE_WALL.get());
         customStairs(blockModels, BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE));
         blockModels.familyWithExistingFullBlock(Blocks.CUT_RED_SANDSTONE).wall(BVBuildingBlocks.CUT_RED_SANDSTONE_WALL.get());
         customStairs(blockModels, BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE));
 
-        customWall(blockModels, BVBuildingBlocks.QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, Identifier.withDefaultNamespace("block/quartz_block_top")));
+        customWall(blockModels, BVBuildingBlocks.QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, new Material(Identifier.withDefaultNamespace("block/quartz_block_top"))));
         blockModels.familyWithExistingFullBlock(Blocks.QUARTZ_BRICKS).stairs(BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get()).slab(BVBuildingBlocks.QUARTZ_BRICK_SLAB.get()).wall(BVBuildingBlocks.QUARTZ_BRICK_WALL.get());
-        customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, Identifier.withDefaultNamespace("block/quartz_block_bottom")));
+        customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, new Material(Identifier.withDefaultNamespace("block/quartz_block_bottom"))));
         blockModels.familyWithExistingFullBlock(Blocks.CHISELED_QUARTZ_BLOCK).stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get()).slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get()).wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.PRISMARINE_BRICKS).wall(BVOtherBlocks.PRISMARINE_BRICK_WALL.get());
@@ -192,26 +193,25 @@ public final class BVModelProvider extends ExtendedModelProvider {
 
         createBarsAndItem(blockModels, BVOtherBlocks.GOLD_BARS.get());
         createChain(blockModels, BVOtherBlocks.GOLD_CHAIN.get());
-        blockModels.createTrivialBlock(BVOtherBlocks.GOLD_GRATE.get(), TexturedModel.CUBE.updateTemplate(t -> t.extend().renderType("cutout").build()));
+        blockModels.createTrivialBlock(BVOtherBlocks.GOLD_GRATE.get(), TexturedModel.CUBE);
     }
 
     public static void createBarsAndItem(BlockModelGenerators blockModels, Block block) {
         var texturemapping = TextureMapping.bars(block);
-        // TODO: cache the ModelTemplates
         blockModels.createBars(
                 block,
-                ModelTemplates.BARS_POST_ENDS.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
-                ModelTemplates.BARS_POST.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
-                ModelTemplates.BARS_CAP.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
-                ModelTemplates.BARS_CAP_ALT.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
-                ModelTemplates.BARS_POST_SIDE.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput),
-                ModelTemplates.BARS_POST_SIDE_ALT.extend().renderType("cutout").build().create(block, texturemapping, blockModels.modelOutput)
+                ModelTemplates.BARS_POST_ENDS.create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST.create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_CAP.create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_CAP_ALT.create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST_SIDE.create(block, texturemapping, blockModels.modelOutput),
+                ModelTemplates.BARS_POST_SIDE_ALT.create(block, texturemapping, blockModels.modelOutput)
         );
         blockModels.registerSimpleFlatItemModel(block);
     }
 
     public static void createChain(BlockModelGenerators blockModels, Block block) {
-        blockModels.createAxisAlignedPillarBlockCustomModel(block, BlockModelGenerators.plainVariant(TexturedModel.CHAIN.updateTemplate(t -> t.extend().renderType("cutout").build()).create(block, blockModels.modelOutput)));
+        blockModels.createAxisAlignedPillarBlockCustomModel(block, BlockModelGenerators.plainVariant(TexturedModel.CHAIN.create(block, blockModels.modelOutput)));
         blockModels.registerSimpleFlatItemModel(block.asItem());
     }
 

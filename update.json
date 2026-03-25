@@ -1,6 +1,8 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/block-variants",
   "promos": {
+    "26.1-latest": "6.7.0",
+    "26.1-recommended": "6.7.0",
     "1.21.11-latest": "6.7.0",
     "1.21.11-recommended": "6.7.0",
     "1.21.10-latest": "6.5.1",
@@ -53,6 +55,9 @@
     "1.17.1-recommended": "2.4",
     "1.16.5-latest": "2.7",
     "1.16.5-recommended": "2.7"
+  },
+  "26.1": {
+    "6.7.0": "gold grate, bars, chain, 26.1 port"
   },
   "1.21.11": {
     "6.7.0": "gold grate, bars, chain",

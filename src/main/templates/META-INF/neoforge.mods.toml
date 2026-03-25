@@ -15,7 +15,7 @@ issueTrackerURL="https://github.com/Ametrin-Studios/BlockVariants/issues" #optio
 [[dependencies.${mod_id}]] #optional
     modId="neoforge" #mandatory
     type="required" #mandatory
-    versionRange="${neo_version_range}" #mandatory
+    versionRange="[${neo_version},)" #mandatory
     ordering="NONE"
     side="BOTH"
 

@@ -5,7 +5,6 @@
   "experience": 0.1,
   "ingredient": "minecraft:stone_stairs",
   "result": {
-    "count": 1,
     "id": "block_variants:smooth_stone_stairs"
   }
 }
