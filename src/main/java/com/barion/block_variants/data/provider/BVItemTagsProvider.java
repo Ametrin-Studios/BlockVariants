@@ -7,12 +7,11 @@ import com.barion.block_variants.registry.BVItems;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.TagAppender;
+import net.minecraft.data.tags.BlockItemTagsProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 
 import java.util.concurrent.CompletableFuture;
@@ -27,58 +26,52 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
     protected void addTags(HolderLookup.Provider lookupProvider) {
         runRules(BVItems.REGISTER);
 
-        new BVBlockItemTagsProvider() {
-
-            @Override
-            protected TagAppender<Block, Block> tag(TagKey<Block> blockTag, TagKey<Item> itemTag) {
-                return new BlockToItemConverter(BVItemTagsProvider.this.tag(itemTag));
-            }
-        }.run();
+        new BVBlockItemTagsProvider(tags -> BlockItemTagsProvider.wrapForItems(tag(tags.item()))).run();
 
         tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
 
         tag(ItemTags.PIGLIN_LOVED).add(
-                BVOtherBlocks.GOLD_BARS.asItem(),
-                BVOtherBlocks.GOLD_CHAIN.asItem(),
-                BVOtherBlocks.GOLD_GRATE.asItem()
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVOtherBlocks.GOLD_BARS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVOtherBlocks.GOLD_CHAIN.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVOtherBlocks.GOLD_GRATE.getKey().identifier())
         );
 
         tag(ItemTags.NON_FLAMMABLE_WOOD).add(
-                BVBuildingBlocks.CRIMSON_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.CRIMSON_STEM_SLAB.asItem(),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.CRIMSON_STEM_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.CRIMSON_STEM_SLAB.getKey().identifier()),
 
-                BVBuildingBlocks.WARPED_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.WARPED_STEM_SLAB.asItem(),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.WARPED_STEM_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.WARPED_STEM_SLAB.getKey().identifier()),
 
-                BVBuildingBlocks.STRIPPED_CRIMSON_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_STEM_SLAB.asItem(),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_CRIMSON_STEM_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_CRIMSON_STEM_SLAB.getKey().identifier()),
 
-                BVBuildingBlocks.STRIPPED_WARPED_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_STEM_SLAB.asItem(),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_WARPED_STEM_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_WARPED_STEM_SLAB.getKey().identifier()),
 
-                BVBuildingBlocks.CRIMSON_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_FENCE_GATE.asItem(),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.CRIMSON_HYPHAE_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.CRIMSON_HYPHAE_SLAB.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.CRIMSON_HYPHAE_WALL.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.CRIMSON_HYPHAE_FENCE.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.CRIMSON_HYPHAE_FENCE_GATE.getKey().identifier()),
 
-                BVBuildingBlocks.WARPED_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_FENCE_GATE.asItem(),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.WARPED_HYPHAE_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.WARPED_HYPHAE_SLAB.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.WARPED_HYPHAE_WALL.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.WARPED_HYPHAE_FENCE.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.WARPED_HYPHAE_FENCE_GATE.getKey().identifier()),
 
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.asItem(),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.getKey().identifier()),
 
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.asItem()
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_SLAB.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_WALL.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE.getKey().identifier()),
+                ResourceKey.create(BuiltInRegistries.ITEM.key(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.getKey().identifier())
         );
     }
 }

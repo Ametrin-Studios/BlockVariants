@@ -2,6 +2,7 @@ package com.barion.block_variants.registry;
 
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.resources.Identifier;
+import net.minecraft.tags.BlockItemTagId;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -39,5 +40,12 @@ public final class BVTags {
         private static TagKey<Item> mod(String path) {
             return ItemTags.create(BlockVariants.locate(path));
         }
+    }
+
+    public static final class BlockItems {
+        public static final BlockItemTagId WOODEN_WALLS = new BlockItemTagId(Blocks.WOODEN_WALLS, Items.WOODEN_WALLS);
+        public static final BlockItemTagId WOOL_STAIRS = new BlockItemTagId(Blocks.WOOL_STAIRS, Items.WOOL_STAIRS);
+        public static final BlockItemTagId WOOL_SLABS = new BlockItemTagId(Blocks.WOOL_SLABS, Items.WOOL_SLABS);
+        public static final BlockItemTagId WOOL_WALLS = new BlockItemTagId(Blocks.WOOL_WALLS, Items.WOOL_WALLS);
     }
 }

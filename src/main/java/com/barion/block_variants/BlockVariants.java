@@ -17,9 +17,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import org.slf4j.Logger;
 
-import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 @Mod(BlockVariants.MOD_ID)
@@ -69,8 +69,8 @@ public final class BlockVariants {
         }
     }
 
-    public static Stream<Block> getAllBlocks() {
-        return Stream.concat(Stream.concat(BVBuildingBlocks.REGISTER.getEntries().stream(), BVColoredBlocks.REGISTER.getEntries().stream()), BVOtherBlocks.REGISTER.getEntries().stream()).map(Supplier::get);
+    public static Stream<DeferredHolder<Block, ? extends Block>> getAllBlocks() {
+        return Stream.concat(Stream.concat(BVBuildingBlocks.REGISTER.getEntries().stream(), BVColoredBlocks.REGISTER.getEntries().stream()), BVOtherBlocks.REGISTER.getEntries().stream());
     }
 
     private static void gatherData(GatherDataEvent.Client event) {

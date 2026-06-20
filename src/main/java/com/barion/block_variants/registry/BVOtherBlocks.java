@@ -33,7 +33,7 @@ public final class BVOtherBlocks {
 
     public static final DeferredBlock<IronBarsBlock> GOLD_BARS = register("gold_bars", IronBarsBlock::new, () -> copyProperties(Blocks.IRON_BARS));
     public static final DeferredBlock<ChainBlock> GOLD_CHAIN = register("gold_chain", ChainBlock::new, () -> copyProperties(Blocks.IRON_CHAIN));
-    public static final DeferredBlock<WaterloggedTransparentBlock> GOLD_GRATE = register("gold_grate", WaterloggedTransparentBlock::new, () -> copyProperties(Blocks.COPPER_GRATE).mapColor(MapColor.GOLD));
+    public static final DeferredBlock<WaterloggedTransparentBlock> GOLD_GRATE = register("gold_grate", WaterloggedTransparentBlock::new, () -> copyProperties(Blocks.COPPER_GRATE.weathering().unaffected()).mapColor(MapColor.GOLD));
 
 
     private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base) {
