@@ -1,3 +1,7 @@
+## 6.4.1
+- fix fence gates destroyed by water
+- fix furnace fuels
+
 ## 6.4
 - Ametrin API compatibility
 ## 6.3
