@@ -77,7 +77,7 @@ repositories {
 }
 
 dependencies {
-    implementation "com.ametrinstudios:ametrin:${minecraft_version}-${ametrin_version}"
+    implementation "com.ametrinstudios:ametrin:26.1.1-${ametrin_version}"
 //    localRuntime "curse.maven:emi-580555:5497461"
 }
 
@@ -86,6 +86,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             minecraft_version       : minecraft_version,
             minecraft_version_range : minecraft_version_range,
             neo_version             : neo_version,
+            neo_version_range       : neo_version_range,
 
             ametrin_version         : ametrin_version,
             ametrin_version_range   : ametrin_version_range,
