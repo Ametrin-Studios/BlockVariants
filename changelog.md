@@ -1,3 +1,7 @@
+## 6.1.1
+- fix fence gates destroyed by water
+- fix furnace fuels
+
 ## 6.1
 * enabled update checker
 * EMI support
