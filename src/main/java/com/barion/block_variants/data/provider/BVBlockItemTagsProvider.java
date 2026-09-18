@@ -2,6 +2,7 @@ package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockItemTagsProvider;
 import com.barion.block_variants.BlockVariants;
+import com.barion.block_variants.registry.BVBlockItemIds;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.references.BlockItemId;
@@ -103,6 +104,11 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
 
         tag(BlockItemTags.WALLS)
                 .addTag(BVTags.BlockItems.WOODEN_WALLS)
+                .addTag(BVTags.BlockItems.CONCRETE_WALLS)
+        ;
+
+        tag(BVTags.BlockItems.CONCRETE_WALLS)
+                .addAll(BVBlockItemIds.CONCRETE_WALL.asList())
         ;
 
         // this includes mineable with pickaxe

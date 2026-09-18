@@ -1,6 +1,7 @@
 package com.barion.block_variants.registry;
 
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
+import com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.BlockFamilies;
 import net.minecraft.world.item.DyeColor;
@@ -17,7 +18,8 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.copyProperties;
+import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.slabProperties;
+import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.wallProperties;
 import static com.barion.block_variants.registry.BVBuildingBlocks.getVanillaBlock;
 
 public final class BVColoredBlocks {
@@ -31,15 +33,21 @@ public final class BVColoredBlocks {
                 REGISTER.addAlias(BlockVariants.locate(key.getPath()), key);
             }
         }
+        for (var woolFamily : BlockFamilies.CONCRETE.asList()) {
+            for (var variant : woolFamily.getVariants().entrySet()) {
+                var key = DataProviderExtensions.getBlockKey(variant.getValue());
+                REGISTER.addAlias(BlockVariants.locate(key.getPath()), key);
+            }
+        }
     }
 
     public static final ColorCollection<DeferredBlock<WallBlock>> WOOL_WALL = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.WOOL_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, Blocks.WOOL.pick(color), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOL))
+            ColorCollection.VALUES, BVBlockItemIds.WOOL_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.WOOL.pick(color)), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOL))
     );
 
-    public static final DeferredBlock<StairBlock> TERRACOTTA_STAIRS = register("terracotta_stairs", StairBlock::new, Blocks.TERRACOTTA);
-    public static final DeferredBlock<SlabBlock> TERRACOTTA_SLAB = register("terracotta_slab", SlabBlock::new, Blocks.TERRACOTTA);
-    public static final DeferredBlock<WallBlock> TERRACOTTA_WALL = register("terracotta_wall", WallBlock::new, Blocks.TERRACOTTA);
+    public static final DeferredBlock<StairBlock> TERRACOTTA_STAIRS = register("terracotta_stairs", StairBlock::new, Blocks.TERRACOTTA, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<SlabBlock> TERRACOTTA_SLAB = register("terracotta_slab", SlabBlock::new, () -> slabProperties(Blocks.TERRACOTTA));
+    public static final DeferredBlock<WallBlock> TERRACOTTA_WALL = register("terracotta_wall", WallBlock::new, () -> wallProperties(Blocks.TERRACOTTA));
 
     public static final DeferredBlock<StairBlock> WHITE_TERRACOTTA_STAIRS = regTerracottaStairs(DyeColor.WHITE, Blocks.DYED_TERRACOTTA.white());
     public static final DeferredBlock<SlabBlock> WHITE_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.WHITE);
@@ -105,70 +113,9 @@ public final class BVColoredBlocks {
     public static final DeferredBlock<SlabBlock> PINK_TERRACOTTA_SLAB = regTerracottaSlab(DyeColor.PINK);
     public static final DeferredBlock<WallBlock> PINK_TERRACOTTA_WALL = regTerracottaWall(DyeColor.PINK);
 
-
-    public static final DeferredBlock<StairBlock> WHITE_CONCRETE_STAIRS = regConcreteStairs(DyeColor.WHITE);
-    public static final DeferredBlock<SlabBlock> WHITE_CONCRETE_SLAB = regConcreteSlab(DyeColor.WHITE);
-    public static final DeferredBlock<WallBlock> WHITE_CONCRETE_WALL = regConcreteWall(DyeColor.WHITE);
-
-    public static final DeferredBlock<StairBlock> LIGHT_GRAY_CONCRETE_STAIRS = regConcreteStairs(DyeColor.LIGHT_GRAY);
-    public static final DeferredBlock<SlabBlock> LIGHT_GRAY_CONCRETE_SLAB = regConcreteSlab(DyeColor.LIGHT_GRAY);
-    public static final DeferredBlock<WallBlock> LIGHT_GRAY_CONCRETE_WALL = regConcreteWall(DyeColor.LIGHT_GRAY);
-
-    public static final DeferredBlock<StairBlock> GRAY_CONCRETE_STAIRS = regConcreteStairs(DyeColor.GRAY);
-    public static final DeferredBlock<SlabBlock> GRAY_CONCRETE_SLAB = regConcreteSlab(DyeColor.GRAY);
-    public static final DeferredBlock<WallBlock> GRAY_CONCRETE_WALL = regConcreteWall(DyeColor.GRAY);
-
-    public static final DeferredBlock<StairBlock> BLACK_CONCRETE_STAIRS = regConcreteStairs(DyeColor.BLACK);
-    public static final DeferredBlock<SlabBlock> BLACK_CONCRETE_SLAB = regConcreteSlab(DyeColor.BLACK);
-    public static final DeferredBlock<WallBlock> BLACK_CONCRETE_WALL = regConcreteWall(DyeColor.BLACK);
-
-    public static final DeferredBlock<StairBlock> BROWN_CONCRETE_STAIRS = regConcreteStairs(DyeColor.BROWN);
-    public static final DeferredBlock<SlabBlock> BROWN_CONCRETE_SLAB = regConcreteSlab(DyeColor.BROWN);
-    public static final DeferredBlock<WallBlock> BROWN_CONCRETE_WALL = regConcreteWall(DyeColor.BROWN);
-
-    public static final DeferredBlock<StairBlock> RED_CONCRETE_STAIRS = regConcreteStairs(DyeColor.RED);
-    public static final DeferredBlock<SlabBlock> RED_CONCRETE_SLAB = regConcreteSlab(DyeColor.RED);
-    public static final DeferredBlock<WallBlock> RED_CONCRETE_WALL = regConcreteWall(DyeColor.RED);
-
-    public static final DeferredBlock<StairBlock> ORANGE_CONCRETE_STAIRS = regConcreteStairs(DyeColor.ORANGE);
-    public static final DeferredBlock<SlabBlock> ORANGE_CONCRETE_SLAB = regConcreteSlab(DyeColor.ORANGE);
-    public static final DeferredBlock<WallBlock> ORANGE_CONCRETE_WALL = regConcreteWall(DyeColor.ORANGE);
-
-    public static final DeferredBlock<StairBlock> YELLOW_CONCRETE_STAIRS = regConcreteStairs(DyeColor.YELLOW);
-    public static final DeferredBlock<SlabBlock> YELLOW_CONCRETE_SLAB = regConcreteSlab(DyeColor.YELLOW);
-    public static final DeferredBlock<WallBlock> YELLOW_CONCRETE_WALL = regConcreteWall(DyeColor.YELLOW);
-
-    public static final DeferredBlock<StairBlock> LIME_CONCRETE_STAIRS = regConcreteStairs(DyeColor.LIME);
-    public static final DeferredBlock<SlabBlock> LIME_CONCRETE_SLAB = regConcreteSlab(DyeColor.LIME);
-    public static final DeferredBlock<WallBlock> LIME_CONCRETE_WALL = regConcreteWall(DyeColor.LIME);
-
-    public static final DeferredBlock<StairBlock> GREEN_CONCRETE_STAIRS = regConcreteStairs(DyeColor.GREEN);
-    public static final DeferredBlock<SlabBlock> GREEN_CONCRETE_SLAB = regConcreteSlab(DyeColor.GREEN);
-    public static final DeferredBlock<WallBlock> GREEN_CONCRETE_WALL = regConcreteWall(DyeColor.GREEN);
-
-    public static final DeferredBlock<StairBlock> CYAN_CONCRETE_STAIRS = regConcreteStairs(DyeColor.CYAN);
-    public static final DeferredBlock<SlabBlock> CYAN_CONCRETE_SLAB = regConcreteSlab(DyeColor.CYAN);
-    public static final DeferredBlock<WallBlock> CYAN_CONCRETE_WALL = regConcreteWall(DyeColor.CYAN);
-
-    public static final DeferredBlock<StairBlock> LIGHT_BLUE_CONCRETE_STAIRS = regConcreteStairs(DyeColor.LIGHT_BLUE);
-    public static final DeferredBlock<SlabBlock> LIGHT_BLUE_CONCRETE_SLAB = regConcreteSlab(DyeColor.LIGHT_BLUE);
-    public static final DeferredBlock<WallBlock> LIGHT_BLUE_CONCRETE_WALL = regConcreteWall(DyeColor.LIGHT_BLUE);
-
-    public static final DeferredBlock<StairBlock> BLUE_CONCRETE_STAIRS = regConcreteStairs(DyeColor.BLUE);
-    public static final DeferredBlock<SlabBlock> BLUE_CONCRETE_SLAB = regConcreteSlab(DyeColor.BLUE);
-    public static final DeferredBlock<WallBlock> BLUE_CONCRETE_WALL = regConcreteWall(DyeColor.BLUE);
-
-    public static final DeferredBlock<StairBlock> PURPLE_CONCRETE_STAIRS = regConcreteStairs(DyeColor.PURPLE);
-    public static final DeferredBlock<SlabBlock> PURPLE_CONCRETE_SLAB = regConcreteSlab(DyeColor.PURPLE);
-    public static final DeferredBlock<WallBlock> PURPLE_CONCRETE_WALL = regConcreteWall(DyeColor.PURPLE);
-
-    public static final DeferredBlock<StairBlock> MAGENTA_CONCRETE_STAIRS = regConcreteStairs(DyeColor.MAGENTA);
-    public static final DeferredBlock<SlabBlock> MAGENTA_CONCRETE_SLAB = regConcreteSlab(DyeColor.MAGENTA);
-    public static final DeferredBlock<WallBlock> MAGENTA_CONCRETE_WALL = regConcreteWall(DyeColor.MAGENTA);
-
-    public static final DeferredBlock<StairBlock> PINK_CONCRETE_STAIRS = regConcreteStairs(DyeColor.PINK);
-    public static final DeferredBlock<SlabBlock> PINK_CONCRETE_SLAB = regConcreteSlab(DyeColor.PINK);
-    public static final DeferredBlock<WallBlock> PINK_CONCRETE_WALL = regConcreteWall(DyeColor.PINK);
+    public static final ColorCollection<DeferredBlock<WallBlock>> CONCRETE_WALL = ColorCollection.zipMap(
+            ColorCollection.VALUES, BVBlockItemIds.CONCRETE_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.CONCRETE.pick(color)))
+    );
 
 
     public static final DeferredBlock<StairBlock> WHITE_GLAZED_TERRACOTTA_STAIRS = regGlazedTerracottaStairs(DyeColor.WHITE);
@@ -237,61 +184,53 @@ public final class BVColoredBlocks {
 
 
     private static DeferredBlock<StairBlock> regTerracottaStairs(DyeColor color, Block base) {
-        return register(color.getName() + "_terracotta_stairs", prop -> new StairBlock(base.defaultBlockState(), prop), () -> copyProperties(base));
+        return register(color.getName() + "_terracotta_stairs", StairBlock::new, base, BlockRegisterHelper::stairProperties);
     }
 
     private static DeferredBlock<SlabBlock> regTerracottaSlab(DyeColor color) {
-        return register(color.getName() + "_terracotta_slab", SlabBlock::new, () -> copyProperties(Blocks.TERRACOTTA));
+        return register(color.getName() + "_terracotta_slab", SlabBlock::new, () -> slabProperties(Blocks.TERRACOTTA));
     }
 
     private static DeferredBlock<WallBlock> regTerracottaWall(DyeColor color) {
-        return register(color.getName() + "_terracotta_wall", WallBlock::new, () -> copyProperties(Blocks.TERRACOTTA));
+        return register(color.getName() + "_terracotta_wall", WallBlock::new, () -> wallProperties(Blocks.TERRACOTTA));
     }
 
     private static DeferredBlock<StairBlock> regGlazedTerracottaStairs(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_stairs", prop -> new StairBlock(parent.defaultBlockState(), prop), parent);
+        return register(color.getName() + "_glazed_terracotta_stairs", StairBlock::new, parent, BlockRegisterHelper::stairProperties);
     }
 
     private static DeferredBlock<SlabBlock> regGlazedTerracottaSlab(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_slab", SlabBlock::new, parent);
+        return register(color.getName() + "_glazed_terracotta_slab", SlabBlock::new, () -> slabProperties(parent));
     }
 
     private static DeferredBlock<WallBlock> regGlazedTerracottaWall(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_wall", WallBlock::new, parent);
+        return register(color.getName() + "_glazed_terracotta_wall", WallBlock::new, () -> wallProperties(parent));
     }
 
-    private static DeferredBlock<StairBlock> regConcreteStairs(DyeColor color) {
-        var parent = getVanillaBlock(color.getName() + "_concrete");
-        return register(color.getName() + "_concrete_stairs", prop -> new StairBlock(parent.defaultBlockState(), prop), parent);
+    private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties) {
+        return register(name, block, base, properties, UnaryOperator.identity());
     }
 
-    private static DeferredBlock<SlabBlock> regConcreteSlab(DyeColor color) {
-        var parent = getVanillaBlock(color.getName() + "_concrete");
-        return register(color.getName() + "_concrete_slab", SlabBlock::new, parent);
+    private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
+        return register(name, prop -> block.apply(base.defaultBlockState(), prop), () -> properties.apply(base), itemProperties);
     }
 
-    private static DeferredBlock<WallBlock> regConcreteWall(DyeColor color) {
-        var parent = getVanillaBlock(color.getName() + "_concrete");
-        return register(color.getName() + "_concrete_wall", WallBlock::new, parent);
-    }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base) {
-        return register(name, prop -> block.apply(base.defaultBlockState(), prop), () -> copyProperties(base));
-    }
-
-    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base) {
-        return register(name, block, () -> copyProperties(base));
-    }
-
-    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base, UnaryOperator<Item.Properties> itemProperties) {
-        return register(name, block, () -> copyProperties(base), itemProperties);
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, UnaryOperator<BlockBehaviour.Properties> properties) {
+        return register(name, block, properties, UnaryOperator.identity());
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
-        return register(name, block, properties, p -> p);
+        return register(name, block, properties, UnaryOperator.identity());
+    }
+
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, UnaryOperator<BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
+        var registryObject = REGISTER.registerBlock(name, block, properties);
+        BVItems.REGISTER.registerSimpleBlockItem(registryObject, itemProperties);
+        return registryObject;
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {

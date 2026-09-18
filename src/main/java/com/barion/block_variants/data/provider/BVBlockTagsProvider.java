@@ -218,55 +218,6 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVBuildingBlocks.PACKED_MUD_SLAB.getKey(),
                     BVBuildingBlocks.PACKED_MUD_WALL.getKey(),
 
-                    BVColoredBlocks.WHITE_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.WHITE_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.WHITE_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.ORANGE_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.ORANGE_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.ORANGE_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.MAGENTA_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.MAGENTA_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.MAGENTA_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.LIGHT_BLUE_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.LIGHT_BLUE_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.LIGHT_BLUE_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.YELLOW_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.YELLOW_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.YELLOW_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.LIME_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.LIME_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.LIME_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.PINK_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.PINK_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.PINK_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.GRAY_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.GRAY_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.GRAY_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.LIGHT_GRAY_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.LIGHT_GRAY_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.LIGHT_GRAY_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.CYAN_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.CYAN_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.CYAN_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.PURPLE_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.PURPLE_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.PURPLE_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.BLUE_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.BLUE_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.BLUE_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.BROWN_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.BROWN_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.BROWN_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.GREEN_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.GREEN_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.GREEN_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.RED_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.RED_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.RED_CONCRETE_WALL.getKey(),
-                    BVColoredBlocks.BLACK_CONCRETE_STAIRS.getKey(),
-                    BVColoredBlocks.BLACK_CONCRETE_SLAB.getKey(),
-                    BVColoredBlocks.BLACK_CONCRETE_WALL.getKey(),
-
                     BVOtherBlocks.GOLD_GRATE.getKey()
             );
 
@@ -447,6 +398,8 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.getKey()
             );
         } // needs Axe
+
+        tag(BlockTags.SHEARS_MAJOR_BREAKING_SPEED).addTags(BVTags.Blocks.WOOL_WALLS);
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(
                 BVOtherBlocks.GOLD_BARS.getKey(),

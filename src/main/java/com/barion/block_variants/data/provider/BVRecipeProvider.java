@@ -231,22 +231,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
 
         all(BVBuildingBlocks.PACKED_MUD_STAIRS.get(), BVBuildingBlocks.PACKED_MUD_SLAB.get(), BVBuildingBlocks.PACKED_MUD_WALL.get(), Blocks.PACKED_MUD, true);
 
-        all(BVColoredBlocks.WHITE_CONCRETE_STAIRS.get(), BVColoredBlocks.WHITE_CONCRETE_SLAB.get(), BVColoredBlocks.WHITE_CONCRETE_WALL.get(), Blocks.CONCRETE.white(), true);
-        all(BVColoredBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_CONCRETE_WALL.get(), Blocks.CONCRETE.lightGray(), true);
-        all(BVColoredBlocks.GRAY_CONCRETE_STAIRS.get(), BVColoredBlocks.GRAY_CONCRETE_SLAB.get(), BVColoredBlocks.GRAY_CONCRETE_WALL.get(), Blocks.CONCRETE.gray(), true);
-        all(BVColoredBlocks.BLACK_CONCRETE_STAIRS.get(), BVColoredBlocks.BLACK_CONCRETE_SLAB.get(), BVColoredBlocks.BLACK_CONCRETE_WALL.get(), Blocks.CONCRETE.black(), true);
-        all(BVColoredBlocks.BROWN_CONCRETE_STAIRS.get(), BVColoredBlocks.BROWN_CONCRETE_SLAB.get(), BVColoredBlocks.BROWN_CONCRETE_WALL.get(), Blocks.CONCRETE.brown(), true);
-        all(BVColoredBlocks.RED_CONCRETE_STAIRS.get(), BVColoredBlocks.RED_CONCRETE_SLAB.get(), BVColoredBlocks.RED_CONCRETE_WALL.get(), Blocks.CONCRETE.red(), true);
-        all(BVColoredBlocks.ORANGE_CONCRETE_STAIRS.get(), BVColoredBlocks.ORANGE_CONCRETE_SLAB.get(), BVColoredBlocks.ORANGE_CONCRETE_WALL.get(), Blocks.CONCRETE.orange(), true);
-        all(BVColoredBlocks.YELLOW_CONCRETE_STAIRS.get(), BVColoredBlocks.YELLOW_CONCRETE_SLAB.get(), BVColoredBlocks.YELLOW_CONCRETE_WALL.get(), Blocks.CONCRETE.yellow(), true);
-        all(BVColoredBlocks.LIME_CONCRETE_STAIRS.get(), BVColoredBlocks.LIME_CONCRETE_SLAB.get(), BVColoredBlocks.LIME_CONCRETE_WALL.get(), Blocks.CONCRETE.lime(), true);
-        all(BVColoredBlocks.GREEN_CONCRETE_STAIRS.get(), BVColoredBlocks.GREEN_CONCRETE_SLAB.get(), BVColoredBlocks.GREEN_CONCRETE_WALL.get(), Blocks.CONCRETE.green(), true);
-        all(BVColoredBlocks.CYAN_CONCRETE_STAIRS.get(), BVColoredBlocks.CYAN_CONCRETE_SLAB.get(), BVColoredBlocks.CYAN_CONCRETE_WALL.get(), Blocks.CONCRETE.cyan(), true);
-        all(BVColoredBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_CONCRETE_WALL.get(), Blocks.CONCRETE.lightBlue(), true);
-        all(BVColoredBlocks.BLUE_CONCRETE_STAIRS.get(), BVColoredBlocks.BLUE_CONCRETE_SLAB.get(), BVColoredBlocks.BLUE_CONCRETE_WALL.get(), Blocks.CONCRETE.blue(), true);
-        all(BVColoredBlocks.PURPLE_CONCRETE_STAIRS.get(), BVColoredBlocks.PURPLE_CONCRETE_SLAB.get(), BVColoredBlocks.PURPLE_CONCRETE_WALL.get(), Blocks.CONCRETE.purple(), true);
-        all(BVColoredBlocks.MAGENTA_CONCRETE_STAIRS.get(), BVColoredBlocks.MAGENTA_CONCRETE_SLAB.get(), BVColoredBlocks.MAGENTA_CONCRETE_WALL.get(), Blocks.CONCRETE.magenta(), true);
-        all(BVColoredBlocks.PINK_CONCRETE_STAIRS.get(), BVColoredBlocks.PINK_CONCRETE_SLAB.get(), BVColoredBlocks.PINK_CONCRETE_WALL.get(), Blocks.CONCRETE.pink(), true);
+        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get(), Blocks.CONCRETE.pick(color), true));
 
         shaped(RecipeCategory.DECORATIONS, BVOtherBlocks.GOLD_BARS, 16)
                 .define('#', Items.GOLD_INGOT)

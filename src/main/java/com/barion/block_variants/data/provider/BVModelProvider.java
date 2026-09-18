@@ -161,22 +161,9 @@ public final class BVModelProvider extends ExtendedModelProvider {
 
         stairsSlabWall(blockModels, Blocks.PACKED_MUD, BVBuildingBlocks.PACKED_MUD_STAIRS.get(), BVBuildingBlocks.PACKED_MUD_SLAB.get(), BVBuildingBlocks.PACKED_MUD_WALL.get());
 
-        stairsSlabWall(blockModels, Blocks.CONCRETE.white(), BVColoredBlocks.WHITE_CONCRETE_STAIRS.get(), BVColoredBlocks.WHITE_CONCRETE_SLAB.get(), BVColoredBlocks.WHITE_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.lightGray(), BVColoredBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.gray(), BVColoredBlocks.GRAY_CONCRETE_STAIRS.get(), BVColoredBlocks.GRAY_CONCRETE_SLAB.get(), BVColoredBlocks.GRAY_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.black(), BVColoredBlocks.BLACK_CONCRETE_STAIRS.get(), BVColoredBlocks.BLACK_CONCRETE_SLAB.get(), BVColoredBlocks.BLACK_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.brown(), BVColoredBlocks.BROWN_CONCRETE_STAIRS.get(), BVColoredBlocks.BROWN_CONCRETE_SLAB.get(), BVColoredBlocks.BROWN_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.red(), BVColoredBlocks.RED_CONCRETE_STAIRS.get(), BVColoredBlocks.RED_CONCRETE_SLAB.get(), BVColoredBlocks.RED_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.orange(), BVColoredBlocks.ORANGE_CONCRETE_STAIRS.get(), BVColoredBlocks.ORANGE_CONCRETE_SLAB.get(), BVColoredBlocks.ORANGE_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.yellow(), BVColoredBlocks.YELLOW_CONCRETE_STAIRS.get(), BVColoredBlocks.YELLOW_CONCRETE_SLAB.get(), BVColoredBlocks.YELLOW_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.lime(), BVColoredBlocks.LIME_CONCRETE_STAIRS.get(), BVColoredBlocks.LIME_CONCRETE_SLAB.get(), BVColoredBlocks.LIME_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.green(), BVColoredBlocks.GREEN_CONCRETE_STAIRS.get(), BVColoredBlocks.GREEN_CONCRETE_SLAB.get(), BVColoredBlocks.GREEN_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.cyan(), BVColoredBlocks.CYAN_CONCRETE_STAIRS.get(), BVColoredBlocks.CYAN_CONCRETE_SLAB.get(), BVColoredBlocks.CYAN_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.lightBlue(), BVColoredBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.blue(), BVColoredBlocks.BLUE_CONCRETE_STAIRS.get(), BVColoredBlocks.BLUE_CONCRETE_SLAB.get(), BVColoredBlocks.BLUE_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.purple(), BVColoredBlocks.PURPLE_CONCRETE_STAIRS.get(), BVColoredBlocks.PURPLE_CONCRETE_SLAB.get(), BVColoredBlocks.PURPLE_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.magenta(), BVColoredBlocks.MAGENTA_CONCRETE_STAIRS.get(), BVColoredBlocks.MAGENTA_CONCRETE_SLAB.get(), BVColoredBlocks.MAGENTA_CONCRETE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CONCRETE.pink(), BVColoredBlocks.PINK_CONCRETE_STAIRS.get(), BVColoredBlocks.PINK_CONCRETE_SLAB.get(), BVColoredBlocks.PINK_CONCRETE_WALL.get());
+        ColorCollection.VALUES.forEach(color -> {
+            blockModels.familyWithExistingFullBlock(Blocks.CONCRETE.pick(color)).wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get());
+        });
 
         createBarsAndItem(blockModels, BVOtherBlocks.GOLD_BARS.get());
         createChain(blockModels, BVOtherBlocks.GOLD_CHAIN.get());
