@@ -1,13 +1,14 @@
 package com.barion.block_variants;
 
-import com.ametrinstudios.ametrin.data.provider.CustomLootTableProvider;
+import com.ametrinstudios.ametrin.util.VanillaCompat;
 import com.barion.block_variants.data.provider.*;
-import com.barion.block_variants.data.provider.loot_table.BVBlockLootProvider;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
 import com.barion.block_variants.registry.BVItems;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import com.mojang.logging.LogUtils;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -32,8 +34,13 @@ public final class BlockVariants {
         BVColoredBlocks.REGISTER.register(modBus);
         BVOtherBlocks.REGISTER.register(modBus);
         BVItems.REGISTER.register(modBus);
+        modBus.addListener(BlockVariants::setup);
         modBus.addListener(BlockVariants::buildCreativeModeTabs);
         modBus.addListener(BlockVariants::gatherData);
+    }
+
+    private static void setup(final FMLCommonSetupEvent event) {
+        BVColoredBlocks.WOOL_WALL.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
     }
 
     public static Identifier locate(String path) {
@@ -64,7 +71,7 @@ public final class BlockVariants {
             BVColoredBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
         }
 
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
@@ -74,11 +81,15 @@ public final class BlockVariants {
     }
 
     private static void gatherData(GatherDataEvent.Client event) {
+
+        event.createReloadableRegistryObjects(new RegistrySetBuilder()
+                .add(Registries.LOOT_TABLE, BVLootTableProvider.create())
+                .add(BVRecipeProvider.create())
+        );
+
         event.createProvider(BVModelProvider::new);
-        event.createProvider(BVRecipeProvider.Runner::new);
         event.createProvider(BVDataMapProvider::new);
         event.createProvider(BVBlockTagsProvider::new);
         event.createProvider(BVItemTagsProvider::new);
-        event.createProvider(CustomLootTableProvider.builder().addBlockProvider(BVBlockLootProvider::new)::build);
     }
 }

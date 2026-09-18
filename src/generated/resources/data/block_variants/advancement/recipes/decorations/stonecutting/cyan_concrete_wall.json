@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/cyan_concrete_wall"
+        "recipes": "block_variants:stonecutting/cyan_concrete_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

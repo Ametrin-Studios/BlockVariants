@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:dispenser"
+        "recipes": "block_variants:dispenser"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

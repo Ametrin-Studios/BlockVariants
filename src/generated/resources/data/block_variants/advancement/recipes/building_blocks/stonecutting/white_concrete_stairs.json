@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/white_concrete_stairs"
+        "recipes": "block_variants:stonecutting/white_concrete_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:bamboo_block_fence"
+        "recipes": "block_variants:bamboo_block_fence"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

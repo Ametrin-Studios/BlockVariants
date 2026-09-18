@@ -48,12 +48,10 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
             if (!name.contains("wool")) return;
             tag(BlockItemTags.DAMPENS_VIBRATIONS).add(id);
 
-            if (name.contains("stairs")) {
-                tag(BVTags.BlockItems.WOOL_STAIRS).add(id);
-            } else if (name.contains("slab")) {
-                tag(BVTags.BlockItems.WOOL_SLABS).add(id);
-            } else if (name.contains("wall")) {
+            if (name.contains("wall")) {
                 tag(BVTags.BlockItems.WOOL_WALLS).add(id);
+            } else {
+                throw new RuntimeException("unknown wool time");
             }
         });
 

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stripped_dark_oak_log_slab"
+        "recipes": "block_variants:stripped_dark_oak_log_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

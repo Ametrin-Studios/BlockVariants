@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:spruce_wood_slab"
+        "recipes": "block_variants:spruce_wood_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

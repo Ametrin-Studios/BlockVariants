@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:crimson_hyphae_fence_gate_from_crimson_stem"
+        "recipes": "block_variants:crimson_hyphae_fence_gate_from_crimson_stem"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

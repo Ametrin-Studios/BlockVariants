@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/cut_red_sandstone_stairs_from_red_sandstone_stairs"
+        "recipes": "block_variants:stonecutting/cut_red_sandstone_stairs_from_red_sandstone_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

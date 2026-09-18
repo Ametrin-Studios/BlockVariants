@@ -1,12 +1,9 @@
 package com.barion.block_variants.data.provider;
 
 import com.barion.block_variants.registry.BVBuildingBlocks;
-import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.common.data.DataMapProvider;
-import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.neoforged.neoforge.registries.datamaps.builtin.Strippable;
 
@@ -19,10 +16,6 @@ public final class BVDataMapProvider extends DataMapProvider {
 
     @Override
     protected void gather( HolderLookup.Provider provider) {
-        builder(NeoForgeDataMaps.FURNACE_FUELS)
-                .add(BVTags.Items.WOODEN_WALLS, new FurnaceFuel(AbstractFurnaceBlockEntity.BURN_TIME_STANDARD * 3 / 2), false)
-        ;
-
         builder(NeoForgeDataMaps.STRIPPABLES)
                 .add(BVBuildingBlocks.OAK_LOG_STAIRS, new Strippable(BVBuildingBlocks.STRIPPED_OAK_LOG_STAIRS.get()), false)
                 .add(BVBuildingBlocks.OAK_LOG_SLAB, new Strippable(BVBuildingBlocks.STRIPPED_OAK_LOG_SLAB.get()), false)

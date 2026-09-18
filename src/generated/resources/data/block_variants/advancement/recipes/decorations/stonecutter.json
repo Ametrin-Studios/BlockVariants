@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutter"
+        "recipes": "block_variants:stonecutter"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

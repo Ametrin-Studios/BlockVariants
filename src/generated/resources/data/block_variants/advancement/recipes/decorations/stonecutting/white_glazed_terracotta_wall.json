@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/white_glazed_terracotta_wall"
+        "recipes": "block_variants:stonecutting/white_glazed_terracotta_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

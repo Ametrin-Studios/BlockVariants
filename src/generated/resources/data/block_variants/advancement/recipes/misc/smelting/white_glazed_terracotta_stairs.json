@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:smelting/white_glazed_terracotta_stairs"
+        "recipes": "block_variants:smelting/white_glazed_terracotta_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

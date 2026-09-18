@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:calcite_stairs"
+        "recipes": "block_variants:calcite_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

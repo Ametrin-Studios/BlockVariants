@@ -5,6 +5,7 @@ import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
 import com.barion.block_variants.registry.BVOtherBlocks;
+import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BlockItemTagsProvider;
@@ -267,24 +268,10 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVColoredBlocks.BLACK_CONCRETE_WALL.getKey(),
 
                     BVOtherBlocks.GOLD_GRATE.getKey()
-            ).remove( // minecraft:walls seems to be part of mineable with pickaxe
-                    BVColoredBlocks.WHITE_WOOL_WALL.getKey(),
-                    BVColoredBlocks.LIGHT_GRAY_WOOL_WALL.getKey(),
-                    BVColoredBlocks.GRAY_WOOL_WALL.getKey(),
-                    BVColoredBlocks.BLACK_WOOL_WALL.getKey(),
-                    BVColoredBlocks.BROWN_WOOL_WALL.getKey(),
-                    BVColoredBlocks.RED_WOOL_WALL.getKey(),
-                    BVColoredBlocks.ORANGE_WOOL_WALL.getKey(),
-                    BVColoredBlocks.YELLOW_WOOL_WALL.getKey(),
-                    BVColoredBlocks.LIME_WOOL_WALL.getKey(),
-                    BVColoredBlocks.GREEN_WOOL_WALL.getKey(),
-                    BVColoredBlocks.CYAN_WOOL_WALL.getKey(),
-                    BVColoredBlocks.LIGHT_BLUE_WOOL_WALL.getKey(),
-                    BVColoredBlocks.BLUE_WOOL_WALL.getKey(),
-                    BVColoredBlocks.PURPLE_WOOL_WALL.getKey(),
-                    BVColoredBlocks.MAGENTA_WOOL_WALL.getKey(),
-                    BVColoredBlocks.PINK_WOOL_WALL.getKey()
             );
+
+            // minecraft:walls seems to be part of mineable with pickaxe
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).remove(BVTags.Blocks.WOOL_WALLS);
         } // needs Pickaxe
 
         {

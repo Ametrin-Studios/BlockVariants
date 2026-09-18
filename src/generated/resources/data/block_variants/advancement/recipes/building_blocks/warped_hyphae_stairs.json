@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:warped_hyphae_stairs"
+        "recipes": "block_variants:warped_hyphae_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:smelting/yellow_glazed_terracotta_slab"
+        "recipes": "block_variants:smelting/yellow_glazed_terracotta_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

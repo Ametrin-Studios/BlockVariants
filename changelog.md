@@ -1,9 +1,15 @@
+## 6.8.0
+
+- remove Wool Stairs/Slabs (existing blocks/items will be converted to vanilla blocks)
+- fix Wool Walls not being flammable
+- 26.3 port
+
 ## 6.7.1
 - fix fence gates destroyed by water
 
 ## 6.7.0
 - added Golden Grate, Bars and Chain
-- (26.x.x port)
+- (26.1 - 26.2 port)
 
 ## 6.6.0
 - added Concrete variants

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/cut_sandstone_wall_from_sandstone_wall"
+        "recipes": "block_variants:stonecutting/cut_sandstone_wall_from_sandstone_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:packed_mud_slab"
+        "recipes": "block_variants:packed_mud_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

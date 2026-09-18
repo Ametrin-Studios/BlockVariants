@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "block_variants:stonecutting/gray_concrete_slab"
+        "recipes": "block_variants:stonecutting/gray_concrete_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

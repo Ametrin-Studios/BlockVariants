@@ -12,6 +12,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.copyProperties;
 
@@ -45,10 +46,10 @@ public final class BVOtherBlocks {
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
-        return register(name, block, properties, ()-> BVBuildingBlocks.DEFAULT_ITEM_PROPERTIES);
+        return register(name, block, properties, p -> p);
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties, Supplier<Item.Properties> itemProperties) {
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
         var registryObject = REGISTER.registerBlock(name, block, properties);
         BVItems.REGISTER.registerSimpleBlockItem(registryObject, itemProperties);
         return registryObject;

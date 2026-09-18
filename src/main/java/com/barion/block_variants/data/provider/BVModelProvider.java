@@ -155,22 +155,9 @@ public final class BVModelProvider extends ExtendedModelProvider {
         stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.red(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_WALL.get());
         stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.black(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get());
 
-        stairsSlabWall(blockModels, Blocks.WOOL.white(), BVColoredBlocks.WHITE_WOOL_STAIRS.get(), BVColoredBlocks.WHITE_WOOL_SLAB.get(), BVColoredBlocks.WHITE_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.orange(), BVColoredBlocks.ORANGE_WOOL_STAIRS.get(), BVColoredBlocks.ORANGE_WOOL_SLAB.get(), BVColoredBlocks.ORANGE_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.magenta(), BVColoredBlocks.MAGENTA_WOOL_STAIRS.get(), BVColoredBlocks.MAGENTA_WOOL_SLAB.get(), BVColoredBlocks.MAGENTA_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.lightBlue(), BVColoredBlocks.LIGHT_BLUE_WOOL_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_WOOL_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.yellow(), BVColoredBlocks.YELLOW_WOOL_STAIRS.get(), BVColoredBlocks.YELLOW_WOOL_SLAB.get(), BVColoredBlocks.YELLOW_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.lime(), BVColoredBlocks.LIME_WOOL_STAIRS.get(), BVColoredBlocks.LIME_WOOL_SLAB.get(), BVColoredBlocks.LIME_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.pink(), BVColoredBlocks.PINK_WOOL_STAIRS.get(), BVColoredBlocks.PINK_WOOL_SLAB.get(), BVColoredBlocks.PINK_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.gray(), BVColoredBlocks.GRAY_WOOL_STAIRS.get(), BVColoredBlocks.GRAY_WOOL_SLAB.get(), BVColoredBlocks.GRAY_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.lightGray(), BVColoredBlocks.LIGHT_GRAY_WOOL_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_WOOL_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.cyan(), BVColoredBlocks.CYAN_WOOL_STAIRS.get(), BVColoredBlocks.CYAN_WOOL_SLAB.get(), BVColoredBlocks.CYAN_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.purple(), BVColoredBlocks.PURPLE_WOOL_STAIRS.get(), BVColoredBlocks.PURPLE_WOOL_SLAB.get(), BVColoredBlocks.PURPLE_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.blue(), BVColoredBlocks.BLUE_WOOL_STAIRS.get(), BVColoredBlocks.BLUE_WOOL_SLAB.get(), BVColoredBlocks.BLUE_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.brown(), BVColoredBlocks.BROWN_WOOL_STAIRS.get(), BVColoredBlocks.BROWN_WOOL_SLAB.get(), BVColoredBlocks.BROWN_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.green(), BVColoredBlocks.GREEN_WOOL_STAIRS.get(), BVColoredBlocks.GREEN_WOOL_SLAB.get(), BVColoredBlocks.GREEN_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.red(), BVColoredBlocks.RED_WOOL_STAIRS.get(), BVColoredBlocks.RED_WOOL_SLAB.get(), BVColoredBlocks.RED_WOOL_WALL.get());
-        stairsSlabWall(blockModels, Blocks.WOOL.black(), BVColoredBlocks.BLACK_WOOL_STAIRS.get(), BVColoredBlocks.BLACK_WOOL_SLAB.get(), BVColoredBlocks.BLACK_WOOL_WALL.get());
+        ColorCollection.VALUES.forEach(color -> {
+            blockModels.familyWithExistingFullBlock(Blocks.WOOL.pick(color)).wall(BVColoredBlocks.WOOL_WALL.pick(color).get());
+        });
 
         stairsSlabWall(blockModels, Blocks.PACKED_MUD, BVBuildingBlocks.PACKED_MUD_STAIRS.get(), BVBuildingBlocks.PACKED_MUD_SLAB.get(), BVBuildingBlocks.PACKED_MUD_WALL.get());
 
