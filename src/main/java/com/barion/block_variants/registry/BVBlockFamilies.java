@@ -2,6 +2,7 @@ package com.barion.block_variants.registry;
 
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ColorCollection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -243,6 +244,26 @@ public final class BVBlockFamilies {
             .wall(BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_WALL.get())
             .fence(BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE.get())
             .fenceGate(BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.get()));
+
+    public static final ColorCollection<BlockFamily> DYED_TERRACOTTA = ColorCollection.VALUES
+            .map(
+                    color -> new BlockFamily.Builder(Blocks.DYED_TERRACOTTA.pick(color))
+                            .stairs(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(color).get())
+                            .slab(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(color).get())
+                            .wall(BVColoredBlocks.DYED_TERRACOTTA_WALL.pick(color).get())
+                            .generateStonecutterRecipe()
+                            .getFamily()
+            );
+
+    public static final ColorCollection<BlockFamily> GLAZED_TERRACOTTA = ColorCollection.VALUES
+            .map(
+                    color -> new BlockFamily.Builder(Blocks.GLAZED_TERRACOTTA.pick(color))
+                            .stairs(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).get())
+                            .slab(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(color).get())
+                            .wall(BVColoredBlocks.GLAZED_TERRACOTTA_WALL.pick(color).get())
+                            .generateStonecutterRecipe()
+                            .getFamily()
+            );
 
     private static BlockFamily logFamily(BlockFamily.Builder builder) {
         var family = builder.getFamily();

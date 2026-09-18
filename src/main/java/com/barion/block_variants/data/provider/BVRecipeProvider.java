@@ -12,26 +12,23 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.flag.FeatureFlagSet;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Map;
 import java.util.Set;
 
 public final class BVRecipeProvider extends ExtendedRecipeProvider {
     public BVRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
-        super(BlockVariants.MOD_ID, recipeOutput, advancementOutput);
+        super(BlockVariants.MOD_ID, recipeOutput, advancementOutput, Map.of());
     }
 
     @Override
     @ParametersAreNonnullByDefault
     protected void buildRecipes() {
-        var featureflagSet = FeatureFlagSet.of(FeatureFlags.VANILLA);
-
         wall(BVOtherBlocks.POLISHED_GRANITE_WALL.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
         wall(BVOtherBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
         wall(BVOtherBlocks.POLISHED_ANDESITE_WALL.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
@@ -73,15 +70,15 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         smelting(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);
         smelting(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(), Blocks.POLISHED_BLACKSTONE_BRICK_SLAB);
         smelting(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(), Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
-        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
-        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
-        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.POLISHED_BLACKSTONE_STAIRS);
-        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_SLAB, 1, Blocks.BLACKSTONE_SLAB);
-        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.BLACKSTONE_SLAB);
-        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.POLISHED_BLACKSTONE_SLAB);
-        stonecutting(RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_WALL, 1, Blocks.BLACKSTONE_WALL);
-        stonecutting(RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.BLACKSTONE_WALL);
-        stonecutting(RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.POLISHED_BLACKSTONE_WALL);
+        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_STAIRS, Blocks.BLACKSTONE_STAIRS, 1);
+        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.BLACKSTONE_STAIRS, 1);
+        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.POLISHED_BLACKSTONE_STAIRS, 1);
+        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_SLAB, Blocks.BLACKSTONE_SLAB, 1);
+        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, Blocks.BLACKSTONE_SLAB, 1);
+        stonecutting(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, Blocks.POLISHED_BLACKSTONE_SLAB, 1);
+        stonecutting(RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_WALL, Blocks.BLACKSTONE_WALL, 1);
+        stonecutting(RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, Blocks.BLACKSTONE_WALL, 1);
+        stonecutting(RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, Blocks.POLISHED_BLACKSTONE_WALL, 1);
 
         all(BVBuildingBlocks.BASALT_STAIRS.get(), BVBuildingBlocks.BASALT_SLAB.get(), BVBuildingBlocks.BASALT_WALL.get(), Blocks.BASALT, true);
         stairs(BVBuildingBlocks.POLISHED_BASALT_STAIRS.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBuildingBlocks.BASALT_STAIRS.get());
@@ -89,32 +86,17 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         wall(BVBuildingBlocks.POLISHED_BASALT_WALL.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBuildingBlocks.BASALT_WALL.get());
 
         all(BVColoredBlocks.TERRACOTTA_STAIRS.get(), BVColoredBlocks.TERRACOTTA_SLAB.get(), BVColoredBlocks.TERRACOTTA_WALL.get(), Blocks.TERRACOTTA, true);
-        all(BVColoredBlocks.WHITE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.WHITE_TERRACOTTA_SLAB.get(), BVColoredBlocks.WHITE_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.white(), true);
-        all(BVColoredBlocks.ORANGE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.ORANGE_TERRACOTTA_SLAB.get(), BVColoredBlocks.ORANGE_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.orange(), true);
-        all(BVColoredBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), BVColoredBlocks.MAGENTA_TERRACOTTA_SLAB.get(), BVColoredBlocks.MAGENTA_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.magenta(), true);
-        all(BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.lightBlue(), true);
-        all(BVColoredBlocks.YELLOW_TERRACOTTA_STAIRS.get(), BVColoredBlocks.YELLOW_TERRACOTTA_SLAB.get(), BVColoredBlocks.YELLOW_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.yellow(), true);
-        all(BVColoredBlocks.LIME_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIME_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIME_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.lime(), true);
-        all(BVColoredBlocks.PINK_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PINK_TERRACOTTA_SLAB.get(), BVColoredBlocks.PINK_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.pink(), true);
-        all(BVColoredBlocks.GRAY_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GRAY_TERRACOTTA_SLAB.get(), BVColoredBlocks.GRAY_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.gray(), true);
-        all(BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.lightGray(), true);
-        all(BVColoredBlocks.CYAN_TERRACOTTA_STAIRS.get(), BVColoredBlocks.CYAN_TERRACOTTA_SLAB.get(), BVColoredBlocks.CYAN_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.cyan(), true);
-        all(BVColoredBlocks.PURPLE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PURPLE_TERRACOTTA_SLAB.get(), BVColoredBlocks.PURPLE_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.purple(), true);
-        all(BVColoredBlocks.BLUE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLUE_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLUE_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.blue(), true);
-        all(BVColoredBlocks.BROWN_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BROWN_TERRACOTTA_SLAB.get(), BVColoredBlocks.BROWN_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.brown(), true);
-        all(BVColoredBlocks.GREEN_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GREEN_TERRACOTTA_SLAB.get(), BVColoredBlocks.GREEN_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.green(), true);
-        all(BVColoredBlocks.RED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.RED_TERRACOTTA_SLAB.get(), BVColoredBlocks.RED_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.red(), true);
-        all(BVColoredBlocks.BLACK_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLACK_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLACK_TERRACOTTA_WALL.get(), Blocks.DYED_TERRACOTTA.black(), true);
+        BVBlockFamilies.DYED_TERRACOTTA.forEach(family -> generateRecipes(family, DEFAULT_FEATURE_FLAG_SET));
 
         all(BVBuildingBlocks.DRIPSTONE_BLOCK_STAIRS.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_SLAB.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_WALL.get(), Blocks.DRIPSTONE_BLOCK, true);
         all(BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(), BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(), BVBuildingBlocks.AMETHYST_BLOCK_WALL.get(), Blocks.AMETHYST_BLOCK, false);
 
         for (var family : BVBlockFamilies.LOG_FAMILIES) {
-            generateRecipes(family, featureflagSet);
+            generateRecipes(family, DEFAULT_FEATURE_FLAG_SET);
         }
 
         for (var family : BVBlockFamilies.WOOD_FAMILIES) {
-            generateRecipes(family, featureflagSet);
+            generateRecipes(family, DEFAULT_FEATURE_FLAG_SET);
         }
 
         wallFenceFenceGate(BVBuildingBlocks.OAK_WOOD_WALL.get(), BVBuildingBlocks.OAK_WOOD_FENCE.get(), BVBuildingBlocks.OAK_WOOD_FENCE_GATE.get(), Blocks.OAK_LOG, false);
@@ -160,70 +142,14 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         all(BVBuildingBlocks.OBSIDIAN_STAIRS.get(), BVBuildingBlocks.OBSIDIAN_SLAB.get(), BVBuildingBlocks.OBSIDIAN_WALL.get(), Blocks.OBSIDIAN, false);
         all(BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get(), BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get(), BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get(), Blocks.CRYING_OBSIDIAN, false);
 
-        all(BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.white(), true);
-        smelting(BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.WHITE_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.WHITE_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.WHITE_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.orange(), true);
-        smelting(BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.ORANGE_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.ORANGE_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.ORANGE_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.magenta(), true);
-        smelting(BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.MAGENTA_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.MAGENTA_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.MAGENTA_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.lightBlue(), true);
-        smelting(BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.yellow(), true);
-        smelting(BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.YELLOW_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.YELLOW_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.YELLOW_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.LIME_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIME_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIME_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.lime(), true);
-        smelting(BVColoredBlocks.LIME_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIME_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.LIME_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIME_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.LIME_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.LIME_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.PINK_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PINK_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.PINK_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.pink(), true);
-        smelting(BVColoredBlocks.PINK_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PINK_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.PINK_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.PINK_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.PINK_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.PINK_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.gray(), true);
-        smelting(BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GRAY_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.GRAY_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.GRAY_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.lightGray(), true);
-        smelting(BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.cyan(), true);
-        smelting(BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.CYAN_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.CYAN_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.CYAN_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.purple(), true);
-        smelting(BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PURPLE_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.PURPLE_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.PURPLE_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.blue(), true);
-        smelting(BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLUE_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLUE_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.BLUE_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.brown(), true);
-        smelting(BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BROWN_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BROWN_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.BROWN_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.green(), true);
-        smelting(BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GREEN_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.GREEN_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.GREEN_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.RED_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.red(), true);
-        smelting(BVColoredBlocks.RED_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.RED_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.RED_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.RED_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.RED_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.RED_TERRACOTTA_WALL.get());
-        all(BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get(), Blocks.GLAZED_TERRACOTTA.black(), true);
-        smelting(BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLACK_TERRACOTTA_STAIRS.get());
-        smelting(BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLACK_TERRACOTTA_SLAB.get());
-        smelting(BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get(), BVColoredBlocks.BLACK_TERRACOTTA_WALL.get());
+        BVBlockFamilies.GLAZED_TERRACOTTA.forEach(family -> generateRecipes(family, DEFAULT_FEATURE_FLAG_SET));
+
+        ColorCollection.VALUES.forEach(color -> {
+            var dyed = BVBlockFamilies.DYED_TERRACOTTA.pick(color);
+            var glazed = BVBlockFamilies.GLAZED_TERRACOTTA.pick(color);
+
+            glazed.getVariants().forEach((variant, _) -> smelting(glazed.get(variant), dyed.get(variant)));
+        });
 
         ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.WOOL_WALL.pick(color).get(), Blocks.WOOL.pick(color), false));
 

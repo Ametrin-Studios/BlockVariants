@@ -1,10 +1,10 @@
 {
   "values": [
     "block_variants:blue_wool_wall",
+    "block_variants:blue_concrete_wall",
     "block_variants:blue_terracotta_stairs",
     "block_variants:blue_terracotta_slab",
     "block_variants:blue_terracotta_wall",
-    "block_variants:blue_concrete_wall",
     "block_variants:blue_glazed_terracotta_stairs",
     "block_variants:blue_glazed_terracotta_slab",
     "block_variants:blue_glazed_terracotta_wall"

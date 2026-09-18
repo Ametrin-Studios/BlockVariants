@@ -2,6 +2,7 @@ package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedModelProvider;
 import com.barion.block_variants.BlockVariants;
+import com.barion.block_variants.registry.BVBlockFamilies;
 import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVColoredBlocks;
 import com.barion.block_variants.registry.BVOtherBlocks;
@@ -50,22 +51,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
         columnStairsSlabWall(blockModels, Blocks.POLISHED_BASALT, BVBuildingBlocks.POLISHED_BASALT_STAIRS.get(), BVBuildingBlocks.POLISHED_BASALT_SLAB.get(), BVBuildingBlocks.POLISHED_BASALT_WALL.get());
 
         stairsSlabWall(blockModels, Blocks.TERRACOTTA, BVColoredBlocks.TERRACOTTA_STAIRS.get(), BVColoredBlocks.TERRACOTTA_SLAB.get(), BVColoredBlocks.TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.white(), BVColoredBlocks.WHITE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.WHITE_TERRACOTTA_SLAB.get(), BVColoredBlocks.WHITE_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.orange(), BVColoredBlocks.ORANGE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.ORANGE_TERRACOTTA_SLAB.get(), BVColoredBlocks.ORANGE_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.magenta(), BVColoredBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), BVColoredBlocks.MAGENTA_TERRACOTTA_SLAB.get(), BVColoredBlocks.MAGENTA_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.lightBlue(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.yellow(), BVColoredBlocks.YELLOW_TERRACOTTA_STAIRS.get(), BVColoredBlocks.YELLOW_TERRACOTTA_SLAB.get(), BVColoredBlocks.YELLOW_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.lime(), BVColoredBlocks.LIME_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIME_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIME_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.pink(), BVColoredBlocks.PINK_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PINK_TERRACOTTA_SLAB.get(), BVColoredBlocks.PINK_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.gray(), BVColoredBlocks.GRAY_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GRAY_TERRACOTTA_SLAB.get(), BVColoredBlocks.GRAY_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.lightGray(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.cyan(), BVColoredBlocks.CYAN_TERRACOTTA_STAIRS.get(), BVColoredBlocks.CYAN_TERRACOTTA_SLAB.get(), BVColoredBlocks.CYAN_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.purple(), BVColoredBlocks.PURPLE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PURPLE_TERRACOTTA_SLAB.get(), BVColoredBlocks.PURPLE_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.blue(), BVColoredBlocks.BLUE_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLUE_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLUE_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.brown(), BVColoredBlocks.BROWN_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BROWN_TERRACOTTA_SLAB.get(), BVColoredBlocks.BROWN_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.green(), BVColoredBlocks.GREEN_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GREEN_TERRACOTTA_SLAB.get(), BVColoredBlocks.GREEN_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.red(), BVColoredBlocks.RED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.RED_TERRACOTTA_SLAB.get(), BVColoredBlocks.RED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.DYED_TERRACOTTA.black(), BVColoredBlocks.BLACK_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLACK_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLACK_TERRACOTTA_WALL.get());
+        BVBlockFamilies.DYED_TERRACOTTA.forEach(family -> blockModels.familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family));
 
         stairsSlabWall(blockModels, Blocks.DRIPSTONE_BLOCK, BVBuildingBlocks.DRIPSTONE_BLOCK_STAIRS.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_SLAB.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_WALL.get());
         stairsSlabWall(blockModels, Blocks.AMETHYST_BLOCK, BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(), BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(), BVBuildingBlocks.AMETHYST_BLOCK_WALL.get());
@@ -138,32 +124,13 @@ public final class BVModelProvider extends ExtendedModelProvider {
         stairsSlabWall(blockModels, Blocks.OBSIDIAN, BVBuildingBlocks.OBSIDIAN_STAIRS.get(), BVBuildingBlocks.OBSIDIAN_SLAB.get(), BVBuildingBlocks.OBSIDIAN_WALL.get());
         stairsSlabWall(blockModels, Blocks.CRYING_OBSIDIAN, BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get(), BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get(), BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get());
 
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.white(), BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.WHITE_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.orange(), BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.ORANGE_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.magenta(), BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.lightBlue(), BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.yellow(), BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.YELLOW_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.lime(), BVColoredBlocks.LIME_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIME_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIME_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.pink(), BVColoredBlocks.PINK_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PINK_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.PINK_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.gray(), BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.GRAY_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.lightGray(), BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.cyan(), BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.CYAN_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.purple(), BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.PURPLE_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.blue(), BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLUE_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.brown(), BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BROWN_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.green(), BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.GREEN_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.red(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.RED_GLAZED_TERRACOTTA_WALL.get());
-        stairsSlabWall(blockModels, Blocks.GLAZED_TERRACOTTA.black(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS.get(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), BVColoredBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get());
+        BVBlockFamilies.GLAZED_TERRACOTTA.forEach(family -> blockModels.familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family));
 
-        ColorCollection.VALUES.forEach(color -> {
-            blockModels.familyWithExistingFullBlock(Blocks.WOOL.pick(color)).wall(BVColoredBlocks.WOOL_WALL.pick(color).get());
-        });
+        ColorCollection.VALUES.forEach(color -> blockModels.familyWithExistingFullBlock(Blocks.WOOL.pick(color)).wall(BVColoredBlocks.WOOL_WALL.pick(color).get()));
 
         stairsSlabWall(blockModels, Blocks.PACKED_MUD, BVBuildingBlocks.PACKED_MUD_STAIRS.get(), BVBuildingBlocks.PACKED_MUD_SLAB.get(), BVBuildingBlocks.PACKED_MUD_WALL.get());
 
-        ColorCollection.VALUES.forEach(color -> {
-            blockModels.familyWithExistingFullBlock(Blocks.CONCRETE.pick(color)).wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get());
-        });
+        ColorCollection.VALUES.forEach(color -> blockModels.familyWithExistingFullBlock(Blocks.CONCRETE.pick(color)).wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get()));
 
         createBarsAndItem(blockModels, BVOtherBlocks.GOLD_BARS.get());
         createChain(blockModels, BVOtherBlocks.GOLD_CHAIN.get());

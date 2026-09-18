@@ -1,10 +1,10 @@
 {
   "values": [
     "block_variants:magenta_wool_wall",
+    "block_variants:magenta_concrete_wall",
     "block_variants:magenta_terracotta_stairs",
     "block_variants:magenta_terracotta_slab",
     "block_variants:magenta_terracotta_wall",
-    "block_variants:magenta_concrete_wall",
     "block_variants:magenta_glazed_terracotta_stairs",
     "block_variants:magenta_glazed_terracotta_slab",
     "block_variants:magenta_glazed_terracotta_wall"
