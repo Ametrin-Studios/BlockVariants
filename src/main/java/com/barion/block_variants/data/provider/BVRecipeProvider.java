@@ -45,6 +45,10 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         wall(BVOtherBlocks.SMOOTH_STONE_WALL.get(), Blocks.SMOOTH_STONE, true);
         smelting(RecipeCategory.DECORATIONS, BVOtherBlocks.SMOOTH_STONE_WALL.get(), BVOtherBlocks.STONE_WALL.get());
 
+        wall(BVOtherBlocks.SMOOTH_SANDSTONE_WALL.get(), Blocks.SMOOTH_SANDSTONE, true);
+        smelting(RecipeCategory.DECORATIONS, BVOtherBlocks.SMOOTH_SANDSTONE_WALL.get(), Blocks.SANDSTONE_WALL, 0.1f, 200);
+        wall(BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.get(), Blocks.SMOOTH_RED_SANDSTONE, true);
+        smelting(RecipeCategory.DECORATIONS, BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.get(), Blocks.RED_SANDSTONE_WALL, 0.1f, 200);
         stairs(BVOtherBlocks.CUT_SANDSTONE_STAIRS.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS);
         stairs(BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS);
         wall(BVOtherBlocks.CUT_SANDSTONE_WALL.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_WALL);

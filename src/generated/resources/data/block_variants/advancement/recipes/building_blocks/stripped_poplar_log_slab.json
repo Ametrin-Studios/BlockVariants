@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_poplar_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stripped_poplar_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "block_variants:stripped_poplar_log_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_poplar_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "block_variants:stripped_poplar_log_slab"
+    ]
+  }
+}

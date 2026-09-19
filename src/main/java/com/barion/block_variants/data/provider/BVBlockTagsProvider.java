@@ -64,6 +64,8 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                             BVOtherBlocks.STONE_WALL.getKey(),
                             BVOtherBlocks.SMOOTH_STONE_STAIRS.getKey(),
                             BVOtherBlocks.SMOOTH_STONE_WALL.getKey(),
+                            BVOtherBlocks.SMOOTH_SANDSTONE_WALL.getKey(),
+                            BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.getKey(),
                             BVOtherBlocks.CUT_SANDSTONE_WALL.getKey(),
                             BVOtherBlocks.CUT_RED_SANDSTONE_WALL.getKey(),
                             BVBuildingBlocks.QUARTZ_WALL.getKey(),

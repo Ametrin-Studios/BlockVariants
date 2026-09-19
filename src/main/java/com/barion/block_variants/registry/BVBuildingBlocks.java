@@ -89,6 +89,8 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<SlabBlock> CHERRY_LOG_SLAB = logSlab("cherry", Blocks.CHERRY_WOOD);
     public static final DeferredBlock<StairBlock> PALE_OAK_LOG_STAIRS = logStairs("pale_oak", Blocks.PALE_OAK_WOOD);
     public static final DeferredBlock<SlabBlock> PALE_OAK_LOG_SLAB = logSlab("pale_oak", Blocks.PALE_OAK_WOOD);
+    public static final DeferredBlock<StairBlock> POPLAR_LOG_STAIRS = logStairs("poplar", Blocks.POPLAR_WOOD);
+    public static final DeferredBlock<SlabBlock> POPLAR_LOG_SLAB = logSlab("poplar", Blocks.POPLAR_WOOD);
 
     public static final DeferredBlock<StairBlock> STRIPPED_OAK_LOG_STAIRS = logStairs("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
     public static final DeferredBlock<SlabBlock> STRIPPED_OAK_LOG_SLAB = logSlab("stripped_oak", Blocks.STRIPPED_OAK_WOOD);
@@ -108,6 +110,8 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<SlabBlock> STRIPPED_CHERRY_LOG_SLAB = logSlab("stripped_cherry", Blocks.STRIPPED_CHERRY_WOOD);
     public static final DeferredBlock<StairBlock> STRIPPED_PALE_OAK_LOG_STAIRS = logStairs("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
     public static final DeferredBlock<SlabBlock> STRIPPED_PALE_OAK_LOG_SLAB = logSlab("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
+    public static final DeferredBlock<StairBlock> STRIPPED_POPLAR_LOG_STAIRS = logStairs("stripped_poplar", Blocks.STRIPPED_POPLAR_WOOD);
+    public static final DeferredBlock<SlabBlock> STRIPPED_POPLAR_LOG_SLAB = logSlab("stripped_poplar", Blocks.STRIPPED_POPLAR_WOOD);
 
     public static final DeferredBlock<StairBlock> CRIMSON_STEM_STAIRS = register("crimson_stem_stairs", StairBlock::new, Blocks.CRIMSON_STEM, BlockRegisterHelper::stairProperties);
     public static final DeferredBlock<SlabBlock> CRIMSON_STEM_SLAB = register("crimson_stem_slab", SlabBlock::new, () -> slabProperties(Blocks.CRIMSON_STEM));
@@ -164,6 +168,11 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<WallBlock> PALE_OAK_WOOD_WALL = woodWall("pale_oak", Blocks.PALE_OAK_WOOD);
     public static final DeferredBlock<FenceBlock> PALE_OAK_WOOD_FENCE = woodFence("pale_oak", Blocks.PALE_OAK_WOOD);
     public static final DeferredBlock<FenceGateBlock> PALE_OAK_WOOD_FENCE_GATE = woodFenceGate("pale_oak", Blocks.PALE_OAK_WOOD);
+    public static final DeferredBlock<StairBlock> POPLAR_WOOD_STAIRS = woodStairs("poplar", Blocks.POPLAR_WOOD);
+    public static final DeferredBlock<SlabBlock> POPLAR_WOOD_SLAB = woodSlab("poplar", Blocks.POPLAR_WOOD);
+    public static final DeferredBlock<WallBlock> POPLAR_WOOD_WALL = woodWall("poplar", Blocks.POPLAR_WOOD);
+    public static final DeferredBlock<FenceBlock> POPLAR_WOOD_FENCE = woodFence("poplar", Blocks.POPLAR_WOOD);
+    public static final DeferredBlock<FenceGateBlock> POPLAR_WOOD_FENCE_GATE = woodFenceGate("poplar", Blocks.POPLAR_WOOD);
     public static final DeferredBlock<StairBlock> BAMBOO_BLOCK_STAIRS = register("bamboo_block_stairs", prop -> new StairBlock(Blocks.BAMBOO_BLOCK.defaultBlockState(), prop), () -> stairProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     public static final DeferredBlock<SlabBlock> BAMBOO_BLOCK_SLAB = register("bamboo_block_slab", SlabBlock::new, () -> slabProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
     public static final DeferredBlock<WallBlock> BAMBOO_BLOCK_WALL = register("bamboo_block_wall", WallBlock::new, () -> wallProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
@@ -215,6 +224,11 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<WallBlock> STRIPPED_PALE_OAK_WOOD_WALL = woodWall("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
     public static final DeferredBlock<FenceBlock> STRIPPED_PALE_OAK_WOOD_FENCE = woodFence("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
     public static final DeferredBlock<FenceGateBlock> STRIPPED_PALE_OAK_WOOD_FENCE_GATE = woodFenceGate("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
+    public static final DeferredBlock<StairBlock> STRIPPED_POPLAR_WOOD_STAIRS = woodStairs("stripped_poplar", Blocks.STRIPPED_POPLAR_WOOD);
+    public static final DeferredBlock<SlabBlock> STRIPPED_POPLAR_WOOD_SLAB = woodSlab("stripped_poplar", Blocks.STRIPPED_POPLAR_WOOD);
+    public static final DeferredBlock<WallBlock> STRIPPED_POPLAR_WOOD_WALL = woodWall("stripped_poplar", Blocks.STRIPPED_POPLAR_WOOD);
+    public static final DeferredBlock<FenceBlock> STRIPPED_POPLAR_WOOD_FENCE = woodFence("stripped_poplar", Blocks.STRIPPED_POPLAR_WOOD);
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_POPLAR_WOOD_FENCE_GATE = woodFenceGate("stripped_poplar", Blocks.STRIPPED_POPLAR_WOOD);
     public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", StairBlock::new, Blocks.STRIPPED_BAMBOO_BLOCK, b -> stairProperties(b).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     public static final DeferredBlock<SlabBlock> STRIPPED_BAMBOO_BLOCK_SLAB = register("stripped_bamboo_block_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
     public static final DeferredBlock<WallBlock> STRIPPED_BAMBOO_BLOCK_WALL = register("stripped_bamboo_block_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));

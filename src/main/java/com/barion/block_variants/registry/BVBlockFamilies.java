@@ -280,6 +280,28 @@ public final class BVBlockFamilies {
             .fence(BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_FENCE_GATE.get()));
 
+    // POPLAR
+    public static final BlockFamily POPLAR_LOG = logFamily(familyBuilder(Blocks.POPLAR_LOG)
+            .stairs(BVBuildingBlocks.POPLAR_LOG_STAIRS.get())
+            .slab(BVBuildingBlocks.POPLAR_LOG_SLAB.get()));
+    public static final BlockFamily POPLAR_WOOD = woodFamily(familyBuilder(Blocks.POPLAR_WOOD)
+            .log(Blocks.POPLAR_LOG)
+            .stairs(BVBuildingBlocks.POPLAR_WOOD_STAIRS.get())
+            .slab(BVBuildingBlocks.POPLAR_WOOD_SLAB.get())
+            .wall(BVBuildingBlocks.POPLAR_WOOD_WALL.get())
+            .fence(BVBuildingBlocks.POPLAR_WOOD_FENCE.get())
+            .fenceGate(BVBuildingBlocks.POPLAR_WOOD_FENCE_GATE.get()));
+    public static final BlockFamily STRIPPED_POPLAR_LOG = logFamily(familyBuilder(Blocks.STRIPPED_POPLAR_LOG)
+            .stairs(BVBuildingBlocks.STRIPPED_POPLAR_LOG_STAIRS.get())
+            .slab(BVBuildingBlocks.STRIPPED_POPLAR_LOG_SLAB.get()));
+    public static final BlockFamily STRIPPED_POPLAR_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_POPLAR_WOOD)
+            .log(Blocks.STRIPPED_POPLAR_LOG)
+            .stairs(BVBuildingBlocks.STRIPPED_POPLAR_WOOD_STAIRS.get())
+            .slab(BVBuildingBlocks.STRIPPED_POPLAR_WOOD_SLAB.get())
+            .wall(BVBuildingBlocks.STRIPPED_POPLAR_WOOD_WALL.get())
+            .fence(BVBuildingBlocks.STRIPPED_POPLAR_WOOD_FENCE.get())
+            .fenceGate(BVBuildingBlocks.STRIPPED_POPLAR_WOOD_FENCE_GATE.get()));
+
     // BAMBOO_BLOCK
     public static final BlockFamily BAMBOO_BLOCK = familyBuilder(Blocks.BAMBOO_BLOCK)
             .stairs(BVBuildingBlocks.BAMBOO_BLOCK_STAIRS.get())

@@ -1,11 +1,9 @@
 package com.barion.block_variants;
 
+import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.util.VanillaCompat;
 import com.barion.block_variants.data.provider.*;
-import com.barion.block_variants.registry.BVBuildingBlocks;
-import com.barion.block_variants.registry.BVColoredBlocks;
-import com.barion.block_variants.registry.BVItems;
-import com.barion.block_variants.registry.BVOtherBlocks;
+import com.barion.block_variants.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -41,6 +39,12 @@ public final class BlockVariants {
 
     private static void setup(final FMLCommonSetupEvent event) {
         BVColoredBlocks.WOOL_WALL.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
+        Stream.concat(BVBlockFamilies.LOG_FAMILIES.stream(), BVBlockFamilies.WOOD_FAMILIES.stream()).filter(family -> {
+            var name = DataProviderExtensions.getBlockName(family.getBaseBlock());
+            return !(name.contains("warped") || name.contains("crimson"));
+        }).forEach(family -> family.getVariants().values().forEach(VanillaCompat.Flammable::addLog));
+        BVBlockFamilies.BAMBOO_BLOCK.getVariants().values().forEach(VanillaCompat.Flammable::addLog);
+        BVBlockFamilies.STRIPPED_BAMBOO_BLOCK.getVariants().values().forEach(VanillaCompat.Flammable::addLog);
     }
 
     public static Identifier locate(String path) {
