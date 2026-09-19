@@ -17,7 +17,8 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ColorCollection;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Set;
@@ -34,15 +35,15 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         wall(BVOtherBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
         wall(BVOtherBlocks.POLISHED_ANDESITE_WALL.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
 
-        smelting(Blocks.STONE_STAIRS, Blocks.COBBLESTONE_STAIRS);
-        smelting(Blocks.STONE_SLAB, Blocks.COBBLESTONE_SLAB);
+        smelting(RecipeCategory.BUILDING_BLOCKS, Blocks.STONE_STAIRS, Blocks.COBBLESTONE_STAIRS);
+        smelting(RecipeCategory.BUILDING_BLOCKS, Blocks.STONE_SLAB, Blocks.COBBLESTONE_SLAB);
         wall(BVOtherBlocks.STONE_WALL.get(), Blocks.STONE, true);
-        smelting(BVOtherBlocks.STONE_WALL.get(), Blocks.COBBLESTONE_WALL);
+        smelting(RecipeCategory.DECORATIONS, BVOtherBlocks.STONE_WALL.get(), Blocks.COBBLESTONE_WALL);
         stairs(BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.SMOOTH_STONE, true);
-        smelting(BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.STONE_STAIRS);
-        smelting(Blocks.SMOOTH_STONE_SLAB, Blocks.STONE_SLAB);
+        smelting(RecipeCategory.BUILDING_BLOCKS, BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.STONE_STAIRS);
+        smelting(RecipeCategory.BUILDING_BLOCKS, Blocks.SMOOTH_STONE_SLAB, Blocks.STONE_SLAB);
         wall(BVOtherBlocks.SMOOTH_STONE_WALL.get(), Blocks.SMOOTH_STONE, true);
-        smelting(BVOtherBlocks.SMOOTH_STONE_WALL.get(), BVOtherBlocks.STONE_WALL.get());
+        smelting(RecipeCategory.DECORATIONS, BVOtherBlocks.SMOOTH_STONE_WALL.get(), BVOtherBlocks.STONE_WALL.get());
 
         stairs(BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS);
         stairs(BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS);
@@ -53,10 +54,10 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         stairs(BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_STAIRS);
         slab(BVBuildingBlocks.QUARTZ_BRICK_SLAB.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
         wall(BVBuildingBlocks.QUARTZ_BRICK_WALL.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, BVBuildingBlocks.QUARTZ_WALL.get());
-        smelting(Blocks.SMOOTH_QUARTZ_STAIRS, Blocks.QUARTZ_STAIRS);
-        smelting(Blocks.SMOOTH_QUARTZ_SLAB, Blocks.QUARTZ_SLAB);
+        smelting(RecipeCategory.BUILDING_BLOCKS, Blocks.SMOOTH_QUARTZ_STAIRS, Blocks.QUARTZ_STAIRS);
+        smelting(RecipeCategory.BUILDING_BLOCKS, Blocks.SMOOTH_QUARTZ_SLAB, Blocks.QUARTZ_SLAB);
         wall(BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), Blocks.SMOOTH_QUARTZ, true);
-        smelting(BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), BVBuildingBlocks.QUARTZ_WALL.get());
+        smelting(RecipeCategory.DECORATIONS, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), BVBuildingBlocks.QUARTZ_WALL.get());
         family(BVBlockFamilies.CHISELED_QUARTZ_BLOCK).generate()
                 .generateStonecuttingConversions(BlockFamilies.QUARTZ)
         ;
@@ -213,25 +214,14 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         } // Recipe overrides
     }
 
-    private void all(StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting) {
-        stairs(stair, material, hasStonecutting);
-        slab(slab, material, hasStonecutting);
-        wall(wall, material, hasStonecutting);
-    }
-
-    private void stairSlab(StairBlock stair, SlabBlock slab, ItemLike material, boolean hasStonecutting) {
-        stairs(stair, material, hasStonecutting);
-        slab(slab, material, hasStonecutting);
-    }
-
     public void wallFenceFenceGate(ItemLike wall, ItemLike fence, ItemLike fenceGate, ItemLike material, boolean hasStonecutting) {
         wall(wall, material, hasStonecutting);
         fence(fence, material);
         fenceGate(fenceGate, material);
     }
 
-    private void smelting(ItemLike result, ItemLike ingredient) {
-        smelting(RecipeCategory.MISC, result, ingredient, 0.1f, 200);
+    private void smelting(RecipeCategory category, ItemLike result, ItemLike ingredient) {
+        smelting(category, result, ingredient, 0.1f, 200);
     }
 
     private static ResourceKey<Recipe<?>> recipeID(ItemLike item) {
