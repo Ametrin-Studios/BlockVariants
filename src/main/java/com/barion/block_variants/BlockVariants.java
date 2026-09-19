@@ -68,7 +68,24 @@ public final class BlockVariants {
         }
 
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
-            BVColoredBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
+//            BVColoredBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
+            var lastColor = BVColoredBlocks.GAMEPLAY_COLOR_ORDER.getLast();
+            BVColoredBlocks.GAMEPLAY_COLOR_ORDER.reversed().forEach(color -> {
+                event.insertAfter(Items.WOOL_SLAB.pick(lastColor).getDefaultInstance(), BVColoredBlocks.WOOL_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(Items.CONCRETE_SLAB.pick(lastColor).getDefaultInstance(), BVColoredBlocks.CONCRETE_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+                event.insertAfter(Items.DYED_TERRACOTTA.pick(lastColor).getDefaultInstance(), BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.DYED_TERRACOTTA_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+                event.insertAfter(Items.GLAZED_TERRACOTTA.pick(lastColor).getDefaultInstance(), BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.GLAZED_TERRACOTTA_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            });
+
+            event.insertAfter(Items.DYED_TERRACOTTA.pick(lastColor).getDefaultInstance(), BVColoredBlocks.TERRACOTTA_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.TERRACOTTA_SLAB.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.TERRACOTTA_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {

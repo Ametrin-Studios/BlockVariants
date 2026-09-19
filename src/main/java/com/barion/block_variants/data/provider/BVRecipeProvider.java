@@ -18,12 +18,11 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Map;
 import java.util.Set;
 
 public final class BVRecipeProvider extends ExtendedRecipeProvider {
     public BVRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
-        super(BlockVariants.MOD_ID, recipeOutput, advancementOutput, Map.of());
+        super(BlockVariants.MOD_ID, recipeOutput, advancementOutput, BVBlockFamilies.MAP);
     }
 
     @Override
@@ -153,7 +152,11 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
 
         ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.WOOL_WALL.pick(color).get(), Blocks.WOOL.pick(color), false));
 
-        dying(BVTags.Items.WOOL_WALLS, "{color}_wool_wall", "dye_wool_walls");
+        ColorCollection.VALUES.forEach(color -> {
+            var dyeItem = Items.DYE.pick(color);
+            var result = BVColoredBlocks.WOOL_WALL.pick(color);
+            shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        });
 
         all(BVBuildingBlocks.PACKED_MUD_STAIRS.get(), BVBuildingBlocks.PACKED_MUD_SLAB.get(), BVBuildingBlocks.PACKED_MUD_WALL.get(), Blocks.PACKED_MUD, true);
 

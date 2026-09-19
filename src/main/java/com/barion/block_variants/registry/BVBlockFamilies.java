@@ -1,30 +1,35 @@
 package com.barion.block_variants.registry;
 
+import com.google.common.collect.Maps;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColorCollection;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public final class BVBlockFamilies {
+    public static final Map<Block, BlockFamily> MAP = Maps.newHashMap();
     public static List<BlockFamily> LOG_FAMILIES = new ArrayList<>();
     public static List<BlockFamily> WOOD_FAMILIES = new ArrayList<>();
 
     // OAK
-    public static final BlockFamily OAK_LOG = logFamily(new BlockFamily.Builder(Blocks.OAK_LOG)
+    public static final BlockFamily OAK_LOG = logFamily(familyBuilder(Blocks.OAK_LOG)
             .stairs(BVBuildingBlocks.OAK_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.OAK_LOG_SLAB.get()));
-    public static final BlockFamily OAK_WOOD = woodFamily(new BlockFamily.Builder(Blocks.OAK_WOOD)
+    public static final BlockFamily OAK_WOOD = woodFamily(familyBuilder(Blocks.OAK_WOOD)
             .stairs(BVBuildingBlocks.OAK_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.OAK_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.OAK_WOOD_WALL.get())
             .fence(BVBuildingBlocks.OAK_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.OAK_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_OAK_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_OAK_LOG)
+    public static final BlockFamily STRIPPED_OAK_LOG = logFamily(familyBuilder(Blocks.STRIPPED_OAK_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_OAK_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_OAK_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_OAK_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_OAK_WOOD)
+    public static final BlockFamily STRIPPED_OAK_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_OAK_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_OAK_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_OAK_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_OAK_WOOD_WALL.get())
@@ -32,19 +37,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_OAK_WOOD_FENCE_GATE.get()));
 
     // SPRUCE
-    public static final BlockFamily SPRUCE_LOG = logFamily(new BlockFamily.Builder(Blocks.SPRUCE_LOG)
+    public static final BlockFamily SPRUCE_LOG = logFamily(familyBuilder(Blocks.SPRUCE_LOG)
             .stairs(BVBuildingBlocks.SPRUCE_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.SPRUCE_LOG_SLAB.get()));
-    public static final BlockFamily SPRUCE_WOOD = woodFamily(new BlockFamily.Builder(Blocks.SPRUCE_WOOD)
+    public static final BlockFamily SPRUCE_WOOD = woodFamily(familyBuilder(Blocks.SPRUCE_WOOD)
             .stairs(BVBuildingBlocks.SPRUCE_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.SPRUCE_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.SPRUCE_WOOD_WALL.get())
             .fence(BVBuildingBlocks.SPRUCE_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.SPRUCE_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_SPRUCE_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_SPRUCE_LOG)
+    public static final BlockFamily STRIPPED_SPRUCE_LOG = logFamily(familyBuilder(Blocks.STRIPPED_SPRUCE_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_SPRUCE_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_SPRUCE_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_SPRUCE_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_SPRUCE_WOOD)
+    public static final BlockFamily STRIPPED_SPRUCE_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_SPRUCE_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_WALL.get())
@@ -52,19 +57,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_FENCE_GATE.get()));
 
     // BIRCH
-    public static final BlockFamily BIRCH_LOG = logFamily(new BlockFamily.Builder(Blocks.BIRCH_LOG)
+    public static final BlockFamily BIRCH_LOG = logFamily(familyBuilder(Blocks.BIRCH_LOG)
             .stairs(BVBuildingBlocks.BIRCH_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.BIRCH_LOG_SLAB.get()));
-    public static final BlockFamily BIRCH_WOOD = woodFamily(new BlockFamily.Builder(Blocks.BIRCH_WOOD)
+    public static final BlockFamily BIRCH_WOOD = woodFamily(familyBuilder(Blocks.BIRCH_WOOD)
             .stairs(BVBuildingBlocks.BIRCH_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.BIRCH_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.BIRCH_WOOD_WALL.get())
             .fence(BVBuildingBlocks.BIRCH_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.BIRCH_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_BIRCH_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_BIRCH_LOG)
+    public static final BlockFamily STRIPPED_BIRCH_LOG = logFamily(familyBuilder(Blocks.STRIPPED_BIRCH_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_BIRCH_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_BIRCH_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_BIRCH_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_BIRCH_WOOD)
+    public static final BlockFamily STRIPPED_BIRCH_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_BIRCH_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_BIRCH_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_BIRCH_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_BIRCH_WOOD_WALL.get())
@@ -72,19 +77,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_BIRCH_WOOD_FENCE_GATE.get()));
 
     // JUNGLE
-    public static final BlockFamily JUNGLE_LOG = logFamily(new BlockFamily.Builder(Blocks.JUNGLE_LOG)
+    public static final BlockFamily JUNGLE_LOG = logFamily(familyBuilder(Blocks.JUNGLE_LOG)
             .stairs(BVBuildingBlocks.JUNGLE_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.JUNGLE_LOG_SLAB.get()));
-    public static final BlockFamily JUNGLE_WOOD = woodFamily(new BlockFamily.Builder(Blocks.JUNGLE_WOOD)
+    public static final BlockFamily JUNGLE_WOOD = woodFamily(familyBuilder(Blocks.JUNGLE_WOOD)
             .stairs(BVBuildingBlocks.JUNGLE_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.JUNGLE_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.JUNGLE_WOOD_WALL.get())
             .fence(BVBuildingBlocks.JUNGLE_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.JUNGLE_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_JUNGLE_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_JUNGLE_LOG)
+    public static final BlockFamily STRIPPED_JUNGLE_LOG = logFamily(familyBuilder(Blocks.STRIPPED_JUNGLE_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_JUNGLE_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_JUNGLE_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_JUNGLE_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_JUNGLE_WOOD)
+    public static final BlockFamily STRIPPED_JUNGLE_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_JUNGLE_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_WALL.get())
@@ -92,19 +97,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_FENCE_GATE.get()));
 
     // ACACIA
-    public static final BlockFamily ACACIA_LOG = logFamily(new BlockFamily.Builder(Blocks.ACACIA_LOG)
+    public static final BlockFamily ACACIA_LOG = logFamily(familyBuilder(Blocks.ACACIA_LOG)
             .stairs(BVBuildingBlocks.ACACIA_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.ACACIA_LOG_SLAB.get()));
-    public static final BlockFamily ACACIA_WOOD = woodFamily(new BlockFamily.Builder(Blocks.ACACIA_WOOD)
+    public static final BlockFamily ACACIA_WOOD = woodFamily(familyBuilder(Blocks.ACACIA_WOOD)
             .stairs(BVBuildingBlocks.ACACIA_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.ACACIA_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.ACACIA_WOOD_WALL.get())
             .fence(BVBuildingBlocks.ACACIA_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.ACACIA_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_ACACIA_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_ACACIA_LOG)
+    public static final BlockFamily STRIPPED_ACACIA_LOG = logFamily(familyBuilder(Blocks.STRIPPED_ACACIA_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_ACACIA_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_ACACIA_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_ACACIA_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_ACACIA_WOOD)
+    public static final BlockFamily STRIPPED_ACACIA_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_ACACIA_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_ACACIA_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_ACACIA_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_ACACIA_WOOD_WALL.get())
@@ -112,19 +117,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_ACACIA_WOOD_FENCE_GATE.get()));
 
     // DARK_OAK
-    public static final BlockFamily DARK_OAK_LOG = logFamily(new BlockFamily.Builder(Blocks.DARK_OAK_LOG)
+    public static final BlockFamily DARK_OAK_LOG = logFamily(familyBuilder(Blocks.DARK_OAK_LOG)
             .stairs(BVBuildingBlocks.DARK_OAK_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.DARK_OAK_LOG_SLAB.get()));
-    public static final BlockFamily DARK_OAK_WOOD = woodFamily(new BlockFamily.Builder(Blocks.DARK_OAK_WOOD)
+    public static final BlockFamily DARK_OAK_WOOD = woodFamily(familyBuilder(Blocks.DARK_OAK_WOOD)
             .stairs(BVBuildingBlocks.DARK_OAK_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.DARK_OAK_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.DARK_OAK_WOOD_WALL.get())
             .fence(BVBuildingBlocks.DARK_OAK_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.DARK_OAK_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_DARK_OAK_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_DARK_OAK_LOG)
+    public static final BlockFamily STRIPPED_DARK_OAK_LOG = logFamily(familyBuilder(Blocks.STRIPPED_DARK_OAK_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_DARK_OAK_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_DARK_OAK_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_DARK_OAK_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_DARK_OAK_WOOD)
+    public static final BlockFamily STRIPPED_DARK_OAK_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_DARK_OAK_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_WALL.get())
@@ -132,19 +137,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_FENCE_GATE.get()));
 
     // MANGROVE
-    public static final BlockFamily MANGROVE_LOG = logFamily(new BlockFamily.Builder(Blocks.MANGROVE_LOG)
+    public static final BlockFamily MANGROVE_LOG = logFamily(familyBuilder(Blocks.MANGROVE_LOG)
             .stairs(BVBuildingBlocks.MANGROVE_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.MANGROVE_LOG_SLAB.get()));
-    public static final BlockFamily MANGROVE_WOOD = woodFamily(new BlockFamily.Builder(Blocks.MANGROVE_WOOD)
+    public static final BlockFamily MANGROVE_WOOD = woodFamily(familyBuilder(Blocks.MANGROVE_WOOD)
             .stairs(BVBuildingBlocks.MANGROVE_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.MANGROVE_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.MANGROVE_WOOD_WALL.get())
             .fence(BVBuildingBlocks.MANGROVE_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.MANGROVE_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_MANGROVE_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_MANGROVE_LOG)
+    public static final BlockFamily STRIPPED_MANGROVE_LOG = logFamily(familyBuilder(Blocks.STRIPPED_MANGROVE_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_MANGROVE_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_MANGROVE_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_MANGROVE_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_MANGROVE_WOOD)
+    public static final BlockFamily STRIPPED_MANGROVE_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_MANGROVE_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_WALL.get())
@@ -152,19 +157,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_FENCE_GATE.get()));
 
     // CHERRY
-    public static final BlockFamily CHERRY_LOG = logFamily(new BlockFamily.Builder(Blocks.CHERRY_LOG)
+    public static final BlockFamily CHERRY_LOG = logFamily(familyBuilder(Blocks.CHERRY_LOG)
             .stairs(BVBuildingBlocks.CHERRY_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.CHERRY_LOG_SLAB.get()));
-    public static final BlockFamily CHERRY_WOOD = woodFamily(new BlockFamily.Builder(Blocks.CHERRY_WOOD)
+    public static final BlockFamily CHERRY_WOOD = woodFamily(familyBuilder(Blocks.CHERRY_WOOD)
             .stairs(BVBuildingBlocks.CHERRY_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.CHERRY_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.CHERRY_WOOD_WALL.get())
             .fence(BVBuildingBlocks.CHERRY_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.CHERRY_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_CHERRY_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_CHERRY_LOG)
+    public static final BlockFamily STRIPPED_CHERRY_LOG = logFamily(familyBuilder(Blocks.STRIPPED_CHERRY_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_CHERRY_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_CHERRY_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_CHERRY_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_CHERRY_WOOD)
+    public static final BlockFamily STRIPPED_CHERRY_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_CHERRY_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_CHERRY_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_CHERRY_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_CHERRY_WOOD_WALL.get())
@@ -172,19 +177,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_CHERRY_WOOD_FENCE_GATE.get()));
 
     // PALE_OAK
-    public static final BlockFamily PALE_OAK_LOG = logFamily(new BlockFamily.Builder(Blocks.PALE_OAK_LOG)
+    public static final BlockFamily PALE_OAK_LOG = logFamily(familyBuilder(Blocks.PALE_OAK_LOG)
             .stairs(BVBuildingBlocks.PALE_OAK_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.PALE_OAK_LOG_SLAB.get()));
-    public static final BlockFamily PALE_OAK_WOOD = woodFamily(new BlockFamily.Builder(Blocks.PALE_OAK_WOOD)
+    public static final BlockFamily PALE_OAK_WOOD = woodFamily(familyBuilder(Blocks.PALE_OAK_WOOD)
             .stairs(BVBuildingBlocks.PALE_OAK_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.PALE_OAK_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.PALE_OAK_WOOD_WALL.get())
             .fence(BVBuildingBlocks.PALE_OAK_WOOD_FENCE.get())
             .fenceGate(BVBuildingBlocks.PALE_OAK_WOOD_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_PALE_OAK_LOG = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_PALE_OAK_LOG)
+    public static final BlockFamily STRIPPED_PALE_OAK_LOG = logFamily(familyBuilder(Blocks.STRIPPED_PALE_OAK_LOG)
             .stairs(BVBuildingBlocks.STRIPPED_PALE_OAK_LOG_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_PALE_OAK_LOG_SLAB.get()));
-    public static final BlockFamily STRIPPED_PALE_OAK_WOOD = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_PALE_OAK_WOOD)
+    public static final BlockFamily STRIPPED_PALE_OAK_WOOD = woodFamily(familyBuilder(Blocks.STRIPPED_PALE_OAK_WOOD)
             .stairs(BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_WALL.get())
@@ -192,13 +197,13 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_FENCE_GATE.get()));
 
     // BAMBOO_BLOCK
-    public static final BlockFamily BAMBOO_BLOCK = woodFamily(new BlockFamily.Builder(Blocks.BAMBOO_BLOCK)
+    public static final BlockFamily BAMBOO_BLOCK = woodFamily(familyBuilder(Blocks.BAMBOO_BLOCK)
             .stairs(BVBuildingBlocks.BAMBOO_BLOCK_STAIRS.get())
             .slab(BVBuildingBlocks.BAMBOO_BLOCK_SLAB.get())
             .wall(BVBuildingBlocks.BAMBOO_BLOCK_WALL.get())
             .fence(BVBuildingBlocks.BAMBOO_BLOCK_FENCE.get())
             .fenceGate(BVBuildingBlocks.BAMBOO_BLOCK_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_BAMBOO_BLOCK = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_BAMBOO_BLOCK)
+    public static final BlockFamily STRIPPED_BAMBOO_BLOCK = woodFamily(familyBuilder(Blocks.STRIPPED_BAMBOO_BLOCK)
             .stairs(BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_WALL.get())
@@ -206,19 +211,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.get()));
 
     // CRIMSON
-    public static final BlockFamily CRIMSON_STEM = logFamily(new BlockFamily.Builder(Blocks.CRIMSON_STEM)
+    public static final BlockFamily CRIMSON_STEM = logFamily(familyBuilder(Blocks.CRIMSON_STEM)
             .stairs(BVBuildingBlocks.CRIMSON_STEM_STAIRS.get())
             .slab(BVBuildingBlocks.CRIMSON_STEM_SLAB.get()));
-    public static final BlockFamily CRIMSON_HYPHAE = woodFamily(new BlockFamily.Builder(Blocks.CRIMSON_HYPHAE)
+    public static final BlockFamily CRIMSON_HYPHAE = woodFamily(familyBuilder(Blocks.CRIMSON_HYPHAE)
             .stairs(BVBuildingBlocks.CRIMSON_HYPHAE_STAIRS.get())
             .slab(BVBuildingBlocks.CRIMSON_HYPHAE_SLAB.get())
             .wall(BVBuildingBlocks.CRIMSON_HYPHAE_WALL.get())
             .fence(BVBuildingBlocks.CRIMSON_HYPHAE_FENCE.get())
             .fenceGate(BVBuildingBlocks.CRIMSON_HYPHAE_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_CRIMSON_STEM = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_CRIMSON_STEM)
+    public static final BlockFamily STRIPPED_CRIMSON_STEM = logFamily(familyBuilder(Blocks.STRIPPED_CRIMSON_STEM)
             .stairs(BVBuildingBlocks.STRIPPED_CRIMSON_STEM_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_CRIMSON_STEM_SLAB.get()));
-    public static final BlockFamily STRIPPED_CRIMSON_HYPHAE = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_CRIMSON_HYPHAE)
+    public static final BlockFamily STRIPPED_CRIMSON_HYPHAE = woodFamily(familyBuilder(Blocks.STRIPPED_CRIMSON_HYPHAE)
             .stairs(BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.get())
@@ -226,19 +231,19 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.get()));
 
     // WARPED
-    public static final BlockFamily WARPED_STEM = logFamily(new BlockFamily.Builder(Blocks.WARPED_STEM)
+    public static final BlockFamily WARPED_STEM = logFamily(familyBuilder(Blocks.WARPED_STEM)
             .stairs(BVBuildingBlocks.WARPED_STEM_STAIRS.get())
             .slab(BVBuildingBlocks.WARPED_STEM_SLAB.get()));
-    public static final BlockFamily WARPED_HYPHAE = woodFamily(new BlockFamily.Builder(Blocks.WARPED_HYPHAE)
+    public static final BlockFamily WARPED_HYPHAE = woodFamily(familyBuilder(Blocks.WARPED_HYPHAE)
             .stairs(BVBuildingBlocks.WARPED_HYPHAE_STAIRS.get())
             .slab(BVBuildingBlocks.WARPED_HYPHAE_SLAB.get())
             .wall(BVBuildingBlocks.WARPED_HYPHAE_WALL.get())
             .fence(BVBuildingBlocks.WARPED_HYPHAE_FENCE.get())
             .fenceGate(BVBuildingBlocks.WARPED_HYPHAE_FENCE_GATE.get()));
-    public static final BlockFamily STRIPPED_WARPED_STEM = logFamily(new BlockFamily.Builder(Blocks.STRIPPED_WARPED_STEM)
+    public static final BlockFamily STRIPPED_WARPED_STEM = logFamily(familyBuilder(Blocks.STRIPPED_WARPED_STEM)
             .stairs(BVBuildingBlocks.STRIPPED_WARPED_STEM_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_WARPED_STEM_SLAB.get()));
-    public static final BlockFamily STRIPPED_WARPED_HYPHAE = woodFamily(new BlockFamily.Builder(Blocks.STRIPPED_WARPED_HYPHAE)
+    public static final BlockFamily STRIPPED_WARPED_HYPHAE = woodFamily(familyBuilder(Blocks.STRIPPED_WARPED_HYPHAE)
             .stairs(BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.get())
             .slab(BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_SLAB.get())
             .wall(BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_WALL.get())
@@ -247,7 +252,7 @@ public final class BVBlockFamilies {
 
     public static final ColorCollection<BlockFamily> DYED_TERRACOTTA = ColorCollection.VALUES
             .map(
-                    color -> new BlockFamily.Builder(Blocks.DYED_TERRACOTTA.pick(color))
+                    color -> familyBuilder(Blocks.DYED_TERRACOTTA.pick(color))
                             .stairs(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(color).get())
                             .slab(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(color).get())
                             .wall(BVColoredBlocks.DYED_TERRACOTTA_WALL.pick(color).get())
@@ -257,7 +262,7 @@ public final class BVBlockFamilies {
 
     public static final ColorCollection<BlockFamily> GLAZED_TERRACOTTA = ColorCollection.VALUES
             .map(
-                    color -> new BlockFamily.Builder(Blocks.GLAZED_TERRACOTTA.pick(color))
+                    color -> familyBuilder(Blocks.GLAZED_TERRACOTTA.pick(color))
                             .stairs(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).get())
                             .slab(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(color).get())
                             .wall(BVColoredBlocks.GLAZED_TERRACOTTA_WALL.pick(color).get())
@@ -281,6 +286,16 @@ public final class BVBlockFamilies {
 
         WOOD_FAMILIES.add(family);
         return family;
+    }
+
+    private static BlockFamily.Builder familyBuilder(Block base) {
+        var builder = new BlockFamily.Builder(base);
+        var blockFamily = MAP.put(base, builder.getFamily());
+        if (blockFamily != null) {
+            throw new IllegalStateException("Duplicate family definition for " + BuiltInRegistries.BLOCK.getKey(base));
+        } else {
+            return builder;
+        }
     }
 
     public static void validateLogFamily(BlockFamily family) {

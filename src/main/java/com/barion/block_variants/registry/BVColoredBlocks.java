@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -24,6 +25,25 @@ import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.
 public final class BVColoredBlocks {
 
     public static final DeferredRegister.Blocks REGISTER = DeferredRegister.createBlocks(BlockVariants.MOD_ID);
+
+    public static final List<DyeColor> GAMEPLAY_COLOR_ORDER = List.of(
+            DyeColor.WHITE,
+            DyeColor.LIGHT_GRAY,
+            DyeColor.GRAY,
+            DyeColor.BLACK,
+            DyeColor.BROWN,
+            DyeColor.RED,
+            DyeColor.ORANGE,
+            DyeColor.YELLOW,
+            DyeColor.LIME,
+            DyeColor.GREEN,
+            DyeColor.CYAN,
+            DyeColor.LIGHT_BLUE,
+            DyeColor.BLUE,
+            DyeColor.PURPLE,
+            DyeColor.MAGENTA,
+            DyeColor.PINK
+    );
 
     static {
         for (var woolFamily : BlockFamilies.WOOL.asList()) {
@@ -44,13 +64,13 @@ public final class BVColoredBlocks {
             ColorCollection.VALUES, BVBlockItemIds.WOOL_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.WOOL.pick(color)), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOL))
     );
 
-    public static final DeferredBlock<StairBlock> TERRACOTTA_STAIRS = register("terracotta_stairs", StairBlock::new, Blocks.TERRACOTTA, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> TERRACOTTA_SLAB = register("terracotta_slab", SlabBlock::new, () -> slabProperties(Blocks.TERRACOTTA));
-    public static final DeferredBlock<WallBlock> TERRACOTTA_WALL = register("terracotta_wall", WallBlock::new, () -> wallProperties(Blocks.TERRACOTTA));
-
     public static final ColorCollection<DeferredBlock<WallBlock>> CONCRETE_WALL = ColorCollection.zipMap(
             ColorCollection.VALUES, BVBlockItemIds.CONCRETE_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.CONCRETE.pick(color)))
     );
+
+    public static final DeferredBlock<StairBlock> TERRACOTTA_STAIRS = register("terracotta_stairs", StairBlock::new, Blocks.TERRACOTTA, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<SlabBlock> TERRACOTTA_SLAB = register("terracotta_slab", SlabBlock::new, () -> slabProperties(Blocks.TERRACOTTA));
+    public static final DeferredBlock<WallBlock> TERRACOTTA_WALL = register("terracotta_wall", WallBlock::new, () -> wallProperties(Blocks.TERRACOTTA));
 
     public static final ColorCollection<DeferredBlock<StairBlock>> DYED_TERRACOTTA_STAIRS = ColorCollection.zipMap(
             ColorCollection.VALUES, BVBlockItemIds.DYED_TERRACOTTA_STAIRS, (color, id) -> register(id.block().identifier().getPath(), StairBlock::new, Blocks.DYED_TERRACOTTA.pick(color), BlockRegisterHelper::slabProperties)
