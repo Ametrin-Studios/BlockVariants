@@ -107,5 +107,6 @@ public final class BlockVariants {
         event.createProvider(BVDataMapProvider::new);
         event.createProvider(BVBlockTagsProvider::new);
         event.createProvider(BVItemTagsProvider::new);
+        event.createProvider(BVLanguageProvider::new);
     }
 }
