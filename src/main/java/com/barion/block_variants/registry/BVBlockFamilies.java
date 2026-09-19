@@ -16,6 +16,13 @@ public final class BVBlockFamilies {
     public static final List<BlockFamily> LOG_FAMILIES = new ArrayList<>();
     public static final List<BlockFamily> WOOD_FAMILIES = new ArrayList<>();
 
+    public static final BlockFamily CHISELED_QUARTZ_BLOCK = familyBuilder(Blocks.CHISELED_QUARTZ_BLOCK)
+            .stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get())
+            .slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get())
+            .wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+
     public static final BlockFamily NETHERRACK = familyBuilder(Blocks.NETHERRACK)
             .stairs(BVBuildingBlocks.NETHERRACK_STAIRS.get())
             .slab(BVBuildingBlocks.NETHERRACK_SLAB.get())
@@ -360,7 +367,13 @@ public final class BVBlockFamilies {
             .stairs(BVBuildingBlocks.CRACKED_NETHER_BRICK_STAIRS.get())
             .slab(BVBuildingBlocks.CRACKED_NETHER_BRICK_SLAB.get())
             .wall(BVBuildingBlocks.CRACKED_NETHER_BRICK_WALL.get())
+//            .fence(BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE.get())
+//            .fenceGate(BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.get())
             .generateStonecutterRecipe()
+            .getFamily();
+    public static final BlockFamily RED_NETHER_BRICKS = familyBuilder(Blocks.RED_NETHER_BRICKS)
+            .fence(BVBuildingBlocks.RED_NETHER_BRICK_FENCE.get())
+            .fenceGate(BVBuildingBlocks.RED_NETHER_BRICK_FENCE_GATE.get())
             .getFamily();
 
 
@@ -401,6 +414,13 @@ public final class BVBlockFamilies {
                             .generateStonecutterRecipe()
                             .getFamily()
             );
+
+    public static final BlockFamily PACKED_MUD = familyBuilder(Blocks.PACKED_MUD)
+            .stairs(BVBuildingBlocks.PACKED_MUD_STAIRS.get())
+            .slab(BVBuildingBlocks.PACKED_MUD_SLAB.get())
+            .wall(BVBuildingBlocks.PACKED_MUD_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
 
     private static BlockFamily logFamily(BlockFamily.Builder builder) {
         var family = builder.getFamily();

@@ -57,9 +57,10 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         smelting(Blocks.SMOOTH_QUARTZ_SLAB, Blocks.QUARTZ_SLAB);
         wall(BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), Blocks.SMOOTH_QUARTZ, true);
         smelting(BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), BVBuildingBlocks.QUARTZ_WALL.get());
-        stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_STAIRS);
-        slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
-        wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get(), Blocks.CHISELED_QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, BVBuildingBlocks.QUARTZ_WALL.get());
+        family(BVBlockFamilies.CHISELED_QUARTZ_BLOCK).generate()
+                .generateStonecuttingConversions(BlockFamilies.QUARTZ)
+        ;
+        stonecutting(RecipeCategory.DECORATIONS, BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL, BVBuildingBlocks.QUARTZ_WALL, 1);
 
         wall(BVOtherBlocks.PRISMARINE_BRICK_WALL.get(), Blocks.PRISMARINE_BRICKS, true);
         wall(BVOtherBlocks.DARK_PRISMARINE_WALL.get(), Blocks.DARK_PRISMARINE, true);
@@ -132,7 +133,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
             shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
         });
 
-        all(BVBuildingBlocks.PACKED_MUD_STAIRS.get(), BVBuildingBlocks.PACKED_MUD_SLAB.get(), BVBuildingBlocks.PACKED_MUD_WALL.get(), Blocks.PACKED_MUD, true);
+        family(BVBlockFamilies.PACKED_MUD).generate();
 
         ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get(), Blocks.CONCRETE.pick(color), true));
 

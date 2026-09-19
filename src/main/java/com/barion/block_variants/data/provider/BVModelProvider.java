@@ -8,12 +8,17 @@ import com.barion.block_variants.registry.BVColoredBlocks;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ColorCollection;
 
 public final class BVModelProvider extends ExtendedModelProvider {
     public BVModelProvider(PackOutput output) {
@@ -38,13 +43,13 @@ public final class BVModelProvider extends ExtendedModelProvider {
         customWall(blockModels, BVBuildingBlocks.QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, new Material(Identifier.withDefaultNamespace("block/quartz_block_top"))));
         blockModels.familyWithExistingFullBlock(Blocks.QUARTZ_BRICKS).stairs(BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get()).slab(BVBuildingBlocks.QUARTZ_BRICK_SLAB.get()).wall(BVBuildingBlocks.QUARTZ_BRICK_WALL.get());
         customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, new Material(Identifier.withDefaultNamespace("block/quartz_block_bottom"))));
-        blockModels.familyWithExistingFullBlock(Blocks.CHISELED_QUARTZ_BLOCK).stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get()).slab(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get()).wall(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.CHISELED_QUARTZ_BLOCK).generateFor(BVBlockFamilies.CHISELED_QUARTZ_BLOCK);
 
         blockModels.familyWithExistingFullBlock(Blocks.PRISMARINE_BRICKS).wall(BVOtherBlocks.PRISMARINE_BRICK_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.DARK_PRISMARINE).wall(BVOtherBlocks.DARK_PRISMARINE_WALL.get());
 
-        blockModels.familyWithExistingFullBlock(Blocks.NETHERRACK).stairs(BVBuildingBlocks.NETHERRACK_STAIRS.get()).slab(BVBuildingBlocks.NETHERRACK_SLAB.get()).wall(BVBuildingBlocks.NETHERRACK_WALL.get());
-        blockModels.familyWithExistingFullBlock(Blocks.END_STONE).stairs(BVBuildingBlocks.END_STONE_STAIRS.get()).slab(BVBuildingBlocks.END_STONE_SLAB.get()).wall(BVBuildingBlocks.END_STONE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.NETHERRACK).generateFor(BVBlockFamilies.NETHERRACK);
+        blockModels.familyWithExistingFullBlock(Blocks.END_STONE).generateFor(BVBlockFamilies.END_STONE);
         blockModels.familyWithExistingFullBlock(Blocks.PURPUR_BLOCK).wall(BVOtherBlocks.PURPUR_WALL.get());
 
         blockModels.familyWithExistingFullBlock(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).generateFor(BVBlockFamilies.CRACKED_POLISHED_BLACKSTONE_BRICKS);
@@ -77,25 +82,25 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.familyWithExistingFullBlock(BVBlockFamilies.BAMBOO_BLOCK.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(BVBlockFamilies.BAMBOO_BLOCK);
         blockModels.familyWithExistingFullBlock(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK);
 
-        stairsSlabWall(blockModels, Blocks.CALCITE, BVBuildingBlocks.CALCITE_STAIRS.get(), BVBuildingBlocks.CALCITE_SLAB.get(), BVBuildingBlocks.CALCITE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.SMOOTH_BASALT, BVBuildingBlocks.SMOOTH_BASALT_STAIRS.get(), BVBuildingBlocks.SMOOTH_BASALT_SLAB.get(), BVBuildingBlocks.SMOOTH_BASALT_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.CALCITE).generateFor(BVBlockFamilies.CALCITE);
+        blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_BASALT).generateFor(BVBlockFamilies.SMOOTH_BASALT);
 
-        stairsSlabWall(blockModels, Blocks.DEEPSLATE, BVBuildingBlocks.DEEPSLATE_STAIRS.get(), BVBuildingBlocks.DEEPSLATE_SLAB.get(), BVBuildingBlocks.DEEPSLATE_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CRACKED_DEEPSLATE_BRICKS, BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CRACKED_DEEPSLATE_TILES, BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.DEEPSLATE).generateFor(BVBlockFamilies.DEEPSLATE);
+        blockModels.familyWithExistingFullBlock(Blocks.CRACKED_DEEPSLATE_BRICKS).generateFor(BVBlockFamilies.CRACKED_DEEPSLATE_BRICKS);
+        blockModels.familyWithExistingFullBlock(Blocks.CRACKED_DEEPSLATE_TILES).generateFor(BVBlockFamilies.CRACKED_DEEPSLATE_TILES);
 
         blockModels.familyWithExistingFullBlock(Blocks.NETHER_BRICKS).fenceGate(BVBuildingBlocks.NETHER_BRICK_FENCE_GATE.get());
-        stairsSlabWallFenceGate(blockModels, Blocks.CRACKED_NETHER_BRICKS, BVBuildingBlocks.CRACKED_NETHER_BRICK_STAIRS.get(), BVBuildingBlocks.CRACKED_NETHER_BRICK_SLAB.get(), BVBuildingBlocks.CRACKED_NETHER_BRICK_WALL.get(), BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE.get(), BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.get());
-        blockModels.familyWithExistingFullBlock(Blocks.RED_NETHER_BRICKS).fence(BVBuildingBlocks.RED_NETHER_BRICK_FENCE.get()).fenceGate(BVBuildingBlocks.RED_NETHER_BRICK_FENCE_GATE.get());
+        blockModels.familyWithExistingFullBlock(Blocks.CRACKED_NETHER_BRICKS).generateFor(BVBlockFamilies.CRACKED_NETHER_BRICKS).fence(BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE.get()).fenceGate(BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.get());
+        blockModels.familyWithExistingFullBlock(Blocks.RED_NETHER_BRICKS).generateFor(BVBlockFamilies.RED_NETHER_BRICKS);
 
-        stairsSlabWall(blockModels, Blocks.OBSIDIAN, BVBuildingBlocks.OBSIDIAN_STAIRS.get(), BVBuildingBlocks.OBSIDIAN_SLAB.get(), BVBuildingBlocks.OBSIDIAN_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CRYING_OBSIDIAN, BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get(), BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get(), BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.OBSIDIAN).generateFor(BVBlockFamilies.OBSIDIAN);
+        blockModels.familyWithExistingFullBlock(Blocks.CRYING_OBSIDIAN).generateFor(BVBlockFamilies.CRYING_OBSIDIAN);
 
         BVBlockFamilies.GLAZED_TERRACOTTA.forEach(family -> blockModels.familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family));
 
         ColorCollection.VALUES.forEach(color -> blockModels.familyWithExistingFullBlock(Blocks.WOOL.pick(color)).wall(BVColoredBlocks.WOOL_WALL.pick(color).get()));
 
-        stairsSlabWall(blockModels, Blocks.PACKED_MUD, BVBuildingBlocks.PACKED_MUD_STAIRS.get(), BVBuildingBlocks.PACKED_MUD_SLAB.get(), BVBuildingBlocks.PACKED_MUD_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.PACKED_MUD).generateFor(BVBlockFamilies.PACKED_MUD);
 
         ColorCollection.VALUES.forEach(color -> blockModels.familyWithExistingFullBlock(Blocks.CONCRETE.pick(color)).wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get()));
 
@@ -121,37 +126,6 @@ public final class BVModelProvider extends ExtendedModelProvider {
     public static void createChain(BlockModelGenerators blockModels, Block block) {
         blockModels.createAxisAlignedPillarBlockCustomModel(block, BlockModelGenerators.plainVariant(TexturedModel.CHAIN.create(block, blockModels.modelOutput)));
         blockModels.registerSimpleFlatItemModel(block.asItem());
-    }
-
-    private static void stairsSlabWall(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, WallBlock wall) {
-        blockModels.familyWithExistingFullBlock(base).stairs(stair).slab(slab).wall(wall);
-    }
-
-    private static void stairsSlabWallFenceGate(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock gate) {
-        blockModels.familyWithExistingFullBlock(base).stairs(stair).slab(slab).wall(wall).fence(fence).fenceGate(gate);
-    }
-
-    public static void woodStairsSlabWallFenceGate(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, Block doubleSlab, WallBlock wall, FenceBlock fence, FenceGateBlock gate) {
-        blockModels.familyWithExistingFullBlock(base).stairs(stair).wall(wall).fence(fence).fenceGate(gate);
-        customSlab(blockModels, slab, doubleSlab, new TextureMapping()
-                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(base))
-                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(base))
-                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(base))
-        );
-    }
-
-    private static void logStairsSlabWallFenceGate(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock gate) {
-        blockModels.familyWithExistingFullBlock(base).wall(wall).fence(fence).fenceGate(gate);
-        var mapping = logTextureMapping(base);
-        customStairs(blockModels, stair, mapping);
-        customSlab(blockModels, slab, base, mapping);
-    }
-
-    private static void columnStairsSlabWall(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, WallBlock wall) {
-        var mapping = columnTopSideTextureMapping(base);
-        customStairs(blockModels, stair, mapping);
-        customSlab(blockModels, slab, base, mapping);
-        customWall(blockModels, wall, mapping);
     }
 
     public static TextureMapping logTextureMapping(Block log) {
@@ -186,13 +160,6 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.registerSimpleItemModel(stairsBlock, straightModel);
     }
 
-    public static void customSlab(BlockModelGenerators blockModels, Block slabBlock, Block doubleSlab, TextureMapping mapping) {
-        var bottomModel = ModelTemplates.SLAB_BOTTOM.create(slabBlock, mapping, blockModels.modelOutput);
-        var topModel = ModelTemplates.SLAB_TOP.create(slabBlock, mapping, blockModels.modelOutput);
-        blockModels.blockStateOutput.accept(BlockModelGenerators.createSlab(slabBlock, BlockModelGenerators.plainVariant(bottomModel), BlockModelGenerators.plainVariant(topModel), BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(doubleSlab))));
-        blockModels.registerSimpleItemModel(slabBlock, bottomModel);
-    }
-
     public static void customWall(BlockModelGenerators blockModels, Block wallBlock, TextureMapping mapping) {
         var postModel = ModelTemplates.WALL_POST.create(wallBlock, mapping, blockModels.modelOutput);
         var lowModel = ModelTemplates.WALL_LOW_SIDE.create(wallBlock, mapping, blockModels.modelOutput);
@@ -200,21 +167,5 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.blockStateOutput.accept(BlockModelGenerators.createWall(wallBlock, BlockModelGenerators.plainVariant(postModel), BlockModelGenerators.plainVariant(lowModel), BlockModelGenerators.plainVariant(tallModel)));
         Identifier inventoryModel = ModelTemplates.WALL_INVENTORY.create(wallBlock, mapping, blockModels.modelOutput);
         blockModels.registerSimpleItemModel(wallBlock, inventoryModel);
-    }
-
-    public static void customFence(BlockModelGenerators blockModels, Block fenceBlock, TextureMapping mapping) {
-        var post = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_POST.create(fenceBlock, mapping, blockModels.modelOutput));
-        var side = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_SIDE.create(fenceBlock, mapping, blockModels.modelOutput));
-        blockModels.blockStateOutput.accept(BlockModelGenerators.createFence(fenceBlock, post, side));
-        var identifier = ModelTemplates.FENCE_INVENTORY.create(fenceBlock, mapping, blockModels.modelOutput);
-        blockModels.registerSimpleItemModel(fenceBlock, identifier);
-    }
-
-    public static void customFenceGate(BlockModelGenerators blockModels, Block fenceGateBlock, TextureMapping mapping) {
-        var open = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_OPEN.create(fenceGateBlock, mapping, blockModels.modelOutput));
-        var closed = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_CLOSED.create(fenceGateBlock, mapping, blockModels.modelOutput));
-        var wall_open = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_WALL_OPEN.create(fenceGateBlock, mapping, blockModels.modelOutput));
-        var wall_closed = BlockModelGenerators.plainVariant(ModelTemplates.FENCE_GATE_WALL_CLOSED.create(fenceGateBlock, mapping, blockModels.modelOutput));
-        blockModels.blockStateOutput.accept(BlockModelGenerators.createFenceGate(fenceGateBlock, open, closed, wall_open, wall_closed, true));
     }
 }

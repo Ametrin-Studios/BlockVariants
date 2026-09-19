@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.neoforged.neoforge.common.Tags;
 
 import java.util.function.Function;
 
@@ -55,43 +54,6 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
                 throw new RuntimeException("unknown wool time");
             }
         });
-
-        blockItemTagProviderRules.add((block, id) -> {
-            final var name = id.block().identifier().getPath();
-            if (name.contains("white")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_WHITE, Tags.Items.DYED_WHITE)).add(id);
-            } else if (name.contains("light_gray")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_LIGHT_GRAY, Tags.Items.DYED_LIGHT_GRAY)).add(id);
-            } else if (name.contains("gray")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_GRAY, Tags.Items.DYED_GRAY)).add(id);
-            } else if (name.contains("black_")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_BLACK, Tags.Items.DYED_BLACK)).add(id);
-            } else if (name.contains("brown")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_BROWN, Tags.Items.DYED_BROWN)).add(id);
-            } else if (name.contains("red") && !name.contains("sandstone") && !name.contains("nether")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_RED, Tags.Items.DYED_RED)).add(id);
-            } else if (name.contains("orange")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_ORANGE, Tags.Items.DYED_ORANGE)).add(id);
-            } else if (name.contains("yellow")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_YELLOW, Tags.Items.DYED_YELLOW)).add(id);
-            } else if (name.contains("lime")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_LIME, Tags.Items.DYED_LIME)).add(id);
-            } else if (name.contains("green")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_GREEN, Tags.Items.DYED_GREEN)).add(id);
-            } else if (name.contains("cyan")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_CYAN, Tags.Items.DYED_CYAN)).add(id);
-            } else if (name.contains("light_blue")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_LIGHT_BLUE, Tags.Items.DYED_LIGHT_BLUE)).add(id);
-            } else if (name.contains("blue")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_BLUE, Tags.Items.DYED_BLUE)).add(id);
-            } else if (name.contains("purple")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_PURPLE, Tags.Items.DYED_PURPLE)).add(id);
-            } else if (name.contains("magenta")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_MAGENTA, Tags.Items.DYED_MAGENTA)).add(id);
-            } else if (name.contains("pink")) {
-                tag(new BlockItemTagId(Tags.Blocks.DYED_PINK, Tags.Items.DYED_PINK)).add(id);
-            }
-        });
     }
 
     protected BVBlockItemTagsProvider(Function<BlockItemTagId, CombinedAppender> tagSupplier) {
@@ -101,6 +63,15 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
     @Override
     protected void run() {
         runRules(BlockVariants.getAllBlocks());
+
+        tagColorCollection(BVBlockItemIds.WOOL_WALL);
+        tagColorCollection(BVBlockItemIds.CONCRETE_WALL);
+        tagColorCollection(BVBlockItemIds.DYED_TERRACOTTA_STAIRS);
+        tagColorCollection(BVBlockItemIds.DYED_TERRACOTTA_SLAB);
+        tagColorCollection(BVBlockItemIds.DYED_TERRACOTTA_WALL);
+        tagColorCollection(BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS);
+        tagColorCollection(BVBlockItemIds.GLAZED_TERRACOTTA_SLAB);
+        tagColorCollection(BVBlockItemIds.GLAZED_TERRACOTTA_WALL);
 
         tag(BlockItemTags.WALLS)
                 .addTag(BVTags.BlockItems.WOODEN_WALLS)
