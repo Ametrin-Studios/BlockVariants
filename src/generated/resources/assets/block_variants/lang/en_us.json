@@ -256,6 +256,8 @@
   "block.block_variants.smooth_basalt_stairs": "Smooth Basalt Stairs",
   "block.block_variants.smooth_basalt_wall": "Smooth Basalt Wall",
   "block.block_variants.smooth_quartz_wall": "Smooth Quartz Wall",
+  "block.block_variants.smooth_red_sandstone_wall": "Smooth Red Sandstone Wall",
+  "block.block_variants.smooth_sandstone_wall": "Smooth Sandstone Wall",
   "block.block_variants.smooth_stone_stairs": "Smooth Stone Stairs",
   "block.block_variants.smooth_stone_wall": "Smooth Stone Wall",
   "block.block_variants.spruce_log_slab": "Spruce Log Slab",

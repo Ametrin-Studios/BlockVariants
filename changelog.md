@@ -1,5 +1,6 @@
 ## 6.8.0
 
+- add Smooth (Red) Sandstone Wall
 - remove Wool Stairs/Slabs (existing blocks/items will be converted to vanilla blocks)
 - fix Wool Walls not being flammable
 - 26.3 port

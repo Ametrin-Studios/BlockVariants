@@ -35,13 +35,15 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_STONE).wall(BVOtherBlocks.SMOOTH_STONE_WALL.get());
         customStairs(blockModels, BVOtherBlocks.SMOOTH_STONE_STAIRS.get(), TextureMapping.cube(Blocks.SMOOTH_STONE).put(TextureSlot.SIDE, new Material(Identifier.withDefaultNamespace("block/smooth_stone_slab_side"))));
 
-        blockModels.familyWithExistingFullBlock(Blocks.CUT_SANDSTONE).wall(BVBuildingBlocks.CUT_SANDSTONE_WALL.get());
-        customStairs(blockModels, BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE));
-        blockModels.familyWithExistingFullBlock(Blocks.CUT_RED_SANDSTONE).wall(BVBuildingBlocks.CUT_RED_SANDSTONE_WALL.get());
-        customStairs(blockModels, BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE));
+        blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_SANDSTONE, new TextureMapping().put(TextureSlot.ALL, TextureMapping.getBlockTexture(Blocks.SANDSTONE, "_top"))).wall(BVOtherBlocks.SMOOTH_SANDSTONE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.SMOOTH_RED_SANDSTONE, new TextureMapping().put(TextureSlot.ALL, TextureMapping.getBlockTexture(Blocks.RED_SANDSTONE, "_top"))).wall(BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.CUT_SANDSTONE).wall(BVOtherBlocks.CUT_SANDSTONE_WALL.get());
+        customStairs(blockModels, BVOtherBlocks.CUT_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_SANDSTONE, Blocks.SANDSTONE));
+        blockModels.familyWithExistingFullBlock(Blocks.CUT_RED_SANDSTONE).wall(BVOtherBlocks.CUT_RED_SANDSTONE_WALL.get());
+        customStairs(blockModels, BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.get(), sandstoneTextureMapping(Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE));
 
         customWall(blockModels, BVBuildingBlocks.QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, new Material(Identifier.withDefaultNamespace("block/quartz_block_top"))));
-        blockModels.familyWithExistingFullBlock(Blocks.QUARTZ_BRICKS).stairs(BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get()).slab(BVBuildingBlocks.QUARTZ_BRICK_SLAB.get()).wall(BVBuildingBlocks.QUARTZ_BRICK_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.QUARTZ_BRICKS).generateFor(BVBlockFamilies.QUARTZ_BRICKS);
         customWall(blockModels, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), new TextureMapping().put(TextureSlot.WALL, new Material(Identifier.withDefaultNamespace("block/quartz_block_bottom"))));
         blockModels.familyWithExistingFullBlock(Blocks.CHISELED_QUARTZ_BLOCK).generateFor(BVBlockFamilies.CHISELED_QUARTZ_BLOCK);
 

@@ -9,7 +9,7 @@ import net.minecraft.data.PackOutput;
 
 public final class BVLanguageProvider extends ExtendedLanguageProvider {
     public BVLanguageProvider(PackOutput output) {
-        super(output, BlockVariants.MOD_ID, "en-us");
+        super(output, BlockVariants.MOD_ID, "en_us");
     }
 
     @Override

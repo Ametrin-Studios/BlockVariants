@@ -32,6 +32,15 @@ public final class BVOtherBlocks {
     public static final DeferredBlock<WallBlock> PRISMARINE_BRICK_WALL = register("prismarine_brick_wall", WallBlock::new, () -> wallProperties(Blocks.PRISMARINE_BRICKS));
     public static final DeferredBlock<WallBlock> DARK_PRISMARINE_WALL = register("dark_prismarine_wall", WallBlock::new, () -> wallProperties(Blocks.PRISMARINE_BRICKS));
 
+    public static final DeferredBlock<WallBlock> SMOOTH_SANDSTONE_WALL = register("smooth_sandstone_wall", WallBlock::new, () -> wallProperties(Blocks.SMOOTH_SANDSTONE));
+    public static final DeferredBlock<WallBlock> SMOOTH_RED_SANDSTONE_WALL = register("smooth_red_sandstone_wall", WallBlock::new, () -> wallProperties(Blocks.SMOOTH_RED_SANDSTONE));
+
+    public static final DeferredBlock<StairBlock> CUT_SANDSTONE_STAIRS = register("cut_sandstone_stairs", StairBlock::new, Blocks.CUT_SANDSTONE, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<WallBlock> CUT_SANDSTONE_WALL = register("cut_sandstone_wall", WallBlock::new, () -> wallProperties(Blocks.CUT_SANDSTONE));
+    public static final DeferredBlock<StairBlock> CUT_RED_SANDSTONE_STAIRS = register("cut_red_sandstone_stairs", StairBlock::new, Blocks.CUT_RED_SANDSTONE, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<WallBlock> CUT_RED_SANDSTONE_WALL = register("cut_red_sandstone_wall", WallBlock::new, () -> wallProperties(Blocks.CUT_RED_SANDSTONE));
+
+
     public static final DeferredBlock<WallBlock> PURPUR_WALL = register("purpur_wall", WallBlock::new, () -> wallProperties(Blocks.PURPUR_BLOCK));
 
     public static final DeferredBlock<IronBarsBlock> GOLD_BARS = register("gold_bars", IronBarsBlock::new, () -> copyProperties(Blocks.IRON_BARS));

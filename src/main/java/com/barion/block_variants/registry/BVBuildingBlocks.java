@@ -30,11 +30,6 @@ public final class BVBuildingBlocks {
         REGISTER.addAlias(BlockVariants.locate("tuff_wall"), DataProviderExtensions.getBlockKey(Blocks.TUFF_WALL));
     }
 
-    public static final DeferredBlock<StairBlock> CUT_SANDSTONE_STAIRS = register("cut_sandstone_stairs", StairBlock::new, Blocks.CUT_SANDSTONE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<WallBlock> CUT_SANDSTONE_WALL = register("cut_sandstone_wall", WallBlock::new, () -> wallProperties(Blocks.CUT_SANDSTONE));
-    public static final DeferredBlock<StairBlock> CUT_RED_SANDSTONE_STAIRS = register("cut_red_sandstone_stairs", StairBlock::new, Blocks.CUT_RED_SANDSTONE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<WallBlock> CUT_RED_SANDSTONE_WALL = register("cut_red_sandstone_wall", WallBlock::new, () -> wallProperties(Blocks.CUT_RED_SANDSTONE));
-
     public static final DeferredBlock<WallBlock> QUARTZ_WALL = register("quartz_wall", WallBlock::new, () -> wallProperties(Blocks.QUARTZ_BLOCK));
     public static final DeferredBlock<StairBlock> QUARTZ_BRICK_STAIRS = register("quartz_brick_stairs", StairBlock::new, Blocks.QUARTZ_BRICKS, BlockRegisterHelper::stairProperties);
     public static final DeferredBlock<SlabBlock> QUARTZ_BRICK_SLAB = register("quartz_brick_slab", SlabBlock::new, () -> slabProperties(Blocks.QUARTZ_BRICKS));

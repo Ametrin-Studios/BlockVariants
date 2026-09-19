@@ -45,15 +45,16 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         wall(BVOtherBlocks.SMOOTH_STONE_WALL.get(), Blocks.SMOOTH_STONE, true);
         smelting(RecipeCategory.DECORATIONS, BVOtherBlocks.SMOOTH_STONE_WALL.get(), BVOtherBlocks.STONE_WALL.get());
 
-        stairs(BVBuildingBlocks.CUT_SANDSTONE_STAIRS.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS);
-        stairs(BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS);
-        wall(BVBuildingBlocks.CUT_SANDSTONE_WALL.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_WALL);
-        wall(BVBuildingBlocks.CUT_RED_SANDSTONE_WALL.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_WALL);
+        stairs(BVOtherBlocks.CUT_SANDSTONE_STAIRS.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS);
+        stairs(BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS);
+        wall(BVOtherBlocks.CUT_SANDSTONE_WALL.get(), Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, Blocks.SANDSTONE_WALL);
+        wall(BVOtherBlocks.CUT_RED_SANDSTONE_WALL.get(), Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_WALL);
 
         wall(BVBuildingBlocks.QUARTZ_WALL.get(), Blocks.QUARTZ_BLOCK, true);
-        stairs(BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_STAIRS);
-        slab(BVBuildingBlocks.QUARTZ_BRICK_SLAB.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_SLAB);
-        wall(BVBuildingBlocks.QUARTZ_BRICK_WALL.get(), Blocks.QUARTZ_BRICKS, Blocks.QUARTZ_BLOCK, BVBuildingBlocks.QUARTZ_WALL.get());
+        family(BVBlockFamilies.QUARTZ_BRICKS).generate()
+                .generateStonecuttingConversions(BlockFamilies.QUARTZ)
+        ;
+        stonecutting(RecipeCategory.DECORATIONS, BVBuildingBlocks.QUARTZ_BRICK_WALL.get(), BVBuildingBlocks.QUARTZ_WALL.get(), 1);
         smelting(RecipeCategory.BUILDING_BLOCKS, Blocks.SMOOTH_QUARTZ_STAIRS, Blocks.QUARTZ_STAIRS);
         smelting(RecipeCategory.BUILDING_BLOCKS, Blocks.SMOOTH_QUARTZ_SLAB, Blocks.QUARTZ_SLAB);
         wall(BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(), Blocks.SMOOTH_QUARTZ, true);

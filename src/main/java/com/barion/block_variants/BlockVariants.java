@@ -60,6 +60,15 @@ public final class BlockVariants {
 
             event.insertAfter(Items.PRISMARINE_BRICK_SLAB.getDefaultInstance(), BVOtherBlocks.PRISMARINE_BRICK_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(Items.DARK_PRISMARINE_SLAB.getDefaultInstance(), BVOtherBlocks.DARK_PRISMARINE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            event.insertAfter(Items.SMOOTH_SANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.SMOOTH_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.SMOOTH_RED_SANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            event.insertAfter(Items.CUT_SANDSTONE.getDefaultInstance(), BVOtherBlocks.CUT_SANDSTONE_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CUT_STANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.CUT_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CUT_RED_SANDSTONE.getDefaultInstance(), BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CUT_RED_SANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.CUT_RED_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             event.insertAfter(Items.PURPUR_SLAB.getDefaultInstance(), BVOtherBlocks.PURPUR_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             event.insertAfter(Items.GOLD_BLOCK.getDefaultInstance(), BVOtherBlocks.GOLD_GRATE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

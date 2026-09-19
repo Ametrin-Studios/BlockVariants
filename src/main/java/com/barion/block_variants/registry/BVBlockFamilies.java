@@ -1,5 +1,6 @@
 package com.barion.block_variants.registry;
 
+import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.google.common.collect.Maps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
@@ -8,13 +9,21 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColorCollection;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
 public final class BVBlockFamilies {
-    public static final Map<Block, BlockFamily> MAP = Maps.newHashMap();
+    public static final Map<Block, BlockFamily> MAP = Maps.newTreeMap(Comparator.comparing(DataProviderExtensions::getBlockKey));
     public static final List<BlockFamily> LOG_FAMILIES = new ArrayList<>();
     public static final List<BlockFamily> WOOD_FAMILIES = new ArrayList<>();
+
+    public static final BlockFamily QUARTZ_BRICKS = familyBuilder(Blocks.QUARTZ_BRICKS)
+            .stairs(BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get())
+            .slab(BVBuildingBlocks.QUARTZ_BRICK_SLAB.get())
+            .wall(BVBuildingBlocks.QUARTZ_BRICK_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
 
     public static final BlockFamily CHISELED_QUARTZ_BLOCK = familyBuilder(Blocks.CHISELED_QUARTZ_BLOCK)
             .stairs(BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get())

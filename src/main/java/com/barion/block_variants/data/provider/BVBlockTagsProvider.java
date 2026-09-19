@@ -32,8 +32,8 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
         {
             tag(BlockTags.MINEABLE_WITH_PICKAXE)
                     .add(
-                            BVBuildingBlocks.CUT_SANDSTONE_STAIRS.getKey(),
-                            BVBuildingBlocks.CUT_RED_SANDSTONE_STAIRS.getKey(),
+                            BVOtherBlocks.CUT_SANDSTONE_STAIRS.getKey(),
+                            BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.getKey(),
                             BVBuildingBlocks.QUARTZ_BRICK_STAIRS.getKey(),
                             BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.getKey(),
                             BVBuildingBlocks.NETHERRACK_STAIRS.getKey(),
@@ -64,8 +64,8 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                             BVOtherBlocks.STONE_WALL.getKey(),
                             BVOtherBlocks.SMOOTH_STONE_STAIRS.getKey(),
                             BVOtherBlocks.SMOOTH_STONE_WALL.getKey(),
-                            BVBuildingBlocks.CUT_SANDSTONE_WALL.getKey(),
-                            BVBuildingBlocks.CUT_RED_SANDSTONE_WALL.getKey(),
+                            BVOtherBlocks.CUT_SANDSTONE_WALL.getKey(),
+                            BVOtherBlocks.CUT_RED_SANDSTONE_WALL.getKey(),
                             BVBuildingBlocks.QUARTZ_WALL.getKey(),
                             BVBuildingBlocks.QUARTZ_BRICK_WALL.getKey(),
                             BVBuildingBlocks.SMOOTH_QUARTZ_WALL.getKey(),
