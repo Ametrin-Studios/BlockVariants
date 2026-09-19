@@ -63,69 +63,65 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
 
         wall(BVOtherBlocks.PRISMARINE_BRICK_WALL.get(), Blocks.PRISMARINE_BRICKS, true);
         wall(BVOtherBlocks.DARK_PRISMARINE_WALL.get(), Blocks.DARK_PRISMARINE, true);
-        all(BVBuildingBlocks.NETHERRACK_STAIRS.get(), BVBuildingBlocks.NETHERRACK_SLAB.get(), BVBuildingBlocks.NETHERRACK_WALL.get(), Blocks.NETHERRACK, true);
-        all(BVBuildingBlocks.END_STONE_STAIRS.get(), BVBuildingBlocks.END_STONE_SLAB.get(), BVBuildingBlocks.END_STONE_WALL.get(), Blocks.END_STONE, true);
+        family(BVBlockFamilies.NETHERRACK).generate();
+        family(BVBlockFamilies.END_STONE).generate();
         wall(BVOtherBlocks.PURPUR_WALL.get(), Blocks.PURPUR_BLOCK, true);
 
-        generateRecipes(BVBlockFamilies.CRACKED_POLISHED_BLACKSTONE_BRICKS, DEFAULT_FEATURE_FLAG_SET);
-        generateSmeltingConversionRecipes(BVBlockFamilies.CRACKED_POLISHED_BLACKSTONE_BRICKS, BlockFamilies.POLISHED_BLACKSTONE_BRICKS, DEFAULT_FEATURE_FLAG_SET);
+        family(BVBlockFamilies.CRACKED_POLISHED_BLACKSTONE_BRICKS).generate()
+                .generateSmeltingConversions(BlockFamilies.POLISHED_BLACKSTONE_BRICKS)
+        ;
         generateStonecuttingConversionRecipes(BlockFamilies.POLISHED_BLACKSTONE, BlockFamilies.BLACKSTONE, DEFAULT_FEATURE_FLAG_SET);
         generateStonecuttingConversionRecipes(BlockFamilies.POLISHED_BLACKSTONE_BRICKS, BlockFamilies.BLACKSTONE, DEFAULT_FEATURE_FLAG_SET);
         generateStonecuttingConversionRecipes(BlockFamilies.POLISHED_BLACKSTONE_BRICKS, BlockFamilies.POLISHED_BLACKSTONE, DEFAULT_FEATURE_FLAG_SET);
 
 
-        generateRecipes(BVBlockFamilies.BASALT, DEFAULT_FEATURE_FLAG_SET);
-//        generateRecipes(BVBlockFamilies.POLISHED_BASALT, DEFAULT_FEATURE_FLAG_SET);
-//        generateStonecuttingConversionRecipes(BVBlockFamilies.POLISHED_BASALT, BVBlockFamilies.BASALT, DEFAULT_FEATURE_FLAG_SET);
-        stairs(BVBuildingBlocks.POLISHED_BASALT_STAIRS.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBuildingBlocks.BASALT_STAIRS.get());
-        slab(BVBuildingBlocks.POLISHED_BASALT_SLAB.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBuildingBlocks.BASALT_SLAB.get());
-        wall(BVBuildingBlocks.POLISHED_BASALT_WALL.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBuildingBlocks.BASALT_WALL.get());
-
-        all(BVColoredBlocks.TERRACOTTA_STAIRS.get(), BVColoredBlocks.TERRACOTTA_SLAB.get(), BVColoredBlocks.TERRACOTTA_WALL.get(), Blocks.TERRACOTTA, true);
-        BVBlockFamilies.DYED_TERRACOTTA.forEach(family -> generateRecipes(family, DEFAULT_FEATURE_FLAG_SET));
-
-        all(BVBuildingBlocks.DRIPSTONE_BLOCK_STAIRS.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_SLAB.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_WALL.get(), Blocks.DRIPSTONE_BLOCK, true);
-        all(BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(), BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(), BVBuildingBlocks.AMETHYST_BLOCK_WALL.get(), Blocks.AMETHYST_BLOCK, false);
+        family(BVBlockFamilies.BASALT).generate();
+        family(BVBlockFamilies.POLISHED_BASALT).generate()
+                .generateStonecuttingConversions(BVBlockFamilies.BASALT)
+        ;
+        family(BVBlockFamilies.DRIPSTONE_BLOCK).generate();
+        family(BVBlockFamilies.AMETHYST_BLOCK).generate();
+        family(BVBlockFamilies.CRACKED_STONE_BRICKS).generate();
 
         for (var family : BVBlockFamilies.LOG_FAMILIES) {
-            generateRecipes(family, DEFAULT_FEATURE_FLAG_SET);
+            family(family).generate();
         }
 
         for (var family : BVBlockFamilies.WOOD_FAMILIES) {
-            generateRecipes(family, DEFAULT_FEATURE_FLAG_SET);
+            family(family).generate();
             wallFenceFenceGate(family.get(BlockFamily.Variant.WALL), family.get(BlockFamily.Variant.FENCE), family.get(BlockFamily.Variant.FENCE_GATE), family.get(BlockFamily.Variant.LOG), false);
         }
 
-        generateRecipes(BVBlockFamilies.BAMBOO_BLOCK, DEFAULT_FEATURE_FLAG_SET);
-        generateRecipes(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK, DEFAULT_FEATURE_FLAG_SET);
+        family(BVBlockFamilies.BAMBOO_BLOCK).generate();
+        family(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK).generate();
 
-        all(BVBuildingBlocks.CALCITE_STAIRS.get(), BVBuildingBlocks.CALCITE_SLAB.get(), BVBuildingBlocks.CALCITE_WALL.get(), Blocks.CALCITE, true);
-        all(BVBuildingBlocks.SMOOTH_BASALT_STAIRS.get(), BVBuildingBlocks.SMOOTH_BASALT_SLAB.get(), BVBuildingBlocks.SMOOTH_BASALT_WALL.get(), Blocks.SMOOTH_BASALT, true);
-        smelting(BVBuildingBlocks.SMOOTH_BASALT_STAIRS.get(), BVBuildingBlocks.BASALT_STAIRS.get());
-        smelting(BVBuildingBlocks.SMOOTH_BASALT_SLAB.get(), BVBuildingBlocks.BASALT_SLAB.get());
-        smelting(BVBuildingBlocks.SMOOTH_BASALT_WALL.get(), BVBuildingBlocks.BASALT_WALL.get());
+        family(BVBlockFamilies.CALCITE).generate();
+        family(BVBlockFamilies.SMOOTH_BASALT).generate()
+                .generateSmeltingConversions(BVBlockFamilies.BASALT)
+        ;
 
-        all(BVBuildingBlocks.DEEPSLATE_STAIRS.get(), BVBuildingBlocks.DEEPSLATE_SLAB.get(), BVBuildingBlocks.DEEPSLATE_WALL.get(), Blocks.DEEPSLATE, true);
-        all(BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get(), Blocks.CRACKED_DEEPSLATE_BRICKS, true);
-        all(BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get(), BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL.get(), Blocks.CRACKED_DEEPSLATE_TILES, true);
+        family(BVBlockFamilies.DEEPSLATE).generate();
+        family(BVBlockFamilies.CRACKED_DEEPSLATE_BRICKS).generate();
+        family(BVBlockFamilies.CRACKED_DEEPSLATE_TILES).generate();
 
         netherFenceGate(BVBuildingBlocks.NETHER_BRICK_FENCE_GATE.get(), Blocks.NETHER_BRICKS);
-        all(BVBuildingBlocks.CRACKED_NETHER_BRICK_STAIRS.get(), BVBuildingBlocks.CRACKED_NETHER_BRICK_SLAB.get(), BVBuildingBlocks.CRACKED_NETHER_BRICK_WALL.get(), Blocks.CRACKED_NETHER_BRICKS, true);
+        family(BVBlockFamilies.CRACKED_NETHER_BRICKS).generate();
         netherFence(BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE.get(), Blocks.CRACKED_NETHER_BRICKS);
         netherFenceGate(BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.get(), Blocks.CRACKED_NETHER_BRICKS);
         netherFence(BVBuildingBlocks.RED_NETHER_BRICK_FENCE.get(), Blocks.RED_NETHER_BRICKS);
         netherFenceGate(BVBuildingBlocks.RED_NETHER_BRICK_FENCE_GATE.get(), Blocks.RED_NETHER_BRICKS);
 
-        all(BVBuildingBlocks.OBSIDIAN_STAIRS.get(), BVBuildingBlocks.OBSIDIAN_SLAB.get(), BVBuildingBlocks.OBSIDIAN_WALL.get(), Blocks.OBSIDIAN, false);
-        all(BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get(), BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get(), BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get(), Blocks.CRYING_OBSIDIAN, false);
+        family(BVBlockFamilies.OBSIDIAN).generate();
+        family(BVBlockFamilies.CRYING_OBSIDIAN).generate();
 
-        BVBlockFamilies.GLAZED_TERRACOTTA.forEach(family -> generateRecipes(family, DEFAULT_FEATURE_FLAG_SET));
-
+        family(BVBlockFamilies.TERRACOTTA).generate();
         ColorCollection.VALUES.forEach(color -> {
             var dyed = BVBlockFamilies.DYED_TERRACOTTA.pick(color);
             var glazed = BVBlockFamilies.GLAZED_TERRACOTTA.pick(color);
-
-            glazed.getVariants().forEach((variant, _) -> smelting(glazed.get(variant), dyed.get(variant)));
+            family(dyed).generate();
+            family(glazed).generate()
+                    .generateSmeltingConversions(dyed)
+            ;
         });
 
         ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.WOOL_WALL.pick(color).get(), Blocks.WOOL.pick(color), false));

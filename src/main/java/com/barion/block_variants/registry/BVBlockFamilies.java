@@ -16,6 +16,19 @@ public final class BVBlockFamilies {
     public static final List<BlockFamily> LOG_FAMILIES = new ArrayList<>();
     public static final List<BlockFamily> WOOD_FAMILIES = new ArrayList<>();
 
+    public static final BlockFamily NETHERRACK = familyBuilder(Blocks.NETHERRACK)
+            .stairs(BVBuildingBlocks.NETHERRACK_STAIRS.get())
+            .slab(BVBuildingBlocks.NETHERRACK_SLAB.get())
+            .wall(BVBuildingBlocks.NETHERRACK_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+    public static final BlockFamily END_STONE = familyBuilder(Blocks.END_STONE)
+            .stairs(BVBuildingBlocks.END_STONE_STAIRS.get())
+            .slab(BVBuildingBlocks.END_STONE_SLAB.get())
+            .wall(BVBuildingBlocks.END_STONE_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+
     public static final BlockFamily CRACKED_POLISHED_BLACKSTONE_BRICKS = familyBuilder(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)
             .stairs(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get())
             .slab(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get())
@@ -45,7 +58,6 @@ public final class BVBlockFamilies {
             .stairs(BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get())
             .slab(BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get())
             .wall(BVBuildingBlocks.AMETHYST_BLOCK_WALL.get())
-            .generateStonecutterRecipe()
             .getFamily();
     public static final BlockFamily CRACKED_STONE_BRICKS = familyBuilder(Blocks.CRACKED_STONE_BRICKS)
             .stairs(BVBuildingBlocks.CRACKED_STONE_BRICK_STAIRS.get())
@@ -313,10 +325,61 @@ public final class BVBlockFamilies {
             .fenceGate(BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.get()));
 
 
+    public static final BlockFamily CALCITE = familyBuilder(Blocks.CALCITE)
+            .stairs(BVBuildingBlocks.CALCITE_STAIRS.get())
+            .slab(BVBuildingBlocks.CALCITE_SLAB.get())
+            .wall(BVBuildingBlocks.CALCITE_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+    public static final BlockFamily SMOOTH_BASALT = familyBuilder(Blocks.SMOOTH_BASALT)
+            .stairs(BVBuildingBlocks.SMOOTH_BASALT_STAIRS.get())
+            .slab(BVBuildingBlocks.SMOOTH_BASALT_SLAB.get())
+            .wall(BVBuildingBlocks.SMOOTH_BASALT_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+    public static final BlockFamily DEEPSLATE = familyBuilder(Blocks.DEEPSLATE)
+            .stairs(BVBuildingBlocks.DEEPSLATE_STAIRS.get())
+            .slab(BVBuildingBlocks.DEEPSLATE_SLAB.get())
+            .wall(BVBuildingBlocks.DEEPSLATE_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+    public static final BlockFamily CRACKED_DEEPSLATE_BRICKS = familyBuilder(Blocks.CRACKED_DEEPSLATE_BRICKS)
+            .stairs(BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get())
+            .slab(BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get())
+            .wall(BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+    public static final BlockFamily CRACKED_DEEPSLATE_TILES = familyBuilder(Blocks.CRACKED_DEEPSLATE_TILES)
+            .stairs(BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get())
+            .slab(BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get())
+            .wall(BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+
+    public static final BlockFamily CRACKED_NETHER_BRICKS = familyBuilder(Blocks.CRACKED_NETHER_BRICKS)
+            .stairs(BVBuildingBlocks.CRACKED_NETHER_BRICK_STAIRS.get())
+            .slab(BVBuildingBlocks.CRACKED_NETHER_BRICK_SLAB.get())
+            .wall(BVBuildingBlocks.CRACKED_NETHER_BRICK_WALL.get())
+            .generateStonecutterRecipe()
+            .getFamily();
+
+
+    public static final BlockFamily OBSIDIAN = familyBuilder(Blocks.OBSIDIAN)
+            .stairs(BVBuildingBlocks.OBSIDIAN_STAIRS.get())
+            .slab(BVBuildingBlocks.OBSIDIAN_SLAB.get())
+            .wall(BVBuildingBlocks.OBSIDIAN_WALL.get())
+            .getFamily();
+    public static final BlockFamily CRYING_OBSIDIAN = familyBuilder(Blocks.CRYING_OBSIDIAN)
+            .stairs(BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get())
+            .slab(BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get())
+            .wall(BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get())
+            .getFamily();
+
     public static final BlockFamily TERRACOTTA = familyBuilder(Blocks.TERRACOTTA)
             .stairs(BVColoredBlocks.TERRACOTTA_STAIRS.get())
             .slab(BVColoredBlocks.TERRACOTTA_SLAB.get())
             .wall(BVColoredBlocks.TERRACOTTA_WALL.get())
+            .generateStonecutterRecipe()
             .getFamily();
 
     public static final ColorCollection<BlockFamily> DYED_TERRACOTTA = ColorCollection.VALUES

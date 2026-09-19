@@ -36,14 +36,14 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
         );
 
         tag(ItemTags.NON_FLAMMABLE_WOOD)
-                .addAll(BVBlockFamilies.CRIMSON_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
-                .addAll(BVBlockFamilies.STRIPPED_CRIMSON_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
-                .addAll(BVBlockFamilies.WARPED_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
-                .addAll(BVBlockFamilies.STRIPPED_WARPED_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
-                .addAll(BVBlockFamilies.CRIMSON_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
-                .addAll(BVBlockFamilies.STRIPPED_CRIMSON_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
-                .addAll(BVBlockFamilies.WARPED_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
-                .addAll(BVBlockFamilies.STRIPPED_WARPED_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey))
+                .addAll(BVBlockFamilies.CRIMSON_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
+                .addAll(BVBlockFamilies.STRIPPED_CRIMSON_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
+                .addAll(BVBlockFamilies.WARPED_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
+                .addAll(BVBlockFamilies.STRIPPED_WARPED_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
+                .addAll(BVBlockFamilies.CRIMSON_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
+                .addAll(BVBlockFamilies.STRIPPED_CRIMSON_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
+                .addAll(BVBlockFamilies.WARPED_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
+                .addAll(BVBlockFamilies.STRIPPED_WARPED_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
         ;
     }
 }
