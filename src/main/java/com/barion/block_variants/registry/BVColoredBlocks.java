@@ -93,18 +93,6 @@ public final class BVColoredBlocks {
     );
 
 
-    private static DeferredBlock<StairBlock> regTerracottaStairs(DyeColor color, Block base) {
-        return register(color.getName() + "_terracotta_stairs", StairBlock::new, base, BlockRegisterHelper::stairProperties);
-    }
-
-    private static DeferredBlock<SlabBlock> regTerracottaSlab(DyeColor color) {
-        return register(color.getName() + "_terracotta_slab", SlabBlock::new, () -> slabProperties(Blocks.TERRACOTTA));
-    }
-
-    private static DeferredBlock<WallBlock> regTerracottaWall(DyeColor color) {
-        return register(color.getName() + "_terracotta_wall", WallBlock::new, () -> wallProperties(Blocks.TERRACOTTA));
-    }
-
     private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties) {
         return register(name, block, base, properties, UnaryOperator.identity());
     }
@@ -112,7 +100,6 @@ public final class BVColoredBlocks {
     private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
         return register(name, prop -> block.apply(base.defaultBlockState(), prop), () -> properties.apply(base), itemProperties);
     }
-
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, UnaryOperator<BlockBehaviour.Properties> properties) {
         return register(name, block, properties, UnaryOperator.identity());

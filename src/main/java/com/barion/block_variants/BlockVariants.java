@@ -68,7 +68,6 @@ public final class BlockVariants {
         }
 
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
-//            BVColoredBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
             var lastColor = BVColoredBlocks.GAMEPLAY_COLOR_ORDER.getLast();
             BVColoredBlocks.GAMEPLAY_COLOR_ORDER.reversed().forEach(color -> {
                 event.insertAfter(Items.WOOL_SLAB.pick(lastColor).getDefaultInstance(), BVColoredBlocks.WOOL_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

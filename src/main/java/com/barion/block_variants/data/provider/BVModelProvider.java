@@ -10,6 +10,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.*;
@@ -46,69 +47,35 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.familyWithExistingFullBlock(Blocks.END_STONE).stairs(BVBuildingBlocks.END_STONE_STAIRS.get()).slab(BVBuildingBlocks.END_STONE_SLAB.get()).wall(BVBuildingBlocks.END_STONE_WALL.get());
         blockModels.familyWithExistingFullBlock(Blocks.PURPUR_BLOCK).wall(BVOtherBlocks.PURPUR_WALL.get());
 
-        blockModels.familyWithExistingFullBlock(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).stairs(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get()).slab(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get()).wall(BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get());
-        columnStairsSlabWall(blockModels, Blocks.BASALT, BVBuildingBlocks.BASALT_STAIRS.get(), BVBuildingBlocks.BASALT_SLAB.get(), BVBuildingBlocks.BASALT_WALL.get());
-        columnStairsSlabWall(blockModels, Blocks.POLISHED_BASALT, BVBuildingBlocks.POLISHED_BASALT_STAIRS.get(), BVBuildingBlocks.POLISHED_BASALT_SLAB.get(), BVBuildingBlocks.POLISHED_BASALT_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).generateFor(BVBlockFamilies.CRACKED_POLISHED_BLACKSTONE_BRICKS);
+        blockModels.familyWithExistingFullBlock(Blocks.BASALT, BVModelProvider::columnTopSideTextureMapping).generateFor(BVBlockFamilies.BASALT);
+        blockModels.familyWithExistingFullBlock(Blocks.POLISHED_BASALT, BVModelProvider::columnTopSideTextureMapping).generateFor(BVBlockFamilies.POLISHED_BASALT);
 
-        stairsSlabWall(blockModels, Blocks.TERRACOTTA, BVColoredBlocks.TERRACOTTA_STAIRS.get(), BVColoredBlocks.TERRACOTTA_SLAB.get(), BVColoredBlocks.TERRACOTTA_WALL.get());
+        blockModels.familyWithExistingFullBlock(Blocks.TERRACOTTA).generateFor(BVBlockFamilies.TERRACOTTA);
         BVBlockFamilies.DYED_TERRACOTTA.forEach(family -> blockModels.familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family));
 
-        stairsSlabWall(blockModels, Blocks.DRIPSTONE_BLOCK, BVBuildingBlocks.DRIPSTONE_BLOCK_STAIRS.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_SLAB.get(), BVBuildingBlocks.DRIPSTONE_BLOCK_WALL.get());
-        stairsSlabWall(blockModels, Blocks.AMETHYST_BLOCK, BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(), BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(), BVBuildingBlocks.AMETHYST_BLOCK_WALL.get());
-        stairsSlabWall(blockModels, Blocks.CRACKED_STONE_BRICKS, BVBuildingBlocks.CRACKED_STONE_BRICK_STAIRS.get(), BVBuildingBlocks.CRACKED_STONE_BRICK_SLAB.get(), BVBuildingBlocks.CRACKED_STONE_BRICK_WALL.get());
-
-        logStairsSlab(blockModels, Blocks.STRIPPED_OAK_LOG, BVBuildingBlocks.STRIPPED_OAK_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_OAK_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_SPRUCE_LOG, BVBuildingBlocks.STRIPPED_SPRUCE_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_SPRUCE_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_BIRCH_LOG, BVBuildingBlocks.STRIPPED_BIRCH_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_BIRCH_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_JUNGLE_LOG, BVBuildingBlocks.STRIPPED_JUNGLE_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_JUNGLE_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_ACACIA_LOG, BVBuildingBlocks.STRIPPED_ACACIA_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_ACACIA_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_DARK_OAK_LOG, BVBuildingBlocks.STRIPPED_DARK_OAK_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_DARK_OAK_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_MANGROVE_LOG, BVBuildingBlocks.STRIPPED_MANGROVE_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_MANGROVE_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_CHERRY_LOG, BVBuildingBlocks.STRIPPED_CHERRY_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_CHERRY_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_PALE_OAK_LOG, BVBuildingBlocks.STRIPPED_PALE_OAK_LOG_STAIRS.get(), BVBuildingBlocks.STRIPPED_PALE_OAK_LOG_SLAB.get());
-
-        logStairsSlab(blockModels, Blocks.OAK_LOG, BVBuildingBlocks.OAK_LOG_STAIRS.get(), BVBuildingBlocks.OAK_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.SPRUCE_LOG, BVBuildingBlocks.SPRUCE_LOG_STAIRS.get(), BVBuildingBlocks.SPRUCE_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.BIRCH_LOG, BVBuildingBlocks.BIRCH_LOG_STAIRS.get(), BVBuildingBlocks.BIRCH_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.JUNGLE_LOG, BVBuildingBlocks.JUNGLE_LOG_STAIRS.get(), BVBuildingBlocks.JUNGLE_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.ACACIA_LOG, BVBuildingBlocks.ACACIA_LOG_STAIRS.get(), BVBuildingBlocks.ACACIA_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.DARK_OAK_LOG, BVBuildingBlocks.DARK_OAK_LOG_STAIRS.get(), BVBuildingBlocks.DARK_OAK_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.MANGROVE_LOG, BVBuildingBlocks.MANGROVE_LOG_STAIRS.get(), BVBuildingBlocks.MANGROVE_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.CHERRY_LOG, BVBuildingBlocks.CHERRY_LOG_STAIRS.get(), BVBuildingBlocks.CHERRY_LOG_SLAB.get());
-        logStairsSlab(blockModels, Blocks.PALE_OAK_LOG, BVBuildingBlocks.PALE_OAK_LOG_STAIRS.get(), BVBuildingBlocks.PALE_OAK_LOG_SLAB.get());
-
-        logStairsSlab(blockModels, Blocks.STRIPPED_CRIMSON_STEM, BVBuildingBlocks.STRIPPED_CRIMSON_STEM_STAIRS.get(), BVBuildingBlocks.STRIPPED_CRIMSON_STEM_SLAB.get());
-        logStairsSlab(blockModels, Blocks.STRIPPED_WARPED_STEM, BVBuildingBlocks.STRIPPED_WARPED_STEM_STAIRS.get(), BVBuildingBlocks.STRIPPED_WARPED_STEM_SLAB.get());
-        logStairsSlab(blockModels, Blocks.CRIMSON_STEM, BVBuildingBlocks.CRIMSON_STEM_STAIRS.get(), BVBuildingBlocks.CRIMSON_STEM_SLAB.get());
-        logStairsSlab(blockModels, Blocks.WARPED_STEM, BVBuildingBlocks.WARPED_STEM_STAIRS.get(), BVBuildingBlocks.WARPED_STEM_SLAB.get());
+        blockModels.familyWithExistingFullBlock(Blocks.DRIPSTONE_BLOCK).generateFor(BVBlockFamilies.DRIPSTONE_BLOCK);
+        blockModels.familyWithExistingFullBlock(Blocks.AMETHYST_BLOCK).generateFor(BVBlockFamilies.AMETHYST_BLOCK);
+        blockModels.familyWithExistingFullBlock(Blocks.CRACKED_STONE_BRICKS).generateFor(BVBlockFamilies.CRACKED_STONE_BRICKS);
 
 
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_OAK_LOG, BVBuildingBlocks.STRIPPED_OAK_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_OAK_WOOD_SLAB.get(), Blocks.STRIPPED_OAK_WOOD, BVBuildingBlocks.STRIPPED_OAK_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_OAK_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_OAK_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_SPRUCE_LOG, BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_SLAB.get(), Blocks.STRIPPED_SPRUCE_WOOD, BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_BIRCH_LOG, BVBuildingBlocks.STRIPPED_BIRCH_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_BIRCH_WOOD_SLAB.get(), Blocks.STRIPPED_BIRCH_WOOD, BVBuildingBlocks.STRIPPED_BIRCH_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_BIRCH_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_BIRCH_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_JUNGLE_LOG, BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_SLAB.get(), Blocks.STRIPPED_JUNGLE_WOOD, BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_ACACIA_LOG, BVBuildingBlocks.STRIPPED_ACACIA_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_ACACIA_WOOD_SLAB.get(), Blocks.STRIPPED_ACACIA_WOOD, BVBuildingBlocks.STRIPPED_ACACIA_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_ACACIA_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_ACACIA_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_DARK_OAK_LOG, BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_SLAB.get(), Blocks.STRIPPED_DARK_OAK_WOOD, BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_MANGROVE_LOG, BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_SLAB.get(), Blocks.STRIPPED_MANGROVE_WOOD, BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_CHERRY_LOG, BVBuildingBlocks.STRIPPED_CHERRY_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_CHERRY_WOOD_SLAB.get(), Blocks.STRIPPED_CHERRY_WOOD, BVBuildingBlocks.STRIPPED_CHERRY_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_CHERRY_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_CHERRY_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_PALE_OAK_LOG, BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_STAIRS.get(), BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_SLAB.get(), Blocks.STRIPPED_PALE_OAK_WOOD, BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_WALL.get(), BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_FENCE.get(), BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_FENCE_GATE.get());
-        logStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_BAMBOO_BLOCK, BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_STAIRS.get(), BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_SLAB.get(), BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_WALL.get(), BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE.get(), BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.get());
+        BVBlockFamilies.LOG_FAMILIES.forEach(family -> {
+            blockModels.familyWithExistingFullBlock(family.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(family);
+        });
 
-        woodStairsSlabWallFenceGate(blockModels, Blocks.OAK_LOG, BVBuildingBlocks.OAK_WOOD_STAIRS.get(), BVBuildingBlocks.OAK_WOOD_SLAB.get(), Blocks.OAK_WOOD, BVBuildingBlocks.OAK_WOOD_WALL.get(), BVBuildingBlocks.OAK_WOOD_FENCE.get(), BVBuildingBlocks.OAK_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.SPRUCE_LOG, BVBuildingBlocks.SPRUCE_WOOD_STAIRS.get(), BVBuildingBlocks.SPRUCE_WOOD_SLAB.get(), Blocks.SPRUCE_WOOD, BVBuildingBlocks.SPRUCE_WOOD_WALL.get(), BVBuildingBlocks.SPRUCE_WOOD_FENCE.get(), BVBuildingBlocks.SPRUCE_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.BIRCH_LOG, BVBuildingBlocks.BIRCH_WOOD_STAIRS.get(), BVBuildingBlocks.BIRCH_WOOD_SLAB.get(), Blocks.BIRCH_WOOD, BVBuildingBlocks.BIRCH_WOOD_WALL.get(), BVBuildingBlocks.BIRCH_WOOD_FENCE.get(), BVBuildingBlocks.BIRCH_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.JUNGLE_LOG, BVBuildingBlocks.JUNGLE_WOOD_STAIRS.get(), BVBuildingBlocks.JUNGLE_WOOD_SLAB.get(), Blocks.JUNGLE_WOOD, BVBuildingBlocks.JUNGLE_WOOD_WALL.get(), BVBuildingBlocks.JUNGLE_WOOD_FENCE.get(), BVBuildingBlocks.JUNGLE_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.ACACIA_LOG, BVBuildingBlocks.ACACIA_WOOD_STAIRS.get(), BVBuildingBlocks.ACACIA_WOOD_SLAB.get(), Blocks.ACACIA_WOOD, BVBuildingBlocks.ACACIA_WOOD_WALL.get(), BVBuildingBlocks.ACACIA_WOOD_FENCE.get(), BVBuildingBlocks.ACACIA_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.DARK_OAK_LOG, BVBuildingBlocks.DARK_OAK_WOOD_STAIRS.get(), BVBuildingBlocks.DARK_OAK_WOOD_SLAB.get(), Blocks.DARK_OAK_WOOD, BVBuildingBlocks.DARK_OAK_WOOD_WALL.get(), BVBuildingBlocks.DARK_OAK_WOOD_FENCE.get(), BVBuildingBlocks.DARK_OAK_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.MANGROVE_LOG, BVBuildingBlocks.MANGROVE_WOOD_STAIRS.get(), BVBuildingBlocks.MANGROVE_WOOD_SLAB.get(), Blocks.MANGROVE_WOOD, BVBuildingBlocks.MANGROVE_WOOD_WALL.get(), BVBuildingBlocks.MANGROVE_WOOD_FENCE.get(), BVBuildingBlocks.MANGROVE_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.CHERRY_LOG, BVBuildingBlocks.CHERRY_WOOD_STAIRS.get(), BVBuildingBlocks.CHERRY_WOOD_SLAB.get(), Blocks.CHERRY_WOOD, BVBuildingBlocks.CHERRY_WOOD_WALL.get(), BVBuildingBlocks.CHERRY_WOOD_FENCE.get(), BVBuildingBlocks.CHERRY_WOOD_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.PALE_OAK_LOG, BVBuildingBlocks.PALE_OAK_WOOD_STAIRS.get(), BVBuildingBlocks.PALE_OAK_WOOD_SLAB.get(), Blocks.PALE_OAK_WOOD, BVBuildingBlocks.PALE_OAK_WOOD_WALL.get(), BVBuildingBlocks.PALE_OAK_WOOD_FENCE.get(), BVBuildingBlocks.PALE_OAK_WOOD_FENCE_GATE.get());
-        logStairsSlabWallFenceGate(blockModels, Blocks.BAMBOO_BLOCK, BVBuildingBlocks.BAMBOO_BLOCK_STAIRS.get(), BVBuildingBlocks.BAMBOO_BLOCK_SLAB.get(), BVBuildingBlocks.BAMBOO_BLOCK_WALL.get(), BVBuildingBlocks.BAMBOO_BLOCK_FENCE.get(), BVBuildingBlocks.BAMBOO_BLOCK_FENCE_GATE.get());
+        BVBlockFamilies.WOOD_FAMILIES.forEach(family -> {
+            var textureBase = family.get(BlockFamily.Variant.LOG);
+            var texture = TextureMapping.getBlockTexture(textureBase);
+            var mapping = new TextureMapping()
+                    .put(TextureSlot.ALL, texture)
+                    .put(TextureSlot.SIDE, texture)
+                    .put(TextureSlot.TOP, texture)
+                    .put(TextureSlot.BOTTOM, texture);
+            blockModels.familyWithExistingFullBlock(family.getBaseBlock(), mapping).generateFor(family);
+        });
 
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_CRIMSON_STEM, BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.get(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.get(), Blocks.STRIPPED_CRIMSON_HYPHAE, BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.get(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE.get(), BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.STRIPPED_WARPED_STEM, BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.get(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_SLAB.get(), Blocks.STRIPPED_WARPED_HYPHAE, BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_WALL.get(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE.get(), BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.CRIMSON_STEM, BVBuildingBlocks.CRIMSON_HYPHAE_STAIRS.get(), BVBuildingBlocks.CRIMSON_HYPHAE_SLAB.get(), Blocks.CRIMSON_HYPHAE, BVBuildingBlocks.CRIMSON_HYPHAE_WALL.get(), BVBuildingBlocks.CRIMSON_HYPHAE_FENCE.get(), BVBuildingBlocks.CRIMSON_HYPHAE_FENCE_GATE.get());
-        woodStairsSlabWallFenceGate(blockModels, Blocks.WARPED_STEM, BVBuildingBlocks.WARPED_HYPHAE_STAIRS.get(), BVBuildingBlocks.WARPED_HYPHAE_SLAB.get(), Blocks.WARPED_HYPHAE, BVBuildingBlocks.WARPED_HYPHAE_WALL.get(), BVBuildingBlocks.WARPED_HYPHAE_FENCE.get(), BVBuildingBlocks.WARPED_HYPHAE_FENCE_GATE.get());
+        blockModels.familyWithExistingFullBlock(BVBlockFamilies.BAMBOO_BLOCK.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(BVBlockFamilies.BAMBOO_BLOCK);
+        blockModels.familyWithExistingFullBlock(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK);
 
         stairsSlabWall(blockModels, Blocks.CALCITE, BVBuildingBlocks.CALCITE_STAIRS.get(), BVBuildingBlocks.CALCITE_SLAB.get(), BVBuildingBlocks.CALCITE_WALL.get());
         stairsSlabWall(blockModels, Blocks.SMOOTH_BASALT, BVBuildingBlocks.SMOOTH_BASALT_STAIRS.get(), BVBuildingBlocks.SMOOTH_BASALT_SLAB.get(), BVBuildingBlocks.SMOOTH_BASALT_WALL.get());
@@ -180,12 +147,6 @@ public final class BVModelProvider extends ExtendedModelProvider {
         customSlab(blockModels, slab, base, mapping);
     }
 
-    public static void logStairsSlab(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab) {
-        var mapping = logTextureMapping(base);
-        customStairs(blockModels, stair, mapping);
-        customSlab(blockModels, slab, base, mapping);
-    }
-
     private static void columnStairsSlabWall(BlockModelGenerators blockModels, Block base, StairBlock stair, SlabBlock slab, WallBlock wall) {
         var mapping = columnTopSideTextureMapping(base);
         customStairs(blockModels, stair, mapping);
@@ -195,6 +156,8 @@ public final class BVModelProvider extends ExtendedModelProvider {
 
     public static TextureMapping logTextureMapping(Block log) {
         return new TextureMapping()
+                .put(TextureSlot.WALL, TextureMapping.getBlockTexture(log))
+                .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(log))
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(log))
                 .put(TextureSlot.TOP, TextureMapping.getBlockTexture(log, "_top"))
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(log, "_top"));
@@ -207,7 +170,7 @@ public final class BVModelProvider extends ExtendedModelProvider {
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(top, "_top"));
     }
 
-    private static TextureMapping columnTopSideTextureMapping(Block log) {
+    public static TextureMapping columnTopSideTextureMapping(Block log) {
         return new TextureMapping()
                 .put(TextureSlot.WALL, TextureMapping.getBlockTexture(log, "_side"))
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(log, "_side"))

@@ -3,8 +3,6 @@ package com.barion.block_variants.registry;
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper;
 import com.barion.block_variants.BlockVariants;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -20,7 +18,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.copyProperties;
 import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.*;
 
 public final class BVBuildingBlocks {
@@ -223,56 +220,56 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<WallBlock> STRIPPED_PALE_OAK_WOOD_WALL = woodWall("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
     public static final DeferredBlock<FenceBlock> STRIPPED_PALE_OAK_WOOD_FENCE = woodFence("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
     public static final DeferredBlock<FenceGateBlock> STRIPPED_PALE_OAK_WOOD_FENCE_GATE = woodFenceGate("stripped_pale_oak", Blocks.STRIPPED_PALE_OAK_WOOD);
-    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", prop -> new StairBlock(Blocks.STRIPPED_BAMBOO_BLOCK.defaultBlockState(), prop), () -> copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", StairBlock::new, Blocks.STRIPPED_BAMBOO_BLOCK, b -> stairProperties(b).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     public static final DeferredBlock<SlabBlock> STRIPPED_BAMBOO_BLOCK_SLAB = register("stripped_bamboo_block_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
     public static final DeferredBlock<WallBlock> STRIPPED_BAMBOO_BLOCK_WALL = register("stripped_bamboo_block_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<FenceBlock> STRIPPED_BAMBOO_BLOCK_FENCE = register("stripped_bamboo_block_fence", FenceBlock::new, () -> copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<FenceGateBlock> STRIPPED_BAMBOO_BLOCK_FENCE_GATE = register("stripped_bamboo_block_fence_gate", prop -> new FenceGateBlock(WoodType.BAMBOO, prop), () -> copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW).forceSolidOn(), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+    public static final DeferredBlock<FenceBlock> STRIPPED_BAMBOO_BLOCK_FENCE = register("stripped_bamboo_block_fence", FenceBlock::new, () -> fenceProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_BAMBOO_BLOCK_FENCE_GATE = register("stripped_bamboo_block_fence_gate", prop -> new FenceGateBlock(WoodType.BAMBOO, prop), () -> fenceGateProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW).forceSolidOn(), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
 
-    public static final DeferredBlock<StairBlock> CRIMSON_HYPHAE_STAIRS = register("crimson_hyphae_stairs", prop -> new StairBlock(Blocks.CRIMSON_HYPHAE.defaultBlockState(), prop), () -> copyProperties(Blocks.CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<SlabBlock> CRIMSON_HYPHAE_SLAB = register("crimson_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<WallBlock> CRIMSON_HYPHAE_WALL = register("crimson_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceBlock> CRIMSON_HYPHAE_FENCE = register("crimson_hyphae_fence", FenceBlock::new, () -> copyProperties(Blocks.CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceGateBlock> CRIMSON_HYPHAE_FENCE_GATE = register("crimson_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> copyProperties(Blocks.CRIMSON_HYPHAE).forceSolidOn(), Item.Properties::fireResistant);
-    public static final DeferredBlock<StairBlock> WARPED_HYPHAE_STAIRS = register("warped_hyphae_stairs", prop -> new StairBlock(Blocks.WARPED_HYPHAE.defaultBlockState(), prop), () -> copyProperties(Blocks.WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<SlabBlock> WARPED_HYPHAE_SLAB = register("warped_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<WallBlock> WARPED_HYPHAE_WALL = register("warped_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceBlock> WARPED_HYPHAE_FENCE = register("warped_hyphae_fence", FenceBlock::new, () -> copyProperties(Blocks.WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceGateBlock> WARPED_HYPHAE_FENCE_GATE = register("warped_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.WARPED, prop), () -> copyProperties(Blocks.WARPED_HYPHAE).forceSolidOn(), Item.Properties::fireResistant);
+    public static final DeferredBlock<StairBlock> CRIMSON_HYPHAE_STAIRS = register("crimson_hyphae_stairs", StairBlock::new, Blocks.CRIMSON_HYPHAE, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<SlabBlock> CRIMSON_HYPHAE_SLAB = register("crimson_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.CRIMSON_HYPHAE));
+    public static final DeferredBlock<WallBlock> CRIMSON_HYPHAE_WALL = register("crimson_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.CRIMSON_HYPHAE));
+    public static final DeferredBlock<FenceBlock> CRIMSON_HYPHAE_FENCE = register("crimson_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.CRIMSON_HYPHAE));
+    public static final DeferredBlock<FenceGateBlock> CRIMSON_HYPHAE_FENCE_GATE = register("crimson_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> fenceGateProperties(Blocks.CRIMSON_HYPHAE).forceSolidOn());
+    public static final DeferredBlock<StairBlock> WARPED_HYPHAE_STAIRS = register("warped_hyphae_stairs", StairBlock::new, Blocks.WARPED_HYPHAE, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<SlabBlock> WARPED_HYPHAE_SLAB = register("warped_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.WARPED_HYPHAE));
+    public static final DeferredBlock<WallBlock> WARPED_HYPHAE_WALL = register("warped_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.WARPED_HYPHAE));
+    public static final DeferredBlock<FenceBlock> WARPED_HYPHAE_FENCE = register("warped_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.WARPED_HYPHAE));
+    public static final DeferredBlock<FenceGateBlock> WARPED_HYPHAE_FENCE_GATE = register("warped_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.WARPED, prop), () -> fenceGateProperties(Blocks.WARPED_HYPHAE).forceSolidOn());
 
-    public static final DeferredBlock<StairBlock> STRIPPED_CRIMSON_HYPHAE_STAIRS = register("stripped_crimson_hyphae_stairs", prop -> new StairBlock(Blocks.STRIPPED_CRIMSON_HYPHAE.defaultBlockState(), prop), () -> copyProperties(Blocks.STRIPPED_CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<SlabBlock> STRIPPED_CRIMSON_HYPHAE_SLAB = register("stripped_crimson_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<WallBlock> STRIPPED_CRIMSON_HYPHAE_WALL = register("stripped_crimson_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceBlock> STRIPPED_CRIMSON_HYPHAE_FENCE = register("stripped_crimson_hyphae_fence", FenceBlock::new, () -> copyProperties(Blocks.STRIPPED_CRIMSON_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceGateBlock> STRIPPED_CRIMSON_HYPHAE_FENCE_GATE = register("stripped_crimson_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> copyProperties(Blocks.STRIPPED_CRIMSON_HYPHAE).forceSolidOn(), Item.Properties::fireResistant);
-    public static final DeferredBlock<StairBlock> STRIPPED_WARPED_HYPHAE_STAIRS = register("stripped_warped_hyphae_stairs", prop -> new StairBlock(Blocks.STRIPPED_WARPED_HYPHAE.defaultBlockState(), prop), () -> copyProperties(Blocks.STRIPPED_WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<SlabBlock> STRIPPED_WARPED_HYPHAE_SLAB = register("stripped_warped_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<WallBlock> STRIPPED_WARPED_HYPHAE_WALL = register("stripped_warped_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceBlock> STRIPPED_WARPED_HYPHAE_FENCE = register("stripped_warped_hyphae_fence", FenceBlock::new, () -> copyProperties(Blocks.STRIPPED_WARPED_HYPHAE), Item.Properties::fireResistant);
-    public static final DeferredBlock<FenceGateBlock> STRIPPED_WARPED_HYPHAE_FENCE_GATE = register("stripped_warped_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.WARPED, prop), () -> copyProperties(Blocks.STRIPPED_WARPED_HYPHAE).forceSolidOn(), Item.Properties::fireResistant);
+    public static final DeferredBlock<StairBlock> STRIPPED_CRIMSON_HYPHAE_STAIRS = register("stripped_crimson_hyphae_stairs", StairBlock::new, Blocks.STRIPPED_CRIMSON_HYPHAE, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<SlabBlock> STRIPPED_CRIMSON_HYPHAE_SLAB = register("stripped_crimson_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_CRIMSON_HYPHAE));
+    public static final DeferredBlock<WallBlock> STRIPPED_CRIMSON_HYPHAE_WALL = register("stripped_crimson_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_CRIMSON_HYPHAE));
+    public static final DeferredBlock<FenceBlock> STRIPPED_CRIMSON_HYPHAE_FENCE = register("stripped_crimson_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.STRIPPED_CRIMSON_HYPHAE));
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_CRIMSON_HYPHAE_FENCE_GATE = register("stripped_crimson_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> fenceGateProperties(Blocks.STRIPPED_CRIMSON_HYPHAE).forceSolidOn());
+    public static final DeferredBlock<StairBlock> STRIPPED_WARPED_HYPHAE_STAIRS = register("stripped_warped_hyphae_stairs", StairBlock::new, Blocks.STRIPPED_WARPED_HYPHAE, BlockRegisterHelper::stairProperties);
+    public static final DeferredBlock<SlabBlock> STRIPPED_WARPED_HYPHAE_SLAB = register("stripped_warped_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_WARPED_HYPHAE));
+    public static final DeferredBlock<WallBlock> STRIPPED_WARPED_HYPHAE_WALL = register("stripped_warped_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_WARPED_HYPHAE));
+    public static final DeferredBlock<FenceBlock> STRIPPED_WARPED_HYPHAE_FENCE = register("stripped_warped_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.STRIPPED_WARPED_HYPHAE));
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_WARPED_HYPHAE_FENCE_GATE = register("stripped_warped_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.WARPED, prop), () -> fenceGateProperties(Blocks.STRIPPED_WARPED_HYPHAE).forceSolidOn());
 
     public static final DeferredBlock<StairBlock> CALCITE_STAIRS = register("calcite_stairs", StairBlock::new, Blocks.CALCITE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> CALCITE_SLAB = register("calcite_slab", SlabBlock::new, () -> copyProperties(Blocks.CALCITE));
-    public static final DeferredBlock<WallBlock> CALCITE_WALL = register("calcite_wall", WallBlock::new, () -> copyProperties(Blocks.CALCITE));
+    public static final DeferredBlock<SlabBlock> CALCITE_SLAB = register("calcite_slab", SlabBlock::new, () -> slabProperties(Blocks.CALCITE));
+    public static final DeferredBlock<WallBlock> CALCITE_WALL = register("calcite_wall", WallBlock::new, () -> wallProperties(Blocks.CALCITE));
     public static final DeferredBlock<StairBlock> SMOOTH_BASALT_STAIRS = register("smooth_basalt_stairs", StairBlock::new, Blocks.SMOOTH_BASALT, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> SMOOTH_BASALT_SLAB = register("smooth_basalt_slab", SlabBlock::new, () -> copyProperties(Blocks.SMOOTH_BASALT));
-    public static final DeferredBlock<WallBlock> SMOOTH_BASALT_WALL = register("smooth_basalt_wall", WallBlock::new, () -> copyProperties(Blocks.SMOOTH_BASALT));
+    public static final DeferredBlock<SlabBlock> SMOOTH_BASALT_SLAB = register("smooth_basalt_slab", SlabBlock::new, () -> slabProperties(Blocks.SMOOTH_BASALT));
+    public static final DeferredBlock<WallBlock> SMOOTH_BASALT_WALL = register("smooth_basalt_wall", WallBlock::new, () -> wallProperties(Blocks.SMOOTH_BASALT));
 
     public static final DeferredBlock<StairBlock> DEEPSLATE_STAIRS = register("deepslate_stairs", StairBlock::new, Blocks.DEEPSLATE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> DEEPSLATE_SLAB = register("deepslate_slab", SlabBlock::new, () -> copyProperties(Blocks.DEEPSLATE));
-    public static final DeferredBlock<WallBlock> DEEPSLATE_WALL = register("deepslate_wall", WallBlock::new, () -> copyProperties(Blocks.DEEPSLATE));
+    public static final DeferredBlock<SlabBlock> DEEPSLATE_SLAB = register("deepslate_slab", SlabBlock::new, () -> slabProperties(Blocks.DEEPSLATE));
+    public static final DeferredBlock<WallBlock> DEEPSLATE_WALL = register("deepslate_wall", WallBlock::new, () -> wallProperties(Blocks.DEEPSLATE));
     public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_BRICK_STAIRS = register("cracked_deepslate_brick_stairs", StairBlock::new, Blocks.CRACKED_DEEPSLATE_BRICKS, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = register("cracked_deepslate_brick_slab", SlabBlock::new, () -> copyProperties(Blocks.CRACKED_DEEPSLATE_BRICKS));
-    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_BRICK_WALL = register("cracked_deepslate_brick_wall", WallBlock::new, () -> copyProperties(Blocks.CRACKED_DEEPSLATE_BRICKS));
+    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = register("cracked_deepslate_brick_slab", SlabBlock::new, () -> slabProperties(Blocks.CRACKED_DEEPSLATE_BRICKS));
+    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_BRICK_WALL = register("cracked_deepslate_brick_wall", WallBlock::new, () -> wallProperties(Blocks.CRACKED_DEEPSLATE_BRICKS));
     public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_TILE_STAIRS = register("cracked_deepslate_tile_stairs", StairBlock::new, Blocks.CRACKED_DEEPSLATE_TILES, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_TILE_SLAB = register("cracked_deepslate_tile_slab", SlabBlock::new, () -> copyProperties(Blocks.CRACKED_DEEPSLATE_TILES));
-    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_TILE_WALL = register("cracked_deepslate_tile_wall", WallBlock::new, () -> copyProperties(Blocks.CRACKED_DEEPSLATE_TILES));
+    public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_TILE_SLAB = register("cracked_deepslate_tile_slab", SlabBlock::new, () -> slabProperties(Blocks.CRACKED_DEEPSLATE_TILES));
+    public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_TILE_WALL = register("cracked_deepslate_tile_wall", WallBlock::new, () -> wallProperties(Blocks.CRACKED_DEEPSLATE_TILES));
 
-    public static final DeferredBlock<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> copyProperties(Blocks.NETHER_BRICK_FENCE).forceSolidOn()); // TODO: fix wood type
+    public static final DeferredBlock<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> fenceGateProperties(Blocks.NETHER_BRICK_FENCE).forceSolidOn()); // TODO: fix wood type
 
     public static final DeferredBlock<StairBlock> CRACKED_NETHER_BRICK_STAIRS = register("cracked_nether_brick_stairs", StairBlock::new, Blocks.CRACKED_NETHER_BRICKS, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> CRACKED_NETHER_BRICK_SLAB = register("cracked_nether_brick_slab", SlabBlock::new, () -> copyProperties(Blocks.CRACKED_NETHER_BRICKS));
-    public static final DeferredBlock<WallBlock> CRACKED_NETHER_BRICK_WALL = register("cracked_nether_brick_wall", WallBlock::new, () -> copyProperties(Blocks.CRACKED_NETHER_BRICKS));
+    public static final DeferredBlock<SlabBlock> CRACKED_NETHER_BRICK_SLAB = register("cracked_nether_brick_slab", SlabBlock::new, () -> slabProperties(Blocks.CRACKED_NETHER_BRICKS));
+    public static final DeferredBlock<WallBlock> CRACKED_NETHER_BRICK_WALL = register("cracked_nether_brick_wall", WallBlock::new, () -> wallProperties(Blocks.CRACKED_NETHER_BRICKS));
     public static final DeferredBlock<FenceBlock> CRACKED_NETHER_BRICK_FENCE = register("cracked_nether_brick_fence", FenceBlock::new, () -> fenceProperties(Blocks.CRACKED_NETHER_BRICKS));
     public static final DeferredBlock<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", prop -> new FenceGateBlock(WoodType.OAK, prop), () -> fenceGateProperties(Blocks.CRACKED_NETHER_BRICKS));
 
@@ -280,24 +277,24 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", prop -> new FenceGateBlock(WoodType.OAK, prop), () -> fenceGateProperties(Blocks.RED_NETHER_BRICKS));
 
     public static final DeferredBlock<StairBlock> OBSIDIAN_STAIRS = register("obsidian_stairs", StairBlock::new, Blocks.OBSIDIAN, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> OBSIDIAN_SLAB = register("obsidian_slab", SlabBlock::new, () -> copyProperties(Blocks.OBSIDIAN));
-    public static final DeferredBlock<WallBlock> OBSIDIAN_WALL = register("obsidian_wall", WallBlock::new, () -> copyProperties(Blocks.OBSIDIAN));
+    public static final DeferredBlock<SlabBlock> OBSIDIAN_SLAB = register("obsidian_slab", SlabBlock::new, () -> slabProperties(Blocks.OBSIDIAN));
+    public static final DeferredBlock<WallBlock> OBSIDIAN_WALL = register("obsidian_wall", WallBlock::new, () -> wallProperties(Blocks.OBSIDIAN));
 
     public static final DeferredBlock<StairBlock> CRYING_OBSIDIAN_STAIRS = register("crying_obsidian_stairs", StairBlock::new, Blocks.CRYING_OBSIDIAN, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> CRYING_OBSIDIAN_SLAB = register("crying_obsidian_slab", SlabBlock::new, () -> copyProperties(Blocks.CRYING_OBSIDIAN));
-    public static final DeferredBlock<WallBlock> CRYING_OBSIDIAN_WALL = register("crying_obsidian_wall", WallBlock::new, () -> copyProperties(Blocks.CRYING_OBSIDIAN));
+    public static final DeferredBlock<SlabBlock> CRYING_OBSIDIAN_SLAB = register("crying_obsidian_slab", SlabBlock::new, () -> slabProperties(Blocks.CRYING_OBSIDIAN));
+    public static final DeferredBlock<WallBlock> CRYING_OBSIDIAN_WALL = register("crying_obsidian_wall", WallBlock::new, () -> wallProperties(Blocks.CRYING_OBSIDIAN));
 
     public static final DeferredBlock<StairBlock> PACKED_MUD_STAIRS = register("packed_mud_stairs", StairBlock::new, Blocks.PACKED_MUD, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> PACKED_MUD_SLAB = register("packed_mud_slab", SlabBlock::new, () -> copyProperties(Blocks.PACKED_MUD));
-    public static final DeferredBlock<WallBlock> PACKED_MUD_WALL = register("packed_mud_wall", WallBlock::new, () -> copyProperties(Blocks.PACKED_MUD));
+    public static final DeferredBlock<SlabBlock> PACKED_MUD_SLAB = register("packed_mud_slab", SlabBlock::new, () -> slabProperties(Blocks.PACKED_MUD));
+    public static final DeferredBlock<WallBlock> PACKED_MUD_WALL = register("packed_mud_wall", WallBlock::new, () -> wallProperties(Blocks.PACKED_MUD));
 
 
     private static DeferredBlock<StairBlock> logStairs(String type, Block base) {
-        return register(type + "_log_stairs", prop -> new StairBlock(base.defaultBlockState(), prop), () -> copyProperties(base), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type + "_log_stairs", StairBlock::new, base, BlockRegisterHelper::stairProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     }
 
     private static DeferredBlock<SlabBlock> logSlab(String type, Block base) {
-        return register(type + "_log_slab", SlabBlock::new, () -> slabProperties(base), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
+        return register(type + "_log_slab", SlabBlock::new, base, BlockRegisterHelper::slabProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
     }
 
     private static DeferredBlock<StairBlock> woodStairs(String type, Block base) {
@@ -305,19 +302,19 @@ public final class BVBuildingBlocks {
     }
 
     private static DeferredBlock<SlabBlock> woodSlab(String type, Block base) {
-        return register(type + "_wood_slab", SlabBlock::new, () -> slabProperties(base), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
+        return register(type + "_wood_slab", SlabBlock::new, base, BlockRegisterHelper::slabProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
     }
 
     private static DeferredBlock<WallBlock> woodWall(String type, Block base) {
-        return register(type + "_wood_wall", WallBlock::new, () -> wallProperties(base), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type + "_wood_wall", WallBlock::new, base, BlockRegisterHelper::wallProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     }
 
     private static DeferredBlock<FenceBlock> woodFence(String type, Block base) {
-        return register(type + "_wood_fence", FenceBlock::new, () -> fenceProperties(base), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type + "_wood_fence", FenceBlock::new, base, BlockRegisterHelper::fenceProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     }
 
     private static DeferredBlock<FenceGateBlock> woodFenceGate(String type, Block base) {
-        return register(type + "_wood_fence_gate", prop -> new FenceGateBlock(woodTypeOf(type), prop), () -> fenceGateProperties(base), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type + "_wood_fence_gate", prop -> new FenceGateBlock(woodTypeOf(type), prop), base, BlockRegisterHelper::fenceGateProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     }
 
 
@@ -331,16 +328,20 @@ public final class BVBuildingBlocks {
         throw new IllegalArgumentException("No wood type with key: " + key);
     }
 
-    static Block getVanillaBlock(String name) {
-        return BuiltInRegistries.BLOCK.get(Identifier.withDefaultNamespace(name)).orElseThrow().value();
-    }
-
     private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties) {
         return register(name, block, base, properties, UnaryOperator.identity());
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
         return register(name, prop -> block.apply(base.defaultBlockState(), prop), () -> properties.apply(base), itemProperties);
+    }
+
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties) {
+        return register(name, block, base, properties, UnaryOperator.identity());
+    }
+
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
+        return register(name, block, () -> properties.apply(base), itemProperties);
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
