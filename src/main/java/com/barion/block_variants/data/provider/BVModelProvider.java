@@ -1,5 +1,6 @@
 package com.barion.block_variants.data.provider;
 
+import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.data.provider.ExtendedModelProvider;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBlockFamilies;
@@ -8,10 +9,7 @@ import com.barion.block_variants.registry.BVColoredBlocks;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
@@ -21,6 +19,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColorCollection;
 
 public final class BVModelProvider extends ExtendedModelProvider {
+    public static final ModelTemplate LOG_STAIRS_STRAIGHT = ModelTemplates.create("block_variants:log_stairs", TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.SIDE);
+    public static final ModelTemplate LOG_STAIRS_INNER = ModelTemplates.create("block_variants:inner_log_stairs", "_inner", TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.SIDE);
+    public static final ModelTemplate LOG_STAIRS_OUTER = ModelTemplates.create("block_variants:outer_log_stairs", "_outer", TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.SIDE);
+
+    static {
+        BlockModelGenerators.SHAPE_CONSUMERS.put(BlockFamily.Variant.STAIRS, BVModelProvider::stairsOverwrite);
+    }
+
     public BVModelProvider(PackOutput output) {
         super(output, BlockVariants.MOD_ID);
     }
@@ -160,6 +166,24 @@ public final class BVModelProvider extends ExtendedModelProvider {
         var outerModel = ModelTemplates.STAIRS_OUTER.create(stairsBlock, mapping, blockModels.modelOutput);
         blockModels.blockStateOutput.accept(BlockModelGenerators.createStairs(stairsBlock, BlockModelGenerators.plainVariant(innerModel), BlockModelGenerators.plainVariant(straightModel), BlockModelGenerators.plainVariant(outerModel)));
         blockModels.registerSimpleItemModel(stairsBlock, straightModel);
+    }
+
+    public static void stairsOverwrite(BlockModelGenerators.BlockFamilyProvider provider, Block stairs) {
+        var name = DataProviderExtensions.getBlockName(stairs);
+        if (name.contains("_log_") || name.contains("_stem_")) {
+            logStairs(provider.blockModels(), provider, stairs);
+        } else {
+            provider.stairs(stairs);
+        }
+    }
+
+    public static void logStairs(BlockModelGenerators blockModels, BlockModelGenerators.BlockFamilyProvider provider, Block stairs) {
+        var inner = BlockModelGenerators.plainVariant(provider.getOrCreateModel(LOG_STAIRS_INNER, stairs));
+        var straight = provider.getOrCreateModel(LOG_STAIRS_STRAIGHT, stairs);
+        var outer = BlockModelGenerators.plainVariant(provider.getOrCreateModel(LOG_STAIRS_OUTER, stairs));
+        blockModels.blockStateOutput
+                .accept(BlockModelGenerators.createStairs(stairs, inner, BlockModelGenerators.plainVariant(straight), outer));
+        blockModels.registerSimpleItemModel(stairs, straight);
     }
 
     public static void customWall(BlockModelGenerators blockModels, Block wallBlock, TextureMapping mapping) {
