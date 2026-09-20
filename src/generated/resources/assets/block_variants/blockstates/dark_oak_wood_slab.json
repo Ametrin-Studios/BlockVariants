@@ -1,13 +1,25 @@
 {
   "variants": {
-    "type=bottom": {
+    "axis=x,type=bottom": {
       "model": "block_variants:block/dark_oak_wood_slab"
     },
-    "type=double": {
+    "axis=x,type=double": {
       "model": "minecraft:block/dark_oak_wood"
     },
-    "type=top": {
+    "axis=x,type=top": {
       "model": "block_variants:block/dark_oak_wood_slab_top"
+    },
+    "axis=z,type=bottom": {
+      "model": "block_variants:block/dark_oak_wood_slab",
+      "y": 90
+    },
+    "axis=z,type=double": {
+      "model": "minecraft:block/dark_oak_wood",
+      "y": 90
+    },
+    "axis=z,type=top": {
+      "model": "block_variants:block/dark_oak_wood_slab_top",
+      "y": 90
     }
   }
 }

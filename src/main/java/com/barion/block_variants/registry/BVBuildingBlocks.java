@@ -1,6 +1,7 @@
 package com.barion.block_variants.registry;
 
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
+import com.ametrinstudios.ametrin.world.block.HorizontalAxisAlignedSlabBlock;
 import com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.world.item.Item;
@@ -236,23 +237,23 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<FenceGateBlock> STRIPPED_BAMBOO_BLOCK_FENCE_GATE = register("stripped_bamboo_block_fence_gate", prop -> new FenceGateBlock(WoodType.BAMBOO, prop), () -> fenceGateProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW).forceSolidOn(), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
 
     public static final DeferredBlock<StairBlock> CRIMSON_HYPHAE_STAIRS = register("crimson_hyphae_stairs", StairBlock::new, Blocks.CRIMSON_HYPHAE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> CRIMSON_HYPHAE_SLAB = register("crimson_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.CRIMSON_HYPHAE));
+    public static final DeferredBlock<SlabBlock> CRIMSON_HYPHAE_SLAB = register("crimson_hyphae_slab", HorizontalAxisAlignedSlabBlock::new, () -> slabProperties(Blocks.CRIMSON_HYPHAE));
     public static final DeferredBlock<WallBlock> CRIMSON_HYPHAE_WALL = register("crimson_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.CRIMSON_HYPHAE));
     public static final DeferredBlock<FenceBlock> CRIMSON_HYPHAE_FENCE = register("crimson_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.CRIMSON_HYPHAE));
     public static final DeferredBlock<FenceGateBlock> CRIMSON_HYPHAE_FENCE_GATE = register("crimson_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> fenceGateProperties(Blocks.CRIMSON_HYPHAE).forceSolidOn());
     public static final DeferredBlock<StairBlock> WARPED_HYPHAE_STAIRS = register("warped_hyphae_stairs", StairBlock::new, Blocks.WARPED_HYPHAE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> WARPED_HYPHAE_SLAB = register("warped_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.WARPED_HYPHAE));
+    public static final DeferredBlock<SlabBlock> WARPED_HYPHAE_SLAB = register("warped_hyphae_slab", HorizontalAxisAlignedSlabBlock::new, () -> slabProperties(Blocks.WARPED_HYPHAE));
     public static final DeferredBlock<WallBlock> WARPED_HYPHAE_WALL = register("warped_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.WARPED_HYPHAE));
     public static final DeferredBlock<FenceBlock> WARPED_HYPHAE_FENCE = register("warped_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.WARPED_HYPHAE));
     public static final DeferredBlock<FenceGateBlock> WARPED_HYPHAE_FENCE_GATE = register("warped_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.WARPED, prop), () -> fenceGateProperties(Blocks.WARPED_HYPHAE).forceSolidOn());
 
     public static final DeferredBlock<StairBlock> STRIPPED_CRIMSON_HYPHAE_STAIRS = register("stripped_crimson_hyphae_stairs", StairBlock::new, Blocks.STRIPPED_CRIMSON_HYPHAE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> STRIPPED_CRIMSON_HYPHAE_SLAB = register("stripped_crimson_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_CRIMSON_HYPHAE));
+    public static final DeferredBlock<SlabBlock> STRIPPED_CRIMSON_HYPHAE_SLAB = register("stripped_crimson_hyphae_slab", HorizontalAxisAlignedSlabBlock::new, () -> slabProperties(Blocks.STRIPPED_CRIMSON_HYPHAE));
     public static final DeferredBlock<WallBlock> STRIPPED_CRIMSON_HYPHAE_WALL = register("stripped_crimson_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_CRIMSON_HYPHAE));
     public static final DeferredBlock<FenceBlock> STRIPPED_CRIMSON_HYPHAE_FENCE = register("stripped_crimson_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.STRIPPED_CRIMSON_HYPHAE));
     public static final DeferredBlock<FenceGateBlock> STRIPPED_CRIMSON_HYPHAE_FENCE_GATE = register("stripped_crimson_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.CRIMSON, prop), () -> fenceGateProperties(Blocks.STRIPPED_CRIMSON_HYPHAE).forceSolidOn());
     public static final DeferredBlock<StairBlock> STRIPPED_WARPED_HYPHAE_STAIRS = register("stripped_warped_hyphae_stairs", StairBlock::new, Blocks.STRIPPED_WARPED_HYPHAE, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> STRIPPED_WARPED_HYPHAE_SLAB = register("stripped_warped_hyphae_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_WARPED_HYPHAE));
+    public static final DeferredBlock<SlabBlock> STRIPPED_WARPED_HYPHAE_SLAB = register("stripped_warped_hyphae_slab", HorizontalAxisAlignedSlabBlock::new, () -> slabProperties(Blocks.STRIPPED_WARPED_HYPHAE));
     public static final DeferredBlock<WallBlock> STRIPPED_WARPED_HYPHAE_WALL = register("stripped_warped_hyphae_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_WARPED_HYPHAE));
     public static final DeferredBlock<FenceBlock> STRIPPED_WARPED_HYPHAE_FENCE = register("stripped_warped_hyphae_fence", FenceBlock::new, () -> fenceProperties(Blocks.STRIPPED_WARPED_HYPHAE));
     public static final DeferredBlock<FenceGateBlock> STRIPPED_WARPED_HYPHAE_FENCE_GATE = register("stripped_warped_hyphae_fence_gate", prop -> new FenceGateBlock(WoodType.WARPED, prop), () -> fenceGateProperties(Blocks.STRIPPED_WARPED_HYPHAE).forceSolidOn());
@@ -311,7 +312,7 @@ public final class BVBuildingBlocks {
     }
 
     private static DeferredBlock<SlabBlock> woodSlab(String type, Block base) {
-        return register(type + "_wood_slab", SlabBlock::new, base, BlockRegisterHelper::slabProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
+        return register(type + "_wood_slab", HorizontalAxisAlignedSlabBlock::new, base, BlockRegisterHelper::slabProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
     }
 
     private static DeferredBlock<WallBlock> woodWall(String type, Block base) {

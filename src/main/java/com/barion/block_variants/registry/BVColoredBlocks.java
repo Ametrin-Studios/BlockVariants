@@ -1,6 +1,7 @@
 package com.barion.block_variants.registry;
 
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
+import com.ametrinstudios.ametrin.world.block.HorizontalRotatedSlabBlock;
 import com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper;
 import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.BlockFamilies;
@@ -86,7 +87,7 @@ public final class BVColoredBlocks {
             ColorCollection.VALUES, BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS, (color, id) -> register(id.block().identifier().getPath(), StairBlock::new, Blocks.GLAZED_TERRACOTTA.pick(color), BlockRegisterHelper::slabProperties)
     );
     public static final ColorCollection<DeferredBlock<SlabBlock>> GLAZED_TERRACOTTA_SLAB = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.GLAZED_TERRACOTTA_SLAB, (color, id) -> register(id.block().identifier().getPath(), SlabBlock::new, () -> slabProperties(Blocks.GLAZED_TERRACOTTA.pick(color)))
+            ColorCollection.VALUES, BVBlockItemIds.GLAZED_TERRACOTTA_SLAB, (color, id) -> register(id.block().identifier().getPath(), HorizontalRotatedSlabBlock::new, () -> slabProperties(Blocks.GLAZED_TERRACOTTA.pick(color)))
     );
     public static final ColorCollection<DeferredBlock<WallBlock>> GLAZED_TERRACOTTA_WALL = ColorCollection.zipMap(
             ColorCollection.VALUES, BVBlockItemIds.GLAZED_TERRACOTTA_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.GLAZED_TERRACOTTA.pick(color)))
