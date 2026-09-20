@@ -3,7 +3,7 @@ package com.barion.block_variants.data.provider;
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.data.provider.ExtendedItemTagsProvider;
 import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.registry.BVBlockFamilies;
+import com.barion.block_variants.registry.BVBlockItemIds;
 import com.barion.block_variants.registry.BVItems;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import com.barion.block_variants.registry.BVTags;
@@ -35,15 +35,22 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
                 DataProviderExtensions.getItemResourceKey(BVOtherBlocks.GOLD_GRATE)
         );
 
-        tag(ItemTags.NON_FLAMMABLE_WOOD)
-                .addAll(BVBlockFamilies.CRIMSON_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-                .addAll(BVBlockFamilies.STRIPPED_CRIMSON_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-                .addAll(BVBlockFamilies.WARPED_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-                .addAll(BVBlockFamilies.STRIPPED_WARPED_STEM.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-                .addAll(BVBlockFamilies.CRIMSON_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-                .addAll(BVBlockFamilies.STRIPPED_CRIMSON_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-                .addAll(BVBlockFamilies.WARPED_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-                .addAll(BVBlockFamilies.STRIPPED_WARPED_HYPHAE.getVariants().values().stream().map(DataProviderExtensions::getItemResourceKey).sorted())
-        ;
+        var non_flammable_wood = tag(ItemTags.NON_FLAMMABLE_WOOD);
+
+        BVBlockItemIds.STEM_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STEM_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STRIPPED_STEM_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STRIPPED_STEM_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
+
+        BVBlockItemIds.HYPHAE_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.HYPHAE_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.HYPHAE_WALL.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.HYPHAE_FENCE.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.HYPHAE_FENCE_GATE.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STRIPPED_HYPHAE_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STRIPPED_HYPHAE_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STRIPPED_HYPHAE_WALL.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STRIPPED_HYPHAE_FENCE.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBlockItemIds.STRIPPED_HYPHAE_FENCE_GATE.forEach(id -> non_flammable_wood.add(id.item()));
     }
 }

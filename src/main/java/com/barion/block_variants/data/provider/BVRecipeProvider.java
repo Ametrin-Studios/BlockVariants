@@ -1,6 +1,7 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedRecipeProvider;
+import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.*;
 import net.minecraft.advancements.Advancement;
@@ -90,14 +91,31 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         family(BVBlockFamilies.AMETHYST_BLOCK).generate();
         family(BVBlockFamilies.CRACKED_STONE_BRICKS).generate();
 
-        for (var family : BVBlockFamilies.LOG_FAMILIES) {
-            family(family).generate();
-        }
 
-        for (var family : BVBlockFamilies.WOOD_FAMILIES) {
-            family(family).generate();
-            wallFenceFenceGate(family.get(BlockFamily.Variant.WALL), family.get(BlockFamily.Variant.FENCE), family.get(BlockFamily.Variant.FENCE_GATE), family.get(BlockFamily.Variant.LOG), false);
-        }
+        WoodTypeCollection.zipCommonApply(BVBlockFamilies.LOG, BVBlockFamilies.WOOD, (_, log, wood) -> {
+            family(log).generate();
+            family(wood).generate();
+            wallFenceFenceGate(wood.get(BlockFamily.Variant.WALL), wood.get(BlockFamily.Variant.FENCE), wood.get(BlockFamily.Variant.FENCE_GATE), log.getBaseBlock(), false);
+        });
+
+        WoodTypeCollection.zipCommonApply(BVBlockFamilies.STRIPPED_LOG, BVBlockFamilies.STRIPPED_WOOD, (_, log, wood) -> {
+            family(log).generate();
+            family(wood).generate();
+            wallFenceFenceGate(wood.get(BlockFamily.Variant.WALL), wood.get(BlockFamily.Variant.FENCE), wood.get(BlockFamily.Variant.FENCE_GATE), log.getBaseBlock(), false);
+        });
+
+        WoodTypeCollection.zipCommonApply(BVBlockFamilies.STEM, BVBlockFamilies.HYPHAE, (_, log, wood) -> {
+            family(log).generate();
+            family(wood).generate();
+            wallFenceFenceGate(wood.get(BlockFamily.Variant.WALL), wood.get(BlockFamily.Variant.FENCE), wood.get(BlockFamily.Variant.FENCE_GATE), log.getBaseBlock(), false);
+        });
+
+        WoodTypeCollection.zipCommonApply(BVBlockFamilies.STRIPPED_STEM, BVBlockFamilies.STRIPPED_HYPHAE, (_, log, wood) -> {
+            family(log).generate();
+            family(wood).generate();
+            wallFenceFenceGate(wood.get(BlockFamily.Variant.WALL), wood.get(BlockFamily.Variant.FENCE), wood.get(BlockFamily.Variant.FENCE_GATE), log.getBaseBlock(), false);
+        });
+
 
         family(BVBlockFamilies.BAMBOO_BLOCK).generate();
         family(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK).generate();

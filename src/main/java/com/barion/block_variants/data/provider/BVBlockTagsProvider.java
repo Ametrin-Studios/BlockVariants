@@ -135,177 +135,51 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
         } // needs Pickaxe
 
         {
-            tag(BlockTags.MINEABLE_WITH_AXE).add(
-                    BVBuildingBlocks.OAK_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.OAK_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.SPRUCE_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.SPRUCE_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.BIRCH_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.BIRCH_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.JUNGLE_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.JUNGLE_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.ACACIA_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.ACACIA_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.DARK_OAK_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.DARK_OAK_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.MANGROVE_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.MANGROVE_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.CHERRY_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.CHERRY_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.PALE_OAK_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.PALE_OAK_LOG_SLAB.getKey(),
-
-                    BVBuildingBlocks.STRIPPED_OAK_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_OAK_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_SPRUCE_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_SPRUCE_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_BIRCH_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_BIRCH_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_JUNGLE_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_JUNGLE_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_ACACIA_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_ACACIA_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_DARK_OAK_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_DARK_OAK_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_MANGROVE_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_MANGROVE_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_CHERRY_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_CHERRY_LOG_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_PALE_OAK_LOG_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_PALE_OAK_LOG_SLAB.getKey(),
-
-                    BVBuildingBlocks.CRIMSON_STEM_STAIRS.getKey(),
-                    BVBuildingBlocks.CRIMSON_STEM_SLAB.getKey(),
-                    BVBuildingBlocks.WARPED_STEM_STAIRS.getKey(),
-                    BVBuildingBlocks.WARPED_STEM_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_CRIMSON_STEM_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_CRIMSON_STEM_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_WARPED_STEM_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_WARPED_STEM_SLAB.getKey(),
-
-                    BVBuildingBlocks.OAK_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.OAK_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.OAK_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.OAK_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.OAK_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.SPRUCE_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.SPRUCE_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.SPRUCE_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.SPRUCE_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.SPRUCE_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.BIRCH_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.BIRCH_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.BIRCH_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.BIRCH_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.BIRCH_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.JUNGLE_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.JUNGLE_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.JUNGLE_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.JUNGLE_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.JUNGLE_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.ACACIA_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.ACACIA_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.ACACIA_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.ACACIA_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.ACACIA_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.DARK_OAK_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.DARK_OAK_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.DARK_OAK_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.DARK_OAK_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.DARK_OAK_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.MANGROVE_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.MANGROVE_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.MANGROVE_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.MANGROVE_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.MANGROVE_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.CHERRY_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.CHERRY_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.CHERRY_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.CHERRY_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.CHERRY_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.PALE_OAK_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.PALE_OAK_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.PALE_OAK_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.PALE_OAK_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.PALE_OAK_WOOD_FENCE_GATE.getKey(),
+            var minableWithAxe = tag(BlockTags.MINEABLE_WITH_AXE).add(
                     BVBuildingBlocks.BAMBOO_BLOCK_STAIRS.getKey(),
                     BVBuildingBlocks.BAMBOO_BLOCK_SLAB.getKey(),
                     BVBuildingBlocks.BAMBOO_BLOCK_WALL.getKey(),
                     BVBuildingBlocks.BAMBOO_BLOCK_FENCE.getKey(),
                     BVBuildingBlocks.BAMBOO_BLOCK_FENCE_GATE.getKey(),
 
-                    BVBuildingBlocks.STRIPPED_OAK_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_OAK_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_OAK_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_OAK_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_OAK_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_SPRUCE_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_BIRCH_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_BIRCH_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_BIRCH_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_BIRCH_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_BIRCH_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_JUNGLE_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_ACACIA_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_ACACIA_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_ACACIA_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_ACACIA_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_ACACIA_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_DARK_OAK_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_MANGROVE_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_CHERRY_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_CHERRY_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_CHERRY_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_CHERRY_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_CHERRY_WOOD_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_PALE_OAK_WOOD_FENCE_GATE.getKey(),
                     BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_STAIRS.getKey(),
                     BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_SLAB.getKey(),
                     BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_WALL.getKey(),
                     BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.getKey(),
-
-                    BVBuildingBlocks.CRIMSON_HYPHAE_STAIRS.getKey(),
-                    BVBuildingBlocks.CRIMSON_HYPHAE_SLAB.getKey(),
-                    BVBuildingBlocks.CRIMSON_HYPHAE_WALL.getKey(),
-                    BVBuildingBlocks.CRIMSON_HYPHAE_FENCE.getKey(),
-                    BVBuildingBlocks.CRIMSON_HYPHAE_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.WARPED_HYPHAE_STAIRS.getKey(),
-                    BVBuildingBlocks.WARPED_HYPHAE_SLAB.getKey(),
-                    BVBuildingBlocks.WARPED_HYPHAE_WALL.getKey(),
-                    BVBuildingBlocks.WARPED_HYPHAE_FENCE.getKey(),
-                    BVBuildingBlocks.WARPED_HYPHAE_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.getKey(),
-                    BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.getKey()
+                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.getKey()
             );
+
+            BVBlockItemIds.LOG_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.LOG_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_LOG_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_LOG_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+
+            BVBlockItemIds.WOOD_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.WOOD_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.WOOD_WALL.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.WOOD_FENCE.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.WOOD_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_WOOD_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_WOOD_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_WOOD_WALL.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_WOOD_FENCE.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_WOOD_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
+
+            BVBlockItemIds.STEM_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STEM_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_STEM_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_STEM_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+
+            BVBlockItemIds.HYPHAE_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.HYPHAE_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.HYPHAE_WALL.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.HYPHAE_FENCE.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.HYPHAE_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_HYPHAE_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_HYPHAE_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_HYPHAE_WALL.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_HYPHAE_FENCE.forEach(id -> minableWithAxe.add(id.block()));
+            BVBlockItemIds.STRIPPED_HYPHAE_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
         } // needs Axe
 
         tag(BlockTags.SHEARS_MAJOR_BREAKING_SPEED).addTag(BVTags.Blocks.WOOL_WALLS);

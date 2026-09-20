@@ -2,6 +2,7 @@ package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.data.provider.ExtendedModelProvider;
+import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBlockFamilies;
 import com.barion.block_variants.registry.BVBuildingBlocks;
@@ -71,21 +72,10 @@ public final class BVModelProvider extends ExtendedModelProvider {
         blockModels.familyWithExistingFullBlock(Blocks.AMETHYST_BLOCK).generateFor(BVBlockFamilies.AMETHYST_BLOCK);
         blockModels.familyWithExistingFullBlock(Blocks.CRACKED_STONE_BRICKS).generateFor(BVBlockFamilies.CRACKED_STONE_BRICKS);
 
-
-        BVBlockFamilies.LOG_FAMILIES.forEach(family -> {
-            blockModels.familyWithExistingFullBlock(family.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(family);
-        });
-
-        BVBlockFamilies.WOOD_FAMILIES.forEach(family -> {
-            var textureBase = family.get(BlockFamily.Variant.LOG);
-            var texture = TextureMapping.getBlockTexture(textureBase);
-            var mapping = new TextureMapping()
-                    .put(TextureSlot.ALL, texture)
-                    .put(TextureSlot.SIDE, texture)
-                    .put(TextureSlot.TOP, texture)
-                    .put(TextureSlot.BOTTOM, texture);
-            blockModels.familyWithExistingFullBlock(family.getBaseBlock(), mapping).generateFor(family);
-        });
+        createWooden(blockModels, BVBlockFamilies.LOG, BVBlockFamilies.WOOD);
+        createWooden(blockModels, BVBlockFamilies.STRIPPED_LOG, BVBlockFamilies.STRIPPED_WOOD);
+        createWooden(blockModels, BVBlockFamilies.STEM, BVBlockFamilies.HYPHAE);
+        createWooden(blockModels, BVBlockFamilies.STRIPPED_STEM, BVBlockFamilies.STRIPPED_HYPHAE);
 
         blockModels.familyWithExistingFullBlock(BVBlockFamilies.BAMBOO_BLOCK.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(BVBlockFamilies.BAMBOO_BLOCK);
         blockModels.familyWithExistingFullBlock(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(BVBlockFamilies.STRIPPED_BAMBOO_BLOCK);
@@ -134,6 +124,21 @@ public final class BVModelProvider extends ExtendedModelProvider {
     public static void createChain(BlockModelGenerators blockModels, Block block) {
         blockModels.createAxisAlignedPillarBlockCustomModel(block, BlockModelGenerators.plainVariant(TexturedModel.CHAIN.create(block, blockModels.modelOutput)));
         blockModels.registerSimpleFlatItemModel(block.asItem());
+    }
+
+    public static void createWooden(BlockModelGenerators blockModels, WoodTypeCollection<BlockFamily> logs, WoodTypeCollection<BlockFamily> woods) {
+        WoodTypeCollection.zipCommonApply(logs, woods, (_, log, wood) -> createWooden(blockModels, log, wood));
+    }
+
+    public static void createWooden(BlockModelGenerators blockModels, BlockFamily log, BlockFamily wood) {
+        blockModels.familyWithExistingFullBlock(log.getBaseBlock(), BVModelProvider::logTextureMapping).generateFor(log);
+        var texture = TextureMapping.getBlockTexture(log.getBaseBlock());
+        var mapping = new TextureMapping()
+                .put(TextureSlot.ALL, texture)
+                .put(TextureSlot.SIDE, texture)
+                .put(TextureSlot.TOP, texture)
+                .put(TextureSlot.BOTTOM, texture);
+        blockModels.familyWithExistingFullBlock(wood.getBaseBlock(), mapping).generateFor(wood);
     }
 
     public static TextureMapping logTextureMapping(Block log) {

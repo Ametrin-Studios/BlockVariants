@@ -204,6 +204,27 @@
     "block_variants:pale_oak_wood_wall": {
       "stripped_block": "block_variants:stripped_pale_oak_wood_wall"
     },
+    "block_variants:poplar_log_slab": {
+      "stripped_block": "block_variants:stripped_poplar_log_slab"
+    },
+    "block_variants:poplar_log_stairs": {
+      "stripped_block": "block_variants:stripped_poplar_log_stairs"
+    },
+    "block_variants:poplar_wood_fence": {
+      "stripped_block": "block_variants:stripped_poplar_wood_fence"
+    },
+    "block_variants:poplar_wood_fence_gate": {
+      "stripped_block": "block_variants:stripped_poplar_wood_fence_gate"
+    },
+    "block_variants:poplar_wood_slab": {
+      "stripped_block": "block_variants:stripped_poplar_wood_slab"
+    },
+    "block_variants:poplar_wood_stairs": {
+      "stripped_block": "block_variants:stripped_poplar_wood_stairs"
+    },
+    "block_variants:poplar_wood_wall": {
+      "stripped_block": "block_variants:stripped_poplar_wood_wall"
+    },
     "block_variants:spruce_log_slab": {
       "stripped_block": "block_variants:stripped_spruce_log_slab"
     },

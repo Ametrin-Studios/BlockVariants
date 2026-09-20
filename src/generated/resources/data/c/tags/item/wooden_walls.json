@@ -10,7 +10,6 @@
     "block_variants:cherry_wood_wall",
     "block_variants:pale_oak_wood_wall",
     "block_variants:poplar_wood_wall",
-    "block_variants:bamboo_block_wall",
     "block_variants:stripped_oak_wood_wall",
     "block_variants:stripped_spruce_wood_wall",
     "block_variants:stripped_birch_wood_wall",
@@ -21,10 +20,11 @@
     "block_variants:stripped_cherry_wood_wall",
     "block_variants:stripped_pale_oak_wood_wall",
     "block_variants:stripped_poplar_wood_wall",
-    "block_variants:stripped_bamboo_block_wall",
     "block_variants:crimson_hyphae_wall",
     "block_variants:warped_hyphae_wall",
     "block_variants:stripped_crimson_hyphae_wall",
-    "block_variants:stripped_warped_hyphae_wall"
+    "block_variants:stripped_warped_hyphae_wall",
+    "block_variants:bamboo_block_wall",
+    "block_variants:stripped_bamboo_block_wall"
   ]
 }
