@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:blackstone_slab",
-  "result": {
-    "id": "block_variants:cracked_polished_blackstone_brick_slab"
-  }
-}
