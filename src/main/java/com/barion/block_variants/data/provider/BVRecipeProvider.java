@@ -149,17 +149,17 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
             ;
         });
 
-        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.WOOL_WALL.pick(color).get(), Blocks.WOOL.pick(color), false));
-
-        ColorCollection.VALUES.forEach(color -> {
-            var dyeItem = Items.DYE.pick(color);
-            var result = BVColoredBlocks.WOOL_WALL.pick(color);
-            shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        ColorCollection.zipApply(Blocks.WOOL, BVColoredBlocks.WOOL_WALL, (base, wall) -> wall(wall, base, false));
+        ColorCollection.zipApply(Items.DYE, BVColoredBlocks.WOOL_WALL, (dyeItem, result) -> {
+            shapeless(RecipeCategory.DECORATIONS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
         });
 
         family(BVBlockFamilies.PACKED_MUD).generate();
 
-        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get(), Blocks.CONCRETE.pick(color), true));
+        ColorCollection.zipApply(Blocks.CONCRETE, BVColoredBlocks.CONCRETE_WALL, (base, wall) -> wall(wall, base, true));
+        ColorCollection.zipApply(Items.DYE, BVColoredBlocks.CONCRETE_WALL, (dyeItem, result) -> {
+            shapeless(RecipeCategory.DECORATIONS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_concrete_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        });
 
         shaped(RecipeCategory.DECORATIONS, BVOtherBlocks.GOLD_BARS, 16)
                 .define('#', Items.GOLD_INGOT)

@@ -1,6 +1,7 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockItemTagsProvider;
+import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.*;
 import net.minecraft.data.BlockFamily;
@@ -9,21 +10,12 @@ import net.minecraft.tags.BlockItemTagId;
 import net.minecraft.tags.BlockItemTags;
 import net.minecraft.world.level.block.*;
 
-import java.util.Set;
 import java.util.function.Function;
 
 import static com.ametrinstudios.ametrin.data.DataProviderExtensions.getBlockItemId;
-import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isWooden;
 
 public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
     {
-        blockItemTagProviderRules.add((block, id) -> {
-            final var name = id.block().identifier().getPath();
-            if (block.get() instanceof WallBlock && isWooden(name)) {
-                tag(BVTags.BlockItems.WOODEN_WALLS).add(id);
-            }
-        });
-
         blockItemTagProviderRules.add((block, id) -> {
             if (id.block().identifier().getPath().contains("bamboo_block")) {
                 if (block.get() instanceof StairBlock) {
@@ -43,16 +35,6 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
                 }
             }
         });
-
-        blockItemTagProviderRules.add((block, id) -> {
-            final var name = id.block().identifier().getPath();
-            if (!name.contains("wool")) return;
-            if (name.contains("wall")) {
-                tag(BVTags.BlockItems.WOOL_WALLS).add(id);
-            } else {
-                throw new RuntimeException("unknown wool type");
-            }
-        });
     }
 
     protected BVBlockItemTagsProvider(Function<BlockItemTagId, CombinedAppender> tagSupplier) {
@@ -62,8 +44,7 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
     @Override
     protected void run() {
         runRules(BlockVariants.getAllBlocks());
-        var ignoredVariants = Set.of(BlockFamily.Variant.LOG);
-        BVBlockFamilies.MAP.forEach((_, family) -> tagBlockFamilyIgnoring(family, ignoredVariants));
+        BVBlockFamilies.MAP.values().forEach(this::tagBlockFamily);
 
         tagVariant(BlockFamily.Variant.WALL, getBlockItemId(BVOtherBlocks.SMOOTH_SANDSTONE_WALL));
         tagVariant(BlockFamily.Variant.WALL, getBlockItemId(BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL));
@@ -91,6 +72,7 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
         tagVariant(BlockFamily.Variant.FENCE_GATE, getBlockItemId(BVBuildingBlocks.NETHER_BRICK_FENCE_GATE));
         tagVariant(BlockFamily.Variant.FENCE_GATE, getBlockItemId(BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE));
 
+        tag(BVTags.BlockItems.WOOL_WALLS).addAll(BVBlockItemIds.WOOL_WALL.asList());
         tagColorCollection(BVBlockItemIds.WOOL_WALL);
         tagColorCollection(BVBlockItemIds.CONCRETE_WALL);
         tagColorCollection(BVBlockItemIds.DYED_TERRACOTTA_STAIRS);
@@ -99,6 +81,8 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
         tagColorCollection(BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS);
         tagColorCollection(BVBlockItemIds.GLAZED_TERRACOTTA_SLAB);
         tagColorCollection(BVBlockItemIds.GLAZED_TERRACOTTA_WALL);
+
+        tag(BVTags.BlockItems.WOODEN_WALLS).addAll(BVBlockItemIds.ALL_WOODEN.stream().filter(c -> c.stream().findFirst().orElseThrow().item().identifier().getPath().contains("_wall")).flatMap(WoodTypeCollection::stream));
 
         tag(BlockItemTags.WALLS)
                 .addTag(BVTags.BlockItems.WOODEN_WALLS)

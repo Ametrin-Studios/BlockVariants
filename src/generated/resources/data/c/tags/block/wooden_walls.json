@@ -1,5 +1,7 @@
 {
   "values": [
+    "block_variants:bamboo_block_wall",
+    "block_variants:stripped_bamboo_block_wall",
     "block_variants:oak_wood_wall",
     "block_variants:spruce_wood_wall",
     "block_variants:birch_wood_wall",
@@ -23,8 +25,6 @@
     "block_variants:crimson_hyphae_wall",
     "block_variants:warped_hyphae_wall",
     "block_variants:stripped_crimson_hyphae_wall",
-    "block_variants:stripped_warped_hyphae_wall",
-    "block_variants:bamboo_block_wall",
-    "block_variants:stripped_bamboo_block_wall"
+    "block_variants:stripped_warped_hyphae_wall"
   ]
 }

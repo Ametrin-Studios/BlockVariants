@@ -7,6 +7,10 @@ import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
+
 public final class BVBlockItemIds {
     public static final WoodTypeCollection<BlockItemId> LOG_STAIRS = BVBuildingBlocks.LOG_STAIRS.map(BVBlockItemIds::create);
     public static final WoodTypeCollection<BlockItemId> LOG_SLAB = BVBuildingBlocks.LOG_SLAB.map(BVBlockItemIds::create);
@@ -49,6 +53,26 @@ public final class BVBlockItemIds {
     public static final ColorCollection<BlockItemId> GLAZED_TERRACOTTA_STAIRS = ColorCollection.prefixWithColor(ColorCollection.create("glazed_terracotta_stairs")).map(BVBlockItemIds::create);
     public static final ColorCollection<BlockItemId> GLAZED_TERRACOTTA_SLAB = ColorCollection.prefixWithColor(ColorCollection.create("glazed_terracotta_slab")).map(BVBlockItemIds::create);
     public static final ColorCollection<BlockItemId> GLAZED_TERRACOTTA_WALL = ColorCollection.prefixWithColor(ColorCollection.create("glazed_terracotta_wall")).map(BVBlockItemIds::create);
+
+    public static final List<WoodTypeCollection<BlockItemId>> ALL_WOODEN = List.of(
+            LOG_STAIRS, LOG_SLAB, STRIPPED_LOG_STAIRS, STRIPPED_LOG_SLAB,
+
+            WOOD_STAIRS, WOOD_SLAB, STRIPPED_WOOD_STAIRS, STRIPPED_WOOD_SLAB,
+            WOOD_WALL, WOOD_FENCE, WOOD_FENCE_GATE, STRIPPED_WOOD_WALL, STRIPPED_WOOD_FENCE, STRIPPED_WOOD_FENCE_GATE,
+
+            STEM_STAIRS, STEM_SLAB, STRIPPED_STEM_STAIRS, STRIPPED_STEM_SLAB,
+            HYPHAE_STAIRS, HYPHAE_SLAB, STRIPPED_HYPHAE_STAIRS, STRIPPED_HYPHAE_SLAB,
+            HYPHAE_WALL, HYPHAE_FENCE, HYPHAE_FENCE_GATE, STRIPPED_HYPHAE_WALL, STRIPPED_HYPHAE_FENCE, STRIPPED_HYPHAE_FENCE_GATE
+    );
+
+    public static Stream<BlockItemId> queryWooden(Set<WoodType> types) {
+        return ALL_WOODEN.stream().mapMulti((node, yield)
+                -> node.forEach((type, block) -> {
+            if (types.contains(type)) {
+                yield.accept(block);
+            }
+        }));
+    }
 
     public static BlockItemId create(String name) {
         var id = BlockVariants.locate(name);

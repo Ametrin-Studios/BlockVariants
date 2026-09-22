@@ -1,11 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "dye_wool_walls",
+  "group": "dye_concrete_walls",
   "ingredients": [
     "#block_variants:wool/walls",
-    "minecraft:black_dye"
+    "minecraft:blue_dye"
   ],
   "result": {
-    "id": "block_variants:black_wool_wall"
+    "id": "block_variants:blue_concrete_wall"
   }
 }

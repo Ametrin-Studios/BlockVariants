@@ -75,7 +75,7 @@ public final class BVBuildingBlocks {
     public static final DeferredBlock<SlabBlock> CRACKED_STONE_BRICK_SLAB = register("cracked_stone_brick_slab", SlabBlock::new, () -> slabProperties(Blocks.CRACKED_STONE_BRICKS));
     public static final DeferredBlock<WallBlock> CRACKED_STONE_BRICK_WALL = register("cracked_stone_brick_wall", WallBlock::new, () -> wallProperties(Blocks.CRACKED_STONE_BRICKS));
 
-    // log sets its map color based of the AXIS so i have to ask it for its default map color
+    // log sets its map color based of the AXIS, so I have to ask it for its default map color
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> LOG_STAIRS = WoodTypeCollection.VANILLA_OVERWORLD_LOGS.map((type, log) -> {
         return register(type.name() + "_log_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     });
@@ -227,6 +227,7 @@ public final class BVBuildingBlocks {
             WOOD_WALL, WOOD_FENCE, WOOD_FENCE_GATE, STRIPPED_WOOD_WALL, STRIPPED_WOOD_FENCE, STRIPPED_WOOD_FENCE_GATE,
 
             STEM_STAIRS, STEM_SLAB, STRIPPED_STEM_STAIRS, STRIPPED_STEM_SLAB,
+            HYPHAE_STAIRS, HYPHAE_SLAB, STRIPPED_HYPHAE_STAIRS, STRIPPED_HYPHAE_SLAB,
             HYPHAE_WALL, HYPHAE_FENCE, HYPHAE_FENCE_GATE, STRIPPED_HYPHAE_WALL, STRIPPED_HYPHAE_FENCE, STRIPPED_HYPHAE_FENCE_GATE
     );
 

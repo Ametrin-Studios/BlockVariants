@@ -1,6 +1,7 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockTagsProvider;
+import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.*;
 import net.minecraft.core.HolderLookup;
@@ -148,38 +149,7 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
                     BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE.getKey(),
                     BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.getKey()
             );
-
-            BVBlockItemIds.LOG_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.LOG_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_LOG_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_LOG_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-
-            BVBlockItemIds.WOOD_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
-
-            BVBlockItemIds.STEM_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STEM_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_STEM_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_STEM_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-
-            BVBlockItemIds.HYPHAE_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
+            minableWithAxe.addAll(BVBlockItemIds.ALL_WOODEN.stream().flatMap(WoodTypeCollection::stream).map(BlockItemId::block));
         } // needs Axe
 
         tag(BlockTags.SHEARS_MAJOR_BREAKING_SPEED).addTag(BVTags.Blocks.WOOL_WALLS);
