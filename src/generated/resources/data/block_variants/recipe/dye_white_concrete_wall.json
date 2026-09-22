@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "dye_concrete_walls",
+  "ingredients": [
+    "#block_variants:concrete/walls",
+    "minecraft:white_dye"
+  ],
+  "result": {
+    "id": "block_variants:white_concrete_wall"
+  }
+}

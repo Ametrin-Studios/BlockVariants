@@ -147,17 +147,29 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
             ;
         });
 
-        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.WOOL_WALL.pick(color).get(), ColorCollection.WOOL.pick(color), false));
-
-        ColorCollection.VALUES.forEach(color -> {
-            var dyeItem = ColorCollection.DYE.pick(color);
-            var result = BVColoredBlocks.WOOL_WALL.pick(color);
+        BVBlockFamilies.WOOL.forEach(family -> family(family).generate());
+        ColorCollection.zipApply(ColorCollection.DYE, BVColoredBlocks.WOOL_STAIRS, (dyeItem, result) -> {
+            shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.WOOL_STAIRS).requires(dyeItem).group("dye_wool_stairs").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        });
+        ColorCollection.zipApply(ColorCollection.DYE, BVColoredBlocks.WOOL_SLAB, (dyeItem, result) -> {
+            shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.WOOL_SLABS).requires(dyeItem).group("dye_wool_slabs").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        });
+        ColorCollection.zipApply(ColorCollection.DYE, BVColoredBlocks.WOOL_WALL, (dyeItem, result) -> {
             shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
         });
 
         family(BVBlockFamilies.PACKED_MUD).generate();
 
-        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get(), ColorCollection.CONCRETE.pick(color), true));
+        BVBlockFamilies.CONCRETE.forEach(family -> family(family).generate());
+        ColorCollection.zipApply(ColorCollection.DYE, BVColoredBlocks.CONCRETE_STAIRS, (dyeItem, result) -> {
+            shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.CONCRETE_STAIRS).requires(dyeItem).group("dye_concrete_stairs").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        });
+        ColorCollection.zipApply(ColorCollection.DYE, BVColoredBlocks.CONCRETE_SLAB, (dyeItem, result) -> {
+            shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.CONCRETE_SLABS).requires(dyeItem).group("dye_concrete_slabs").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        });
+        ColorCollection.zipApply(ColorCollection.DYE, BVColoredBlocks.CONCRETE_WALL, (dyeItem, result) -> {
+            shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.CONCRETE_WALLS).requires(dyeItem).group("dye_concrete_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+        });
 
         shaped(RecipeCategory.DECORATIONS, BVOtherBlocks.GOLD_BARS, 16)
                 .define('#', Items.GOLD_INGOT)

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "dye_wool_stairs",
+  "ingredients": [
+    "#block_variants:wool/stairs",
+    "minecraft:blue_dye"
+  ],
+  "result": {
+    "id": "block_variants:blue_wool_stairs"
+  }
+}

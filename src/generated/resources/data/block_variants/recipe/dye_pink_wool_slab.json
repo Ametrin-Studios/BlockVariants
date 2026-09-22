@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "dye_wool_slabs",
+  "ingredients": [
+    "#block_variants:wool/slabs",
+    "minecraft:pink_dye"
+  ],
+  "result": {
+    "id": "block_variants:pink_wool_slab"
+  }
+}

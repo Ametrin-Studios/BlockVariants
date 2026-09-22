@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:lime_wool",
+  "result": {
+    "id": "block_variants:lime_wool_wall"
+  }
+}

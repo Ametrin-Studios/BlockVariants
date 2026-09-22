@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:blue_wool",
+  "result": {
+    "id": "block_variants:blue_wool_wall"
+  }
+}
