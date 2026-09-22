@@ -160,8 +160,7 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
             );
 
             for (var collection : BVBuildingBlocks.ALL_WOODEN) {
-                collection.forEach(id -> minableWithAxe.add(id.get()));
-
+                minableWithAxe.addAll(collection.stream().map(Supplier::get));
             }
         } // needs Axe
 
