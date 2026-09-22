@@ -88,6 +88,8 @@
     "block_variants:yellow_wool_stairs",
     "block_variants:cut_sandstone_stairs",
     "block_variants:cut_red_sandstone_stairs",
-    "block_variants:smooth_stone_stairs"
+    "block_variants:smooth_stone_stairs",
+    "#block_variants:wool/stairs",
+    "#block_variants:concrete/stairs"
   ]
 }

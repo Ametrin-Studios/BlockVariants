@@ -86,7 +86,11 @@ public abstract class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvi
         tagVariant(BlockFamily.Variant.FENCE_GATE, BVBuildingBlocks.NETHER_BRICK_FENCE_GATE.get());
         tagVariant(BlockFamily.Variant.FENCE_GATE, BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.get());
 
+        tagColorCollection(BVColoredBlocks.WOOL_STAIRS);
+        tagColorCollection(BVColoredBlocks.WOOL_SLAB);
         tagColorCollection(BVColoredBlocks.WOOL_WALL);
+        tagColorCollection(BVColoredBlocks.CONCRETE_STAIRS);
+        tagColorCollection(BVColoredBlocks.CONCRETE_SLAB);
         tagColorCollection(BVColoredBlocks.CONCRETE_WALL);
         tagColorCollection(BVColoredBlocks.DYED_TERRACOTTA_STAIRS);
         tagColorCollection(BVColoredBlocks.DYED_TERRACOTTA_SLAB);
@@ -95,10 +99,28 @@ public abstract class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvi
         tagColorCollection(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB);
         tagColorCollection(BVColoredBlocks.GLAZED_TERRACOTTA_WALL);
 
+        tag(BlockTags.STAIRS, ItemTags.STAIRS)
+                .addTag(BVTags.Blocks.WOOL_STAIRS)
+                .addTag(BVTags.Blocks.CONCRETE_STAIRS)
+        ;
+
+        tag(BlockTags.SLABS, ItemTags.SLABS)
+                .addTag(BVTags.Blocks.WOOL_SLABS)
+                .addTag(BVTags.Blocks.CONCRETE_SLABS)
+        ;
+
         tag(BlockTags.WALLS, ItemTags.WALLS)
                 .addTag(BVTags.Blocks.WOODEN_WALLS)
                 .addTag(BVTags.Blocks.WOOL_WALLS)
                 .addTag(BVTags.Blocks.CONCRETE_WALLS)
+        ;
+
+        tag(BVTags.Blocks.CONCRETE_STAIRS, BVTags.Items.CONCRETE_STAIRS)
+                .addAll(BVColoredBlocks.CONCRETE_STAIRS.asList().stream().map(Supplier::get))
+        ;
+
+        tag(BVTags.Blocks.CONCRETE_SLABS, BVTags.Items.CONCRETE_SLABS)
+                .addAll(BVColoredBlocks.CONCRETE_SLAB.asList().stream().map(Supplier::get))
         ;
 
         tag(BVTags.Blocks.CONCRETE_WALLS, BVTags.Items.CONCRETE_WALLS)

@@ -85,6 +85,8 @@
     "block_variants:yellow_concrete_slab",
     "block_variants:yellow_glazed_terracotta_slab",
     "block_variants:yellow_terracotta_slab",
-    "block_variants:yellow_wool_slab"
+    "block_variants:yellow_wool_slab",
+    "#block_variants:wool/slabs",
+    "#block_variants:concrete/slabs"
   ]
 }
