@@ -1,12 +1,13 @@
 package com.barion.block_variants;
 
 import com.ametrinstudios.ametrin.data.provider.CustomLootTableProvider;
+import com.ametrinstudios.ametrin.util.ColorCollection;
+import com.ametrinstudios.ametrin.util.VanillaCompat;
+import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.data.provider.*;
 import com.barion.block_variants.data.provider.loot_table.BVBlockLootProvider;
-import com.barion.block_variants.registry.BVBuildingBlocks;
-import com.barion.block_variants.registry.BVColoredBlocks;
-import com.barion.block_variants.registry.BVItems;
-import com.barion.block_variants.registry.BVOtherBlocks;
+import com.barion.block_variants.registry.*;
+import com.google.common.collect.ImmutableSet;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
@@ -15,11 +16,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import org.slf4j.Logger;
 
-import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 @Mod(BlockVariants.MOD_ID)
@@ -32,8 +34,19 @@ public final class BlockVariants {
         BVColoredBlocks.REGISTER.register(modBus);
         BVOtherBlocks.REGISTER.register(modBus);
         BVItems.REGISTER.register(modBus);
+        modBus.addListener(BlockVariants::setup);
         modBus.addListener(BlockVariants::buildCreativeModeTabs);
         modBus.addListener(BlockVariants::gatherData);
+    }
+
+    private static void setup(final FMLCommonSetupEvent event) {
+        BVColoredBlocks.WOOL_STAIRS.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
+        BVColoredBlocks.WOOL_SLAB.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
+        BVColoredBlocks.WOOL_WALL.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
+
+        BVBuildingBlocks.queryWooden(ImmutableSet.copyOf(WoodTypeCollection.VANILLA_OVERWORLD_TYPES)).forEach(b -> VanillaCompat.Flammable.addLog(b.get()));
+        BVBlockFamilies.BAMBOO_BLOCK.getVariants().values().forEach(VanillaCompat.Flammable::addLog);
+        BVBlockFamilies.STRIPPED_BAMBOO_BLOCK.getVariants().values().forEach(VanillaCompat.Flammable::addLog);
     }
 
     public static Identifier locate(String path) {
@@ -53,6 +66,15 @@ public final class BlockVariants {
 
             event.insertAfter(Items.PRISMARINE_BRICK_SLAB.getDefaultInstance(), BVOtherBlocks.PRISMARINE_BRICK_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(Items.DARK_PRISMARINE_SLAB.getDefaultInstance(), BVOtherBlocks.DARK_PRISMARINE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            event.insertAfter(Items.SMOOTH_SANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.SMOOTH_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.SMOOTH_RED_SANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            event.insertAfter(Items.CUT_SANDSTONE.getDefaultInstance(), BVOtherBlocks.CUT_SANDSTONE_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CUT_STANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.CUT_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CUT_RED_SANDSTONE.getDefaultInstance(), BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CUT_RED_SANDSTONE_SLAB.getDefaultInstance(), BVOtherBlocks.CUT_RED_SANDSTONE_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             event.insertAfter(Items.PURPUR_SLAB.getDefaultInstance(), BVOtherBlocks.PURPUR_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             event.insertAfter(Items.GOLD_BLOCK.getDefaultInstance(), BVOtherBlocks.GOLD_GRATE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -61,16 +83,37 @@ public final class BlockVariants {
         }
 
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
-            BVColoredBlocks.REGISTER.getEntries().forEach((blockHolder) -> event.accept(blockHolder.get()));
+            var lastColor = BVColoredBlocks.GAMEPLAY_COLOR_ORDER.getLast();
+            BVColoredBlocks.GAMEPLAY_COLOR_ORDER.reversed().forEach(color -> {
+                event.insertAfter(ColorCollection.WOOL.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.WOOL_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.WOOL_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.WOOL_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.WOOL_SLAB.pick(lastColor).toStack(), BVColoredBlocks.WOOL_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+                event.insertAfter(ColorCollection.CONCRETE.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.CONCRETE_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.CONCRETE_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.CONCRETE_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.CONCRETE_SLAB.pick(lastColor).toStack(), BVColoredBlocks.CONCRETE_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+                event.insertAfter(ColorCollection.DYED_TERRACOTTA.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.DYED_TERRACOTTA_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+                event.insertAfter(ColorCollection.GLAZED_TERRACOTTA.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.GLAZED_TERRACOTTA_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            });
+
+            event.insertAfter(ColorCollection.DYED_TERRACOTTA.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.TERRACOTTA_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.TERRACOTTA_SLAB.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.TERRACOTTA_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), BVOtherBlocks.GOLD_CHAIN.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 
-    public static Stream<Block> getAllBlocks() {
-        return Stream.concat(Stream.concat(BVBuildingBlocks.REGISTER.getEntries().stream(), BVColoredBlocks.REGISTER.getEntries().stream()), BVOtherBlocks.REGISTER.getEntries().stream()).map(Supplier::get);
+    public static Stream<DeferredHolder<Block, ? extends Block>> getAllBlocks() {
+        return Stream.concat(Stream.concat(BVBuildingBlocks.REGISTER.getEntries().stream(), BVColoredBlocks.REGISTER.getEntries().stream()), BVOtherBlocks.REGISTER.getEntries().stream());
     }
 
     private static void gatherData(GatherDataEvent.Client event) {
@@ -79,6 +122,7 @@ public final class BlockVariants {
         event.createProvider(BVDataMapProvider::new);
         event.createProvider(BVBlockTagsProvider::new);
         event.createProvider(BVItemTagsProvider::new);
+        event.createProvider(BVLanguageProvider::new);
         event.createProvider(CustomLootTableProvider.builder().addBlockProvider(BVBlockLootProvider::new)::build);
     }
 }

@@ -1,9 +1,20 @@
+## 7.1.0
+
+- add Poplar Log/Wood variants
+- remove Wool Stairs/Slabs (existing blocks/items will be converted to vanilla blocks)
+- 26.3 port
+
+## 7.0.0
+
+- add Smooth (Red) Sandstone Wall
+- fix Wool variants not being flammable
+
 ## 6.7.1
 - fix fence gates destroyed by water
 
 ## 6.7.0
 - added Golden Grate, Bars and Chain
-- (26.1.x port)
+- (26.1 - 26.2 port)
 
 ## 6.6.0
 - added Concrete variants

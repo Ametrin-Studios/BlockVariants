@@ -2,99 +2,129 @@ package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockItemTagsProvider;
 import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.registry.BVOtherBlocks;
-import com.barion.block_variants.registry.BVTags;
+import com.barion.block_variants.registry.*;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
-import net.neoforged.neoforge.common.Tags;
+import net.minecraft.world.level.block.*;
+
+import java.util.function.Supplier;
 
 import static com.ametrinstudios.ametrin.data.DataProviderExtensions.isWooden;
 
 public abstract class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
     {
         blockItemTagProviderRules.add((block, name) -> {
-            if (block instanceof WallBlock && (isWooden(name) || name.contains("bamboo_block"))) {
-                tag(BVTags.Blocks.WOODEN_WALLS, BVTags.Items.WOODEN_WALLS).add(block);
+            if (block.get() instanceof WallBlock && isWooden(name)) {
+                tag(BVTags.Blocks.WOODEN_WALLS, BVTags.Items.WOODEN_WALLS).add(block.get());
             }
         });
 
-        blockItemTagProviderRules.add((block, name) -> {
-            if (name.contains("bamboo_block")) {
-                if (block instanceof StairBlock) {
-                    tag(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS).add(block);
+        blockItemTagProviderRules.add((block, id) -> {
+            if (id.contains("bamboo_block")) {
+                if (block.get() instanceof StairBlock) {
+                    tag(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS).add(block.get());
                 }
-                if (block instanceof SlabBlock) {
-                    tag(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS).add(block);
+                if (block.get() instanceof SlabBlock) {
+                    tag(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS).add(block.get());
                 }
-                if (block instanceof FenceBlock) {
-                    tag(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES).add(block);
+                if (block.get() instanceof WallBlock) {
+                    tag(BVTags.Blocks.WOODEN_WALLS, BVTags.Items.WOODEN_WALLS).add(block.get());
                 }
-                if (block instanceof FenceBlock) {
-                    tag(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES).add(block);
+                if (block.get() instanceof FenceBlock) {
+                    tag(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES).add(block.get());
+                }
+                if (block.get() instanceof FenceGateBlock) {
+                    tag(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES).add(block.get());
                 }
             }
         });
 
         blockItemTagProviderRules.add((block, name) -> {
             if (!name.contains("wool")) return;
-            tag(BlockTags.DAMPENS_VIBRATIONS, ItemTags.DAMPENS_VIBRATIONS).add(block);
-
-            if (name.contains("stairs")) {
-                tag(BVTags.Blocks.WOOL_STAIRS, BVTags.Items.WOOL_STAIRS).add(block);
-            } else if (name.contains("slab")) {
-                tag(BVTags.Blocks.WOOL_SLABS, BVTags.Items.WOOL_SLABS).add(block);
-            } else if (name.contains("wall")) {
-                tag(BVTags.Blocks.WOOL_WALLS, BVTags.Items.WOOL_WALLS).add(block);
-            }
-        });
-
-        blockItemTagProviderRules.add((block, name) -> {
-            if (name.contains("white")) {
-                tag(Tags.Blocks.DYED_WHITE, Tags.Items.DYED_WHITE).add(block);
-            } else if (name.contains("light_gray")) {
-                tag(Tags.Blocks.DYED_LIGHT_GRAY, Tags.Items.DYED_LIGHT_GRAY).add(block);
-            } else if (name.contains("gray")) {
-                tag(Tags.Blocks.DYED_GRAY, Tags.Items.DYED_GRAY).add(block);
-            } else if (name.contains("black_")) {
-                tag(Tags.Blocks.DYED_BLACK, Tags.Items.DYED_BLACK).add(block);
-            } else if (name.contains("brown")) {
-                tag(Tags.Blocks.DYED_BROWN, Tags.Items.DYED_BROWN).add(block);
-            } else if (name.contains("red") && !name.contains("sandstone") && !name.contains("nether")) {
-                tag(Tags.Blocks.DYED_RED, Tags.Items.DYED_RED).add(block);
-            } else if (name.contains("orange")) {
-                tag(Tags.Blocks.DYED_ORANGE, Tags.Items.DYED_ORANGE).add(block);
-            } else if (name.contains("yellow")) {
-                tag(Tags.Blocks.DYED_YELLOW, Tags.Items.DYED_YELLOW).add(block);
-            } else if (name.contains("lime")) {
-                tag(Tags.Blocks.DYED_LIME, Tags.Items.DYED_LIME).add(block);
-            } else if (name.contains("green")) {
-                tag(Tags.Blocks.DYED_GREEN, Tags.Items.DYED_GREEN).add(block);
-            } else if (name.contains("cyan")) {
-                tag(Tags.Blocks.DYED_CYAN, Tags.Items.DYED_CYAN).add(block);
-            } else if (name.contains("light_blue")) {
-                tag(Tags.Blocks.DYED_LIGHT_BLUE, Tags.Items.DYED_LIGHT_BLUE).add(block);
-            } else if (name.contains("blue")) {
-                tag(Tags.Blocks.DYED_BLUE, Tags.Items.DYED_BLUE).add(block);
-            } else if (name.contains("purple")) {
-                tag(Tags.Blocks.DYED_PURPLE, Tags.Items.DYED_PURPLE).add(block);
-            } else if (name.contains("magenta")) {
-                tag(Tags.Blocks.DYED_MAGENTA, Tags.Items.DYED_MAGENTA).add(block);
-            } else if (name.contains("pink")) {
-                tag(Tags.Blocks.DYED_PINK, Tags.Items.DYED_PINK).add(block);
+            if (name.contains("_stairs")) {
+                tag(BVTags.Blocks.WOOL_STAIRS, BVTags.Items.WOOL_STAIRS).add(block.get());
+            } else if (name.contains("_slab")) {
+                tag(BVTags.Blocks.WOOL_SLABS, BVTags.Items.WOOL_SLABS).add(block.get());
+            } else if (name.contains("_wall")) {
+                tag(BVTags.Blocks.WOOL_WALLS, BVTags.Items.WOOL_WALLS).add(block.get());
+            } else {
+                throw new RuntimeException("unknown wool type");
             }
         });
     }
 
+
     @Override
     protected void run() {
         runRules(BlockVariants.getAllBlocks());
+        BVBlockFamilies.MAP.forEach((_, family) -> tagBlockFamily(family));
+
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.SMOOTH_SANDSTONE_WALL.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.get());
+
+        tagVariant(BlockFamily.Variant.STAIRS, BVOtherBlocks.CUT_SANDSTONE_STAIRS.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.CUT_SANDSTONE_WALL.get());
+        tagVariant(BlockFamily.Variant.STAIRS, BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.CUT_RED_SANDSTONE_WALL.get());
+
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.POLISHED_ANDESITE_WALL.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.POLISHED_DIORITE_WALL.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.POLISHED_GRANITE_WALL.get());
+
+        tagVariant(BlockFamily.Variant.WALL, BVBuildingBlocks.QUARTZ_WALL.get());
+        tagVariant(BlockFamily.Variant.WALL, BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.STONE_WALL.get());
+        tagVariant(BlockFamily.Variant.STAIRS, BVOtherBlocks.SMOOTH_STONE_STAIRS.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.SMOOTH_STONE_WALL.get());
+
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.PRISMARINE_BRICK_WALL.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.DARK_PRISMARINE_WALL.get());
+        tagVariant(BlockFamily.Variant.WALL, BVOtherBlocks.PURPUR_WALL.get());
+
+        tagVariant(BlockFamily.Variant.FENCE, BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE.get());
+        tagVariant(BlockFamily.Variant.FENCE_GATE, BVBuildingBlocks.NETHER_BRICK_FENCE_GATE.get());
+        tagVariant(BlockFamily.Variant.FENCE_GATE, BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.get());
+
+        tagColorCollection(BVColoredBlocks.WOOL_STAIRS);
+        tagColorCollection(BVColoredBlocks.WOOL_SLAB);
+        tagColorCollection(BVColoredBlocks.WOOL_WALL);
+        tagColorCollection(BVColoredBlocks.CONCRETE_STAIRS);
+        tagColorCollection(BVColoredBlocks.CONCRETE_SLAB);
+        tagColorCollection(BVColoredBlocks.CONCRETE_WALL);
+        tagColorCollection(BVColoredBlocks.DYED_TERRACOTTA_STAIRS);
+        tagColorCollection(BVColoredBlocks.DYED_TERRACOTTA_SLAB);
+        tagColorCollection(BVColoredBlocks.DYED_TERRACOTTA_WALL);
+        tagColorCollection(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS);
+        tagColorCollection(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB);
+        tagColorCollection(BVColoredBlocks.GLAZED_TERRACOTTA_WALL);
+
+        tag(BlockTags.STAIRS, ItemTags.STAIRS)
+                .addTag(BVTags.Blocks.WOOL_STAIRS)
+                .addTag(BVTags.Blocks.CONCRETE_STAIRS)
+        ;
+
+        tag(BlockTags.SLABS, ItemTags.SLABS)
+                .addTag(BVTags.Blocks.WOOL_SLABS)
+                .addTag(BVTags.Blocks.CONCRETE_SLABS)
+        ;
 
         tag(BlockTags.WALLS, ItemTags.WALLS)
                 .addTag(BVTags.Blocks.WOODEN_WALLS)
+                .addTag(BVTags.Blocks.WOOL_WALLS)
+                .addTag(BVTags.Blocks.CONCRETE_WALLS)
+        ;
+
+        tag(BVTags.Blocks.CONCRETE_STAIRS, BVTags.Items.CONCRETE_STAIRS)
+                .addAll(BVColoredBlocks.CONCRETE_STAIRS.asList().stream().map(Supplier::get))
+        ;
+
+        tag(BVTags.Blocks.CONCRETE_SLABS, BVTags.Items.CONCRETE_SLABS)
+                .addAll(BVColoredBlocks.CONCRETE_SLAB.asList().stream().map(Supplier::get))
+        ;
+
+        tag(BVTags.Blocks.CONCRETE_WALLS, BVTags.Items.CONCRETE_WALLS)
+                .addAll(BVColoredBlocks.CONCRETE_WALL.asList().stream().map(Supplier::get))
         ;
 
         // this includes mineable with pickaxe

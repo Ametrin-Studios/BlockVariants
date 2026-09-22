@@ -1,0 +1,20 @@
+{
+  "values": [
+    "block_variants:white_concrete_wall",
+    "block_variants:orange_concrete_wall",
+    "block_variants:magenta_concrete_wall",
+    "block_variants:light_blue_concrete_wall",
+    "block_variants:yellow_concrete_wall",
+    "block_variants:lime_concrete_wall",
+    "block_variants:pink_concrete_wall",
+    "block_variants:gray_concrete_wall",
+    "block_variants:light_gray_concrete_wall",
+    "block_variants:cyan_concrete_wall",
+    "block_variants:purple_concrete_wall",
+    "block_variants:blue_concrete_wall",
+    "block_variants:brown_concrete_wall",
+    "block_variants:green_concrete_wall",
+    "block_variants:red_concrete_wall",
+    "block_variants:black_concrete_wall"
+  ]
+}

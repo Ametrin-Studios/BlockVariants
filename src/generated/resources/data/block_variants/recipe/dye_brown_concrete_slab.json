@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "dye_concrete_slabs",
+  "ingredients": [
+    "#block_variants:concrete/slabs",
+    "minecraft:brown_dye"
+  ],
+  "result": {
+    "id": "block_variants:brown_concrete_slab"
+  }
+}

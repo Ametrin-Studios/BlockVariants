@@ -13,8 +13,10 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.common.Tags;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("unchecked")
@@ -28,13 +30,11 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
         runRules(BVItems.REGISTER);
 
         new BVBlockItemTagsProvider() {
-
             @Override
             protected TagAppender<Block, Block> tag(TagKey<Block> blockTag, TagKey<Item> itemTag) {
                 return new BlockToItemConverter(BVItemTagsProvider.this.tag(itemTag));
             }
         }.run();
-
         tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
 
         tag(ItemTags.PIGLIN_LOVED).add(
@@ -43,42 +43,8 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
                 BVOtherBlocks.GOLD_GRATE.asItem()
         );
 
-        tag(ItemTags.NON_FLAMMABLE_WOOD).add(
-                BVBuildingBlocks.CRIMSON_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.CRIMSON_STEM_SLAB.asItem(),
+        var non_flammable_wood = tag(ItemTags.NON_FLAMMABLE_WOOD);
 
-                BVBuildingBlocks.WARPED_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.WARPED_STEM_SLAB.asItem(),
-
-                BVBuildingBlocks.STRIPPED_CRIMSON_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_STEM_SLAB.asItem(),
-
-                BVBuildingBlocks.STRIPPED_WARPED_STEM_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_STEM_SLAB.asItem(),
-
-                BVBuildingBlocks.CRIMSON_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.CRIMSON_HYPHAE_FENCE_GATE.asItem(),
-
-                BVBuildingBlocks.WARPED_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.WARPED_HYPHAE_FENCE_GATE.asItem(),
-
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.asItem(),
-
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_STAIRS.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_SLAB.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_WALL.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE.asItem(),
-                BVBuildingBlocks.STRIPPED_WARPED_HYPHAE_FENCE_GATE.asItem()
-        );
+        BVBuildingBlocks.queryWooden(Set.of(WoodType.CRIMSON, WoodType.WARPED)).forEach(block -> non_flammable_wood.add(block.asItem()));
     }
 }

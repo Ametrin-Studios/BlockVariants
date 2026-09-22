@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/outer_stairs",
+  "parent": "block_variants:block/outer_log_stairs",
   "textures": {
     "bottom": "minecraft:block/mangrove_log_top",
     "side": "minecraft:block/mangrove_log",

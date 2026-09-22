@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:pink_wool",
+  "result": {
+    "id": "block_variants:pink_wool_wall"
+  }
+}

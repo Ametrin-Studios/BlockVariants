@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.141'
+    id 'net.neoforged.moddev' version '2.0.147'
     id 'idea'
 }
 
@@ -74,29 +74,32 @@ repositories {
     maven {
         url "https://github.com/BarionLP/MCModsMaven/raw/main/"
     }
+    maven {
+        url uri(rootProject.file("../maven"))
+    }
 }
 
 dependencies {
-    implementation "com.ametrinstudios:ametrin:26.1.1-${ametrin_version}"
-//    localRuntime "curse.maven:emi-580555:5497461"
+    implementation "com.ametrinstudios:ametrin-${minecraft_version}:${ametrin_version}"
+    interfaceInjectionData "com.ametrinstudios:ametrin-${minecraft_version}:${ametrin_version}"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
     var replaceProperties = [
-            minecraft_version       : minecraft_version,
-            minecraft_version_range : minecraft_version_range,
-            neo_version             : neo_version,
-            neo_version_range       : neo_version_range,
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            neo_version_range      : neo_version_range,
 
-            ametrin_version         : ametrin_version,
-            ametrin_version_range   : ametrin_version_range,
+            ametrin_version        : ametrin_version,
+            ametrin_version_range  : ametrin_version_range,
 
-            mod_id                  : mod_id,
-            mod_name                : mod_name,
-            mod_license             : mod_license,
-            mod_version             : mod_version,
-            mod_authors             : mod_authors,
-            mod_description         : mod_description
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description
     ]
     inputs.properties replaceProperties
     expand replaceProperties
