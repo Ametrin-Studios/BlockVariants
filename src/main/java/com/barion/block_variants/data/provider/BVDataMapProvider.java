@@ -2,11 +2,14 @@ package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.registry.BVBuildingBlocks;
+import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.neoforged.neoforge.registries.datamaps.builtin.Strippable;
 
@@ -19,6 +22,10 @@ public final class BVDataMapProvider extends DataMapProvider {
 
     @Override
     protected void gather(HolderLookup.Provider provider) {
+        builder(NeoForgeDataMaps.FURNACE_FUELS)
+                .add(BVTags.Items.WOODEN_WALLS, new FurnaceFuel(AbstractFurnaceBlockEntity.BURN_TIME_STANDARD * 3 / 2), false)
+        ;
+
         var strippables = builder(NeoForgeDataMaps.STRIPPABLES)
                 .add(BVBuildingBlocks.BAMBOO_BLOCK_STAIRS, new Strippable(BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_STAIRS.get()), false)
                 .add(BVBuildingBlocks.BAMBOO_BLOCK_SLAB, new Strippable(BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_SLAB.get()), false)
