@@ -74,9 +74,9 @@ repositories {
     maven {
         url "https://github.com/BarionLP/MCModsMaven/raw/main/"
     }
-    maven {
-        url uri(rootProject.file("../maven"))
-    }
+//    maven {
+//        url uri(rootProject.file("../maven"))
+//    }
 }
 
 dependencies {
@@ -107,9 +107,27 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
     into "build/generated/sources/modMetadata"
 }
 
-
 sourceSets.main.resources.srcDir generateModMetadata
 neoForge.ideSyncTask generateModMetadata
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            artifactId = "${mod_id}-${minecraft_version}"
+            from components.java
+
+            pom {
+                url = 'https://github.com/Ametrin-Studios/BlockVariants'
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'Ametrin'
+            url = uri(rootProject.file("../maven"))
+        }
+    }
+}
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
