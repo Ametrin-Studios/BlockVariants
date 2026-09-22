@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:birch_log_stairs"
+        "recipe": "block_variants:birch_log_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

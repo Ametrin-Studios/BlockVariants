@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:packed_mud_stairs"
+        "recipe": "block_variants:packed_mud_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

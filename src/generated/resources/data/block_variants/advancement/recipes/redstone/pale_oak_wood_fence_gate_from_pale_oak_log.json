@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:pale_oak_wood_fence_gate_from_pale_oak_log"
+        "recipe": "block_variants:pale_oak_wood_fence_gate_from_pale_oak_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

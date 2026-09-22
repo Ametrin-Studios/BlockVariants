@@ -1,13 +1,13 @@
 package com.barion.block_variants.registry;
 
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
+import com.ametrinstudios.ametrin.util.ColorCollection;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.google.common.collect.Maps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ColorCollection;
 
 import java.util.Comparator;
 import java.util.Map;
@@ -220,6 +220,27 @@ public final class BVBlockFamilies {
             .wall(BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get())
             .getFamily();
 
+    public static final ColorCollection<BlockFamily> WOOL = ColorCollection.VALUES
+            .map(
+                    color -> familyBuilder(ColorCollection.WOOL.pick(color))
+                            .stairs(BVColoredBlocks.WOOL_STAIRS.pick(color).get())
+                            .slab(BVColoredBlocks.WOOL_SLAB.pick(color).get())
+                            .wall(BVColoredBlocks.WOOL_WALL.pick(color).get())
+                            .generateStonecutterRecipe()
+                            .getFamily()
+            );
+
+    public static final ColorCollection<BlockFamily> CONCRETE = ColorCollection.VALUES
+            .map(
+                    color -> familyBuilder(ColorCollection.CONCRETE.pick(color))
+                            .stairs(BVColoredBlocks.CONCRETE_STAIRS.pick(color).get())
+                            .slab(BVColoredBlocks.CONCRETE_SLAB.pick(color).get())
+                            .wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get())
+                            .generateStonecutterRecipe()
+                            .getFamily()
+            );
+
+
     public static final BlockFamily TERRACOTTA = familyBuilder(Blocks.TERRACOTTA)
             .stairs(BVColoredBlocks.TERRACOTTA_STAIRS.get())
             .slab(BVColoredBlocks.TERRACOTTA_SLAB.get())
@@ -229,7 +250,7 @@ public final class BVBlockFamilies {
 
     public static final ColorCollection<BlockFamily> DYED_TERRACOTTA = ColorCollection.VALUES
             .map(
-                    color -> familyBuilder(Blocks.DYED_TERRACOTTA.pick(color))
+                    color -> familyBuilder(ColorCollection.DYED_TERRACOTTA.pick(color))
                             .stairs(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(color).get())
                             .slab(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(color).get())
                             .wall(BVColoredBlocks.DYED_TERRACOTTA_WALL.pick(color).get())
@@ -239,7 +260,7 @@ public final class BVBlockFamilies {
 
     public static final ColorCollection<BlockFamily> GLAZED_TERRACOTTA = ColorCollection.VALUES
             .map(
-                    color -> familyBuilder(Blocks.GLAZED_TERRACOTTA.pick(color))
+                    color -> familyBuilder(ColorCollection.GLAZED_TERRACOTTA.pick(color))
                             .stairs(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).get())
                             .slab(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(color).get())
                             .wall(BVColoredBlocks.GLAZED_TERRACOTTA_WALL.pick(color).get())

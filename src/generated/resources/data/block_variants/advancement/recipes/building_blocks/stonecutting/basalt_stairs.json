@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:stonecutting/basalt_stairs"
+        "recipe": "block_variants:stonecutting/basalt_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

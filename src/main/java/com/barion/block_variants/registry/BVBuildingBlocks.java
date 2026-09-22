@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -77,64 +76,64 @@ public final class BVBuildingBlocks {
 
     // log sets its map color based of the AXIS so i have to ask it for its default map color
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> LOG_STAIRS = WoodTypeCollection.VANILLA_OVERWORLD_LOGS.map((type, log) -> {
-        return register(type.name() + "_log_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type.name() + "_log_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base).mapColor(base.defaultMapColor()));
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> LOG_SLAB = WoodTypeCollection.VANILLA_OVERWORLD_LOGS.map((type, log) -> {
-        return register(type.name() + "_log_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
+        return register(type.name() + "_log_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base).mapColor(base.defaultMapColor()));
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> STRIPPED_LOG_STAIRS = WoodTypeCollection.VANILLA_OVERWORLD_STRIPPED_LOGS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_log_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register("stripped_" + type.name() + "_log_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base).mapColor(base.defaultMapColor()));
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> STRIPPED_LOG_SLAB = WoodTypeCollection.VANILLA_OVERWORLD_STRIPPED_LOGS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_log_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
+        return register("stripped_" + type.name() + "_log_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base).mapColor(base.defaultMapColor()));
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> STEM_STAIRS = WoodTypeCollection.VANILLA_NETHER_STEMS.map((type, log) -> {
-        return register(type.name() + "_stem_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base));
+        return register(type.name() + "_stem_stairs", StairBlock::new, log, BlockRegisterHelper::stairProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> STEM_SLAB = WoodTypeCollection.VANILLA_NETHER_STEMS.map((type, log) -> {
-        return register(type.name() + "_stem_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base));
+        return register(type.name() + "_stem_slab", SlabBlock::new, log, BlockRegisterHelper::slabProperties);
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> STRIPPED_STEM_STAIRS = WoodTypeCollection.VANILLA_NETHER_STRIPPED_STEMS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_stem_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base));
+        return register("stripped_" + type.name() + "_stem_stairs", StairBlock::new, log, BlockRegisterHelper::stairProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> STRIPPED_STEM_SLAB = WoodTypeCollection.VANILLA_NETHER_STRIPPED_STEMS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_stem_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base));
+        return register("stripped_" + type.name() + "_stem_slab", SlabBlock::new, log, BlockRegisterHelper::slabProperties);
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> WOOD_STAIRS = WoodTypeCollection.VANILLA_OVERWORLD_WOODS.map((type, log) -> {
-        return register(type.name() + "_wood_stairs", StairBlock::new, log, BlockRegisterHelper::stairProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type.name() + "_wood_stairs", StairBlock::new, log, BlockRegisterHelper::stairProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> WOOD_SLAB = WoodTypeCollection.VANILLA_OVERWORLD_WOODS.map((type, log) -> {
-        return register(type.name() + "_wood_slab", HorizontalAxisAlignedSlabBlock::new, log, BlockRegisterHelper::slabProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
+        return register(type.name() + "_wood_slab", HorizontalAxisAlignedSlabBlock::new, log, BlockRegisterHelper::slabProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<WallBlock>> WOOD_WALL = WoodTypeCollection.VANILLA_OVERWORLD_WOODS.map((type, log) -> {
-        return register(type.name() + "_wood_wall", WallBlock::new, log, BlockRegisterHelper::wallProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type.name() + "_wood_wall", WallBlock::new, log, BlockRegisterHelper::wallProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<FenceBlock>> WOOD_FENCE = WoodTypeCollection.VANILLA_OVERWORLD_WOODS.map((type, log) -> {
-        return register(type.name() + "_wood_fence", FenceBlock::new, log, BlockRegisterHelper::fenceProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type.name() + "_wood_fence", FenceBlock::new, log, BlockRegisterHelper::fenceProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<FenceGateBlock>> WOOD_FENCE_GATE = WoodTypeCollection.VANILLA_OVERWORLD_WOODS.map((type, log) -> {
-        return register(type.name() + "_wood_fence_gate", p -> new FenceGateBlock(type, p), log, BlockRegisterHelper::fenceGateProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register(type.name() + "_wood_fence_gate", p -> new FenceGateBlock(type, p), log, BlockRegisterHelper::fenceGateProperties);
     });
 
     // for some reason STRIPPED_MANGROVE_WOOD bases its mapColor choice on AXIS (but with the same result anyway) so we do the same here
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> STRIPPED_WOOD_STAIRS = WoodTypeCollection.VANILLA_OVERWORLD_STRIPPED_WOODS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_wood_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register("stripped_" + type.name() + "_wood_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base).mapColor(base.defaultMapColor()));
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> STRIPPED_WOOD_SLAB = WoodTypeCollection.VANILLA_OVERWORLD_STRIPPED_WOODS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_wood_slab", HorizontalAxisAlignedSlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
+        return register("stripped_" + type.name() + "_wood_slab", HorizontalAxisAlignedSlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base).mapColor(base.defaultMapColor()));
     });
     public static final WoodTypeCollection<DeferredBlock<WallBlock>> STRIPPED_WOOD_WALL = WoodTypeCollection.VANILLA_OVERWORLD_STRIPPED_WOODS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_wood_wall", WallBlock::new, log, base -> BlockRegisterHelper.wallProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register("stripped_" + type.name() + "_wood_wall", WallBlock::new, log, base -> BlockRegisterHelper.wallProperties(base).mapColor(base.defaultMapColor()));
     });
     public static final WoodTypeCollection<DeferredBlock<FenceBlock>> STRIPPED_WOOD_FENCE = WoodTypeCollection.VANILLA_OVERWORLD_STRIPPED_WOODS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_wood_fence", FenceBlock::new, log, base -> BlockRegisterHelper.fenceProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register("stripped_" + type.name() + "_wood_fence", FenceBlock::new, log, base -> BlockRegisterHelper.fenceProperties(base).mapColor(base.defaultMapColor()));
     });
     public static final WoodTypeCollection<DeferredBlock<FenceGateBlock>> STRIPPED_WOOD_FENCE_GATE = WoodTypeCollection.VANILLA_OVERWORLD_STRIPPED_WOODS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_wood_fence_gate", p -> new FenceGateBlock(type, p), log, base -> BlockRegisterHelper.fenceGateProperties(base).mapColor(base.defaultMapColor()), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+        return register("stripped_" + type.name() + "_wood_fence_gate", p -> new FenceGateBlock(type, p), log, base -> BlockRegisterHelper.fenceGateProperties(base).mapColor(base.defaultMapColor()));
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> HYPHAE_STAIRS = WoodTypeCollection.VANILLA_NETHER_HYPHAES.map((type, log) -> {
@@ -169,16 +168,16 @@ public final class BVBuildingBlocks {
         return register("stripped_" + type.name() + "_hyphae_fence_gate", p -> new FenceGateBlock(type, p), log, BlockRegisterHelper::fenceGateProperties);
     });
 
-    public static final DeferredBlock<StairBlock> BAMBOO_BLOCK_STAIRS = register("bamboo_block_stairs", prop -> new StairBlock(Blocks.BAMBOO_BLOCK.defaultBlockState(), prop), () -> stairProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<SlabBlock> BAMBOO_BLOCK_SLAB = register("bamboo_block_slab", SlabBlock::new, () -> slabProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
-    public static final DeferredBlock<WallBlock> BAMBOO_BLOCK_WALL = register("bamboo_block_wall", WallBlock::new, () -> wallProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<FenceBlock> BAMBOO_BLOCK_FENCE = register("bamboo_block_fence", FenceBlock::new, () -> fenceGateProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<FenceGateBlock> BAMBOO_BLOCK_FENCE_GATE = register("bamboo_block_fence_gate", prop -> new FenceGateBlock(WoodType.BAMBOO, prop), () -> fenceGateProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", StairBlock::new, Blocks.STRIPPED_BAMBOO_BLOCK, b -> stairProperties(b).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<SlabBlock> STRIPPED_BAMBOO_BLOCK_SLAB = register("stripped_bamboo_block_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS));
-    public static final DeferredBlock<WallBlock> STRIPPED_BAMBOO_BLOCK_WALL = register("stripped_bamboo_block_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<FenceBlock> STRIPPED_BAMBOO_BLOCK_FENCE = register("stripped_bamboo_block_fence", FenceBlock::new, () -> fenceProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
-    public static final DeferredBlock<FenceGateBlock> STRIPPED_BAMBOO_BLOCK_FENCE_GATE = register("stripped_bamboo_block_fence_gate", prop -> new FenceGateBlock(WoodType.BAMBOO, prop), () -> fenceGateProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW).forceSolidOn(), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
+    public static final DeferredBlock<StairBlock> BAMBOO_BLOCK_STAIRS = register("bamboo_block_stairs", prop -> new StairBlock(Blocks.BAMBOO_BLOCK.defaultBlockState(), prop), () -> stairProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW));
+    public static final DeferredBlock<SlabBlock> BAMBOO_BLOCK_SLAB = register("bamboo_block_slab", SlabBlock::new, () -> slabProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW));
+    public static final DeferredBlock<WallBlock> BAMBOO_BLOCK_WALL = register("bamboo_block_wall", WallBlock::new, () -> wallProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT));
+    public static final DeferredBlock<FenceBlock> BAMBOO_BLOCK_FENCE = register("bamboo_block_fence", FenceBlock::new, () -> fenceGateProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT));
+    public static final DeferredBlock<FenceGateBlock> BAMBOO_BLOCK_FENCE_GATE = register("bamboo_block_fence_gate", prop -> new FenceGateBlock(WoodType.BAMBOO, prop), () -> fenceGateProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT));
+    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", StairBlock::new, Blocks.STRIPPED_BAMBOO_BLOCK, b -> stairProperties(b).mapColor(MapColor.COLOR_YELLOW));
+    public static final DeferredBlock<SlabBlock> STRIPPED_BAMBOO_BLOCK_SLAB = register("stripped_bamboo_block_slab", SlabBlock::new, () -> slabProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW));
+    public static final DeferredBlock<WallBlock> STRIPPED_BAMBOO_BLOCK_WALL = register("stripped_bamboo_block_wall", WallBlock::new, () -> wallProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW));
+    public static final DeferredBlock<FenceBlock> STRIPPED_BAMBOO_BLOCK_FENCE = register("stripped_bamboo_block_fence", FenceBlock::new, () -> fenceProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW));
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_BAMBOO_BLOCK_FENCE_GATE = register("stripped_bamboo_block_fence_gate", prop -> new FenceGateBlock(WoodType.BAMBOO, prop), () -> fenceGateProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW).forceSolidOn());
 
     public static final DeferredBlock<StairBlock> CALCITE_STAIRS = register("calcite_stairs", StairBlock::new, Blocks.CALCITE, BlockRegisterHelper::stairProperties);
     public static final DeferredBlock<SlabBlock> CALCITE_SLAB = register("calcite_slab", SlabBlock::new, () -> slabProperties(Blocks.CALCITE));

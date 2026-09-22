@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:birch_wood_slab"
+        "recipe": "block_variants:birch_wood_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

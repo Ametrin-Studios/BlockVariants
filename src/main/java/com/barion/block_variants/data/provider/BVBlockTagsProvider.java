@@ -2,14 +2,20 @@ package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockTagsProvider;
 import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.registry.*;
+import com.barion.block_variants.registry.BVBuildingBlocks;
+import com.barion.block_variants.registry.BVColoredBlocks;
+import com.barion.block_variants.registry.BVOtherBlocks;
+import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.BlockItemTagsProvider;
-import net.minecraft.references.BlockItemId;
+import net.minecraft.data.tags.TagAppender;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
     public BVBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
@@ -17,204 +23,179 @@ public final class BVBlockTagsProvider extends ExtendedBlockTagsProvider {
 
         blockTagProviderRules.add((block, name) -> {
             if (name.contains("wool")) {
-                tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(block.getKey());
+                tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(block.get());
             }
         });
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     protected void addTags(HolderLookup.Provider holderLookup) {
         runRules(BlockVariants.getAllBlocks());
 
-        new BVBlockItemTagsProvider(tags -> BlockItemTagsProvider.wrapForBlocks(tag(tags.block()))).run();
+        new BVBlockItemTagsProvider() {
+            @Override
+            protected TagAppender<Block, Block> tag(TagKey<Block> blockTag, TagKey<Item> itemTag) {
+                return BVBlockTagsProvider.this.tag(blockTag);
+            }
+        }.run();
 
         {
             tag(BlockTags.MINEABLE_WITH_PICKAXE)
                     .add(
-                            BVOtherBlocks.CUT_SANDSTONE_STAIRS.getKey(),
-                            BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.getKey(),
-                            BVBuildingBlocks.QUARTZ_BRICK_STAIRS.getKey(),
-                            BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.getKey(),
-                            BVBuildingBlocks.NETHERRACK_STAIRS.getKey(),
-                            BVBuildingBlocks.END_STONE_STAIRS.getKey(),
-                            BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.getKey(),
-                            BVBuildingBlocks.BASALT_STAIRS.getKey(),
-                            BVBuildingBlocks.POLISHED_BASALT_STAIRS.getKey(),
-                            BVColoredBlocks.TERRACOTTA_STAIRS.getKey(),
-                            BVBuildingBlocks.DRIPSTONE_BLOCK_STAIRS.getKey(),
-                            BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.getKey(),
-                            BVBuildingBlocks.CRACKED_STONE_BRICK_STAIRS.getKey(),
+                            BVOtherBlocks.CUT_SANDSTONE_STAIRS.get(),
+                            BVOtherBlocks.CUT_RED_SANDSTONE_STAIRS.get(),
+                            BVBuildingBlocks.QUARTZ_BRICK_STAIRS.get(),
+                            BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_STAIRS.get(),
+                            BVBuildingBlocks.NETHERRACK_STAIRS.get(),
+                            BVBuildingBlocks.END_STONE_STAIRS.get(),
+                            BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(),
+                            BVBuildingBlocks.BASALT_STAIRS.get(),
+                            BVBuildingBlocks.POLISHED_BASALT_STAIRS.get(),
+                            BVColoredBlocks.TERRACOTTA_STAIRS.get(),
+                            BVBuildingBlocks.DRIPSTONE_BLOCK_STAIRS.get(),
+                            BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(),
+                            BVBuildingBlocks.CRACKED_STONE_BRICK_STAIRS.get(),
 
-                            BVBuildingBlocks.QUARTZ_BRICK_SLAB.getKey(),
-                            BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.getKey(),
-                            BVBuildingBlocks.NETHERRACK_SLAB.getKey(),
-                            BVBuildingBlocks.END_STONE_SLAB.getKey(),
-                            BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.getKey(),
-                            BVBuildingBlocks.BASALT_SLAB.getKey(),
-                            BVBuildingBlocks.POLISHED_BASALT_SLAB.getKey(),
-                            BVColoredBlocks.TERRACOTTA_SLAB.getKey(),
-                            BVBuildingBlocks.DRIPSTONE_BLOCK_SLAB.getKey(),
-                            BVBuildingBlocks.AMETHYST_BLOCK_SLAB.getKey(),
-                            BVBuildingBlocks.CRACKED_STONE_BRICK_SLAB.getKey(),
+                            BVBuildingBlocks.QUARTZ_BRICK_SLAB.get(),
+                            BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_SLAB.get(),
+                            BVBuildingBlocks.NETHERRACK_SLAB.get(),
+                            BVBuildingBlocks.END_STONE_SLAB.get(),
+                            BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(),
+                            BVBuildingBlocks.BASALT_SLAB.get(),
+                            BVBuildingBlocks.POLISHED_BASALT_SLAB.get(),
+                            BVColoredBlocks.TERRACOTTA_SLAB.get(),
+                            BVBuildingBlocks.DRIPSTONE_BLOCK_SLAB.get(),
+                            BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(),
+                            BVBuildingBlocks.CRACKED_STONE_BRICK_SLAB.get(),
 
-                            BVOtherBlocks.POLISHED_DIORITE_WALL.getKey(),
-                            BVOtherBlocks.POLISHED_GRANITE_WALL.getKey(),
-                            BVOtherBlocks.POLISHED_ANDESITE_WALL.getKey(),
-                            BVOtherBlocks.STONE_WALL.getKey(),
-                            BVOtherBlocks.SMOOTH_STONE_STAIRS.getKey(),
-                            BVOtherBlocks.SMOOTH_STONE_WALL.getKey(),
-                            BVOtherBlocks.SMOOTH_SANDSTONE_WALL.getKey(),
-                            BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.getKey(),
-                            BVOtherBlocks.CUT_SANDSTONE_WALL.getKey(),
-                            BVOtherBlocks.CUT_RED_SANDSTONE_WALL.getKey(),
-                            BVBuildingBlocks.QUARTZ_WALL.getKey(),
-                            BVBuildingBlocks.QUARTZ_BRICK_WALL.getKey(),
-                            BVBuildingBlocks.SMOOTH_QUARTZ_WALL.getKey(),
-                            BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.getKey(),
-                            BVOtherBlocks.PRISMARINE_BRICK_WALL.getKey(),
-                            BVOtherBlocks.DARK_PRISMARINE_WALL.getKey(),
-                            BVBuildingBlocks.NETHERRACK_WALL.getKey(),
-                            BVBuildingBlocks.END_STONE_WALL.getKey(),
-                            BVOtherBlocks.PURPUR_WALL.getKey(),
-                            BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.getKey(),
-                            BVBuildingBlocks.BASALT_WALL.getKey(),
-                            BVBuildingBlocks.POLISHED_BASALT_WALL.getKey(),
-                            BVColoredBlocks.TERRACOTTA_WALL.getKey(),
-                            BVBuildingBlocks.DRIPSTONE_BLOCK_WALL.getKey(),
-                            BVBuildingBlocks.AMETHYST_BLOCK_WALL.getKey(),
-                            BVBuildingBlocks.CRACKED_STONE_BRICK_WALL.getKey(),
+                            BVOtherBlocks.POLISHED_DIORITE_WALL.get(),
+                            BVOtherBlocks.POLISHED_GRANITE_WALL.get(),
+                            BVOtherBlocks.POLISHED_ANDESITE_WALL.get(),
+                            BVOtherBlocks.STONE_WALL.get(),
+                            BVOtherBlocks.SMOOTH_STONE_STAIRS.get(),
+                            BVOtherBlocks.SMOOTH_STONE_WALL.get(),
+                            BVOtherBlocks.SMOOTH_SANDSTONE_WALL.get(),
+                            BVOtherBlocks.SMOOTH_RED_SANDSTONE_WALL.get(),
+                            BVOtherBlocks.CUT_SANDSTONE_WALL.get(),
+                            BVOtherBlocks.CUT_RED_SANDSTONE_WALL.get(),
+                            BVBuildingBlocks.QUARTZ_WALL.get(),
+                            BVBuildingBlocks.QUARTZ_BRICK_WALL.get(),
+                            BVBuildingBlocks.SMOOTH_QUARTZ_WALL.get(),
+                            BVBuildingBlocks.CHISELED_QUARTZ_BLOCK_WALL.get(),
+                            BVOtherBlocks.PRISMARINE_BRICK_WALL.get(),
+                            BVOtherBlocks.DARK_PRISMARINE_WALL.get(),
+                            BVBuildingBlocks.NETHERRACK_WALL.get(),
+                            BVBuildingBlocks.END_STONE_WALL.get(),
+                            BVOtherBlocks.PURPUR_WALL.get(),
+                            BVBuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(),
+                            BVBuildingBlocks.BASALT_WALL.get(),
+                            BVBuildingBlocks.POLISHED_BASALT_WALL.get(),
+                            BVColoredBlocks.TERRACOTTA_WALL.get(),
+                            BVBuildingBlocks.DRIPSTONE_BLOCK_WALL.get(),
+                            BVBuildingBlocks.AMETHYST_BLOCK_WALL.get(),
+                            BVBuildingBlocks.CRACKED_STONE_BRICK_WALL.get(),
 
-                            BVBuildingBlocks.CALCITE_STAIRS.getKey(),
-                            BVBuildingBlocks.CALCITE_SLAB.getKey(),
-                            BVBuildingBlocks.CALCITE_WALL.getKey(),
-                            BVBuildingBlocks.SMOOTH_BASALT_STAIRS.getKey(),
-                            BVBuildingBlocks.SMOOTH_BASALT_SLAB.getKey(),
-                            BVBuildingBlocks.SMOOTH_BASALT_WALL.getKey(),
+                            BVBuildingBlocks.CALCITE_STAIRS.get(),
+                            BVBuildingBlocks.CALCITE_SLAB.get(),
+                            BVBuildingBlocks.CALCITE_WALL.get(),
+                            BVBuildingBlocks.SMOOTH_BASALT_STAIRS.get(),
+                            BVBuildingBlocks.SMOOTH_BASALT_SLAB.get(),
+                            BVBuildingBlocks.SMOOTH_BASALT_WALL.get(),
 
-                            BVBuildingBlocks.DEEPSLATE_STAIRS.getKey(),
-                            BVBuildingBlocks.DEEPSLATE_SLAB.getKey(),
-                            BVBuildingBlocks.DEEPSLATE_WALL.getKey(),
-                            BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.getKey(),
-                            BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.getKey(),
-                            BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL.getKey(),
-                            BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.getKey(),
-                            BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_SLAB.getKey(),
-                            BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL.getKey(),
+                            BVBuildingBlocks.DEEPSLATE_STAIRS.get(),
+                            BVBuildingBlocks.DEEPSLATE_SLAB.get(),
+                            BVBuildingBlocks.DEEPSLATE_WALL.get(),
+                            BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(),
+                            BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(),
+                            BVBuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL.get(),
+                            BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_STAIRS.get(),
+                            BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_SLAB.get(),
+                            BVBuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL.get(),
 
-                            BVBuildingBlocks.NETHER_BRICK_FENCE_GATE.getKey(),
-                            BVBuildingBlocks.CRACKED_NETHER_BRICK_STAIRS.getKey(),
-                            BVBuildingBlocks.CRACKED_NETHER_BRICK_SLAB.getKey(),
-                            BVBuildingBlocks.CRACKED_NETHER_BRICK_WALL.getKey(),
-                            BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE.getKey(),
-                            BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.getKey(),
-                            BVBuildingBlocks.RED_NETHER_BRICK_FENCE.getKey(),
-                            BVBuildingBlocks.RED_NETHER_BRICK_FENCE_GATE.getKey(),
+                            BVBuildingBlocks.NETHER_BRICK_FENCE_GATE.get(),
+                            BVBuildingBlocks.CRACKED_NETHER_BRICK_STAIRS.get(),
+                            BVBuildingBlocks.CRACKED_NETHER_BRICK_SLAB.get(),
+                            BVBuildingBlocks.CRACKED_NETHER_BRICK_WALL.get(),
+                            BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE.get(),
+                            BVBuildingBlocks.CRACKED_NETHER_BRICK_FENCE_GATE.get(),
+                            BVBuildingBlocks.RED_NETHER_BRICK_FENCE.get(),
+                            BVBuildingBlocks.RED_NETHER_BRICK_FENCE_GATE.get(),
 
-                            BVBuildingBlocks.OBSIDIAN_STAIRS.getKey(),
-                            BVBuildingBlocks.OBSIDIAN_SLAB.getKey(),
-                            BVBuildingBlocks.OBSIDIAN_WALL.getKey(),
-                            BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.getKey(),
-                            BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.getKey(),
-                            BVBuildingBlocks.CRYING_OBSIDIAN_WALL.getKey(),
+                            BVBuildingBlocks.OBSIDIAN_STAIRS.get(),
+                            BVBuildingBlocks.OBSIDIAN_SLAB.get(),
+                            BVBuildingBlocks.OBSIDIAN_WALL.get(),
+                            BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get(),
+                            BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get(),
+                            BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get(),
 
-                            BVBuildingBlocks.PACKED_MUD_STAIRS.getKey(),
-                            BVBuildingBlocks.PACKED_MUD_SLAB.getKey(),
-                            BVBuildingBlocks.PACKED_MUD_WALL.getKey(),
+                            BVBuildingBlocks.PACKED_MUD_STAIRS.get(),
+                            BVBuildingBlocks.PACKED_MUD_SLAB.get(),
+                            BVBuildingBlocks.PACKED_MUD_WALL.get(),
 
-                            BVOtherBlocks.GOLD_GRATE.getKey()
+                            BVOtherBlocks.GOLD_GRATE.get()
                     )
-                    .addAll(BVBlockItemIds.DYED_TERRACOTTA_STAIRS.asList().stream().map(BlockItemId::block))
-                    .addAll(BVBlockItemIds.DYED_TERRACOTTA_SLAB.asList().stream().map(BlockItemId::block))
-                    .addAll(BVBlockItemIds.DYED_TERRACOTTA_WALL.asList().stream().map(BlockItemId::block))
-                    .addAll(BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS.asList().stream().map(BlockItemId::block))
-                    .addAll(BVBlockItemIds.GLAZED_TERRACOTTA_SLAB.asList().stream().map(BlockItemId::block))
-                    .addAll(BVBlockItemIds.GLAZED_TERRACOTTA_WALL.asList().stream().map(BlockItemId::block))
+                    .addAll(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.asList().stream().map(Supplier::get))
+                    .addAll(BVColoredBlocks.DYED_TERRACOTTA_SLAB.asList().stream().map(Supplier::get))
+                    .addAll(BVColoredBlocks.DYED_TERRACOTTA_WALL.asList().stream().map(Supplier::get))
+                    .addAll(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.asList().stream().map(Supplier::get))
+                    .addAll(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.asList().stream().map(Supplier::get))
+                    .addAll(BVColoredBlocks.GLAZED_TERRACOTTA_WALL.asList().stream().map(Supplier::get))
                     // minecraft:walls seems to be part of mineable with pickaxe
                     .remove(BVTags.Blocks.WOOL_WALLS);
         } // needs Pickaxe
 
         {
             var minableWithAxe = tag(BlockTags.MINEABLE_WITH_AXE).add(
-                    BVBuildingBlocks.BAMBOO_BLOCK_STAIRS.getKey(),
-                    BVBuildingBlocks.BAMBOO_BLOCK_SLAB.getKey(),
-                    BVBuildingBlocks.BAMBOO_BLOCK_WALL.getKey(),
-                    BVBuildingBlocks.BAMBOO_BLOCK_FENCE.getKey(),
-                    BVBuildingBlocks.BAMBOO_BLOCK_FENCE_GATE.getKey(),
+                    BVBuildingBlocks.BAMBOO_BLOCK_STAIRS.get(),
+                    BVBuildingBlocks.BAMBOO_BLOCK_SLAB.get(),
+                    BVBuildingBlocks.BAMBOO_BLOCK_WALL.get(),
+                    BVBuildingBlocks.BAMBOO_BLOCK_FENCE.get(),
+                    BVBuildingBlocks.BAMBOO_BLOCK_FENCE_GATE.get(),
 
-                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_STAIRS.getKey(),
-                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_SLAB.getKey(),
-                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_WALL.getKey(),
-                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE.getKey(),
-                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.getKey()
+                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_STAIRS.get(),
+                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_SLAB.get(),
+                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_WALL.get(),
+                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE.get(),
+                    BVBuildingBlocks.STRIPPED_BAMBOO_BLOCK_FENCE_GATE.get()
             );
 
-            BVBlockItemIds.LOG_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.LOG_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_LOG_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_LOG_SLAB.forEach(id -> minableWithAxe.add(id.block()));
+            for (var collection : BVBuildingBlocks.ALL_WOODEN) {
+                collection.forEach(id -> minableWithAxe.add(id.get()));
 
-            BVBlockItemIds.WOOD_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.WOOD_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_WOOD_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
-
-            BVBlockItemIds.STEM_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STEM_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_STEM_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_STEM_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-
-            BVBlockItemIds.HYPHAE_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.HYPHAE_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_STAIRS.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_SLAB.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_WALL.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_FENCE.forEach(id -> minableWithAxe.add(id.block()));
-            BVBlockItemIds.STRIPPED_HYPHAE_FENCE_GATE.forEach(id -> minableWithAxe.add(id.block()));
+            }
         } // needs Axe
 
-        tag(BlockTags.SHEARS_MAJOR_BREAKING_SPEED).addTag(BVTags.Blocks.WOOL_WALLS);
-
         tag(BlockTags.NEEDS_IRON_TOOL).add(
-                BVOtherBlocks.GOLD_BARS.getKey(),
-                BVOtherBlocks.GOLD_CHAIN.getKey(),
-                BVOtherBlocks.GOLD_GRATE.getKey()
+                BVOtherBlocks.GOLD_BARS.get(),
+                BVOtherBlocks.GOLD_CHAIN.get(),
+                BVOtherBlocks.GOLD_GRATE.get()
         );
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
-                BVBuildingBlocks.OBSIDIAN_STAIRS.getKey(),
-                BVBuildingBlocks.OBSIDIAN_SLAB.getKey(),
-                BVBuildingBlocks.OBSIDIAN_WALL.getKey(),
-                BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.getKey(),
-                BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.getKey(),
-                BVBuildingBlocks.CRYING_OBSIDIAN_WALL.getKey()
+                BVBuildingBlocks.OBSIDIAN_STAIRS.get(),
+                BVBuildingBlocks.OBSIDIAN_SLAB.get(),
+                BVBuildingBlocks.OBSIDIAN_WALL.get(),
+                BVBuildingBlocks.CRYING_OBSIDIAN_STAIRS.get(),
+                BVBuildingBlocks.CRYING_OBSIDIAN_SLAB.get(),
+                BVBuildingBlocks.CRYING_OBSIDIAN_WALL.get()
         );
 
         tag(BlockTags.CRYSTAL_SOUND_BLOCKS).add(
-                BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.getKey(),
-                BVBuildingBlocks.AMETHYST_BLOCK_SLAB.getKey(),
-                BVBuildingBlocks.AMETHYST_BLOCK_WALL.getKey()
+                BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_WALL.get()
         );
 
         tag(BlockTags.VIBRATION_RESONATORS).add(
-                BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.getKey(),
-                BVBuildingBlocks.AMETHYST_BLOCK_SLAB.getKey(),
-                BVBuildingBlocks.AMETHYST_BLOCK_WALL.getKey()
+                BVBuildingBlocks.AMETHYST_BLOCK_STAIRS.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_SLAB.get(),
+                BVBuildingBlocks.AMETHYST_BLOCK_WALL.get()
         );
 
         tag(BlockTags.DRAGON_IMMUNE).add(
-                BVBuildingBlocks.END_STONE_STAIRS.getKey(),
-                BVBuildingBlocks.END_STONE_SLAB.getKey(),
-                BVBuildingBlocks.END_STONE_WALL.getKey()
+                BVBuildingBlocks.END_STONE_STAIRS.get(),
+                BVBuildingBlocks.END_STONE_SLAB.get(),
+                BVBuildingBlocks.END_STONE_WALL.get()
         );
     }
 }

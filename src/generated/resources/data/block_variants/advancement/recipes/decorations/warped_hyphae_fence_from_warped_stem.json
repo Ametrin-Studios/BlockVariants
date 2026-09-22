@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:warped_hyphae_fence_from_warped_stem"
+        "recipe": "block_variants:warped_hyphae_fence_from_warped_stem"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

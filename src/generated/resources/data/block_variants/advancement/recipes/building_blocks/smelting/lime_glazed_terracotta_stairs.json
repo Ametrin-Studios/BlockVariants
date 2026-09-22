@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:smelting/lime_glazed_terracotta_stairs"
+        "recipe": "block_variants:smelting/lime_glazed_terracotta_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

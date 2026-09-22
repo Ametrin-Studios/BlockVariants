@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:smelting/smooth_quartz_stairs"
+        "recipe": "block_variants:smelting/smooth_quartz_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

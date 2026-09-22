@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:stonecutting/cracked_deepslate_tile_slab"
+        "recipe": "block_variants:stonecutting/cracked_deepslate_tile_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

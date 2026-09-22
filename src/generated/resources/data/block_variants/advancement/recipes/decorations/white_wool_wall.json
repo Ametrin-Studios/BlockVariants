@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:white_wool_wall"
+        "recipe": "block_variants:white_wool_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

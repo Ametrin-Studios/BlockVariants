@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:stripped_warped_hyphae_slab"
+        "recipe": "block_variants:stripped_warped_hyphae_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

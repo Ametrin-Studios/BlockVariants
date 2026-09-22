@@ -1,13 +1,14 @@
 package com.barion.block_variants;
 
+import com.ametrinstudios.ametrin.data.provider.CustomLootTableProvider;
+import com.ametrinstudios.ametrin.util.ColorCollection;
 import com.ametrinstudios.ametrin.util.VanillaCompat;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.data.provider.*;
+import com.barion.block_variants.data.provider.loot_table.BVBlockLootProvider;
 import com.barion.block_variants.registry.*;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.logging.LogUtils;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -39,6 +40,8 @@ public final class BlockVariants {
     }
 
     private static void setup(final FMLCommonSetupEvent event) {
+        BVColoredBlocks.WOOL_STAIRS.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
+        BVColoredBlocks.WOOL_SLAB.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
         BVColoredBlocks.WOOL_WALL.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
 
         BVBuildingBlocks.queryWooden(ImmutableSet.copyOf(WoodTypeCollection.VANILLA_OVERWORLD_TYPES)).forEach(b -> VanillaCompat.Flammable.addLog(b.get()));
@@ -82,19 +85,24 @@ public final class BlockVariants {
         if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             var lastColor = BVColoredBlocks.GAMEPLAY_COLOR_ORDER.getLast();
             BVColoredBlocks.GAMEPLAY_COLOR_ORDER.reversed().forEach(color -> {
-                event.insertAfter(Items.WOOL_SLAB.pick(lastColor).getDefaultInstance(), BVColoredBlocks.WOOL_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-                event.insertAfter(Items.CONCRETE_SLAB.pick(lastColor).getDefaultInstance(), BVColoredBlocks.CONCRETE_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(ColorCollection.WOOL.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.WOOL_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.WOOL_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.WOOL_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.WOOL_SLAB.pick(lastColor).toStack(), BVColoredBlocks.WOOL_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-                event.insertAfter(Items.DYED_TERRACOTTA.pick(lastColor).getDefaultInstance(), BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(ColorCollection.CONCRETE.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.CONCRETE_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.CONCRETE_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.CONCRETE_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(BVColoredBlocks.CONCRETE_SLAB.pick(lastColor).toStack(), BVColoredBlocks.CONCRETE_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+                event.insertAfter(ColorCollection.DYED_TERRACOTTA.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.DYED_TERRACOTTA_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-                event.insertAfter(Items.GLAZED_TERRACOTTA.pick(lastColor).getDefaultInstance(), BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.insertAfter(ColorCollection.GLAZED_TERRACOTTA.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 event.insertAfter(BVColoredBlocks.GLAZED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 event.insertAfter(BVColoredBlocks.GLAZED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.GLAZED_TERRACOTTA_WALL.pick(color).toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             });
 
-            event.insertAfter(Items.DYED_TERRACOTTA.pick(lastColor).getDefaultInstance(), BVColoredBlocks.TERRACOTTA_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(ColorCollection.DYED_TERRACOTTA.pick(lastColor).asItem().getDefaultInstance(), BVColoredBlocks.TERRACOTTA_STAIRS.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_STAIRS.pick(lastColor).toStack(), BVColoredBlocks.TERRACOTTA_SLAB.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(BVColoredBlocks.DYED_TERRACOTTA_SLAB.pick(lastColor).toStack(), BVColoredBlocks.TERRACOTTA_WALL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
@@ -109,16 +117,12 @@ public final class BlockVariants {
     }
 
     private static void gatherData(GatherDataEvent.Client event) {
-
-        event.createReloadableRegistryObjects(new RegistrySetBuilder()
-                .add(Registries.LOOT_TABLE, BVLootTableProvider.create())
-                .add(BVRecipeProvider.create())
-        );
-
         event.createProvider(BVModelProvider::new);
+        event.createProvider(BVRecipeProvider.Runner::new);
         event.createProvider(BVDataMapProvider::new);
         event.createProvider(BVBlockTagsProvider::new);
         event.createProvider(BVItemTagsProvider::new);
         event.createProvider(BVLanguageProvider::new);
+        event.createProvider(CustomLootTableProvider.builder().addBlockProvider(BVBlockLootProvider::new)::build);
     }
 }

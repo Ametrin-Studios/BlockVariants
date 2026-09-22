@@ -1,17 +1,17 @@
 package com.barion.block_variants.data.provider;
 
 import com.ametrinstudios.ametrin.data.provider.ExtendedRecipeProvider;
+import com.ametrinstudios.ametrin.util.ColorCollection;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.*;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.MultiRegistryBootstrap;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamilies;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
@@ -19,14 +19,14 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ColorCollection;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 public final class BVRecipeProvider extends ExtendedRecipeProvider {
-    public BVRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
-        super(BlockVariants.MOD_ID, recipeOutput, advancementOutput, BVBlockFamilies.MAP);
+    public BVRecipeProvider(HolderLookup.Provider registries, RecipeOutput output, Set<Identifier> known) {
+        super(BlockVariants.MOD_ID, registries, output, known, BVBlockFamilies.MAP);
     }
 
     @Override
@@ -140,26 +140,24 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         family(BVBlockFamilies.CRYING_OBSIDIAN).generate();
 
         family(BVBlockFamilies.TERRACOTTA).generate();
-        ColorCollection.VALUES.forEach(color -> {
-            var dyed = BVBlockFamilies.DYED_TERRACOTTA.pick(color);
-            var glazed = BVBlockFamilies.GLAZED_TERRACOTTA.pick(color);
+        ColorCollection.zipApply(BVBlockFamilies.DYED_TERRACOTTA, BVBlockFamilies.GLAZED_TERRACOTTA, (dyed, glazed) -> {
             family(dyed).generate();
             family(glazed).generate()
                     .generateSmeltingConversions(dyed)
             ;
         });
 
-        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.WOOL_WALL.pick(color).get(), Blocks.WOOL.pick(color), false));
+        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.WOOL_WALL.pick(color).get(), ColorCollection.WOOL.pick(color), false));
 
         ColorCollection.VALUES.forEach(color -> {
-            var dyeItem = Items.DYE.pick(color);
+            var dyeItem = ColorCollection.DYE.pick(color);
             var result = BVColoredBlocks.WOOL_WALL.pick(color);
             shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
         });
 
         family(BVBlockFamilies.PACKED_MUD).generate();
 
-        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get(), Blocks.CONCRETE.pick(color), true));
+        ColorCollection.VALUES.forEach(color -> wall(BVColoredBlocks.CONCRETE_WALL.pick(color).get(), ColorCollection.CONCRETE.pick(color), true));
 
         shaped(RecipeCategory.DECORATIONS, BVOtherBlocks.GOLD_BARS, 16)
                 .define('#', Items.GOLD_INGOT)
@@ -251,17 +249,20 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(BlockVariants.MOD_ID, getItemName(item)));
     }
 
-    public static MultiRegistryBootstrap create() {
-        return new MultiRegistryBootstrap() {
-            @Override
-            public Set<ResourceKey<? extends Registry<?>>> requestedRegistries() {
-                return Set.of(Registries.RECIPE, Registries.ADVANCEMENT);
-            }
+    public static class Runner extends ExtendedRecipeProvider.Runner {
 
-            @Override
-            public void run(MultiRegistryBootstrap.BootstrapGetter registries) {
-                new BVRecipeProvider(registries.get(Registries.RECIPE), registries.get(Registries.ADVANCEMENT)).buildRecipes();
-            }
-        };
+        public Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries) {
+            super(packOutput, registries);
+        }
+
+        @Override
+        protected ExtendedRecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput, Set<Identifier> set) {
+            return new BVRecipeProvider(provider, recipeOutput, set);
+        }
+
+        @Override
+        public String getName() {
+            return "Block Variants Recipe Provider";
+        }
     }
 }

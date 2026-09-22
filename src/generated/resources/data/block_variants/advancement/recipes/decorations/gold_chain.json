@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:gold_chain"
+        "recipe": "block_variants:gold_chain"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

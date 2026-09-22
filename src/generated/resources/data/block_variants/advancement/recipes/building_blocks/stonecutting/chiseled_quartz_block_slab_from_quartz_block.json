@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:stonecutting/chiseled_quartz_block_slab_from_quartz_block"
+        "recipe": "block_variants:stonecutting/chiseled_quartz_block_slab_from_quartz_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

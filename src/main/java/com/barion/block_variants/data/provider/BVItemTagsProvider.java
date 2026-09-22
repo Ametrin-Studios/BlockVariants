@@ -1,18 +1,22 @@
 package com.barion.block_variants.data.provider;
 
-import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.data.provider.ExtendedItemTagsProvider;
 import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.registry.BVBlockItemIds;
+import com.barion.block_variants.registry.BVBuildingBlocks;
 import com.barion.block_variants.registry.BVItems;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import com.barion.block_variants.registry.BVTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.BlockItemTagsProvider;
+import net.minecraft.data.tags.TagAppender;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.common.Tags;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("unchecked")
@@ -25,32 +29,22 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
     protected void addTags(HolderLookup.Provider lookupProvider) {
         runRules(BVItems.REGISTER);
 
-        new BVBlockItemTagsProvider(tags -> BlockItemTagsProvider.wrapForItems(tag(tags.item()))).run();
-
+        new BVBlockItemTagsProvider() {
+            @Override
+            protected TagAppender<Block, Block> tag(TagKey<Block> blockTag, TagKey<Item> itemTag) {
+                return new BlockToItemConverter(BVItemTagsProvider.this.tag(itemTag));
+            }
+        }.run();
         tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
 
         tag(ItemTags.PIGLIN_LOVED).add(
-                DataProviderExtensions.getItemResourceKey(BVOtherBlocks.GOLD_BARS),
-                DataProviderExtensions.getItemResourceKey(BVOtherBlocks.GOLD_CHAIN),
-                DataProviderExtensions.getItemResourceKey(BVOtherBlocks.GOLD_GRATE)
+                BVOtherBlocks.GOLD_BARS.asItem(),
+                BVOtherBlocks.GOLD_CHAIN.asItem(),
+                BVOtherBlocks.GOLD_GRATE.asItem()
         );
 
         var non_flammable_wood = tag(ItemTags.NON_FLAMMABLE_WOOD);
 
-        BVBlockItemIds.STEM_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STEM_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STRIPPED_STEM_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STRIPPED_STEM_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
-
-        BVBlockItemIds.HYPHAE_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.HYPHAE_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.HYPHAE_WALL.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.HYPHAE_FENCE.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.HYPHAE_FENCE_GATE.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STRIPPED_HYPHAE_STAIRS.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STRIPPED_HYPHAE_SLAB.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STRIPPED_HYPHAE_WALL.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STRIPPED_HYPHAE_FENCE.forEach(id -> non_flammable_wood.add(id.item()));
-        BVBlockItemIds.STRIPPED_HYPHAE_FENCE_GATE.forEach(id -> non_flammable_wood.add(id.item()));
+        BVBuildingBlocks.queryWooden(Set.of(WoodType.CRIMSON, WoodType.WARPED)).forEach(block -> non_flammable_wood.add(block.asItem()));
     }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "block_variants:stripped_mangrove_wood_fence_from_stripped_mangrove_log"
+        "recipe": "block_variants:stripped_mangrove_wood_fence_from_stripped_mangrove_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

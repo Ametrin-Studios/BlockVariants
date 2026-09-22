@@ -6,7 +6,6 @@ import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.barion.block_variants.BlockVariants;
 import com.barion.block_variants.registry.BVBlockFamilies;
 import com.barion.block_variants.registry.BVBuildingBlocks;
-import com.barion.block_variants.registry.BVColoredBlocks;
 import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -17,7 +16,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ColorCollection;
 
 public final class BVModelProvider extends ExtendedModelProvider {
     public static final ModelTemplate LOG_STAIRS_STRAIGHT = ModelTemplates.create("block_variants:log_stairs", TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.SIDE);
@@ -96,11 +94,11 @@ public final class BVModelProvider extends ExtendedModelProvider {
 
         BVBlockFamilies.GLAZED_TERRACOTTA.forEach(family -> blockModels.familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family));
 
-        ColorCollection.zipApply(Blocks.WOOL, BVColoredBlocks.WOOL_WALL, (base, wall) -> blockModels.familyWithExistingFullBlock(base).wall(wall.get()));
+        BVBlockFamilies.WOOL.forEach(family -> blockModels.familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family));
 
         blockModels.familyWithExistingFullBlock(Blocks.PACKED_MUD).generateFor(BVBlockFamilies.PACKED_MUD);
 
-        ColorCollection.zipApply(Blocks.CONCRETE, BVColoredBlocks.CONCRETE_WALL, (base, wall) -> blockModels.familyWithExistingFullBlock(base).wall(wall.get()));
+        BVBlockFamilies.CONCRETE.forEach(family -> blockModels.familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family));
 
         createBarsAndItem(blockModels, BVOtherBlocks.GOLD_BARS.get());
         createChain(blockModels, BVOtherBlocks.GOLD_CHAIN.get());
