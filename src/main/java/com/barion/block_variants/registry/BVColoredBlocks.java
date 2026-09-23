@@ -20,9 +20,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.slabProperties;
-import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.wallProperties;
-
 public final class BVColoredBlocks {
 
     public static final DeferredRegister.Blocks REGISTER = DeferredRegister.createBlocks(BlockVariants.MOD_ID);
@@ -62,37 +59,36 @@ public final class BVColoredBlocks {
     }
 
     public static final ColorCollection<DeferredBlock<WallBlock>> WOOL_WALL = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.WOOL_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.WOOL.pick(color)), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOL))
+            Blocks.WOOL, BVBlockItemIds.WOOL_WALL, (base, id) -> register(id.block().identifier().getPath(), WallBlock::new, base, BlockRegisterHelper::wallProperties, p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOL))
     );
 
     public static final ColorCollection<DeferredBlock<WallBlock>> CONCRETE_WALL = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.CONCRETE_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.CONCRETE.pick(color)))
+            Blocks.CONCRETE, BVBlockItemIds.CONCRETE_WALL, (base, id) -> register(id.block().identifier().getPath(), WallBlock::new, base, BlockRegisterHelper::wallProperties)
     );
 
     public static final DeferredBlock<StairBlock> TERRACOTTA_STAIRS = register("terracotta_stairs", StairBlock::new, Blocks.TERRACOTTA, BlockRegisterHelper::stairProperties);
-    public static final DeferredBlock<SlabBlock> TERRACOTTA_SLAB = register("terracotta_slab", SlabBlock::new, () -> slabProperties(Blocks.TERRACOTTA));
-    public static final DeferredBlock<WallBlock> TERRACOTTA_WALL = register("terracotta_wall", WallBlock::new, () -> wallProperties(Blocks.TERRACOTTA));
+    public static final DeferredBlock<SlabBlock> TERRACOTTA_SLAB = register("terracotta_slab", SlabBlock::new, Blocks.TERRACOTTA, BlockRegisterHelper::slabProperties);
+    public static final DeferredBlock<WallBlock> TERRACOTTA_WALL = register("terracotta_wall", WallBlock::new, Blocks.TERRACOTTA, BlockRegisterHelper::wallProperties);
 
     public static final ColorCollection<DeferredBlock<StairBlock>> DYED_TERRACOTTA_STAIRS = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.DYED_TERRACOTTA_STAIRS, (color, id) -> register(id.block().identifier().getPath(), StairBlock::new, Blocks.DYED_TERRACOTTA.pick(color), BlockRegisterHelper::slabProperties)
+            Blocks.DYED_TERRACOTTA, BVBlockItemIds.DYED_TERRACOTTA_STAIRS, (base, id) -> register(id.block().identifier().getPath(), StairBlock::new, base, BlockRegisterHelper::slabProperties)
     );
     public static final ColorCollection<DeferredBlock<SlabBlock>> DYED_TERRACOTTA_SLAB = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.DYED_TERRACOTTA_SLAB, (color, id) -> register(id.block().identifier().getPath(), SlabBlock::new, () -> slabProperties(Blocks.DYED_TERRACOTTA.pick(color)))
+            Blocks.DYED_TERRACOTTA, BVBlockItemIds.DYED_TERRACOTTA_SLAB, (base, id) -> register(id.block().identifier().getPath(), SlabBlock::new, base, BlockRegisterHelper::slabProperties)
     );
     public static final ColorCollection<DeferredBlock<WallBlock>> DYED_TERRACOTTA_WALL = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.DYED_TERRACOTTA_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.DYED_TERRACOTTA.pick(color)))
+            Blocks.DYED_TERRACOTTA, BVBlockItemIds.DYED_TERRACOTTA_WALL, (base, id) -> register(id.block().identifier().getPath(), WallBlock::new, base, BlockRegisterHelper::wallProperties)
     );
 
     public static final ColorCollection<DeferredBlock<StairBlock>> GLAZED_TERRACOTTA_STAIRS = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS, (color, id) -> register(id.block().identifier().getPath(), StairBlock::new, Blocks.GLAZED_TERRACOTTA.pick(color), BlockRegisterHelper::slabProperties)
+            Blocks.GLAZED_TERRACOTTA, BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS, (base, id) -> register(id.block().identifier().getPath(), StairBlock::new, base, BlockRegisterHelper::slabProperties)
     );
     public static final ColorCollection<DeferredBlock<SlabBlock>> GLAZED_TERRACOTTA_SLAB = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.GLAZED_TERRACOTTA_SLAB, (color, id) -> register(id.block().identifier().getPath(), HorizontalRotatedSlabBlock::new, () -> slabProperties(Blocks.GLAZED_TERRACOTTA.pick(color)))
+            Blocks.GLAZED_TERRACOTTA, BVBlockItemIds.GLAZED_TERRACOTTA_SLAB, (base, id) -> register(id.block().identifier().getPath(), HorizontalRotatedSlabBlock::new, base, BlockRegisterHelper::slabProperties)
     );
     public static final ColorCollection<DeferredBlock<WallBlock>> GLAZED_TERRACOTTA_WALL = ColorCollection.zipMap(
-            ColorCollection.VALUES, BVBlockItemIds.GLAZED_TERRACOTTA_WALL, (color, id) -> register(id.block().identifier().getPath(), WallBlock::new, () -> wallProperties(Blocks.GLAZED_TERRACOTTA.pick(color)))
+            Blocks.GLAZED_TERRACOTTA, BVBlockItemIds.GLAZED_TERRACOTTA_WALL, (base, id) -> register(id.block().identifier().getPath(), WallBlock::new, base, BlockRegisterHelper::wallProperties)
     );
-
 
     private static <T extends Block> DeferredBlock<T> register(String name, BiFunction<BlockState, BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties) {
         return register(name, block, base, properties, UnaryOperator.identity());
@@ -102,18 +98,16 @@ public final class BVColoredBlocks {
         return register(name, prop -> block.apply(base.defaultBlockState(), prop), () -> properties.apply(base), itemProperties);
     }
 
-    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, UnaryOperator<BlockBehaviour.Properties> properties) {
-        return register(name, block, properties, UnaryOperator.identity());
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties) {
+        return register(name, block, base, properties, UnaryOperator.identity());
+    }
+
+    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Block base, Function<Block, BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
+        return register(name, block, () -> properties.apply(base), itemProperties);
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
         return register(name, block, properties, UnaryOperator.identity());
-    }
-
-    private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, UnaryOperator<BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {
-        var registryObject = REGISTER.registerBlock(name, block, properties);
-        BVItems.REGISTER.registerSimpleBlockItem(registryObject, itemProperties);
-        return registryObject;
     }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties, UnaryOperator<Item.Properties> itemProperties) {

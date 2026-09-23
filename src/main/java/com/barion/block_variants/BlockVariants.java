@@ -109,7 +109,6 @@ public final class BlockVariants {
     }
 
     private static void gatherData(GatherDataEvent.Client event) {
-
         event.createReloadableRegistryObjects(new RegistrySetBuilder()
                 .add(Registries.LOOT_TABLE, BVLootTableProvider.create())
                 .add(BVRecipeProvider.create())
