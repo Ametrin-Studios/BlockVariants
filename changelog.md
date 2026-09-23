@@ -1,3 +1,7 @@
+## 7.1.1
+
+- dyeing recipe fixes
+
 ## 7.1.0
 - add Poplar Log/Wood variants
 - remove Wool Stairs/Slabs (existing blocks/items will be converted to vanilla blocks)

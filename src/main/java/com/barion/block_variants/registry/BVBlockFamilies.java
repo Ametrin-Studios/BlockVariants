@@ -254,6 +254,7 @@ public final class BVBlockFamilies {
             .generateStonecutterRecipe()
             .getFamily();
 
+
     private static BlockFamily logFamily(BlockFamily.Builder builder) {
         var family = builder.getFamily();
         validateLogFamily(family);

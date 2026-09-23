@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_terracotta_wall",
+  "key": {
+    "#": "block_variants:terracotta_wall",
+    "X": "minecraft:pink_dye"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "block_variants:pink_terracotta_wall"
+  }
+}

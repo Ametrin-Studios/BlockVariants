@@ -149,17 +149,27 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
             ;
         });
 
+        ColorCollection.zipApply(Items.DYE, BVColoredBlocks.DYED_TERRACOTTA_STAIRS, (dye, stairs) -> {
+            dyeing8(RecipeCategory.BUILDING_BLOCKS, stairs, BVColoredBlocks.TERRACOTTA_STAIRS, dye, "stained_terracotta_stairs");
+        });
+
+        ColorCollection.zipApply(Items.DYE, BVColoredBlocks.DYED_TERRACOTTA_SLAB, (dye, slab) -> {
+            dyeing8(RecipeCategory.BUILDING_BLOCKS, slab, BVColoredBlocks.TERRACOTTA_SLAB, dye, "stained_terracotta_slab");
+        });
+
+        ColorCollection.zipApply(Items.DYE, BVColoredBlocks.DYED_TERRACOTTA_WALL, (dye, wall) -> {
+            dyeing8(RecipeCategory.DECORATIONS, wall, BVColoredBlocks.TERRACOTTA_WALL, dye, "stained_terracotta_wall");
+        });
+
         ColorCollection.zipApply(Blocks.WOOL, BVColoredBlocks.WOOL_WALL, (base, wall) -> wall(wall, base, false));
         ColorCollection.zipApply(Items.DYE, BVColoredBlocks.WOOL_WALL, (dyeItem, result) -> {
-            shapeless(RecipeCategory.DECORATIONS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
+            shapeless(RecipeCategory.DECORATIONS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_wool_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, dyeingRecipeID(result, dyeItem));
         });
 
         family(BVBlockFamilies.PACKED_MUD).generate();
 
         ColorCollection.zipApply(Blocks.CONCRETE, BVColoredBlocks.CONCRETE_WALL, (base, wall) -> wall(wall, base, true));
-        ColorCollection.zipApply(Items.DYE, BVColoredBlocks.CONCRETE_WALL, (dyeItem, result) -> {
-            shapeless(RecipeCategory.DECORATIONS, result).requires(BVTags.Items.WOOL_WALLS).requires(dyeItem).group("dye_concrete_walls").unlockedBy("has_needed_dye", has(dyeItem)).save(output, ResourceKey.create(Registries.RECIPE, this.locate("dye_" + getItemName(result))));
-        });
+        // concrete cannot be dyed, only powdered concrete
 
         shaped(RecipeCategory.DECORATIONS, BVOtherBlocks.GOLD_BARS, 16)
                 .define('#', Items.GOLD_INGOT)

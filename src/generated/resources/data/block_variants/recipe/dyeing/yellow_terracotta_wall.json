@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_terracotta_wall",
+  "key": {
+    "#": "block_variants:terracotta_wall",
+    "X": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "block_variants:yellow_terracotta_wall"
+  }
+}
