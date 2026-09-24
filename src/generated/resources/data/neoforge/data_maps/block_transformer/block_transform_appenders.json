@@ -1,0 +1,1636 @@
+{
+  "values": {
+    "minecraft:axe": [
+      {
+        "block_state_provider": {
+          "type": "minecraft:rule_based",
+          "rules": [
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:bamboo_block_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_bamboo_block_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:bamboo_block_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_bamboo_block_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:bamboo_block_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_bamboo_block_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:bamboo_block_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_bamboo_block_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:bamboo_block_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_bamboo_block_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:bamboo_block_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_bamboo_block_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:oak_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_oak_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:spruce_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_spruce_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:birch_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_birch_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:jungle_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_jungle_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:acacia_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_acacia_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:dark_oak_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_dark_oak_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:mangrove_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_mangrove_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:cherry_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_cherry_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:pale_oak_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_pale_oak_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:poplar_log_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_poplar_log_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:oak_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_oak_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:spruce_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_spruce_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:birch_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_birch_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:jungle_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_jungle_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:acacia_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_acacia_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:dark_oak_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_dark_oak_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:mangrove_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_mangrove_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:cherry_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_cherry_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:pale_oak_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_pale_oak_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:poplar_log_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_poplar_log_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:oak_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_oak_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:spruce_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_spruce_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:birch_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_birch_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:jungle_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_jungle_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:acacia_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_acacia_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:dark_oak_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_dark_oak_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:mangrove_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_mangrove_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:cherry_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_cherry_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:pale_oak_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_pale_oak_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:poplar_wood_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_poplar_wood_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:oak_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_oak_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:spruce_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_spruce_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:birch_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_birch_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:jungle_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_jungle_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:acacia_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_acacia_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:dark_oak_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_dark_oak_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:mangrove_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_mangrove_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:cherry_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_cherry_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:pale_oak_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_pale_oak_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:poplar_wood_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_poplar_wood_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:oak_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_oak_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:spruce_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_spruce_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:birch_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_birch_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:jungle_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_jungle_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:acacia_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_acacia_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:dark_oak_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_dark_oak_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:mangrove_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_mangrove_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:cherry_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_cherry_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:pale_oak_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_pale_oak_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:poplar_wood_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_poplar_wood_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:oak_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_oak_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:spruce_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_spruce_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:birch_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_birch_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:jungle_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_jungle_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:acacia_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_acacia_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:dark_oak_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_dark_oak_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:mangrove_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_mangrove_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:cherry_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_cherry_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:pale_oak_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_pale_oak_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:poplar_wood_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_poplar_wood_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:oak_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_oak_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:spruce_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_spruce_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:birch_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_birch_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:jungle_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_jungle_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:acacia_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_acacia_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:dark_oak_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_dark_oak_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:mangrove_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_mangrove_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:cherry_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_cherry_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:pale_oak_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_pale_oak_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:poplar_wood_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_poplar_wood_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:crimson_stem_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_crimson_stem_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:warped_stem_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_warped_stem_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:crimson_stem_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_crimson_stem_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:warped_stem_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_warped_stem_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:crimson_hyphae_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_crimson_hyphae_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:warped_hyphae_stairs"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_warped_hyphae_stairs",
+                  "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:crimson_hyphae_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_crimson_hyphae_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:warped_hyphae_slab"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_warped_hyphae_slab",
+                  "properties": {
+                    "type": "bottom",
+                    "axis": "x",
+                    "waterlogged": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:crimson_hyphae_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_crimson_hyphae_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:warped_hyphae_wall"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_warped_hyphae_wall",
+                  "properties": {
+                    "east": "none",
+                    "north": "none",
+                    "south": "none",
+                    "up": "true",
+                    "waterlogged": "false",
+                    "west": "none"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:crimson_hyphae_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_crimson_hyphae_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:warped_hyphae_fence"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_warped_hyphae_fence",
+                  "properties": {
+                    "east": "false",
+                    "north": "false",
+                    "south": "false",
+                    "waterlogged": "false",
+                    "west": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:crimson_hyphae_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_crimson_hyphae_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            },
+            {
+              "if_true": {
+                "type": "minecraft:matching_blocks",
+                "blocks": "block_variants:warped_hyphae_fence_gate"
+              },
+              "then": {
+                "type": "minecraft:copy_properties",
+                "source": {
+                  "id": "block_variants:stripped_warped_hyphae_fence_gate",
+                  "properties": {
+                    "facing": "north",
+                    "in_wall": "false",
+                    "open": "false",
+                    "powered": "false"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "item_damage_per_use": 1,
+        "sound": "minecraft:item.axe.strip"
+      }
+    ]
+  }
+}
