@@ -1,6 +1,6 @@
 ## 7.1.1
-
 - dyeing recipe fixes
+- NeoForge compatibility
 
 ## 7.1.0
 - add Poplar Log/Wood variants
