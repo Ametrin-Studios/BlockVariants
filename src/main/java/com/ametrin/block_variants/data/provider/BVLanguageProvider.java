@@ -1,10 +1,10 @@
-package com.barion.block_variants.data.provider;
+package com.ametrin.block_variants.data.provider;
 
+import com.ametrin.block_variants.BlockVariants;
+import com.ametrin.block_variants.registry.BVItems;
+import com.ametrin.block_variants.registry.BVOtherBlocks;
+import com.ametrin.block_variants.registry.BVTags;
 import com.ametrinstudios.ametrin.data.provider.ExtendedLanguageProvider;
-import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.registry.BVItems;
-import com.barion.block_variants.registry.BVOtherBlocks;
-import com.barion.block_variants.registry.BVTags;
 import net.minecraft.data.PackOutput;
 
 public final class BVLanguageProvider extends ExtendedLanguageProvider {

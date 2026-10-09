@@ -1,7 +1,7 @@
-package com.barion.block_variants.data.provider.loot_table;
+package com.ametrin.block_variants.data.provider.loot_table;
 
+import com.ametrin.block_variants.BlockVariants;
 import com.ametrinstudios.ametrin.data.provider.loot_table.ExtendedBlockLootSubProvider;
-import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.world.level.block.Block;
 

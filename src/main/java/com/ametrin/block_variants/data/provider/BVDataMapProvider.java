@@ -1,7 +1,7 @@
-package com.barion.block_variants.data.provider;
+package com.ametrin.block_variants.data.provider;
 
+import com.ametrin.block_variants.registry.BVBuildingBlocks;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
-import com.barion.block_variants.registry.BVBuildingBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.BlockTransformer;
 import net.minecraft.data.PackOutput;

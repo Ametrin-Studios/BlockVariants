@@ -1,9 +1,9 @@
-package com.barion.block_variants.registry;
+package com.ametrin.block_variants.registry;
 
+import com.ametrin.block_variants.BlockVariants;
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.world.block.HorizontalRotatedSlabBlock;
 import com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper;
-import com.barion.block_variants.BlockVariants;
 import net.minecraft.data.BlockFamilies;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;

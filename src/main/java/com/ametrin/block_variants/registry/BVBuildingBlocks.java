@@ -1,10 +1,10 @@
-package com.barion.block_variants.registry;
+package com.ametrin.block_variants.registry;
 
+import com.ametrin.block_variants.BlockVariants;
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
 import com.ametrinstudios.ametrin.world.block.HorizontalAxisAlignedSlabBlock;
 import com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper;
-import com.barion.block_variants.BlockVariants;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;

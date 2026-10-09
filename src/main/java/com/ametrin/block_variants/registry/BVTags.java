@@ -1,4 +1,4 @@
-package com.barion.block_variants.registry;
+package com.ametrin.block_variants.registry;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockItemTagId;

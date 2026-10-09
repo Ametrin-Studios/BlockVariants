@@ -1,13 +1,13 @@
-package com.barion.block_variants.data.provider;
+package com.ametrin.block_variants.data.provider;
 
+import com.ametrin.block_variants.BlockVariants;
+import com.ametrin.block_variants.registry.BVBlockFamilies;
+import com.ametrin.block_variants.registry.BVBuildingBlocks;
+import com.ametrin.block_variants.registry.BVColoredBlocks;
+import com.ametrin.block_variants.registry.BVOtherBlocks;
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.data.provider.ExtendedModelProvider;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
-import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.registry.BVBlockFamilies;
-import com.barion.block_variants.registry.BVBuildingBlocks;
-import com.barion.block_variants.registry.BVColoredBlocks;
-import com.barion.block_variants.registry.BVOtherBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.*;

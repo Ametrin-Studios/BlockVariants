@@ -1,7 +1,7 @@
-package com.barion.block_variants.registry;
+package com.ametrin.block_variants.registry;
 
+import com.ametrin.block_variants.BlockVariants;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
-import com.barion.block_variants.BlockVariants;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.state.properties.WoodType;

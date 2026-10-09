@@ -1,9 +1,9 @@
-package com.barion.block_variants.data.provider;
+package com.ametrin.block_variants.data.provider;
 
+import com.ametrin.block_variants.BlockVariants;
+import com.ametrin.block_variants.registry.*;
 import com.ametrinstudios.ametrin.data.provider.ExtendedBlockItemTagsProvider;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
-import com.barion.block_variants.BlockVariants;
-import com.barion.block_variants.registry.*;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.tags.BlockItemTagId;
@@ -96,12 +96,12 @@ public class BVBlockItemTagsProvider extends ExtendedBlockItemTagsProvider {
 
         // this includes mineable with pickaxe
         tag(BlockItemTags.BARS).add(
-                BlockItemId.create(BVOtherBlocks.GOLD_BARS.getKey().identifier(), BVOtherBlocks.GOLD_BARS.getKey().identifier())
+                BlockItemId.create(BVOtherBlocks.GOLD_BARS.getId(), BVOtherBlocks.GOLD_BARS.getId())
         );
 
         // this includes mineable with pickaxe
         tag(BlockItemTags.CHAINS).add(
-                BlockItemId.create(BVOtherBlocks.GOLD_CHAIN.getKey().identifier(), BVOtherBlocks.GOLD_CHAIN.getKey().identifier())
+                BlockItemId.create(BVOtherBlocks.GOLD_CHAIN.getId(), BVOtherBlocks.GOLD_CHAIN.getId())
         );
     }
 }

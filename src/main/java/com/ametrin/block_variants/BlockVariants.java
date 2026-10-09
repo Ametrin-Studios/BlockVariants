@@ -1,13 +1,10 @@
-package com.barion.block_variants;
+package com.ametrin.block_variants;
 
+import com.ametrin.block_variants.registry.*;
 import com.ametrinstudios.ametrin.util.VanillaCompat;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
-import com.barion.block_variants.data.provider.*;
-import com.barion.block_variants.registry.*;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.logging.LogUtils;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -16,7 +13,6 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import org.slf4j.Logger;
@@ -35,7 +31,6 @@ public final class BlockVariants {
         BVItems.REGISTER.register(modBus);
         modBus.addListener(BlockVariants::setup);
         modBus.addListener(BlockVariants::buildCreativeModeTabs);
-        modBus.addListener(BlockVariants::gatherData);
     }
 
     private static void setup(final FMLCommonSetupEvent event) {
@@ -106,18 +101,5 @@ public final class BlockVariants {
 
     public static Stream<DeferredHolder<Block, ? extends Block>> getAllBlocks() {
         return Stream.concat(Stream.concat(BVBuildingBlocks.REGISTER.getEntries().stream(), BVColoredBlocks.REGISTER.getEntries().stream()), BVOtherBlocks.REGISTER.getEntries().stream());
-    }
-
-    private static void gatherData(GatherDataEvent.Client event) {
-        event.createReloadableRegistryObjects(new RegistrySetBuilder()
-                .add(Registries.LOOT_TABLE, BVLootTableProvider.create())
-                .add(BVRecipeProvider.create())
-        );
-
-        event.createProvider(BVModelProvider::new);
-        event.createProvider(BVDataMapProvider::new);
-        event.createProvider(BVBlockTagsProvider::new);
-        event.createProvider(BVItemTagsProvider::new);
-        event.createProvider(BVLanguageProvider::new);
     }
 }

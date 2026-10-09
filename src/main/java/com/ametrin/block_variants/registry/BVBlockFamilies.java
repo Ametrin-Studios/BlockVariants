@@ -1,4 +1,4 @@
-package com.barion.block_variants.registry;
+package com.ametrin.block_variants.registry;
 
 import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
