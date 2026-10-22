@@ -1,0 +1,668 @@
+{
+  "values": {
+    "block_variants:acacia_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:acacia_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:acacia_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:acacia_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:acacia_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:acacia_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:acacia_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:bamboo_block_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:bamboo_block_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:bamboo_block_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:bamboo_block_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:bamboo_block_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:birch_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:birch_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:birch_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:birch_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:birch_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:birch_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:birch_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:black_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:blue_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:brown_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:cherry_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:cherry_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:cherry_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:cherry_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:cherry_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:cherry_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:cherry_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:cyan_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:dark_oak_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:dark_oak_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:dark_oak_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:dark_oak_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:dark_oak_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:dark_oak_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:dark_oak_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:gray_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:green_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:jungle_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:jungle_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:jungle_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:jungle_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:jungle_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:jungle_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:jungle_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:light_blue_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:light_gray_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:lime_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:magenta_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:mangrove_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:mangrove_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:mangrove_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:mangrove_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:mangrove_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:mangrove_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:mangrove_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:oak_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:oak_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:oak_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:oak_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:oak_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:oak_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:oak_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:orange_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:pale_oak_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:pale_oak_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:pale_oak_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:pale_oak_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:pale_oak_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:pale_oak_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:pale_oak_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:pink_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:poplar_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:poplar_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:poplar_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:poplar_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:poplar_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:poplar_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:poplar_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:purple_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:red_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:spruce_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:spruce_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:spruce_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:spruce_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:spruce_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:spruce_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:spruce_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_acacia_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_acacia_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_acacia_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_acacia_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_acacia_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_acacia_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_acacia_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_bamboo_block_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_bamboo_block_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_bamboo_block_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_bamboo_block_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_bamboo_block_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_birch_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_birch_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_birch_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_birch_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_birch_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_birch_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_birch_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_cherry_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_cherry_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_cherry_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_cherry_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_cherry_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_cherry_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_cherry_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_dark_oak_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_dark_oak_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_dark_oak_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_dark_oak_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_dark_oak_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_dark_oak_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_dark_oak_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_jungle_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_jungle_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_jungle_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_jungle_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_jungle_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_jungle_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_jungle_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_mangrove_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_mangrove_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_mangrove_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_mangrove_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_mangrove_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_mangrove_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_mangrove_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_oak_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_oak_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_oak_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_oak_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_oak_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_oak_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_oak_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_pale_oak_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_pale_oak_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_pale_oak_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_pale_oak_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_pale_oak_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_pale_oak_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_pale_oak_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_poplar_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_poplar_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_poplar_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_poplar_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_poplar_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_poplar_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_poplar_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_spruce_log_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_spruce_log_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_spruce_wood_fence": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_spruce_wood_fence_gate": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_spruce_wood_slab": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_spruce_wood_stairs": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:stripped_spruce_wood_wall": {
+      "burn_odds": 5,
+      "ignite_odds": 5
+    },
+    "block_variants:white_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    },
+    "block_variants:yellow_wool_wall": {
+      "burn_odds": 60,
+      "ignite_odds": 30
+    }
+  }
+}

@@ -1,19 +1,25 @@
 package com.ametrin.block_variants.data.provider;
 
+import com.ametrin.block_variants.registry.BVBlockFamilies;
 import com.ametrin.block_variants.registry.BVBuildingBlocks;
+import com.ametrin.block_variants.registry.BVColoredBlocks;
+import com.ametrinstudios.ametrin.data.DataProviderExtensions;
 import com.ametrinstudios.ametrin.util.WoodTypeCollection;
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.BlockTransformer;
 import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.component.BlockTransformers;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.stateproviders.CopyPropertiesProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.datamaps.builtin.BlockTransformAppender;
+import net.neoforged.neoforge.registries.datamaps.builtin.Flammable;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 
 import java.util.List;
@@ -52,6 +58,14 @@ public final class BVDataMapProvider extends DataMapProvider {
 
         builder(NeoForgeDataMaps.BLOCK_TRANSFORM_APPENDERS)
                 .add(BlockTransformers.AXE, new BlockTransformAppender(List.of(BlockTransformer.BlockTransformData.builder(strippables.build()).sound(SoundEvents.AXE_STRIP).build())), false);
+
+        var flammables = builder(NeoForgeDataMaps.FLAMMABLE);
+
+        BVColoredBlocks.WOOL_WALL.forEach(b -> flammables.add(b, new Flammable(FireBlock.IGNITE_EASY, FireBlock.BURN_EASY), false));
+
+        BVBuildingBlocks.queryWooden(ImmutableSet.copyOf(WoodTypeCollection.VANILLA_OVERWORLD_TYPES)).forEach(b -> flammables.add(b, new Flammable(FireBlock.IGNITE_HARD, FireBlock.BURN_HARD), false));
+        BVBlockFamilies.BAMBOO_BLOCK.getVariants().values().forEach(b -> flammables.add(DataProviderExtensions.getBlockResouceKey(b), new Flammable(FireBlock.IGNITE_HARD, FireBlock.BURN_HARD), false));
+        BVBlockFamilies.STRIPPED_BAMBOO_BLOCK.getVariants().values().forEach(b -> flammables.add(DataProviderExtensions.getBlockResouceKey(b), new Flammable(FireBlock.IGNITE_HARD, FireBlock.BURN_HARD), false));
     }
 
     public static void add(RuleBasedStateProvider.Builder builder, WoodTypeCollection<? extends DeferredBlock<? extends Block>> bases, WoodTypeCollection<? extends DeferredBlock<? extends Block>> stripped) {

@@ -1,9 +1,9 @@
 package com.ametrin.block_variants;
 
-import com.ametrin.block_variants.registry.*;
-import com.ametrinstudios.ametrin.util.VanillaCompat;
-import com.ametrinstudios.ametrin.util.WoodTypeCollection;
-import com.google.common.collect.ImmutableSet;
+import com.ametrin.block_variants.registry.BVBuildingBlocks;
+import com.ametrin.block_variants.registry.BVColoredBlocks;
+import com.ametrin.block_variants.registry.BVItems;
+import com.ametrin.block_variants.registry.BVOtherBlocks;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
@@ -12,7 +12,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import org.slf4j.Logger;
@@ -29,16 +28,7 @@ public final class BlockVariants {
         BVColoredBlocks.REGISTER.register(modBus);
         BVOtherBlocks.REGISTER.register(modBus);
         BVItems.REGISTER.register(modBus);
-        modBus.addListener(BlockVariants::setup);
         modBus.addListener(BlockVariants::buildCreativeModeTabs);
-    }
-
-    private static void setup(final FMLCommonSetupEvent event) {
-        BVColoredBlocks.WOOL_WALL.forEach(b -> VanillaCompat.Flammable.addWool(b.get()));
-
-        BVBuildingBlocks.queryWooden(ImmutableSet.copyOf(WoodTypeCollection.VANILLA_OVERWORLD_TYPES)).forEach(b -> VanillaCompat.Flammable.addLog(b.get()));
-        BVBlockFamilies.BAMBOO_BLOCK.getVariants().values().forEach(VanillaCompat.Flammable::addLog);
-        BVBlockFamilies.STRIPPED_BAMBOO_BLOCK.getVariants().values().forEach(VanillaCompat.Flammable::addLog);
     }
 
     public static Identifier locate(String path) {
