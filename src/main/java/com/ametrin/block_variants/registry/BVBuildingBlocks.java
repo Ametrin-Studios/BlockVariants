@@ -91,17 +91,17 @@ public final class BVBuildingBlocks {
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> STEM_STAIRS = WoodTypeCollection.VANILLA_NETHER_STEMS.map((type, log) -> {
-        return register(type.name() + "_stem_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base));
+        return register(type.name() + "_stem_stairs", StairBlock::new, log, BlockRegisterHelper::stairProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> STEM_SLAB = WoodTypeCollection.VANILLA_NETHER_STEMS.map((type, log) -> {
-        return register(type.name() + "_stem_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base));
+        return register(type.name() + "_stem_slab", SlabBlock::new, log, BlockRegisterHelper::slabProperties);
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> STRIPPED_STEM_STAIRS = WoodTypeCollection.VANILLA_NETHER_STRIPPED_STEMS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_stem_stairs", StairBlock::new, log, base -> BlockRegisterHelper.stairProperties(base));
+        return register("stripped_" + type.name() + "_stem_stairs", StairBlock::new, log, BlockRegisterHelper::stairProperties);
     });
     public static final WoodTypeCollection<DeferredBlock<SlabBlock>> STRIPPED_STEM_SLAB = WoodTypeCollection.VANILLA_NETHER_STRIPPED_STEMS.map((type, log) -> {
-        return register("stripped_" + type.name() + "_stem_slab", SlabBlock::new, log, base -> BlockRegisterHelper.slabProperties(base));
+        return register("stripped_" + type.name() + "_stem_slab", SlabBlock::new, log, BlockRegisterHelper::slabProperties);
     });
 
     public static final WoodTypeCollection<DeferredBlock<StairBlock>> WOOD_STAIRS = WoodTypeCollection.VANILLA_OVERWORLD_WOODS.map((type, log) -> {

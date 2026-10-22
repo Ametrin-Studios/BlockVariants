@@ -71,7 +71,7 @@ public final class BVColoredBlocks {
     public static final DeferredBlock<WallBlock> TERRACOTTA_WALL = register("terracotta_wall", WallBlock::new, Blocks.TERRACOTTA, BlockRegisterHelper::wallProperties);
 
     public static final ColorCollection<DeferredBlock<StairBlock>> DYED_TERRACOTTA_STAIRS = ColorCollection.zipMap(
-            Blocks.DYED_TERRACOTTA, BVBlockItemIds.DYED_TERRACOTTA_STAIRS, (base, id) -> register(id.block().identifier().getPath(), StairBlock::new, base, BlockRegisterHelper::slabProperties)
+            Blocks.DYED_TERRACOTTA, BVBlockItemIds.DYED_TERRACOTTA_STAIRS, (base, id) -> register(id.block().identifier().getPath(), StairBlock::new, base, BlockRegisterHelper::stairProperties)
     );
     public static final ColorCollection<DeferredBlock<SlabBlock>> DYED_TERRACOTTA_SLAB = ColorCollection.zipMap(
             Blocks.DYED_TERRACOTTA, BVBlockItemIds.DYED_TERRACOTTA_SLAB, (base, id) -> register(id.block().identifier().getPath(), SlabBlock::new, base, BlockRegisterHelper::slabProperties)
@@ -81,7 +81,7 @@ public final class BVColoredBlocks {
     );
 
     public static final ColorCollection<DeferredBlock<StairBlock>> GLAZED_TERRACOTTA_STAIRS = ColorCollection.zipMap(
-            Blocks.GLAZED_TERRACOTTA, BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS, (base, id) -> register(id.block().identifier().getPath(), StairBlock::new, base, BlockRegisterHelper::slabProperties)
+            Blocks.GLAZED_TERRACOTTA, BVBlockItemIds.GLAZED_TERRACOTTA_STAIRS, (base, id) -> register(id.block().identifier().getPath(), StairBlock::new, base, BlockRegisterHelper::stairProperties)
     );
     public static final ColorCollection<DeferredBlock<SlabBlock>> GLAZED_TERRACOTTA_SLAB = ColorCollection.zipMap(
             Blocks.GLAZED_TERRACOTTA, BVBlockItemIds.GLAZED_TERRACOTTA_SLAB, (base, id) -> register(id.block().identifier().getPath(), HorizontalRotatedSlabBlock::new, base, BlockRegisterHelper::slabProperties)

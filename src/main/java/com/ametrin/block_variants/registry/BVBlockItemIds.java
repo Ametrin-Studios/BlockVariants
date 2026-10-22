@@ -74,7 +74,7 @@ public final class BVBlockItemIds {
         }));
     }
 
-    public static BlockItemId create(String name) {
+    static BlockItemId create(String name) {
         var id = BlockVariants.locate(name);
         return BlockItemId.create(id, id);
     }

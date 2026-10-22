@@ -30,7 +30,7 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
 
         new BVBlockItemTagsProvider(tags -> BlockItemTagsProvider.wrapForItems(tag(tags.item()))).run();
 
-        tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
+        tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.BlockItems.STONES.item());
 
         tag(ItemTags.PIGLIN_LOVED).add(
                 DataProviderExtensions.getItemResourceKey(BVOtherBlocks.GOLD_BARS),

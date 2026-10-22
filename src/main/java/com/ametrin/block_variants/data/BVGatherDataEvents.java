@@ -1,5 +1,6 @@
-package com.ametrin.block_variants.data.provider;
+package com.ametrin.block_variants.data;
 
+import com.ametrin.block_variants.data.provider.*;
 import com.ametrin.block_variants.data.provider.loot_table.BVBlockLootProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
