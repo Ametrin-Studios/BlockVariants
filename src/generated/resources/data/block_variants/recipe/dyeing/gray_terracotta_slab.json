@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_terracotta_slab",
+  "key": {
+    "#": "block_variants:terracotta_slab",
+    "X": "minecraft:gray_dye"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "block_variants:gray_terracotta_slab"
+  }
+}

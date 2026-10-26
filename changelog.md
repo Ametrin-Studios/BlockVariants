@@ -1,11 +1,8 @@
-## 7.1.0
+## 7.0.1
 
-- add Poplar Log/Wood variants
-- remove Wool Stairs/Slabs (existing blocks/items will be converted to vanilla blocks)
-- 26.3 port
+- dyeing recipe fixes
 
 ## 7.0.0
-
 - add Smooth (Red) Sandstone Wall
 - fix Wool variants not being flammable
 
