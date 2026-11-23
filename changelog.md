@@ -1,3 +1,6 @@
+## 6.1.2
+- Ametrin API compatibility 
+
 ## 6.1.1
 - fix fence gates destroyed by water
 - fix furnace fuels

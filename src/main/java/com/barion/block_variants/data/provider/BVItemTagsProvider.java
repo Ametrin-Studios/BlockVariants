@@ -11,27 +11,26 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("unchecked")
 public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
-    public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> provider, ExistingFileHelper existingFileHelper) {
-        super(packOutput, lookupProvider, provider, BlockVariants.MOD_ID, existingFileHelper);
+    public BVItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> provider) {
+        super(packOutput, lookupProvider, provider, BlockVariants.MOD_ID, null);
     }
 
     {
-        itemTagProviderRules.add((item, name)-> {
-            if(!name.contains("wool")) return;
+        itemTagProviderRules.add((item, name) -> {
+            if (!name.contains("wool")) return;
 
-            if(name.contains("stairs")){
-                tag(BVTags.Items.WOOL_STAIRS).add(item);
-            }else if(name.contains("slab")){
-                tag(BVTags.Items.WOOL_SLABS).add(item);
-            }else if(name.contains("wall")){
-                tag(BVTags.Items.WOOL_WALLS).add(item);
+            if (name.contains("stairs")) {
+                tag(BVTags.Items.WOOL_STAIRS).add(item.getKey());
+            } else if (name.contains("slab")) {
+                tag(BVTags.Items.WOOL_SLABS).add(item.getKey());
+            } else if (name.contains("wall")) {
+                tag(BVTags.Items.WOOL_WALLS).add(item.getKey());
             }
         });
     }
@@ -51,11 +50,11 @@ public final class BVItemTagsProvider extends ExtendedItemTagsProvider {
         copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
         copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);
 
-        tag(BVTags.Items.STONE_CRAFTING).addTags(ItemTags.STONE_CRAFTING_MATERIALS, Tags.Items.STONES);
+        tag(BVTags.Items.STONE_CRAFTING).addOptionalTag(ItemTags.STONE_CRAFTING_MATERIALS).addOptionalTag(Tags.Items.STONES);
 
 //        tag(ItemTags.STAIRS).addTag(ItemTags.WOODEN_STAIRS);
 //        tag(ItemTags.SLABS).addTag(ItemTags.WOODEN_SLABS);
-        //tag(ItemTags.WALLS).addTag(BVTags.Items.WoodenWalls);
+//        tag(ItemTags.WALLS).addTag(BVTags.Items.WoodenWalls);
 
         tag(ItemTags.NON_FLAMMABLE_WOOD).add(
                 BVBlocks.CRIMSON_STEM_STAIRS.asItem(),

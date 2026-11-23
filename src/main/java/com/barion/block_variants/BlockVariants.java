@@ -1,6 +1,6 @@
 package com.barion.block_variants;
 
-import com.ametrinstudios.ametrin.data.DataProviderHelper;
+import com.ametrinstudios.ametrin.data.provider.CustomLootTableProvider;
 import com.barion.block_variants.data.provider.*;
 import com.barion.block_variants.data.provider.loot_table.BVBlockLootProvider;
 import com.barion.block_variants.registry.BVBlocks;
@@ -37,12 +37,12 @@ public final class BlockVariants{
     }
 
     private static void gatherData(GatherDataEvent event){
-        var helper = new DataProviderHelper(event);
-
-        helper.add(BVBlockStateProvider::new);
-        helper.add(BVItemModelProvider::new);
-        helper.add(BVRecipeProvider::new);
-        helper.addBlockAndItemTags(BVBlockTagsProvider::new, BVItemTagsProvider::new);
-        helper.addLootTables(builder -> builder.addBlockProvider(BVBlockLootProvider::new));
+        event.createProvider((output) -> new BVBlockStateProvider(output, event.getExistingFileHelper()));
+        event.createProvider((output) -> new BVItemModelProvider(output, event.getExistingFileHelper()));
+        event.createProvider(BVRecipeProvider::new);
+        event.createBlockAndItemTags(BVBlockTagsProvider::new, BVItemTagsProvider::new);
+        event.createProvider(CustomLootTableProvider.builder()
+                .addBlockProvider(BVBlockLootProvider::new)
+                ::build);
     }
 }

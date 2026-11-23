@@ -34,5 +34,5 @@ issueTrackerURL="https://github.com/Ametrin-Studios/BlockVariants/issues" #optio
     modId="ametrin"
     type="required"
     versionRange="${ametrin_version_range}"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"

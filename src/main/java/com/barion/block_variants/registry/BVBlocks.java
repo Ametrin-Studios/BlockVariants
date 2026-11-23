@@ -19,12 +19,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Iterator;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
-import static com.ametrinstudios.ametrin.world.block.helper.BlockBehaviourPropertiesHelper.copyProperties;
-import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.fenceGate;
-import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.stair;
+import static com.ametrinstudios.ametrin.world.block.helper.BlockRegisterHelper.*;
 
 public final class BVBlocks {
 
@@ -248,11 +246,11 @@ public final class BVBlocks {
     public static final DeferredBlock<WallBlock> STRIPPED_CHERRY_WOOD_WALL = woodWall("stripped_cherry", Blocks.STRIPPED_CHERRY_WOOD);
     public static final DeferredBlock<FenceBlock> STRIPPED_CHERRY_WOOD_FENCE = woodFence("stripped_cherry", Blocks.STRIPPED_CHERRY_WOOD);
     public static final DeferredBlock<FenceGateBlock> STRIPPED_CHERRY_WOOD_FENCE_GATE = woodFenceGate("stripped_cherry", Blocks.STRIPPED_CHERRY_WOOD);
-    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", ()-> stair(Blocks.STRIPPED_BAMBOO_BLOCK::defaultBlockState, copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
-    public static final DeferredBlock<SlabBlock> STRIPPED_BAMBOO_BLOCK_SLAB = register("stripped_bamboo_block_slab", ()-> slab(copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 75);
-    public static final DeferredBlock<WallBlock> STRIPPED_BAMBOO_BLOCK_WALL = register("stripped_bamboo_block_wall", ()-> wall(copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
-    public static final DeferredBlock<FenceBlock> STRIPPED_BAMBOO_BLOCK_FENCE = register("stripped_bamboo_block_fence", ()-> fence(copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
-    public static final DeferredBlock<FenceGateBlock> STRIPPED_BAMBOO_BLOCK_FENCE_GATE = register("stripped_bamboo_block_fence_gate", ()-> fenceGate(WoodType.BAMBOO, copyProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW).forceSolidOn()), 75);
+    public static final DeferredBlock<StairBlock> STRIPPED_BAMBOO_BLOCK_STAIRS = register("stripped_bamboo_block_stairs", ()-> new StairBlock(Blocks.STRIPPED_BAMBOO_BLOCK.defaultBlockState(), stairProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
+    public static final DeferredBlock<SlabBlock> STRIPPED_BAMBOO_BLOCK_SLAB = register("stripped_bamboo_block_slab", ()-> slab(slabProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 75);
+    public static final DeferredBlock<WallBlock> STRIPPED_BAMBOO_BLOCK_WALL = register("stripped_bamboo_block_wall", ()-> wall(wallProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
+    public static final DeferredBlock<FenceBlock> STRIPPED_BAMBOO_BLOCK_FENCE = register("stripped_bamboo_block_fence", ()-> fence(fenceProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_BAMBOO_BLOCK_FENCE_GATE = register("stripped_bamboo_block_fence_gate", ()-> new FenceGateBlock(WoodType.BAMBOO, fenceGateProperties(Blocks.STRIPPED_BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 75);
 
     public static final DeferredBlock<StrippableStairBlock> OAK_WOOD_STAIRS = woodStairs("oak", Blocks.OAK_WOOD, STRIPPED_OAK_WOOD_STAIRS);
     public static final DeferredBlock<StrippableSlabBlock> OAK_WOOD_SLAB = woodSlab("oak", Blocks.OAK_WOOD, STRIPPED_OAK_WOOD_SLAB);
@@ -294,22 +292,22 @@ public final class BVBlocks {
     public static final DeferredBlock<StrippableWallBlock> CHERRY_WOOD_WALL = woodWall("cherry", Blocks.CHERRY_WOOD, STRIPPED_CHERRY_WOOD_WALL);
     public static final DeferredBlock<StrippableFenceBlock> CHERRY_WOOD_FENCE = woodFence("cherry", Blocks.CHERRY_WOOD, STRIPPED_CHERRY_WOOD_FENCE);
     public static final DeferredBlock<StrippableFenceGateBlock> CHERRY_WOOD_FENCE_GATE = woodFenceGate(WoodType.CHERRY, Blocks.CHERRY_WOOD, STRIPPED_CHERRY_WOOD_FENCE_GATE);
-    public static final DeferredBlock<StrippableStairBlock> BAMBOO_BLOCK_STAIRS = register("bamboo_block_stairs", ()-> strippableStair(STRIPPED_BAMBOO_BLOCK_STAIRS, Blocks.BAMBOO_BLOCK, copyProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
-    public static final DeferredBlock<StrippableSlabBlock> BAMBOO_BLOCK_SLAB = register("bamboo_block_slab", ()-> strippableSlab(STRIPPED_BAMBOO_BLOCK_SLAB, copyProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 75);
-    public static final DeferredBlock<StrippableWallBlock> BAMBOO_BLOCK_WALL = register("bamboo_block_wall", ()-> strippableWall(STRIPPED_BAMBOO_BLOCK_WALL, copyProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT)), 150);
-    public static final DeferredBlock<StrippableFenceBlock> BAMBOO_BLOCK_FENCE = register("bamboo_block_fence", ()-> strippableFence(STRIPPED_BAMBOO_BLOCK_FENCE, copyProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT)), 150);
-    public static final DeferredBlock<StrippableFenceGateBlock> BAMBOO_BLOCK_FENCE_GATE = register("bamboo_block_fence_gate", ()-> strippableFenceGate(STRIPPED_BAMBOO_BLOCK_FENCE_GATE, WoodType.BAMBOO, copyProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT).forceSolidOn()), 150);
+    public static final DeferredBlock<StrippableStairBlock> BAMBOO_BLOCK_STAIRS = register("bamboo_block_stairs", ()-> strippableStair(STRIPPED_BAMBOO_BLOCK_STAIRS, Blocks.BAMBOO_BLOCK, stairProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 150);
+    public static final DeferredBlock<StrippableSlabBlock> BAMBOO_BLOCK_SLAB = register("bamboo_block_slab", ()-> strippableSlab(STRIPPED_BAMBOO_BLOCK_SLAB, slabProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.COLOR_YELLOW)), 75);
+    public static final DeferredBlock<StrippableWallBlock> BAMBOO_BLOCK_WALL = register("bamboo_block_wall", ()-> strippableWall(STRIPPED_BAMBOO_BLOCK_WALL, wallProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT)), 150);
+    public static final DeferredBlock<StrippableFenceBlock> BAMBOO_BLOCK_FENCE = register("bamboo_block_fence", ()-> strippableFence(STRIPPED_BAMBOO_BLOCK_FENCE, fenceProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT)), 150);
+    public static final DeferredBlock<StrippableFenceGateBlock> BAMBOO_BLOCK_FENCE_GATE = register("bamboo_block_fence_gate", ()-> strippableFenceGate(STRIPPED_BAMBOO_BLOCK_FENCE_GATE, WoodType.BAMBOO, fenceGateProperties(Blocks.BAMBOO_BLOCK).mapColor(MapColor.PLANT)), 150);
 
     public static final DeferredBlock<StairBlock> STRIPPED_CRIMSON_HYPHAE_STAIRS = register("stripped_crimson_hyphae_stairs", ()-> stair(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<SlabBlock> STRIPPED_CRIMSON_HYPHAE_SLAB = register("stripped_crimson_hyphae_slab", ()-> slab(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<WallBlock> STRIPPED_CRIMSON_HYPHAE_WALL = register("stripped_crimson_hyphae_wall", ()-> wall(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<FenceBlock> STRIPPED_CRIMSON_HYPHAE_FENCE = register("stripped_crimson_hyphae_fence", ()-> fence(Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
-    public static final DeferredBlock<FenceGateBlock> STRIPPED_CRIMSON_HYPHAE_FENCE_GATE = register("stripped_crimson_hyphae_fence_gate", ()-> fenceGate(WoodType.CRIMSON, copyProperties(Blocks.STRIPPED_CRIMSON_HYPHAE).forceSolidOn()), fireResistanceItemProperties);
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_CRIMSON_HYPHAE_FENCE_GATE = register("stripped_crimson_hyphae_fence_gate", ()-> fenceGate(WoodType.CRIMSON, Blocks.STRIPPED_CRIMSON_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<StairBlock> STRIPPED_WARPED_HYPHAE_STAIRS = register("stripped_warped_hyphae_stairs", ()-> stair(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<SlabBlock> STRIPPED_WARPED_HYPHAE_SLAB = register("stripped_warped_hyphae_slab", ()-> slab(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<WallBlock> STRIPPED_WARPED_HYPHAE_WALL = register("stripped_warped_hyphae_wall", ()-> wall(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<FenceBlock> STRIPPED_WARPED_HYPHAE_FENCE = register("stripped_warped_hyphae_fence", ()-> fence(Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
-    public static final DeferredBlock<FenceGateBlock> STRIPPED_WARPED_HYPHAE_FENCE_GATE = register("stripped_warped_hyphae_fence_gate", ()-> fenceGate(WoodType.WARPED, copyProperties(Blocks.STRIPPED_WARPED_HYPHAE).forceSolidOn()), fireResistanceItemProperties);
+    public static final DeferredBlock<FenceGateBlock> STRIPPED_WARPED_HYPHAE_FENCE_GATE = register("stripped_warped_hyphae_fence_gate", ()-> fenceGate(WoodType.WARPED, Blocks.STRIPPED_WARPED_HYPHAE), fireResistanceItemProperties);
 
     public static final DeferredBlock<StrippableStairBlock> CRIMSON_HYPHAE_STAIRS = register("crimson_hyphae_stairs", ()-> strippableStair(STRIPPED_CRIMSON_HYPHAE_STAIRS, Blocks.CRIMSON_HYPHAE), fireResistanceItemProperties);
     public static final DeferredBlock<StrippableSlabBlock> CRIMSON_HYPHAE_SLAB = register("crimson_hyphae_slab", ()-> strippableSlab(STRIPPED_CRIMSON_HYPHAE_SLAB, Blocks.CRIMSON_HYPHAE), fireResistanceItemProperties);
@@ -339,16 +337,16 @@ public final class BVBlocks {
     public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_TILE_SLAB = register("cracked_deepslate_tile_slab", ()-> slab(Blocks.CRACKED_DEEPSLATE_TILES));
     public static final DeferredBlock<WallBlock> CRACKED_DEEPSLATE_TILE_WALL = register("cracked_deepslate_tile_wall", ()-> wall(Blocks.CRACKED_DEEPSLATE_TILES));
 
-    public static final DeferredBlock<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, copyProperties(Blocks.NETHER_BRICK_FENCE).forceSolidOn())); // TODO: fix wood type
+    public static final DeferredBlock<FenceGateBlock> NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, Blocks.NETHER_BRICK_FENCE)); // TODO: fix wood type
 
     public static final DeferredBlock<StairBlock> CRACKED_NETHER_BRICK_STAIRS = register("cracked_nether_brick_stairs", ()-> stair(Blocks.CRACKED_NETHER_BRICKS));
     public static final DeferredBlock<SlabBlock> CRACKED_NETHER_BRICK_SLAB = register("cracked_nether_brick_slab", ()-> slab(Blocks.CRACKED_NETHER_BRICKS));
     public static final DeferredBlock<WallBlock> CRACKED_NETHER_BRICK_WALL = register("cracked_nether_brick_wall", ()-> wall(Blocks.CRACKED_NETHER_BRICKS));
     public static final DeferredBlock<FenceBlock> CRACKED_NETHER_BRICK_FENCE = register("cracked_nether_brick_fence", ()-> fence(Blocks.CRACKED_NETHER_BRICKS));
-    public static final DeferredBlock<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, copyProperties(Blocks.CRACKED_NETHER_BRICKS).forceSolidOn()));
+    public static final DeferredBlock<FenceGateBlock> CRACKED_NETHER_BRICK_FENCE_GATE = register("cracked_nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, Blocks.CRACKED_NETHER_BRICKS));
 
     public static final DeferredBlock<FenceBlock> RED_NETHER_BRICK_FENCE = register("red_nether_brick_fence", ()-> fence(Blocks.RED_NETHER_BRICKS));
-    public static final DeferredBlock<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, copyProperties(Blocks.RED_NETHER_BRICKS).forceSolidOn()));
+    public static final DeferredBlock<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", ()-> fenceGate(WoodType.OAK, Blocks.RED_NETHER_BRICKS));
 
     public static final DeferredBlock<StairBlock> OBSIDIAN_STAIRS = register("obsidian_stairs", ()-> stair(Blocks.OBSIDIAN));
     public static final DeferredBlock<SlabBlock> OBSIDIAN_SLAB = register("obsidian_slab", ()-> slab(Blocks.OBSIDIAN));
@@ -490,15 +488,15 @@ public final class BVBlocks {
     public static final DeferredBlock<SlabBlock> PACKED_MUD_SLAB = register("packed_mud_slab", ()-> slab(Blocks.PACKED_MUD));
     public static final DeferredBlock<WallBlock> PACKED_MUD_WALL = register("packed_mud_wall", ()-> wall(Blocks.PACKED_MUD));
 
-    private static StrippableStairBlock strippableStair(Supplier<StairBlock> stripped, Block base) { return new StrippableStairBlock(stripped, base.defaultBlockState(), copyProperties(base)); }
+    private static StrippableStairBlock strippableStair(Supplier<StairBlock> stripped, Block base) { return new StrippableStairBlock(stripped, base.defaultBlockState(), stairProperties(base)); }
     private static StrippableStairBlock strippableStair(Supplier<StairBlock> stripped, Block base, BlockBehaviour.Properties properties) { return new StrippableStairBlock(stripped, base.defaultBlockState(), properties); }
-    private static StrippableSlabBlock strippableSlab(Supplier<SlabBlock> stripped, Block base) { return new StrippableSlabBlock(stripped, copyProperties(base)); }
+    private static StrippableSlabBlock strippableSlab(Supplier<SlabBlock> stripped, Block base) { return new StrippableSlabBlock(stripped, slabProperties(base)); }
     private static StrippableSlabBlock strippableSlab(Supplier<SlabBlock> stripped, BlockBehaviour.Properties properties) { return new StrippableSlabBlock(stripped, properties); }
-    private static StrippableWallBlock strippableWall(Supplier<WallBlock> stripped, Block base) { return new StrippableWallBlock(stripped, copyProperties(base)); }
+    private static StrippableWallBlock strippableWall(Supplier<WallBlock> stripped, Block base) { return new StrippableWallBlock(stripped, wallProperties(base)); }
     private static StrippableWallBlock strippableWall(Supplier<WallBlock> stripped, BlockBehaviour.Properties properties) { return new StrippableWallBlock(stripped, properties); }
-    private static StrippableFenceBlock strippableFence(Supplier<FenceBlock> stripped, Block base) { return new StrippableFenceBlock(stripped, copyProperties(base)); }
+    private static StrippableFenceBlock strippableFence(Supplier<FenceBlock> stripped, Block base) { return new StrippableFenceBlock(stripped, fenceProperties(base)); }
     private static StrippableFenceBlock strippableFence(Supplier<FenceBlock> stripped, BlockBehaviour.Properties properties) { return new StrippableFenceBlock(stripped, properties); }
-    private static StrippableFenceGateBlock strippableFenceGate(Supplier<FenceGateBlock> stripped, WoodType type, Block base) { return new StrippableFenceGateBlock(stripped, type, copyProperties(base).forceSolidOn()); }
+    private static StrippableFenceGateBlock strippableFenceGate(Supplier<FenceGateBlock> stripped, WoodType type, Block base) { return new StrippableFenceGateBlock(stripped, type, fenceGateProperties(base)); }
     private static StrippableFenceGateBlock strippableFenceGate(Supplier<FenceGateBlock> stripped, WoodType type, BlockBehaviour.Properties properties) { return new StrippableFenceGateBlock(stripped, type, properties); }
 
     private static DeferredBlock<StairBlock> regTerracottaStairs(DyeColor color, Block base) {
@@ -551,7 +549,7 @@ public final class BVBlocks {
         return register(type + "_wood_fence", ()-> strippableFence(stripped, base), 300);
     }
     private static DeferredBlock<FenceGateBlock> woodFenceGate(String type, Block base) {
-        return register(type + "_wood_fence_gate", ()-> fenceGate(woodTypeOf(type), copyProperties(base).forceSolidOn()), 300);
+        return register(type + "_wood_fence_gate", ()-> fenceGate(woodTypeOf(type), base), 300);
     }
     private static DeferredBlock<StrippableFenceGateBlock> woodFenceGate(WoodType type, Block base, Supplier<FenceGateBlock> stripped) {
         return register(type.name() + "_wood_fence_gate", ()-> strippableFenceGate(stripped, type, base), 300);
@@ -559,15 +557,15 @@ public final class BVBlocks {
 
     private static DeferredBlock<StairBlock> regGlazedTerracottaStairs(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent.defaultBlockState(), copyProperties(parent)));
+        return register(color.getName() + "_glazed_terracotta_stairs", ()-> new StairBlock(parent.defaultBlockState(), stairProperties(parent)));
     }
     private static DeferredBlock<SlabBlock> regGlazedTerracottaSlab(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_slab", ()-> new SlabBlock(copyProperties(parent)));
+        return register(color.getName() + "_glazed_terracotta_slab", ()-> new SlabBlock(slabProperties(parent)));
     }
     private static DeferredBlock<WallBlock> regGlazedTerracottaWall(DyeColor color) {
         var parent = getVanillaBlock(color.getName() + "_glazed_terracotta");
-        return register(color.getName() + "_glazed_terracotta_wall", ()-> new WallBlock(copyProperties(parent)));
+        return register(color.getName() + "_glazed_terracotta_wall", ()-> new WallBlock(wallProperties(parent)));
     }
 
     private static DeferredBlock<StairBlock> regWoolStairs(DyeColor color) {
@@ -583,12 +581,14 @@ public final class BVBlocks {
         return register(color.getName() + "_wool_wall", ()-> wall(parent));
     }
 
+    private static StairBlock stair(Block parent) { return new StairBlock(parent.defaultBlockState(), stairProperties(parent)); }
     private static SlabBlock slab(SlabBlock.Properties properties) { return new SlabBlock(properties); }
-    private static SlabBlock slab(Block parent) { return slab(copyProperties(parent)); }
+    private static SlabBlock slab(Block parent) { return slab(slabProperties(parent)); }
     private static WallBlock wall(WallBlock.Properties properties) { return new WallBlock(properties); }
-    private static WallBlock wall(Block parent) { return wall(copyProperties(parent)); }
+    private static WallBlock wall(Block parent) { return wall(wallProperties(parent)); }
     private static FenceBlock fence(FenceBlock.Properties properties) { return new FenceBlock(properties); }
-    private static FenceBlock fence(Block parent) { return fence(copyProperties(parent)); }
+    private static FenceBlock fence(Block parent) { return fence(fenceProperties(parent)); }
+    private static FenceGateBlock fenceGate(WoodType woodType, Block parent) { return new FenceGateBlock(woodType, fenceGateProperties(parent)); }
 
     private static WoodType woodTypeOf(String key) {
         key = key.replace("stripped_", "");
@@ -628,5 +628,5 @@ public final class BVBlocks {
     }
     private static <T extends Block> DeferredBlock<T> registerWithoutItem(String name, Supplier<T> block) { return REGISTER.register(name, block); }
 
-    public static Iterator<? extends Block> getAllBlocks() { return REGISTER.getEntries().stream().map(Supplier::get).iterator(); }
+    public static Stream<? extends Block> getAllBlocks() { return REGISTER.getEntries().stream().map(Supplier::get); }
 }

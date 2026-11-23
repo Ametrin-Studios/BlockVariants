@@ -72,12 +72,16 @@ repositories {
         }
     }
     maven {
-        url "https://github.com/BarionLP/MCModsMaven/raw/main/"
+        name "Ametrin Studios Maven"
+        url "https://github.com/Ametrin-Studios/maven/raw/main/"
+    }
+    maven {
+        url uri(rootProject.file("../maven"))
     }
 }
 
 dependencies {
-    implementation "com.ametrinstudios:ametrin:${minecraft_version}-${ametrin_version}"
+    implementation "com.ametrinstudios:ametrin-${minecraft_version}:${ametrin_version}"
 //    localRuntime "curse.maven:emi-580555:5497461"
 }
 

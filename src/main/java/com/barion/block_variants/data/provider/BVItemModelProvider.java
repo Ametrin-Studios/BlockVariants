@@ -33,7 +33,7 @@ public final class BVItemModelProvider extends ExtendedItemModelProvider {
     @Override
     protected void registerModels() {
        runProviderRules(BVItems.REGISTER);
-       blocks(BVBlocks.getAllBlocks());
+       blocks(BVBlocks.getAllBlocks().iterator());
     }
 
     private <B extends Block> void blocks(Iterator<B> blocks){

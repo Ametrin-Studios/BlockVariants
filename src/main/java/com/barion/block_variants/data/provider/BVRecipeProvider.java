@@ -19,10 +19,14 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.concurrent.CompletableFuture;
 
 public final class BVRecipeProvider extends ExtendedRecipeProvider {
-    public BVRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {super(packOutput, BlockVariants.MOD_ID, lookupProvider);}
+
+    public BVRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(BlockVariants.MOD_ID, output, registries);
+    }
 
     @Override @ParametersAreNonnullByDefault
-    protected void buildRecipes(RecipeOutput output){
+    protected void buildRecipes(RecipeOutput output, HolderLookup.Provider registries) {
+
         wall(output, BVBlocks.POLISHED_GRANITE_WALL.get(), Blocks.POLISHED_GRANITE, Blocks.GRANITE, Blocks.GRANITE_WALL);
         wall(output, BVBlocks.POLISHED_DIORITE_WALL.get(), Blocks.POLISHED_DIORITE, Blocks.DIORITE, Blocks.DIORITE_WALL);
         wall(output, BVBlocks.POLISHED_ANDESITE_WALL.get(), Blocks.POLISHED_ANDESITE, Blocks.ANDESITE, Blocks.ANDESITE_WALL);
@@ -64,15 +68,15 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         smelting(output, BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.get(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);
         smelting(output, BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.get(), Blocks.POLISHED_BLACKSTONE_BRICK_SLAB);
         smelting(output, BVBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get(), Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
-        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
-        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.BLACKSTONE_STAIRS);
-        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, 1, Blocks.POLISHED_BLACKSTONE_STAIRS);
-        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_SLAB, 1, Blocks.BLACKSTONE_SLAB);
-        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.BLACKSTONE_SLAB);
-        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, 1, Blocks.POLISHED_BLACKSTONE_SLAB);
-        stonecutting(output, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_WALL, 1, Blocks.BLACKSTONE_WALL);
-        stonecutting(output, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.BLACKSTONE_WALL);
-        stonecutting(output, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, 1, Blocks.POLISHED_BLACKSTONE_WALL);
+        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_STAIRS, Blocks.BLACKSTONE_STAIRS, 1);
+        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.BLACKSTONE_STAIRS, 1);
+        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.POLISHED_BLACKSTONE_STAIRS, 1);
+        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_SLAB, Blocks.BLACKSTONE_SLAB, 1);
+        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, Blocks.BLACKSTONE_SLAB, 1);
+        stonecutting(output, RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, Blocks.POLISHED_BLACKSTONE_SLAB, 1);
+        stonecutting(output, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_WALL, Blocks.BLACKSTONE_WALL, 1);
+        stonecutting(output, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, Blocks.BLACKSTONE_WALL, 1);
+        stonecutting(output, RecipeCategory.DECORATIONS, Blocks.POLISHED_BLACKSTONE_BRICK_WALL, Blocks.POLISHED_BLACKSTONE_WALL, 1);
 
         all(output, BVBlocks.BASALT_STAIRS.get(), BVBlocks.BASALT_SLAB.get(), BVBlocks.BASALT_WALL.get(), Blocks.BASALT, true);
         stairs(output, BVBlocks.POLISHED_BASALT_STAIRS.get(), Blocks.POLISHED_BASALT, Blocks.BASALT, BVBlocks.BASALT_STAIRS.get());
@@ -281,7 +285,7 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
                     .unlockedBy("has_stone", has(BVTags.Items.STONE_CRAFTING))
                     .save(output, recipeID(Blocks.FURNACE));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS,Blocks.STONECUTTER, 1)
+            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Blocks.STONECUTTER, 1)
                     .define('#', BVTags.Items.STONE_CRAFTING)
                     .define('+', Items.IRON_INGOT)
                     .pattern(" + ")
@@ -310,26 +314,30 @@ public final class BVRecipeProvider extends ExtendedRecipeProvider {
         } //Recipe overrides
     }
 
-    private void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting){
+    private void all(RecipeOutput output, StairBlock stair, SlabBlock slab, WallBlock wall, ItemLike material, boolean hasStonecutting) {
         stairs(output, stair, material, hasStonecutting);
         slab(output, slab, material, hasStonecutting);
         wall(output, wall, material, hasStonecutting);
     }
-    private void stairSlab(RecipeOutput output, StairBlock stair, SlabBlock slab, ItemLike material, boolean hasStonecutting){
+
+    private void stairSlab(RecipeOutput output, StairBlock stair, SlabBlock slab, ItemLike material, boolean hasStonecutting) {
         stairs(output, stair, material, hasStonecutting);
         slab(output, slab, material, hasStonecutting);
     }
+
     private void smelting(RecipeOutput output, ItemLike result, ItemLike ingredient) {
         smelting(output, RecipeCategory.MISC, result, ingredient, 0.1f, 200);
     }
-    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material){
+
+    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material) {
         stairs(output, stairs, material, false);
         slab(output, slab, material, false);
         wall(output, wall, material, false);
         fence(output, fence, material);
         fenceGate(output, fenceGate, material);
     }
-    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material, ItemLike altMaterial){
+
+    private void recipeWoods(RecipeOutput output, StairBlock stairs, SlabBlock slab, WallBlock wall, FenceBlock fence, FenceGateBlock fenceGate, ItemLike material, ItemLike altMaterial) {
         stairs(output, stairs, material, false);
         slab(output, slab, material, false);
         wall(output, wall, material, false);
