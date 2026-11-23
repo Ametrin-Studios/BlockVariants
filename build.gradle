@@ -110,6 +110,25 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
     into "build/generated/sources/modMetadata"
 }
 
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            artifactId = "${mod_id}-${minecraft_version}"
+            from components.java
+
+            pom {
+                url = 'https://github.com/Ametrin-Studios/BlockVariants'
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'Ametrin'
+            url = uri(rootProject.file("../maven"))
+        }
+    }
+}
+
 sourceSets.main.resources.srcDir generateModMetadata
 neoForge.ideSyncTask generateModMetadata
 
